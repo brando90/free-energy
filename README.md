@@ -19,9 +19,7 @@ correspondence:
     F[Q] = E_Q[log P̃(X)] + H(Q)         (maximize over a tractable Q)
 
 Inference becomes optimization, Z disappears or becomes a one-time fitting
-cost, and the deployed forward pass is evaluation on a fitted Q̂. This is
-the framing of Koller & Friedman Ch. 11 and the spine of LeCun's EBM
-program. Lean is the test bed because formal proving has variable
+cost, and the deployed forward pass is evaluation on a fitted Q̂. Lean is the test bed because formal proving has variable
 per-instance difficulty (good for adaptive-compute architectures) and
 verifiable correctness (clean training signal).
 
@@ -68,6 +66,20 @@ Not Friston. "Free energy" here is Helmholtz / variational / ELBO.
 - A polished library.
 - Renaming standard concepts.
 
+## Appendix B: citation
+
+If this repo is useful to you:
+
+\`\`\`bibtex
+@misc{miranda2026freeenergy,
+  author       = {Miranda, Brando},
+  title        = {free-energy: post-softmax architectures via free-energy minimization},
+  year         = {2026},
+  howpublished = {\url{https://github.com/<your-username>/free-energy}},
+  note         = {Exploratory research repository}
+}
+\`\`\`
+
 ## Appendix A: names considered
 
 For the record. Picked `free-energy` because it names the central object
@@ -82,20 +94,6 @@ without describing the project by its opposition.
 - `post-transformer`, `after-attention` — defines by opposition
 - `freedom-from-transformer`, `free-energy-post-transformer` — pun / overspecified
 - `qed-net`, `tactic-energy`, `lean-ebm` — locks in the test bed
-
-## Appendix B: citation
-
-If this repo is useful to you:
-
-\`\`\`bibtex
-@misc{miranda2026freeenergy,
-  author       = {Miranda, Brando},
-  title        = {free-energy: post-softmax architectures via free-energy minimization},
-  year         = {2026},
-  howpublished = {\url{https://github.com/<your-username>/free-energy}},
-  note         = {Exploratory research repository}
-}
-\`\`\`
 
 ## License
 
