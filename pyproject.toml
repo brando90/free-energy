@@ -1,0 +1,23 @@
+[project]
+name = "free-energy"
+version = "0.1.0"
+description = "Post-softmax architectures via free-energy minimization, with Lean as the test bed."
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "torch>=2.4",
+    "triton>=3.0; platform_system == 'Linux'",
+    "numpy>=1.26",
+    "matplotlib>=3.8",
+    "einops>=0.8",
+    "transformers>=4.44",
+    "datasets>=2.20",
+    "jaxtyping>=0.2.34",
+    "pytest>=8.3",
+    "tqdm>=4.66",
+    "torchvision>=0.19",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["experiments", "kernels"]
+python_files = ["test_*.py"]
+addopts = "-q"

@@ -216,3 +216,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# free-energy project
+papers/*.pdf
+runs/
+wandb/
+**/results/*.png
+**/results/*.npz
+**/results/*.pt
+**/results/*.json
+.DS_Store
