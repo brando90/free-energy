@@ -45,6 +45,16 @@ Exploratory. Bets, not promises. The thesis is that the partition function
 and softmax are worth questioning; the experiments will say whether any of
 this cashes out.
 
+## Against this thesis
+
+The strongest counter-evidence is that transformers + scaling loss may
+already be all we need: scaling laws (Kaplan, Chinchilla) keep paying out,
+softmax attention has survived every proposed replacement at scale, and
+"just add compute and tokens" has beaten architectural cleverness for a
+decade. If that trend holds, the partition function isn't a bug to remove —
+it's the substrate that scales. This repo is a bet that it isn't, but the
+prior should be against us.
+
 ## Lineage
 
 - Koller & Friedman, *PGM*, Ch. 11 (inference as optimization).
