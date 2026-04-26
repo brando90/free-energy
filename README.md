@@ -37,7 +37,8 @@ Four claims to support or falsify:
 4. Exp-free attention substrates (sigmoid, softplus, kernel, energy) match
    or beat softmax attention while removing the numerical-stability tax.
 
-Each claim has a baseline and a falsification criterion in `MOTIVATION.md`.
+Each claim has a baseline and a falsification criterion in `MOTIVATION.md`
+(forthcoming).
 
 ## Status
 
@@ -55,35 +56,6 @@ decade. If that trend holds, the partition function isn't a bug to remove —
 it's the substrate that scales. This repo is a bet that it isn't, but the
 prior should be against us.
 
-## Roadmap: four pillars
-
-The thesis is too big to attack head-on, so the work is decomposed into
-four pillars. Each has a concrete deliverable and lives in its own
-subdirectory.
-
-1. **Softmax graveyard** — `docs/softmax_graveyard.md`. Synthesis of
-   why every proposed softmax-attention replacement has either failed or
-   been surpassed by softmax at scale, with named failure modes per
-   architecture. Frames what *not* to repeat.
-2. **Signal propagation** — `experiments/signal_prop/`. Reproduce the
-   two failure modes of attention at initialization: rank collapse
-   (Dong et al. 2021, arXiv:2103.03404) and entropy collapse / phase
-   diagram (arXiv:2505.24333). These are the diagnostic instruments any
-   new substrate must pass.
-3. **ML systems** — `kernels/flashattention_v1_triton/`. FlashAttention v1
-   forward pass implemented from scratch in Triton. Internalizes what
-   softmax is doing on the chip (online-softmax recurrence, tiling,
-   memory hierarchy) so we know what we'd need to change in silicon for
-   an exp-free substrate. See also issue: hardware co-design.
-4. **Energy-based modeling** — `experiments/ebm_baseline/`. Toy JEPA with
-   side-by-side contrastive (partition-function-explicit) and VICReg-style
-   (non-contrastive) training, to feel where Z actually leaks back into
-   the cost.
-
-Side quest: `lean/RankCollapse/` — formalize Dong et al.'s rank-collapse
-theorem in Lean 4. Unique target at the intersection of formal methods
-and architecture analysis; nobody has done it.
-
 ## Hopfield reframe
 
 Ramsauer et al. 2020 (*Hopfield Networks Is All You Need*, arXiv:2008.02217)
@@ -94,7 +66,25 @@ proved softmax attention **is** a continuous modern Hopfield network with
 So this project is not "EBMs vs. transformers." It's: **a different
 energy than Hopfield's, or a different way to fit / deploy the same
 energy without paying for the partition function at every forward pass.**
-Sharper framing, narrower target.
+See `docs/hopfield_equivalence.md` for what's literal vs metaphor.
+
+## Current state
+
+Literature-first phase, deliberately. No experiments are running yet.
+The bar to clear before proposing a substrate is high (see *Definition
+of Done* below); the homework is in progress.
+
+Done:
+
+- `docs/softmax_graveyard.md` — 15-row table of prior softmax-replacement
+  attempts with named failure modes, plus the five properties of softmax
+  nothing else replicates simultaneously.
+- `docs/hopfield_equivalence.md` — careful statement of the Hopfield
+  reframe and a seeded catalog of candidate energies.
+
+In progress: hardware-co-design reading, the broader reading list,
+expansion of the candidate-energy catalog, and `MOTIVATION.md`
+(per-claim falsification criteria). See the meta tracker issue.
 
 ## Definition of done (per architectural proposal)
 
@@ -102,14 +92,15 @@ Any candidate substrate proposed in this repo must, before being
 called a result:
 
 1. State the energy function (or explain why it's exp-free / Z-free).
-2. Pass the signal-propagation diagnostics from Pillar 2 (no rank
-   collapse, no entropy collapse) at depth ≥ 12.
-3. Run on a streaming-tile kernel analogue of FlashAttention (Pillar 3),
-   so wall-clock isn't a free pass given to the baseline.
+   See `docs/hopfield_equivalence.md` §4 for the candidate catalog.
+2. Pass signal-propagation diagnostics at depth ≥ 12 (rank collapse
+   per Dong et al. 2021, entropy collapse per arXiv:2505.24333).
+3. Run on a streaming-tile kernel analogue of FlashAttention, so
+   wall-clock isn't a free pass given to the baseline.
 4. Hit a baseline on at least one of: Lean tactic prediction, image
    classification, language-model perplexity at matched compute.
-5. **Failure-mode inheritance contract.** For each architecture in the
-   softmax graveyard (Pillar 1 table), name whether this proposal
+5. **Failure-mode inheritance contract.** For each row in
+   `docs/softmax_graveyard.md` Table A, name whether this proposal
    inherits, partially inherits, or avoids that failure mode, and
    give an experiment that would detect it. Without this, the
    proposal is "another headstone."
