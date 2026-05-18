@@ -72,9 +72,9 @@ experiments/00_start_off/results/local_codebert_cpu/training_report.json
 
 ## SNAP Transformer Run
 
-Status: TODO on SNAP.
+Status: completed on `skampere1.stanford.edu`.
 
-Planned command:
+Command:
 
 ```bash
 cd ~/free-energy
@@ -90,7 +90,21 @@ python experiments/00_start_off/train_transformer_energy.py \
   --device cuda
 ```
 
-Expected artifact:
+Outcome:
+
+```text
+host=skampere1.stanford.edu
+gpu=A100 via CUDA_VISIBLE_DEVICES=0
+model=microsoft/codebert-base
+device=cuda
+epochs=5
+num_pairs=18
+loss=0.2386
+mean_reciprocal_rank=1.0000
+all_gold_top=true
+```
+
+Artifact on SNAP:
 
 ```text
 experiments/00_start_off/results/transformer_energy/training_report.json
@@ -98,13 +112,11 @@ experiments/00_start_off/results/transformer_energy/training_report.json
 
 ## Final Ranking Table
 
-TODO after SNAP run.
-
 | Task | Gold rank | Top candidate | Notes |
 |---|---:|---|---|
-| `easy_set/1_MyAdd` | TODO | TODO | TODO |
-| `easy_set/21_is_palindrome` | TODO | TODO | TODO |
-| `cs_set/binary_search` | TODO | TODO | TODO |
+| `easy_set/1_MyAdd` | 1 | `gold` | gold ranks first |
+| `easy_set/21_is_palindrome` | 1 | `gold` | gold ranks first |
+| `cs_set/binary_search` | 1 | `gold` | gold ranks first on SNAP after 5 epochs |
 
 ## Next Step
 
