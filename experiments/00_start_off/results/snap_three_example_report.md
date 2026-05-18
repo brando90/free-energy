@@ -1,6 +1,30 @@
 # SNAP Three-Example EBM Pilot Report
 
-TL;DR: local smoke-test plumbing passes. SNAP transformer run is the next step.
+TL;DR: local smoke-test plumbing passes, and the SNAP finite-pool transformer ranking sanity check completed. This is not maximum-likelihood EBM training with MCMC.
+
+## Important Correction
+
+The run in this report is **not** MLE-with-MCMC EBM training.
+
+What it did:
+
+- built a finite candidate pool for three VeriBench tasks;
+- treated gold Lean files as positives and generated/corrupted files as negatives;
+- trained a transformer scalar energy head with pairwise ranking loss:
+
+```math
+-\log \sigma(E_\theta(t, y^-) - E_\theta(t, y^+)).
+```
+
+What it did not do:
+
+- no autoregressive language-model MLE;
+- no EBM maximum likelihood objective;
+- no partition-function gradient estimate;
+- no model samples from `p_theta`;
+- no MCMC, Langevin, Metropolis-Hastings, or contrastive-divergence chain.
+
+So the fast runtime is expected. It is a wiring and ranking sanity check, not evidence that MLE-MCMC is cheap.
 
 ## Local Smoke Test
 
@@ -70,7 +94,7 @@ Artifact kept locally but ignored by git:
 experiments/00_start_off/results/local_codebert_cpu/training_report.json
 ```
 
-## SNAP Transformer Run
+## SNAP Transformer Ranking Run
 
 Status: completed on `skampere1.stanford.edu`.
 
