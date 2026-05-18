@@ -1,0 +1,39 @@
+{
+  "name": "veribench_three_example_ebm_pilot",
+  "purpose": "Tiny VeriBench seed set for getting an energy-model experiment running before scaling to a benchmark split.",
+  "source_repo": "/Users/brandomiranda/veribench",
+  "split_policy": {
+    "pilot": "Use all three examples for debugging the pipeline, overfit checks, and qualitative ranking behavior.",
+    "real_experiment": "Once the pipeline runs, reserve most VeriBench tasks for test/evaluation and use a small train/dev slice only for energy-model fitting and hyperparameter decisions."
+  },
+  "examples": [
+    {
+      "id": "easy_set/1_MyAdd",
+      "role": "sanity_train",
+      "why": "Minimal arithmetic task; useful for verifying the scorer, candidate formatting, and positive/negative energy ordering.",
+      "python_source": "/Users/brandomiranda/veribench/veribench_dataset/py_src/easy_set/1_MyAdd.py",
+      "lean_source": "/Users/brandomiranda/veribench/veribench_dataset/lean_src/veribench/easy_set/1_MyAdd.lean"
+    },
+    {
+      "id": "easy_set/21_is_palindrome",
+      "role": "dev_behavior",
+      "why": "Nontrivial helper structure with digit/string-style reasoning; catches whether the energy function learns more than arithmetic surface forms.",
+      "python_source": "/Users/brandomiranda/veribench/veribench_dataset/py_src/easy_set/21_is_palindrome.py",
+      "lean_source": "/Users/brandomiranda/veribench/veribench_dataset/lean_src/veribench/easy_set/21_is_palindrome.lean"
+    },
+    {
+      "id": "cs_set/binary_search",
+      "role": "mini_test",
+      "why": "Classic algorithm with sorted-input precondition, index soundness, and completeness flavor; good first test of whether EBM ranking helps on real specification structure.",
+      "python_source": "/Users/brandomiranda/veribench/veribench_dataset/py_src/cs_set/binary_search.py",
+      "lean_source": "/Users/brandomiranda/veribench/veribench_dataset/lean_src/veribench/cs_set/binary_search.lean"
+    }
+  ],
+  "first_objective": "Rank a small candidate set per task so gold or verifier-passing candidates have lower energy than corrupted or verifier-failing candidates.",
+  "negative_sources": [
+    "agent-generated VeriBench attempts",
+    "syntactic corruptions of theorem statements or proofs",
+    "wrong implementation/spec pairings across the three tasks",
+    "short-run MCMC or local edits over candidate text once the static ranking setup works"
+  ]
+}
