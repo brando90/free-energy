@@ -80,6 +80,10 @@ def gradient_metrics(reference, estimate, torch) -> dict[str, float]:
     }
 
 
+def gradient_norm(gradient, torch) -> float:
+    return float(torch.linalg.vector_norm(gradient.double()).item())
+
+
 def compute_exact_mle_gradient(model, tokenizer, pools, device: str, max_length: int, batch_size: int):
     torch, _nn, _F, _AutoModel, _AutoTokenizer = exp.train_energy.import_training_deps()
     model.zero_grad(set_to_none=True)
@@ -263,7 +267,7 @@ def main() -> int:
     exact_grad, exact_loss = compute_exact_mle_gradient(
         model, tokenizer, gradient_pools, device, args.max_length, args.task_batch_size
     )
-    print(f"exact_mle_gradient loss={exact_loss:.6f} norm={float(torch.linalg.vector_norm(exact_grad)):.6f}")
+    print(f"exact_mle_gradient loss={exact_loss:.6f} norm={gradient_norm(exact_grad, torch):.6f}")
 
     exact_ebm_grad, exact_ebm_surrogate = compute_exact_ebm_negative_phase_gradient(
         model, tokenizer, gradient_pools, device, args.max_length, args.task_batch_size
@@ -343,7 +347,7 @@ def main() -> int:
         },
         "exact_mle": {
             "loss": exact_loss,
-            "gradient_norm": float(torch.linalg.vector_norm(exact_grad).item()),
+            "gradient_norm": gradient_norm(exact_grad, torch),
         },
         "exact_ebm_negative_phase": {
             "surrogate_loss": exact_ebm_surrogate,
