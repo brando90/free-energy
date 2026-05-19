@@ -1,6 +1,7 @@
 /candidate_pools/
 /transformer_energy/
 /local_*/
+/mle_mcmc*/
 *.pt
 *.bin
 *.safetensors

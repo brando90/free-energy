@@ -8,6 +8,7 @@ Current notes:
 - `veribench_three_example_manifest.json` - first three VeriBench tasks for a tiny EBM/MCMC pilot.
 - `pilot_ebm_ranking.py` - local smoke test that builds candidate pools and verifies the ranking/evaluation plumbing.
 - `train_transformer_energy.py` - cluster starter script for fitting a transformer scalar energy model on the three-example pool.
+- `run_mle_mcmc_experiment.py` - finite-support exact MLE vs MCMC-estimated EBM training on VeriBench candidate pools.
 - `SNAP_RUNBOOK.md` - commands and workflow for running the pilot on the SNAP cluster.
 - `agent_prompt_snap_cluster.md` - prompt to hand to a cluster agent.
 
@@ -19,6 +20,22 @@ cd /Users/brandomiranda/free-energy
 ```
 
 Expected output: a pass message and JSON results in `experiments/00_start_off/results/smoke_test_rankings.json`.
+
+SNAP full finite-support MLE/MCMC experiment:
+
+```bash
+cd ~/free-energy
+CUDA_VISIBLE_DEVICES=0 .venv/bin/python experiments/00_start_off/run_mle_mcmc_experiment.py \
+  --veribench-root ~/veribench \
+  --output-dir experiments/00_start_off/results/mle_mcmc_full \
+  --model-name microsoft/codebert-base \
+  --subsets easy_set cs_set humaneval_set \
+  --epochs 2 \
+  --task-batch-size 4 \
+  --max-length 256 \
+  --mcmc-steps 10 \
+  --device cuda
+```
 
 Use numbered folders under `experiments/` for concrete research threads:
 
