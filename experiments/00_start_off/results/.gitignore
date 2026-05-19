@@ -2,6 +2,7 @@
 /transformer_energy/
 /local_*/
 /mle_mcmc*/
+/ebm_mle_sanity*/
 *.pt
 *.bin
 *.safetensors
