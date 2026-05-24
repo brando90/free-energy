@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../lean-ebm"
+		},
+		{
+			"path": "../veribench"
+		},
+		{
+			"path": "../veribench-dt"
+		},
+		{
+			"path": "../cert-judge"
+		},
+		{
+			"path": "../ultimate-utils"
+		},
+		{
+			"path": "../agents-config"
+		},
+		{
+			"path": "../brandomiranda"
+		}
+	]
+}
