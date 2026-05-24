@@ -124,7 +124,11 @@ def main() -> int:
         msg.add_attachment(data, maintype="application", subtype="octet-stream", filename=path.name)
 
     password = load_password()
-    context = ssl.create_default_context()
+    try:
+        import certifi  # type: ignore
+        context = ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        context = ssl.create_default_context()
     with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as smtp:
         smtp.login(args.from_addr, password)
         smtp.send_message(msg)
