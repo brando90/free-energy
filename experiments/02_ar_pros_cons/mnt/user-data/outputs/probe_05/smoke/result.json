@@ -1,0 +1,62 @@
+{
+  "control_passed": true,
+  "cuda_available": true,
+  "device": "cuda",
+  "duration_s": 9.770475387573242,
+  "finished_at": 1779663402.1956124,
+  "gpu_name": "NVIDIA H200",
+  "host": "skampere2.stanford.edu",
+  "metrics": {
+    "direct": [
+      {
+        "accuracy": 1.0,
+        "n": 4,
+        "params": 26112
+      },
+      {
+        "accuracy": 0.4921875,
+        "n": 8,
+        "params": 26240
+      },
+      {
+        "accuracy": 0.49609375,
+        "n": 16,
+        "params": 26496
+      }
+    ],
+    "direct_drops_with_n": true,
+    "lengths": [
+      4,
+      8,
+      16
+    ],
+    "scratchpad": [
+      {
+        "accuracy": 1.0,
+        "n": 4,
+        "params": 26368
+      },
+      {
+        "accuracy": 1.0,
+        "n": 8,
+        "params": 26752
+      },
+      {
+        "accuracy": 1.0,
+        "n": 16,
+        "params": 27520
+      }
+    ],
+    "scratchpad_lifts_at_longest": true
+  },
+  "notes": {
+    "interpretation": "Direct parity accuracy should drop as n grows past a depth-dependent threshold, and the scratchpad variant should restore accuracy."
+  },
+  "platform": "Linux-6.8.0-110-generic-x86_64-with-glibc2.39",
+  "probe": "probe_05_fixed_compute",
+  "seed": 0,
+  "started_at": 1779663392.425137,
+  "tag": "smoke",
+  "torch_version": "2.12.0+cu130",
+  "verdict": "CONTROL_PASS"
+}

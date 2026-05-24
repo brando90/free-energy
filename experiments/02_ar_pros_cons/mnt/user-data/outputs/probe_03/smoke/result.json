@@ -1,0 +1,186 @@
+{
+  "control_passed": true,
+  "cuda_available": true,
+  "device": "cuda",
+  "duration_s": 0.5067410469055176,
+  "finished_at": 1779663389.9045227,
+  "gpu_name": "NVIDIA H200",
+  "host": "skampere2.stanford.edu",
+  "metrics": {
+    "curves": {
+      "pure": [
+        {
+          "effective_rank": 18,
+          "layer": 1
+        },
+        {
+          "effective_rank": 1,
+          "layer": 2
+        },
+        {
+          "effective_rank": 1,
+          "layer": 3
+        },
+        {
+          "effective_rank": 1,
+          "layer": 4
+        },
+        {
+          "effective_rank": 1,
+          "layer": 5
+        },
+        {
+          "effective_rank": 1,
+          "layer": 6
+        },
+        {
+          "effective_rank": 1,
+          "layer": 7
+        },
+        {
+          "effective_rank": 1,
+          "layer": 8
+        },
+        {
+          "effective_rank": 1,
+          "layer": 9
+        },
+        {
+          "effective_rank": 1,
+          "layer": 10
+        },
+        {
+          "effective_rank": 1,
+          "layer": 11
+        },
+        {
+          "effective_rank": 1,
+          "layer": 12
+        }
+      ],
+      "residual": [
+        {
+          "effective_rank": 30,
+          "layer": 1
+        },
+        {
+          "effective_rank": 30,
+          "layer": 2
+        },
+        {
+          "effective_rank": 30,
+          "layer": 3
+        },
+        {
+          "effective_rank": 30,
+          "layer": 4
+        },
+        {
+          "effective_rank": 30,
+          "layer": 5
+        },
+        {
+          "effective_rank": 30,
+          "layer": 6
+        },
+        {
+          "effective_rank": 30,
+          "layer": 7
+        },
+        {
+          "effective_rank": 30,
+          "layer": 8
+        },
+        {
+          "effective_rank": 30,
+          "layer": 9
+        },
+        {
+          "effective_rank": 30,
+          "layer": 10
+        },
+        {
+          "effective_rank": 30,
+          "layer": 11
+        },
+        {
+          "effective_rank": 30,
+          "layer": 12
+        }
+      ],
+      "residual_mlp": [
+        {
+          "effective_rank": 30,
+          "layer": 1
+        },
+        {
+          "effective_rank": 30,
+          "layer": 2
+        },
+        {
+          "effective_rank": 30,
+          "layer": 3
+        },
+        {
+          "effective_rank": 30,
+          "layer": 4
+        },
+        {
+          "effective_rank": 30,
+          "layer": 5
+        },
+        {
+          "effective_rank": 30,
+          "layer": 6
+        },
+        {
+          "effective_rank": 29,
+          "layer": 7
+        },
+        {
+          "effective_rank": 29,
+          "layer": 8
+        },
+        {
+          "effective_rank": 29,
+          "layer": 9
+        },
+        {
+          "effective_rank": 28,
+          "layer": 10
+        },
+        {
+          "effective_rank": 28,
+          "layer": 11
+        },
+        {
+          "effective_rank": 28,
+          "layer": 12
+        }
+      ]
+    },
+    "d_model": 64,
+    "depth": 12,
+    "final": {
+      "pure": 1,
+      "residual": 30,
+      "residual_mlp": 28
+    },
+    "n_heads": 4,
+    "pure_collapsed": true,
+    "residual_keeps_rank": true,
+    "residual_mlp_keeps_rank": true,
+    "seq_len": 32,
+    "upper_bound": 32
+  },
+  "notes": {
+    "interpretation": "Pure attention's final-layer effective rank should drop near 1; configs with residuals (and MLP) should retain a meaningful fraction of the upper bound."
+  },
+  "platform": "Linux-6.8.0-110-generic-x86_64-with-glibc2.39",
+  "probe": "probe_03_rank_collapse",
+  "seed": 0,
+  "started_at": 1779663389.3977816,
+  "tag": "smoke",
+  "torch_version": "2.12.0+cu130",
+  "verdict": "CONTROL_PASS"
+}
