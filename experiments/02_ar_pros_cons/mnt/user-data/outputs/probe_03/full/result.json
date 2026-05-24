@@ -1,0 +1,330 @@
+{
+  "control_passed": true,
+  "cuda_available": true,
+  "device": "cuda",
+  "duration_s": 0.6038308143615723,
+  "finished_at": 1779663741.1707082,
+  "gpu_name": "NVIDIA H200",
+  "host": "skampere2.stanford.edu",
+  "metrics": {
+    "curves": {
+      "pure": [
+        {
+          "effective_rank": 31,
+          "layer": 1
+        },
+        {
+          "effective_rank": 1,
+          "layer": 2
+        },
+        {
+          "effective_rank": 1,
+          "layer": 3
+        },
+        {
+          "effective_rank": 1,
+          "layer": 4
+        },
+        {
+          "effective_rank": 1,
+          "layer": 5
+        },
+        {
+          "effective_rank": 1,
+          "layer": 6
+        },
+        {
+          "effective_rank": 1,
+          "layer": 7
+        },
+        {
+          "effective_rank": 1,
+          "layer": 8
+        },
+        {
+          "effective_rank": 1,
+          "layer": 9
+        },
+        {
+          "effective_rank": 1,
+          "layer": 10
+        },
+        {
+          "effective_rank": 1,
+          "layer": 11
+        },
+        {
+          "effective_rank": 1,
+          "layer": 12
+        },
+        {
+          "effective_rank": 1,
+          "layer": 13
+        },
+        {
+          "effective_rank": 1,
+          "layer": 14
+        },
+        {
+          "effective_rank": 1,
+          "layer": 15
+        },
+        {
+          "effective_rank": 1,
+          "layer": 16
+        },
+        {
+          "effective_rank": 1,
+          "layer": 17
+        },
+        {
+          "effective_rank": 1,
+          "layer": 18
+        },
+        {
+          "effective_rank": 1,
+          "layer": 19
+        },
+        {
+          "effective_rank": 1,
+          "layer": 20
+        },
+        {
+          "effective_rank": 1,
+          "layer": 21
+        },
+        {
+          "effective_rank": 1,
+          "layer": 22
+        },
+        {
+          "effective_rank": 1,
+          "layer": 23
+        },
+        {
+          "effective_rank": 1,
+          "layer": 24
+        }
+      ],
+      "residual": [
+        {
+          "effective_rank": 60,
+          "layer": 1
+        },
+        {
+          "effective_rank": 60,
+          "layer": 2
+        },
+        {
+          "effective_rank": 60,
+          "layer": 3
+        },
+        {
+          "effective_rank": 60,
+          "layer": 4
+        },
+        {
+          "effective_rank": 60,
+          "layer": 5
+        },
+        {
+          "effective_rank": 60,
+          "layer": 6
+        },
+        {
+          "effective_rank": 60,
+          "layer": 7
+        },
+        {
+          "effective_rank": 60,
+          "layer": 8
+        },
+        {
+          "effective_rank": 60,
+          "layer": 9
+        },
+        {
+          "effective_rank": 60,
+          "layer": 10
+        },
+        {
+          "effective_rank": 60,
+          "layer": 11
+        },
+        {
+          "effective_rank": 60,
+          "layer": 12
+        },
+        {
+          "effective_rank": 59,
+          "layer": 13
+        },
+        {
+          "effective_rank": 59,
+          "layer": 14
+        },
+        {
+          "effective_rank": 59,
+          "layer": 15
+        },
+        {
+          "effective_rank": 59,
+          "layer": 16
+        },
+        {
+          "effective_rank": 59,
+          "layer": 17
+        },
+        {
+          "effective_rank": 59,
+          "layer": 18
+        },
+        {
+          "effective_rank": 59,
+          "layer": 19
+        },
+        {
+          "effective_rank": 59,
+          "layer": 20
+        },
+        {
+          "effective_rank": 59,
+          "layer": 21
+        },
+        {
+          "effective_rank": 59,
+          "layer": 22
+        },
+        {
+          "effective_rank": 59,
+          "layer": 23
+        },
+        {
+          "effective_rank": 59,
+          "layer": 24
+        }
+      ],
+      "residual_mlp": [
+        {
+          "effective_rank": 60,
+          "layer": 1
+        },
+        {
+          "effective_rank": 59,
+          "layer": 2
+        },
+        {
+          "effective_rank": 59,
+          "layer": 3
+        },
+        {
+          "effective_rank": 59,
+          "layer": 4
+        },
+        {
+          "effective_rank": 59,
+          "layer": 5
+        },
+        {
+          "effective_rank": 59,
+          "layer": 6
+        },
+        {
+          "effective_rank": 59,
+          "layer": 7
+        },
+        {
+          "effective_rank": 58,
+          "layer": 8
+        },
+        {
+          "effective_rank": 58,
+          "layer": 9
+        },
+        {
+          "effective_rank": 58,
+          "layer": 10
+        },
+        {
+          "effective_rank": 58,
+          "layer": 11
+        },
+        {
+          "effective_rank": 57,
+          "layer": 12
+        },
+        {
+          "effective_rank": 57,
+          "layer": 13
+        },
+        {
+          "effective_rank": 57,
+          "layer": 14
+        },
+        {
+          "effective_rank": 56,
+          "layer": 15
+        },
+        {
+          "effective_rank": 56,
+          "layer": 16
+        },
+        {
+          "effective_rank": 55,
+          "layer": 17
+        },
+        {
+          "effective_rank": 54,
+          "layer": 18
+        },
+        {
+          "effective_rank": 53,
+          "layer": 19
+        },
+        {
+          "effective_rank": 53,
+          "layer": 20
+        },
+        {
+          "effective_rank": 53,
+          "layer": 21
+        },
+        {
+          "effective_rank": 52,
+          "layer": 22
+        },
+        {
+          "effective_rank": 51,
+          "layer": 23
+        },
+        {
+          "effective_rank": 50,
+          "layer": 24
+        }
+      ]
+    },
+    "d_model": 128,
+    "depth": 24,
+    "final": {
+      "pure": 1,
+      "residual": 59,
+      "residual_mlp": 50
+    },
+    "n_heads": 4,
+    "pure_collapsed": true,
+    "residual_keeps_rank": true,
+    "residual_mlp_keeps_rank": true,
+    "seq_len": 64,
+    "upper_bound": 64
+  },
+  "notes": {
+    "interpretation": "Pure attention's final-layer effective rank should drop near 1; configs with residuals (and MLP) should retain a meaningful fraction of the upper bound."
+  },
+  "platform": "Linux-6.8.0-110-generic-x86_64-with-glibc2.39",
+  "probe": "probe_03_rank_collapse",
+  "seed": 0,
+  "started_at": 1779663740.5668774,
+  "tag": "full",
+  "torch_version": "2.12.0+cu130",
+  "verdict": "CONTROL_PASS"
+}

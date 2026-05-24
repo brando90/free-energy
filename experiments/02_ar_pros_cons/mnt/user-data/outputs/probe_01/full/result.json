@@ -1,0 +1,51 @@
+{
+  "control_passed": true,
+  "cuda_available": true,
+  "device": "cuda",
+  "duration_s": 3.095623016357422,
+  "finished_at": 1779663737.6036618,
+  "gpu_name": "NVIDIA H200",
+  "host": "skampere2.stanford.edu",
+  "metrics": {
+    "large_d_lower_kl_than_bottleneck": true,
+    "mixture_beats_bottleneck_single": true,
+    "mixture_softmax": {
+      "final_kl": 0.012949482537806034,
+      "params": 3840
+    },
+    "monotone_down_in_d": true,
+    "num_contexts": 128,
+    "rank": 16,
+    "single_softmax": [
+      {
+        "d": 8,
+        "final_kl": 0.13785339891910553,
+        "params": 1600,
+        "svd_tail_share": 0.2074185540296341
+      },
+      {
+        "d": 16,
+        "final_kl": 0.0004738606221508235,
+        "params": 3136,
+        "svd_tail_share": 1.2591878412781905e-14
+      },
+      {
+        "d": 32,
+        "final_kl": 0.0002102676808135584,
+        "params": 6208,
+        "svd_tail_share": 3.703443428619995e-15
+      }
+    ],
+    "vocab": 64
+  },
+  "notes": {
+    "interpretation": "If KL falls monotonically as d grows and the K-mixture beats the d=r/2 single softmax, the softmax bottleneck is acting as predicted."
+  },
+  "platform": "Linux-6.8.0-110-generic-x86_64-with-glibc2.39",
+  "probe": "probe_01_softmax_bottleneck",
+  "seed": 0,
+  "started_at": 1779663734.5080388,
+  "tag": "full",
+  "torch_version": "2.12.0+cu130",
+  "verdict": "CONTROL_PASS"
+}

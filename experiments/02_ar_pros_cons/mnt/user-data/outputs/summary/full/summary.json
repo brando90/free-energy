@@ -1,0 +1,32 @@
+{
+  "device": "cuda",
+  "duration_s": 39.689589500427246,
+  "finished_at": 1779663771.6513877,
+  "overall_control_passed": true,
+  "probes": {
+    "probe_01": {
+      "control_passed": true,
+      "duration_s": 3.095623016357422,
+      "result_path": "/dfs/scratch0/brando9/free-energy/experiments/02_ar_pros_cons/mnt/user-data/outputs/probe_01/full/result.json",
+      "return_code": 0,
+      "verdict": "CONTROL_PASS"
+    },
+    "probe_03": {
+      "control_passed": true,
+      "duration_s": 0.6038308143615723,
+      "result_path": "/dfs/scratch0/brando9/free-energy/experiments/02_ar_pros_cons/mnt/user-data/outputs/probe_03/full/result.json",
+      "return_code": 0,
+      "verdict": "CONTROL_PASS"
+    },
+    "probe_05": {
+      "control_passed": true,
+      "duration_s": 27.35714340209961,
+      "result_path": "/dfs/scratch0/brando9/free-energy/experiments/02_ar_pros_cons/mnt/user-data/outputs/probe_05/full/result.json",
+      "return_code": 0,
+      "verdict": "CONTROL_PASS"
+    }
+  },
+  "seed": 0,
+  "started_at": 1779663731.9617982,
+  "tag": "full"
+}
