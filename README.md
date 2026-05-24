@@ -1,4 +1,4 @@
-# free-energy: Freedom with Enrergy from the Transformer
+# free-energy: Freedom with Energy from the Transformer
 
 Post-softmax architectures via free-energy minimization, with Lean as the test bed.
 
