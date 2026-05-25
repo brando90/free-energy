@@ -1,0 +1,115 @@
+{
+  "control_passed": true,
+  "cuda_available": true,
+  "device": "cuda",
+  "duration_s": 29.849626779556274,
+  "finished_at": 1779683986.2892973,
+  "gpu_name": "NVIDIA H200",
+  "host": "skampere2.stanford.edu",
+  "metrics": {
+    "L_range_ratio_max_over_min": 68.83530550786617,
+    "L_varies_sufficiently": true,
+    "bound_holds_across_all_runs": true,
+    "n_train": 4096,
+    "ranked_L_global": [
+      44.21733273991765,
+      90.53509097600234,
+      2334.1167581569193,
+      2974.502031023347,
+      3043.7136078952044
+    ],
+    "ranked_median_min_flip_norm": [
+      1.600000023841858,
+      1.600000023841858,
+      0.3333333383003871,
+      0.4000000059604645,
+      0.26666667064030963
+    ],
+    "runs": [
+      {
+        "bound_holds_at_min": true,
+        "eval_acc": 0.7799479166666666,
+        "flip_rate_at_max_radius": 0.4357370138168335,
+        "mean_output_margin": 30.766835530598957,
+        "median_min_flip_norm": 0.4000000059604645,
+        "min_flip_norm": 0.009999999776482582,
+        "min_lipschitz_bound": 7.420239489874803e-05,
+        "n_seeds_used": 3,
+        "skipped": false,
+        "spectral_norm_product": 2974.502031023347,
+        "weight_decay": 0.0
+      },
+      {
+        "bound_holds_at_min": true,
+        "eval_acc": 0.7916666666666666,
+        "flip_rate_at_max_radius": 0.39147738615671795,
+        "mean_output_margin": 33.820068995157875,
+        "median_min_flip_norm": 0.26666667064030963,
+        "min_flip_norm": 0.009999999776482582,
+        "min_lipschitz_bound": 9.434442229879399e-05,
+        "n_seeds_used": 3,
+        "skipped": false,
+        "spectral_norm_product": 3043.7136078952044,
+        "weight_decay": 0.01
+      },
+      {
+        "bound_holds_at_min": true,
+        "eval_acc": 0.7903645833333334,
+        "flip_rate_at_max_radius": 0.460408091545105,
+        "mean_output_margin": 28.656456629435223,
+        "median_min_flip_norm": 0.3333333383003871,
+        "min_flip_norm": 0.009999999776482582,
+        "min_lipschitz_bound": 8.608177692318957e-05,
+        "n_seeds_used": 3,
+        "skipped": false,
+        "spectral_norm_product": 2334.1167581569193,
+        "weight_decay": 0.1
+      },
+      {
+        "bound_holds_at_min": true,
+        "eval_acc": 0.8333333333333334,
+        "flip_rate_at_max_radius": 0.9937686522801717,
+        "mean_output_margin": 3.2953529357910156,
+        "median_min_flip_norm": 1.600000023841858,
+        "min_flip_norm": 0.023333333432674408,
+        "min_lipschitz_bound": 0.00032285880111733906,
+        "n_seeds_used": 3,
+        "skipped": false,
+        "spectral_norm_product": 90.53509097600234,
+        "weight_decay": 1.0
+      },
+      {
+        "bound_holds_at_min": true,
+        "eval_acc": 0.8359375,
+        "flip_rate_at_max_radius": 0.9033597509066263,
+        "mean_output_margin": 2.525656223297119,
+        "median_min_flip_norm": 1.600000023841858,
+        "min_flip_norm": 0.05666666726271311,
+        "min_lipschitz_bound": 0.0010031206960168977,
+        "n_seeds_used": 3,
+        "skipped": false,
+        "spectral_norm_product": 44.21733273991765,
+        "weight_decay": 10.0
+      }
+    ],
+    "smallest_L_is_most_robust": true,
+    "spearman_L_vs_flip_norm": -0.9,
+    "weight_decays": [
+      0.0,
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ]
+  },
+  "notes": {
+    "interpretation": "Across models trained with the same architecture but varying weight decay, larger spectral norm product (low / zero decay) should yield smaller empirical min flip norms. Output margin alone is not protective; the relevant ratio is f(x)/L_global."
+  },
+  "platform": "Linux-6.8.0-110-generic-x86_64-with-glibc2.39",
+  "probe": "probe_08_lipschitz_margin",
+  "seed": 0,
+  "started_at": 1779683956.4396706,
+  "tag": "full",
+  "torch_version": "2.12.0+cu130",
+  "verdict": "CONTROL_PASS"
+}

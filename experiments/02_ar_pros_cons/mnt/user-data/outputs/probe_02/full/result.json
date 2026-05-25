@@ -1,0 +1,37 @@
+{
+  "control_passed": true,
+  "cuda_available": true,
+  "device": "cuda",
+  "duration_s": 5.275342702865601,
+  "finished_at": 1779683882.9914622,
+  "gpu_name": "NVIDIA H200",
+  "host": "skampere2.stanford.edu",
+  "metrics": {
+    "forward_close_to_centre": true,
+    "forward_covers_valley": true,
+    "forward_final_kl": 1.4142253398895264,
+    "forward_fit_mu": -2.977831314865398e-08,
+    "forward_fit_sigma": 1.1030199527740479,
+    "forward_kl_valley_mass": 0.5623362347432221,
+    "forward_much_more_valley_than_reverse": true,
+    "mu_target": 0.6,
+    "n_bins": 512,
+    "reverse_final_kl": 0.6931472420692444,
+    "reverse_fit_mu": -0.6000000238418579,
+    "reverse_fit_sigma": 0.060000013560056686,
+    "reverse_kl_valley_mass": 0.07056255337181458,
+    "reverse_near_a_mode": true,
+    "sigma_target": 0.06,
+    "target_valley_mass": 0.07056249790369304
+  },
+  "notes": {
+    "interpretation": "Single-Gaussian q is forced to compromise. Forward KL (mode-covering) pulls mu toward the mid-point and widens sigma. Reverse KL (mode-seeking) collapses onto one of the two modes."
+  },
+  "platform": "Linux-6.8.0-110-generic-x86_64-with-glibc2.39",
+  "probe": "probe_02_mode_covering",
+  "seed": 0,
+  "started_at": 1779683877.7161195,
+  "tag": "full",
+  "torch_version": "2.12.0+cu130",
+  "verdict": "CONTROL_PASS"
+}

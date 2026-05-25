@@ -2,8 +2,8 @@
   "control_passed": true,
   "cuda_available": true,
   "device": "cuda",
-  "duration_s": 27.35714340209961,
-  "finished_at": 1779663770.9909184,
+  "duration_s": 27.09477925300598,
+  "finished_at": 1779683934.9271533,
   "gpu_name": "NVIDIA H200",
   "host": "skampere2.stanford.edu",
   "metrics": {
@@ -66,7 +66,7 @@
   "platform": "Linux-6.8.0-110-generic-x86_64-with-glibc2.39",
   "probe": "probe_05_fixed_compute",
   "seed": 0,
-  "started_at": 1779663743.633775,
+  "started_at": 1779683907.832374,
   "tag": "full",
   "torch_version": "2.12.0+cu130",
   "verdict": "CONTROL_PASS"
