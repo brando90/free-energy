@@ -2,21 +2,22 @@
   "control_passed": true,
   "cuda_available": false,
   "device": "cpu",
-  "duration_s": 8.129029035568237,
-  "finished_at": 1779683222.344445,
+  "duration_s": 18.07875394821167,
+  "finished_at": 1779683819.555306,
   "gpu_name": "",
   "host": "DNa81a129.SUNet",
   "metrics": {
+    "L_range_ratio_max_over_min": 33.82385055695129,
+    "L_varies_sufficiently": true,
     "bound_holds_across_all_runs": true,
-    "largest_L_is_most_brittle": true,
     "n_train": 2048,
     "ranked_L_global": [
+      43.06537801341086,
       1171.6855443749334,
-      1307.7161191390069,
       1456.6369101042246
     ],
     "ranked_median_min_flip_norm": [
-      0.800000011920929,
+      3.200000047683716,
       0.800000011920929,
       0.20000000298023224
     ],
@@ -26,46 +27,47 @@
         "eval_acc": 0.7890625,
         "flip_rate_at_max_radius": 0.41584157943725586,
         "mean_output_margin": 29.037803649902344,
-        "median_lipschitz_bound": 0.017815319821238518,
         "median_min_flip_norm": 0.20000000298023224,
         "min_flip_norm": 0.05000000074505806,
         "min_lipschitz_bound": 7.110528531484306e-05,
+        "n_seeds_used": 1,
         "skipped": false,
         "spectral_norm_product": 1456.6369101042246,
         "weight_decay": 0.0
       },
       {
         "bound_holds_at_min": true,
-        "eval_acc": 0.78125,
-        "flip_rate_at_max_radius": 0.47999998927116394,
-        "mean_output_margin": 26.201269149780273,
-        "median_lipschitz_bound": 0.019223811104893684,
-        "median_min_flip_norm": 0.800000011920929,
-        "min_flip_norm": 0.05000000074505806,
-        "min_lipschitz_bound": 0.00011570961942197755,
-        "skipped": false,
-        "spectral_norm_product": 1307.7161191390069,
-        "weight_decay": 0.001
-      },
-      {
-        "bound_holds_at_min": true,
         "eval_acc": 0.8125,
         "flip_rate_at_max_radius": 0.5480769276618958,
         "mean_output_margin": 22.110851287841797,
-        "median_lipschitz_bound": 0.017418649047613144,
         "median_min_flip_norm": 0.800000011920929,
         "min_flip_norm": 0.05000000074505806,
         "min_lipschitz_bound": 7.452660065609962e-05,
+        "n_seeds_used": 1,
         "skipped": false,
         "spectral_norm_product": 1171.6855443749334,
         "weight_decay": 0.1
+      },
+      {
+        "bound_holds_at_min": true,
+        "eval_acc": 0.890625,
+        "flip_rate_at_max_radius": 0.8684210777282715,
+        "mean_output_margin": 2.6145453453063965,
+        "median_min_flip_norm": 3.200000047683716,
+        "min_flip_norm": 0.800000011920929,
+        "min_lipschitz_bound": 0.008260668255388737,
+        "n_seeds_used": 1,
+        "skipped": false,
+        "spectral_norm_product": 43.06537801341086,
+        "weight_decay": 10.0
       }
     ],
-    "spearman_L_vs_flip_norm": -0.5,
+    "smallest_L_is_most_robust": true,
+    "spearman_L_vs_flip_norm": -1.0,
     "weight_decays": [
       0.0,
-      0.001,
-      0.1
+      0.1,
+      10.0
     ]
   },
   "notes": {
@@ -74,7 +76,7 @@
   "platform": "macOS-26.3.1-arm64-arm-64bit",
   "probe": "probe_08_lipschitz_margin",
   "seed": 0,
-  "started_at": 1779683214.215416,
+  "started_at": 1779683801.476552,
   "tag": "smoke",
   "torch_version": "2.12.0",
   "verdict": "CONTROL_PASS"

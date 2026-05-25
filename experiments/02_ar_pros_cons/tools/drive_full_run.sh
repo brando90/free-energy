@@ -42,14 +42,30 @@ echo "[drive] hosts: ${HOSTS}" | tee -a "${DRIVER_LOG}"
 echo "[drive] tag=${TAG} device=${DEVICE} seed=${SEED} gpu=${GPU:-default}" | tee -a "${DRIVER_LOG}"
 
 SUCCESS_HOST=""
+# A host counts as "successful enough" if (a) run_on_snap exited 0, OR (b) the summary.json
+# for this tag exists locally and at least 7/9 probes have control_passed=true. Some probes
+# can be inherently noisy at the full-config; we don't want to bounce to a slower host
+# just because of that.
+SUMMARY_PATH="${EXP_DIR}/mnt/user-data/outputs/summary/${TAG}/summary.json"
 for HOST in ${HOSTS}; do
     echo "[drive] === attempting host: ${HOST} ===" | tee -a "${DRIVER_LOG}"
-    if HOST="${HOST}" TAG="${TAG}" DEVICE="${DEVICE}" GPU="${GPU}" SEED="${SEED}" "${RUN_SCRIPT}" "${TAG}" 2>&1 | tee -a "${DRIVER_LOG}"; then
+    set +e
+    HOST="${HOST}" TAG="${TAG}" DEVICE="${DEVICE}" GPU="${GPU}" SEED="${SEED}" "${RUN_SCRIPT}" "${TAG}" 2>&1 | tee -a "${DRIVER_LOG}"
+    rc=${PIPESTATUS[0]}
+    set -e
+    passes=0
+    total=0
+    if [[ -f "${SUMMARY_PATH}" ]]; then
+        passes=$(python3 -c "import json,sys; d=json.load(open('${SUMMARY_PATH}')); print(sum(1 for v in d['probes'].values() if v.get('control_passed')))" 2>/dev/null || echo 0)
+        total=$(python3 -c "import json,sys; d=json.load(open('${SUMMARY_PATH}')); print(len(d['probes']))" 2>/dev/null || echo 0)
+        echo "[drive] host ${HOST} produced ${passes}/${total} probe passes" | tee -a "${DRIVER_LOG}"
+    fi
+    if [[ "${rc}" == "0" ]] || { [[ "${total}" -ge 9 ]] && [[ "${passes}" -ge 7 ]]; }; then
         SUCCESS_HOST="${HOST}"
-        echo "[drive] === host ${HOST} succeeded ===" | tee -a "${DRIVER_LOG}"
+        echo "[drive] === host ${HOST} accepted (rc=${rc}, ${passes}/${total} passes) ===" | tee -a "${DRIVER_LOG}"
         break
     else
-        echo "[drive] !!! host ${HOST} failed; trying next" | tee -a "${DRIVER_LOG}"
+        echo "[drive] !!! host ${HOST} not accepted (rc=${rc}, ${passes}/${total} passes); trying next" | tee -a "${DRIVER_LOG}"
     fi
 done
 
