@@ -1,0 +1,129 @@
+% =====================================================================
+% 06 — Training methods for EBMs.
+% =====================================================================
+% Planning (% comments only):
+% For each: equation, what it does, where the partition function moves.
+% Cover: MLE with MCMC, contrastive divergence, score matching,
+% noise-contrastive estimation, denoising score matching,
+% energy-based score matching, ratio matching, persistent CD, JEM.
+% =====================================================================
+
+\section{Training Energy-Based Models}
+\label{sec:ebm_training}
+
+The training methods for energy-based models can be organized by what they do with $\Ztheta$.
+\Cref{tab:ebm_training} previews the taxonomy.
+We then take each method in turn.
+
+\begin{table}[ht]
+  \centering
+  \small
+  \caption{Training methods for energy-based models, organized by their treatment of the partition function.
+  ``Cost moved to'' indicates where the difficulty appears in practice.}
+  \label{tab:ebm_training}
+  \begin{tabular}{@{}lll@{}}
+    \toprule
+    Method & Treatment of $\Ztheta$ & Cost moved to \\
+    \midrule
+    MLE with sampling                   & estimated via MCMC samples           & MCMC mixing per gradient step \\
+    Contrastive divergence              & truncated MCMC chains                & bias from short chains \\
+    Persistent CD                       & long-lived chains across updates     & chain decorrelation \\
+    Noise-contrastive estimation        & cast as binary classification        & quality of the noise distribution \\
+    Score matching                      & avoids $\Ztheta$ entirely            & second-order derivatives of the energy \\
+    Denoising score matching            & avoids $\Ztheta$ entirely            & noise schedule design \\
+    Sliced score matching               & avoids $\Ztheta$ entirely            & random-projection variance \\
+    Ratio matching                      & avoids $\Ztheta$ entirely (discrete) & per-coordinate ratio comparisons \\
+    Stein discrepancy                   & avoids $\Ztheta$ entirely            & kernel choice \\
+    Implicit differentiation / JEM      & shares $\Ztheta$ with a classifier   & inference for the gradient \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Maximum likelihood with sampled gradients}
+\label{ssec:ebm_mle}
+
+The gradient of the negative log-likelihood under \cref{eq:ebm_definition} is
+\begin{equation}
+  -\nabla_\theta \log \ptheta(x)
+  \;=\; \nabla_\theta \Etheta(x)
+     \;-\; \EE_{x' \sim \ptheta}\!\left[\nabla_\theta \Etheta(x')\right].
+  \label{eq:ebm_mle_grad}
+\end{equation}
+The data term $\nabla_\theta \Etheta(x)$ is direct.
+The model expectation is the part that requires samples from $\ptheta$, typically via Markov chain Monte Carlo~\citep{hinton2002training,carreira2005contrastive}.
+Each gradient step incurs the cost of running a sampler until it has approximately mixed.
+For energy parameterizations as expressive as a transformer, sampling does not mix quickly~\citep{nijkamp2019learning,du2019implicit}, and exact MLE becomes operationally a budgeted approximation rather than a literal objective.
+
+\subsection{Contrastive divergence and its persistent variant}
+\label{ssec:cd}
+
+\citet{hinton2002training} introduced contrastive divergence (CD-$k$), which replaces the long MCMC run in \cref{eq:ebm_mle_grad} with a short chain of $k$ steps starting from a data point.
+The resulting estimator is biased but cheap.
+Persistent contrastive divergence~\citep{tieleman2008training} maintains chains across parameter updates so that the negative samples track a slowly-changing $\ptheta$.
+\citet{du2019implicit} and \citet{nijkamp2019learning} apply these to deep image energies with sampler buffers.
+The empirical pattern is that CD trains and stabilizes only when the energy landscape is regular enough for short chains to be informative;
+for very expressive energies, the bias of CD becomes the limiting factor and persistent variants are typically used.
+
+\subsection{Noise-contrastive estimation}
+\label{ssec:nce}
+
+Noise-contrastive estimation~\citep{gutmann2010noise,gutmann2012noise} converts density estimation into binary classification: distinguish data samples from samples drawn from a known noise distribution $p_n$.
+The unnormalized energy enters the classification logit, and $\log Z_\theta$ becomes a learnable scalar parameter trained jointly.
+Asymptotically, the classifier learns $\log(\poftxt / p_n)$, and the recovered density is correct up to the noise distribution's coverage of the data~\citep{ma2018noise}.
+The cost moves from sampling $\ptheta$ to choosing $p_n$.
+A noise distribution that misses regions of the data renders the classifier blind to them~\citep{gutmann2014likelihood}.
+Conditional NCE~\citep{mnih2012fast} adapts the method to language modeling by sampling negatives from a unigram base.
+
+\subsection{Score matching}
+\label{ssec:score_matching}
+
+Score matching~\citep{hyvarinen2005score} avoids $\Ztheta$ entirely by matching $\nabla_x \log \ptheta(x)$ to $\nabla_x \log \poftxt(x)$ in expectation.
+Because the gradient of $\log \Ztheta$ with respect to $x$ is zero, the score depends only on $\Etheta$:
+\begin{equation}
+  \nabla_x \log \ptheta(x) \;=\; -\nabla_x \Etheta(x).
+\end{equation}
+The original Fisher-divergence loss requires the trace of the Hessian of $\Etheta$, which is expensive for deep networks.
+Two reformulations sidestep this.
+\paragraph{Denoising score matching.}
+\citet{vincent2011connection} prove that score matching against the smoothed density $\widetilde{p}(\tilde{x}) = \int q_\sigma(\tilde{x} \mid x) \poftxt(x) \mathrm{d}x$ for a known noise kernel $q_\sigma$ reduces to predicting the noise $\nabla_{\tilde{x}} \log q_\sigma(\tilde{x} \mid x)$.
+This is the loss now standard in diffusion models~\citep{song2019generative,ho2020denoising}.
+\paragraph{Sliced score matching.}
+\citet{song2020sliced} replace the Hessian trace with random projections, giving an unbiased estimator with a single backward pass per sample.
+
+Score matching has been adapted to text via discrete-variable extensions and to mixed sequence-embedding settings~\citep{meng2022concrete,lou2023discrete}.
+The price of avoiding $\Ztheta$ at training is that the model is implicit in the score, and sampling requires running an iterative procedure (\cref{ssec:langevin}).
+
+\subsection{Ratio matching and discrete energies}
+\label{ssec:ratio_matching}
+
+For discrete variables, the derivative-based score-matching identities do not apply.
+\citet{hyvarinen2007some} introduce ratio matching: for each datum and each coordinate, the model matches the ratio of $\ptheta$ between flipping and not flipping the coordinate.
+Generalized score matching for discrete data~\citep{lyu2009interpretation,grathwohl2021ono} extends this to wider notions of local perturbation.
+In the language modeling context, \citet{deng2020residual} and \citet{lou2023discrete} use related ideas to define energies whose training loss is a coordinate-wise comparison rather than a full normalization.
+
+\subsection{Joint energy / classifier hybrids}
+\label{ssec:jem}
+
+\citet{grathwohl2019your} observe that a logit-producing classifier defines an unconditional density via $\log p(x) = \lse(\mathrm{logits}(x))$ up to a constant.
+Treating the classifier as both a discriminative model and an EBM gives the joint energy-based model (JEM).
+Training combines the standard cross-entropy classification loss with a generative term computed via MCMC, sharing the partition function with the classification head.
+The mechanism is consistent with the Hopfield reframe in \cref{ssec:hopfield}: a softmax-headed classifier is already an EBM.
+
+\subsection{Stein and kernelized objectives}
+\label{ssec:stein}
+
+Kernelized Stein discrepancy~\citep{liu2016kernelized,chwialkowski2016kernel} provides an unnormalized goodness-of-fit objective that uses only $\nabla_x \log \ptheta(x)$.
+Training an energy by minimizing the empirical Stein discrepancy avoids $\Ztheta$ at the cost of choosing a kernel and accepting bias proportional to the kernel's ability to detect mass discrepancies.
+
+\subsection{What the training survey leaves}
+\label{ssec:training_leaves}
+
+Each method in \cref{tab:ebm_training} pays the cost of $\Ztheta$ somewhere.
+Score-matching, denoising, and Stein methods push it into inference, where sampling becomes an iterative procedure (next section).
+NCE pushes it into the choice of noise distribution and into the asymptotic bias if the noise misses modes.
+MCMC-based estimators pay it directly in mixing time, which is the binding constraint on training large discrete energies.
+
+The honest comparison with autoregressive language modeling is therefore not ``EBM versus AR.''
+It is ``where does the cost of $\Ztheta$ go, and is the destination cheaper than $T$ local softmaxes plus the mode-covering objective?''
+For domains with a hard verifier --- including formal-methods generation, code, structured outputs, and constraint satisfaction --- the cost of an inference-time iterative procedure can be amortized across a small number of verifier-bounded segments, which is precisely the setting in which the partition-function obstacle is most plausibly evaded in practice.
+We return to this in \cref{sec:conclusion}.

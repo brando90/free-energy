@@ -1,0 +1,211 @@
+% =====================================================================
+% 04 — Which objections actually hold?
+% =====================================================================
+% Planning (% comments only):
+% For each claim from sec 3, deliver a verdict in {theorem / robust
+% empirical / weak empirical / refuted / untested}. Each subsection
+% has the same structure: claim, premises, what supports it, what
+% would refute it, current verdict, what the companion suite measures.
+% This is the technical core. Be specific.
+% =====================================================================
+
+\section{Which Objections Actually Hold}
+\label{sec:what_holds}
+
+We now grade each claim from \cref{sec:catalog} against a clear bar:
+a claim is a \emph{theorem} only if it follows from the math of the factorization, parameterization, or objective;
+a \emph{robust empirical} finding only if it is reproduced across labs and scales with a stated mechanism;
+\emph{weak empirical} if its support depends on a single setup or a fragile premise;
+and \emph{refuted} if a direct counterexample exists under conditions a deployed system can satisfy.
+\Cref{tab:verdicts} previews the verdicts;
+the subsections justify each.
+
+\begin{table}[ht]
+  \centering
+  \small
+  \caption{Standing of each objection.
+  ``Layer'' is from \cref{sec:catalog}.
+  ``Verdict'' is the standing of the claim under the bar of theorem / robust empirical / weak empirical / refuted / untested.
+  ``Bites'' is what the surviving form of the claim indicts.}
+  \label{tab:verdicts}
+  \begin{tabular}{@{}lllll@{}}
+    \toprule
+    Tag & Claim & Layer & Verdict & Bites \\
+    \midrule
+    \ref{cl:softmax_bottleneck}  & Softmax rank cap                     & architecture     & theorem            & softmax head \\
+    \ref{cl:rank_collapse}       & Pure-attention rank collapse         & architecture     & theorem (pure); masked (trained) & softmax attention \\
+    \ref{cl:partition_local}     & Local partition function tax         & architecture     & established        & softmax / normalization \\
+    \ref{cl:fixed_compute}       & Fixed compute ceiling                & architecture     & theorem            & one-pass generation \\
+    \ref{cl:hidden_state}        & Fixed-state recall limit             & architecture     & theorem (SSMs); workaround (attn) & fixed-state heads \\
+    \ref{cl:mode_covering}       & Mode-covering MLE                    & objective        & theorem            & MLE \\
+    \ref{cl:teacher_forcing}     & Exposure bias                        & objective        & weak empirical     & objective (small effect at scale) \\
+    \ref{cl:next_token_misalign} & Likelihood $\neq$ correctness        & objective        & true and central   & objective \\
+    \ref{cl:compounding}         & $(1-\varepsilon)^T$ compounding      & trained behavior & valid under premises; refuted with a verifier & blind rollout only \\
+    \ref{cl:reversal}            & Reversal curse                       & trained behavior & robust empirical   & directional training \\
+    \ref{cl:hallucination}       & Hallucination is inevitable          & trained behavior & weak (strong form refuted by abstention + retrieval) & MLE + open generation \\
+    \ref{cl:lipschitz_margin}    & Lipschitz--margin brittleness        & trained behavior & robust empirical + theory link & unconstrained Lipschitz \\
+    \ref{cl:data_wall}           & Data wall                            & external         & robust empirical (resource curve) & data-bound scaling \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Theorems: rank, collapse, partition, compute, mode-covering}
+\label{ssec:theorems}
+
+The strongest objections to the standard parameterization and objective are not conjectures.
+They follow from the math.
+
+\paragraph{\ref{cl:softmax_bottleneck} Softmax bottleneck.}
+\citet{yang2018softmax} show that a softmax over a $d$-dimensional hidden state can only produce a stochastic matrix of context-conditional probabilities whose log-probability matrix has rank at most $d+1$.
+If natural language has higher rank in this sense --- as their empirical analysis suggests --- the model class is misspecified by construction.
+Mixture-of-softmaxes restores rank;
+\citet{kanai2018mixture} and \citet{chang2022softmax} confirm the predicted improvement and identify mechanisms behind it.
+This is a theorem.
+It indicts the softmax parameterization, not the autoregressive factorization.
+
+\paragraph{\ref{cl:rank_collapse} Rank collapse.}
+\citet{dong2021attention} prove that without residuals, MLPs, or layer normalization, a stack of self-attention layers contracts representations to a rank-one matrix at a doubly-exponential rate in depth.
+The proof identifies the row-stochastic attention matrix as a Perron--Frobenius contraction on the simplex.
+The theorem is exact for pure attention.
+In trained transformers the effect is observed but masked by skip connections and feedforward blocks~\citep{noci2022signal,he2023deep};
+whether residual streams alone are enough remains an open empirical question.
+For the present paper, the cleanest statement is: pure attention provably collapses;
+the contribution of residual stream depth to recovery is quantitative and architecture-specific.
+
+\paragraph{\ref{cl:partition_local} Local partition function tax.}
+Softmax attention is, by \citet{ramsauer2020hopfield}, a single gradient step on a continuous Hopfield energy whose exponential form was chosen because it admits a closed-form normalizer.
+Most downstream uses of the attention layer need only \emph{differences} between scores, in which case the local $Z$ cancels in expectation.
+Whether the per-layer normalization is necessary --- as opposed to being a convenient bookkeeping device --- is itself a falsifiable architectural claim, and is exactly what sigmoid attention~\citep{wortsman2023sigmoid,ramapuram2024theory} and energy heads~\citep{grathwohl2019your} probe.
+We mark this claim as ``established'' rather than ``theorem'' because what is established is the cost, not the necessity.
+
+\paragraph{\ref{cl:fixed_compute} Fixed compute ceiling.}
+A standard transformer with depth $L$, width $w$, and head count $h$ performs a bounded number of sequential operations per generated token.
+\citet{merrill2023parallelism,strobl2024transformer} formalize this within circuit complexity: transformers without intermediate steps are placed in fixed-depth uniform classes that cannot solve problems requiring more sequential depth.
+Chain-of-thought~\citep{wei2022chain} and \citet{feng2023towards}'s analysis of intermediate steps explicitly use the output token stream to buy more sequential computation.
+The bound is real.
+The empirical question is how much chain-of-thought, search, and tool use already buy back, and at what cost in latency.
+
+\paragraph{\ref{cl:mode_covering} Mode-covering MLE.}
+For data distribution $\poftxt$ and model $\ptheta$, the forward KL is
+\begin{equation}
+  \KL(\poftxt \,\|\, \ptheta)
+  \;=\; \EE_{\poftxt}\!\left[\log \poftxt(x) - \log \ptheta(x)\right],
+\end{equation}
+which diverges whenever $\ptheta(x) \to 0$ while $\poftxt(x) > 0$.
+The optimizer is therefore compelled to spread mass across every observed mode.
+\citet{theis2016note} and \citet{minka2005divergence} state this as the standard consequence of forward versus reverse KL;
+under the noise present in any web-scale corpus, the model assigns nonzero mass to contradictions and incorrect continuations by construction.
+This is a theorem about the objective.
+It indicts MLE and, indirectly, the family of methods that use MLE as a pretraining proxy without correction --- though instruction tuning and reinforcement learning from verifier feedback are exactly the correction stage.
+
+\subsection{The $(1-\varepsilon)^T$ argument, carefully}
+\label{ssec:compounding}
+
+The $(1-\varepsilon)^T$ argument is the most-cited critique of autoregressive language models in popular discussion.
+We dwell on it because the gap between its mathematical validity and its actual reach is the main case study for layer discipline in this paper.
+
+The argument is exact under three explicit premises.
+Let $X_t$ denote the model's $t$-th generated token and $X_t^\star$ denote the (multi-set of) correct alternatives.
+\begin{itemize}
+  \item \emph{Premise 1 (constant rate).}
+        There exists $\varepsilon \in (0,1)$ such that $\PP(X_t \neq X_t^\star) = \varepsilon$ for every $t$.
+  \item \emph{Premise 2 (independence).}
+        The events $\{X_t = X_t^\star\}_{t=1}^{T}$ are mutually independent.
+  \item \emph{Premise 3 (unrecoverability).}
+        Once $X_t \neq X_t^\star$, the trajectory cannot recover; equivalently, ``correct'' means literal token-wise match against a single reference path.
+\end{itemize}
+Under premises 1--3, $\PP[\text{trajectory correct}] = \prod_t (1-\varepsilon) = (1-\varepsilon)^T$.
+For any $\varepsilon > 0$, this decays exponentially in $T$~\citep{lecun2022autonomous,bachmann2024pitfalls}.
+
+The math is correct.
+The three premises do the work.
+
+Premise 1 fails in trained models: the realized per-token error rate depends on context, position, topic, and prompt;
+some stretches are nearly deterministic and others are unstable~\citep{kalai2024calibrated}.
+A constant-rate model is an envelope calculation, not a description of the empirical process.
+
+Premise 2 also fails.
+Errors cluster.
+A wrong token typically conditions a region of corrupted state in which subsequent tokens are more, not equally, likely to be wrong.
+For an actual i.i.d. claim one would have to control for context, and the literature offering such controls reports a context-dependent error rate rather than independent errors~\citep{stechly2024chain,lin2024diverging}.
+
+Premise 3 is the most consequential.
+A wrong token is unrecoverable only if the surrounding system has no mechanism to detect, reject, or revise it.
+Modern systems are designed precisely around the opposite assumption.
+A compiler rejects a syntactically invalid program;
+a Lean kernel rejects an invalid proof step~\citep{moura2021lean};
+a unit-test harness flags a behavioral failure;
+a search procedure can branch and backtrack;
+a verifier-in-the-loop trainer reinforces only the trajectories that survive the checker~\citep{lightman2024lets,uesato2022solving}.
+A formal-methods workflow can sit in a generate--check--revise loop that turns a long trajectory into a sequence of short, verifier-bounded segments.
+
+The interesting empirical object is not $\PP[\text{token locally wrong}]$.
+It is closer to
+\begin{equation}
+  \PP[\text{a consequential error survives detection, recovery, and verification}].
+  \label{eq:effective_eps}
+\end{equation}
+That quantity can be much smaller than $\varepsilon$, especially in domains with a hard checker.
+It can also still be too large.
+The point is that \cref{eq:effective_eps} is a different object from $(1-\varepsilon)^T$.
+The compounding bound applies to blind rollout.
+It does not apply to systems whose construction is the negation of premises 1--3.
+
+The companion suite (\texttt{experiments/02\_ar\_pros\_cons/probes/probe\_06\_error\_compounding.py}) pre-registers a recoverable-Markov alternative model whose null is geometric decay and whose alternative is a slower-than-geometric process with verifier-bounded segments.
+Whether the realized rate in formal-methods generation is geometric is the empirical question we explicitly defer to that suite.
+
+\subsection{Robust empirical and weak empirical findings}
+\label{ssec:empirical}
+
+\paragraph{\ref{cl:reversal} Reversal curse (robust empirical).}
+\citet{berglund2023reversal} demonstrate that models trained on ``$A$ is $B$'' do not reliably retrieve ``$B$ is $A$''.
+The result reproduces across model scales and across structured-relation tests.
+The indicted target is the directional next-token objective combined with static text training, not the autoregressive factorization itself --- as the experimental controls show, conditioning the same model on a paraphrase that recovers symmetric structure can lift performance.
+
+\paragraph{\ref{cl:lipschitz_margin} Lipschitz--margin (robust empirical + theory link).}
+\citet{tsuzuku2018lipschitz} and \citet{virmaux2018lipschitz} give the explicit bound and the upper estimate $L \leq \prod_i \|W_i\|_2$.
+Adversarial robustness studies~\citep{szegedy2014intriguing,goodfellow2015explaining,carlini2023llm} report small input perturbations that swing model outputs across decision boundaries despite high confidence.
+The mechanism is consistent: confidence and geometric margin are decoupled.
+The indictment is unconstrained Lipschitz training rather than autoregression.
+
+\paragraph{\ref{cl:hallucination} Hallucination (weak in its strong form).}
+\citet{kalai2024calibrated} prove that calibrated next-token training places nonzero mass on incorrect continuations and conclude that an open-generation system trained this way will hallucinate at a nonzero rate.
+The strong version of the claim --- hallucination is \emph{inevitable} --- requires also that the system not abstain, not retrieve, and not check.
+\citet{kang2023impact} and \citet{maynez2020faithfulness} document realized hallucination patterns;
+\citet{liu2024lost} document grounding effects.
+We take the conservative reading: the structural pressure follows from the objective, but the realized rate is a system property that retrieval, abstention, and verification can change~\citep{ji2023survey}.
+
+\paragraph{\ref{cl:teacher_forcing} Exposure bias (weak empirical).}
+Scheduled sampling~\citep{bengio2015scheduled} and reinforcement-learning extensions~\citep{ranzato2016sequence} demonstrated the mechanism on small models.
+On large models, the realized gap between teacher-forced training and free-running generation appears smaller~\citep{wang2020exposure}, though the question is not closed for very long horizons.
+We flag this as weak rather than refuted because its magnitude in the long-horizon regime is precisely the regime where it would matter most, and the existing evidence is concentrated in short-horizon benchmarks.
+
+\paragraph{\ref{cl:data_wall} Data wall (robust empirical, resource curve).}
+The argument depends only on (i) the empirical scaling law that loss requires exponential data for linear improvement and (ii) an estimate of available high-quality text~\citep{villalobos2024position}.
+Neither piece requires a ``model cannot do X'' claim;
+both are observed.
+The companion suite includes a probe that re-fits the scaling law on \textsc{VeriBench} subsets~\citep{daruru2024veribench} and extrapolates.
+
+\subsection{Explicitly excluded as not load-bearing}
+\label{ssec:excluded}
+
+Two further objections appear regularly and are not load-bearing in our reading.
+
+The ``stochastic parrot'' framing~\citep{bender2021dangers} is not operationalizable in its general form: it makes no falsifiable prediction at the granularity at which it is stated.
+Its operationalizable pieces (reversal, planning, compositional generalization) reduce to claims we have already addressed.
+
+The claim that autoregressive factorization \emph{itself} caps expressivity is mostly false.
+The chain rule of probability decomposes any joint over a finite sequence into left-to-right conditionals.
+Practical bottlenecks come from the parameterization of the conditional, the objective used to train it, and the compute used to run inference --- not from the existence of the factorization.
+
+\subsection{What this leaves}
+\label{ssec:what_remains}
+
+The surviving load-bearing claims separate cleanly into three families:
+\begin{enumerate}
+  \item \emph{Against the softmax / local normalization:} \ref{cl:softmax_bottleneck}, \ref{cl:rank_collapse}, \ref{cl:partition_local}.
+  \item \emph{Against the MLE objective:} \ref{cl:mode_covering}.
+  \item \emph{Against fixed-compute generation:} \ref{cl:fixed_compute}, \ref{cl:lipschitz_margin}.
+\end{enumerate}
+The next three sections take this as input and ask, for each family, what alternative architectures put in its place.
+The recurring question is whether the alternative pays the same cost in a different place or absorbs it.

@@ -1,0 +1,108 @@
+% =====================================================================
+% 05 — Energy-based models: motivation and the partition function.
+% =====================================================================
+% Planning (% comments only):
+% 1. Why EBMs look appealing: global scoring of whole objects.
+% 2. The partition function cost: discrete (|V|^T), continuous (R^D)^T.
+% 3. Where AR and EBM differ structurally.
+% 4. The Hopfield reframe: softmax attention IS an EBM update.
+% =====================================================================
+
+\section{Energy-Based Models and the Partition Function}
+\label{sec:ebm_motivation}
+
+The promise of energy-based models is to address the most central limitation that survived \cref{sec:what_holds}:
+local next-token likelihood is not global correctness (\ref{cl:next_token_misalign}).
+An energy-based model defines a scalar energy on whole objects and turns global compatibility into a single scoring function.
+The cost is that exact normalization, exact likelihood, and exact sampling become hard.
+This section states the formulation, the central obstacle, and the reframing of softmax attention as an energy-descent step.
+
+\subsection{Energy and probability}
+\label{ssec:ebm_definition}
+
+An energy-based model parameterizes a scalar function $\Etheta : \X \to \RR$ on the object space $\X$ and induces the Boltzmann distribution
+\begin{equation}
+  \ptheta(x) \;=\; \frac{\exp(-\Etheta(x))}{\Ztheta},
+  \qquad
+  \Ztheta \;=\; \int_{\X} \exp(-\Etheta(x))\, \mathrm{d}x.
+  \label{eq:ebm_definition}
+\end{equation}
+For finite $\X$, the integral becomes a sum.
+The energy can be any neural network producing a scalar;
+$\Ztheta$ is the partition function~\citep{lecun2006tutorial,song2021train}.
+
+The appeal is that $\Etheta$ can be parameterized in any way that respects the geometry of the problem, free of the constraint that its output be a normalized probability.
+A model that scores a whole sequence, a whole image, or a whole proof can be defined directly:
+\begin{equation}
+  \Etheta(x_{1:T}) \;=\; f_\theta(x_{1:T}),
+  \label{eq:sequence_ebm}
+\end{equation}
+where $f_\theta$ is, for example, a transformer that returns a single scalar from a sequence input~\citep{grathwohl2019your,du2019implicit}.
+Low energy denotes high compatibility;
+high energy denotes incompatibility.
+Two equally good completions of a prompt can have equal energy without competing for probability mass in the way they would in a locally normalized model.
+
+\subsection{The partition function on sequences}
+\label{ssec:partition_obstacle}
+
+\Cref{eq:ebm_definition} is honest about its cost.
+For a discrete sequence space $\X = \V^T$,
+\begin{equation}
+  \Ztheta \;=\; \sum_{x \in \V^T} \exp(-\Etheta(x)),
+  \label{eq:z_discrete_seq}
+\end{equation}
+which contains $|\V|^T$ terms.
+For a $32{,}000$-token vocabulary and a $512$-token sequence, that is a sum of $32000^{512}$ terms, well beyond enumeration.
+For continuous sequence embeddings $\X = (\RR^d)^T$,
+\begin{equation}
+  \Ztheta \;=\; \int_{(\RR^d)^T} \exp(-\Etheta(x))\, \mathrm{d}x,
+  \label{eq:z_continuous_seq}
+\end{equation}
+which is a high-dimensional integral whose only general guarantee is that it is hard~\citep{murphy2023advanced}.
+
+The autoregressive factorization in \cref{eq:ar_factorization} avoided this by paying $T$ local normalizers of size $|\V|$ each instead of one global normalizer of size $|\V|^T$.
+That is the structural trade.
+The cost of the autoregressive bargain is the per-token mode-covering objective (\ref{cl:mode_covering}) and the local-then-global mismatch (\ref{cl:next_token_misalign}).
+The cost of the energy-based bargain is \cref{eq:z_discrete_seq,eq:z_continuous_seq} or whatever approximation stands in for them.
+
+The natural taxonomy of training methods for energy-based models reflects this:
+each method makes a different choice about whether to approximate $\Ztheta$ directly, replace it with a tractable surrogate, learn only its gradient, or avoid it altogether at training time.
+\Cref{sec:ebm_training} surveys these.
+The natural taxonomy of inference methods reflects the same question for sampling and posterior queries;
+\Cref{sec:ebm_inference} surveys those.
+
+\subsection{The Hopfield reframing}
+\label{ssec:hopfield}
+
+A reframing that pre-dates much of the EBM discussion makes the gap between autoregressive and energy-based language modeling narrower than slogans suggest.
+\citet{ramsauer2020hopfield} prove that scaled-dot-product attention, applied to query $\xi \in \RR^d$ and stored patterns $X \in \RR^{N \times d}$, is one gradient step on the continuous Hopfield energy
+\begin{equation}
+  E(\xi) \;=\; -\lse(\beta\, X\xi) + \tfrac{1}{2}\xi^\top \xi + c,
+  \label{eq:hopfield_energy}
+\end{equation}
+with update
+\begin{equation}
+  \xi_{\mathrm{new}} \;=\; X \,\softmax(\beta\, X\xi).
+  \label{eq:hopfield_update}
+\end{equation}
+The match is literal for a single attention head with $K = V$, with the standard $1/\sqrt{d_k}$ scaling absorbed into $\beta$;
+\citet{ramsauer2020hopfield} extend it to the $K \neq V$ case by a substitution.
+Capacity in this energy is exponential in pattern dimension~\citep{demircigil2017model}.
+
+The reframe is consequential.
+\begin{itemize}
+  \item Softmax attention is \emph{already} an energy-descent step.
+        The research question is which energy and how many steps.
+  \item The local partition function \ref{cl:partition_local} is the part of $\lse$ that makes the energy admit a tractable closed-form step.
+        Replacing $\lse$ with something exp-free typically removes the global competition, injective query-to-weight map, or spikiness properties that make softmax attention work~\citep{zhang2024hedgehog,han2024bridging}.
+  \item The full transformer is not the gradient of any single energy.
+        Multi-layer composition with layer norm, MLPs, and residuals takes the equivalence beyond literal at the layer-stack level.
+        It is sound to call a single attention head an energy-descent step;
+        it is metaphor to call the full transformer ``minimizing a single energy.''
+\end{itemize}
+This bounds the claims a project pitched against softmax can credibly make.
+An EBM design that wins by ``replacing softmax with an energy'' has to specify which property of \cref{eq:hopfield_energy} the replacement preserves and which it abandons.
+Recent post-mortem and synthesis papers~\citep{jelassi2024repeat,zhang2024hedgehog,han2024bridging,mongaras2025expressiveness} consistently arrive at ``softmax plus modification'' rather than ``no softmax,'' which is consistent with the energy reading.
+
+The remaining question --- the one that the rest of the paper takes seriously --- is not ``EBM versus AR'' framed as a binary.
+It is which energy, where it is evaluated, and whether $\Ztheta$ can be amortized or avoided at training and at inference.

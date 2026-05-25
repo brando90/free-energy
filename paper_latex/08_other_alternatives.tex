@@ -1,0 +1,100 @@
+% =====================================================================
+% 08 — Other alternative architectures.
+% =====================================================================
+% Planning (% comments only):
+% Cover: diffusion (continuous + discrete + masked), flow matching,
+% JEPA, latent variable / VAE, normalizing flows, state-space models
+% (Mamba etc.), Hopfield reframe (already covered briefly in 5),
+% AR + verifier/search (PRM, MCTS, RAG, tool use).
+% For each: where does the hard part live?
+% =====================================================================
+
+\section{Alternatives Beyond Energy-Based Models}
+\label{sec:other_alts}
+
+Energy-based models are not the only alternative.
+The space of design choices for sequence generation is larger, and several lines of work occupy intermediate positions between the autoregressive recipe and a fully energy-based one.
+We organize them by which design choice they replace and what they pay in exchange.
+
+\subsection{Diffusion and denoising models}
+\label{ssec:diffusion}
+
+Diffusion models~\citep{sohldickstein2015deep,ho2020denoising,song2021scorebased,nichol2021improved} define a forward Markov chain that progressively destroys structure and a learned reverse chain that progressively restores it.
+Training reduces to denoising score matching (\cref{ssec:score_matching}) along a fixed noise schedule.
+The resulting model is an EBM in disguise: the learned reverse process is the score of a sequence of perturbed densities~\citep{song2021maximum}.
+\paragraph{Continuous data.}
+For images, audio, and continuous embeddings, the inference cost is the number of denoising steps;
+distillation~\citep{salimans2022progressive,song2023consistency} compresses this from hundreds of steps to a small number.
+\paragraph{Discrete data.}
+For text and structured outputs, discrete and masked diffusion~\citep{austin2021structured,hoogeboom2021argmax,lou2023discrete,nie2024scaling} replace Gaussian perturbation with token-level corruption or masking.
+The training loss remains a denoising objective;
+inference is iterative refinement on a partially-masked sequence.
+The relevant trade against the autoregressive recipe is that diffusion trains and samples without the directional constraint of left-to-right, which has implications for the reversal curse (\ref{cl:reversal}) and for the ability to amortize global constraints across iterations.
+
+\subsection{Flow matching and continuous normalizing flows}
+\label{ssec:flow_matching}
+
+Flow matching~\citep{lipman2023flow,liu2023flow,albergo2023building} replaces the Gaussian diffusion path with a learned vector field whose integration produces samples.
+Continuous normalizing flows~\citep{chen2018neural,grathwohl2019ffjord} preserve exact likelihood by integrating the change-of-variables formula along the field.
+Both inherit the inference-time iteration of diffusion;
+both avoid the partition function by parameterizing transport rather than density.
+
+\subsection{Joint-embedding predictive architectures}
+\label{ssec:jepa}
+
+\citet{lecun2022autonomous} proposes joint-embedding predictive architectures (JEPA) that replace pixel- or token-level reconstruction with feature-space prediction.
+The energy is the distance between predicted and target embeddings.
+\citet{assran2023ijepa} and \citet{bardes2023vjepa} demonstrate the recipe on image and video.
+The position is that reconstruction-level prediction allocates capacity to perceptually irrelevant details and that predicting in an abstracted feature space is a more efficient use of the same data.
+The training methods inherit the contrastive--vs--non-contrastive distinction familiar from self-supervised learning~\citep{chen2020simple,grill2020bootstrap,he2022masked};
+the partition function does not directly appear because the loss is a feature-space distance rather than a normalized density.
+
+\subsection{State-space models and recurrent alternatives}
+\label{ssec:ssm}
+
+State-space models~\citep{gu2022efficiently,gu2023mamba,dao2024transformers} replace softmax attention with an input-dependent linear recurrence whose state is fixed-dimensional.
+The forward pass is a streaming linear-time operation;
+training admits a parallel-prefix-scan formulation.
+The targeted indictment is the per-layer partition function tax (\ref{cl:partition_local}).
+The cost is the fixed-state recall limit (\ref{cl:hidden_state}): \citet{jelassi2024repeat} show that any fixed-dimensional recurrent model cannot copy strings of arbitrary length, where a two-layer softmax transformer can.
+Hybrids~\citep{lieber2024jamba,dao2024transformers,deepseek2026v4} interleave linear recurrence with softmax attention precisely to recover the recall property while keeping most of the per-layer cost linear.
+The post-mortem reading~\citep{zhang2024hedgehog,han2024bridging,mongaras2025expressiveness} is that the load-bearing property of softmax is global competition over a non-injective domain, and any replacement must preserve it at some scale.
+
+\subsection{Latent-variable and variational architectures}
+\label{ssec:vae}
+
+Variational autoencoders~\citep{kingma2014auto,rezende2014stochastic} factor the joint as $p(x, z) = p(z) p(x \mid z)$ and train both factors against an evidence lower bound that uses a tractable surrogate posterior $q_\phi(z \mid x)$.
+The partition function over $x$ does not appear;
+the latent prior $p(z)$ is typically chosen tractable.
+For sequence modeling, latent-variable architectures have been competitive with autoregressive models in restricted regimes~\citep{razavi2019generating,vahdat2021score} but have not displaced them at the scale of public language models, in part because the dense per-token supervision of the autoregressive recipe is hard to match with a single latent code per object.
+
+\subsection{Autoregressive models with verifiers, search, and tools}
+\label{ssec:ar_plus}
+
+The most empirically successful response to the surviving objections of \cref{sec:what_holds} has been to keep the autoregressive recipe and surround it with mechanisms that violate the premises of the strong critiques.
+\paragraph{Verifier-in-the-loop training.}
+Process- and outcome-based reward models~\citep{lightman2024lets,uesato2022solving,wang2024math} learn from a verifier's accept/reject signal.
+Reinforcement learning from verifier feedback~\citep{cobbe2021training,gao2023scaling} aligns the trained model against the same signal.
+The targeted indictment is mode-covering MLE (\ref{cl:mode_covering}) and the unrecoverability premise of error compounding (\ref{cl:compounding}).
+\paragraph{Search and self-consistency.}
+Self-consistency decoding~\citep{wang2023self-consistency}, Monte Carlo tree search over reasoning trees~\citep{yao2023tree,hao2023reasoning,zhang2024rest}, and verifier-guided sampling~\citep{chen2024alphamath} buy variable compute at inference by running multiple trajectories and selecting the one a learned or external scorer prefers.
+\paragraph{Retrieval-augmented generation.}
+Retrieval-augmented generation~\citep{lewis2020retrieval,izacard2023atlas,khattab2022demonstrate} couples the generator to a retriever over an external corpus, addressing the structural pressure toward plausible completion that drives hallucination (\ref{cl:hallucination}).
+\paragraph{Tool use and program synthesis.}
+\citet{schick2023toolformer,chen2022program,gao2023pal} delegate computation to external interpreters, calculators, search engines, and verifiers.
+The autoregressive model writes the program;
+the program is executed elsewhere.
+Each of these mechanisms is a small step toward the broader principle that load-bearing computation belongs outside the language model.
+
+The honest summary is that the most successful production system today is an autoregressive language model wrapped in mechanisms that explicitly negate \ref{cl:compounding}'s third premise (unrecoverability), implicitly damp \ref{cl:hallucination}'s rate via retrieval and verification, and externalize part of \ref{cl:fixed_compute} via search.
+A clean comparison with an energy-based architecture has to specify which of these mechanisms it retains, which it absorbs, and which it discards.
+
+\subsection{Hopfield, modern associative memory, and the architectural middle ground}
+\label{ssec:hopfield_modern}
+
+The Hopfield reframe (\cref{ssec:hopfield}) is itself an architectural middle ground.
+\citet{ramsauer2020hopfield} and follow-up work~\citep{millidge2022universal,burns2024semantically} treat the transformer as a sequence of associative memory retrievals.
+Project proposals that propose ``different energies'' under this view~\citep{krotov2021dense,hoover2024energy} are not opposing the transformer;
+they are proposing different per-step energies for the same recurrence pattern.
+Whether any of these designs simultaneously preserves the five properties identified as load-bearing in \citet{zhang2024hedgehog,han2024bridging,mongaras2025expressiveness} --- global competition, injective query-to-weight map, low-entropy attention, streaming-stable kernel, and exponential storage capacity --- remains an open empirical question.
+The companion repository's \texttt{docs/softmax\_graveyard.md} pre-registers a five-property accounting that any proposal must address.

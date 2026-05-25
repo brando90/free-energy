@@ -1,0 +1,62 @@
+% =====================================================================
+% 98 — Appendix: derivations referenced from the body.
+% =====================================================================
+
+\section{Derivations Used in the Body}
+\label{app:derivations}
+
+This appendix records the short derivations cited in the body but kept out of the main text for readability.
+
+\subsection{Autoregressive normalization is automatic}
+\label{app:ar_norm}
+
+For local conditionals $\ptheta(x_t \mid x_{<t})$ each normalized over $\V$,
+\begin{align}
+  \sum_{x \in \V^T} \prod_{t=1}^{T} \ptheta(x_t \mid x_{<t})
+  &= \sum_{x_{<T} \in \V^{T-1}} \prod_{t=1}^{T-1} \ptheta(x_t \mid x_{<t}) \cdot \underbrace{\sum_{x_T \in \V} \ptheta(x_T \mid x_{<T})}_{=1} \\
+  &= \cdots \;=\; 1.
+\end{align}
+This is the statement that left-to-right factorization with locally normalized conditionals produces a normalized joint by construction, with no global $\Ztheta$.
+
+\subsection{Forward-KL is zero-avoiding (mode-covering)}
+\label{app:mode_cover_proof}
+
+For data distribution $\poftxt$ and model $\ptheta$,
+\begin{align}
+  \KL(\poftxt \,\|\, \ptheta)
+  &= \int \poftxt(x) \log \frac{\poftxt(x)}{\ptheta(x)}\, \mathrm{d}x \\
+  &= -H(\poftxt) - \int \poftxt(x) \log \ptheta(x)\, \mathrm{d}x.
+\end{align}
+The integral diverges to $+\infty$ whenever $\poftxt(x) > 0$ and $\ptheta(x) \to 0$, so any optimizer minimizing the KL is compelled to keep $\ptheta(x) > 0$ on the support of $\poftxt$.
+This holds whether $\poftxt$ is the empirical distribution or its smoothed version, and is the source of the mode-covering pressure cited in \cref{ssec:theorems}.
+
+\subsection{$(1-\varepsilon)^T$ under the three explicit premises}
+\label{app:eps_proof}
+
+Let $X_t$ denote the generated token at step $t$ and $X_t^\star$ the (multi-set of) correct alternatives.
+Under \emph{constant rate} ($\PP(X_t \neq X_t^\star) = \varepsilon$), \emph{independence} ($\{X_t = X_t^\star\}_{t=1}^T$ mutually independent), and \emph{unrecoverability} (``correct trajectory'' is the literal intersection $\bigcap_t \{X_t = X_t^\star\}$),
+\begin{align}
+  \PP[\text{trajectory correct}]
+  &= \PP\!\left[\bigcap_{t=1}^{T} \{X_t = X_t^\star\}\right] \\
+  &\overset{\text{indep.}}{=} \prod_{t=1}^{T} \PP[X_t = X_t^\star]
+   \overset{\text{const.}}{=} (1-\varepsilon)^T.
+\end{align}
+The premises are the entire content of the proof.
+Without independence, the product step does not hold;
+without constant rate, the exponent is replaced by a sum that does not factor;
+without unrecoverability, the intersection is no longer the event of interest.
+
+\subsection{Score-matching gradient does not depend on $\Ztheta$}
+\label{app:score_proof}
+
+For $\ptheta(x) = \exp(-\Etheta(x))/\Ztheta$,
+\begin{align}
+  \nabla_x \log \ptheta(x)
+  &= \nabla_x \!\left[-\Etheta(x) - \log \Ztheta\right] \\
+  &= -\nabla_x \Etheta(x),
+\end{align}
+since $\Ztheta$ is independent of $x$.
+The Fisher-divergence loss $\EE_{\poftxt}\!\left[\tfrac{1}{2} \|\nabla_x \log \ptheta(x) - \nabla_x \log \poftxt(x)\|^2\right]$ is therefore expressible as a function of $\Etheta$ alone~\citep{hyvarinen2005score}.
+The original form requires $\nabla_x \log \poftxt$, which is unknown;
+\citet{hyvarinen2005score}'s identity rewrites the loss using integration by parts as $\EE_{\poftxt}\!\left[\tfrac{1}{2}\|\nabla_x \Etheta(x)\|^2 + \mathrm{tr}(\nabla_x^2 \Etheta(x))\right]$, eliminating dependence on $\poftxt$'s score.
+Denoising score matching~\citep{vincent2011connection} replaces the Hessian trace with a tractable denoising target via a known noise kernel.

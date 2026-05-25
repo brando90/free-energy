@@ -1,0 +1,51 @@
+% =====================================================================
+% 98 — Appendix: open questions.
+% =====================================================================
+% Pulled from docs/softmax_graveyard.md and CLAIMS.md for completeness.
+
+\section{Open Questions}
+\label{app:open_questions}
+
+This appendix records the precise open questions that the paper raises but does not resolve.
+Each is stated as a measurement with a null and an alternative.
+
+\subsection{Mechanism-level open questions}
+\label{app:mechanism_open}
+
+\paragraph{Q1: Is rank collapse \ref{cl:rank_collapse} masked in trained transformers?}
+Null: a depth-$L$ pre-norm transformer trained on standard data exhibits the same row-rank statistics as a randomly initialized one of the same depth and width.
+Alternative: residual streams plus MLPs interrupt the contraction enough that the row-rank gap with random initialization grows with $L$.
+
+\paragraph{Q2: Is the local partition function \ref{cl:partition_local} removable on text?}
+Null: swapping softmax attention for sigmoid attention with norm correction matches downstream task loss within confidence intervals at matched compute.
+Alternative: the per-layer normalizer is load-bearing for content-addressed retrieval on long context~\citep{zhang2024hedgehog,han2024bridging}.
+
+\paragraph{Q3: Does $K > 1$ steps of energy descent at inference beat equivalent additional training compute?}
+Null: a one-step energy model trained with $C$ FLOPs matches the test loss of a $K$-step energy model trained with $C/K$ FLOPs and run for $K$ steps at inference.
+Alternative: iteration buys more than additional training on inputs whose patterns are not well-separated.
+
+\subsection{$(1-\varepsilon)^T$-shaped questions}
+\label{app:eps_open}
+
+\paragraph{Q4: Is the per-token error rate constant in a trained model?}
+Null: in a held-out generation set, the per-position error rate is independent of position and prior errors.
+Alternative: the error rate is context-dependent and clusters along trajectories.
+
+\paragraph{Q5: Is the surviving-error rate of verifier-augmented Lean generation geometric in $T$?}
+Null: $\log \PP[\text{trajectory accepted by Lean kernel}]$ is linear in trajectory length with a constant slope.
+Alternative: the slope is shallower than $\log(1 - \varepsilon_{\mathrm{single-step}})$ by a verifier-induced gap whose magnitude is the quantity of interest.
+
+\paragraph{Q6: Is the reversal failure \ref{cl:reversal} closed by any-order training?}
+Null: a model trained with random ordering of the next-token target inherits reversal failures at the same rate as a left-to-right model.
+Alternative: any-order training~\citep{sahoo2024simple,kitouni2024factorization} reduces but does not eliminate the gap.
+
+\subsection{Scaling / external open questions}
+\label{app:scaling_open}
+
+\paragraph{Q7: Is the high-quality public text corpus the binding constraint?}
+Null: the scaling-law fit on \textsc{VeriBench} subsets predicts the realized loss curve at the high end of the public-data range.
+Alternative: synthetic data and verifier-generated data shift the law before the dataset runs out~\citep{kazemi2024boostingdata}.
+
+\paragraph{Q8: Do mixture-of-softmaxes heads close the softmax bottleneck \ref{cl:softmax_bottleneck} in trained models?}
+Null: mixture-of-softmaxes matches a single softmax at compute parity.
+Alternative: a non-trivial gap survives, consistent with~\citet{yang2018softmax,chang2022softmax}.

@@ -1,0 +1,50 @@
+% =====================================================================
+% 09 — Conclusion: where the hard part should live.
+% =====================================================================
+% Planning (% comments only):
+% Tie everything back to the three-indictment partition.
+% State what we will and will not claim until the companion suite reports.
+% Articulate the future directions in concrete falsifiable terms.
+% =====================================================================
+
+\section{Where the Hard Part Should Live}
+\label{sec:conclusion}
+
+This paper organized the standard objections to autoregressive language models, separated them into three logically independent indictments, evaluated each against a clear bar, and surveyed the alternatives that target each.
+A summary of the position the paper supports is below.
+
+\paragraph{What survives, and what it indicts.}
+Three families of objections survive the audit of \cref{sec:what_holds}.
+The softmax bottleneck, doubly-exponential rank collapse in pure attention, and the local partition function tax indict the parameterization of the per-step distribution and the per-layer attention.
+The mode-covering pressure of forward-KL training indicts the maximum-likelihood objective on noisy corpora.
+The fixed-compute ceiling and the Lipschitz--margin gap indict the inference procedure of single-pass blind rollout.
+The $(1-\varepsilon)^T$ argument is mathematically valid and rhetorically useful, but its three premises are explicitly violated by verifier-augmented systems and by feedback loops with hard checkers;
+treating it as an impossibility proof confuses a warning label for a theorem.
+
+\paragraph{Where the alternatives put the hard part.}
+Energy-based models address the local-then-global mismatch by scoring whole objects.
+The cost is the partition function or its approximation, paid either at training time (MLE with MCMC, contrastive divergence), at inference time (score-matching plus Langevin or diffusion sampling), or at neither but through a noise distribution whose coverage becomes the bottleneck (NCE).
+Diffusion and flow-matching models share the inference-time iteration of score-matching;
+they have largely succeeded in continuous data and are an active question in discrete data.
+Joint-embedding predictive architectures avoid token-level reconstruction and the partition function but inherit the contrastive-versus-non-contrastive design space of self-supervised representation learning.
+State-space models target only the per-layer partition function and, in their pure form, inherit the fixed-state recall limit;
+hybrid stacks restore softmax attention at some scale and recover the property.
+Autoregressive models with verifiers, search, retrieval, and tools attack the third indictment directly by negating the unrecoverability premise and the fixed-compute premise, and are the most empirically successful production response.
+
+\paragraph{What this paper deliberately defers.}
+This paper is the literature-grounded half of a two-part project.
+The empirical claims --- which mechanisms are load-bearing inside a trained model on a domain with a hard verifier, and how the realized error process compares to the geometric prediction of \cref{ssec:compounding} --- are deferred to the companion suite, \texttt{experiments/02\_ar\_pros\_cons}, which pre-registers a probe-by-probe accounting at the correct layer for each surviving claim.
+We will not commit to a verdict on the bridge between isolated mechanism strength and downstream realized effect until that suite reports.
+
+\paragraph{What we are willing to say now.}
+The honest summary of the literature is that the most-discussed critique of autoregressive language models, $(1-\varepsilon)^T$, is the weakest one in the surviving set, and the most-discussed alternative, ``replace softmax with an energy,'' is, by the Hopfield reading, a question of \emph{which} energy rather than \emph{whether} an energy.
+The load-bearing research questions are narrower and more concrete than the slogans suggest:
+\begin{enumerate}
+  \item For each load-bearing isolated mechanism in \cref{tab:verdicts}, what is its realized effect inside an end-to-end trained model on a hard-verifier domain?
+  \item For each candidate energy, which of the five load-bearing softmax properties does it preserve, and at what cost?
+  \item Under what conditions is $K > 1$ steps of energy descent at inference cheaper than the equivalent additional training compute?
+  \item What is the empirical decay law of $(1-\varepsilon_{\mathrm{effective}})^T$ for verifier-augmented generation on Lean, and is it geometric, sub-geometric, or polynomial?
+\end{enumerate}
+Each of these is a measurement question with a stated null and a stated alternative.
+The companion suite is structured to answer them.
+The answer will determine whether the architectural questions this paper raises remain open or are resolved by ablation.

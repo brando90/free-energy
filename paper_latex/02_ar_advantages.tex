@@ -1,0 +1,61 @@
+% =====================================================================
+% 02 — Honest pros of autoregressive language models.
+% =====================================================================
+% Planning (% comments only):
+% Frame: any case against AR LLMs must first concede what they bought.
+% Bundle: tractable likelihood, dense supervision, teacher forcing,
+% streaming generation, chain-rule expressivity. End with the explicit
+% claim that the factorization itself is not the bottleneck people
+% sometimes claim.
+% =====================================================================
+
+\section{What Autoregressive Language Models Get Right}
+\label{sec:advantages}
+
+Any honest critique of autoregressive language models has to begin with what they bought.
+The factorization $p(x_1, \ldots, x_T) = \prod_t p(x_t \mid x_{<t})$ enabled four properties that, taken together, explain a decade of scaling progress.
+
+\paragraph{Tractable normalized likelihood.}
+For an energy-based model over a length-$T$ sequence with vocabulary $\V$, the natural probability is
+\begin{equation}
+  \ptheta(x) \;=\; \frac{\exp(-\Etheta(x))}{\Ztheta}, \qquad
+  \Ztheta \;=\; \sum_{x \in \V^T} \exp(-\Etheta(x)).
+  \label{eq:seq_ebm}
+\end{equation}
+The normalizer in \cref{eq:seq_ebm} sums over $|\V|^T$ sequences for discrete vocabularies and becomes a high-dimensional integral over $(\RR^d)^T$ in the continuous-embedding case.
+Without special structure on $\Etheta$, exact normalization is intractable.
+The autoregressive factorization replaces this single global normalizer with $T$ local normalizers, each summing over $|\V|$ tokens:
+\begin{equation}
+  \ptheta(x) \;=\; \prod_{t=1}^{T} \ptheta(x_t \mid x_{<t}), \qquad
+  \sum_{x_t \in \V} \ptheta(x_t \mid x_{<t}) \;=\; 1.
+  \label{eq:ar_factorization}
+\end{equation}
+Summing out the joint from the right confirms normalization by construction.
+This is not a minor implementation detail.
+It is the architectural reason an exact likelihood is available for end-to-end gradient training, and it is the reason maximum-likelihood was a viable training objective at the scale of modern corpora.
+
+\paragraph{Dense supervision per token.}
+A length-$T$ sequence furnishes $T$ next-token prediction losses.
+No human label is required.
+Combined with the chain rule in \cref{eq:ar_factorization}, this makes every position in a corpus a training example, and it is one reason gradient-based pretraining on web-scale text yielded usable models at all~\citep{radford2018improving,brown2020language,kaplan2020scaling}.
+
+\paragraph{Teacher forcing decouples training from inference dynamics.}
+At training time, each conditional is evaluated on the true prefix from the data rather than on the model's own past samples.
+The target is local: a categorical distribution over $|\V|$ tokens given $x_{<t}$.
+This makes the optimization landscape close to that of independent classification problems, one per position, and avoids the variance and instability of bootstrapping from the model's own samples.
+The cost --- a discrepancy between training and free-running deployment, sometimes called \emph{exposure bias}~\citep{bengio2015scheduled,ranzato2016sequence} --- is real but smaller than initially feared on large models, and we revisit it as a candidate trained-behavior claim in \cref{sec:catalog}.
+
+\paragraph{Streaming generation as a universal interface.}
+Left-to-right factorization lets generation begin before the full output is determined.
+The token stream serves as a common substrate for prose, code, proof steps, structured outputs, tool calls, and intermediate reasoning traces.
+This is the engineering interface that allowed chain-of-thought~\citep{wei2022chain}, tool use~\citep{schick2023toolformer}, and verifier-in-the-loop pipelines~\citep{cobbe2021training,lightman2024lets} to compose without new training paradigms.
+
+\paragraph{The factorization itself is not an expressivity bottleneck.}
+By the chain rule of probability, any joint distribution over a finite sequence space admits a left-to-right factorization with sufficiently expressive conditionals.
+The practical bottlenecks are model capacity, training data, the objective, and inference;
+the existence of the factorization is not a proof of weakness.
+Many empirical failures attributed to ``autoregression'' more accurately indict the parameterization (softmax over a low-rank hidden state), the objective (mode-covering MLE), or the inference procedure (one-pass blind rollout) rather than the chain-rule decomposition itself.
+We return to this disentanglement repeatedly.
+
+These four properties --- tractable likelihood, dense supervision, teacher forcing, and streaming --- make up the case the rest of the paper is graded against.
+A successful alternative architecture must either (i) replicate them, (ii) supply something strictly more useful in their place, or (iii) make a clearly bounded trade in a specific regime (long-horizon exactness, global coherence, adaptive compute) where the gain is large enough to justify the loss.
