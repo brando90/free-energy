@@ -1,16 +1,16 @@
 {
   "control_passed": true,
-  "cuda_available": true,
-  "device": "cuda",
-  "duration_s": 0.5067410469055176,
-  "finished_at": 1779663389.9045227,
-  "gpu_name": "NVIDIA H200",
-  "host": "skampere2.stanford.edu",
+  "cuda_available": false,
+  "device": "cpu",
+  "duration_s": 0.10815882682800293,
+  "finished_at": 1779682991.390199,
+  "gpu_name": "",
+  "host": "DNa81a129.SUNet",
   "metrics": {
     "curves": {
       "pure": [
         {
-          "effective_rank": 18,
+          "effective_rank": 17,
           "layer": 1
         },
         {
@@ -126,11 +126,11 @@
           "layer": 4
         },
         {
-          "effective_rank": 30,
+          "effective_rank": 29,
           "layer": 5
         },
         {
-          "effective_rank": 30,
+          "effective_rank": 29,
           "layer": 6
         },
         {
@@ -146,15 +146,15 @@
           "layer": 9
         },
         {
-          "effective_rank": 28,
+          "effective_rank": 29,
           "layer": 10
         },
         {
-          "effective_rank": 28,
+          "effective_rank": 29,
           "layer": 11
         },
         {
-          "effective_rank": 28,
+          "effective_rank": 29,
           "layer": 12
         }
       ]
@@ -164,7 +164,7 @@
     "final": {
       "pure": 1,
       "residual": 30,
-      "residual_mlp": 28
+      "residual_mlp": 29
     },
     "n_heads": 4,
     "pure_collapsed": true,
@@ -176,11 +176,11 @@
   "notes": {
     "interpretation": "Pure attention's final-layer effective rank should drop near 1; configs with residuals (and MLP) should retain a meaningful fraction of the upper bound."
   },
-  "platform": "Linux-6.8.0-110-generic-x86_64-with-glibc2.39",
+  "platform": "macOS-26.3.1-arm64-arm-64bit",
   "probe": "probe_03_rank_collapse",
   "seed": 0,
-  "started_at": 1779663389.3977816,
+  "started_at": 1779682991.28204,
   "tag": "smoke",
-  "torch_version": "2.12.0+cu130",
+  "torch_version": "2.12.0",
   "verdict": "CONTROL_PASS"
 }

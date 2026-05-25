@@ -19,7 +19,21 @@ def main() -> int:
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--smoke", action="store_true")
     parser.add_argument("--output-dir", default=None)
-    parser.add_argument("--probes", nargs="+", default=["probe_01", "probe_03", "probe_05"])
+    parser.add_argument(
+        "--probes",
+        nargs="+",
+        default=[
+            "probe_01",
+            "probe_02",
+            "probe_03",
+            "probe_04",
+            "probe_05",
+            "probe_06",
+            "probe_07",
+            "probe_08",
+            "probe_data_wall",
+        ],
+    )
     args = parser.parse_args()
 
     out_root = Path(args.output_dir) if args.output_dir else REPO_ROOT / "mnt" / "user-data" / "outputs"
@@ -28,8 +42,14 @@ def main() -> int:
 
     script_for = {
         "probe_01": "probe_01_softmax_bottleneck.py",
+        "probe_02": "probe_02_mode_covering.py",
         "probe_03": "probe_03_rank_collapse.py",
+        "probe_04": "probe_04_partition_removable.py",
         "probe_05": "probe_05_fixed_compute.py",
+        "probe_06": "probe_06_error_compounding.py",
+        "probe_07": "probe_07_reversal_curse.py",
+        "probe_08": "probe_08_lipschitz_margin.py",
+        "probe_data_wall": "probe_data_wall.py",
     }
 
     summary = {"tag": args.tag, "device": args.device, "seed": args.seed, "started_at": time.time(), "probes": {}}

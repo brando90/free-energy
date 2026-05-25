@@ -1,0 +1,37 @@
+{
+  "control_passed": true,
+  "cuda_available": false,
+  "device": "cpu",
+  "duration_s": 1.3618979454040527,
+  "finished_at": 1779682989.7138271,
+  "gpu_name": "",
+  "host": "DNa81a129.SUNet",
+  "metrics": {
+    "forward_close_to_centre": true,
+    "forward_covers_valley": true,
+    "forward_final_kl": 1.4704185724258423,
+    "forward_fit_mu": -2.9757881492287197e-08,
+    "forward_fit_sigma": 0.6941208839416504,
+    "forward_kl_valley_mass": 0.6298583524261014,
+    "forward_much_more_valley_than_reverse": true,
+    "mu_target": 0.6,
+    "n_bins": 256,
+    "reverse_final_kl": 0.6931468844413757,
+    "reverse_fit_mu": -0.5999999642372131,
+    "reverse_fit_sigma": 0.06000006943941116,
+    "reverse_kl_valley_mass": 0.06208024993501746,
+    "reverse_near_a_mode": true,
+    "sigma_target": 0.06,
+    "target_valley_mass": 0.062079906512486
+  },
+  "notes": {
+    "interpretation": "Single-Gaussian q is forced to compromise. Forward KL (mode-covering) pulls mu toward the mid-point and widens sigma. Reverse KL (mode-seeking) collapses onto one of the two modes."
+  },
+  "platform": "macOS-26.3.1-arm64-arm-64bit",
+  "probe": "probe_02_mode_covering",
+  "seed": 0,
+  "started_at": 1779682988.3519292,
+  "tag": "smoke",
+  "torch_version": "2.12.0",
+  "verdict": "CONTROL_PASS"
+}
