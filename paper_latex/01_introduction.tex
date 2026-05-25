@@ -1,0 +1,70 @@
+% =====================================================================
+% 01 — Introduction.
+% =====================================================================
+% Planning (% comments only):
+% Six-move expanded:
+%   1. Problem motivation (slogans on both sides; we want a map)
+%   2. Set up assumption (the bundling)
+%   3. Flip (three independent indictments; layer discipline)
+%   4. Instantiate (which claims survive)
+%   5. Evaluation (the companion probe suite + literature)
+%   6. Implications (where to invest research effort)
+% =====================================================================
+
+\section{Introduction}
+\label{sec:introduction}
+
+The discourse around autoregressive language models has settled into two slogans.
+One says they work, scale, and only need more compute, data, and tools.
+The other says they are fundamentally broken because each generated token has a nonzero probability of being wrong, and a length-$T$ generation is fully correct with probability at most $(1-\varepsilon)^T$, which decays exponentially.
+
+Both slogans are too clean.
+
+The first ignores that local fluency is not the same as global correctness on tasks like proof writing, program synthesis, or long-horizon planning.
+The second ignores that the math is valid only under three premises: independent token errors, a constant per-token error rate, and unrecoverability of any single wrong token.
+Modern deployed systems are designed precisely to violate those premises.
+Tools catch syntax, arithmetic, and type errors;
+verifiers reject invalid proofs;
+search lets a model retry;
+and reinforcement learning from verifier feedback shifts the empirical error process away from the i.i.d. assumption the bound requires.
+
+Most critiques of autoregressive language models bundle three distinct design choices into a single object.
+The first is the \emph{autoregressive factorization} $p(x) = \prod_t p(x_t \mid x_{<t})$, which trades the global partition function of a sequence-level model for $T$ local normalizers.
+The second is the \emph{softmax parameterization} of each conditional, which factors as an exponential over a learned hidden state followed by normalization over the vocabulary.
+The third is the \emph{maximum-likelihood objective with teacher forcing}, which trains each conditional on clean prefixes drawn from data rather than from the model's own past samples.
+These three choices are independent.
+Different objections indict different choices, and any honest case for an alternative architecture must specify which of the three it is replacing.
+
+The contribution of this paper is a layer-disciplined map of the standard objections to autoregressive language models.
+We tag each objection by the layer at which it lives.
+\emph{Architecture}-layer claims (\eg the softmax bottleneck, pure-attention rank collapse, fixed compute per token) can be tested on a random-initialized model.
+\emph{Objective}-layer claims (\eg mode-covering pressure from forward-KL minimization) require a controlled training run.
+\emph{Trained-behavior}-layer claims (\eg error compounding, reversal failures, hallucination rates) require both a trained model and an evaluator with a notion of correctness.
+\emph{External}-layer claims (\eg the data wall) are properties of a resource curve, not of any single model.
+Mixing layers is the most common way to fool oneself about which mechanism is doing the work.
+
+We then ask, for each objection, whether it is a theorem, a robust empirical finding, a weak empirical finding, or refuted under modern conditions.
+Two clusters emerge.
+The softmax bottleneck~\citep{yang2018softmax}, doubly-exponential rank collapse in pure attention~\citep{dong2021attention}, and forward-KL mode-covering pressure~\citep{theis2016note,minka2005divergence} are theorems whose preconditions are visible from the parameterization or the objective.
+The error-compounding bound~\citep{lecun2022autonomous,bachmann2024pitfalls}, the reversal curse~\citep{berglund2023reversal}, and most hallucination claims are empirical patterns whose realized effect under verifier-augmented systems is an open quantitative question rather than a fundamental impossibility.
+
+Alternatives to the autoregressive recipe inherit, evade, or relocate the same costs.
+Energy-based models~\citep{lecun2006tutorial,grathwohl2019your} score whole objects globally and avoid the local-then-global mismatch, but pay for the partition function or its approximations at training and at inference.
+Score matching~\citep{hyvarinen2005score}, noise-contrastive estimation~\citep{gutmann2010noise}, and ratio matching~\citep{hyvarinen2007some} sidestep $Z_\theta$ during training but typically push the cost to inference-time sampling.
+Diffusion and denoising models~\citep{sohldickstein2015deep,ho2020denoising,song2021scorebased,nichol2021improved} score a hierarchy of perturbations to the data and yield a tractable training loss at the cost of an iterative inference loop.
+Discrete and masked diffusion~\citep{lou2023discrete,nie2024scaling} bring the same idea to vocabulary-indexed sequences.
+Joint-embedding predictive architectures~\citep{lecun2022autonomous} replace per-token reconstruction with feature-space prediction.
+Each is a different choice about \emph{where the hard part lives}.
+
+This paper is the literature-grounded half of a two-part project.
+The companion experiment, \texttt{experiments/02\_ar\_pros\_cons} in the same repository, tests each surviving claim with an isolated probe at the correct layer and then re-measures the same mechanism inside an end-to-end run on a domain with a hard verifier (Lean 4, via \textsc{VeriBench}).
+We refer to that suite throughout, both for which claims it pre-registers as load-bearing and for which it pre-registers as likely masked once everything is trained together.
+
+The remainder of the paper is organized as follows.
+\Cref{sec:advantages} restates the honest case for autoregressive language models: the four design properties that explain why they scaled.
+\Cref{sec:catalog} catalogs the standard objections, with layer tags.
+\Cref{sec:what_holds} evaluates each objection against the bar of theorem, robust empirical, weak empirical, or refuted, and identifies the three independent indictments the surviving claims support.
+\Cref{sec:ebm_motivation} introduces energy-based models from the global-scoring viewpoint and isolates the partition-function obstacle as the central cost.
+\Cref{sec:ebm_training,sec:ebm_inference} survey the training and inference methods that aim to evade or amortize that cost.
+\Cref{sec:other_alts} surveys non-EBM alternatives.
+\Cref{sec:conclusion} discusses where the hard part should live and the empirical questions that this paper deliberately defers to the companion suite.

@@ -1,0 +1,55 @@
+% !TEX root = main.tex
+% =====================================================================
+% Free Energy: An Honest Audit of Autoregressive Language Models and the
+% Energy-Based Alternative
+% =====================================================================
+%
+% Status: DRAFT — do not submit, do not link from public README,
+% do not \input{} into any external repo until reviewed end-to-end.
+%
+% Target venue (tentative): arXiv preprint.
+% Companion empirical work: experiments/02_ar_pros_cons/ in this repo.
+% =====================================================================
+
+\documentclass[11pt]{article}
+
+\input{preamble}
+
+\title{%
+  Free Energy: An Honest Audit of Autoregressive Language Models\\
+  and the Energy-Based Alternative%
+}
+
+\author{%
+  Brando Miranda\thanks{Stanford University. \href{mailto:brando9@stanford.edu}{brando9@stanford.edu}.}%
+}
+
+\date{\today \\[2pt] \textit{Draft --- comments welcome}}
+
+\begin{document}
+
+\maketitle
+
+\input{00_abstract}
+
+\input{01_introduction}
+\input{02_ar_advantages}
+\input{03_critiques_catalog}
+\input{04_what_holds}
+\input{05_ebm_motivation}
+\input{06_ebm_training}
+\input{07_ebm_inference}
+\input{08_other_alternatives}
+\input{09_conclusion}
+
+\input{97_acknowledgments}
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\clearpage
+\appendix
+\input{98_appendix_open_questions}
+\input{98_appendix_proofs}
+
+\end{document}

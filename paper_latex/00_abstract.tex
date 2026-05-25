@@ -1,0 +1,37 @@
+% =====================================================================
+% 00 — Abstract.
+% =====================================================================
+% Planning (in % comments — NOT in reader-facing prose):
+%   bit-flip: most critiques bundle the AR factorization, the softmax
+%   parameterization, and the MLE objective into one indictment. They
+%   are three independent things. Different objections motivate
+%   different alternatives, and only some of the objections survive
+%   contact with verifier-augmented modern systems.
+%
+% Six-move structure (CS197 scaffold; do NOT write these labels in the
+% actual abstract prose):
+%   1. Problem motivation
+%   2. Set up the assumption (the bundling)
+%   3. Flip it (separate the three layers; audit each)
+%   4. Instantiate (which objections hold, which collapse under a
+%      verifier, where the partition function actually bites)
+%   5. Evaluation (probe-by-probe map, with companion empirical suite)
+%   6. Implications (where the hard part should live)
+% =====================================================================
+
+\begin{abstract}
+Autoregressive language models dominate sequence modeling, yet a long-running set of theoretical objections holds that they are fundamentally limited:
+local next-token prediction cannot scale to global correctness;
+softmax heads cap representational rank;
+training under maximum likelihood is mode-covering;
+and per-token errors compound to make long, exact sequences asymptotically unattainable.
+Most critiques bundle three distinct design choices --- the autoregressive factorization, the softmax parameterization, and the maximum-likelihood objective --- into one indictment.
+We separate them.
+We catalog the standard objections, tag each by the layer it actually constrains (architecture, objective, trained behavior, or external resource), and rate which are theorems, which are robust empirical findings, and which depend on premises modern systems explicitly violate.
+The most-cited compounding bound $(1-\varepsilon)^T$ is mathematically valid but predicates on independent, constant-rate, unrecoverable errors;
+verifiers, tools, and search are precisely the system features designed to break those premises.
+By contrast, the softmax bottleneck and mode-covering pressure are genuine theorems, and the partition-function obstacle of energy-based models is a real cost rather than a free escape.
+We then survey the alternatives --- energy-based models, score-matching and noise-contrastive estimation, denoising and masked diffusion, joint-embedding predictive architectures, and verifier-augmented decoding --- and ask, for each, \emph{where the hard part lives}: local prediction with external verification, or global compatibility scoring with hard inference and normalization.
+This work is the literature-grounded half of a two-part project;
+a companion empirical suite (\texttt{experiments/02\_ar\_pros\_cons}) tests each surviving claim end-to-end on a formal-verification domain with a hard checker.
+\end{abstract}

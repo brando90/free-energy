@@ -1,0 +1,88 @@
+% =====================================================================
+% Preamble: packages, macros, theorem environments.
+% =====================================================================
+
+% --- Layout -----------------------------------------------------------
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\setlist{leftmargin=*,itemsep=2pt,parsep=2pt,topsep=4pt}
+
+% --- Math -------------------------------------------------------------
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{bm}
+
+% --- Tables and figures ----------------------------------------------
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% --- Cross-references and hyperlinks ---------------------------------
+\usepackage[colorlinks=true,
+            linkcolor=blue!50!black,
+            citecolor=blue!50!black,
+            urlcolor=blue!50!black]{hyperref}
+\usepackage[capitalize,noabbrev]{cleveref}
+\usepackage[round,authoryear]{natbib}
+
+% --- Code listings (for any pseudocode in appendices) ----------------
+\usepackage{listings}
+
+% --- Theorem environments --------------------------------------------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% --- Macros ----------------------------------------------------------
+% Probability and expectation
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\KL}{D_{\mathrm{KL}}}
+\newcommand{\indic}[1]{\mathbb{1}\!\left[#1\right]}
+
+% Sets and spaces
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\V}{\mathcal{V}}
+\newcommand{\Y}{\mathcal{Y}}
+\newcommand{\Hh}{\mathcal{H}}
+
+% Model components
+\newcommand{\ptheta}{p_\theta}
+\newcommand{\Etheta}{E_\theta}
+\newcommand{\Ztheta}{Z_\theta}
+\newcommand{\softmax}{\mathrm{softmax}}
+\newcommand{\lse}{\mathrm{lse}}
+\newcommand{\poftxt}{p_{\mathrm{data}}}
+
+% Editorial comments (silenced for the working draft;
+% switch to a colored note once reviewers see it).
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\newcommand{\note}[1]{\textcolor{blue!60!black}{[note: #1]}}
+
+% Standard text shortcuts
+\newcommand{\eg}{e.g.\@\xspace}
+\newcommand{\ie}{i.e.\@\xspace}
+\newcommand{\cf}{cf.\@\xspace}
+\newcommand{\etc}{etc.\@\xspace}
+\usepackage{xspace}
+
+% Bibliography spacing
+\setlength{\bibsep}{2pt plus 0.3ex}

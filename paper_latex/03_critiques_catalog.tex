@@ -1,0 +1,146 @@
+% =====================================================================
+% 03 — Catalog of the standard objections, with layer tags.
+% =====================================================================
+% Planning (% comments only):
+% Lift the layer tags directly from experiments/02_ar_pros_cons/CLAIMS.md.
+% Tag each claim by layer (architecture / objective / trained / external).
+% Critically: do NOT yet judge them as theorem/empirical/refuted; that
+% is the job of section 4. Here we only catalog.
+% =====================================================================
+
+\section{The Standard Objections, Cataloged by Layer}
+\label{sec:catalog}
+
+We catalog the objections that recur in the literature and on social media, organized by the layer at which they live.
+This is the input to \cref{sec:what_holds}, which judges each.
+
+\subsection{Architecture-layer claims}
+\label{ssec:arch_claims}
+
+Architecture-layer claims can be tested on a random-initialized model with no training data.
+A positive control should show the effect at the limit predicted by the theory;
+if it does not, the probe is broken, not the claim.
+
+\begin{enumerate}[label=(A\arabic*),leftmargin=2.5em]
+  \item \label{cl:softmax_bottleneck}
+        \textbf{Softmax bottleneck.}
+        A softmax head over a $d$-dimensional hidden state can produce a log-probability matrix of rank at most $d+1$.
+        If the true next-token log-probability matrix has rank greater than $d+1$, the model class cannot represent it~\citep{yang2018softmax}.
+
+  \item \label{cl:rank_collapse}
+        \textbf{Doubly-exponential rank collapse in pure attention.}
+        A stack of pure self-attention layers (no residual connections, no MLPs, no layer normalization) converges to a rank-one representation doubly-exponentially in depth~\citep{dong2021attention}.
+        Residuals and MLPs slow but do not eliminate the underlying contraction.
+
+  \item \label{cl:partition_local}
+        \textbf{Locally normalized softmax is a per-step partition function.}
+        Each softmax layer evaluates $Z = \sum_k \exp(q^\top k_k / \sqrt{d})$ over its candidate set;
+        the output head evaluates $\sum_v \exp(w_v^\top h)$ over the vocabulary.
+        \citet{ramsauer2020hopfield} show that softmax attention is one gradient step on a continuous Hopfield energy whose specific exponential form was chosen to make $Z$ tractable.
+        The cost is paid at every layer and every position.
+
+  \item \label{cl:fixed_compute}
+        \textbf{Fixed compute per token is a representational ceiling.}
+        Standard transformers perform $O(1)$ sequential operations per generated token.
+        Circuit-complexity results~\citep{merrill2023parallelism,strobl2024transformer} place transformer expressivity in low-depth uniform classes, implying problems that require more sequential depth cannot be solved in a single forward pass.
+        Chain-of-thought externalizes serial computation into the token stream and is, on this reading, evidence of the limit rather than a refutation of it.
+
+  \item \label{cl:hidden_state}
+        \textbf{Fixed hidden-state capacity bounds in-context memory.}
+        Architectures with a bounded hidden state cannot copy strings of arbitrary length~\citep{jelassi2024repeat,arora2024simple}.
+        Self-attention's key/value cache sidesteps this by growing with context;
+        state-space models with fixed-dimensional state inherit a sharper version of the same constraint.
+\end{enumerate}
+
+\subsection{Objective-layer claims}
+\label{ssec:obj_claims}
+
+Objective-layer claims are about the geometry of the training loss.
+They require a controlled training run to test the realized effect, but the underlying mechanism is derivable from the loss alone.
+
+\begin{enumerate}[label=(O\arabic*),leftmargin=2.5em,start=1]
+  \item \label{cl:mode_covering}
+        \textbf{Mode-covering pressure of maximum likelihood.}
+        Maximum-likelihood estimation minimizes the forward KL $\KL(\poftxt \,\|\, \ptheta)$, which diverges if $\ptheta$ places near-zero mass on any datum the data distribution supports~\citep{theis2016note,minka2005divergence}.
+        The objective therefore presses the model to cover every observed mode, including noise, contradictions, and rare or undesired patterns.
+
+  \item \label{cl:teacher_forcing}
+        \textbf{Teacher forcing differs from free-running generation.}
+        At training time, conditionals are evaluated on data prefixes;
+        at inference time, the model conditions on its own past samples.
+        \citet{ranzato2016sequence,bengio2015scheduled} formalize the resulting distribution shift, often called exposure bias.
+
+  \item \label{cl:next_token_misalign}
+        \textbf{Next-token likelihood and global correctness are different metrics.}
+        A proof, a program, or a multi-step plan can have low cumulative log-likelihood and high correctness, or high log-likelihood and zero correctness.
+        Optimizing one is not optimization of the other.
+\end{enumerate}
+
+\subsection{Trained-behavior-layer claims}
+\label{ssec:trained_claims}
+
+Trained-behavior claims involve the dynamics of a trained model under inference, including its interaction with a verifier or environment.
+These claims are empirical: they require both a trained model and an evaluator with a notion of correctness.
+
+\begin{enumerate}[label=(T\arabic*),leftmargin=2.5em,start=1]
+  \item \label{cl:compounding}
+        \textbf{Error compounding: the $(1-\varepsilon)^T$ argument.}
+        Under the assumptions that (i) each generated token is wrong with constant probability $\varepsilon$, (ii) token errors are independent across positions, and (iii) any wrong token is unrecoverable, the probability that a length-$T$ output is fully correct is $(1-\varepsilon)^T$, which decays exponentially in $T$~\citep{lecun2022autonomous,bachmann2024pitfalls}.
+
+  \item \label{cl:reversal}
+        \textbf{Reversal curse.}
+        A model trained on the statement ``$A$ is $B$'' does not reliably infer ``$B$ is $A$''~\citep{berglund2023reversal}.
+        The pattern survives across scales and is presented as evidence that next-token prediction encodes directional co-occurrence rather than symmetric relations.
+
+  \item \label{cl:hallucination}
+        \textbf{Hallucination.}
+        Trained autoregressive models confidently produce factually unsupported continuations.
+        \citet{kalai2024calibrated} argue calibrated next-token training induces a structural pressure toward plausible completion;
+        \citet{xu2024hallucination} and \citet{kang2023impact} catalog empirical patterns.
+        The strong form of the claim is that hallucination is \emph{inevitable}.
+
+  \item \label{cl:lipschitz_margin}
+        \textbf{Brittleness and the Lipschitz--margin gap.}
+        For a model with global Lipschitz constant $L$, the input-space margin obeys $\|\delta\| \geq f_\theta(x) / L$, where $f_\theta(x)$ is the unnormalized output gap and $L \leq \prod_i \|W_i\|_2$~\citep{tsuzuku2018lipschitz,virmaux2018lipschitz}.
+        Output confidence can therefore be inflated by scaling weights while the geometric margin stays small, producing brittleness under small input perturbations.
+\end{enumerate}
+
+\subsection{External-layer claims}
+\label{ssec:ext_claims}
+
+External-layer claims are not about any single model.
+They are about the resource curve on which the field is operating.
+
+\begin{enumerate}[label=(E\arabic*),leftmargin=2.5em,start=1]
+  \item \label{cl:data_wall}
+        \textbf{Data wall.}
+        High-quality public text is finite and is being consumed~\citep{villalobos2024position}.
+        Combined with empirical neural scaling laws~\citep{kaplan2020scaling,hoffmann2022training} that require exponential data for linear loss improvements, the cheap-gains regime is expected to end before the loss has saturated to its irreducible floor.
+        The claim is not that scaling stops working;
+        it is that the implicit dataset assumption behind the scaling laws breaks before the curve does.
+\end{enumerate}
+
+\subsection{Three independent indictments}
+\label{ssec:three_indictments}
+
+The catalog above bundles three logically independent design choices.
+The factorization, the parameterization, and the objective each take some of the heat.
+We will repeatedly need the following partition:
+\begin{description}[leftmargin=1.5em]
+  \item[Against the softmax / local normalization:]
+        \ref{cl:softmax_bottleneck}, \ref{cl:rank_collapse}, \ref{cl:partition_local}.
+        These motivate energy-based heads, mixture-of-softmaxes, or non-normalized attention substrates.
+  \item[Against the MLE objective:]
+        \ref{cl:mode_covering}, \ref{cl:hallucination} (in its calibrated form).
+        These motivate noise-contrastive estimation, margin or contrastive losses, and reinforcement learning from verifier rewards.
+  \item[Against autoregressive generation under fixed compute:]
+        \ref{cl:fixed_compute}, \ref{cl:compounding}, \ref{cl:lipschitz_margin}.
+        These motivate inference-as-optimization (energy descent, iterative refinement), search-augmented decoding, and verifier-in-the-loop pipelines.
+\end{description}
+\ref{cl:hidden_state}, \ref{cl:teacher_forcing}, \ref{cl:next_token_misalign}, \ref{cl:reversal}, and \ref{cl:data_wall} cross the three buckets or sit outside them.
+
+The point of separating these is that an alternative architecture only addresses the indictments it actually targets.
+An energy-based head with a softmax-trained encoder still pays the cost of mode-covering MLE.
+A non-softmax attention substrate still pays the cost of fixed compute per token.
+The most-cited objection in popular discussion, \ref{cl:compounding}, indicts only the third bucket and only under premises that modern verifier-augmented systems explicitly violate;
+this is the subject of \cref{sec:what_holds}.

@@ -1,0 +1,89 @@
+% =====================================================================
+% 07 — Inference methods for EBMs.
+% =====================================================================
+% Planning (% comments only):
+% Langevin / SGLD, HMC, MPPI, Gibbs (discrete), MAP-via-gradient,
+% energy descent at inference (adaptive compute), variational inference,
+% diffusion ancestral sampling, MCMC sampling for ratios.
+% Endpoint: adaptive-compute inference is the load-bearing claim that
+% EBMs add beyond AR LLMs — but only if iteration buys more than equivalent
+% additional training.
+% =====================================================================
+
+\section{Inference in Energy-Based Models}
+\label{sec:ebm_inference}
+
+Sampling from \cref{eq:ebm_definition} or computing posterior queries against it is the second place the partition function bites.
+This section organizes inference methods by the discreteness of the object and by whether the model exposes its score, its energy, or only its conditional updates.
+
+\subsection{Continuous: Langevin dynamics and Hamiltonian methods}
+\label{ssec:langevin}
+
+Langevin dynamics defines an SDE whose stationary distribution is $\ptheta$:
+\begin{equation}
+  \mathrm{d} x \;=\; -\nabla_x \Etheta(x)\, \mathrm{d}t \;+\; \sqrt{2}\, \mathrm{d}W_t,
+  \label{eq:langevin}
+\end{equation}
+discretized as $x_{k+1} = x_k - \tau \nabla_x \Etheta(x_k) + \sqrt{2\tau}\, \eta_k$ for noise $\eta_k \sim \mathcal{N}(0, I)$ and step $\tau > 0$.
+Convergence to $\ptheta$ holds under mild regularity~\citep{roberts1996exponential}.
+The cost of inference is the number of iterations to traverse a representative region of the energy landscape.
+Stochastic gradient Langevin dynamics~\citep{welling2011bayesian} couples \cref{eq:langevin} with stochastic gradient updates to scale.
+Hamiltonian Monte Carlo~\citep{neal2011mcmc,betancourt2017conceptual} augments with momentum, reducing the number of effective steps when the energy is smooth.
+
+Score-based generative models~\citep{song2019generative,song2021scorebased} use a noise-conditional score network in place of $\nabla_x \Etheta$ and integrate \cref{eq:langevin} along a denoising schedule.
+The training methods of \cref{ssec:score_matching} return an estimate of the score that this inference loop consumes.
+
+\subsection{Discrete: Gibbs, simulated annealing, and local-search analogues}
+\label{ssec:gibbs}
+
+For discrete sequence spaces, Langevin dynamics does not directly apply.
+Gibbs sampling~\citep{geman1984stochastic} updates one coordinate at a time conditional on the rest;
+the conditional itself requires evaluating $|\V|$ energies per step.
+Block-Gibbs and Metropolis--within-Gibbs variants trade per-step cost for mixing rate.
+For energies parameterized as deep networks over discrete sequences, recent work~\citep{grathwohl2021ono,emami2024discrete} proposes continuous relaxations and gradient-guided proposals that accelerate mixing without losing the discrete target.
+
+Simulated annealing~\citep{kirkpatrick1983optimization} traces the same energy under a temperature schedule that contracts as iteration proceeds.
+It is a natural model for ``inference as optimization'' when only the MAP is required.
+
+\subsection{Variational inference and the free-energy view}
+\label{ssec:variational}
+
+Variational methods replace exact inference with a tractable surrogate $q_\phi(z)$ over latents $z$ and minimize the variational free energy
+\begin{equation}
+  \mathcal{F}[q_\phi] \;=\; \EE_{q_\phi}\!\left[\Etheta(z)\right] \;-\; H(q_\phi),
+  \label{eq:variational_free_energy}
+\end{equation}
+where $H(q_\phi)$ is the entropy.
+Minimization of \cref{eq:variational_free_energy} gives the closest $q_\phi$ to $\ptheta$ in reverse-KL~\citep{wainwright2008graphical}.
+\citet{rezende2014stochastic,kingma2014auto} introduce amortized variants that learn $q_\phi$ as a neural network and have become the standard scaffold for variational autoencoders.
+\citet{ranganath2014black} make the approach black-box-applicable.
+The mean-field assumption that $q_\phi$ factorizes across coordinates is the analogue of independent token modeling and is what attention's row-stochastic structure already implements~\citep{ramsauer2020hopfield}.
+
+\subsection{Posterior queries: conditional sampling and amortization}
+\label{ssec:conditional}
+
+Many practical EBM uses do not need samples from the unconditional $\ptheta$.
+They need samples from $\ptheta(x \mid c)$ for a conditioning context $c$ --- a prompt, a partial program, a goal state.
+\citet{du2023reduce} demonstrate that conditional energy descent is competitive with autoregressive sampling on structured outputs, and that energy-based composition can be applied in latent space.
+For tasks with a hard verifier, conditional sampling on the verifier's accept set reduces to constrained energy descent: project at each step onto the verifier-bounded subspace~\citep{cobbe2021training}.
+
+\subsection{Energy descent at inference and adaptive compute}
+\label{ssec:adaptive_compute}
+
+The reason inference deserves a dedicated section is the claim that motivated the field in the first place: \emph{the number of inference steps is a free parameter}, and energy-based inference can spend more on harder inputs.
+This is the architectural counterpart to chain-of-thought.
+Where chain-of-thought converts more inference into more tokens, energy descent converts more inference into more iterations of the same forward pass~\citep{lecun2022autonomous,du2023reduce}.
+
+The empirical question is whether $K > 1$ steps of energy descent on a fixed model are ever more compute-efficient than the equivalent additional training compute spent on a one-step model.
+For well-separated patterns under \cref{eq:hopfield_energy}, \citet{ramsauer2020hopfield} prove that one step is already optimal.
+For not-well-separated inputs --- precisely the inputs we care about --- multiple steps are expected to help, and partial results in this direction exist~\citep{bachlechner2021rezero,bansal2022end,schwarzschild2021can}.
+The companion suite (\texttt{experiments/02\_ar\_pros\_cons/probes/probe\_05.py}) explicitly tests whether iteration is compute-cheaper than parameter count in a verifier-bounded setting.
+
+\subsection{What the inference survey leaves}
+\label{ssec:inference_leaves}
+
+Inference in energy-based models is a budgeted decision: how many iterations, with what proposal, against which conditioning set, with what verifier hook.
+The autoregressive recipe makes the equivalent decision implicitly --- one forward pass, beam search, or sample-then-verify --- but does so with a fixed compute budget per output token.
+The interesting comparison is not ``EBM inference is hard'' versus ``AR inference is easy.''
+It is ``where do you want to spend the variable-compute budget,'' phrased clearly enough that the trade is visible.
+\Cref{sec:other_alts} broadens the comparison to alternatives that occupy intermediate positions on this trade.
