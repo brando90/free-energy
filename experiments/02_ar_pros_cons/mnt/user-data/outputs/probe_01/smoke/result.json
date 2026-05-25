@@ -1,16 +1,16 @@
 {
   "control_passed": true,
-  "cuda_available": true,
-  "device": "cuda",
-  "duration_s": 57.164450883865356,
-  "finished_at": 1779663385.5960283,
-  "gpu_name": "NVIDIA H200",
-  "host": "skampere2.stanford.edu",
+  "cuda_available": false,
+  "device": "cpu",
+  "duration_s": 1.825092077255249,
+  "finished_at": 1779682987.117867,
+  "gpu_name": "",
+  "host": "DNa81a129.SUNet",
   "metrics": {
     "large_d_lower_kl_than_bottleneck": true,
     "mixture_beats_bottleneck_single": true,
     "mixture_softmax": {
-      "final_kl": 0.015079650096595287,
+      "final_kl": 0.018145151436328888,
       "params": 1152
     },
     "monotone_down_in_d": true,
@@ -19,21 +19,21 @@
     "single_softmax": [
       {
         "d": 4,
-        "final_kl": 0.18527665734291077,
+        "final_kl": 0.19813111424446106,
         "params": 416,
-        "svd_tail_share": 0.10723813277558043
+        "svd_tail_share": 0.16131839379833385
       },
       {
         "d": 8,
-        "final_kl": 0.001000941963866353,
+        "final_kl": 0.0005792419542558491,
         "params": 800,
-        "svd_tail_share": 1.663272605212409e-14
+        "svd_tail_share": 9.670907561169094e-15
       },
       {
         "d": 16,
-        "final_kl": 0.0001763564214343205,
+        "final_kl": 0.00027149778907187283,
         "params": 1568,
-        "svd_tail_share": 3.3501772444857653e-15
+        "svd_tail_share": 2.8147668565232312e-15
       }
     ],
     "vocab": 32
@@ -41,11 +41,11 @@
   "notes": {
     "interpretation": "If KL falls monotonically as d grows and the K-mixture beats the d=r/2 single softmax, the softmax bottleneck is acting as predicted."
   },
-  "platform": "Linux-6.8.0-110-generic-x86_64-with-glibc2.39",
+  "platform": "macOS-26.3.1-arm64-arm-64bit",
   "probe": "probe_01_softmax_bottleneck",
   "seed": 0,
-  "started_at": 1779663328.4315774,
+  "started_at": 1779682985.292775,
   "tag": "smoke",
-  "torch_version": "2.12.0+cu130",
+  "torch_version": "2.12.0",
   "verdict": "CONTROL_PASS"
 }

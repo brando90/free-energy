@@ -1,0 +1,81 @@
+{
+  "control_passed": true,
+  "cuda_available": false,
+  "device": "cpu",
+  "duration_s": 8.129029035568237,
+  "finished_at": 1779683222.344445,
+  "gpu_name": "",
+  "host": "DNa81a129.SUNet",
+  "metrics": {
+    "bound_holds_across_all_runs": true,
+    "largest_L_is_most_brittle": true,
+    "n_train": 2048,
+    "ranked_L_global": [
+      1171.6855443749334,
+      1307.7161191390069,
+      1456.6369101042246
+    ],
+    "ranked_median_min_flip_norm": [
+      0.800000011920929,
+      0.800000011920929,
+      0.20000000298023224
+    ],
+    "runs": [
+      {
+        "bound_holds_at_min": true,
+        "eval_acc": 0.7890625,
+        "flip_rate_at_max_radius": 0.41584157943725586,
+        "mean_output_margin": 29.037803649902344,
+        "median_lipschitz_bound": 0.017815319821238518,
+        "median_min_flip_norm": 0.20000000298023224,
+        "min_flip_norm": 0.05000000074505806,
+        "min_lipschitz_bound": 7.110528531484306e-05,
+        "skipped": false,
+        "spectral_norm_product": 1456.6369101042246,
+        "weight_decay": 0.0
+      },
+      {
+        "bound_holds_at_min": true,
+        "eval_acc": 0.78125,
+        "flip_rate_at_max_radius": 0.47999998927116394,
+        "mean_output_margin": 26.201269149780273,
+        "median_lipschitz_bound": 0.019223811104893684,
+        "median_min_flip_norm": 0.800000011920929,
+        "min_flip_norm": 0.05000000074505806,
+        "min_lipschitz_bound": 0.00011570961942197755,
+        "skipped": false,
+        "spectral_norm_product": 1307.7161191390069,
+        "weight_decay": 0.001
+      },
+      {
+        "bound_holds_at_min": true,
+        "eval_acc": 0.8125,
+        "flip_rate_at_max_radius": 0.5480769276618958,
+        "mean_output_margin": 22.110851287841797,
+        "median_lipschitz_bound": 0.017418649047613144,
+        "median_min_flip_norm": 0.800000011920929,
+        "min_flip_norm": 0.05000000074505806,
+        "min_lipschitz_bound": 7.452660065609962e-05,
+        "skipped": false,
+        "spectral_norm_product": 1171.6855443749334,
+        "weight_decay": 0.1
+      }
+    ],
+    "spearman_L_vs_flip_norm": -0.5,
+    "weight_decays": [
+      0.0,
+      0.001,
+      0.1
+    ]
+  },
+  "notes": {
+    "interpretation": "Across models trained with the same architecture but varying weight decay, larger spectral norm product (low / zero decay) should yield smaller empirical min flip norms. Output margin alone is not protective; the relevant ratio is f(x)/L_global."
+  },
+  "platform": "macOS-26.3.1-arm64-arm-64bit",
+  "probe": "probe_08_lipschitz_margin",
+  "seed": 0,
+  "started_at": 1779683214.215416,
+  "tag": "smoke",
+  "torch_version": "2.12.0",
+  "verdict": "CONTROL_PASS"
+}

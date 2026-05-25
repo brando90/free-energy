@@ -1,0 +1,166 @@
+{
+  "control_passed": true,
+  "cuda_available": false,
+  "device": "cpu",
+  "duration_s": 0.5373072624206543,
+  "finished_at": 1779683174.94735,
+  "gpu_name": "",
+  "host": "DNa81a129.SUNet",
+  "metrics": {
+    "N_trials": 4000,
+    "aic_geometric_sim": {
+      "constant": 217102.62910582186,
+      "geometric": 176974.27490551624,
+      "recoverable_markov": 176976.62462463224
+    },
+    "aic_markov_sim": {
+      "constant": 219373.9029935617,
+      "geometric": 175719.52179160816,
+      "recoverable_markov": 175134.26901007816
+    },
+    "e_true": 0.05,
+    "fits_on_geometric_sim": {
+      "constant": {
+        "logL": -108550.31455291093,
+        "n_params": 1,
+        "p": 0.41445625
+      },
+      "geometric": {
+        "e": 0.0499587279040404,
+        "logL": -88486.13745275812,
+        "n_params": 1
+      },
+      "recoverable_markov": {
+        "logL": -88485.31231231612,
+        "n_params": 3,
+        "params": [
+          0.05015625,
+          0.06570312500000004,
+          3.0812499999999665
+        ]
+      }
+    },
+    "fits_on_markov_sim": {
+      "constant": {
+        "logL": -109685.95149678085,
+        "n_params": 1,
+        "p": 0.43839375
+      },
+      "geometric": {
+        "e": 0.046637073863636365,
+        "logL": -87858.76089580408,
+        "n_params": 1
+      },
+      "recoverable_markov": {
+        "logL": -87564.13450503908,
+        "n_params": 3,
+        "params": [
+          0.05015625,
+          0.2905029296874999,
+          1.7564941406249983
+        ]
+      }
+    },
+    "k_curves": {
+      "geometric_sim": [
+        3808,
+        3623,
+        3433,
+        3258,
+        3120,
+        2971,
+        2808,
+        2663,
+        2523,
+        2387,
+        2274,
+        2154,
+        2037,
+        1929,
+        1844,
+        1760,
+        1679,
+        1601,
+        1515,
+        1452,
+        1381,
+        1307,
+        1235,
+        1181,
+        1118,
+        1064,
+        1010,
+        950,
+        905,
+        856,
+        804,
+        765,
+        720,
+        687,
+        659,
+        626,
+        597,
+        563,
+        538,
+        508
+      ],
+      "markov_sim": [
+        4000,
+        3791,
+        3599,
+        3418,
+        3244,
+        3088,
+        2951,
+        2815,
+        2676,
+        2528,
+        2411,
+        2310,
+        2172,
+        2061,
+        1953,
+        1858,
+        1760,
+        1679,
+        1608,
+        1525,
+        1451,
+        1372,
+        1305,
+        1247,
+        1175,
+        1120,
+        1070,
+        1017,
+        967,
+        926,
+        884,
+        840,
+        789,
+        750,
+        719,
+        687,
+        651,
+        608,
+        572,
+        546
+      ]
+    },
+    "max_len": 40,
+    "num_seqs": 4000,
+    "recovery_true": 0.4,
+    "winner_on_geometric_sim": "geometric",
+    "winner_on_markov_sim": "recoverable_markov"
+  },
+  "notes": {
+    "interpretation": "On (1-e)^n data, geometric AIC should win (recoverable_markov's extra params are wasted). On recoverable-Markov data, geometric should LOSE -- either constant or recoverable_markov wins. This validates the AIC-based comparison for the real VeriBench setting."
+  },
+  "platform": "macOS-26.3.1-arm64-arm-64bit",
+  "probe": "probe_06_error_compounding",
+  "seed": 0,
+  "started_at": 1779683174.4100428,
+  "tag": "smoke",
+  "torch_version": "2.12.0",
+  "verdict": "CONTROL_PASS"
+}

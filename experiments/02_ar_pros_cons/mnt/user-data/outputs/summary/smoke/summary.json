@@ -1,32 +1,74 @@
 {
-  "device": "cuda",
-  "duration_s": 124.76486158370972,
-  "finished_at": 1779663402.75841,
+  "device": "cpu",
+  "duration_s": 240.18304085731506,
+  "finished_at": 1779683224.3130329,
   "overall_control_passed": true,
   "probes": {
     "probe_01": {
       "control_passed": true,
-      "duration_s": 57.164450883865356,
-      "result_path": "/dfs/scratch0/brando9/free-energy/experiments/02_ar_pros_cons/mnt/user-data/outputs/probe_01/smoke/result.json",
+      "duration_s": 1.825092077255249,
+      "result_path": "/Users/brandomiranda/free-energy/experiments/02_ar_pros_cons/mnt/user-data/outputs/probe_01/smoke/result.json",
+      "return_code": 0,
+      "verdict": "CONTROL_PASS"
+    },
+    "probe_02": {
+      "control_passed": true,
+      "duration_s": 1.3618979454040527,
+      "result_path": "/Users/brandomiranda/free-energy/experiments/02_ar_pros_cons/mnt/user-data/outputs/probe_02/smoke/result.json",
       "return_code": 0,
       "verdict": "CONTROL_PASS"
     },
     "probe_03": {
       "control_passed": true,
-      "duration_s": 0.5067410469055176,
-      "result_path": "/dfs/scratch0/brando9/free-energy/experiments/02_ar_pros_cons/mnt/user-data/outputs/probe_03/smoke/result.json",
+      "duration_s": 0.10815882682800293,
+      "result_path": "/Users/brandomiranda/free-energy/experiments/02_ar_pros_cons/mnt/user-data/outputs/probe_03/smoke/result.json",
       "return_code": 0,
       "verdict": "CONTROL_PASS"
     },
+    "probe_04": {
+      "control_passed": true,
+      "duration_s": 46.03412199020386,
+      "result_path": "/Users/brandomiranda/free-energy/experiments/02_ar_pros_cons/mnt/user-data/outputs/probe_04/smoke/result.json",
+      "return_code": 0,
+      "verdict": "CONFIRMED_REMOVABLE"
+    },
     "probe_05": {
       "control_passed": true,
-      "duration_s": 9.770475387573242,
-      "result_path": "/dfs/scratch0/brando9/free-energy/experiments/02_ar_pros_cons/mnt/user-data/outputs/probe_05/smoke/result.json",
+      "duration_s": 129.53182673454285,
+      "result_path": "/Users/brandomiranda/free-energy/experiments/02_ar_pros_cons/mnt/user-data/outputs/probe_05/smoke/result.json",
+      "return_code": 0,
+      "verdict": "CONTROL_PASS"
+    },
+    "probe_06": {
+      "control_passed": true,
+      "duration_s": 0.5373072624206543,
+      "result_path": "/Users/brandomiranda/free-energy/experiments/02_ar_pros_cons/mnt/user-data/outputs/probe_06/smoke/result.json",
+      "return_code": 0,
+      "verdict": "CONTROL_PASS"
+    },
+    "probe_07": {
+      "control_passed": true,
+      "duration_s": 31.588129997253418,
+      "result_path": "/Users/brandomiranda/free-energy/experiments/02_ar_pros_cons/mnt/user-data/outputs/probe_07/smoke/result.json",
+      "return_code": 0,
+      "verdict": "CONTROL_PASS"
+    },
+    "probe_08": {
+      "control_passed": true,
+      "duration_s": 8.129029035568237,
+      "result_path": "/Users/brandomiranda/free-energy/experiments/02_ar_pros_cons/mnt/user-data/outputs/probe_08/smoke/result.json",
+      "return_code": 0,
+      "verdict": "CONTROL_PASS"
+    },
+    "probe_data_wall": {
+      "control_passed": true,
+      "duration_s": 0.0579991340637207,
+      "result_path": "/Users/brandomiranda/free-energy/experiments/02_ar_pros_cons/mnt/user-data/outputs/probe_data_wall/smoke/result.json",
       "return_code": 0,
       "verdict": "CONTROL_PASS"
     }
   },
   "seed": 0,
-  "started_at": 1779663277.9935484,
+  "started_at": 1779682984.129992,
   "tag": "smoke"
 }
