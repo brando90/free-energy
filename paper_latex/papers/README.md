@@ -13,12 +13,17 @@ three-paper stack is deliberately staged:
 | Track | Publication role | Status | Canonical source |
 |---|---|---|---|
 | 1. Review paper | "Guarantees" a publication by making the literature map, claim audit, and experimental protocol useful on their own. | Active draft | `../main.tex` and `review_paper/README.md` |
-| 2. Data-centric comparison paper | "Guarantees" a publication by comparing three architectures on the same data/protocol: AR/LLM baseline, normal EBM, and our novel EBM. | Scaffolded | `data_centric_architecture_comparison/main.tex` |
+| 2. Data-centric comparison paper | "Guarantees" a publication by comparing AR/LLM baseline, normal EBM, our novel EBM, and a diffusion/iterative baseline on the same data/protocol. | Scaffolded | `data_centric_architecture_comparison/main.tex` |
 | 3. Novel EBM paper | Conditional upside paper if the novel EBM actually works. | Scaffolded | `novel_ebm/main.tex` |
 
 The word "guarantees" is a strategy label, not a claim that acceptance is
 automatic. It means the paper has a defensible contribution even if the novel
 architecture result is negative.
+
+The vision derisking scaffold lives in
+`../../experiments/04_vision_energy_comparison/`. It starts with Digits/MNIST
+smoke tests and includes a diffusion baseline so the data-centric comparison is
+not artificially limited to AR versus EBM.
 
 ## Assignment rule
 

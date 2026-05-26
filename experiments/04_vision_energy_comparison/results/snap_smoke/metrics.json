@@ -1,0 +1,105 @@
+{
+  "config": {
+    "dataset": "digits",
+    "tag": "snap_smoke",
+    "output_dir": "results",
+    "seed": 0,
+    "device": "cuda",
+    "batch_size": 128,
+    "epochs": 1,
+    "diffusion_epochs": 1,
+    "lr": 0.001,
+    "max_train": 256,
+    "max_test": 128,
+    "models": [
+      "cnn",
+      "tiny_vit",
+      "ebm",
+      "novel_ebm",
+      "diffusion"
+    ],
+    "smoke": true
+  },
+  "environment": {
+    "python": "3.12.9",
+    "platform": "Linux-6.8.0-117-generic-x86_64-with-glibc2.39",
+    "torch": "2.5.1+cu124",
+    "cuda_available": true,
+    "cuda_device_count": 1,
+    "device_name": "NVIDIA H200"
+  },
+  "results": [
+    {
+      "loss": 2.2988739013671875,
+      "accuracy": 0.125,
+      "epoch": 1,
+      "model": "cnn",
+      "objective": "cross_entropy",
+      "history": [
+        {
+          "loss": 2.2988739013671875,
+          "accuracy": 0.125,
+          "epoch": 1
+        }
+      ]
+    },
+    {
+      "loss": 2.343160390853882,
+      "accuracy": 0.109375,
+      "epoch": 1,
+      "model": "tiny_vit",
+      "objective": "cross_entropy",
+      "history": [
+        {
+          "loss": 2.343160390853882,
+          "accuracy": 0.109375,
+          "epoch": 1
+        }
+      ]
+    },
+    {
+      "loss": 2.2943522930145264,
+      "accuracy": 0.1875,
+      "energy_margin_mean": -0.08246711449464783,
+      "epoch": 1,
+      "model": "ebm",
+      "objective": "energy_ce",
+      "history": [
+        {
+          "loss": 2.2943522930145264,
+          "accuracy": 0.1875,
+          "energy_margin_mean": -0.08246711449464783,
+          "epoch": 1
+        }
+      ]
+    },
+    {
+      "loss": 2.294889211654663,
+      "accuracy": 0.1015625,
+      "energy_margin_mean": -0.07710538589162752,
+      "epoch": 1,
+      "model": "novel_ebm",
+      "objective": "energy_ce",
+      "contrastive_weight": 0.2,
+      "history": [
+        {
+          "loss": 2.294889211654663,
+          "accuracy": 0.1015625,
+          "energy_margin_mean": -0.07710538589162752,
+          "epoch": 1
+        }
+      ]
+    },
+    {
+      "model": "diffusion",
+      "objective": "ddpm_noise_prediction",
+      "test_noise_mse": 0.9955915212631226,
+      "history": [
+        {
+          "epoch": 1,
+          "test_noise_mse": 0.9955915212631226
+        }
+      ]
+    }
+  ]
+}

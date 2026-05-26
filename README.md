@@ -55,7 +55,7 @@ does not work.
 | Track | Role | Source |
 |---|---|---|
 | **1. Review paper** | "Guarantees" a publication by making the literature map, AR/LLM claim audit, and experiment protocol useful on their own. | `paper_latex/main.tex` |
-| **2. Data-centric comparison paper** | "Guarantees" a publication by comparing AR/LLM, normal EBM, and our novel EBM under the same data, verifier, and compute protocol. | `paper_latex/papers/data_centric_architecture_comparison/` |
+| **2. Data-centric comparison paper** | "Guarantees" a publication by comparing AR/LLM, normal EBM, our novel EBM, and diffusion/iterative baselines under the same data, verifier, and compute protocol. | `paper_latex/papers/data_centric_architecture_comparison/` |
 | **3. Novel EBM paper** | Upside paper if the novel EBM actually works. | `paper_latex/papers/novel_ebm/` |
 
 Here "guarantees" means publication-floor strategy, not automatic acceptance:
