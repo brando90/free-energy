@@ -83,11 +83,13 @@ Goal: determine which mechanisms matter once everything is trained together.
 
 ### Track D: vision first pass
 
-MNIST is acceptable for now because the goal is methodology, not benchmark
-leadership.
+Digits/MNIST is acceptable for now because the goal is methodology, not benchmark
+leadership. The working scaffold lives in `experiments/04_vision_energy_comparison/`.
 
 - Treat images as sequences under several orderings.
-- Compare AR next-pixel/token models, masked/iterative models, and simple EBMs.
+- Compare CNN, tiny ViT/patch transformer, AR next-pixel/token models,
+  masked/iterative models, conventional EBMs, the novel EBM prototype, and a
+  diffusion/denoising baseline.
 - Track whether global digit validity or classifier agreement decays with
   sequence length/order.
 - Later replace or supplement MNIST with a more realistic vision dataset.

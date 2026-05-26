@@ -7,7 +7,7 @@
 | Track | Publication role | Source |
 |---|---|---|
 | **1. Review paper** | "Guarantees" a publication by making the literature map, claim audit, and experimental protocol useful on their own. | `main.tex` |
-| **2. Data-centric comparison paper** | "Guarantees" a publication by comparing AR/LLM, normal EBM, and our novel EBM on the same toy, VeriBench, and MNIST-first protocol. | `papers/data_centric_architecture_comparison/main.tex` |
+| **2. Data-centric comparison paper** | "Guarantees" a publication by comparing AR/LLM, normal EBM, our novel EBM, and diffusion/iterative baselines on the same toy, VeriBench, and MNIST-first protocol. | `papers/data_centric_architecture_comparison/main.tex` |
 | **3. Novel EBM paper** | Conditional upside paper if the novel EBM actually works. | `papers/novel_ebm/main.tex` |
 
 The quoted "guarantees" are a project-management target: the first two papers

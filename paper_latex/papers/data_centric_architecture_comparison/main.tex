@@ -5,6 +5,8 @@
 \usepackage{hyperref}
 \usepackage{amsmath,amssymb}
 \usepackage{enumitem}
+\usepackage{microtype}
+\setlength{\emergencystretch}{2em}
 
 \title{A Data-Centric Comparison of Autoregressive, Energy-Based, and Novel Energy Models for Verifier-Guided Generation}
 \author{Brando Miranda}
@@ -14,9 +16,12 @@
 \maketitle
 
 \begin{abstract}
-This paper compares three model families under one data-centric protocol:
+This paper compares three primary model families under one data-centric protocol:
 an autoregressive language-model baseline, a conventional energy-based model,
 and a novel free-energy/post-softmax energy model.
+It also includes diffusion/iterative denoising as a required reference point,
+because otherwise the comparison artificially excludes the strongest
+non-autoregressive generative baseline.
 The contribution is the controlled comparison itself: common splits, common
 candidate pools, verifier-backed metrics, and matched compute reporting on toy
 controls, VeriBench/Lean, and an initial MNIST vision track.
@@ -42,6 +47,9 @@ fixed.
         surrogates where appropriate.
   \item \textbf{Novel EBM.}
         The proposed free-energy/post-softmax model from this project.
+  \item \textbf{Diffusion / iterative denoising reference.}
+        A DDPM-style or masked-diffusion-style baseline that pays iterative
+        inference cost rather than local autoregressive normalization.
 \end{enumerate}
 
 \section{Data}
