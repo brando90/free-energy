@@ -33,7 +33,7 @@ So the suite has two levels:
    causally attributable rather than merely correlated.
 
 The deliverable that ties them together is the **bridge analysis**
-(`integrated/BRIDGE.md`): plot each mechanism's isolated strength against its
+(`BRIDGE.md`): plot each mechanism's isolated strength against its
 realized effect. Three outcomes, all informative:
 
 | Outcome | Meaning |
@@ -59,7 +59,7 @@ Every probe is tagged with the layer it tests. Never mix layers in one claim.
 
 ## The claims under test
 
-Full detail and strength ratings in [`docs/CLAIMS.md`](docs/CLAIMS.md).
+Full detail and strength ratings in [`CLAIMS.md`](CLAIMS.md).
 
 | # | Claim | Layer | Prior strength |
 |---|---|---|---|
@@ -74,7 +74,7 @@ Full detail and strength ratings in [`docs/CLAIMS.md`](docs/CLAIMS.md).
 | — | Data wall | external | empirical |
 
 Claims explicitly **excluded** as weak/non-operationalizable (and why) are listed
-in `docs/CLAIMS.md` so the exclusion is part of the argument, not an omission.
+in [`CLAIMS.md`](CLAIMS.md) so the exclusion is part of the argument, not an omission.
 
 ---
 
@@ -84,18 +84,31 @@ in `docs/CLAIMS.md` so the exclusion is part of the argument, not an omission.
 ar_claims/
 ├── README.md                  ← you are here
 ├── FINDINGS.md                ← living results log; update as runs complete
-├── docs/
-│   ├── CLAIMS.md              ← the claims, strength ratings, what each motivates
-│   └── METHODOLOGY.md         ← layer separation, controls, stats protocol
+├── CLAIMS.md                  ← the claims, strength ratings, what each motivates
+├── METHODOLOGY.md             ← layer separation, controls, stats protocol
+├── blog/
+│   └── 2026-05-26-lecun-error-compounding-experiment.md
+├── data/
+│   ├── setup.py               ← VeriBench train/val/test splitter
+│   └── splits/                ← generated manifests; gitignored by convention
 ├── probes/
 │   ├── README.md              ← isolated-probe suite overview + run order
-│   └── PROBE_SPECS.md         ← all 8 probes: prediction / null / measurement
+│   └── *.py                   ← isolated probe implementations
+├── PROBE_SPECS.md             ← all 8 probes: prediction / null / measurement
+├── toy/
+│   ├── README.md              ← toy controls and @eobbad request
+│   └── toy_error_process.py
 ├── integrated/
-│   ├── README.md              ← integrated harness + factorial ablation grid
-│   └── BRIDGE.md              ← isolated-strength ↔ realized-effect analysis
-└── data/
-    └── VERIBENCH.md           ← dataset + Lean verifier setup, smoke subset
+│   └── README.md              ← integrated harness + factorial ablation grid
+├── BRIDGE.md                  ← isolated-strength ↔ realized-effect analysis
+└── VERIBENCH.md               ← dataset + Lean verifier setup, smoke subset
 ```
+
+The website repo is also mounted as a git submodule at `website/brandomiranda`
+so blog drafts can be checked against the site without copying the experiment
+text into a second source of truth. The live local website checkout at
+`~/brandomiranda` can symlink `_drafts/*.md` files back to `blog/*.md`; this
+experiment starts that pattern with the LeCun error-compounding post.
 
 ---
 
@@ -123,6 +136,35 @@ python -m probes.run_all --smoke
 # 2. results land in mnt/user-data/outputs/<probe>/smoke/result.json
 ```
 
+### Toy control for LeCun's hypothesis
+
+```bash
+cd experiments/02_ar_pros_cons
+python toy/toy_error_process.py --output-dir toy/results
+```
+
+This produces `toy/results/toy_error_process.png` and a JSON summary comparing:
+
+- blind AR rollout, where `(1-e)^T` should fit;
+- verifier resampling, where the raw error rate is not the surviving error rate;
+- a recoverable process, where "off manifold" is not absorbing.
+
+`toy/README.md` includes an explicit @eobbad request for a more VeriBench-like
+toy that shows both the claimed AR cons and the real AR pros.
+
+### VeriBench train/val/test manifests
+
+```bash
+cd experiments/02_ar_pros_cons
+python -m data.setup --smoke
+python -m data.setup --include-generated-agents
+```
+
+The splitter scans `~/veribench/veribench_dataset`, keeps all variants of a task
+in the same split, and writes JSONL manifests under `data/splits/`. The manifests
+store absolute local paths and metadata only; they do not copy benchmark data into
+this repo.
+
 ### Snap cluster (skampere2 by default)
 
 The helper script `run_on_snap.sh` rsyncs the experiment to a snap host, sets up
@@ -149,9 +191,9 @@ and a combined `summary/<tag>/summary.json`.
 
 ### What is *not* wired yet
 
-`integrated/run_grid.py`, `data.setup --smoke`, and probes 02/04/06/07/08 are
-still TODO — see `PROBE_SPECS.md`. The integrated harness section below is the
-target shape once the data + verifier are in place.
+`integrated/run_grid.py` and the verifier-backed real-data paths for probes
+02/04/06/07/08 are still TODO — see `PROBE_SPECS.md`. The data splitter and toy
+controls are now wired.
 
 ```bash
 # planned, not yet implemented
@@ -170,7 +212,7 @@ INTERACTION-DRIVEN / NOT-SUPPORTED in this setup**, each with a realized effect
 size, a bootstrap CI, and a caveats column (sample size, model scale, what was
 not controlled). Plus a `FINDINGS.md` narrative written as runs complete.
 
-See [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) for the statistical protocol
+See [`METHODOLOGY.md`](METHODOLOGY.md) for the statistical protocol
 (seeds, bootstrap CIs, compute- vs param-matched comparisons, pre-registration of
 predicted signs).
 

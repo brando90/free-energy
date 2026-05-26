@@ -72,13 +72,44 @@ of the (1−e)ⁿ-vs-recoverable-Markov test.
 
 ---
 
-## Smoke subset (run this first)
+## Train / validation / test split (run this first)
 
 ```bash
-python -m data.setup --smoke      # 20 examples, verifies Lean toolchain is callable
+cd experiments/02_ar_pros_cons
+
+# Gold Lean files only. Writes train/val/test plus a 20-row smoke manifest.
+python -m data.setup --smoke
+
+# Include generated agent candidates as additional rows, split by the same task id.
+python -m data.setup --include-generated-agents --smoke
 ```
 
-The smoke subset must:
+`data.setup` scans `~/veribench/veribench_dataset` by default and writes:
+
+```text
+data/splits/veribench_manifest.jsonl
+data/splits/train.jsonl
+data/splits/val.jsonl
+data/splits/test.jsonl
+data/splits/smoke.jsonl
+data/splits/summary.json
+```
+
+The split is deterministic and task-level: all generated variants of the same
+task stay in the same split. That avoids a subtle but fatal leakage mode where
+`agent0` for a task lands in train and `agent1` for the same task lands in test.
+
+The current manifest rows include:
+
+- `split`, `task_id`, `variant_id`, `source_kind`, and `family`;
+- absolute local `lean_path` and optional `py_path`;
+- line/character counts;
+- theorem count, `sorry`/`admit` count, and a tactic-count proxy;
+- SHA-256 of the Lean source for cache keys.
+
+## Smoke subset requirements
+
+The smoke subset should:
 - contain a spread of proof depths (so probe 05's depth axis is non-trivial),
 - include at least a few known-recoverable proofs (so probe 06 can detect recovery),
 - run the *entire* probe suite + integrated smoke grid end-to-end on CPU in minutes.

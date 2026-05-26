@@ -221,6 +221,7 @@ __marimo__/
 papers/*.pdf
 runs/
 wandb/
+experiments/02_ar_pros_cons/data/splits/
 **/results/*.png
 **/results/*.npz
 **/results/*.pt
