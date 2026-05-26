@@ -16,11 +16,29 @@ training update directly testable before introducing approximate MCMC.
 
 - `PLAN.md` - experiment plan and success criteria.
 - `TRANSCRIPTION.md` - best-effort transcription of the handwritten notes.
+- `blog/2026-05-26-toy-ebm-training.md` - blog draft explaining the finite-support EBM training/inference loop.
 - `assets/` - raw uploaded note photos.
 - `run_toy_ebm.py` - PyTorch experiment runner.
 - `test_toy_ebm.py` - smoke/unit tests.
 - `run_smoke_test.sh` - CLI smoke experiment.
 - `results/` - generated JSON/markdown reports.
+
+## Blog Draft
+
+The canonical experiment blog draft is:
+
+```text
+experiments/01_toy_ebm_training/blog/2026-05-26-toy-ebm-training.md
+```
+
+When rendering through Brando's website, copy the same markdown file into the
+website submodule at:
+
+```text
+website/brandomiranda/_drafts/2026-05-26-toy-ebm-training.md
+```
+
+Keep the two copies byte-for-byte identical when the website copy is used.
 
 ## Run
 
