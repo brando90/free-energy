@@ -1,6 +1,6 @@
 # Free Energy paper draft
 
-**TLDR:** Literature-grounded audit of the standard objections to autoregressive language models, the partition-function obstacle of energy-based alternatives, and the broader space of architectures (diffusion, JEPA, SSMs, AR + verifier). Companion to the empirical suite in `../experiments/02_ar_pros_cons/`. **Status: DRAFT** — do not submit, do not cite externally yet.
+**TLDR:** Literature-grounded audit of the standard objections to autoregressive language models, the partition-function obstacle of energy-based alternatives, and the broader space of architectures (diffusion, JEPA, SSMs, AR + verifier). Companion to the empirical suite in `../experiments/02_ar_pros_cons/` and the review-paper coordination layer in `../experiments/03_review_paper/`. **Status: DRAFT** — do not submit, do not cite externally yet.
 
 ## Layout
 
@@ -13,6 +13,7 @@ paper_latex/
 ├── 02_ar_advantages.tex           the honest pros
 ├── 03_critiques_catalog.tex       layer-tagged catalog of objections
 ├── 04_what_holds.tex               which objections survive the audit
+├── 04a_experimental_program.tex    toy / VeriBench / MNIST empirical plan
 ├── 05_ebm_motivation.tex          EBMs + partition function
 ├── 06_ebm_training.tex            CD / NCE / score matching / Stein
 ├── 07_ebm_inference.tex           Langevin / variational / energy descent
@@ -48,7 +49,14 @@ This paper is the literature-grounded half of a two-part project. The probe-by-p
 ../experiments/02_ar_pros_cons/
 ```
 
-with claim definitions in `CLAIMS.md`, probe specs in `PROBE_SPECS.md`, and a living results log in `FINDINGS.md`. The paper references that suite by relative path throughout.
+with claim definitions in `CLAIMS.md`, probe specs in `PROBE_SPECS.md`, and a living results log in `FINDINGS.md`. The review-paper coordination layer lives at
+
+```
+../experiments/03_review_paper/
+```
+
+with the Codex runbook, section map, blog drafts, and paper synchronization plan.
+The paper references these folders by relative path throughout.
 
 ## Status
 
