@@ -58,12 +58,14 @@ Each is a different choice about \emph{where the hard part lives}.
 
 This paper is the literature-grounded half of a two-part project.
 The companion experiment, \texttt{experiments/02\_ar\_pros\_cons} in the same repository, tests each surviving claim with an isolated probe at the correct layer and then re-measures the same mechanism inside an end-to-end run on a domain with a hard verifier (Lean 4, via \textsc{VeriBench}).
+The review-paper coordination layer, \texttt{experiments/03\_review\_paper}, keeps the paper, blog series, and experiment plan synchronized and adds a simple vision track, initially \textsc{MNIST}, before moving to a richer dataset.
 We refer to that suite throughout, both for which claims it pre-registers as load-bearing and for which it pre-registers as likely masked once everything is trained together.
 
 The remainder of the paper is organized as follows.
 \Cref{sec:advantages} restates the honest case for autoregressive language models: the four design properties that explain why they scaled.
 \Cref{sec:catalog} catalogs the standard objections, with layer tags.
 \Cref{sec:what_holds} evaluates each objection against the bar of theorem, robust empirical, weak empirical, or refuted, and identifies the three independent indictments the surviving claims support.
+\Cref{sec:experimental_program} states the companion experimental program: toy controls, \textsc{VeriBench}/Lean, and an initial \textsc{MNIST} vision track.
 \Cref{sec:ebm_motivation} introduces energy-based models from the global-scoring viewpoint and isolates the partition-function obstacle as the central cost.
 \Cref{sec:ebm_training,sec:ebm_inference} survey the training and inference methods that aim to evade or amortize that cost.
 \Cref{sec:other_alts} surveys non-EBM alternatives.

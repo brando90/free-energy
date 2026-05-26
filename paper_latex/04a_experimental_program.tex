@@ -1,0 +1,107 @@
+% =====================================================================
+% 04a -- Companion experimental program.
+% =====================================================================
+% Planning (% comments only):
+% This section ties the review paper to the repo experiments. The core
+% principle is: every critique should either be a theorem/literature
+% claim or have a falsifiable probe with a toy control and a real-data
+% test. The first real-data domain is VeriBench/Lean; MNIST is the first
+% simple vision domain for order/global-validity effects.
+% =====================================================================
+
+\section{Companion Experimental Program}
+\label{sec:experimental_program}
+
+The previous sections separate the objections by layer and identify which ones are worth taking seriously.
+This section describes the empirical program that keeps the review honest.
+The goal is not to produce a single benchmark score in favor of or against autoregressive models.
+The goal is to test each objection at the layer where it actually lives, first in a toy setting where the effect should be visible by construction, and then in a real domain where the effect may be masked, amplified, or reversed.
+
+The coordination folder for this program is \texttt{experiments/03\_review\_paper/}.
+The first concrete claim suite is \texttt{experiments/02\_ar\_pros\_cons/}.
+The paper, blogs, and experiments are intended to move together: a claim becomes paper-ready only after it has a reproducible command, a saved result, a figure or table, and a caveat.
+
+\subsection{Three experimental tiers}
+\label{ssec:three_tiers}
+
+\paragraph{Tier 1: toy controls.}
+Toy controls are not substitutes for real data; they are positive controls.
+For the LeCun compounding argument, a blind independent-error rollout should follow
+\begin{equation}
+  \PP[\text{success at length } T] = (1-\varepsilon)^T.
+  \label{eq:lecun_toy_control}
+\end{equation}
+If a toy built to satisfy the assumptions of \cref{eq:lecun_toy_control} does not produce the geometric curve, the probe is broken.
+The useful comparisons are then verifier-resampling and recoverable-error toys, where the same raw local error rate need not produce the same surviving sequence-level error rate.
+The current toy harness lives in \texttt{experiments/02\_ar\_pros\_cons/toy/}.
+We explicitly leave a review item for Elyas Obbad to propose a toy closer to \textsc{VeriBench}: a setting that shows both the claimed autoregressive failure mode and the real autoregressive advantages of exact likelihood and cheap local normalization.
+
+\paragraph{Tier 2: VeriBench/Lean.}
+VeriBench supplies the hard-checker domain this paper needs~\citep{daruru2024veribench,moura2021lean}.
+The relevant outcome is not token accuracy but verifier survival: whether a generated Lean file, theorem, or proof passes the Lean kernel and associated checks.
+This matters because the strongest form of the compounding argument assumes unrecoverability.
+A verifier-backed system is designed precisely to reject, retry, and recover.
+
+The current data splitter scans a local \texttt{\textasciitilde/veribench/veribench\_dataset} checkout and writes deterministic train/validation/test manifests at the task level.
+The first real-data analysis should fit three models to pass probability as a function of length or proof-depth proxy:
+\begin{enumerate}[leftmargin=2em]
+  \item a geometric model, corresponding to \cref{eq:lecun_toy_control};
+  \item a constant-pass model, corresponding to length-insensitive success;
+  \item a recoverable Markov model, corresponding to nonzero probability of returning to the valid set after an error.
+\end{enumerate}
+If the recoverable model fits better, the conclusion is not that \cref{eq:lecun_toy_control} is algebraically false.
+The conclusion is that it is the wrong model of a verifier-guided system.
+If the geometric model fits even after retry/search/verifier feedback, then the compounding critique survives in exactly the domain where we expected it to fail.
+
+\paragraph{Tier 3: a simple vision domain.}
+The first vision domain can be \textsc{MNIST}~\citep{lecun1998gradient}.
+The purpose is methodology rather than benchmark leadership.
+Images can be treated as token sequences under raster, shuffled, patch, or learned orderings.
+This makes it possible to compare:
+\begin{itemize}
+  \item raster-order autoregressive reconstruction;
+  \item shuffled-order autoregressive reconstruction;
+  \item masked or iterative refinement;
+  \item an energy classifier or ranker over complete images.
+\end{itemize}
+The measurement is whether local prediction and ordering choices create measurable global-validity or classifier-agreement failures after controlling for parameter count and compute.
+Later, MNIST should be replaced or supplemented by a richer vision dataset, but the first pass should remain small enough that methodological mistakes are visible.
+
+\subsection{Integrated tests rather than isolated anecdotes}
+\label{ssec:integrated_tests}
+
+The isolated probes establish that mechanisms exist.
+They do not establish that a mechanism moves the downstream metric once everything is trained together.
+For that, the companion suite uses an integrated harness.
+One run logs hidden-state rank, attention entropy, bottleneck rank deficit, invalid-token mass, spectral-norm product, and verifier pass rate through training.
+A factorial ablation grid then toggles the commitments separately:
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Axis & Baseline & Alternative \\
+\midrule
+attention normalization & softmax & sigmoid/linear or energy-style attention \\
+objective & MLE & margin/energy/verifier-aware objective \\
+inference & blind AR rollout & verifier-guided retry/search \\
+ordering & left-to-right & any-order/masked/iterative \\
+\bottomrule
+\end{tabular}
+\end{center}
+The scientific object is not just the main effect of each toggle but the interactions.
+For example, replacing softmax may do little under MLE but matter under an energy or margin objective.
+That is a different conclusion from ``softmax is unnecessary,'' and it is the kind of conclusion the review paper should be able to state cleanly.
+
+\subsection{How results enter the paper}
+\label{ssec:result_promotion}
+
+A result should be promoted from experiment log to paper text only after it satisfies five conditions:
+\begin{enumerate}[leftmargin=2em]
+  \item a reproducible command exists in the experiment folder;
+  \item JSON or tabular statistics are saved;
+  \item a figure or table exists;
+  \item uncertainty is reported with seeds or bootstrap intervals when applicable;
+  \item the caveat is written before the interpretation.
+\end{enumerate}
+The blog series is allowed to be earlier and more exploratory.
+The paper should be stricter.
+This is why the first blog post can introduce the LeCun experiment before the \textsc{VeriBench} result is complete, but this section treats the result as pending until the real-data run lands in \texttt{FINDINGS.md}.
