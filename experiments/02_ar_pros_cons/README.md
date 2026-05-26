@@ -87,6 +87,7 @@ ar_claims/
 ├── CLAIMS.md                  ← the claims, strength ratings, what each motivates
 ├── METHODOLOGY.md             ← layer separation, controls, stats protocol
 ├── blog/
+│   ├── 2026-05-24-autoregressive-models-pros-cons.md
 │   └── 2026-05-26-lecun-error-compounding-experiment.md
 ├── data/
 │   ├── setup.py               ← VeriBench train/val/test splitter
@@ -105,10 +106,12 @@ ar_claims/
 ```
 
 The website repo is also mounted as a git submodule at `website/brandomiranda`
-so blog drafts can be checked against the site without copying the experiment
-text into a second source of truth. The live local website checkout at
-`~/brandomiranda` can symlink `_drafts/*.md` files back to `blog/*.md`; this
-experiment starts that pattern with the LeCun error-compounding post.
+so blog drafts can be checked against the site. The canonical experiment-facing
+AR pros/cons draft lives at
+`blog/2026-05-24-autoregressive-models-pros-cons.md`, and the website-visible
+copy should be committed as
+`website/brandomiranda/_drafts/2026-05-24-autoregressive-models-pros-cons.md`.
+Use real markdown copies for GitHub visibility rather than external symlinks.
 
 ---
 
