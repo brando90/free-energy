@@ -67,6 +67,27 @@ Elyas should be asked to pressure-test toy controls and EBM framing; Sri should
 be asked to pressure-test VeriBench splits, Lean verifier metrics, and pass@k;
 Brando owns the paper thesis and final strategy.
 
+## Blog and website workflow
+
+This repo includes Brando's website as a git submodule at
+`website/brandomiranda`, because some blog drafts are canonical experiment
+artifacts in `free-energy` while others are canonical website-side drafts.
+
+Use `BLOG_WORKFLOW.md` for the rule of thumb:
+
+- experiment reports start in `experiments/<NN_name>/blog/` in this repo;
+- website-native drafts live in `website/brandomiranda`;
+- anything that should be visible on GitHub in the website must be committed as
+  a real markdown file in the website repo, not only as a local symlink;
+- after merging a website PR, update and merge the `website/brandomiranda`
+  submodule pointer in `free-energy`.
+
+Initialize the website submodule from a fresh clone with:
+
+```bash
+git submodule update --init --recursive website/brandomiranda
+```
+
 ## Against this thesis
 
 The strongest counter-evidence is that transformers + scaling loss may
