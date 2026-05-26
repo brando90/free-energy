@@ -1,6 +1,21 @@
-# Free Energy paper draft
+# Free Energy paper drafts
 
-**TLDR:** Literature-grounded audit of the standard objections to autoregressive language models, the partition-function obstacle of energy-based alternatives, and the broader space of architectures (diffusion, JEPA, SSMs, AR + verifier). Companion to the empirical suite in `../experiments/02_ar_pros_cons/` and the review-paper coordination layer in `../experiments/03_review_paper/`. **Status: DRAFT** — do not submit, do not cite externally yet.
+**TLDR:** This folder holds the Free Energy paper portfolio. The root-level `main.tex` is the review paper. `papers/` holds the data-centric comparison paper and the conditional novel-EBM paper. The strategy is to have two publication-floor papers (review + data-centric comparison) plus one upside paper if the novel EBM works. **Status: DRAFT** — do not submit, do not cite externally yet.
+
+## Three-paper strategy
+
+| Track | Publication role | Source |
+|---|---|---|
+| **1. Review paper** | "Guarantees" a publication by making the literature map, claim audit, and experimental protocol useful on their own. | `main.tex` |
+| **2. Data-centric comparison paper** | "Guarantees" a publication by comparing AR/LLM, normal EBM, and our novel EBM on the same toy, VeriBench, and MNIST-first protocol. | `papers/data_centric_architecture_comparison/main.tex` |
+| **3. Novel EBM paper** | Conditional upside paper if the novel EBM actually works. | `papers/novel_ebm/main.tex` |
+
+The quoted "guarantees" are a project-management target: the first two papers
+should remain publishable even if the novel architecture result is negative.
+
+Paper-track PRs should assign `@brando90`, `@eobbad`, and `@Srivatsava`.
+Use the PR body to ask `@eobbad` for toy/EBM framing review and `@Srivatsava`
+for VeriBench/Lean protocol review.
 
 ## Layout
 
@@ -24,6 +39,17 @@ paper_latex/
 ├── 98_appendix_proofs.tex
 ├── refs.bib
 ├── Makefile
+├── papers/
+│   ├── README.md
+│   ├── review_paper/README.md
+│   ├── data_centric_architecture_comparison/
+│   │   ├── main.tex
+│   │   ├── Makefile
+│   │   └── README.md
+│   └── novel_ebm/
+│       ├── main.tex
+│       ├── Makefile
+│       └── README.md
 ├── figures/                       (empty for now)
 └── README.md
 ```
@@ -63,3 +89,4 @@ The paper references these folders by relative path throughout.
 - Initial draft scaffolded 2026-05-25 (this branch: `paper_latex/ar_vs_ebm_initial_draft`).
 - Bibliography includes best-effort bibtex entries; several are marked `% TODO(verify)` and should be checked against canonical sources before any external submission.
 - Open questions live in `98_appendix_open_questions.tex` and are pre-registered as measurement targets for the companion suite.
+- Data-centric and novel-EBM paper scaffolds were added as planning drafts in `papers/`.

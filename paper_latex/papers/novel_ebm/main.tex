@@ -1,0 +1,92 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+
+\newcommand{\Etheta}{E_\theta}
+\newcommand{\Ztheta}{Z_\theta}
+
+\title{Free-Energy Inference for Verifier-Guided Structured Generation}
+\author{Brando Miranda}
+\date{\today \\ \emph{Planning draft}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper is the conditional upside paper for the Free Energy project.
+It should be advanced only if the proposed novel EBM produces a concrete
+advantage over autoregressive and conventional EBM baselines on verifier-guided
+structured generation.
+\end{abstract}
+
+\section{Problem}
+
+Autoregressive models turn global structured generation into local next-token
+prediction.
+Energy-based models score whole objects but inherit hard normalization and
+sampling.
+The goal of this paper is to propose and test a model that keeps the global
+compatibility benefits of energies while making training and inference practical
+enough for verifier-guided tasks.
+
+\section{Model}
+
+The model should be stated as an energy or free-energy objective.
+At minimum, specify:
+
+\begin{equation}
+  \Etheta(x, y)
+\end{equation}
+
+for context $x$ and candidate structured object $y$, plus the training surrogate
+that avoids or approximates
+
+\begin{equation}
+  \Ztheta(x) = \sum_y \exp(-\Etheta(x,y)).
+\end{equation}
+
+\section{Training objective}
+
+The paper should state exactly which cost is being avoided or relocated:
+
+\begin{itemize}[leftmargin=2em]
+  \item local softmax normalization;
+  \item global partition-function estimation;
+  \item verifier-guided contrastive or margin loss;
+  \item free-energy/variational surrogate;
+  \item test-time energy descent or search.
+\end{itemize}
+
+\section{Inference}
+
+Inference should be described as a budgeted optimization procedure rather than a
+vague global search.
+Report the number of energy evaluations, verifier calls, gradient steps, samples,
+and retries.
+
+\section{Experiments}
+
+\begin{enumerate}[leftmargin=2em]
+  \item Toy controls where the mechanism is known to help.
+  \item VeriBench/Lean structured generation.
+  \item MNIST/order-effect smoke if it clarifies the mechanism.
+  \item Ablations against AR and conventional EBM baselines.
+\end{enumerate}
+
+\section{Go/no-go criteria}
+
+This paper should not be submitted unless at least one of the following is true:
+
+\begin{itemize}[leftmargin=2em]
+  \item pass@k improves over both AR and normal EBM baselines at matched budget;
+  \item cost per verified solution improves substantially;
+  \item scaling with proof/program difficulty is better;
+  \item a negative result reveals a publishable failure mode of existing EBM
+        assumptions.
+\end{itemize}
+
+\end{document}

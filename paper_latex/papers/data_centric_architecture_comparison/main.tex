@@ -1,0 +1,88 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+
+\title{A Data-Centric Comparison of Autoregressive, Energy-Based, and Novel Energy Models for Verifier-Guided Generation}
+\author{Brando Miranda}
+\date{\today \\ \emph{Planning draft}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper compares three model families under one data-centric protocol:
+an autoregressive language-model baseline, a conventional energy-based model,
+and a novel free-energy/post-softmax energy model.
+The contribution is the controlled comparison itself: common splits, common
+candidate pools, verifier-backed metrics, and matched compute reporting on toy
+controls, VeriBench/Lean, and an initial MNIST vision track.
+\end{abstract}
+
+\section{Thesis}
+
+The paper should be publishable even if the novel EBM is only competitive or
+partially successful.
+The scientific claim is that architecture debates are underdetermined unless the
+data, verifier, candidate pool, compute budget, and evaluation protocol are held
+fixed.
+
+\section{Model families}
+
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Autoregressive/LLM baseline.}
+        A standard next-token model with teacher forcing, softmax attention, and
+        softmax output head.
+  \item \textbf{Normal EBM baseline.}
+        A conventional energy model trained with established EBM objectives such
+        as contrastive divergence, noise-contrastive estimation, or score-style
+        surrogates where appropriate.
+  \item \textbf{Novel EBM.}
+        The proposed free-energy/post-softmax model from this project.
+\end{enumerate}
+
+\section{Data}
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Toy controls:} mechanisms with known ground truth.
+  \item \textbf{VeriBench/Lean:} primary real-data domain with a hard verifier.
+  \item \textbf{MNIST:} first vision smoke test for ordering/global-validity effects.
+  \item \textbf{Later vision dataset:} to decide after the MNIST methodology is
+        stable.
+\end{itemize}
+
+\section{Metrics}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Metric & Purpose \\
+\midrule
+Pass@k & verifier-backed success \\
+cost per verified solution & efficiency under search/retry \\
+success vs length/depth & test error-compounding hypotheses \\
+candidate energy/rank quality & evaluate EBM scoring \\
+matched-compute loss/pass rate & prevent unfair architecture comparisons \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Experimental protocol}
+
+Every run reports the split, model class, parameter count, training compute,
+inference budget, verifier budget, seeds, and bootstrap intervals where
+applicable.
+The data protocol is the paper's main contribution, so leakage boundaries and
+candidate-pool construction should be described before model results.
+
+\section{Expected outcomes}
+
+A positive result shows that the novel EBM improves verifier-backed success or
+cost per verified solution.
+A useful negative result shows that the data-centric protocol exposes a precise
+failure mode of EBM training, EBM inference, or AR baselines.
+
+\end{document}

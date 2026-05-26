@@ -46,6 +46,27 @@ Exploratory. Bets, not promises. The thesis is that the partition function
 and softmax are worth questioning; the experiments will say whether any of
 this cashes out.
 
+## Paper strategy
+
+The project now has a three-paper publication stack under `paper_latex/`.
+The point is to make the project publishable even if the riskiest architecture
+does not work.
+
+| Track | Role | Source |
+|---|---|---|
+| **1. Review paper** | "Guarantees" a publication by making the literature map, AR/LLM claim audit, and experiment protocol useful on their own. | `paper_latex/main.tex` |
+| **2. Data-centric comparison paper** | "Guarantees" a publication by comparing AR/LLM, normal EBM, and our novel EBM under the same data, verifier, and compute protocol. | `paper_latex/papers/data_centric_architecture_comparison/` |
+| **3. Novel EBM paper** | Upside paper if the novel EBM actually works. | `paper_latex/papers/novel_ebm/` |
+
+Here "guarantees" means publication-floor strategy, not automatic acceptance:
+the review and data-centric papers should still make defensible contributions
+even if the novel model result is negative.
+
+Paper PRs should assign `@brando90`, `@eobbad`, and `@Srivatsava`.
+Elyas should be asked to pressure-test toy controls and EBM framing; Sri should
+be asked to pressure-test VeriBench splits, Lean verifier metrics, and pass@k;
+Brando owns the paper thesis and final strategy.
+
 ## Against this thesis
 
 The strongest counter-evidence is that transformers + scaling loss may
