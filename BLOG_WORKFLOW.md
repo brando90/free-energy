@@ -77,7 +77,7 @@ This keeps both repos discoverable:
 
 ## Current examples
 
-- `experiments/02_ar_pros_cons/blog/2026-05-26-lecun-error-compounding-experiment.md`
+- `experiments/02_ar_pros_cons/blog/2026-05-26-ar-error-compounding-real-or-fiction.md`
   is canonical in `free-energy` and mirrored into the website drafts folder.
 - `website/brandomiranda/experiments/08_ebm_partition_function_motivation/`
   owns a website-side source-note/blog workspace.

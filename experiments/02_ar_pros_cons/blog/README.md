@@ -6,7 +6,7 @@ autoregressive-model pros/cons experiment suite.
 Current drafts:
 
 - `2026-05-24-autoregressive-models-pros-cons.md`
-- `2026-05-26-lecun-error-compounding-experiment.md`
+- `2026-05-26-ar-error-compounding-real-or-fiction.md`
 
 Website linkage:
 
@@ -18,7 +18,7 @@ Website linkage:
 
 ```text
 website/brandomiranda/_drafts/2026-05-24-autoregressive-models-pros-cons.md
-website/brandomiranda/_drafts/2026-05-26-lecun-error-compounding-experiment.md
+website/brandomiranda/_drafts/2026-05-26-ar-error-compounding-real-or-fiction.md
 ```
 
 Keep the experiment-facing source draft here, then mirror the same markdown into

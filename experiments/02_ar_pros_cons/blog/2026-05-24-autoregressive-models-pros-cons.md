@@ -201,7 +201,7 @@ The experiment plan, probes, and source notes for this post live in the
 - [Experiment folder](https://github.com/brando90/free-energy/tree/main/experiments/02_ar_pros_cons)
 - [Claims under test](https://github.com/brando90/free-energy/blob/main/experiments/02_ar_pros_cons/CLAIMS.md)
 - [Probe specifications](https://github.com/brando90/free-energy/blob/main/experiments/02_ar_pros_cons/PROBE_SPECS.md)
-- [LeCun error-compounding experiment draft](https://github.com/brando90/free-energy/blob/main/experiments/02_ar_pros_cons/blog/2026-05-26-lecun-error-compounding-experiment.md)
+- [AR error-compounding experiment draft](https://github.com/brando90/free-energy/blob/main/experiments/02_ar_pros_cons/blog/2026-05-26-ar-error-compounding-real-or-fiction.md)
 - [Handwritten AR/error-compounding note](https://github.com/brando90/free-energy/blob/main/experiments/02_ar_pros_cons/assets/handwritten_ar_pros_cons_lecun_argument.md)
 
 The website-side source-note archive, including the EBM partition-function

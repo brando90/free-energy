@@ -40,8 +40,8 @@ The review paper should not argue that autoregressive language models are
 
 - Review paper LaTeX: `../../paper_latex/main.tex`
 - AR/LLM pros/cons experiment: `../02_ar_pros_cons/`
-- LeCun error-compounding blog source:
-  `../02_ar_pros_cons/blog/2026-05-26-lecun-error-compounding-experiment.md`
+- AR error-compounding blog source:
+  `../02_ar_pros_cons/blog/2026-05-26-ar-error-compounding-real-or-fiction.md`
 - Website submodule: `../../website/brandomiranda`
 
 The blog drafts in this experiment should be written so that their body can be

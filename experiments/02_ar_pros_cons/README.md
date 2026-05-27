@@ -88,7 +88,7 @@ ar_claims/
 ├── METHODOLOGY.md             ← layer separation, controls, stats protocol
 ├── blog/
 │   ├── 2026-05-24-autoregressive-models-pros-cons.md
-│   └── 2026-05-26-lecun-error-compounding-experiment.md
+│   └── 2026-05-26-ar-error-compounding-real-or-fiction.md
 ├── data/
 │   ├── setup.py               ← VeriBench train/val/test splitter
 │   └── splits/                ← generated manifests; gitignored by convention
