@@ -6,7 +6,7 @@ date: 2026-05-26
 
 *Brando Miranda — May 2026 · ~5 min read*
 
-**TL;DR.** LeCun's critique of autoregressive language models says that if each generated token has an independent unrecoverable error probability `e`, then the chance of producing a fully correct length-`T` object is `(1 - e)^T`. This experiment asks whether real verifier-guided systems actually behave like that. The plan is to start with toy controls where the geometric curve must appear, then move to VeriBench/Lean where a hard verifier can reject, backtrack, and resample. If a recoverable-error model fits better than `(1 - e)^T`, the argument is not false algebraically; it is false as a model of the system we actually run.
+**TL;DR.** **[In development — not fully finished. Published as a work-in-progress while the experiment runs; numbers, plots, and conclusions may change as Stages 2–3 (VeriBench / the key test) complete.]** LeCun's critique of autoregressive language models says that if each generated token has an independent unrecoverable error probability `e`, then the chance of producing a fully correct length-`T` object is `(1 - e)^T`. This experiment asks whether real verifier-guided systems actually behave like that. The plan is to start with toy controls where the geometric curve must appear, then move to VeriBench/Lean where a hard verifier can reject, backtrack, and resample. If a recoverable-error model fits better than `(1 - e)^T`, the argument is not false algebraically; it is false as a model of the system we actually run.
 
 ---
 

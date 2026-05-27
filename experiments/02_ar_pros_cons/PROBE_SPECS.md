@@ -120,6 +120,15 @@ Conventions: `d` = hidden dim, `V` = vocab, `N` = sequence length, `L` = depth,
 - **Verdict logic:** if recoverable-Markov wins, the `(1−e)ⁿ` claim is
   **NOT-SUPPORTED in the verifier setting** — a genuine, reportable negative result.
   If geometric wins, LeCun's argument survives here and we say so.
+- **PS / open question (BM, 2026-05-27):** the `(1−e)ⁿ → 0` story is true for *any*
+  approximate generative model, not just autoregressive ones — so it isn't clear how
+  EBMs (or any non-AR sampler) would escape it on their own. The whole bite of the
+  argument should come from the **error model** (independent + unrecoverable),
+  not from the AR factorization. If that's right, the right contrast is
+  AR-without-verifier vs. AR-with-verifier (recovery changes the exponent), not
+  AR vs. EBM. Worth designing the recoverable-Markov fit so it makes that contrast
+  explicit, and worth checking whether an EBM-style sampler with no verifier shows
+  the same `(1−e)ⁿ` decay on the toy.
 
 ---
 
