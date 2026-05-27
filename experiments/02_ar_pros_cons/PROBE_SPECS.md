@@ -129,6 +129,23 @@ Conventions: `d` = hidden dim, `V` = vocab, `N` = sequence length, `L` = depth,
   AR vs. EBM. Worth designing the recoverable-Markov fit so it makes that contrast
   explicit, and worth checking whether an EBM-style sampler with no verifier shows
   the same `(1−e)ⁿ` decay on the toy.
+- **TODO — does the "full-sequence EBM needs a fixed-dim `x`" objection actually
+  bite?** (BM + Eshan, 2026-05-27.) The standard pitch against the full-sequence
+  formulation `p(x) = exp(-E(x))/Z` is that a single vector `x` can't represent
+  arbitrary-length text well — you'd need a good sentence2vec / vec2sentence or
+  some latent space. BM is skeptical this is a real problem: architectures that
+  handle variable length already exist (a "very long" feed-forward net like a
+  transformer treats the whole sequence as input; RNN/LSTM-style models score
+  variable-length sequences natively — though confirm whether LSTM-as-EBM has its
+  own length pathology). **Action items, lightweight:**
+  (a) write the EBM energy explicitly as `E_θ(x_{1:T})` over a transformer (or
+      LSTM) encoder so "needs a sentence2vec" is visibly false;
+  (b) check whether either arch introduces a *different* length problem (e.g.,
+      energy magnitude scaling with `T`, partition-function intractability
+      growing with sequence length), and if so, that's the real objection — not
+      "can't represent arbitrary length";
+  (c) note this in any blog/writeup that frames AR-vs-EBM as a length-handling
+      issue, so we don't propagate a sloppy framing.
 
 ---
 
