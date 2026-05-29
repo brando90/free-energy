@@ -1,11 +1,12 @@
 # 06 - Adaptive Compute Foundations
 
-**TLDR:** Foundations audit for the claim that EBMs can spend more inference-time compute on harder problems. The goal is to separate what is distinctive about energy-based iterative inference from what autoregressive chain-of-thought, thinking models, verifier search, and best-of-N already do.
+**TLDR:** Foundations audit for the claim that EBMs are "adaptive": they can spend more inference-time compute on harder problems. The goal is to separate what is distinctive about energy-based iterative inference from what autoregressive chain-of-thought, thinking models, verifier search, and best-of-N already do.
 
 ## Core Question
 
-Is it really true that EBMs have a special advantage because they can spend
-more computation on more difficult problems?
+Are EBMs distinctively **adaptive**, meaning they can allocate more inference
+compute to harder problems in a way that is not already captured by CoT,
+thinking models, verifier search, best-of-N, or self-refinement?
 
 The immediate objection is that modern autoregressive systems already vary
 inference-time compute through chain-of-thought, hidden "thinking" tokens,
@@ -28,10 +29,25 @@ benchmark. The right question is not "can EBMs iterate?" but:
 3. whether autoregressive thinking/search is an equivalent mechanism;
 4. what empirical signature would distinguish the two.
 
+## Key Questions
+
+1. What does "adaptive" mean operationally: more steps, more candidates, more
+   verifier calls, lower energy, or better success per unit compute?
+2. Is adaptivity an EBM-specific property, or a general property of iterative
+   inference/search systems?
+3. Does EBM adaptivity improve a global compatibility objective more
+   efficiently than compute-matched AR thinking/search?
+4. When should we call the result "adaptive EBMs" versus "adaptive inference"
+   more generally?
+
 ## Source Prompt
 
 - Raw seed: [`pre_prompt.md`](pre_prompt.md)
 - Plan: [`PLAN.md`](PLAN.md)
+- Questions: [`QUESTIONS.md`](QUESTIONS.md)
+- Term note: Letitia / AI coffee phrasing: EBMs are "adaptive"; this experiment
+  tests whether that term names a distinctive mechanism or just variable
+  inference-time compute.
 - Inspiration: [Energy-Based Transformers explained | How EBTs and EBMs work](https://www.youtube.com/watch?v=18Fn2m99X1k)
 
 ## Reuse From Existing Experiments

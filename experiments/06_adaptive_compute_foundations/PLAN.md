@@ -1,6 +1,6 @@
 # Plan - Are EBMs Distinctively Adaptive-Compute?
 
-**TLDR:** The experiment should test whether EBM inference has a distinctive adaptive-compute advantage, or whether the same benefit is already obtained by autoregressive chain-of-thought, hidden thinking tokens, verifier-guided retry, best-of-N, and search.
+**TLDR:** The experiment should test whether EBM inference is distinctively adaptive, or whether the same benefit is already obtained by autoregressive chain-of-thought, hidden thinking tokens, verifier-guided retry, best-of-N, and search.
 
 ## 1. Claim Under Audit
 
@@ -12,6 +12,11 @@ Current repo-level claim:
 The weak version is almost certainly true but not distinctive:
 
 > Some systems can spend more inference-time compute on hard instances.
+
+Call the attractive term **adaptive**: a system uses more inference-time work
+when the instance needs it. The foundations question is whether EBMs are
+distinctively adaptive, or whether adaptivity is a broader property of any
+iterative inference/search system.
 
 CoT/thinking models already do that by emitting more reasoning tokens, running
 internal reasoning steps, retrying, using tools, or searching. The experiment
@@ -42,6 +47,14 @@ The difference cannot be "variable compute" alone. It has to be something like:
 - better use of a verifier because the score is global rather than local.
 
 ## 3. Operational Definitions
+
+Define **adaptive** before comparing models:
+
+- weak adaptivity: compute used increases with instance difficulty;
+- useful adaptivity: extra compute improves hard-instance success without
+  wasting much compute on easy instances;
+- distinctive EBM adaptivity: the gain comes from optimizing/scoring global
+  compatibility, not merely from generic search or longer reasoning traces.
 
 Define instance difficulty using at least two independent signals:
 
@@ -120,9 +133,11 @@ Do not claim foundations success from Stage B alone; it is a domain sanity check
 
 1. `FOUNDATIONS.md` - conceptual answer to "what is the difference from CoT?"
 2. `PROTOCOL.md` - pre-registered compute-matching and difficulty-binning rules.
-3. toy script or adapted Probe 05 run showing the comparison.
-4. results table with success vs difficulty and compute used.
-5. recommendation: keep, narrow, or drop the repo-level adaptive-compute claim.
+3. `QUESTIONS.md` - concise research questions around "adaptive EBMs" versus
+   "adaptive inference" generally.
+4. toy script or adapted Probe 05 run showing the comparison.
+5. results table with success vs difficulty and compute used.
+6. recommendation: keep, narrow, or drop the repo-level adaptive-compute claim.
 
 ## 8. Non-Goals
 
