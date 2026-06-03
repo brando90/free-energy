@@ -1,7 +1,0 @@
-*.pt
-*.bin
-*.safetensors
-*.json
-**/*.json
-logs/
-tmp_*/

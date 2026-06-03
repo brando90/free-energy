@@ -1,0 +1,74 @@
+{
+  "device": "cuda",
+  "duration_s": 120.39081811904907,
+  "finished_at": 1779683989.6023383,
+  "overall_control_passed": true,
+  "probes": {
+    "probe_01": {
+      "control_passed": true,
+      "duration_s": 3.2196924686431885,
+      "result_path": "/dfs/scratch0/brando9/free-energy/experiments/00_ar_pros_cons/mnt/user-data/outputs/probe_01/full/result.json",
+      "return_code": 0,
+      "verdict": "CONTROL_PASS"
+    },
+    "probe_02": {
+      "control_passed": true,
+      "duration_s": 5.275342702865601,
+      "result_path": "/dfs/scratch0/brando9/free-energy/experiments/00_ar_pros_cons/mnt/user-data/outputs/probe_02/full/result.json",
+      "return_code": 0,
+      "verdict": "CONTROL_PASS"
+    },
+    "probe_03": {
+      "control_passed": true,
+      "duration_s": 0.4813218116760254,
+      "result_path": "/dfs/scratch0/brando9/free-energy/experiments/00_ar_pros_cons/mnt/user-data/outputs/probe_03/full/result.json",
+      "return_code": 0,
+      "verdict": "CONTROL_PASS"
+    },
+    "probe_04": {
+      "control_passed": true,
+      "duration_s": 16.647339820861816,
+      "result_path": "/dfs/scratch0/brando9/free-energy/experiments/00_ar_pros_cons/mnt/user-data/outputs/probe_04/full/result.json",
+      "return_code": 0,
+      "verdict": "CONFIRMED_REMOVABLE"
+    },
+    "probe_05": {
+      "control_passed": true,
+      "duration_s": 27.09477925300598,
+      "result_path": "/dfs/scratch0/brando9/free-energy/experiments/00_ar_pros_cons/mnt/user-data/outputs/probe_05/full/result.json",
+      "return_code": 0,
+      "verdict": "CONTROL_PASS"
+    },
+    "probe_06": {
+      "control_passed": true,
+      "duration_s": 0.08483600616455078,
+      "result_path": "/dfs/scratch0/brando9/free-energy/experiments/00_ar_pros_cons/mnt/user-data/outputs/probe_06/full/result.json",
+      "return_code": 0,
+      "verdict": "CONTROL_PASS"
+    },
+    "probe_07": {
+      "control_passed": true,
+      "duration_s": 13.626291513442993,
+      "result_path": "/dfs/scratch0/brando9/free-energy/experiments/00_ar_pros_cons/mnt/user-data/outputs/probe_07/full/result.json",
+      "return_code": 0,
+      "verdict": "CONTROL_PASS"
+    },
+    "probe_08": {
+      "control_passed": true,
+      "duration_s": 29.849626779556274,
+      "result_path": "/dfs/scratch0/brando9/free-energy/experiments/00_ar_pros_cons/mnt/user-data/outputs/probe_08/full/result.json",
+      "return_code": 0,
+      "verdict": "CONTROL_PASS"
+    },
+    "probe_data_wall": {
+      "control_passed": true,
+      "duration_s": 0.31343913078308105,
+      "result_path": "/dfs/scratch0/brando9/free-energy/experiments/00_ar_pros_cons/mnt/user-data/outputs/probe_data_wall/full/result.json",
+      "return_code": 0,
+      "verdict": "CONTROL_PASS"
+    }
+  },
+  "seed": 0,
+  "started_at": 1779683869.2115202,
+  "tag": "full"
+}

@@ -72,13 +72,13 @@ make full        # explicit pdflatex / bibtex / pdflatex / pdflatex
 This paper is the literature-grounded half of a two-part project. The probe-by-probe empirical companion lives at
 
 ```
-../experiments/02_ar_pros_cons/
+../experiments/00_ar_pros_cons/
 ```
 
 with claim definitions in `CLAIMS.md`, probe specs in `PROBE_SPECS.md`, and a living results log in `FINDINGS.md`. The review-paper coordination layer lives at
 
 ```
-../experiments/03_review_paper/
+../experiments/01_review_paper/
 ```
 
 with the Codex runbook, section map, blog drafts, and paper synchronization plan.

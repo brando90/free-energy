@@ -32,7 +32,7 @@ reference:
 ## Data
 
 - Primary: VeriBench / Lean.
-- Toy controls: from `experiments/02_ar_pros_cons/`.
+- Toy controls: from `experiments/00_ar_pros_cons/`.
 - Vision first pass: `experiments/04_vision_energy_comparison/`, starting with
   sklearn Digits as a no-download MNIST proxy and then MNIST/FashionMNIST.
 - Later vision dataset: to decide once the methodology is stable.

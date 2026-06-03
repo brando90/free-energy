@@ -27,9 +27,9 @@ not work, the review paper should still be useful because it contributes:
 ## Inputs
 
 - `../../main.tex` and section files.
-- `../../../experiments/02_ar_pros_cons/`
-- `../../../experiments/03_review_paper/`
-- Blog drafts under `../../../experiments/03_review_paper/blog/`
+- `../../../experiments/00_ar_pros_cons/`
+- `../../../experiments/01_review_paper/`
+- Blog drafts under `../../../experiments/01_review_paper/blog/`
 
 ## Next paper tasks
 
