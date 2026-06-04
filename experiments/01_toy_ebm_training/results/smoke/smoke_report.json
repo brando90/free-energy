@@ -1,0 +1,122 @@
+{
+  "baseline": {
+    "test": {
+      "kl_pstar_model": 0.2911733090877533,
+      "mode_match_rate": 0.0,
+      "nll_pstar": 4.158883094787598,
+      "target_mode_rank_mean": 39.0,
+      "target_mode_rank_median": 24.0,
+      "tv_distance": 0.3069552183151245
+    },
+    "train": {
+      "kl_pstar_model": 0.28976544737815857,
+      "mode_match_rate": 0.1666666716337204,
+      "nll_pstar": 4.1588826179504395,
+      "target_mode_rank_mean": 33.91666793823242,
+      "target_mode_rank_median": 32.0,
+      "tv_distance": 0.3027762472629547
+    }
+  },
+  "config": {
+    "batch_size": 4,
+    "device": "cpu",
+    "device_resolved": "cpu",
+    "epochs": 20,
+    "grad_clip": 5.0,
+    "hidden_dim": 32,
+    "log_every": 10,
+    "lr": 0.01,
+    "models": [
+      "linear",
+      "mlp"
+    ],
+    "num_heads": 4,
+    "num_layers": 2,
+    "num_test_tasks": 4,
+    "num_train_tasks": 12,
+    "output_dir": "experiments/01_toy_ebm_training/results/smoke",
+    "pair_batch_size": 512,
+    "require_improvement": true,
+    "seed": 17,
+    "seq_len": 6,
+    "support_size": 64,
+    "tag": "smoke",
+    "target_temperature": 1.0,
+    "weight_decay": 0.0001
+  },
+  "results": [
+    {
+      "history": [
+        {
+          "epoch": 1.0,
+          "train_loss": 4.152303854624431
+        },
+        {
+          "epoch": 10.0,
+          "train_loss": 4.003426233927409
+        },
+        {
+          "epoch": 20.0,
+          "train_loss": 3.9900227387746177
+        }
+      ],
+      "model": "linear",
+      "model_seed": 117,
+      "num_parameters": 25,
+      "test": {
+        "kl_pstar_model": 0.1200476735830307,
+        "mode_match_rate": 1.0,
+        "nll_pstar": 3.987757682800293,
+        "target_mode_rank_mean": 1.0,
+        "target_mode_rank_median": 1.0,
+        "tv_distance": 0.20403386652469635
+      },
+      "train": {
+        "kl_pstar_model": 0.12074786424636841,
+        "mode_match_rate": 0.5833333134651184,
+        "nll_pstar": 3.989865303039551,
+        "target_mode_rank_mean": 4.083333492279053,
+        "target_mode_rank_median": 1.0,
+        "tv_distance": 0.2071048468351364
+      },
+      "train_seconds": 0.6532266139984131
+    },
+    {
+      "history": [
+        {
+          "epoch": 1.0,
+          "train_loss": 4.146580537160237
+        },
+        {
+          "epoch": 10.0,
+          "train_loss": 3.984528382619222
+        },
+        {
+          "epoch": 20.0,
+          "train_loss": 3.9616599877675376
+        }
+      ],
+      "model": "mlp",
+      "model_seed": 217,
+      "num_parameters": 1889,
+      "test": {
+        "kl_pstar_model": 0.1083892434835434,
+        "mode_match_rate": 1.0,
+        "nll_pstar": 3.9760994911193848,
+        "target_mode_rank_mean": 1.0,
+        "target_mode_rank_median": 1.0,
+        "tv_distance": 0.1964953988790512
+      },
+      "train": {
+        "kl_pstar_model": 0.09117157012224197,
+        "mode_match_rate": 0.5833333134651184,
+        "nll_pstar": 3.960289239883423,
+        "target_mode_rank_mean": 3.0,
+        "target_mode_rank_median": 1.0,
+        "tv_distance": 0.19173330068588257
+      },
+      "train_seconds": 0.5810902118682861
+    }
+  ],
+  "status": "pass"
+}

@@ -227,3 +227,6 @@ experiments/00_ar_pros_cons/data/splits/
 **/results/*.pt
 **/results/*.json
 .DS_Store
+
+# large model checkpoints (exceed GitHub 100MB limit)
+*.pt

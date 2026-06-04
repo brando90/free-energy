@@ -1,0 +1,226 @@
+{
+  "args": {
+    "veribench_root": "/Users/brandomiranda/veribench",
+    "output_dir": "experiments/00_start_off/results/mle_mcmc_smoke",
+    "model_name": "microsoft/codebert-base",
+    "subsets": [
+      "easy_set"
+    ],
+    "max_tasks": 3,
+    "max_generated_agents": 3,
+    "train_fraction": 0.8,
+    "epochs": 1,
+    "task_batch_size": 2,
+    "mcmc_steps": 2,
+    "max_length": 128,
+    "lr": 2e-05,
+    "weight_decay": 0.01,
+    "max_grad_norm": 1.0,
+    "seed": 17,
+    "device": "cpu"
+  },
+  "device": "cpu",
+  "veribench_root": "/Users/brandomiranda/veribench",
+  "dataset": {
+    "all": {
+      "num_tasks": 3,
+      "num_candidates": 21,
+      "min_candidates_per_task": 7,
+      "max_candidates_per_task": 7,
+      "by_subset": {
+        "easy_set": 3
+      }
+    },
+    "train": {
+      "num_tasks": 2,
+      "num_candidates": 14,
+      "min_candidates_per_task": 7,
+      "max_candidates_per_task": 7,
+      "by_subset": {
+        "easy_set": 2
+      }
+    },
+    "test": {
+      "num_tasks": 1,
+      "num_candidates": 7,
+      "min_candidates_per_task": 7,
+      "max_candidates_per_task": 7,
+      "by_subset": {
+        "easy_set": 1
+      }
+    }
+  },
+  "exact": {
+    "method": "exact_finite_support_mle",
+    "seconds": 2.4626689159777015,
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.9455426931381226,
+        "train_eval": {
+          "num_tasks": 2,
+          "top1": 0.5,
+          "mrr": 0.75,
+          "mean_nll": 1.8973275423049927
+        },
+        "test_eval": {
+          "num_tasks": 1,
+          "top1": 1.0,
+          "mrr": 1.0,
+          "mean_nll": 1.8867392539978027
+        }
+      }
+    ],
+    "final_train": {
+      "num_tasks": 2,
+      "top1": 0.5,
+      "mrr": 0.75,
+      "mean_nll": 1.8973275423049927,
+      "tasks": [
+        {
+          "task_id": "easy_set/10_MyEvenSumParity",
+          "subset": "easy_set",
+          "num_candidates": 7,
+          "gold_rank": 2,
+          "gold_energy": -0.9632107615470886,
+          "top_candidate": "corrupt_broken_statement",
+          "top_kind": "corruption",
+          "top_energy": -0.9632108211517334,
+          "nll": 1.8981239795684814
+        },
+        {
+          "task_id": "easy_set/11_MyFirstChar",
+          "subset": "easy_set",
+          "num_candidates": 7,
+          "gold_rank": 1,
+          "gold_energy": -0.967942476272583,
+          "top_candidate": "gold",
+          "top_kind": "gold",
+          "top_energy": -0.967942476272583,
+          "nll": 1.896531105041504
+        }
+      ]
+    },
+    "final_test": {
+      "num_tasks": 1,
+      "top1": 1.0,
+      "mrr": 1.0,
+      "mean_nll": 1.8867392539978027,
+      "tasks": [
+        {
+          "task_id": "easy_set/12_MyStringLength",
+          "subset": "easy_set",
+          "num_candidates": 7,
+          "gold_rank": 1,
+          "gold_energy": -0.9807815551757812,
+          "top_candidate": "gold",
+          "top_kind": "gold",
+          "top_energy": -0.9807815551757812,
+          "nll": 1.8867392539978027
+        }
+      ]
+    }
+  },
+  "mcmc": {
+    "method": "persistent_mh_mcmc_gradient",
+    "mcmc_steps": 2,
+    "seconds": 1.706297833006829,
+    "history": [
+      {
+        "epoch": 1,
+        "surrogate_loss": 0.0,
+        "train_eval": {
+          "num_tasks": 2,
+          "top1": 0.0,
+          "mrr": 0.3333333333333333,
+          "mean_nll": 1.947179913520813
+        },
+        "test_eval": {
+          "num_tasks": 1,
+          "top1": 1.0,
+          "mrr": 1.0,
+          "mean_nll": 1.9314582347869873
+        }
+      }
+    ],
+    "final_train": {
+      "num_tasks": 2,
+      "top1": 0.0,
+      "mrr": 0.3333333333333333,
+      "mean_nll": 1.947179913520813,
+      "tasks": [
+        {
+          "task_id": "easy_set/10_MyEvenSumParity",
+          "subset": "easy_set",
+          "num_candidates": 7,
+          "gold_rank": 3,
+          "gold_energy": -0.8610634803771973,
+          "top_candidate": "10_MyEvenSumParity__agent2",
+          "top_kind": "generated_agent",
+          "top_energy": -0.8896186351776123,
+          "nll": 1.947115421295166
+        },
+        {
+          "task_id": "easy_set/11_MyFirstChar",
+          "subset": "easy_set",
+          "num_candidates": 7,
+          "gold_rank": 3,
+          "gold_energy": -0.8618525862693787,
+          "top_candidate": "11_MyFirstChar__agent1",
+          "top_kind": "generated_agent",
+          "top_energy": -0.8853984475135803,
+          "nll": 1.94724440574646
+        }
+      ]
+    },
+    "final_test": {
+      "num_tasks": 1,
+      "top1": 1.0,
+      "mrr": 1.0,
+      "mean_nll": 1.9314582347869873,
+      "tasks": [
+        {
+          "task_id": "easy_set/12_MyStringLength",
+          "subset": "easy_set",
+          "num_candidates": 7,
+          "gold_rank": 1,
+          "gold_energy": -0.888891875743866,
+          "top_candidate": "gold",
+          "top_kind": "gold",
+          "top_energy": -0.888891875743866,
+          "nll": 1.9314582347869873
+        }
+      ]
+    }
+  },
+  "comparison": {
+    "train": {
+      "exact": {
+        "num_tasks": 2,
+        "top1": 0.5,
+        "mrr": 0.75,
+        "mean_nll": 1.8973275423049927
+      },
+      "mcmc": {
+        "num_tasks": 2,
+        "top1": 0.0,
+        "mrr": 0.3333333333333333,
+        "mean_nll": 1.947179913520813
+      }
+    },
+    "test": {
+      "exact": {
+        "num_tasks": 1,
+        "top1": 1.0,
+        "mrr": 1.0,
+        "mean_nll": 1.8867392539978027
+      },
+      "mcmc": {
+        "num_tasks": 1,
+        "top1": 1.0,
+        "mrr": 1.0,
+        "mean_nll": 1.9314582347869873
+      }
+    }
+  }
+}

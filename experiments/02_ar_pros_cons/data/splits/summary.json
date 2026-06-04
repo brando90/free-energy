@@ -1,0 +1,23 @@
+{
+  "by_family": {
+    "generated_agents": 368,
+    "veribench": 891
+  },
+  "by_source_kind": {
+    "generated_agent": 368,
+    "gold": 891
+  },
+  "by_split": {
+    "test": 133,
+    "train": 1009,
+    "val": 117
+  },
+  "include_generated_agents": true,
+  "n_rows": 1259,
+  "output_dir": "/Users/brandomiranda/free-energy/experiments/02_ar_pros_cons/data/splits",
+  "smoke": true,
+  "test_frac": 0.09999999999999995,
+  "train_frac": 0.8,
+  "val_frac": 0.1,
+  "veribench_root": "/Users/brandomiranda/veribench/veribench_dataset"
+}

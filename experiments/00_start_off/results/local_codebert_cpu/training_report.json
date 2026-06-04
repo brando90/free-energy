@@ -1,0 +1,446 @@
+{
+  "model_name": "microsoft/codebert-base",
+  "veribench_root": "/Users/brandomiranda/veribench",
+  "num_pairs": 18,
+  "num_tasks": 3,
+  "epochs": 1,
+  "device": "cpu",
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 0.6111554420656629,
+      "mean_reciprocal_rank": 0.8333333333333334,
+      "all_gold_top": false,
+      "task_results": [
+        {
+          "task_id": "easy_set/1_MyAdd",
+          "gold_rank": 1,
+          "top_candidate": {
+            "candidate_id": "gold",
+            "kind": "gold",
+            "label": 1,
+            "energy": -1.4060132503509521,
+            "source_path": "/Users/brandomiranda/veribench/veribench_dataset/lean_src/veribench/easy_set/1_MyAdd.lean",
+            "rank": 1
+          },
+          "ranked_candidates": [
+            {
+              "candidate_id": "gold",
+              "kind": "gold",
+              "label": 1,
+              "energy": -1.4060132503509521,
+              "source_path": "/Users/brandomiranda/veribench/veribench_dataset/lean_src/veribench/easy_set/1_MyAdd.lean",
+              "rank": 1
+            },
+            {
+              "candidate_id": "corrupt_flipped_expectation",
+              "kind": "corruption",
+              "label": 0,
+              "energy": -1.4060132503509521,
+              "source_path": null,
+              "rank": 2
+            },
+            {
+              "candidate_id": "corrupt_broken_statement",
+              "kind": "corruption",
+              "label": 0,
+              "energy": -1.4060132503509521,
+              "source_path": null,
+              "rank": 3
+            },
+            {
+              "candidate_id": "corrupt_no_imports",
+              "kind": "corruption",
+              "label": 0,
+              "energy": -1.2018024921417236,
+              "source_path": null,
+              "rank": 4
+            },
+            {
+              "candidate_id": "1_MyAdd__agent2",
+              "kind": "generated_agent",
+              "label": 0,
+              "energy": 0.5927075743675232,
+              "source_path": "/Users/brandomiranda/veribench/veribench_dataset/generated_agents/1_MyAdd__agent2.lean",
+              "rank": 5
+            },
+            {
+              "candidate_id": "1_MyAdd__agent0",
+              "kind": "generated_agent",
+              "label": 0,
+              "energy": 0.8713297843933105,
+              "source_path": "/Users/brandomiranda/veribench/veribench_dataset/generated_agents/1_MyAdd__agent0.lean",
+              "rank": 6
+            },
+            {
+              "candidate_id": "1_MyAdd__agent1",
+              "kind": "generated_agent",
+              "label": 0,
+              "energy": 0.9127609729766846,
+              "source_path": "/Users/brandomiranda/veribench/veribench_dataset/generated_agents/1_MyAdd__agent1.lean",
+              "rank": 7
+            }
+          ]
+        },
+        {
+          "task_id": "easy_set/21_is_palindrome",
+          "gold_rank": 1,
+          "top_candidate": {
+            "candidate_id": "gold",
+            "kind": "gold",
+            "label": 1,
+            "energy": -1.1450073719024658,
+            "source_path": "/Users/brandomiranda/veribench/veribench_dataset/lean_src/veribench/easy_set/21_is_palindrome.lean",
+            "rank": 1
+          },
+          "ranked_candidates": [
+            {
+              "candidate_id": "gold",
+              "kind": "gold",
+              "label": 1,
+              "energy": -1.1450073719024658,
+              "source_path": "/Users/brandomiranda/veribench/veribench_dataset/lean_src/veribench/easy_set/21_is_palindrome.lean",
+              "rank": 1
+            },
+            {
+              "candidate_id": "corrupt_flipped_expectation",
+              "kind": "corruption",
+              "label": 0,
+              "energy": -1.1450073719024658,
+              "source_path": null,
+              "rank": 2
+            },
+            {
+              "candidate_id": "corrupt_broken_statement",
+              "kind": "corruption",
+              "label": 0,
+              "energy": -1.1450073719024658,
+              "source_path": null,
+              "rank": 3
+            },
+            {
+              "candidate_id": "corrupt_no_imports",
+              "kind": "corruption",
+              "label": 0,
+              "energy": -0.9021449089050293,
+              "source_path": null,
+              "rank": 4
+            },
+            {
+              "candidate_id": "21_is_palindrome__agent0",
+              "kind": "generated_agent",
+              "label": 0,
+              "energy": 0.6200106739997864,
+              "source_path": "/Users/brandomiranda/veribench/veribench_dataset/generated_agents/21_is_palindrome__agent0.lean",
+              "rank": 5
+            },
+            {
+              "candidate_id": "21_is_palindrome__agent2",
+              "kind": "generated_agent",
+              "label": 0,
+              "energy": 0.797602653503418,
+              "source_path": "/Users/brandomiranda/veribench/veribench_dataset/generated_agents/21_is_palindrome__agent2.lean",
+              "rank": 6
+            },
+            {
+              "candidate_id": "21_is_palindrome__agent1",
+              "kind": "generated_agent",
+              "label": 0,
+              "energy": 0.9203920364379883,
+              "source_path": "/Users/brandomiranda/veribench/veribench_dataset/generated_agents/21_is_palindrome__agent1.lean",
+              "rank": 7
+            }
+          ]
+        },
+        {
+          "task_id": "cs_set/binary_search",
+          "gold_rank": 2,
+          "top_candidate": {
+            "candidate_id": "corrupt_no_imports",
+            "kind": "corruption",
+            "label": 0,
+            "energy": -0.8926267623901367,
+            "source_path": null,
+            "rank": 1
+          },
+          "ranked_candidates": [
+            {
+              "candidate_id": "corrupt_no_imports",
+              "kind": "corruption",
+              "label": 0,
+              "energy": -0.8926267623901367,
+              "source_path": null,
+              "rank": 1
+            },
+            {
+              "candidate_id": "gold",
+              "kind": "gold",
+              "label": 1,
+              "energy": -0.6715144515037537,
+              "source_path": "/Users/brandomiranda/veribench/veribench_dataset/lean_src/veribench/cs_set/binary_search.lean",
+              "rank": 2
+            },
+            {
+              "candidate_id": "corrupt_flipped_expectation",
+              "kind": "corruption",
+              "label": 0,
+              "energy": -0.6715144515037537,
+              "source_path": null,
+              "rank": 3
+            },
+            {
+              "candidate_id": "corrupt_broken_statement",
+              "kind": "corruption",
+              "label": 0,
+              "energy": -0.6715144515037537,
+              "source_path": null,
+              "rank": 4
+            },
+            {
+              "candidate_id": "binary_search__agent0",
+              "kind": "generated_agent",
+              "label": 0,
+              "energy": 0.24460400640964508,
+              "source_path": "/Users/brandomiranda/veribench/veribench_dataset/generated_agents/binary_search__agent0.lean",
+              "rank": 5
+            },
+            {
+              "candidate_id": "binary_search__agent2",
+              "kind": "generated_agent",
+              "label": 0,
+              "energy": 0.25366562604904175,
+              "source_path": "/Users/brandomiranda/veribench/veribench_dataset/generated_agents/binary_search__agent2.lean",
+              "rank": 6
+            },
+            {
+              "candidate_id": "binary_search__agent1",
+              "kind": "generated_agent",
+              "label": 0,
+              "energy": 0.3690740466117859,
+              "source_path": "/Users/brandomiranda/veribench/veribench_dataset/generated_agents/binary_search__agent1.lean",
+              "rank": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "final": {
+    "epoch": 1,
+    "loss": 0.6111554420656629,
+    "mean_reciprocal_rank": 0.8333333333333334,
+    "all_gold_top": false,
+    "task_results": [
+      {
+        "task_id": "easy_set/1_MyAdd",
+        "gold_rank": 1,
+        "top_candidate": {
+          "candidate_id": "gold",
+          "kind": "gold",
+          "label": 1,
+          "energy": -1.4060132503509521,
+          "source_path": "/Users/brandomiranda/veribench/veribench_dataset/lean_src/veribench/easy_set/1_MyAdd.lean",
+          "rank": 1
+        },
+        "ranked_candidates": [
+          {
+            "candidate_id": "gold",
+            "kind": "gold",
+            "label": 1,
+            "energy": -1.4060132503509521,
+            "source_path": "/Users/brandomiranda/veribench/veribench_dataset/lean_src/veribench/easy_set/1_MyAdd.lean",
+            "rank": 1
+          },
+          {
+            "candidate_id": "corrupt_flipped_expectation",
+            "kind": "corruption",
+            "label": 0,
+            "energy": -1.4060132503509521,
+            "source_path": null,
+            "rank": 2
+          },
+          {
+            "candidate_id": "corrupt_broken_statement",
+            "kind": "corruption",
+            "label": 0,
+            "energy": -1.4060132503509521,
+            "source_path": null,
+            "rank": 3
+          },
+          {
+            "candidate_id": "corrupt_no_imports",
+            "kind": "corruption",
+            "label": 0,
+            "energy": -1.2018024921417236,
+            "source_path": null,
+            "rank": 4
+          },
+          {
+            "candidate_id": "1_MyAdd__agent2",
+            "kind": "generated_agent",
+            "label": 0,
+            "energy": 0.5927075743675232,
+            "source_path": "/Users/brandomiranda/veribench/veribench_dataset/generated_agents/1_MyAdd__agent2.lean",
+            "rank": 5
+          },
+          {
+            "candidate_id": "1_MyAdd__agent0",
+            "kind": "generated_agent",
+            "label": 0,
+            "energy": 0.8713297843933105,
+            "source_path": "/Users/brandomiranda/veribench/veribench_dataset/generated_agents/1_MyAdd__agent0.lean",
+            "rank": 6
+          },
+          {
+            "candidate_id": "1_MyAdd__agent1",
+            "kind": "generated_agent",
+            "label": 0,
+            "energy": 0.9127609729766846,
+            "source_path": "/Users/brandomiranda/veribench/veribench_dataset/generated_agents/1_MyAdd__agent1.lean",
+            "rank": 7
+          }
+        ]
+      },
+      {
+        "task_id": "easy_set/21_is_palindrome",
+        "gold_rank": 1,
+        "top_candidate": {
+          "candidate_id": "gold",
+          "kind": "gold",
+          "label": 1,
+          "energy": -1.1450073719024658,
+          "source_path": "/Users/brandomiranda/veribench/veribench_dataset/lean_src/veribench/easy_set/21_is_palindrome.lean",
+          "rank": 1
+        },
+        "ranked_candidates": [
+          {
+            "candidate_id": "gold",
+            "kind": "gold",
+            "label": 1,
+            "energy": -1.1450073719024658,
+            "source_path": "/Users/brandomiranda/veribench/veribench_dataset/lean_src/veribench/easy_set/21_is_palindrome.lean",
+            "rank": 1
+          },
+          {
+            "candidate_id": "corrupt_flipped_expectation",
+            "kind": "corruption",
+            "label": 0,
+            "energy": -1.1450073719024658,
+            "source_path": null,
+            "rank": 2
+          },
+          {
+            "candidate_id": "corrupt_broken_statement",
+            "kind": "corruption",
+            "label": 0,
+            "energy": -1.1450073719024658,
+            "source_path": null,
+            "rank": 3
+          },
+          {
+            "candidate_id": "corrupt_no_imports",
+            "kind": "corruption",
+            "label": 0,
+            "energy": -0.9021449089050293,
+            "source_path": null,
+            "rank": 4
+          },
+          {
+            "candidate_id": "21_is_palindrome__agent0",
+            "kind": "generated_agent",
+            "label": 0,
+            "energy": 0.6200106739997864,
+            "source_path": "/Users/brandomiranda/veribench/veribench_dataset/generated_agents/21_is_palindrome__agent0.lean",
+            "rank": 5
+          },
+          {
+            "candidate_id": "21_is_palindrome__agent2",
+            "kind": "generated_agent",
+            "label": 0,
+            "energy": 0.797602653503418,
+            "source_path": "/Users/brandomiranda/veribench/veribench_dataset/generated_agents/21_is_palindrome__agent2.lean",
+            "rank": 6
+          },
+          {
+            "candidate_id": "21_is_palindrome__agent1",
+            "kind": "generated_agent",
+            "label": 0,
+            "energy": 0.9203920364379883,
+            "source_path": "/Users/brandomiranda/veribench/veribench_dataset/generated_agents/21_is_palindrome__agent1.lean",
+            "rank": 7
+          }
+        ]
+      },
+      {
+        "task_id": "cs_set/binary_search",
+        "gold_rank": 2,
+        "top_candidate": {
+          "candidate_id": "corrupt_no_imports",
+          "kind": "corruption",
+          "label": 0,
+          "energy": -0.8926267623901367,
+          "source_path": null,
+          "rank": 1
+        },
+        "ranked_candidates": [
+          {
+            "candidate_id": "corrupt_no_imports",
+            "kind": "corruption",
+            "label": 0,
+            "energy": -0.8926267623901367,
+            "source_path": null,
+            "rank": 1
+          },
+          {
+            "candidate_id": "gold",
+            "kind": "gold",
+            "label": 1,
+            "energy": -0.6715144515037537,
+            "source_path": "/Users/brandomiranda/veribench/veribench_dataset/lean_src/veribench/cs_set/binary_search.lean",
+            "rank": 2
+          },
+          {
+            "candidate_id": "corrupt_flipped_expectation",
+            "kind": "corruption",
+            "label": 0,
+            "energy": -0.6715144515037537,
+            "source_path": null,
+            "rank": 3
+          },
+          {
+            "candidate_id": "corrupt_broken_statement",
+            "kind": "corruption",
+            "label": 0,
+            "energy": -0.6715144515037537,
+            "source_path": null,
+            "rank": 4
+          },
+          {
+            "candidate_id": "binary_search__agent0",
+            "kind": "generated_agent",
+            "label": 0,
+            "energy": 0.24460400640964508,
+            "source_path": "/Users/brandomiranda/veribench/veribench_dataset/generated_agents/binary_search__agent0.lean",
+            "rank": 5
+          },
+          {
+            "candidate_id": "binary_search__agent2",
+            "kind": "generated_agent",
+            "label": 0,
+            "energy": 0.25366562604904175,
+            "source_path": "/Users/brandomiranda/veribench/veribench_dataset/generated_agents/binary_search__agent2.lean",
+            "rank": 6
+          },
+          {
+            "candidate_id": "binary_search__agent1",
+            "kind": "generated_agent",
+            "label": 0,
+            "energy": 0.3690740466117859,
+            "source_path": "/Users/brandomiranda/veribench/veribench_dataset/generated_agents/binary_search__agent1.lean",
+            "rank": 7
+          }
+        ]
+      }
+    ]
+  }
+}

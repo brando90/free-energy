@@ -1,0 +1,138 @@
+{
+  "args": {
+    "veribench_root": "/Users/brandomiranda/veribench",
+    "output_dir": "experiments/00_start_off/results/ebm_mle_sanity_smoke",
+    "model_name": "microsoft/codebert-base",
+    "subsets": [
+      "easy_set"
+    ],
+    "max_tasks": 3,
+    "max_gradient_tasks": 2,
+    "max_generated_agents": 3,
+    "train_fraction": 0.8,
+    "task_batch_size": 1,
+    "negative_batch_size": 4,
+    "max_length": 64,
+    "seed": 17,
+    "device": "cpu",
+    "exact_sample_counts": [
+      1,
+      4
+    ],
+    "mcmc_steps_list": [
+      0,
+      2
+    ],
+    "mcmc_samples": 4
+  },
+  "hypothesis": "MCMC-based EBM training is normally expensive because the model expectation is hard to sample exactly, but for Lean/VeriBench it may still be worth doing with finite candidate pools, short-run MCMC, or biased negative samplers if the resulting gradient is close enough to MLE to learn a useful verifier/proof ranker.",
+  "device": "cpu",
+  "veribench_root": "/Users/brandomiranda/veribench",
+  "dataset": {
+    "all": {
+      "num_tasks": 3,
+      "num_candidates": 21,
+      "min_candidates_per_task": 7,
+      "max_candidates_per_task": 7,
+      "by_subset": {
+        "easy_set": 3
+      }
+    },
+    "train": {
+      "num_tasks": 2,
+      "num_candidates": 14,
+      "min_candidates_per_task": 7,
+      "max_candidates_per_task": 7,
+      "by_subset": {
+        "easy_set": 2
+      }
+    },
+    "test": {
+      "num_tasks": 1,
+      "num_candidates": 7,
+      "min_candidates_per_task": 7,
+      "max_candidates_per_task": 7,
+      "by_subset": {
+        "easy_set": 1
+      }
+    },
+    "gradient": {
+      "num_tasks": 2,
+      "num_candidates": 14,
+      "min_candidates_per_task": 7,
+      "max_candidates_per_task": 7,
+      "by_subset": {
+        "easy_set": 2
+      }
+    }
+  },
+  "exact_mle": {
+    "loss": 1.9461804628372192,
+    "gradient_norm": 0.6872162818908691
+  },
+  "exact_ebm_negative_phase": {
+    "surrogate_loss": 0.0002923011779785156,
+    "cosine": 0.999999999959575,
+    "relative_l2": 8.920017075078523e-06,
+    "norm_ratio": 1.000000140726959,
+    "dot_over_reference_norm_sq": 1.000000140686534,
+    "reference_norm": 0.6954854925013414,
+    "estimate_norm": 0.6954855903748998,
+    "difference_norm": 6.203742468581361e-06
+  },
+  "exact_model_samples": [
+    {
+      "estimator": "exact_model_samples",
+      "samples_per_task": 1,
+      "surrogate_loss": 0.004271805286407471,
+      "cosine": 0.4574431952581246,
+      "relative_l2": 1.3848768495449633,
+      "norm_ratio": 1.5191108293600641,
+      "dot_over_reference_norm_sq": 0.6949069117336875,
+      "reference_norm": 0.6954854925013414,
+      "estimate_norm": 1.0565195433216055,
+      "difference_norm": 0.9631617577594849
+    },
+    {
+      "estimator": "exact_model_samples",
+      "samples_per_task": 4,
+      "surrogate_loss": 0.0014990270137786865,
+      "cosine": 0.8955668425740287,
+      "relative_l2": 0.5108840113690265,
+      "norm_ratio": 1.146649383973339,
+      "dot_over_reference_norm_sq": 1.0269011683444584,
+      "reference_norm": 0.6954854925013414,
+      "estimate_norm": 0.7974780115390574,
+      "difference_norm": 0.35531241825804827
+    }
+  ],
+  "mcmc": [
+    {
+      "estimator": "finite_support_mh_mcmc",
+      "steps": 0,
+      "samples_per_task": 4,
+      "surrogate_loss": 0.002028822898864746,
+      "cosine": 0.9517129259206647,
+      "relative_l2": 0.31231225149277364,
+      "norm_ratio": 1.009127521638467,
+      "dot_over_reference_norm_sq": 0.9603997062456143,
+      "reference_norm": 0.6954854925013414,
+      "estimate_norm": 0.7018335513833873,
+      "difference_norm": 0.21720864004365448
+    },
+    {
+      "estimator": "finite_support_mh_mcmc",
+      "steps": 2,
+      "samples_per_task": 4,
+      "surrogate_loss": 0.002163439989089966,
+      "cosine": 0.9143866033047103,
+      "relative_l2": 0.5145679010473306,
+      "norm_ratio": 1.2320074229886109,
+      "dot_over_reference_norm_sq": 1.1265310827527453,
+      "reference_norm": 0.6954854925013414,
+      "estimate_norm": 0.8568432893425425,
+      "difference_norm": 0.35787451008528426
+    }
+  ],
+  "seconds": 7.644807208998827
+}
