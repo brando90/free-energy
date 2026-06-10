@@ -48,7 +48,8 @@ class VeribenchDataset(Dataset):
                     n_target_trunc += 1
                     prompt_ids = []
                 elif len(prompt_ids) + len(target_ids) > self.max_length:
-                    prompt_ids = prompt_ids[-(self.max_length - len(target_ids)):]
+                    budget = self.max_length - len(target_ids)  # guard: [-0:] would keep the whole prompt
+                    prompt_ids = prompt_ids[-budget:] if budget > 0 else []
                     n_prompt_trunc += 1
                 ids = prompt_ids + target_ids
                 self.items.append({"input_ids": ids, "attention_mask": [1] * len(ids)})

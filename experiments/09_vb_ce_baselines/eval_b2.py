@@ -53,9 +53,16 @@ def main() -> int:
     from base_model_trainer import ModelTrainer  # noqa: E402
 
     ckpt = pick_ckpt(Path(args.ckpt).resolve())
-    module = ModelTrainer.load_from_checkpoint(str(ckpt), map_location="cuda")
+    # ModelTrainer.__init__ takes hparams positionally, which breaks load_from_checkpoint -> load manually
+    from argparse import Namespace  # noqa: E402
+    payload = torch.load(str(ckpt), map_location="cpu", weights_only=False)
+    hp = payload.get("hyper_parameters", {})
+    hparams = hp if isinstance(hp, Namespace) else Namespace(**dict(hp))
+    module = ModelTrainer(hparams)
+    missing, unexpected = module.load_state_dict(payload["state_dict"], strict=False)
+    assert not missing and not unexpected, f"state_dict mismatch: missing={missing[:3]} unexpected={unexpected[:3]}"
     model = module.model.cuda().eval()
-    tok_name = module.hparams.tokenizer
+    tok_name = hparams.tokenizer
     from transformers import AutoTokenizer  # noqa: E402
     tokenizer = AutoTokenizer.from_pretrained(tok_name, clean_up_tokenization_spaces=False)
     eos = tokenizer.eos_token_id
@@ -69,7 +76,8 @@ def main() -> int:
         if len(target_ids) > max_len:
             target_ids, prompt_ids = target_ids[:max_len], []
         elif len(prompt_ids) + len(target_ids) > max_len:
-            prompt_ids = prompt_ids[-(max_len - len(target_ids)):]
+            budget = max_len - len(target_ids)  # guard: [-0:] would keep the whole prompt
+            prompt_ids = prompt_ids[-budget:] if budget > 0 else []
         ids = torch.tensor([prompt_ids + target_ids], device="cuda")
         x, targets = ids[:, :-1], ids[:, 1:]
         dists, _ = model(x, learning=False, return_raw_logits=False, no_randomness=True)
@@ -90,6 +98,7 @@ def main() -> int:
 
     res = {
         "mode": "b2_eval", "ckpt": str(ckpt), "split": args.split, "n_docs": len(rows),
+        "n_params": sum(p.numel() for p in model.parameters()),
         "context_length": args.context_length, "tokenizer": tok_name,
         "completion_ce": comp_nll / max(comp_tok, 1), "completion_ppl": math.exp(comp_nll / max(comp_tok, 1)),
         "completion_tokens": int(comp_tok),

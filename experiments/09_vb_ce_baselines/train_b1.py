@@ -66,7 +66,8 @@ class PairDataset(Dataset):
                 self.n_target_trunc += 1
                 prompt_ids = []
             elif len(prompt_ids) + len(target_ids) > max_len:
-                prompt_ids = prompt_ids[-(max_len - len(target_ids)):]
+                budget = max_len - len(target_ids)  # guard: [-0:] would keep the whole prompt
+                prompt_ids = prompt_ids[-budget:] if budget > 0 else []
                 self.n_prompt_trunc += 1
             self.examples.append(
                 Example(input_ids=prompt_ids + target_ids, labels=[-100] * len(prompt_ids) + target_ids)
