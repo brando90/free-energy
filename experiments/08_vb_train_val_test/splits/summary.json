@@ -1,0 +1,79 @@
+{
+  "created_for": "experiments/08_vb_train_val_test \u2014 CE + SCSC split for Elyas baselines (LM, EBT, Diffusion)",
+  "veribench_root": "/Users/brandomiranda/veribench/veribench_dataset",
+  "output_dir": "/Users/brandomiranda/free-energy/experiments/08_vb_train_val_test/splits",
+  "train_frac": 0.8,
+  "val_frac": 0.1,
+  "test_frac": 0.1,
+  "split_key": "task_id (gold lean stem), SHA-256 stable bucket \u2014 identical to experiments/00_ar_pros_cons",
+  "gold": {
+    "n": 891,
+    "by_split": {
+      "train": 707,
+      "val": 87,
+      "test": 97
+    },
+    "paired": 884,
+    "unpaired": 7
+  },
+  "agent_variants": {
+    "n": 368,
+    "by_split": {
+      "train": 302,
+      "val": 30,
+      "test": 36
+    },
+    "paired": 356,
+    "unpaired": 12
+  },
+  "pairing_methods": {
+    "exact": 602,
+    "snake": 275,
+    "normdir": 7,
+    "normfam": 0
+  },
+  "unpaired_gold_task_names": [
+    "cs_set/heapsort_heap_structure",
+    "cs_set/heapsort_build_heap",
+    "cs_set/heapsort_max_heapify",
+    "cs_set/heapsort_priority_queue",
+    "cs_set/heapsort_problems",
+    "cs_set/linear_search",
+    "cs_set/heapsort_algorithm"
+  ],
+  "by_family_gold": {
+    "aerospace_set_real": 3,
+    "aerospace_set_synthetic": 17,
+    "compilers_set_real": 5,
+    "compilers_set_synthetic": 15,
+    "concurrent_set_real": 5,
+    "concurrent_set_synthetic": 15,
+    "critical_infra_set_real": 6,
+    "critical_infra_set_synthetic": 14,
+    "crypto_set_real": 16,
+    "crypto_set_synthetic": 4,
+    "cs_set": 20,
+    "easy_set": 41,
+    "finance_set_real": 8,
+    "finance_set_synthetic": 12,
+    "gov_cert_set_real": 4,
+    "gov_cert_set_synthetic": 16,
+    "hardware_set_real": 5,
+    "hardware_set_synthetic": 16,
+    "humaneval_set": 56,
+    "hypervisor_set_real": 5,
+    "hypervisor_set_synthetic": 16,
+    "medical_oss_set_real": 9,
+    "medical_oss_set_synthetic": 11,
+    "memory_bugs_set_real": 5,
+    "memory_bugs_set_synthetic": 15,
+    "os_embedded_set_real": 6,
+    "os_embedded_set_synthetic": 14,
+    "realcode_set": 32,
+    "regulated_set_real": 5,
+    "regulated_set_synthetic": 15,
+    "rfc_set_real": 19,
+    "rfc_set_synthetic": 1,
+    "security_set": 460
+  }
+}

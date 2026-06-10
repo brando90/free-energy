@@ -1,0 +1,2 @@
+# manifest.jsonl duplicates train/val/test/agent_variants — regenerate with make_split.py
+splits/manifest.jsonl
