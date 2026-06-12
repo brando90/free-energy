@@ -1,0 +1,24 @@
+{
+  "_gold": {
+    "solved": 147,
+    "attempted": 500,
+    "gold_think_doubt_rate": 1.0,
+    "gold_visible_doubt_rate": 0.0136
+  },
+  "paraphrase": {
+    "n": 122,
+    "valid_rederivation": 0.5492,
+    "derailed": 0.3443,
+    "unparsed": 0.082,
+    "ack_visible": 0.0082,
+    "reopened_think": 0.0
+  },
+  "negstep": {
+    "n": 122,
+    "valid_rederivation": 0.6885,
+    "derailed": 0.123,
+    "unparsed": 0.1557,
+    "ack_visible": 0.6721,
+    "reopened_think": 0.0
+  }
+}

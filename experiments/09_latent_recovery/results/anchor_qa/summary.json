@@ -1,0 +1,20 @@
+{
+  "paraphrase": {
+    "n": 36,
+    "verdict_ok": 0.7778,
+    "chain_sound": 0.8056,
+    "recovered": 0.6389,
+    "ack": 0.3611
+  },
+  "negstep": {
+    "n": 35,
+    "verdict_ok": 0.7143,
+    "chain_sound": 0.7143,
+    "recovered": 0.5714,
+    "ack": 0.5714
+  },
+  "_gold": {
+    "solved": 72,
+    "attempted": 130
+  }
+}
