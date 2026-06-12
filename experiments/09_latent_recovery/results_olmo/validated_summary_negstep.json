@@ -1,0 +1,38 @@
+{
+  "early": {
+    "unparsed": 15,
+    "acknowledged": 0,
+    "n": 76,
+    "parroted": 11,
+    "valid_rederivation": 46,
+    "derailed": 4,
+    "valid_rederivation_rate": 0.6053,
+    "poisoned_rate": 0.0
+  },
+  "mid": {
+    "valid_rederivation": 40,
+    "acknowledged": 1,
+    "n": 76,
+    "unparsed": 16,
+    "parroted": 9,
+    "derailed": 9,
+    "poisoned": 2,
+    "valid_rederivation_rate": 0.5263,
+    "poisoned_rate": 0.0263
+  },
+  "late": {
+    "parroted": 9,
+    "acknowledged": 0,
+    "n": 76,
+    "valid_rederivation": 47,
+    "unparsed": 13,
+    "poisoned": 1,
+    "derailed": 6,
+    "valid_rederivation_rate": 0.6184,
+    "poisoned_rate": 0.0132
+  },
+  "_cohort": {
+    "gold_validated_instances": 103,
+    "perturbed_runs_excluded_gold_not_valid": 60
+  }
+}

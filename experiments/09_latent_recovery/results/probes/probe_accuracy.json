@@ -1,0 +1,21 @@
+{
+  "n_boundaries": 2514,
+  "n_instances": 161,
+  "n_classes": 31,
+  "skipped_align": 0,
+  "majority_baseline": 0.0746,
+  "last_derived_acc_by_layer": {
+    "0": 0.0746,
+    "7": 0.6734,
+    "14": 0.5746,
+    "21": 0.4073,
+    "28": 0.4879
+  },
+  "next_derived_acc_by_layer (precommit signal)": {
+    "0": 0.0464,
+    "7": 0.3246,
+    "14": 0.3246,
+    "21": 0.3629,
+    "28": 0.373
+  }
+}
