@@ -17,9 +17,7 @@ advantage for EBMs on this axis.
 ## Source
 
 - Saved source photo: `assets/source_photo.jpg`
-- Saved summary update photo: `assets/summary_update_photo.jpg`
-- Original upload path: `/tmp/codex-remote-attachments/019ec76d-55f8-7671-aed0-2667ac416b8b/0d7a30d9-1e1b-47e1-9e9f-644e9753f2ff/3-Photo-3.jpg`
-- Summary update upload path: `/tmp/codex-remote-attachments/019ec76d-55f8-7671-aed0-2667ac416b8b/ea880cd6-79b2-4fda-ad8e-23ca65ea9c0a/3-Photo-3.jpg`
+- Original upload path: `/tmp/codex-remote-attachments/019ec76d-55f8-7671-aed0-2667ac416b8b/ea880cd6-79b2-4fda-ad8e-23ca65ea9c0a/3-Photo-3.jpg`
 - Visible formulas resemble unconditional and conditional EBM normalization.
 - Transcript confidence: medium-low. Re-read the image before finalizing.
 
@@ -45,7 +43,7 @@ that EBMs are being credited with solving.
 
 Plan:
 
-1. Re-transcribe both source photos and separate four claims:
+1. Re-transcribe the source photo and separate four claims:
    - transformers/attention solve the full-input or long-context issue
    - unsupervised EBMs learn semantic/task structure
    - learned energy transfers to downstream tasks

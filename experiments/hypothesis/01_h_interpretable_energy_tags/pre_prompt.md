@@ -17,9 +17,7 @@ decomposed into token, hidden-state, concept, or tag components.
 ## Source
 
 - Saved source photo: `assets/source_photo.jpg`
-- Saved summary update photo: `assets/summary_update_photo.jpg`
-- Original upload path: `/tmp/codex-remote-attachments/019ec76d-55f8-7671-aed0-2667ac416b8b/0d7a30d9-1e1b-47e1-9e9f-644e9753f2ff/2-Photo-2.jpg`
-- Summary update upload path: `/tmp/codex-remote-attachments/019ec76d-55f8-7671-aed0-2667ac416b8b/ea880cd6-79b2-4fda-ad8e-23ca65ea9c0a/2-Photo-2.jpg`
+- Original upload path: `/tmp/codex-remote-attachments/019ec76d-55f8-7671-aed0-2667ac416b8b/ea880cd6-79b2-4fda-ad8e-23ca65ea9c0a/2-Photo-2.jpg`
 - Visible formulas include a Boltzmann conditional form and a sequence-energy
   expression resembling `E_theta(x_{1:i})`.
 - Transcript confidence: medium-low. Re-read the image before finalizing.
@@ -45,7 +43,7 @@ problem, and whether decomposition fixes it or merely creates post-hoc stories.
 
 Plan:
 
-1. Re-transcribe both photos and identify the intended objects: sequence
+1. Re-transcribe the photo and identify the intended objects: sequence
    prefix, token `x_i`, hidden state `h_i`, concept/tag `c_j`, and scalar
    energy.
 2. Define candidate decompositions:

@@ -20,9 +20,7 @@ partition-function costs.
 ## Source
 
 - Saved source photo: `assets/source_photo.jpg`
-- Saved summary update photo: `assets/summary_update_photo.jpg`
-- Original upload path: `/tmp/codex-remote-attachments/019ec76d-55f8-7671-aed0-2667ac416b8b/0d7a30d9-1e1b-47e1-9e9f-644e9753f2ff/1-Photo-1.jpg`
-- Summary update upload path: `/tmp/codex-remote-attachments/019ec76d-55f8-7671-aed0-2667ac416b8b/ea880cd6-79b2-4fda-ad8e-23ca65ea9c0a/1-Photo-1.jpg`
+- Original upload path: `/tmp/codex-remote-attachments/019ec76d-55f8-7671-aed0-2667ac416b8b/ea880cd6-79b2-4fda-ad8e-23ca65ea9c0a/1-Photo-1.jpg`
 - Visible formula: `p_theta(y | x) = exp(-E_theta(x, y)) / Z_theta(x)`
 - Transcript confidence: low. Re-read the image before finalizing the exact
   research question.
@@ -50,7 +48,7 @@ then decide whether the older surjection/many-to-one reading adds anything.
 
 Plan:
 
-1. Re-transcribe both source photos and write the cleanest possible version of
+1. Re-transcribe the source photo and write the cleanest possible version of
    the one-sentence hypothesis, confidence, and importance.
 2. Formalize the standard object:
    - conditional EBM: `p_theta(y | x) = exp(-E_theta(x, y)) / Z_theta(x)`

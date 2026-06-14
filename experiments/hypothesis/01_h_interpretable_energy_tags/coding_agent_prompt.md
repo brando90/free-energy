@@ -9,7 +9,7 @@ so the ground-truth tags are known.
 
 - GitHub issue: https://github.com/brando90/free-energy/issues/47
 - Hypothesis notes: `pre_prompt.md`
-- Source images: `assets/source_photo.jpg`, `assets/summary_update_photo.jpg`
+- Source image: `assets/source_photo.jpg`
 
 ## Compact Hypothesis
 

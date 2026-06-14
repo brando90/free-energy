@@ -1,5 +1,4 @@
-**Source artifacts.** Original notebook photo saved at `assets/source_photo.jpg`;
-summary update photo saved at `assets/summary_update_photo.jpg`.
+**Source artifact.** Notebook photo saved at `assets/source_photo.jpg`.
 
 **Coding-agent prompt.** `coding_agent_prompt.md` specifies the real
 long-context experiment, optional SNAP escalation, deliverables, and verdict
@@ -25,7 +24,7 @@ transformers/attention do not already solve, or is attention the main
 mechanism?
 
 **Tasks**
-- [ ] Re-transcribe both source images and refine the exact one-sentence goal,
+- [ ] Re-transcribe the source image and refine the exact one-sentence goal,
   confidence, and importance.
 - [ ] Define the alleged "unbounded length" or full-input conditioning issue
   precisely: context length, recurrence forgetting, global dependency capture,

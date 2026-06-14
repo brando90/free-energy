@@ -1,5 +1,4 @@
-**Source artifacts.** Original notebook photo saved at `assets/source_photo.jpg`;
-summary update photo saved at `assets/summary_update_photo.jpg`.
+**Source artifact.** Notebook photo saved at `assets/source_photo.jpg`.
 
 **Coding-agent prompt.** `coding_agent_prompt.md` specifies the real benchmark,
 local smoke test, optional SNAP escalation, deliverables, and verdict criteria.
@@ -27,7 +26,7 @@ more hardware-friendly score/normalization while preserving the ordering,
 search, and calibration properties that matter?
 
 **Tasks**
-- [ ] Re-transcribe both source images and refine the one-sentence hypothesis,
+- [ ] Re-transcribe the source image and refine the one-sentence hypothesis,
   confidence, and importance.
 - [ ] Write the standard EBM derivation for `p_theta(y | x)`,
   `Z_theta(x)`, and `log p_theta(y | x)`.

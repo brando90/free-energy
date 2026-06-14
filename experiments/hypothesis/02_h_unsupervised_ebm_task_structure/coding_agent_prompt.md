@@ -10,7 +10,7 @@ it tests a real alternative.
 
 - GitHub issue: https://github.com/brando90/free-energy/issues/48
 - Hypothesis notes: `pre_prompt.md`
-- Source images: `assets/source_photo.jpg`, `assets/summary_update_photo.jpg`
+- Source image: `assets/source_photo.jpg`
 
 ## Compact Hypothesis
 

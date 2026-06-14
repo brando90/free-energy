@@ -1,5 +1,4 @@
-**Source artifacts.** Original notebook photo saved at `assets/source_photo.jpg`;
-summary update photo saved at `assets/summary_update_photo.jpg`.
+**Source artifact.** Notebook photo saved at `assets/source_photo.jpg`.
 
 **Coding-agent prompt.** `coding_agent_prompt.md` specifies the real synthetic
 sequence experiment, optional SNAP escalation, deliverables, and verdict
@@ -25,7 +24,7 @@ that scalar or from the network computing it.
 EBMs, and do structured/decomposed energy outputs fix anything measurable?
 
 **Tasks**
-- [ ] Re-transcribe both source images and refine the intended variables,
+- [ ] Re-transcribe the source image and refine the intended variables,
   confidence, and importance.
 - [ ] Define why a single real-valued output might be too lossy: optimization,
   credit assignment, interpretability, calibration, or expressivity.
