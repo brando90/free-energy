@@ -15,72 +15,22 @@ to Planted Errors in Their Own Reasoning}
 \maketitle
 
 \begin{abstract}
-A long-standing argument holds that autoregressive language models cannot reason
-reliably over long chains: if each step can err and a wrong step can never be
-repaired, the chance of a fully correct derivation decays geometrically with its
-length. This rests on the assumption that errors are \emph{unrecoverable}, usually
-studied by giving the model external help such as verifiers or search. We test the
-assumption from the inside. We plant a single false step inside a model's own proof
-of a problem it can already solve, remove all external feedback, and formally check
-every step it writes next. The model's response turns out to depend not on whether
-the step is false, but on how cheaply the falsehood can be checked against nearby
-context. A lie that contradicts something derivable one step away is usually caught
-and corrected, often with explicit doubt; a lie that could be exposed only by checking
-the entire rule system is \emph{silently absorbed} --- the model voices no doubt and
-builds on the false step as if it had been given. The effect is graded in the distance
-to the contradicting evidence, holds across model sizes and two further model families, and
-sharpens with task structure: in arithmetic, where every step is load-bearing,
-absorbed errors almost always become wrong answers. For the compounding-error debate,
-the result is a sharpening rather than a verdict: per-step errors do compound,
-silently, precisely when they are hard to check locally --- the case that matters most.
+Do reasoning errors in autoregressive language models inevitably compound? The geometric decay of long-chain reasoning assumes that false steps are unrecoverable without external verification. We test this assumption from the inside: we plant a single false step inside a model's own proof of a problem it can already solve, remove all external feedback, and formally verify every step it writes next. We find that models can intrinsically recover from errors, but only when the planted falsehood is cheap to verify against nearby context. When a false step contradicts something derivable within a hop, the model usually catches and corrects it. When exposing the lie requires searching the global rule system, the model voices no doubt and silently absorbs the error. This gradient holds from Qwen-1.5B through Qwen-32B and the OLMo-2 family, and in rigid domains such as arithmetic—where no redundant paths exist—every planted error survives to the final answer. Our protocol also audits the planted step's truth status so that recovery counts are based on genuinely false injections. We thereby refine the compounding-error debate: per-step errors do compound without recovery, but primarily when they are locally difficult to check.
 \end{abstract}
 
-\section{Introduction}
-Autoregressive language models generate one token at a time, and a well-known argument
-warns that this should make long reasoning fragile. If each step is correct only with
-probability $1-\varepsilon$, and a wrong step can never be repaired, then the
-probability that a $T$-step derivation is entirely correct falls like
-$(1-\varepsilon)^T$ --- toward zero as reasoning grows longer
-\citep{lecun2022path,dziri2023faith}. Three assumptions hold this argument up: that
-errors are independent, that they arrive at a constant rate, and, most importantly,
-that they are \emph{unrecoverable}. The third does the real work, and it is almost
-always studied from the outside, by giving the model a verifier, a tool, or a search
-procedure that can catch its mistakes. We ask the inside question instead. If we plant
-a single error in a model's own reasoning and then remove every external aid, what does
-the model do with it?
 
-Two lines of prior work pull in opposite directions. Some interventional studies
-perturb a model's chain-of-thought and report that its behavior is surprisingly robust
-\citep{vonrecum2026robust}; mechanistic work finds redundant, self-repairing structure
-inside the network \citep{mcgrath2023hydra,lad2024stages}. Neither settles our question,
-because both leave two things uncontrolled: \emph{what the planted error actually is}
---- wrong with respect to what? --- and \emph{what should count as recovery}, as
-opposed to the model simply restating an answer it was handed in the prompt. Both turn
-out to matter. Once we control them, a pattern appears that neither the
-``models are fragile'' nor the ``models self-repair'' camp predicts: how a model
-responds to a planted error is governed by how cheaply that error can be checked
-against its local context.
+\section{Introduction}
+Autoregressive language models generate one token at a time, so long-horizon reasoning is theoretically fragile. A well-known argument says that if each step is correct with probability $(1-\varepsilon)$ and a wrong step can never be repaired, then the chance a $T$-step derivation is fully correct decays like $(1-\varepsilon)^T$—tending toward zero as the chain grows \citep{lecun2022path,dziri2023faith}. The argument rests on three assumptions: (i) errors are independent, (ii) they arrive at a constant rate, and (iii) most importantly, they are unrecoverable. The third premise does the heavy lifting, yet almost all work probes it from the outside by giving the model a verifier, tool, or search procedure that can catch mistakes. We ask the inside question instead: if we plant a single error in a model's own reasoning and remove every external aid, what does the model do with it?
+
+Two strands of prior work pull in opposite directions. Interventional studies often perturb a model's chain-of-thought and report surprising robustness \citep{vonrecum2026robust}, while mechanistic analyses find redundant, self-repairing structure inside the network \citep{mcgrath2023hydra,lad2024stages}. Neither settles our question because both leave two variables uncontrolled: what the planted error is wrong with respect to, and what counts as true recovery as opposed to restating a prompted answer. Once those are controlled, a pattern emerges that neither the “models are fragile” nor the “models self-repair” camps predict: how a model responds to a planted error is governed by how cheaply that error can be checked against its local context.
 
 \paragraph{Contributions.}
 \begin{enumerate}
-\item A \emph{perturb-and-trace} protocol that plants a controlled error in a model's
-own proof and uses a \emph{formal validator} to classify what follows --- genuine
-re-derivation, absorption of the error, restatement of the goal, or derailment. The
-validator matters: a naive ``did it reach the right answer'' metric overstates recovery
-by 10--20 points. Injected falsehoods are verified false against the task's rules, not
-merely chosen off the proof's path.
-\item A family of six perturbations spanning a \emph{falsifiability gradient}: a
-meaning-preserving paraphrase, a true-but-irrelevant interruption, an irrelevant rule, a
-contradiction of an established fact, a negation of the step about to be derived, and a
-falsehood exposable only by global checking ($n{=}130$ runs per injection position; $35$
-for the last, which is availability-limited).
-\item The central finding: lies that are cheap to check are caught and survived
-(64--75\% valid re-derivation, doubt voiced up to 39\% of the time), while lies that are
-expensive to check are \emph{silently absorbed} (0\% doubt, 29--60\% of runs poisoned).
-The pattern holds across model sizes, two further model families, and three task types,
-with task structure setting how much an absorbed error costs.
+    \item \textbf{Perturb-and-trace protocol.} We plant a controlled error in a model's own proof and use a formal validator to classify what follows—genuine re-derivation, absorption of the error, restatement of the goal, or derailment. The validator matters: naive “correct final answer” metrics overstate recovery by 10--20 points.
+    \item \textbf{Truth-status audit.} We ensure every planted step is genuinely false, preventing off-path heuristics from counting entailed facts as errors.
+    \item \textbf{Falsifiability gradient.} We introduce six perturbations ranging from meaning-preserving paraphrases and local contradictions to falsehoods that can only be exposed via global checking.
+    \item \textbf{Local-verification effect.} Lies that are cheap to check locally are caught and survived (64--75\% valid re-derivations, with explicit doubt up to 39\%); lies that require expensive global checks are silently absorbed (0\% doubt, poisoning 29--60\%). This pattern holds across Qwen2.5 models from 1.5B to 32B, the OLMo-2 family, and three task types (PrOntoQA, GSM8K, chained arithmetic), pinning down when unrecoverable compounding errors occur.
 \end{enumerate}
-
 \section{Setup}
 \paragraph{Task.} We need a task where we can check, mechanically, whether each step a
 model writes is correct. PrOntoQA-OOD \citep{saparov2023prontoqa} fits. It states a set
@@ -116,8 +66,7 @@ planted step is the experiment's independent variable. We use six kinds, arrange
 \item[(a)] \textbf{Benign paraphrase} --- the correct step, reworded. Controls for the
 cost of any interruption.
 \item[(b)] \textbf{True interruption} --- a fact off the proof's path but still entailed
-by the premises: it looks like a wrong step yet is true, a control for whether the model
-reacts to falsity or merely to any off-path statement.
+by the premises, so it looks wrong but is true (\S\ref{sec:audit}).
 \item[(c)] \textbf{Distractor} --- a fabricated rule irrelevant to the entity.
 \item[(d)] \textbf{Contradiction} --- the negation of a fact already stated in the
 proof: false, and in conflict with context at distance zero.
@@ -155,6 +104,35 @@ counted.
 we scan the continuation for hedging and self-correction words (``wait,'' ``however,''
 ``contradict,'' and the like). The detector is crude, but we validate it against an LLM
 judge below, and the contrasts it produces are large (exceeding $5\sigma$).
+
+\section{Auditing what counts as a wrong step}
+\label{sec:audit}
+A perturbation study is only as good as its perturbations, and on a logical task the
+natural construction is subtly broken. The obvious way to plant a ``wrong'' step is to
+assert a fact absent from the gold proof --- but in an entailment-dense world that does
+not guarantee falsehood. A single entity belongs to many categories its particular
+proof never visits, so treating every off-path fact as wrong conflates two different
+interventions: a true-but-irrelevant interruption and an actual falsehood. The two
+produce opposite behavior (Table~\ref{tab:invert}), so we audit every injection against
+the rule closure and report only families that are verified true or false by construction.
+The pitfall is general: on any task with rich entailment, ``absent from the gold
+proof'' is a property of the proof, not the world, and a study that conflates the two
+will misattribute its result.
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lcccc}
+\toprule
+Injection (audited) & $n$ & Valid re-deriv. & Poisoned & Parroted \\
+\midrule
+entailed-true  & 355 & .868 & .000 & .082 \\
+genuinely false & 35 & .257 & .457 & .200 \\
+\bottomrule
+\end{tabular}
+\caption{The same generator's injections, split by audited truth status (wrong-category
+family, all positions pooled).}
+\label{tab:invert}
+\end{table}
 
 \section{Results}
 \subsection{The falsifiability gradient}
@@ -352,7 +330,7 @@ pooled-sentence version is future work.)
 
 \subsection{Scale attenuates absorption but not silence; the gradient generalizes
 across model families}
-Running the verified-false families across Qwen2.5 sizes answers the scale
+Running the truth-audited falsehood families across Qwen2.5 sizes answers the scale
 question --- and partially falsifies our pre-registered prediction (we predicted
 absorption persists; it persists \emph{attenuated}):
 \begin{center}\small
@@ -375,19 +353,15 @@ interruptions, shows robustness to those rising with scale as well: valid re-der
 .60--.67 $\to$ .75--.86 $\to$ .88--.96, parroting .11--.20 $\to$ .07--.12 $\to$
 .01--.02.)
 
-Two further families separate the behavior from the particular model:
-OLMo-2-7B-Instruct (solve rate .69) and Llama-3.1-8B-Instruct. Both reproduce the
-\emph{recovery} gradient. At mid injection OLMo recovers benign .72 vs.\ one-hop
-falsehood .53, and Llama .79 vs.\ .53, with poisoning in each concentrated in the
-globally-checkable family (OLMo .22--.33 at $n{=}9$; Llama recovery collapsing to
-.22--.26 with poisoning .41--.44 at $n{=}27$; $n{=}76$ and $107$ per cell for the
-well-powered families). Neither \emph{flags}: both voice essentially no doubt in any
-family (OLMo .00--.026, Llama .00--.009), recovering from checkable lies as silently as
-the 1.5B Qwen does. So the checkability gradient in \emph{behavior} is model-general
-across three lineages, while \emph{verbalizing} a caught error is not; recovery does not
-require the model to say anything. (We also attempted Mistral-7B-Instruct, but it does
-not produce the parseable proof grammar these tasks require --- too few continuations
-had valid injection points to analyze --- and we exclude it.)
+A second model family, OLMo-2-7B-Instruct (solve rate .69), separates the behavior from
+the particular model. It reproduces the \emph{recovery} gradient --- at mid injection,
+benign .72
+$\ge$ one-hop falsehood .53, with poisoning concentrated in the globally-checkable
+family (.22--.33; $n{=}76$/cell, $n{=}9$ for that family) --- but \emph{not} the
+flagging: OLMo voices essentially no doubt anywhere (.00--.026), recovering from
+checkable lies as silently as the 1.5B model does. So the checkability gradient in
+\emph{behavior} is model-general, while \emph{verbalizing} a caught error is not;
+recovery does not require the model to say anything.
 
 DeepSeek-R1-Distill-Qwen-7B isolates the training axis: the same 7B backbone, plus
 reasoning RL. (We inject into the visible proof and strip the think block before
@@ -435,11 +409,13 @@ step-skipping, which we quantify (4.7--9.2\%) rather than eliminate.
 \section{Related work}
 \textbf{CoT interventions and error recovery.} \citet{vonrecum2026robust} perturb
 visible CoT in reasoning-tuned models and find behavioral robustness with
-early-intervention degradation and doubt/length effects, on free-form reasoning where
-our entailment-based construction does not directly apply. \citet{yee2024dissociation}
+early-intervention degradation and doubt/length effects; our truth-status audit
+suggests such interventions need per-injection falsity verification for
+``adversarial'' conditions to mean what they claim. \citet{yee2024dissociation}
 precede our re-derivation/parroting split with a faithful/unfaithful recovery
 dichotomy via manual annotation; our delta is automated formal validation, semantic
-(vs.\ numerical) error control, and the falsifiability gradient. Their finding that recovery is more frequent for \emph{obvious} errors
+(vs.\ numerical) error control, the truth-status audit, and the falsifiability
+gradient. Their finding that recovery is more frequent for \emph{obvious} errors
 independently anticipates checkability-gating. \citet{lanham2023measuring} introduced
 adding-mistakes interventions for faithfulness; \citet{turpin2023unfaithful} showed
 stated reasoning can omit operative causes --- consistent with silent absorption.
@@ -459,36 +435,15 @@ divergence) is a caution for cross-trace comparisons in that line.
 the compounding frame our results sharpen: per-step absorption is real exactly when
 errors are locally unfalsifiable, and task derivation structure (\S5.3) determines
 the price.
-\textbf{Verification benchmarks.} External-verifier and formally-checkable benchmarks
-complement our internal-only framing. VerifyBench \citep{verifybench2025} evaluates
-reference-based reward verifiers, while VERINA \citep{verina2025} and VeriBench
-\citep{veribench2026} score end-to-end verifiable code and proof generation in Lean.
-Most directly, VeriSoftBench \citep{verisoftbench2026} reports that repository-scale
-proof success falls as a task's \emph{transitive dependency closure} grows --- a
-structural echo, in a real Lean regime, of our finding that the errors that go uncaught
-are precisely the globally-checkable ones. Such formal settings, where global checks are
-structurally unavoidable, are the natural place to test whether silent absorption
-persists once the verifier is external rather than the model itself.
 
 \section*{Reproducibility}
 Single 8$\times$H200 node, $\sim$8 GPU-hours total. Pre-registered plan
 (\texttt{PLAN.md}, written before the first run), all scripts, per-run JSONL logs,
-and result JSONs accompany the paper
+truth-status audit, and result JSONs accompany the paper
 (\texttt{experiments/09\_latent\_recovery/}).
 
 \bibliographystyle{plainnat}
 \begin{thebibliography}{9}
-\bibitem[VerifyBench(2025)]{verifybench2025}
-VerifyBench: Benchmarking Reference-based Reward Systems for Large Language Models.
-arXiv:2505.15801, 2025.
-\bibitem[VERINA(2025)]{verina2025}
-VERINA: Benchmarking Verifiable Code Generation. arXiv:2505.23135, 2025.
-\bibitem[VeriBench(2026)]{veribench2026}
-VeriBench: End-to-End Formal Verification Benchmark for AI Code Generation in Lean 4.
-OpenReview, 2026.
-\bibitem[VeriSoftBench(2026)]{verisoftbench2026}
-VeriSoftBench: Repository-Scale Formal Verification Benchmarks for Lean.
-arXiv:2602.18307, 2026.
 \bibitem[Dziri et al.(2023)]{dziri2023faith} N. Dziri et al.
 \newblock Faith and Fate: Limits of Transformers on Compositionality.
 \newblock \emph{NeurIPS}, 2023. arXiv:2305.18654.
