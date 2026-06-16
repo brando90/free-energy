@@ -15,173 +15,157 @@ to Planted Errors in Their Own Reasoning}
 \maketitle
 
 \begin{abstract}
-Compounding-error arguments against autoregressive reasoning assume mid-trajectory
-errors are unrecoverable. We test the premise causally: take multi-hop deduction
-problems a pretrained transformer solves, inject a single controlled sentence into the
-model's \emph{own} proof, remove all external feedback, and formally validate every
-step of the continuation. Our central finding required catching our own construct
-error: a perturbation generator that picks facts ``off the gold proof's path'' ---
-the natural reading of \emph{wrong} --- produces statements that are \textbf{entailed-true
-92\% of the time} in PrOntoQA worlds. Auditing injection truth status inverts the
-apparent result. True-but-irrelevant interruptions are shrugged off (87\% formally
-valid re-derivation, 0\% error adoption). Genuinely false injections split by
-\emph{local falsifiability}: lies contradicting evidence available within one
-inference hop are loudly flagged (up to 39\% verbalized doubt) and largely survived
-(64--75\% valid re-derivation), while lies that can only be falsified by global
-entailment checking are \textbf{silently absorbed} --- 0\% verbalized doubt, valid
-re-derivation collapsing to 23--34\%, and the planted fact entering the model's
-subsequent derivation in 29--60\% of runs. All falsehoods cause damage exceeding a
-benign-paraphrase control ($p<.03$ at every injection position); a formal
-step-validator separates genuine re-derivation from goal parroting, which inflates
-naive final-answer ``recovery'' by 10--20 points. The gradient is parametric: placing the falsifying evidence exactly $k$ inference
-hops away yields monotonically falling doubt ($.39 \to .32 \to .23 \to .00$) and
-recovery as $k$ grows. Three further results bound the claim. Recovery survives a
-question-format condition in which the queried statement's truth value is unknown
-(57\% formally validated, so it is not goal parroting). The regime sets the price:
-on GSM8K and chained arithmetic, where intermediates are load-bearing, absorption
-reaches 88--100\% --- and the GSM8K case shows models re-check what they can re-read
-in context, not what they must recompute. Scale attenuates absorption
-(32B recovers from hard-to-check lies at $\sim$3$\times$ the 7B rate) but not
-silence, and a second model family (OLMo-2) replicates the recovery gradient while
-verbalizing nothing --- flagging is training-dependent, recovery is not. All rates are measured on a doubly
-filtered cohort (instances the model solves, whose unperturbed proofs formally
-validate) and are upper bounds. For the compounding debate the upshot is sharpened
-rather than settled: per-step error \emph{absorption} is real precisely when errors
-are hardest to check --- the dangerous case --- while cheaply-checkable errors are
-not absorbed. Off-path $\neq$ false is a construct trap for any perturbation study
-on entailment-dense tasks; we release the truth-status audit with the pipeline.
+A long-standing argument holds that autoregressive language models cannot reason
+reliably over long chains: if each step can err and a wrong step can never be
+repaired, the chance of a fully correct derivation decays geometrically with its
+length. This rests on the assumption that errors are \emph{unrecoverable}, usually
+studied by giving the model external help such as verifiers or search. We test the
+assumption from the inside. We plant a single false step inside a model's own proof
+of a problem it can already solve, remove all external feedback, and formally check
+every step it writes next. The model's response turns out to depend not on whether
+the step is false, but on how cheaply the falsehood can be checked against nearby
+context. A lie that contradicts something derivable one step away is usually caught
+and corrected, often with explicit doubt; a lie that could be exposed only by checking
+the entire rule system is \emph{silently absorbed} --- the model voices no doubt and
+builds on the false step as if it had been given. The effect is graded in the distance
+to the contradicting evidence, holds across model sizes and two further model families, and
+sharpens with task structure: in arithmetic, where every step is load-bearing,
+absorbed errors almost always become wrong answers. For the compounding-error debate,
+the result is a sharpening rather than a verdict: per-step errors do compound,
+silently, precisely when they are hard to check locally --- the case that matters most.
 \end{abstract}
 
 \section{Introduction}
-A stylized argument pattern, assembled from ingredients in the compounding-error
-literature \citep{lecun2022path,dziri2023faith}, holds that per-token commitment makes
-long autoregressive generations collapse: if each step errs with probability
-$\varepsilon$ and errors are independent, constant-rate, and unrecoverable, success
-decays like $(1-\varepsilon)^T$. The \emph{unrecoverable} premise is the load-bearing
-one, and it is usually attacked externally, via verifiers and tools. We ask the internal
-question: when a single error is planted in a pretrained transformer's own reasoning
-trajectory, with all external feedback removed, what does the model's subsequent
-computation actually do with it?
+Autoregressive language models generate one token at a time, and a well-known argument
+warns that this should make long reasoning fragile. If each step is correct only with
+probability $1-\varepsilon$, and a wrong step can never be repaired, then the
+probability that a $T$-step derivation is entirely correct falls like
+$(1-\varepsilon)^T$ --- toward zero as reasoning grows longer
+\citep{lecun2022path,dziri2023faith}. Three assumptions hold this argument up: that
+errors are independent, that they arrive at a constant rate, and, most importantly,
+that they are \emph{unrecoverable}. The third does the real work, and it is almost
+always studied from the outside, by giving the model a verifier, a tool, or a search
+procedure that can catch its mistakes. We ask the inside question instead. If we plant
+a single error in a model's own reasoning and then remove every external aid, what does
+the model do with it?
 
-Prior interventional work perturbs visible chain-of-thought and reads out behavioral
-robustness \citep{vonrecum2026robust}; redundancy and self-repair results
-\citep{mcgrath2023hydra,lad2024stages} suggest internal robustness mechanisms exist.
-What is missing is (i) \emph{semantic control over what the perturbation actually is}
---- wrong relative to what? --- and (ii) a behavioral metric strong enough to
-distinguish re-derivation from reaching a goal stated in the prompt. Both gaps turn out
-to be load-bearing. Controlling them yields a result neither the fragility nor the
-robustness literature predicts cleanly: the model's response to a planted error is
-governed by how cheaply the error can be falsified against its local context.
+Two lines of prior work pull in opposite directions. Some interventional studies
+perturb a model's chain-of-thought and report that its behavior is surprisingly robust
+\citep{vonrecum2026robust}; mechanistic work finds redundant, self-repairing structure
+inside the network \citep{mcgrath2023hydra,lad2024stages}. Neither settles our question,
+because both leave two things uncontrolled: \emph{what the planted error actually is}
+--- wrong with respect to what? --- and \emph{what should count as recovery}, as
+opposed to the model simply restating an answer it was handed in the prompt. Both turn
+out to matter. Once we control them, a pattern appears that neither the
+``models are fragile'' nor the ``models self-repair'' camp predicts: how a model
+responds to a planted error is governed by how cheaply that error can be checked
+against its local context.
 
 \paragraph{Contributions.}
-\textbf{(1)} A perturb-and-trace protocol on the model's own solved rollouts with a
-\emph{formal step-validator}: each continuation is classified as valid re-derivation,
-poisoned (a later step derivable only through the planted error), parroted (goal
-reached via an underivable step), or derailed. Naive final-answer accuracy overstates
-recovery by 10--20 points.
-\textbf{(2)} A \emph{truth-status audit} exposing a construct trap: in entailment-dense
-worlds, ``off the gold path'' injections are usually entailed-true (92\% here).
-Conclusions about error recovery invert once injections are audited for actual falsity.
-\textbf{(3)} Six perturbation families spanning a falsifiability gradient --- benign
-paraphrase, true interruption, irrelevant rule, contradiction of an established fact,
-negation of the imminent step, and unfalsifiable-without-global-checking false fact ---
-each $n{=}130$ runs per injection position (35 for the last, availability-limited).
-\textbf{(4)} The finding: \emph{silent absorption of hard-to-check lies}
-(0\% doubt, 29--60\% poisoning) vs.\ \emph{loud flagging of cheap-to-check lies}
-(18--39\% doubt, 0\% measurable poisoning, 64--75\% valid re-derivation), with
-true interruptions shrugged off and all falsehoods significantly worse than the benign
-control.
+\begin{enumerate}
+\item A \emph{perturb-and-trace} protocol that plants a controlled error in a model's
+own proof and uses a \emph{formal validator} to classify what follows --- genuine
+re-derivation, absorption of the error, restatement of the goal, or derailment. The
+validator matters: a naive ``did it reach the right answer'' metric overstates recovery
+by 10--20 points. Injected falsehoods are verified false against the task's rules, not
+merely chosen off the proof's path.
+\item A family of six perturbations spanning a \emph{falsifiability gradient}: a
+meaning-preserving paraphrase, a true-but-irrelevant interruption, an irrelevant rule, a
+contradiction of an established fact, a negation of the step about to be derived, and a
+falsehood exposable only by global checking ($n{=}130$ runs per injection position; $35$
+for the last, which is availability-limited).
+\item The central finding: lies that are cheap to check are caught and survived
+(64--75\% valid re-derivation, doubt voiced up to 39\% of the time), while lies that are
+expensive to check are \emph{silently absorbed} (0\% doubt, 29--60\% of runs poisoned).
+The pattern holds across model sizes, two further model families, and three task types,
+with task structure setting how much an absorbed error costs.
+\end{enumerate}
 
 \section{Setup}
-\paragraph{Task and model.} PrOntoQA-OOD \citep{saparov2023prontoqa} generates
-multi-hop deductions over fictional ontologies in machine-parseable sentences. We use
-500 instances (4--6 hops), few-shot prompting in the canonical proof style, and frozen
-Qwen2.5-7B-Instruct (greedy decoding). The model solves 91\% of instances; the analysis
-cohort is the solved subset whose gold rollout itself passes the formal validator
-(84\%; $n{=}168$ instances, $n{=}130$ runs per family$\times$position cell).
+\paragraph{Task.} We need a task where we can check, mechanically, whether each step a
+model writes is correct. PrOntoQA-OOD \citep{saparov2023prontoqa} fits. It states a set
+of rules and facts about fictional creatures (``every wumpus is a tumpus''), asks for a
+proof of a target statement, and writes every sentence in a grammar we can parse. We
+use 500 problems of 4--6 reasoning hops.
 
-\paragraph{Protocol.} We parse the model's own rollout into sentences, select an
-intermediate derived fact at an early/mid/late position, replace it, and let the model
-continue greedily with no feedback, no critique prompt, and a fixed budget. Hidden
-states are cached at five depths for all rollouts. For each instance and position, a
-null ensemble of $n{=}8$ temperature-0.8 continuations from the same prefix with the
-\emph{correct} step (filtered to those remaining correct) calibrates all latent
-comparisons.
+\paragraph{Models and cohort.} We study five open models: Qwen2.5-Instruct at 1.5B,
+7B, and 32B; OLMo-2-7B-Instruct, from a different family; and
+DeepSeek-R1-Distill-Qwen-7B, the same 7B backbone trained with reasoning RL.
+Qwen2.5-7B is the primary model, and the others isolate the effects of scale, model
+family, and reasoning training. All are run greedily and never fine-tuned. For each
+model we first let it solve every problem on its own, then perturb only the proofs it
+both solves and that pass our validator. For Qwen2.5-7B that is 91\% solved, 84\% of
+those validating ($n{=}168$ problems), which gives $n{=}130$ runs per
+perturbation-by-position cell. Because we perturb only problems the model already
+solves, every rate we report is best read as an upper bound.
 
-\paragraph{Perturbation families and the falsifiability gradient.}
-\textbf{(a) Benign paraphrase}: the correct step with a discourse marker prepended ---
-semantically identical, controls for any-disruption effects.
-\textbf{(b) True interruption}: an entity-category fact off the gold proof's path but
-\emph{entailed by the world} (see \S\ref{sec:audit} --- this family was designed as
-``wrong'' and discovered to be true).
-\textbf{(c) Distractor}: a fabricated rule irrelevant to the entity.
-\textbf{(d) Contradiction}: negation of the most recently \emph{established} fact ---
-false, and in direct conflict with stated context (checkable at distance zero).
-\textbf{(e) Negated step}: negation of the fact the model was about to derive ---
-false, not conflicting with any stated sentence, but falsifiable by a one-hop
-inference from context.
-\textbf{(f) Unfalsifiable-locally false fact}: an entity-category assertion verified
-non-entailed under the world's rule closure --- detectable only by global checking.
-Constructions (d)--(f) are verified false (and (b)'s truth verified) against the rule
-closure, per-injection.
+\paragraph{The perturb-and-trace protocol.} We take the model's own correct proof, pick
+one intermediate step --- early, middle, or late in the proof --- and replace it with a
+single planted sentence. The model then continues from that point, greedily, with no
+feedback, no prompt telling it to check itself, and the same token budget as before. We
+record everything it writes. To know how far a perturbed continuation \emph{should}
+drift on its own, we also sample, for each problem and position, eight temperature-0.8
+continuations from the same point with the \emph{correct} step left in place, keeping
+those that stay correct; these calibrate the latent comparisons. Hidden states are
+cached at five depths throughout.
+
+\paragraph{Six perturbations, ordered by how hard the planted step is to check.} The
+planted step is the experiment's independent variable. We use six kinds, arranged from
+``not actually wrong'' to ``wrong but hard to detect'':
+\begin{enumerate}
+\item[(a)] \textbf{Benign paraphrase} --- the correct step, reworded. Controls for the
+cost of any interruption.
+\item[(b)] \textbf{True interruption} --- a fact off the proof's path but still entailed
+by the premises: it looks like a wrong step yet is true, a control for whether the model
+reacts to falsity or merely to any off-path statement.
+\item[(c)] \textbf{Distractor} --- a fabricated rule irrelevant to the entity.
+\item[(d)] \textbf{Contradiction} --- the negation of a fact already stated in the
+proof: false, and in conflict with context at distance zero.
+\item[(e)] \textbf{Negated step} --- the negation of the step about to be derived:
+false, in conflict with nothing yet stated, but refutable by a one-hop inference.
+\item[(f)] \textbf{Globally-checkable falsehood} --- a category claim that is simply not
+entailed, detectable only by searching the whole rule system.
+\end{enumerate}
+For (d)--(f) we verify, per injection, that the planted step is actually false against
+the rule closure; for (b) we verify that it is true.
 
 \section{Metrics}
-\paragraph{Formal validation.} A continuation is a \textbf{valid re-derivation} iff
-every entity-fact sentence is entailed by the true world state (premises plus prior
-valid derivations) under the transitive closure of the question's rules, and the final
-statement matches the target. \textbf{Poisoned}: some step is derivable \emph{only}
-through the planted atom. \textbf{Parroted}: target reached despite an underivable
-intermediate step. \textbf{Derailed}: wrong final statement. Discourse markers are
-stripped before parsing (a bug our benign control caught: the model adopts injected
-style, which broke naive parsing); unparsed runs are excluded and counted.
-Two scope notes, stated plainly: closure entailment permits step-skipping, so we
-separately measured derivation-free goal-jumps (4.7--9.2\% of valid re-derivations at
-early/mid positions; at late positions gold itself has no remaining intermediate
-steps); and poisoning is mechanically measurable only for \emph{positive category}
-injections --- the grammar derives nothing from negated facts --- so 0\% poisoning for
-families (d)--(e) is a measurement bound, not evidence of resistance.
+\paragraph{What counts as recovery.} Because the target is stated in the prompt, a
+model can reach the right final line without reasoning correctly --- so final-answer
+accuracy is not a recovery metric. We check the \emph{proof} instead. A continuation is
+a \textbf{valid re-derivation} if every fact it states about the entity follows from
+the true premises and prior valid steps, under the closure of the question's rules, and
+it ends on the target. We separately label three failures: \textbf{poisoned} (a later
+step follows only if the planted falsehood is assumed), \textbf{parroted} (the target
+is reached but some intermediate step does not follow), and \textbf{derailed} (the
+proof ends on the wrong statement).
 
-\paragraph{Doubt.} A lexical detector (wait/however/but/actually/contradict/\ldots)
-over the continuation. Crude, but the cross-family contrasts it yields exceed
-$5\sigma$.
+\paragraph{Two honest limits of the validator.} First, closure-based checking lets a
+model skip steps, so we measured how often a ``valid'' continuation is really a
+derivation-free jump to the goal: 4.7--9.2\% at early and mid positions, and at late
+positions the proof has no intermediate steps left to skip. Second, poisoning is only
+mechanically detectable for positive category claims --- the grammar derives nothing
+\emph{from} a negation --- so the 0\% poisoning we report for the negation families
+(d, e) is a measurement limit, not evidence that the model resisted. Finally, discourse
+markers are stripped before parsing: our benign control revealed that the model copies
+injected phrasing, which had been breaking the parser. Unparsed runs are excluded and
+counted.
 
-\section{The truth-status audit}
-\label{sec:audit}
-Our original ``wrong-category'' generator guaranteed injections were off the gold
-proof's path. Auditing every injection against the world's rule closure showed
-\textbf{92\% were entailed-true}: PrOntoQA entities carry second premises and distractor
-rule branches, so most off-path categories are still true of the entity. Splitting that
-family's outcomes by audited truth status inverts the headline
-(Table~\ref{tab:invert}): true injections are shrugged off; the genuinely false
-minority is absorbed. Every conclusion below uses truth-audited families. We flag this
-as a general trap: in any entailment-dense benchmark, ``not in the gold derivation''
-is a property of the \emph{proof}, not of the \emph{world}.
-
-\begin{table}[h]
-\centering\small
-\begin{tabular}{lcccc}
-\toprule
-Injection (audited) & $n$ & Valid re-deriv. & Poisoned & Parroted \\
-\midrule
-entailed-true  & 355 & .868 & .000 & .082 \\
-genuinely false & 35 & .257 & .457 & .200 \\
-\bottomrule
-\end{tabular}
-\caption{The same generator's injections, split by audited truth status (wrong-category
-family, all positions pooled). The apparent ``recovery from lies'' was recovery from
-\emph{true statements}.}
-\label{tab:invert}
-\end{table}
+\paragraph{Measuring doubt.} To ask whether the model \emph{says} something is wrong,
+we scan the continuation for hedging and self-correction words (``wait,'' ``however,''
+``contradict,'' and the like). The detector is crude, but we validate it against an LLM
+judge below, and the contrasts it produces are large (exceeding $5\sigma$).
 
 \section{Results}
 \subsection{The falsifiability gradient}
-Table~\ref{tab:main} is the main result. Reading top to bottom:
-benign disruption costs 8--23 points of valid re-derivation relative to the
-construction ceiling (unperturbed gold = 100\% by cohort definition) --- \emph{any}
-mid-proof interruption has a price. True interruptions and contradictions of stated
-facts cost no more than benign ($|z|<1.5$, n.s.). Genuine falsehoods cost
-significantly more than benign at every position (negated step: $z{=}{-}2.18/{-}3.20/{-}3.64$,
-$p{=}.029/.0014/.0003$) --- and split sharply by checkability:
+Table~\ref{tab:main} is the main result; we read it from the top. Even a
+meaning-preserving paraphrase costs something: any interruption to the proof lowers
+valid re-derivation by 8--23 points. We therefore measure every other family against
+this benign floor, not against a perfect baseline. A true-but-irrelevant interruption,
+or a contradiction of an already-stated fact, costs no more than the paraphrase
+($|z|<1.5$). A genuine falsehood costs significantly more, at every position (negated
+step vs.\ benign: $p{=}.029/.0014/.0003$). And the falsehoods split sharply by how hard
+they are to check:
 
 \begin{table}[h]
 \centering\small
@@ -270,6 +254,19 @@ the lexical detector's largest deviation (benign paraphrase, .162 lexical vs.\ .
 judge) reflects regex false positives on discourse markers, in the direction that
 \emph{understates} our contrast.
 
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{fig_dose_response.pdf}
+\caption{\textbf{The response to a planted lie is a dose--response in inferential
+distance.} Negating the fact the model will derive $k$ hops downstream places the
+falsifying evidence $k$ inferences from local context. Both verbalized doubt (left)
+and validated recovery (right) decline as $k$ grows and then plateau ($k\ge 3$);
+globally-checkable-only lies (off-path, $k{\to}\infty$, $\star$) collapse to silent
+absorption. 32B shifts the whole curve up rather than steepening it. 7B $n{=}130$
+per $k\le3$; $n{=}96,69$ at $k{=}4,5$ (only longer chains admit distant targets).}
+\label{fig:dose}
+\end{figure}
+
 \subsection{The regime supplies recoverability: three tasks, one protocol}
 The same mid-trajectory corruption protocol across task structures (7B):
 \begin{center}\small
@@ -283,70 +280,79 @@ Chained arithmetic (no redundancy) & .00--.02 & .99--1.00 & 99/cell \\
 \bottomrule
 \end{tabular}
 \end{center}
-($^{*}$by family; GSM8K cohort is format-filtered --- correct greedy solutions with
-$\ge$3 explicit computations, 57/250 --- selecting multi-step explicit-arithmetic
-problems; corruption at the middle computation.) Redundant tasks afford
-re-derivation; tasks where each intermediate is load-bearing convert nearly every
-absorbed error into a wrong answer. Notably, the corrupted GSM8K value \emph{is}
-locally checkable --- one recomputation --- yet absorption dominates: the checking
-that drives the PrOntoQA gradient operates over \emph{stated context facts},
-not over recomputation. Models re-check what they can re-read, not what they must
-re-derive numerically. ``Recoverability'' is a property of the task's derivation
-structure and the check's modality, at least as much as of the model.
+($^{*}$The PrOntoQA range is over families; the GSM8K cohort is filtered to the 57 of
+250 problems with at least three explicit computations, and the corruption is applied
+to the middle one.) The pattern follows how much redundancy each task offers. When
+many derivation paths reach the goal, a planted error can be routed around; when every
+intermediate is load-bearing, an absorbed error becomes a wrong answer almost every
+time. One detail sharpens what ``checkable'' means here: the corrupted GSM8K value
+\emph{is} checkable, by a single recomputation --- and it is absorbed anyway. The
+checking that produces the PrOntoQA gradient runs over facts \emph{stated in context},
+not over arithmetic the model would have to redo. Models re-check what they can
+re-read, not what they must recompute. Recoverability is thus a property of the task,
+and of how the relevant check must be performed, as much as of the model.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.62\textwidth]{fig_regime_map.pdf}
+\caption{\textbf{Task derivation structure sets the price of an absorbed error.}
+A genuine on-path falsehood injected under one protocol across three tasks ordered
+by derivation redundancy. As redundant alternative paths disappear (PrOntoQA
+$\to$ GSM8K $\to$ chained arithmetic), validated recovery collapses and error
+absorption approaches certainty. PrOntoQA is shown with its globally-checkable
+(hardest) family for an apples-to-apples comparison with the value corruptions in
+GSM8K/arithmetic; its locally-checkable lies recover at .64.}
+\label{fig:regime}
+\end{figure}
 
 \subsection{Recovery is not goal-anchor re-reading}
-Two ablations target the concern that recovery is just attention re-reading the
-stated target. \textbf{(a) Question format}: rephrasing instances as ``True or false:
-$s$?'' --- with $s$ the entailed target on half the instances and its negation on the
-other half --- removes the parrotable goal (the statement is visible; its truth value
-is not). Validated recovery (correct verdict $+$ formally sound post-injection chain)
-remains 57\% under 1-hop falsehoods and 64\% under benign paraphrase
-($n{=}35/36$; QA gold solve rate 55\%, so the cohort is smaller and harder).
-Attenuated, not collapsed: goal-anchoring is not a sufficient explanation.
-\textbf{(b) Attention knockout} on the goal-statement span collapses \emph{both} the
-falsehood arm (.015) \emph{and the benign arm} (.046) --- the masking breaks the task
-(without a visible target, proof termination is undefined), so it cannot isolate the
-recovery mechanism; we report it as a negative design result. Its salvageable
-secondary: goal-masked continuations remain chain-sound at identical rates for benign
-and falsehood arms (.45 vs .42), i.e., goal access matters for derivation quality
-generally, not differentially for error recovery.
+Could the apparent recovery be nothing more than the model re-reading the target the
+prompt hands it? Two ablations say no. First, we hide the target. Reframing each
+problem as ``True or false: $s$?'', with $s$ the true target on half the problems and
+its negation on the other half, leaves the statement visible but its truth value
+unknown --- so there is no answer to copy. Recovery is attenuated but does not
+collapse: 57\% under one-hop falsehoods and 64\% under the benign paraphrase, in a
+harder format the model solves only 55\% of the time ($n{=}35/36$). Goal-copying
+cannot be the whole story. Second, we tried masking attention to the goal span
+directly. This collapses recovery for \emph{both} the falsehood arm (.015) and the
+benign arm (.046), which means the manipulation breaks the task itself --- with no
+readable target the model has no signal for when its proof is done --- rather than
+isolating the recovery mechanism, and we report it as a negative result. Its one usable
+finding: with the goal masked, continuations stay chain-sound at the same rate whether
+the injection was a falsehood or benign (.45 vs.\ .42), so goal access aids derivation
+quality in general, not error recovery in particular.
 
 \subsection{Latent trace}
-A null-calibrated functional divergence ($\rhofunc_h$: Jensen--Shannon divergence
-between perturbed and gold next-token distributions at sentence boundaries, normalized
-by the correct-null ensemble's spread; LM-head computation verified exactly against
-live logits; instance-specificity verified by a shuffled-gold control, 1.49$\times$)
-shows a consistent shape at well-powered horizons (early/mid injections, $h\le 4$,
-$n\ge 106$ per point): a large spike at the first post-injection boundary, decaying
-toward but remaining above the null band ($\rhofunc_4 \approx 1.2$--$2.3$ across
-families). We report this as descriptive only, for two reasons measured in our own
-data. First, the null ensemble is temperature-sampled while rollouts are greedy, a
-decoding mismatch that inflates the denominator by an unquantified factor. Second, and
-decisively: the \emph{benign paraphrase} family shows the largest early-injection
-divergence of any family ($\rhofunc_4{=}2.32$ vs.\ 1.9--2.2 for genuine falsehoods) ---
-the model adopts the injected discourse style for the rest of its proof, and the
-functional metric tracks that surface change as strongly as it tracks semantic damage.
-As instrumented, $\rhofunc$ cannot distinguish a lie from a stylistic tic.
-Three follow-up controls close the question. \emph{Matched decoding}: sampling
-perturbed continuations at the null's temperature ($T{=}0.8$, $n{=}4$/site) removes
-the greedy-vs-sampled confound, and benign $\approx$ falsehood persists (h1: 22.4 vs
-16.3; h4: 1.36 vs 1.58) --- the null result is not a decoding artifact.
-\emph{Ensemble stability}: across reasonable null configurations ($T \in
-\{0.6, 0.8, 1.0\}$, $n \in \{4, 8, 16, 32\}$) the instance-level $\rhofunc$ median
-ranges 1.9--7.9 with interquartile ranges spanning two orders of magnitude --- the
-ratio is unstable at feasible ensemble sizes. Late-injection horizons beyond $h{=}2$
-collapse to $n\le 12$ and support no conclusions. Raw hidden-state geometry tells the same story: null-calibrated cosine
-divergence at the final layer is statistically indistinguishable between benign
-paraphrase (median 2.57) and verified falsehoods (2.52--2.99) at well-powered
-horizons --- surface form dominates content in geometric trajectory comparisons too.
-(A layer-0 lexical control was attempted but is degenerate at sentence boundaries,
-where the position is always the period token; a pooled-sentence control is future
-work.) We accordingly make \emph{no} latent-recovery claims: the paper's evidence is
-behavioral and formally validated.
+We also looked for recovery in the hidden states, and report a negative result. Our
+metric $\rhofunc_h$ is the Jensen--Shannon divergence between the perturbed and gold
+next-token distributions at each sentence boundary, normalized by how far correct
+continuations naturally drift (the null ensemble). We verified it against live logits
+and confirmed it is instance-specific (a shuffled-gold control gives $1.49\times$
+larger divergence). At well-powered horizons (early and mid injection, $h\le 4$,
+$n\ge 106$) it shows a clean shape: a spike right after the injection that decays
+toward, but stays above, the null band ($\rhofunc_4 \approx 1.2$--$2.3$). The trouble
+is that this shape does not track \emph{content}. The benign paraphrase --- a
+semantically identical edit --- produces the \emph{largest} early divergence of any
+family ($\rhofunc_4 = 2.32$, against 1.9--2.2 for genuine falsehoods), because the
+model adopts the injected phrasing for the rest of its proof and the metric reads that
+surface change as strongly as a planted lie. As instrumented, $\rhofunc$ cannot tell a
+lie from a stylistic tic. Three controls confirm this is real and not an artifact.
+Matching the decoding --- sampling perturbed continuations at the null's temperature
+($T{=}0.8$, $n{=}4$ per site) --- still leaves benign and falsehood together
+($h1$: 22.4 vs.\ 16.3; $h4$: 1.36 vs.\ 1.58), so it is not a greedy-versus-sampled
+mismatch. Varying the null ensemble ($T \in \{0.6, 0.8, 1.0\}$, $n \in \{4,8,16,32\}$)
+leaves $\rhofunc$ unstable, with medians from 1.9 to 7.9 and interquartile ranges
+spanning two orders of magnitude. And the raw geometry agrees: final-layer cosine
+divergence is statistically indistinguishable between the benign paraphrase (2.57) and
+verified falsehoods (2.52--2.99). Beyond $h{=}2$ for late injections the sample falls
+to $n\le 12$ and supports nothing. We therefore make \emph{no} latent claims; the
+paper's evidence is behavioral and formally validated. (A token-identity control at
+layer 0 was degenerate, since the sentence-boundary token is always a period; a
+pooled-sentence version is future work.)
 
 \subsection{Scale attenuates absorption but not silence; the gradient generalizes
 across model families}
-Running the truth-audited falsehood families across Qwen2.5 sizes answers the scale
+Running the verified-false families across Qwen2.5 sizes answers the scale
 question --- and partially falsifies our pre-registered prediction (we predicted
 absorption persists; it persists \emph{attenuated}):
 \begin{center}\small
@@ -361,63 +367,79 @@ Qwen2.5-32B  & .60--.73 & .10--.37 & .033--.067 & .13--.28 \\
 \bottomrule
 \end{tabular}
 \end{center}
-Recovery from hard-to-check lies roughly triples from 7B to 32B and poisoning roughly
-halves ($n{=}30$--$35$/cell for this family) --- scale buys checking. But the
-\emph{silence} is scale-invariant: at every size, absorbed lies go unverbalized.
-Separately, the pre-audit ``wrong-category'' sweep (predominantly true interruptions)
-shows robustness to true interruptions also scaling (.60--.67 $\to$ .75--.86 $\to$
-.88--.96; parroting .11--.20 $\to$ .07--.12 $\to$ .01--.02).
+Scale buys checking, but not candor. From 7B to 32B, recovery from hard-to-check lies
+roughly triples and poisoning roughly halves ($n{=}30$--$35$/cell). The silence,
+however, does not move: at every size the lies that get absorbed are absorbed with no
+verbalized doubt. (The pre-audit ``wrong-category'' sweep, which is mostly true
+interruptions, shows robustness to those rising with scale as well: valid re-derivation
+.60--.67 $\to$ .75--.86 $\to$ .88--.96, parroting .11--.20 $\to$ .07--.12 $\to$
+.01--.02.)
 
-A second model family, OLMo-2-7B-Instruct ($n{=}76$/cell; solve rate .69), replicates
-the \emph{recovery} gradient (benign .72 $\ge$ 1-hop falsehood .53 at mid; poisoning
-concentrated in globally-checkable falsehoods, .22--.33 at $n{=}9$) but \textbf{not
-the flagging}: OLMo verbalizes essentially nothing in any family (.00--.026),
-recovering from checkable lies as silently as Qwen-1.5B does. The behavioral
-checkability gradient appears model-general; \emph{verbalization of detected errors
-is model- and training-dependent} --- recovery does not require verbalization even
-within a single model.
+Two further families separate the behavior from the particular model:
+OLMo-2-7B-Instruct (solve rate .69) and Llama-3.1-8B-Instruct. Both reproduce the
+\emph{recovery} gradient. At mid injection OLMo recovers benign .72 vs.\ one-hop
+falsehood .53, and Llama .79 vs.\ .53, with poisoning in each concentrated in the
+globally-checkable family (OLMo .22--.33 at $n{=}9$; Llama recovery collapsing to
+.22--.26 with poisoning .41--.44 at $n{=}27$; $n{=}76$ and $107$ per cell for the
+well-powered families). Neither \emph{flags}: both voice essentially no doubt in any
+family (OLMo .00--.026, Llama .00--.009), recovering from checkable lies as silently as
+the 1.5B Qwen does. So the checkability gradient in \emph{behavior} is model-general
+across three lineages, while \emph{verbalizing} a caught error is not; recovery does not
+require the model to say anything. (We also attempted Mistral-7B-Instruct, but it does
+not produce the parseable proof grammar these tasks require --- too few continuations
+had valid injection points to analyze --- and we exclude it.)
 
-The training axis is isolated by DeepSeek-R1-Distill-Qwen-7B (same backbone,
-RL reasoning training; injection into the visible proof body, think block stripped
-for validation; 29\% solve, 8--16\% unparsed, reported per pre-registration).
-Pre-registered prediction --- doubt rises, recovery flat --- confirmed: visible
-flagging of 1-hop falsehoods reaches \textbf{.672} ($n{=}122$; vs.\ .25 Qwen-7B,
-.00 OLMo) while validated recovery stays flat (.689 vs.\ .638), and the flagging is
-content-selective (benign paraphrase: .008). The verbalization spectrum --- silent
-(OLMo, Qwen-1.5B) $\to$ moderate (Qwen-7B/32B) $\to$ loud (R1) --- at roughly
-constant recovery supports a clean separation: \emph{flagging is trained; recovery
-is intrinsic}. (R1's private channel is uninformative here: 100\% of its gold think
-blocks contain doubt vocabulary at baseline --- a ceiling. R1 also handles the benign
-style perturbation \emph{worse} than its base model, .549 vs.\ .815: reasoning
-training buys error verbalization at some cost in disruption robustness.)
+DeepSeek-R1-Distill-Qwen-7B isolates the training axis: the same 7B backbone, plus
+reasoning RL. (We inject into the visible proof and strip the think block before
+validating; the model solves 29\% of problems and leaves 8--16\% of runs unparsed,
+which we report as-is.) Our pre-registered prediction --- doubt rises, recovery stays
+flat --- holds. Visible flagging of one-hop falsehoods reaches .672 ($n{=}122$),
+against .25 for Qwen-7B and .00 for OLMo, while validated recovery barely moves
+(.689 vs.\ .638), and the flagging is selective --- only .008 on the benign paraphrase.
+Read across all five models, the picture is a spectrum --- silent (OLMo, 1.5B),
+moderate (7B, 32B), loud (R1) --- at roughly constant recovery. \emph{Flagging is
+trained; recovery is intrinsic.} (R1's hidden reasoning channel is uninformative here,
+since every gold think block already contains doubt words --- a ceiling. R1 also
+handles the benign paraphrase \emph{worse} than its base model, .549 vs.\ .815:
+reasoning training buys verbalization at some cost in robustness to mere disruption.)
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.66\textwidth]{fig_verbalization_spectrum.pdf}
+\caption{\textbf{Verbalization is trained; recovery is intrinsic.} Across five models
+(1-hop falsehood, mid injection), verbalized doubt ranges over $50\times$ (.01 to .67)
+while validated recovery stays within a narrow band (.53--.74). Reasoning-RL training
+(R1-Distill) buys loud flagging at flat recovery; the base/instruct models recover at
+comparable rates while saying nothing. Verbalizing a caught error and correcting it
+are dissociable behaviors.}
+\label{fig:verbal}
+\end{figure}
 
 \section{Limitations}
-Task coverage now spans two synthetic families plus GSM8K (format-filtered cohort,
-57/250 --- selection toward multi-step explicit arithmetic; Lean theorem proving is
-the next arm); two base-model families (Qwen2.5, OLMo-2; a reasoning-tuned arm is in
-progress), greedy gold rollouts. The Prove-format
-prompt states the target; the validator classifies parroting separately and the
-QA-format condition shows recovery survives without a parrotable goal, but
-goal-directedness still aids derivation quality generically (knockout secondary
-result). The globally-checkable-only falsehood family has $n{=}35$/cell and exists
-only on $\sim$30\% of instances (a within-subset control rules out instance
-selection); the QA condition has $n{=}35$--$36$/cell. ``Local falsifiability'' is
-operationalized at two levels (distance 0--1 vs.\ global); the parametric
-inferential-distance version is future work. Latent and geometric metrics are
-reported as negative/descriptive results (\S5.2). Closure-based validity permits
-step-skipping (quantified at 4.7--9.2\%). One seed of null sampling; behavioral
-results use deterministic decoding throughout.
+Our coverage is still narrow. The tasks are two synthetic families plus GSM8K, whose
+cohort is filtered to the 57 of 250 problems with at least three explicit steps; a
+formal-verification task such as Lean is the natural next regime. The models span three
+sizes, a second family (OLMo-2), and a reasoning-RL variant (R1-Distill), but remain
+largely one lineage. We use deterministic decoding and a single null-sampling seed. The
+globally-checkable falsehood family --- the one that produces silent absorption --- has
+only $n{=}35$ per cell and exists for about 30\% of problems, though a within-subset
+control rules out instance selection; the QA-format condition is similarly small
+($n{=}35$--$36$). We operationalize ``local falsifiability'' at two levels
+(contradiction-distance zero to one, versus global) and report a three-point distance
+curve; a fully parametric version is future work. The prompt states the proof target,
+which the validator's parroting category and the goal-hidden QA condition address,
+though goal-directedness may still aid derivation quality in general. Our latent and
+geometric metrics are negative results. And closure-based validation permits
+step-skipping, which we quantify (4.7--9.2\%) rather than eliminate.
 
 \section{Related work}
 \textbf{CoT interventions and error recovery.} \citet{vonrecum2026robust} perturb
 visible CoT in reasoning-tuned models and find behavioral robustness with
-early-intervention degradation and doubt/length effects; our truth-status audit
-suggests such interventions need per-injection falsity verification for
-``adversarial'' conditions to mean what they claim. \citet{yee2024dissociation}
+early-intervention degradation and doubt/length effects, on free-form reasoning where
+our entailment-based construction does not directly apply. \citet{yee2024dissociation}
 precede our re-derivation/parroting split with a faithful/unfaithful recovery
 dichotomy via manual annotation; our delta is automated formal validation, semantic
-(vs.\ numerical) error control, the truth-status audit, and the falsifiability
-gradient. Their finding that recovery is more frequent for \emph{obvious} errors
+(vs.\ numerical) error control, and the falsifiability gradient. Their finding that recovery is more frequent for \emph{obvious} errors
 independently anticipates checkability-gating. \citet{lanham2023measuring} introduced
 adding-mistakes interventions for faithfulness; \citet{turpin2023unfaithful} showed
 stated reasoning can omit operative causes --- consistent with silent absorption.
@@ -437,15 +459,36 @@ divergence) is a caution for cross-trace comparisons in that line.
 the compounding frame our results sharpen: per-step absorption is real exactly when
 errors are locally unfalsifiable, and task derivation structure (\S5.3) determines
 the price.
+\textbf{Verification benchmarks.} External-verifier and formally-checkable benchmarks
+complement our internal-only framing. VerifyBench \citep{verifybench2025} evaluates
+reference-based reward verifiers, while VERINA \citep{verina2025} and VeriBench
+\citep{veribench2026} score end-to-end verifiable code and proof generation in Lean.
+Most directly, VeriSoftBench \citep{verisoftbench2026} reports that repository-scale
+proof success falls as a task's \emph{transitive dependency closure} grows --- a
+structural echo, in a real Lean regime, of our finding that the errors that go uncaught
+are precisely the globally-checkable ones. Such formal settings, where global checks are
+structurally unavoidable, are the natural place to test whether silent absorption
+persists once the verifier is external rather than the model itself.
 
 \section*{Reproducibility}
 Single 8$\times$H200 node, $\sim$8 GPU-hours total. Pre-registered plan
 (\texttt{PLAN.md}, written before the first run), all scripts, per-run JSONL logs,
-truth-status audit, and result JSONs accompany the paper
+and result JSONs accompany the paper
 (\texttt{experiments/09\_latent\_recovery/}).
 
 \bibliographystyle{plainnat}
 \begin{thebibliography}{9}
+\bibitem[VerifyBench(2025)]{verifybench2025}
+VerifyBench: Benchmarking Reference-based Reward Systems for Large Language Models.
+arXiv:2505.15801, 2025.
+\bibitem[VERINA(2025)]{verina2025}
+VERINA: Benchmarking Verifiable Code Generation. arXiv:2505.23135, 2025.
+\bibitem[VeriBench(2026)]{veribench2026}
+VeriBench: End-to-End Formal Verification Benchmark for AI Code Generation in Lean 4.
+OpenReview, 2026.
+\bibitem[VeriSoftBench(2026)]{verisoftbench2026}
+VeriSoftBench: Repository-Scale Formal Verification Benchmarks for Lean.
+arXiv:2602.18307, 2026.
 \bibitem[Dziri et al.(2023)]{dziri2023faith} N. Dziri et al.
 \newblock Faith and Fate: Limits of Transformers on Compositionality.
 \newblock \emph{NeurIPS}, 2023. arXiv:2305.18654.
