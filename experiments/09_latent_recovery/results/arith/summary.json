@@ -1,0 +1,17 @@
+{
+  "early": {
+    "n": 99,
+    "recovered_rate": 0.0101,
+    "poisoned_next_step_rate": 0.9899
+  },
+  "mid": {
+    "n": 99,
+    "recovered_rate": 0.0202,
+    "poisoned_next_step_rate": 0.9899
+  },
+  "late": {
+    "n": 99,
+    "recovered_rate": 0.0,
+    "poisoned_next_step_rate": 1.0
+  }
+}

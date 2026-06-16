@@ -1,0 +1,7 @@
+prontoqa/
+data/prontoqa_ood/
+results*/null*/
+results*/*/hs/
+results*/aligned_gold/
+*.npz
+*.log
