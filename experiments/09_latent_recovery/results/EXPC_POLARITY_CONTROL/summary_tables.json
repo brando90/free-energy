@@ -1,0 +1,2996 @@
+{
+  "availability": {
+    "audit_counts": {
+      "duplicate_question": 139,
+      "fully_matched_2x2_available": 127,
+      "no_direct_local_negative_evidence_for_positive_claim": 1289,
+      "no_unentailed_category_without_negative_evidence": 3150,
+      "not_all_four_cells_available_at_all_positions": 1173,
+      "original_proof_not_validated": 6984,
+      "too_few_intermediate_entity_steps": 10677
+    },
+    "fully_matched_candidate_pool_n": 127,
+    "generated_problem_n": 7,
+    "validated_rows": 84
+  },
+  "created_at": "2026-06-18T20:05:39.519076+00:00",
+  "exclusion_rule": "Fully paired examples only: all four conditions must be formally available at early, mid, and late positions before any model generation. This rule is fixed before generation and is applied identically across conditions.",
+  "integrity": {
+    "all_injected_statements_audited": true,
+    "all_original_proofs_validated": true,
+    "all_planted_claims_audited_false": true,
+    "all_required_result_fields": true,
+    "duplicate_problem_condition_position_seed": [],
+    "duplicate_problem_condition_position_seed_count": 0,
+    "duplicate_run_id_count": 0,
+    "prompt_hashes": [
+      "f668299fe738b58ba81a6b8435bf284ac5eed682b99f5e7d4cccfee62c7ab93c"
+    ],
+    "strict_validator_separate_from_closure": true,
+    "unique_run_ids": true
+  },
+  "metrics": {
+    "by_condition_position": {
+      "GLOBAL_FALSE_NEGATIVE|early": {
+        "derailed": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "doubt": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "n": 7,
+        "parroted": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "poisoning": {
+          "count": 0,
+          "n": 0,
+          "problem_cluster_bootstrap95": [
+            null,
+            null
+          ],
+          "rate": null,
+          "wilson95": [
+            null,
+            null
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "valid_recovery": {
+          "count": 6,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.5714,
+            1.0
+          ],
+          "rate": 0.8571,
+          "wilson95": [
+            0.4869,
+            0.9743
+          ]
+        }
+      },
+      "GLOBAL_FALSE_NEGATIVE|late": {
+        "derailed": {
+          "count": 2,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.5714
+          ],
+          "rate": 0.2857,
+          "wilson95": [
+            0.0822,
+            0.6411
+          ]
+        },
+        "doubt": {
+          "count": 2,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.5714
+          ],
+          "rate": 0.2857,
+          "wilson95": [
+            0.0822,
+            0.6411
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "n": 7,
+        "parroted": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "poisoning": {
+          "count": 0,
+          "n": 0,
+          "problem_cluster_bootstrap95": [
+            null,
+            null
+          ],
+          "rate": null,
+          "wilson95": [
+            null,
+            null
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "valid_recovery": {
+          "count": 5,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.4286,
+            1.0
+          ],
+          "rate": 0.7143,
+          "wilson95": [
+            0.3589,
+            0.9178
+          ]
+        }
+      },
+      "GLOBAL_FALSE_NEGATIVE|mid": {
+        "derailed": {
+          "count": 2,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.5714
+          ],
+          "rate": 0.2857,
+          "wilson95": [
+            0.0822,
+            0.6411
+          ]
+        },
+        "doubt": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "n": 7,
+        "parroted": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "poisoning": {
+          "count": 0,
+          "n": 0,
+          "problem_cluster_bootstrap95": [
+            null,
+            null
+          ],
+          "rate": null,
+          "wilson95": [
+            null,
+            null
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "valid_recovery": {
+          "count": 4,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.2857,
+            0.8571
+          ],
+          "rate": 0.5714,
+          "wilson95": [
+            0.2505,
+            0.8418
+          ]
+        }
+      },
+      "GLOBAL_FALSE_POSITIVE|early": {
+        "derailed": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "doubt": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "n": 7,
+        "parroted": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "poisoning": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "valid_recovery": {
+          "count": 5,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.4286,
+            1.0
+          ],
+          "rate": 0.7143,
+          "wilson95": [
+            0.3589,
+            0.9178
+          ]
+        }
+      },
+      "GLOBAL_FALSE_POSITIVE|late": {
+        "derailed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "doubt": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "n": 7,
+        "parroted": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "poisoning": {
+          "count": 3,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.1429,
+            0.7143
+          ],
+          "rate": 0.4286,
+          "wilson95": [
+            0.1582,
+            0.7495
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "valid_recovery": {
+          "count": 4,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.1429,
+            0.8571
+          ],
+          "rate": 0.5714,
+          "wilson95": [
+            0.2505,
+            0.8418
+          ]
+        }
+      },
+      "GLOBAL_FALSE_POSITIVE|mid": {
+        "derailed": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "doubt": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "n": 7,
+        "parroted": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "poisoning": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "valid_recovery": {
+          "count": 5,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.4286,
+            1.0
+          ],
+          "rate": 0.7143,
+          "wilson95": [
+            0.3589,
+            0.9178
+          ]
+        }
+      },
+      "LOCAL_FALSE_NEGATIVE|early": {
+        "derailed": {
+          "count": 2,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.5714
+          ],
+          "rate": 0.2857,
+          "wilson95": [
+            0.0822,
+            0.6411
+          ]
+        },
+        "doubt": {
+          "count": 2,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.7143
+          ],
+          "rate": 0.2857,
+          "wilson95": [
+            0.0822,
+            0.6411
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "n": 7,
+        "parroted": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "poisoning": {
+          "count": 0,
+          "n": 0,
+          "problem_cluster_bootstrap95": [
+            null,
+            null
+          ],
+          "rate": null,
+          "wilson95": [
+            null,
+            null
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "valid_recovery": {
+          "count": 4,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.1429,
+            0.8571
+          ],
+          "rate": 0.5714,
+          "wilson95": [
+            0.2505,
+            0.8418
+          ]
+        }
+      },
+      "LOCAL_FALSE_NEGATIVE|late": {
+        "derailed": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "doubt": {
+          "count": 2,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.5714
+          ],
+          "rate": 0.2857,
+          "wilson95": [
+            0.0822,
+            0.6411
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "n": 7,
+        "parroted": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "poisoning": {
+          "count": 0,
+          "n": 0,
+          "problem_cluster_bootstrap95": [
+            null,
+            null
+          ],
+          "rate": null,
+          "wilson95": [
+            null,
+            null
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "valid_recovery": {
+          "count": 4,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.2857,
+            0.8571
+          ],
+          "rate": 0.5714,
+          "wilson95": [
+            0.2505,
+            0.8418
+          ]
+        }
+      },
+      "LOCAL_FALSE_NEGATIVE|mid": {
+        "derailed": {
+          "count": 4,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.1429,
+            0.8571
+          ],
+          "rate": 0.5714,
+          "wilson95": [
+            0.2505,
+            0.8418
+          ]
+        },
+        "doubt": {
+          "count": 3,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.1429,
+            0.7143
+          ],
+          "rate": 0.4286,
+          "wilson95": [
+            0.1582,
+            0.7495
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "n": 7,
+        "parroted": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "poisoning": {
+          "count": 0,
+          "n": 0,
+          "problem_cluster_bootstrap95": [
+            null,
+            null
+          ],
+          "rate": null,
+          "wilson95": [
+            null,
+            null
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "valid_recovery": {
+          "count": 3,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.1429,
+            0.7143
+          ],
+          "rate": 0.4286,
+          "wilson95": [
+            0.1582,
+            0.7495
+          ]
+        }
+      },
+      "LOCAL_FALSE_POSITIVE|early": {
+        "derailed": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "doubt": {
+          "count": 2,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.5714
+          ],
+          "rate": 0.2857,
+          "wilson95": [
+            0.0822,
+            0.6411
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "n": 7,
+        "parroted": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "poisoning": {
+          "count": 0,
+          "n": 0,
+          "problem_cluster_bootstrap95": [
+            null,
+            null
+          ],
+          "rate": null,
+          "wilson95": [
+            null,
+            null
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "valid_recovery": {
+          "count": 5,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.2857,
+            1.0
+          ],
+          "rate": 0.7143,
+          "wilson95": [
+            0.3589,
+            0.9178
+          ]
+        }
+      },
+      "LOCAL_FALSE_POSITIVE|late": {
+        "derailed": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "doubt": {
+          "count": 2,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.7143
+          ],
+          "rate": 0.2857,
+          "wilson95": [
+            0.0822,
+            0.6411
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "n": 7,
+        "parroted": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "poisoning": {
+          "count": 0,
+          "n": 0,
+          "problem_cluster_bootstrap95": [
+            null,
+            null
+          ],
+          "rate": null,
+          "wilson95": [
+            null,
+            null
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "valid_recovery": {
+          "count": 5,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.4286,
+            1.0
+          ],
+          "rate": 0.7143,
+          "wilson95": [
+            0.3589,
+            0.9178
+          ]
+        }
+      },
+      "LOCAL_FALSE_POSITIVE|mid": {
+        "derailed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "doubt": {
+          "count": 2,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.5714
+          ],
+          "rate": 0.2857,
+          "wilson95": [
+            0.0822,
+            0.6411
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "n": 7,
+        "parroted": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "poisoning": {
+          "count": 0,
+          "n": 0,
+          "problem_cluster_bootstrap95": [
+            null,
+            null
+          ],
+          "rate": null,
+          "wilson95": [
+            null,
+            null
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "valid_recovery": {
+          "count": 5,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.4286,
+            1.0
+          ],
+          "rate": 0.7143,
+          "wilson95": [
+            0.3589,
+            0.9178
+          ]
+        }
+      }
+    },
+    "by_locality_polarity_position": {
+      "global|negative|early": {
+        "derailed": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "doubt": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "n": 7,
+        "parroted": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "poisoning": {
+          "count": 0,
+          "n": 0,
+          "problem_cluster_bootstrap95": [
+            null,
+            null
+          ],
+          "rate": null,
+          "wilson95": [
+            null,
+            null
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "valid_recovery": {
+          "count": 6,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.5714,
+            1.0
+          ],
+          "rate": 0.8571,
+          "wilson95": [
+            0.4869,
+            0.9743
+          ]
+        }
+      },
+      "global|negative|late": {
+        "derailed": {
+          "count": 2,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.5714
+          ],
+          "rate": 0.2857,
+          "wilson95": [
+            0.0822,
+            0.6411
+          ]
+        },
+        "doubt": {
+          "count": 2,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.5714
+          ],
+          "rate": 0.2857,
+          "wilson95": [
+            0.0822,
+            0.6411
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "n": 7,
+        "parroted": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "poisoning": {
+          "count": 0,
+          "n": 0,
+          "problem_cluster_bootstrap95": [
+            null,
+            null
+          ],
+          "rate": null,
+          "wilson95": [
+            null,
+            null
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "valid_recovery": {
+          "count": 5,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.4286,
+            1.0
+          ],
+          "rate": 0.7143,
+          "wilson95": [
+            0.3589,
+            0.9178
+          ]
+        }
+      },
+      "global|negative|mid": {
+        "derailed": {
+          "count": 2,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.5714
+          ],
+          "rate": 0.2857,
+          "wilson95": [
+            0.0822,
+            0.6411
+          ]
+        },
+        "doubt": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "n": 7,
+        "parroted": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "poisoning": {
+          "count": 0,
+          "n": 0,
+          "problem_cluster_bootstrap95": [
+            null,
+            null
+          ],
+          "rate": null,
+          "wilson95": [
+            null,
+            null
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "valid_recovery": {
+          "count": 4,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.2857,
+            0.8571
+          ],
+          "rate": 0.5714,
+          "wilson95": [
+            0.2505,
+            0.8418
+          ]
+        }
+      },
+      "global|positive|early": {
+        "derailed": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "doubt": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "n": 7,
+        "parroted": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "poisoning": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "valid_recovery": {
+          "count": 5,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.4286,
+            1.0
+          ],
+          "rate": 0.7143,
+          "wilson95": [
+            0.3589,
+            0.9178
+          ]
+        }
+      },
+      "global|positive|late": {
+        "derailed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "doubt": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "n": 7,
+        "parroted": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "poisoning": {
+          "count": 3,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.1429,
+            0.7143
+          ],
+          "rate": 0.4286,
+          "wilson95": [
+            0.1582,
+            0.7495
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "valid_recovery": {
+          "count": 4,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.1429,
+            0.8571
+          ],
+          "rate": 0.5714,
+          "wilson95": [
+            0.2505,
+            0.8418
+          ]
+        }
+      },
+      "global|positive|mid": {
+        "derailed": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "doubt": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "n": 7,
+        "parroted": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "poisoning": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "valid_recovery": {
+          "count": 5,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.4286,
+            1.0
+          ],
+          "rate": 0.7143,
+          "wilson95": [
+            0.3589,
+            0.9178
+          ]
+        }
+      },
+      "local|negative|early": {
+        "derailed": {
+          "count": 2,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.5714
+          ],
+          "rate": 0.2857,
+          "wilson95": [
+            0.0822,
+            0.6411
+          ]
+        },
+        "doubt": {
+          "count": 2,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.7143
+          ],
+          "rate": 0.2857,
+          "wilson95": [
+            0.0822,
+            0.6411
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "n": 7,
+        "parroted": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "poisoning": {
+          "count": 0,
+          "n": 0,
+          "problem_cluster_bootstrap95": [
+            null,
+            null
+          ],
+          "rate": null,
+          "wilson95": [
+            null,
+            null
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "valid_recovery": {
+          "count": 4,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.1429,
+            0.8571
+          ],
+          "rate": 0.5714,
+          "wilson95": [
+            0.2505,
+            0.8418
+          ]
+        }
+      },
+      "local|negative|late": {
+        "derailed": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "doubt": {
+          "count": 2,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.5714
+          ],
+          "rate": 0.2857,
+          "wilson95": [
+            0.0822,
+            0.6411
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "n": 7,
+        "parroted": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "poisoning": {
+          "count": 0,
+          "n": 0,
+          "problem_cluster_bootstrap95": [
+            null,
+            null
+          ],
+          "rate": null,
+          "wilson95": [
+            null,
+            null
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "valid_recovery": {
+          "count": 4,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.2857,
+            0.8571
+          ],
+          "rate": 0.5714,
+          "wilson95": [
+            0.2505,
+            0.8418
+          ]
+        }
+      },
+      "local|negative|mid": {
+        "derailed": {
+          "count": 4,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.1429,
+            0.8571
+          ],
+          "rate": 0.5714,
+          "wilson95": [
+            0.2505,
+            0.8418
+          ]
+        },
+        "doubt": {
+          "count": 3,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.1429,
+            0.7143
+          ],
+          "rate": 0.4286,
+          "wilson95": [
+            0.1582,
+            0.7495
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "n": 7,
+        "parroted": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "poisoning": {
+          "count": 0,
+          "n": 0,
+          "problem_cluster_bootstrap95": [
+            null,
+            null
+          ],
+          "rate": null,
+          "wilson95": [
+            null,
+            null
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "valid_recovery": {
+          "count": 3,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.1429,
+            0.7143
+          ],
+          "rate": 0.4286,
+          "wilson95": [
+            0.1582,
+            0.7495
+          ]
+        }
+      },
+      "local|positive|early": {
+        "derailed": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "doubt": {
+          "count": 2,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.5714
+          ],
+          "rate": 0.2857,
+          "wilson95": [
+            0.0822,
+            0.6411
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "n": 7,
+        "parroted": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "poisoning": {
+          "count": 0,
+          "n": 0,
+          "problem_cluster_bootstrap95": [
+            null,
+            null
+          ],
+          "rate": null,
+          "wilson95": [
+            null,
+            null
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "valid_recovery": {
+          "count": 5,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.2857,
+            1.0
+          ],
+          "rate": 0.7143,
+          "wilson95": [
+            0.3589,
+            0.9178
+          ]
+        }
+      },
+      "local|positive|late": {
+        "derailed": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "doubt": {
+          "count": 2,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.7143
+          ],
+          "rate": 0.2857,
+          "wilson95": [
+            0.0822,
+            0.6411
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "n": 7,
+        "parroted": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "poisoning": {
+          "count": 0,
+          "n": 0,
+          "problem_cluster_bootstrap95": [
+            null,
+            null
+          ],
+          "rate": null,
+          "wilson95": [
+            null,
+            null
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "valid_recovery": {
+          "count": 5,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.4286,
+            1.0
+          ],
+          "rate": 0.7143,
+          "wilson95": [
+            0.3589,
+            0.9178
+          ]
+        }
+      },
+      "local|positive|mid": {
+        "derailed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "doubt": {
+          "count": 2,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.5714
+          ],
+          "rate": 0.2857,
+          "wilson95": [
+            0.0822,
+            0.6411
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ]
+        },
+        "n": 7,
+        "parroted": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "poisoning": {
+          "count": 0,
+          "n": 0,
+          "problem_cluster_bootstrap95": [
+            null,
+            null
+          ],
+          "rate": null,
+          "wilson95": [
+            null,
+            null
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 1,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.4286
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "valid_recovery": {
+          "count": 5,
+          "n": 7,
+          "problem_cluster_bootstrap95": [
+            0.4286,
+            1.0
+          ],
+          "rate": 0.7143,
+          "wilson95": [
+            0.3589,
+            0.9178
+          ]
+        }
+      }
+    },
+    "pooled_by_condition": {
+      "GLOBAL_FALSE_NEGATIVE": {
+        "derailed": {
+          "count": 5,
+          "n": 21,
+          "problem_cluster_bootstrap95": [
+            0.0476,
+            0.4762
+          ],
+          "rate": 0.2381,
+          "wilson95": [
+            0.1063,
+            0.4509
+          ]
+        },
+        "doubt": {
+          "count": 3,
+          "n": 21,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.3333
+          ],
+          "rate": 0.1429,
+          "wilson95": [
+            0.0498,
+            0.3464
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 21,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.1546
+          ]
+        },
+        "n": 21,
+        "parroted": {
+          "count": 0,
+          "n": 21,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.1546
+          ]
+        },
+        "poisoning": {
+          "count": 0,
+          "n": 0,
+          "problem_cluster_bootstrap95": [
+            null,
+            null
+          ],
+          "rate": null,
+          "wilson95": [
+            null,
+            null
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 0,
+          "n": 21,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.1546
+          ]
+        },
+        "valid_recovery": {
+          "count": 15,
+          "n": 21,
+          "problem_cluster_bootstrap95": [
+            0.5238,
+            0.9048
+          ],
+          "rate": 0.7143,
+          "wilson95": [
+            0.5004,
+            0.8619
+          ]
+        }
+      },
+      "GLOBAL_FALSE_POSITIVE": {
+        "derailed": {
+          "count": 2,
+          "n": 21,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.1905
+          ],
+          "rate": 0.0952,
+          "wilson95": [
+            0.0265,
+            0.2891
+          ]
+        },
+        "doubt": {
+          "count": 0,
+          "n": 21,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.1546
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 21,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.1546
+          ]
+        },
+        "n": 21,
+        "parroted": {
+          "count": 0,
+          "n": 21,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.1546
+          ]
+        },
+        "poisoning": {
+          "count": 5,
+          "n": 21,
+          "problem_cluster_bootstrap95": [
+            0.0476,
+            0.4762
+          ],
+          "rate": 0.2381,
+          "wilson95": [
+            0.1063,
+            0.4509
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 0,
+          "n": 21,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.1546
+          ]
+        },
+        "valid_recovery": {
+          "count": 14,
+          "n": 21,
+          "problem_cluster_bootstrap95": [
+            0.4286,
+            0.9048
+          ],
+          "rate": 0.6667,
+          "wilson95": [
+            0.4537,
+            0.8281
+          ]
+        }
+      },
+      "LOCAL_FALSE_NEGATIVE": {
+        "derailed": {
+          "count": 7,
+          "n": 21,
+          "problem_cluster_bootstrap95": [
+            0.1429,
+            0.5238
+          ],
+          "rate": 0.3333,
+          "wilson95": [
+            0.1719,
+            0.5463
+          ]
+        },
+        "doubt": {
+          "count": 7,
+          "n": 21,
+          "problem_cluster_bootstrap95": [
+            0.0952,
+            0.5714
+          ],
+          "rate": 0.3333,
+          "wilson95": [
+            0.1719,
+            0.5463
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 21,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.1546
+          ]
+        },
+        "n": 21,
+        "parroted": {
+          "count": 2,
+          "n": 21,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.2381
+          ],
+          "rate": 0.0952,
+          "wilson95": [
+            0.0265,
+            0.2891
+          ]
+        },
+        "poisoning": {
+          "count": 0,
+          "n": 0,
+          "problem_cluster_bootstrap95": [
+            null,
+            null
+          ],
+          "rate": null,
+          "wilson95": [
+            null,
+            null
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 1,
+          "n": 21,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.1429
+          ],
+          "rate": 0.0476,
+          "wilson95": [
+            0.0085,
+            0.2267
+          ]
+        },
+        "valid_recovery": {
+          "count": 11,
+          "n": 21,
+          "problem_cluster_bootstrap95": [
+            0.2857,
+            0.7619
+          ],
+          "rate": 0.5238,
+          "wilson95": [
+            0.3237,
+            0.7166
+          ]
+        }
+      },
+      "LOCAL_FALSE_POSITIVE": {
+        "derailed": {
+          "count": 2,
+          "n": 21,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.1905
+          ],
+          "rate": 0.0952,
+          "wilson95": [
+            0.0265,
+            0.2891
+          ]
+        },
+        "doubt": {
+          "count": 6,
+          "n": 21,
+          "problem_cluster_bootstrap95": [
+            0.0952,
+            0.4762
+          ],
+          "rate": 0.2857,
+          "wilson95": [
+            0.1381,
+            0.4996
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n": 21,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.1546
+          ]
+        },
+        "n": 21,
+        "parroted": {
+          "count": 2,
+          "n": 21,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.2857
+          ],
+          "rate": 0.0952,
+          "wilson95": [
+            0.0265,
+            0.2891
+          ]
+        },
+        "poisoning": {
+          "count": 0,
+          "n": 0,
+          "problem_cluster_bootstrap95": [
+            null,
+            null
+          ],
+          "rate": null,
+          "wilson95": [
+            null,
+            null
+          ]
+        },
+        "problem_n": 7,
+        "unparsed": {
+          "count": 2,
+          "n": 21,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.1905
+          ],
+          "rate": 0.0952,
+          "wilson95": [
+            0.0265,
+            0.2891
+          ]
+        },
+        "valid_recovery": {
+          "count": 15,
+          "n": 21,
+          "problem_cluster_bootstrap95": [
+            0.4762,
+            0.9048
+          ],
+          "rate": 0.7143,
+          "wilson95": [
+            0.5004,
+            0.8619
+          ]
+        }
+      }
+    }
+  },
+  "multiple_comparisons": "The locality and polarity main contrasts for valid_recovery and doubt are primary; position-specific and poisoning contrasts are exploratory unless separately pre-specified.",
+  "primary_analysis": {
+    "doubt": {
+      "locality_contrast": {
+        "contrast": "local_minus_global",
+        "estimate": 0.2381,
+        "metric": "doubt",
+        "problem_cluster_bootstrap95": [
+          0.0714,
+          0.4048
+        ],
+        "problem_n": 7,
+        "status": "ok"
+      },
+      "model": {
+        "coefficients": {
+          "intercept": {
+            "log_or": -0.5069,
+            "or": 0.6023
+          },
+          "locality=global": {
+            "log_or": -9.866,
+            "or": 0.0001
+          },
+          "locality=global:polarity=negative": {
+            "log_or": 1.8288,
+            "or": 6.2261
+          },
+          "locality=global:polarity=negative:position=late": {
+            "log_or": 6.8233,
+            "or": 919.0311
+          },
+          "locality=global:polarity=negative:position=mid": {
+            "log_or": 5.3884,
+            "or": 218.8537
+          },
+          "locality=global:position=late": {
+            "log_or": 1.2128,
+            "or": 3.3629
+          },
+          "locality=global:position=mid": {
+            "log_or": 0.9731,
+            "or": 2.6461
+          },
+          "polarity=negative": {
+            "log_or": -0.0006,
+            "or": 0.9994
+          },
+          "polarity=negative:position=late": {
+            "log_or": 0.0015,
+            "or": 1.0015
+          },
+          "polarity=negative:position=mid": {
+            "log_or": 0.7259,
+            "or": 2.0665
+          },
+          "position=late": {
+            "log_or": -0.0003,
+            "or": 0.9997
+          },
+          "position=mid": {
+            "log_or": -0.0001,
+            "or": 0.9999
+          }
+        },
+        "formula": "doubt ~ locality * polarity * position + problem_id_fixed_effect",
+        "method": "problem_fixed_effects_logistic; paired approximation to random-intercept mixed model",
+        "n": 84,
+        "problem_n": 7,
+        "requested_formula": "doubt ~ locality * polarity * position + (1 | problem_id)",
+        "status": "ok"
+      },
+      "polarity_contrast": {
+        "contrast": "positive_minus_negative",
+        "estimate": -0.0952,
+        "metric": "doubt",
+        "problem_cluster_bootstrap95": [
+          -0.2381,
+          0.0238
+        ],
+        "problem_n": 7,
+        "status": "ok"
+      }
+    },
+    "poisoning": {
+      "locality_contrast": {
+        "contrast": "local_minus_global",
+        "status": "insufficient_data"
+      },
+      "model": {
+        "n": 21,
+        "problem_n": 7,
+        "status": "insufficient_data"
+      },
+      "polarity_contrast": {
+        "contrast": "positive_minus_negative",
+        "status": "insufficient_data"
+      }
+    },
+    "valid_recovery": {
+      "locality_contrast": {
+        "contrast": "local_minus_global",
+        "estimate": -0.0714,
+        "metric": "valid_recovery",
+        "problem_cluster_bootstrap95": [
+          -0.2143,
+          0.0714
+        ],
+        "problem_n": 7,
+        "status": "ok"
+      },
+      "model": {
+        "coefficients": {
+          "intercept": {
+            "log_or": 0.6201,
+            "or": 1.8591
+          },
+          "locality=global": {
+            "log_or": 0.0003,
+            "or": 1.0003
+          },
+          "locality=global:polarity=negative": {
+            "log_or": 1.5911,
+            "or": 4.9092
+          },
+          "locality=global:polarity=negative:position=late": {
+            "log_or": -0.2369,
+            "or": 0.7891
+          },
+          "locality=global:polarity=negative:position=mid": {
+            "log_or": -0.9517,
+            "or": 0.3861
+          },
+          "locality=global:position=late": {
+            "log_or": -0.6774,
+            "or": 0.5079
+          },
+          "locality=global:position=mid": {
+            "log_or": -0.0004,
+            "or": 0.9996
+          },
+          "polarity=negative": {
+            "log_or": -0.6768,
+            "or": 0.5083
+          },
+          "polarity=negative:position=late": {
+            "log_or": -0.0003,
+            "or": 0.9997
+          },
+          "polarity=negative:position=mid": {
+            "log_or": -0.6396,
+            "or": 0.5275
+          },
+          "position=late": {
+            "log_or": 0.0001,
+            "or": 1.0001
+          },
+          "position=mid": {
+            "log_or": 0.0002,
+            "or": 1.0002
+          }
+        },
+        "formula": "valid_recovery ~ locality * polarity * position + problem_id_fixed_effect",
+        "method": "problem_fixed_effects_logistic; paired approximation to random-intercept mixed model",
+        "n": 84,
+        "problem_n": 7,
+        "requested_formula": "valid_recovery ~ locality * polarity * position + (1 | problem_id)",
+        "status": "ok"
+      },
+      "polarity_contrast": {
+        "contrast": "positive_minus_negative",
+        "estimate": 0.0714,
+        "metric": "valid_recovery",
+        "problem_cluster_bootstrap95": [
+          -0.0952,
+          0.1905
+        ],
+        "problem_n": 7,
+        "status": "ok"
+      }
+    }
+  },
+  "token_length_and_grammar": {
+    "by_condition": {
+      "GLOBAL_FALSE_NEGATIVE": {
+        "grammar_template_counts": {
+          "entity_is_not_a_category": 14,
+          "entity_is_not_attribute": 7
+        },
+        "n": 21,
+        "predicate_family_counts": {
+          "attribute": 7,
+          "category": 14
+        },
+        "token_count_max": 9,
+        "token_count_mean": 7.667,
+        "token_count_min": 5,
+        "word_count_mean": 4.667
+      },
+      "GLOBAL_FALSE_POSITIVE": {
+        "grammar_template_counts": {
+          "entity_is_a_category": 21
+        },
+        "n": 21,
+        "predicate_family_counts": {
+          "category": 21
+        },
+        "token_count_max": 8,
+        "token_count_mean": 7.238,
+        "token_count_min": 6,
+        "word_count_mean": 4.0
+      },
+      "LOCAL_FALSE_NEGATIVE": {
+        "grammar_template_counts": {
+          "entity_is_not_a_category": 21
+        },
+        "n": 21,
+        "predicate_family_counts": {
+          "category": 21
+        },
+        "token_count_max": 9,
+        "token_count_mean": 8.476,
+        "token_count_min": 7,
+        "word_count_mean": 5.0
+      },
+      "LOCAL_FALSE_POSITIVE": {
+        "grammar_template_counts": {
+          "entity_is_attribute": 21
+        },
+        "n": 21,
+        "predicate_family_counts": {
+          "attribute": 21
+        },
+        "token_count_max": 5,
+        "token_count_mean": 4.762,
+        "token_count_min": 4,
+        "word_count_mean": 3.0
+      }
+    },
+    "by_locality_polarity": {
+      "global|negative": {
+        "grammar_template_counts": {
+          "entity_is_not_a_category": 14,
+          "entity_is_not_attribute": 7
+        },
+        "n": 21,
+        "predicate_family_counts": {
+          "attribute": 7,
+          "category": 14
+        },
+        "token_count_max": 9,
+        "token_count_mean": 7.667,
+        "token_count_min": 5,
+        "word_count_mean": 4.667
+      },
+      "global|positive": {
+        "grammar_template_counts": {
+          "entity_is_a_category": 21
+        },
+        "n": 21,
+        "predicate_family_counts": {
+          "category": 21
+        },
+        "token_count_max": 8,
+        "token_count_mean": 7.238,
+        "token_count_min": 6,
+        "word_count_mean": 4.0
+      },
+      "local|negative": {
+        "grammar_template_counts": {
+          "entity_is_not_a_category": 21
+        },
+        "n": 21,
+        "predicate_family_counts": {
+          "category": 21
+        },
+        "token_count_max": 9,
+        "token_count_mean": 8.476,
+        "token_count_min": 7,
+        "word_count_mean": 5.0
+      },
+      "local|positive": {
+        "grammar_template_counts": {
+          "entity_is_attribute": 21
+        },
+        "n": 21,
+        "predicate_family_counts": {
+          "attribute": 21
+        },
+        "token_count_max": 5,
+        "token_count_mean": 4.762,
+        "token_count_min": 4,
+        "word_count_mean": 3.0
+      }
+    }
+  }
+}
