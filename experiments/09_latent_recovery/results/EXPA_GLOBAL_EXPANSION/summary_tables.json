@@ -1,0 +1,1934 @@
+{
+  "availability": {
+    "global_falsehood_problem_n": 150,
+    "problems_by_condition": {
+      "benign_paraphrase": 150,
+      "global_falsehood": 150,
+      "one_hop_falsehood": 150,
+      "true_interruption": 150
+    }
+  },
+  "created_at": "2026-06-18T21:41:07.753829+00:00",
+  "integrity": {
+    "all_global_truth_false": true,
+    "all_original_proofs_validated": true,
+    "duplicate_count": 0,
+    "duplicate_problem_condition_position_seed": [],
+    "validated_rows": 1800
+  },
+  "logistic": {
+    "poisoned": {
+      "coefficients": {
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.global_falsehood]": {
+          "log_or": 4.1521,
+          "log_or_approx95": [
+            3.9497,
+            4.3546
+          ],
+          "or": 63.5695,
+          "or_approx95": [
+            51.9201,
+            77.8326
+          ],
+          "se": 0.1033
+        },
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.global_falsehood]:C(injection_position, Treatment(reference='early'))[T.late]": {
+          "log_or": 1.1699,
+          "log_or_approx95": [
+            0.8377,
+            1.5021
+          ],
+          "or": 3.2216,
+          "or_approx95": [
+            2.311,
+            4.4911
+          ],
+          "se": 0.1695
+        },
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.global_falsehood]:C(injection_position, Treatment(reference='early'))[T.mid]": {
+          "log_or": 1.0634,
+          "log_or_approx95": [
+            0.7246,
+            1.4022
+          ],
+          "or": 2.8962,
+          "or_approx95": [
+            2.0639,
+            4.0643
+          ],
+          "se": 0.1729
+        },
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.one_hop_falsehood]": {
+          "log_or": -0.0223,
+          "log_or_approx95": [
+            -0.7626,
+            0.7181
+          ],
+          "or": 0.978,
+          "or_approx95": [
+            0.4665,
+            2.0505
+          ],
+          "se": 0.3777
+        },
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.one_hop_falsehood]:C(injection_position, Treatment(reference='early'))[T.late]": {
+          "log_or": 1.6694,
+          "log_or_approx95": [
+            0.6478,
+            2.691
+          ],
+          "or": 5.3091,
+          "or_approx95": [
+            1.9114,
+            14.7467
+          ],
+          "se": 0.5212
+        },
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.one_hop_falsehood]:C(injection_position, Treatment(reference='early'))[T.mid]": {
+          "log_or": 1.4161,
+          "log_or_approx95": [
+            0.2456,
+            2.5866
+          ],
+          "or": 4.121,
+          "or_approx95": [
+            1.2784,
+            13.2844
+          ],
+          "se": 0.5972
+        },
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.true_interruption]": {
+          "log_or": -2.1415,
+          "log_or_approx95": [
+            -4.3711,
+            0.0881
+          ],
+          "or": 0.1175,
+          "or_approx95": [
+            0.0126,
+            1.0921
+          ],
+          "se": 1.1376
+        },
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.true_interruption]:C(injection_position, Treatment(reference='early'))[T.late]": {
+          "log_or": -0.7548,
+          "log_or_approx95": [
+            -3.734,
+            2.2244
+          ],
+          "or": 0.4701,
+          "or_approx95": [
+            0.0239,
+            9.248
+          ],
+          "se": 1.52
+        },
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.true_interruption]:C(injection_position, Treatment(reference='early'))[T.mid]": {
+          "log_or": -0.7212,
+          "log_or_approx95": [
+            -3.7286,
+            2.2862
+          ],
+          "or": 0.4862,
+          "or_approx95": [
+            0.024,
+            9.8376
+          ],
+          "se": 1.5344
+        },
+        "C(injection_position, Treatment(reference='early'))[T.late]": {
+          "log_or": -0.2514,
+          "log_or_approx95": [
+            -0.5653,
+            0.0624
+          ],
+          "or": 0.7777,
+          "or_approx95": [
+            0.5682,
+            1.0644
+          ],
+          "se": 0.1601
+        },
+        "C(injection_position, Treatment(reference='early'))[T.mid]": {
+          "log_or": -0.3536,
+          "log_or_approx95": [
+            -0.677,
+            -0.0301
+          ],
+          "or": 0.7022,
+          "or_approx95": [
+            0.5081,
+            0.9703
+          ],
+          "se": 0.165
+        },
+        "Intercept": {
+          "log_or": -5.4211,
+          "log_or_approx95": [
+            -5.6144,
+            -5.2279
+          ],
+          "or": 0.0044,
+          "or_approx95": [
+            0.0036,
+            0.0054
+          ],
+          "se": 0.0986
+        }
+      },
+      "formula": "poisoned ~ condition * position + (1 | problem_id)",
+      "method": "statsmodels BinomialBayesMixedGLM variational Bayes with random intercept for problem_id",
+      "n": 1800,
+      "problem_n": 150,
+      "random_intercept_sd": 0.4787,
+      "status": "ok"
+    },
+    "valid_rederivation": {
+      "coefficients": {
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.global_falsehood]": {
+          "log_or": -1.4654,
+          "log_or_approx95": [
+            -1.6623,
+            -1.2686
+          ],
+          "or": 0.231,
+          "or_approx95": [
+            0.1897,
+            0.2812
+          ],
+          "se": 0.1004
+        },
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.global_falsehood]:C(injection_position, Treatment(reference='early'))[T.late]": {
+          "log_or": -1.612,
+          "log_or_approx95": [
+            -1.9545,
+            -1.2695
+          ],
+          "or": 0.1995,
+          "or_approx95": [
+            0.1416,
+            0.281
+          ],
+          "se": 0.1748
+        },
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.global_falsehood]:C(injection_position, Treatment(reference='early'))[T.mid]": {
+          "log_or": -1.25,
+          "log_or_approx95": [
+            -1.595,
+            -0.905
+          ],
+          "or": 0.2865,
+          "or_approx95": [
+            0.2029,
+            0.4045
+          ],
+          "se": 0.176
+        },
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.one_hop_falsehood]": {
+          "log_or": -0.6307,
+          "log_or_approx95": [
+            -0.8359,
+            -0.4255
+          ],
+          "or": 0.5322,
+          "or_approx95": [
+            0.4335,
+            0.6534
+          ],
+          "se": 0.1047
+        },
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.one_hop_falsehood]:C(injection_position, Treatment(reference='early'))[T.late]": {
+          "log_or": -0.7325,
+          "log_or_approx95": [
+            -1.1096,
+            -0.3554
+          ],
+          "or": 0.4807,
+          "or_approx95": [
+            0.3297,
+            0.7009
+          ],
+          "se": 0.1924
+        },
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.one_hop_falsehood]:C(injection_position, Treatment(reference='early'))[T.mid]": {
+          "log_or": -0.821,
+          "log_or_approx95": [
+            -1.167,
+            -0.4749
+          ],
+          "or": 0.44,
+          "or_approx95": [
+            0.3113,
+            0.6219
+          ],
+          "se": 0.1765
+        },
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.true_interruption]": {
+          "log_or": 0.4059,
+          "log_or_approx95": [
+            0.1358,
+            0.676
+          ],
+          "or": 1.5006,
+          "or_approx95": [
+            1.1455,
+            1.966
+          ],
+          "se": 0.1378
+        },
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.true_interruption]:C(injection_position, Treatment(reference='early'))[T.late]": {
+          "log_or": -0.7356,
+          "log_or_approx95": [
+            -1.2392,
+            -0.2319
+          ],
+          "or": 0.4792,
+          "or_approx95": [
+            0.2896,
+            0.793
+          ],
+          "se": 0.257
+        },
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.true_interruption]:C(injection_position, Treatment(reference='early'))[T.mid]": {
+          "log_or": -0.4443,
+          "log_or_approx95": [
+            -0.9256,
+            0.0371
+          ],
+          "or": 0.6413,
+          "or_approx95": [
+            0.3963,
+            1.0378
+          ],
+          "se": 0.2456
+        },
+        "C(injection_position, Treatment(reference='early'))[T.late]": {
+          "log_or": 1.2988,
+          "log_or_approx95": [
+            1.0874,
+            1.5102
+          ],
+          "or": 3.6649,
+          "or_approx95": [
+            2.9664,
+            4.5279
+          ],
+          "se": 0.1079
+        },
+        "C(injection_position, Treatment(reference='early'))[T.mid]": {
+          "log_or": 0.8712,
+          "log_or_approx95": [
+            0.6714,
+            1.071
+          ],
+          "or": 2.3898,
+          "or_approx95": [
+            1.957,
+            2.9184
+          ],
+          "se": 0.1019
+        },
+        "Intercept": {
+          "log_or": 1.2213,
+          "log_or_approx95": [
+            1.1073,
+            1.3352
+          ],
+          "or": 3.3915,
+          "or_approx95": [
+            3.0263,
+            3.8008
+          ],
+          "se": 0.0581
+        }
+      },
+      "formula": "valid_rederivation ~ condition * position + (1 | problem_id)",
+      "method": "statsmodels BinomialBayesMixedGLM variational Bayes with random intercept for problem_id",
+      "n": 1800,
+      "problem_n": 150,
+      "random_intercept_sd": 0.6272,
+      "status": "ok"
+    },
+    "verbalized_doubt": {
+      "coefficients": {
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.global_falsehood]": {
+          "log_or": -2.1672,
+          "log_or_approx95": [
+            -2.9316,
+            -1.4028
+          ],
+          "or": 0.1145,
+          "or_approx95": [
+            0.0533,
+            0.2459
+          ],
+          "se": 0.39
+        },
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.global_falsehood]:C(injection_position, Treatment(reference='early'))[T.late]": {
+          "log_or": 1.2855,
+          "log_or_approx95": [
+            0.1178,
+            2.4532
+          ],
+          "or": 3.6165,
+          "or_approx95": [
+            1.125,
+            11.6256
+          ],
+          "se": 0.5958
+        },
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.global_falsehood]:C(injection_position, Treatment(reference='early'))[T.mid]": {
+          "log_or": -0.4523,
+          "log_or_approx95": [
+            -1.7483,
+            0.8438
+          ],
+          "or": 0.6362,
+          "or_approx95": [
+            0.1741,
+            2.3251
+          ],
+          "se": 0.6612
+        },
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.one_hop_falsehood]": {
+          "log_or": 2.3757,
+          "log_or_approx95": [
+            2.1686,
+            2.5829
+          ],
+          "or": 10.759,
+          "or_approx95": [
+            8.7463,
+            13.2349
+          ],
+          "se": 0.1057
+        },
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.one_hop_falsehood]:C(injection_position, Treatment(reference='early'))[T.late]": {
+          "log_or": 0.0812,
+          "log_or_approx95": [
+            -0.2932,
+            0.4556
+          ],
+          "or": 1.0846,
+          "or_approx95": [
+            0.7459,
+            1.5771
+          ],
+          "se": 0.191
+        },
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.one_hop_falsehood]:C(injection_position, Treatment(reference='early'))[T.mid]": {
+          "log_or": -1.3235,
+          "log_or_approx95": [
+            -1.694,
+            -0.953
+          ],
+          "or": 0.2662,
+          "or_approx95": [
+            0.1838,
+            0.3856
+          ],
+          "se": 0.1891
+        },
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.true_interruption]": {
+          "log_or": -2.0408,
+          "log_or_approx95": [
+            -2.6819,
+            -1.3998
+          ],
+          "or": 0.1299,
+          "or_approx95": [
+            0.0684,
+            0.2467
+          ],
+          "se": 0.3271
+        },
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.true_interruption]:C(injection_position, Treatment(reference='early'))[T.late]": {
+          "log_or": 1.5326,
+          "log_or_approx95": [
+            0.5125,
+            2.5527
+          ],
+          "or": 4.6302,
+          "or_approx95": [
+            1.6695,
+            12.8418
+          ],
+          "se": 0.5205
+        },
+        "C(condition, Treatment(reference='benign_paraphrase'))[T.true_interruption]:C(injection_position, Treatment(reference='early'))[T.mid]": {
+          "log_or": 0.1829,
+          "log_or_approx95": [
+            -0.7969,
+            1.1627
+          ],
+          "or": 1.2007,
+          "or_approx95": [
+            0.4507,
+            3.1985
+          ],
+          "se": 0.4999
+        },
+        "C(injection_position, Treatment(reference='early'))[T.late]": {
+          "log_or": -1.0268,
+          "log_or_approx95": [
+            -1.344,
+            -0.7096
+          ],
+          "or": 0.3581,
+          "or_approx95": [
+            0.2608,
+            0.4918
+          ],
+          "se": 0.1618
+        },
+        "C(injection_position, Treatment(reference='early'))[T.mid]": {
+          "log_or": 0.429,
+          "log_or_approx95": [
+            0.1499,
+            0.7081
+          ],
+          "or": 1.5357,
+          "or_approx95": [
+            1.1618,
+            2.03
+          ],
+          "se": 0.1424
+        },
+        "Intercept": {
+          "log_or": -2.5451,
+          "log_or_approx95": [
+            -2.7128,
+            -2.3774
+          ],
+          "or": 0.0785,
+          "or_approx95": [
+            0.0664,
+            0.0928
+          ],
+          "se": 0.0856
+        }
+      },
+      "formula": "verbalized_doubt ~ condition * position + (1 | problem_id)",
+      "method": "statsmodels BinomialBayesMixedGLM variational Bayes with random intercept for problem_id",
+      "n": 1800,
+      "problem_n": 150,
+      "random_intercept_sd": 0.6392,
+      "status": "ok"
+    }
+  },
+  "metrics": {
+    "by_condition_position": {
+      "benign_paraphrase|early": {
+        "derailed": {
+          "count": 26,
+          "problem_cluster_bootstrap95": [
+            0.1133,
+            0.2333
+          ],
+          "rate": 0.1733,
+          "wilson95": [
+            0.1211,
+            0.2419
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.025
+          ]
+        },
+        "n": 150,
+        "parroted": {
+          "count": 4,
+          "problem_cluster_bootstrap95": [
+            0.0067,
+            0.0533
+          ],
+          "rate": 0.0267,
+          "wilson95": [
+            0.0104,
+            0.0666
+          ]
+        },
+        "poisoned": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.025
+          ]
+        },
+        "problem_n": 150,
+        "unparsed": {
+          "count": 8,
+          "problem_cluster_bootstrap95": [
+            0.02,
+            0.0867
+          ],
+          "rate": 0.0533,
+          "wilson95": [
+            0.0273,
+            0.1017
+          ]
+        },
+        "valid_rederivation": {
+          "count": 112,
+          "problem_cluster_bootstrap95": [
+            0.68,
+            0.8133
+          ],
+          "rate": 0.7467,
+          "wilson95": [
+            0.6715,
+            0.8095
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 13,
+          "problem_cluster_bootstrap95": [
+            0.0467,
+            0.1333
+          ],
+          "rate": 0.0867,
+          "wilson95": [
+            0.0513,
+            0.1426
+          ]
+        }
+      },
+      "benign_paraphrase|late": {
+        "derailed": {
+          "count": 12,
+          "problem_cluster_bootstrap95": [
+            0.04,
+            0.1267
+          ],
+          "rate": 0.08,
+          "wilson95": [
+            0.0464,
+            0.1346
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.025
+          ]
+        },
+        "n": 150,
+        "parroted": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.025
+          ]
+        },
+        "poisoned": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.025
+          ]
+        },
+        "problem_n": 150,
+        "unparsed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.025
+          ]
+        },
+        "valid_rederivation": {
+          "count": 138,
+          "problem_cluster_bootstrap95": [
+            0.8733,
+            0.96
+          ],
+          "rate": 0.92,
+          "wilson95": [
+            0.8654,
+            0.9536
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 4,
+          "problem_cluster_bootstrap95": [
+            0.0067,
+            0.0533
+          ],
+          "rate": 0.0267,
+          "wilson95": [
+            0.0104,
+            0.0666
+          ]
+        }
+      },
+      "benign_paraphrase|mid": {
+        "derailed": {
+          "count": 9,
+          "problem_cluster_bootstrap95": [
+            0.0267,
+            0.1
+          ],
+          "rate": 0.06,
+          "wilson95": [
+            0.0319,
+            0.1101
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.025
+          ]
+        },
+        "n": 150,
+        "parroted": {
+          "count": 6,
+          "problem_cluster_bootstrap95": [
+            0.0133,
+            0.0733
+          ],
+          "rate": 0.04,
+          "wilson95": [
+            0.0185,
+            0.0845
+          ]
+        },
+        "poisoned": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.025
+          ]
+        },
+        "problem_n": 150,
+        "unparsed": {
+          "count": 3,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0467
+          ],
+          "rate": 0.02,
+          "wilson95": [
+            0.0068,
+            0.0571
+          ]
+        },
+        "valid_rederivation": {
+          "count": 132,
+          "problem_cluster_bootstrap95": [
+            0.8133,
+            0.9333
+          ],
+          "rate": 0.88,
+          "wilson95": [
+            0.8183,
+            0.9227
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 19,
+          "problem_cluster_bootstrap95": [
+            0.0733,
+            0.18
+          ],
+          "rate": 0.1267,
+          "wilson95": [
+            0.0826,
+            0.1894
+          ]
+        }
+      },
+      "global_falsehood|early": {
+        "derailed": {
+          "count": 9,
+          "problem_cluster_bootstrap95": [
+            0.0267,
+            0.1
+          ],
+          "rate": 0.06,
+          "wilson95": [
+            0.0319,
+            0.1101
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.025
+          ]
+        },
+        "n": 150,
+        "parroted": {
+          "count": 35,
+          "problem_cluster_bootstrap95": [
+            0.1733,
+            0.3067
+          ],
+          "rate": 0.2333,
+          "wilson95": [
+            0.1728,
+            0.3072
+          ]
+        },
+        "poisoned": {
+          "count": 35,
+          "problem_cluster_bootstrap95": [
+            0.1667,
+            0.3067
+          ],
+          "rate": 0.2333,
+          "wilson95": [
+            0.1728,
+            0.3072
+          ]
+        },
+        "problem_n": 150,
+        "unparsed": {
+          "count": 4,
+          "problem_cluster_bootstrap95": [
+            0.0067,
+            0.0533
+          ],
+          "rate": 0.0267,
+          "wilson95": [
+            0.0104,
+            0.0666
+          ]
+        },
+        "valid_rederivation": {
+          "count": 67,
+          "problem_cluster_bootstrap95": [
+            0.3733,
+            0.52
+          ],
+          "rate": 0.4467,
+          "wilson95": [
+            0.3694,
+            0.5266
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.02
+          ],
+          "rate": 0.0067,
+          "wilson95": [
+            0.0012,
+            0.0368
+          ]
+        }
+      },
+      "global_falsehood|late": {
+        "derailed": {
+          "count": 3,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.04
+          ],
+          "rate": 0.02,
+          "wilson95": [
+            0.0068,
+            0.0571
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.025
+          ]
+        },
+        "n": 150,
+        "parroted": {
+          "count": 26,
+          "problem_cluster_bootstrap95": [
+            0.1133,
+            0.2333
+          ],
+          "rate": 0.1733,
+          "wilson95": [
+            0.1211,
+            0.2419
+          ]
+        },
+        "poisoned": {
+          "count": 63,
+          "problem_cluster_bootstrap95": [
+            0.34,
+            0.4933
+          ],
+          "rate": 0.42,
+          "wilson95": [
+            0.344,
+            0.5
+          ]
+        },
+        "problem_n": 150,
+        "unparsed": {
+          "count": 2,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0333
+          ],
+          "rate": 0.0133,
+          "wilson95": [
+            0.0037,
+            0.0473
+          ]
+        },
+        "valid_rederivation": {
+          "count": 56,
+          "problem_cluster_bootstrap95": [
+            0.2933,
+            0.4467
+          ],
+          "rate": 0.3733,
+          "wilson95": [
+            0.3,
+            0.453
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 3,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0467
+          ],
+          "rate": 0.02,
+          "wilson95": [
+            0.0068,
+            0.0571
+          ]
+        }
+      },
+      "global_falsehood|mid": {
+        "derailed": {
+          "count": 9,
+          "problem_cluster_bootstrap95": [
+            0.0267,
+            0.1067
+          ],
+          "rate": 0.06,
+          "wilson95": [
+            0.0319,
+            0.1101
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.025
+          ]
+        },
+        "n": 150,
+        "parroted": {
+          "count": 29,
+          "problem_cluster_bootstrap95": [
+            0.1267,
+            0.26
+          ],
+          "rate": 0.1933,
+          "wilson95": [
+            0.1381,
+            0.2639
+          ]
+        },
+        "poisoned": {
+          "count": 56,
+          "problem_cluster_bootstrap95": [
+            0.2933,
+            0.4533
+          ],
+          "rate": 0.3733,
+          "wilson95": [
+            0.3,
+            0.453
+          ]
+        },
+        "problem_n": 150,
+        "unparsed": {
+          "count": 2,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0333
+          ],
+          "rate": 0.0133,
+          "wilson95": [
+            0.0037,
+            0.0473
+          ]
+        },
+        "valid_rederivation": {
+          "count": 54,
+          "problem_cluster_bootstrap95": [
+            0.28,
+            0.4333
+          ],
+          "rate": 0.36,
+          "wilson95": [
+            0.2876,
+            0.4394
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 2,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0333
+          ],
+          "rate": 0.0133,
+          "wilson95": [
+            0.0037,
+            0.0473
+          ]
+        }
+      },
+      "one_hop_falsehood|early": {
+        "derailed": {
+          "count": 26,
+          "problem_cluster_bootstrap95": [
+            0.12,
+            0.24
+          ],
+          "rate": 0.1733,
+          "wilson95": [
+            0.1211,
+            0.2419
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.025
+          ]
+        },
+        "n": 150,
+        "parroted": {
+          "count": 22,
+          "problem_cluster_bootstrap95": [
+            0.0933,
+            0.2067
+          ],
+          "rate": 0.1467,
+          "wilson95": [
+            0.0989,
+            0.2121
+          ]
+        },
+        "poisoned": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.025
+          ]
+        },
+        "problem_n": 150,
+        "unparsed": {
+          "count": 7,
+          "problem_cluster_bootstrap95": [
+            0.0133,
+            0.08
+          ],
+          "rate": 0.0467,
+          "wilson95": [
+            0.0228,
+            0.0932
+          ]
+        },
+        "valid_rederivation": {
+          "count": 95,
+          "problem_cluster_bootstrap95": [
+            0.5533,
+            0.7133
+          ],
+          "rate": 0.6333,
+          "wilson95": [
+            0.5538,
+            0.7062
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 70,
+          "problem_cluster_bootstrap95": [
+            0.3933,
+            0.5467
+          ],
+          "rate": 0.4667,
+          "wilson95": [
+            0.3887,
+            0.5463
+          ]
+        }
+      },
+      "one_hop_falsehood|late": {
+        "derailed": {
+          "count": 14,
+          "problem_cluster_bootstrap95": [
+            0.0533,
+            0.14
+          ],
+          "rate": 0.0933,
+          "wilson95": [
+            0.0564,
+            0.1506
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.025
+          ]
+        },
+        "n": 150,
+        "parroted": {
+          "count": 13,
+          "problem_cluster_bootstrap95": [
+            0.0467,
+            0.1333
+          ],
+          "rate": 0.0867,
+          "wilson95": [
+            0.0513,
+            0.1426
+          ]
+        },
+        "poisoned": {
+          "count": 4,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0533
+          ],
+          "rate": 0.0267,
+          "wilson95": [
+            0.0104,
+            0.0666
+          ]
+        },
+        "problem_n": 150,
+        "unparsed": {
+          "count": 8,
+          "problem_cluster_bootstrap95": [
+            0.02,
+            0.0933
+          ],
+          "rate": 0.0533,
+          "wilson95": [
+            0.0273,
+            0.1017
+          ]
+        },
+        "valid_rederivation": {
+          "count": 111,
+          "problem_cluster_bootstrap95": [
+            0.6667,
+            0.8133
+          ],
+          "rate": 0.74,
+          "wilson95": [
+            0.6644,
+            0.8036
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 40,
+          "problem_cluster_bootstrap95": [
+            0.2,
+            0.34
+          ],
+          "rate": 0.2667,
+          "wilson95": [
+            0.2024,
+            0.3426
+          ]
+        }
+      },
+      "one_hop_falsehood|mid": {
+        "derailed": {
+          "count": 17,
+          "problem_cluster_bootstrap95": [
+            0.0667,
+            0.1667
+          ],
+          "rate": 0.1133,
+          "wilson95": [
+            0.072,
+            0.174
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.025
+          ]
+        },
+        "n": 150,
+        "parroted": {
+          "count": 32,
+          "problem_cluster_bootstrap95": [
+            0.1467,
+            0.28
+          ],
+          "rate": 0.2133,
+          "wilson95": [
+            0.1554,
+            0.2856
+          ]
+        },
+        "poisoned": {
+          "count": 3,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0467
+          ],
+          "rate": 0.02,
+          "wilson95": [
+            0.0068,
+            0.0571
+          ]
+        },
+        "problem_n": 150,
+        "unparsed": {
+          "count": 2,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0333
+          ],
+          "rate": 0.0133,
+          "wilson95": [
+            0.0037,
+            0.0473
+          ]
+        },
+        "valid_rederivation": {
+          "count": 96,
+          "problem_cluster_bootstrap95": [
+            0.5667,
+            0.7133
+          ],
+          "rate": 0.64,
+          "wilson95": [
+            0.5606,
+            0.7124
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 41,
+          "problem_cluster_bootstrap95": [
+            0.2067,
+            0.3467
+          ],
+          "rate": 0.2733,
+          "wilson95": [
+            0.2083,
+            0.3496
+          ]
+        }
+      },
+      "true_interruption|early": {
+        "derailed": {
+          "count": 5,
+          "problem_cluster_bootstrap95": [
+            0.0067,
+            0.06
+          ],
+          "rate": 0.0333,
+          "wilson95": [
+            0.0143,
+            0.0757
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.025
+          ]
+        },
+        "n": 150,
+        "parroted": {
+          "count": 19,
+          "problem_cluster_bootstrap95": [
+            0.08,
+            0.18
+          ],
+          "rate": 0.1267,
+          "wilson95": [
+            0.0826,
+            0.1894
+          ]
+        },
+        "poisoned": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.025
+          ]
+        },
+        "problem_n": 150,
+        "unparsed": {
+          "count": 3,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0467
+          ],
+          "rate": 0.02,
+          "wilson95": [
+            0.0068,
+            0.0571
+          ]
+        },
+        "valid_rederivation": {
+          "count": 123,
+          "problem_cluster_bootstrap95": [
+            0.7533,
+            0.8733
+          ],
+          "rate": 0.82,
+          "wilson95": [
+            0.7508,
+            0.8732
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.02
+          ],
+          "rate": 0.0067,
+          "wilson95": [
+            0.0012,
+            0.0368
+          ]
+        }
+      },
+      "true_interruption|late": {
+        "derailed": {
+          "count": 2,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0333
+          ],
+          "rate": 0.0133,
+          "wilson95": [
+            0.0037,
+            0.0473
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.025
+          ]
+        },
+        "n": 150,
+        "parroted": {
+          "count": 15,
+          "problem_cluster_bootstrap95": [
+            0.0533,
+            0.1533
+          ],
+          "rate": 0.1,
+          "wilson95": [
+            0.0615,
+            0.1584
+          ]
+        },
+        "poisoned": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.025
+          ]
+        },
+        "problem_n": 150,
+        "unparsed": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0267
+          ],
+          "rate": 0.0067,
+          "wilson95": [
+            0.0012,
+            0.0368
+          ]
+        },
+        "valid_rederivation": {
+          "count": 132,
+          "problem_cluster_bootstrap95": [
+            0.82,
+            0.9267
+          ],
+          "rate": 0.88,
+          "wilson95": [
+            0.8183,
+            0.9227
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 4,
+          "problem_cluster_bootstrap95": [
+            0.0067,
+            0.0533
+          ],
+          "rate": 0.0267,
+          "wilson95": [
+            0.0104,
+            0.0666
+          ]
+        }
+      },
+      "true_interruption|mid": {
+        "derailed": {
+          "count": 3,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0467
+          ],
+          "rate": 0.02,
+          "wilson95": [
+            0.0068,
+            0.0571
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.025
+          ]
+        },
+        "n": 150,
+        "parroted": {
+          "count": 15,
+          "problem_cluster_bootstrap95": [
+            0.0533,
+            0.1533
+          ],
+          "rate": 0.1,
+          "wilson95": [
+            0.0615,
+            0.1584
+          ]
+        },
+        "poisoned": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.025
+          ]
+        },
+        "problem_n": 150,
+        "unparsed": {
+          "count": 2,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0333
+          ],
+          "rate": 0.0133,
+          "wilson95": [
+            0.0037,
+            0.0473
+          ]
+        },
+        "valid_rederivation": {
+          "count": 130,
+          "problem_cluster_bootstrap95": [
+            0.8133,
+            0.9133
+          ],
+          "rate": 0.8667,
+          "wilson95": [
+            0.803,
+            0.912
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 4,
+          "problem_cluster_bootstrap95": [
+            0.0067,
+            0.0533
+          ],
+          "rate": 0.0267,
+          "wilson95": [
+            0.0104,
+            0.0666
+          ]
+        }
+      }
+    },
+    "pooled_by_condition": {
+      "benign_paraphrase": {
+        "derailed": {
+          "count": 47,
+          "problem_cluster_bootstrap95": [
+            0.0756,
+            0.1333
+          ],
+          "rate": 0.1044,
+          "wilson95": [
+            0.0795,
+            0.1361
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.0085
+          ]
+        },
+        "n": 450,
+        "parroted": {
+          "count": 10,
+          "problem_cluster_bootstrap95": [
+            0.0089,
+            0.0378
+          ],
+          "rate": 0.0222,
+          "wilson95": [
+            0.0121,
+            0.0404
+          ]
+        },
+        "poisoned": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.0085
+          ]
+        },
+        "problem_n": 150,
+        "unparsed": {
+          "count": 11,
+          "problem_cluster_bootstrap95": [
+            0.0111,
+            0.04
+          ],
+          "rate": 0.0244,
+          "wilson95": [
+            0.0137,
+            0.0432
+          ]
+        },
+        "valid_rederivation": {
+          "count": 382,
+          "problem_cluster_bootstrap95": [
+            0.8133,
+            0.8822
+          ],
+          "rate": 0.8489,
+          "wilson95": [
+            0.8129,
+            0.879
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 36,
+          "problem_cluster_bootstrap95": [
+            0.0556,
+            0.1067
+          ],
+          "rate": 0.08,
+          "wilson95": [
+            0.0583,
+            0.1088
+          ]
+        }
+      },
+      "global_falsehood": {
+        "derailed": {
+          "count": 21,
+          "problem_cluster_bootstrap95": [
+            0.0289,
+            0.0667
+          ],
+          "rate": 0.0467,
+          "wilson95": [
+            0.0307,
+            0.0703
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.0085
+          ]
+        },
+        "n": 450,
+        "parroted": {
+          "count": 90,
+          "problem_cluster_bootstrap95": [
+            0.1644,
+            0.2378
+          ],
+          "rate": 0.2,
+          "wilson95": [
+            0.1657,
+            0.2394
+          ]
+        },
+        "poisoned": {
+          "count": 154,
+          "problem_cluster_bootstrap95": [
+            0.2933,
+            0.3844
+          ],
+          "rate": 0.3422,
+          "wilson95": [
+            0.2999,
+            0.3872
+          ]
+        },
+        "problem_n": 150,
+        "unparsed": {
+          "count": 8,
+          "problem_cluster_bootstrap95": [
+            0.0044,
+            0.0311
+          ],
+          "rate": 0.0178,
+          "wilson95": [
+            0.009,
+            0.0347
+          ]
+        },
+        "valid_rederivation": {
+          "count": 177,
+          "problem_cluster_bootstrap95": [
+            0.3422,
+            0.4422
+          ],
+          "rate": 0.3933,
+          "wilson95": [
+            0.3493,
+            0.4392
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 6,
+          "problem_cluster_bootstrap95": [
+            0.0044,
+            0.0244
+          ],
+          "rate": 0.0133,
+          "wilson95": [
+            0.0061,
+            0.0288
+          ]
+        }
+      },
+      "one_hop_falsehood": {
+        "derailed": {
+          "count": 57,
+          "problem_cluster_bootstrap95": [
+            0.0956,
+            0.16
+          ],
+          "rate": 0.1267,
+          "wilson95": [
+            0.0991,
+            0.1606
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.0085
+          ]
+        },
+        "n": 450,
+        "parroted": {
+          "count": 67,
+          "problem_cluster_bootstrap95": [
+            0.1133,
+            0.1822
+          ],
+          "rate": 0.1489,
+          "wilson95": [
+            0.119,
+            0.1847
+          ]
+        },
+        "poisoned": {
+          "count": 7,
+          "problem_cluster_bootstrap95": [
+            0.0044,
+            0.0289
+          ],
+          "rate": 0.0156,
+          "wilson95": [
+            0.0076,
+            0.0318
+          ]
+        },
+        "problem_n": 150,
+        "unparsed": {
+          "count": 17,
+          "problem_cluster_bootstrap95": [
+            0.02,
+            0.0578
+          ],
+          "rate": 0.0378,
+          "wilson95": [
+            0.0237,
+            0.0597
+          ]
+        },
+        "valid_rederivation": {
+          "count": 302,
+          "problem_cluster_bootstrap95": [
+            0.6244,
+            0.7222
+          ],
+          "rate": 0.6711,
+          "wilson95": [
+            0.6264,
+            0.7129
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 151,
+          "problem_cluster_bootstrap95": [
+            0.2911,
+            0.3867
+          ],
+          "rate": 0.3356,
+          "wilson95": [
+            0.2935,
+            0.3804
+          ]
+        }
+      },
+      "true_interruption": {
+        "derailed": {
+          "count": 10,
+          "problem_cluster_bootstrap95": [
+            0.0111,
+            0.0356
+          ],
+          "rate": 0.0222,
+          "wilson95": [
+            0.0121,
+            0.0404
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.0085
+          ]
+        },
+        "n": 450,
+        "parroted": {
+          "count": 49,
+          "problem_cluster_bootstrap95": [
+            0.0733,
+            0.1444
+          ],
+          "rate": 0.1089,
+          "wilson95": [
+            0.0833,
+            0.141
+          ]
+        },
+        "poisoned": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.0085
+          ]
+        },
+        "problem_n": 150,
+        "unparsed": {
+          "count": 6,
+          "problem_cluster_bootstrap95": [
+            0.0044,
+            0.0244
+          ],
+          "rate": 0.0133,
+          "wilson95": [
+            0.0061,
+            0.0288
+          ]
+        },
+        "valid_rederivation": {
+          "count": 385,
+          "problem_cluster_bootstrap95": [
+            0.8178,
+            0.8889
+          ],
+          "rate": 0.8556,
+          "wilson95": [
+            0.8201,
+            0.885
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 9,
+          "problem_cluster_bootstrap95": [
+            0.0067,
+            0.0356
+          ],
+          "rate": 0.02,
+          "wilson95": [
+            0.0106,
+            0.0376
+          ]
+        }
+      }
+    }
+  },
+  "multiple_comparisons": "Global falsehood absorption and recovery are primary for EXPA; control contrasts are exploratory unless stated in the preregistered prompt."
+}

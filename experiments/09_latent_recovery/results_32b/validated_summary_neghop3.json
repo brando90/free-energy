@@ -1,0 +1,26 @@
+{
+  "early": {
+    "valid_rederivation": 66,
+    "acknowledged": 15,
+    "n": 93,
+    "derailed": 13,
+    "unparsed": 12,
+    "parroted": 2,
+    "valid_rederivation_rate": 0.7097,
+    "poisoned_rate": 0.0
+  },
+  "mid": {
+    "valid_rederivation": 32,
+    "acknowledged": 2,
+    "n": 38,
+    "unparsed": 3,
+    "derailed": 1,
+    "parroted": 2,
+    "valid_rederivation_rate": 0.8421,
+    "poisoned_rate": 0.0
+  },
+  "_cohort": {
+    "gold_validated_instances": 174,
+    "perturbed_runs_excluded_gold_not_valid": 37
+  }
+}

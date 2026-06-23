@@ -1,0 +1,262 @@
+# EXPC Manual Audit Note
+
+Generated: 2026-06-18T20:05:39.669655+00:00
+
+## LOCAL_FALSE_POSITIVE (20 inspected; requested 20)
+
+- run_id: `c626d13adcfb0d41c6209e09`; problem_id: `4hop_ProofsOnly_random_noadj.json::example61::in_context_example0`; position: `mid`; class: `valid_rederivation`; truth: `false`
+  - injected: Sam is large.
+  - continuation: Lempuses are bitter. Lorpuses are feisty. Every jompus is a lorpus. Jompuses are not blue. Every jompus is a lorpus. Sam is not blue.
+- run_id: `0fb43b4e013f45e5c0ea016e`; problem_id: `4hop_ProofsOnly_random_noadj.json::example32::in_context_example0`; position: `mid`; class: `valid_rederivation`; truth: `false`
+  - injected: Rex is slow.
+  - continuation: This contradicts "Each sterpus is not slow" since Rex is also a sterpus (given Rex is a rompus and every rompus is a sterpus). Yumpuses are tumpuses. Rex is a tumpus. Tumpuses are not dull. Rex is not dull.
+- run_id: `9ede8880ddeea06202c2a801`; problem_id: `2hop_ProofsOnly_4shot_4testhops_random_noadj.json::example19::test_example`; position: `late`; class: `unparsed`; truth: `false`
+  - injected: Stella is dull.
+  - continuation: Every shumpus is not dull. This is a contradiction, so our initial assumption that Stella is a shumpus must be re-evaluated through other paths. However, we know every shumpus is a numpus. Stella is a shumpus. Every shumpus is a numpus. Stella is a numpus. Numpuses are loud. This does not directly help. Revisiting, every shumpus is a yumpus, and yumpuses are tumpuses. Stella is a shumpus. Every shumpus is a yumpus. Stella is a yumpus. Yumpuses are tumpuses. Stella is a tumpus. Tumpuses are bitter. This does not directly help either. But, every shumpus is a zumpus, and every zumpus is slow. Ste
+- run_id: `3652e8493768039d3d66a1f6`; problem_id: `4hop_ProofsOnly_random_noadj.json::example90::in_context_example4`; position: `late`; class: `valid_rederivation`; truth: `false`
+  - injected: Rex is loud.
+  - continuation: Lorpuses are not loud. Rex is a lorpus. Lorpes are gorpuses. Gorpuses are not lorpuses. Rex is a tumpus. Tumpuses are not rainy. Rex is not rainy.
+- run_id: `c2db53046d9712fd837c73bb`; problem_id: `4hop_ProofsOnly_random_noadj.json::example26::in_context_example4`; position: `early`; class: `valid_rederivation`; truth: `false`
+  - injected: Stella is fast.
+  - continuation: Every zumpus is a vumpus. Stella is a vumpus. Every vumpus is a dumpus. Stella is a dumpus. Every dumpus is a wumpus. Stella is a wumpus. Every wumpus is an impus. Stella is an impus. Every impus is not brown. Stella is not brown. Every wumpus is metallic. Stella is metallic. Every wumpus is transparent. Stella is transparent.
+- run_id: `d843bb3f410e3fbcb643cd6f`; problem_id: `4hop_ProofsOnly_random_noadj.json::example32::in_context_example0`; position: `early`; class: `derailed`; truth: `false`
+  - injected: Rex is slow.
+  - continuation: Every rompus is a shumpus. Rex is a shumpus. Shumpuses are orange. (Not relevant to dullness) Rompuses are jompuses. Jompuses are yumpuses. Rex is a yumpus. Yumpuses are tumpuses. Rex is a tumpus. Tumpuses are metallic. (Not relevant to dullness) Each wumpus is not dull. Wumpuses are gorpuses. Gorpuses are not melodic. (Not relevant to dullness) Wumpuses are not dull. Wumpuses are gorpuses. Wumpuses are not dull. Wumpuses are not dull. Wumpuses are not dull. Wumpuses are not dull. Wumpuses are not dull. Wumpuses are not dull. Wumpuses are not dull. Wumpuses are not dull. Wumpuses are not dull.
+- run_id: `fb6645197e227e450ae8f498`; problem_id: `4hop_ProofsOnly_random_noadj.json::example61::in_context_example0`; position: `late`; class: `valid_rederivation`; truth: `false`
+  - injected: Sam is amenable.
+  - continuation: (This contradicts the previous statement, but we proceed with the given information) Lempuses are not blue. Sam is not blue.
+- run_id: `6eaf25311a60e034f1fc5a32`; problem_id: `4hop_ProofsOnly_random_noadj.json::example26::in_context_example4`; position: `late`; class: `valid_rederivation`; truth: `false`
+  - injected: Stella is fast.
+  - continuation: Every yumpus is not fast. Stella is a yumpus. Every yumpus is a shumpus. Every zumpus is a vumpus. Stella is a vumpus. Every vumpus is a wumpus. Every wumpus is an impus. Stella is an impus. Every impus is not brown. Every wumpus is metallic. Every wumpus is transparent. Stella is transparent.
+- run_id: `d5bbc56fe6e610dc34c91880`; problem_id: `4hop_ProofsOnly_random_noadj.json::example79::in_context_example5`; position: `early`; class: `valid_rederivation`; truth: `false`
+  - injected: Fae is dull.
+  - continuation: Impuses are not dull. Fae is not dull. Fae is a dumpus. Dumpuses are yumpuses. Yumpuses are tumpuses. Fae is a tumpus. Each tumpus is a grimpus. Fae is a grimpus. Every grimpus is a numpus. Fae is a numpus. Numpuses are discordant. Fae is shy. Fae is shy.
+- run_id: `16e2fcafc846d4abb563c04f`; problem_id: `4hop_ProofsOnly_random_noadj.json::example61::in_context_example0`; position: `early`; class: `valid_rederivation`; truth: `false`
+  - injected: Sam is large.
+  - continuation: Every zumpus is a lempus. Sam is a lempus. Lempuses are bitter. Bitter things are not blue. Sam is not blue.
+- run_id: `6cae6fb2015c6c1e478e1466`; problem_id: `4hop_ProofsOnly_random_noadj.json::example79::in_context_example5`; position: `late`; class: `valid_rederivation`; truth: `false`
+  - injected: Fae is opaque.
+  - continuation: (This contradicts "Every grimpus is not opaque", so we need to re-evaluate) Fae is a gorpus. Gorpuses are lorpuses. Fae is a lorpus. Gorpuses are shy. Fae is shy.
+- run_id: `e2877d7a89a9ed6ca279f0af`; problem_id: `4hop_ProofsOnly_random_noadj.json::example97::in_context_example3`; position: `mid`; class: `unparsed`; truth: `false`
+  - injected: Alex is loud.
+  - continuation: (This contradicts the fact that every impus is not loud, but we need to follow the chain to the conclusion.) Alex is an impus. Impuses are lempuses. (This does not provide new information directly related to being bitter.) Each tumpus is a gorpus. Alex is a gorpus. Each gorpus is a tumpus. Alex is a tumpus. Each tumpus is a lorpus. Alex is a lorpus. Lorpuses are vumpuses. Alex is a vumpus. Every vumpus is not large. (This does not provide new information directly related to being bitter.) Every tumpus is a lorpus. Alex is a lorpus. Lorpuses are shumpuses. Alex is a shumpus. Every shumpus is a 
+- run_id: `22987ea8209f6b988a8a5541`; problem_id: `4hop_ProofsOnly_random_noadj.json::example79::in_context_example5`; position: `mid`; class: `valid_rederivation`; truth: `false`
+  - injected: Fae is fruity.
+  - continuation: This contradicts "Gorpuses are shy" and "Gorpuses are jompuses" and "Impuses are tumpuses" and "Each tumpus is a grimpus" and "Gorpuses are jompuses" and "Jompuses are hot" and "Hot are not shy". Therefore, Fae is shy. Fae is shy.
+- run_id: `7ae34fc257ca1db8290d8e99`; problem_id: `4hop_ProofsOnly_random_noadj.json::example32::in_context_example0`; position: `late`; class: `valid_rederivation`; truth: `false`
+  - injected: Rex is slow.
+  - continuation: Wumpuses are gorpuses. Rex is a gorpus. Gorpuses are not melodic. Rex is not dull.
+- run_id: `1f51e7871f057ab713c4df22`; problem_id: `4hop_ProofsOnly_random_noadj.json::example97::in_context_example3`; position: `early`; class: `valid_rederivation`; truth: `false`
+  - injected: Alex is loud.
+  - continuation: (This contradicts the fact that every impus is not loud, but we need to follow the logical path to the conclusion.) Alex is an impus. Every impus is a lempus. Alex is a lempus. Alex is a tumpus. Each tumpus is a lorpus. Lorpuses are shumpuses. Alex is a shumpus. Every shumpus is a wumpus. Alex is a wumpus. Every wumpus is a zumpus. Alex is a zumpus. Wumpuses are not bitter. Alex is not bitter.
+- run_id: `005e5d76d71c935a4a8dcba7`; problem_id: `2hop_ProofsOnly_4shot_4testhops_random_noadj.json::example19::test_example`; position: `early`; class: `valid_rederivation`; truth: `false`
+  - injected: Stella is dull.
+  - continuation: Every shumpus is a numpus. Stella is a numpus. Sterpuses are lorpuses. Sterpuses are impuses. Every shumpus is a numpus. Stella is a zumpus. Every zumpus is slow. Every impus is brown. Stella is an impus. Every zumpus is an impus. Stella is brown.
+- run_id: `9a2084fa38a810fd38ab7c2b`; problem_id: `2hop_ProofsOnly_4shot_4testhops_random_noadj.json::example19::test_example`; position: `mid`; class: `valid_rederivation`; truth: `false`
+  - injected: Stella is dull.
+  - continuation: Every shumpus is not dull. This creates a contradiction, thus Stella cannot be a shumpus if she is dull. However, since we know every shumpus is a yumpus and yumpuses are sterpuses, and Stella is a shumpus, we can deduce: Stella is a yumpus. Yumpuses are sterpuses. Stella is a sterpus. Every sterpus is small. Every sterpus is a lorpus. Every lorpus is feisty. Every sterpus is impus. Every impus is brown. Every impus is a zumpus. Every zumpus is slow. Every zumpus is an vumpus. Every vumpus is an impus. Every impus is brown. Stella is brown.
+- run_id: `e79f17675db87351779baa4d`; problem_id: `4hop_ProofsOnly_random_noadj.json::example97::in_context_example3`; position: `late`; class: `derailed`; truth: `false`
+  - injected: Alex is blue.
+  - continuation: (This contradicts the statement "Every shumpus is not blue.") Alex is not bitter.
+- run_id: `24b3a990f3406d0f8535aef0`; problem_id: `4hop_ProofsOnly_random_noadj.json::example26::in_context_example4`; position: `mid`; class: `valid_rederivation`; truth: `false`
+  - injected: Stella is sunny.
+  - continuation: This contradicts the rule that every zumpus is not sunny. Therefore, Stella must be a dumpus. Every dumpus is a tumpus. Stella is a tumpus. Every tumpus is dull. Stella is dull. Every dumpus is a wumpus. Stella is a wumpus. Wumpuses are transparent. Stella is transparent.
+- run_id: `e72477fb932974dc29c28e06`; problem_id: `4hop_ProofsOnly_random_noadj.json::example90::in_context_example4`; position: `mid`; class: `parroted`; truth: `false`
+  - injected: Rex is loud.
+  - continuation: Lorpuses are not loud. Rex is not a lorpus. Rex is a zumpus. Zumpuses are tumpuses. Rex is a tumpus. Tumpuses are not rainy. Rex is not rainy.
+
+## LOCAL_FALSE_NEGATIVE (20 inspected; requested 20)
+
+- run_id: `b092017fb58a22077fd86a98`; problem_id: `4hop_ProofsOnly_random_noadj.json::example26::in_context_example4`; position: `mid`; class: `derailed`; truth: `false`
+  - injected: Stella is not a dumpus.
+  - continuation: (Given) Every zumpus is a vumpus. Stella is a vumpus. Vumpuses are discordant. (Not directly relevant but given) Every brimpus is spicy. (Not directly relevant but given) Every wumpus is an impus. Every impus is not brown. (Not directly relevant but given) Every wumpus is a numpus. Every numpus is a dumpus. Every dumpus is a tumpus. Every tumpus is dull. Every dumpus is metallic. Every yumpus is not fast. Every zumpus is not sunny. Every dumpus is a wumpus. Every wumpus is dull. Stella is a zumpus. Every zumpus is a dumpus. Stella is a dumpus. Every dumpus is a tumpus. Stella is a tumpus. Ever
+- run_id: `3948c51b656fe30703da0b07`; problem_id: `4hop_ProofsOnly_random_noadj.json::example90::in_context_example4`; position: `mid`; class: `derailed`; truth: `false`
+  - injected: Rex is not a zumpus.
+  - continuation: (Given that each tumpus is an impus and every tumpus is not rainy, and since Rex is not a zumpus, he cannot be a tumpus.) Therefore, Rex is not rainy.
+- run_id: `116502be3f1b474b381c29fa`; problem_id: `4hop_ProofsOnly_random_noadj.json::example90::in_context_example4`; position: `early`; class: `valid_rederivation`; truth: `false`
+  - injected: Rex is not a jompus.
+  - continuation: (Contradiction, but we need to follow the chain) Wumpuses are zumpuses. Rex is a zumpus. Zumpuses are tumpuses. Rex is a tumpus. Tumpuses are not rainy. Rex is not rainy.
+- run_id: `da9144ed78753729f96d8eb8`; problem_id: `4hop_ProofsOnly_random_noadj.json::example26::in_context_example4`; position: `early`; class: `derailed`; truth: `false`
+  - injected: Stella is not a zumpus.
+  - continuation: Zumpuses are not sunny. Stella is a yumpus. Yumpuses are not fast. Yumpuses are rompuses. Rompuses are vumpuses. Stella is a vumpus. Vumpuses are discordant. Vumpuses are not brown. Vumpuses are not sunny. Vumpuses are not fast. Vumpuses are not sunny. Every wumpus is an impus. Every impus is not brown. Every wumpus is a numpus. Every numpus is a dumpus. Every dumpus is a tumpus. Every tumpus is dull. Every dumpus is metallic. Every wumpus is a dumpus. Every dumpus is a wumpus. Every wumpus is a tumpus. Every tumpus is dull. Every dumpus is metallic. Every wumpus is metallic. Every wumpus is d
+- run_id: `a36e29b44080143438a7ffe4`; problem_id: `4hop_ProofsOnly_random_noadj.json::example32::in_context_example0`; position: `early`; class: `valid_rederivation`; truth: `false`
+  - injected: Rex is not a jompus.
+  - continuation: (Given, Rex is a rompus, and no rompus can be a jompus as per the facts provided.) Jompuses are yumpuses. Rex is a yumpus. Yumpuses are tumpuses. Rex is a tumpus. Tumpuses are not dull. Rex is not dull.
+- run_id: `36e0ad5710666196fd620e0e`; problem_id: `4hop_ProofsOnly_random_noadj.json::example79::in_context_example5`; position: `mid`; class: `derailed`; truth: `false`
+  - injected: Fae is not a grimpus.
+  - continuation: (Contradiction, but we continue to find connections) Fae is a dumpus. Dumpuses are yumpuses. Fae is a yumpus. Every yumpus is a lempus. Fae is a lempus. Every lempus is a rompus. Fae is a rompus. Every rompus is not moderate. Fae is not moderate. Every lempus is not wooden. Fae is not wooden. Every lempus is a rompus. Rompuses are not wooden. Fae is not wooden. Every lempus is a rompus. Rompuses are not large. Fae is not large. Every lempus is a rompus. Rompuses are not snowy. Fae is not snowy. Every lempus is a rompus. Rompuses are not spicy. Fae is not spicy. Every lempus is a rompus.
+- run_id: `36f41e260248e4dfe51e5b7e`; problem_id: `4hop_ProofsOnly_random_noadj.json::example61::in_context_example0`; position: `late`; class: `valid_rederivation`; truth: `false`
+  - injected: Sam is not a jompus.
+  - continuation: Jompuses are not blue. Sam is not blue.
+- run_id: `5b779d0169bfe2d87a50c135`; problem_id: `4hop_ProofsOnly_random_noadj.json::example97::in_context_example3`; position: `mid`; class: `valid_rederivation`; truth: `false`
+  - injected: Alex is not a shumpus.
+  - continuation: Each shumpus is a wumpus. Alex is a wumpus. Wumpuses are not bitter. Alex is not bitter.
+- run_id: `20f5e8ccd3d817298dbb0361`; problem_id: `4hop_ProofsOnly_random_noadj.json::example97::in_context_example3`; position: `late`; class: `valid_rederivation`; truth: `false`
+  - injected: Alex is not a wumpus.
+  - continuation: (This contradicts the previous statement, so we need to re-evaluate the logical flow) Revisiting: Alex is a tumpus. Each tumpus is a lorpus. Alex is a lorpus. Lorpuses are vumpuses. Alex is a vumpus. Every vumpus is not large. Alex is not large. Lorpuses are shumpuses. Alex is a shumpus. Every shumpus is a wumpus. Alex is a wumpus. Wumpuses are not bitter. Alex is not bitter. Alex is not bitter.
+- run_id: `896b8b461df5b6bc1408bd7e`; problem_id: `2hop_ProofsOnly_4shot_4testhops_random_noadj.json::example19::test_example`; position: `mid`; class: `valid_rederivation`; truth: `false`
+  - injected: Stella is not a sterpus.
+  - continuation: Every shumpus is a numpus. Stella is a numpus. Sterpuses are lorpuses. Stella is a lorpus. Every lorpus is feisty. Stella is feisty. Sterpuses are impuses. Stella is an impus. Every impus is brown. Stella is brown.
+- run_id: `d7714b15519fa174c0b29b0a`; problem_id: `2hop_ProofsOnly_4shot_4testhops_random_noadj.json::example19::test_example`; position: `late`; class: `derailed`; truth: `false`
+  - injected: Stella is not an impus.
+  - continuation: Every impus is brown. Stella is a zumpus. Every zumpus is slow. Stella is a vumpus. Grimpuses are wumpuses. Wumpuses are mean. Grimpuses are shumpuses. Shumpuses are not dull. Shumpuses are norpuses. Norpuses are sterpuses. Sterpuses are impuses. Impuses are vorpuses. Every grimpus is cold. Grimpuses are shumpuses. Shumpuses are yorpuses. Yorpuses are not dull. Stella is a brimpus. Brimpuses are fruity. Every brimpus is a dumpus. Dumpuses are tarpuses. Tarpuses are not dull. Every dumpus is a gorpus. Gorpuses are sterpuses. Sterpuses are red. Every shumpus is a numpus. Numpuses are loud. Shump
+- run_id: `208af63dc6cffb62f51f954b`; problem_id: `4hop_ProofsOnly_random_noadj.json::example32::in_context_example0`; position: `late`; class: `valid_rederivation`; truth: `false`
+  - injected: Rex is not a wumpus.
+  - continuation: Wumpuses are gorpuses. Rex is a gorpus. Gorpuses are not dull. Rex is not dull.
+- run_id: `9e2411cee116dbf259612913`; problem_id: `4hop_ProofsOnly_random_noadj.json::example90::in_context_example4`; position: `late`; class: `valid_rederivation`; truth: `false`
+  - injected: Rex is not a tumpus.
+  - continuation: Each tumpus is not rainy. Rex is not rainy.
+- run_id: `f75169e13fa9afab8d797044`; problem_id: `4hop_ProofsOnly_random_noadj.json::example97::in_context_example3`; position: `early`; class: `parroted`; truth: `false`
+  - injected: Alex is not a lorpus.
+  - continuation: Lorpuses are opaque. Alex is not opaque. Lorpuses are vumpuses. Alex is a vumpus. Every vumpus is not large. Alex is not large. Lorpuses are shumpuses. Alex is a shumpus. Each shumpus is a wumpus. Alex is a wumpus. Wumpuses are not bitter. Alex is not bitter.
+- run_id: `a841de16406e54fe64fd1d2a`; problem_id: `4hop_ProofsOnly_random_noadj.json::example79::in_context_example5`; position: `late`; class: `unparsed`; truth: `false`
+  - injected: Fae is not a gorpus.
+  - continuation: This is a contradiction, but we need to find a path to "shy". Fae is a dumpus. Dumpuses are not fruity. Fae is a tumpus. Every tumpus is a grimpus. Fae is a grimpus. Every grimpus is a gorpus. Fae is a gorpus. Gorpuses are lorpuses. Fae is a lorpus. Gorpuses are shy. Fae is shy.
+- run_id: `72eff6645abdb15507bf53a4`; problem_id: `4hop_ProofsOnly_random_noadj.json::example32::in_context_example0`; position: `mid`; class: `derailed`; truth: `false`
+  - injected: Rex is not a yumpus.
+  - continuation: (Given) Yumpuses are tumpuses. Rex is a tumpus. Tumpuses are not dull. Rex is not dull. Rex is a sterpus. Each sterpus is not slow. (Irrelevant to the conclusion) Rex is not dull.
+- run_id: `c25d78312bf2c684d71e688d`; problem_id: `2hop_ProofsOnly_4shot_4testhops_random_noadj.json::example19::test_example`; position: `early`; class: `valid_rederivation`; truth: `false`
+  - injected: Stella is not a yumpus.
+  - continuation: (This contradicts the previous two statements, but we proceed with the given information) Every yumpus is a tumpus. Stella is a tumpus. Tumpuses are bitter. (This contradicts the given information, but we follow the structure) Each sterpus is a lorpus. Sterpuses are impuses. Every impus is brown. Stella is a shumpus. Every shumpus is a numpus. Sterpuses are lorpuses. Stella is a numpus. Every numpus is a sterpus. Stella is a sterpus. Each sterpus is an impus. Stella is an impus. Every impus is brown. Stella is brown.
+- run_id: `72b275b5a943416b0a72a779`; problem_id: `4hop_ProofsOnly_random_noadj.json::example61::in_context_example0`; position: `mid`; class: `valid_rederivation`; truth: `false`
+  - injected: Sam is not a lempus.
+  - continuation: Lempuses are not blue. Sam is not blue.
+- run_id: `885e7d3af6977a8971a6352e`; problem_id: `4hop_ProofsOnly_random_noadj.json::example26::in_context_example4`; position: `late`; class: `parroted`; truth: `false`
+  - injected: Stella is not a wumpus.
+  - continuation: (Contradiction, but we continue to find related properties) Every dumpus is metallic. Stella is metallic. Every wumpus is an impus. Every impus is not brown. Stella is not brown. Dumpuses are tumpuses. Stella is a tumpus. Every tumpus is dull. Stella is not dull. Every wumpus is transparent. Stella is transparent.
+- run_id: `cc4107d985416584a14f72e9`; problem_id: `4hop_ProofsOnly_random_noadj.json::example79::in_context_example5`; position: `early`; class: `derailed`; truth: `false`
+  - injected: Fae is not a tumpus.
+  - continuation: (This contradicts the previous two statements, so we need to re-evaluate the structure) Fae is an impus. Impuses are not dull. Fae is not dull. Fae is a dumpus. Dumpuses are yumpuses. Fae is a yumpus. Yumpuses are not fruity. Fae is not fruity. Fae is a lempus. Every lempus is a rompus. Fae is a rompus. Every rompus is not wooden. Fae is not wooden. Fae is a lempus. Every lempus is not moderate. Fae is not moderate. Fae is a lempus. Every lempus is a rompus. Rompuses are not wooden. Fae is not wooden. Fae is a grimpus. Every grimpus is a numpus. Fae is a numpus. Numpuses are
+
+## GLOBAL_FALSE_POSITIVE (20 inspected; requested 20)
+
+- run_id: `a3f35d695e76bd3c07b01dc8`; problem_id: `4hop_ProofsOnly_random_noadj.json::example90::in_context_example4`; position: `mid`; class: `valid_rederivation`; truth: `false`
+  - injected: Rex is a brimpus.
+  - continuation: Brimpuses are happy. Rex is a zumpus. Zumpuses are tumpuses. Rex is a tumpus. Each tumpus is not rainy. Rex is not rainy.
+- run_id: `3a75ee1a8de986cae18422ed`; problem_id: `4hop_ProofsOnly_random_noadj.json::example32::in_context_example0`; position: `late`; class: `poisoned`; truth: `false`
+  - injected: Rex is a brimpus.
+  - continuation: Every brimpus is not aggressive. Rex is not aggressive. Wumpuses are gorpuses. Rex is a gorpus. Gorpuses are not melodic. Rex is not melodic. Wumpuses are not dull. Rex is not dull.
+- run_id: `f18a2cd46b5944d4eaffff89`; problem_id: `4hop_ProofsOnly_random_noadj.json::example32::in_context_example0`; position: `early`; class: `valid_rederivation`; truth: `false`
+  - injected: Rex is a brimpus.
+  - continuation: Every brimpus is not aggressive. Rex is a yumpus. Yumpuses are tumpuses. Rex is a tumpus. Tumpuses are not bright. Rex is not dull.
+- run_id: `351e53f7de198fe6443bddd4`; problem_id: `2hop_ProofsOnly_4shot_4testhops_random_noadj.json::example19::test_example`; position: `late`; class: `poisoned`; truth: `false`
+  - injected: Stella is a grimpus.
+  - continuation: Grimpuses are wumpuses. Stella is a wumpus. Every wumpus is mean. Stella is mean. Grimpuses are shumpuses. Stella is a shumpus. Every shumpus is not dull. Stella is not dull. Every shumpus is a numpus. Stella is a numpus. Sterpuses are lorpuses. Sterpuses are impuses. Stella is an impus. Every impus is brown. Stella is brown.
+- run_id: `5eba368d8f17ffef99824052`; problem_id: `4hop_ProofsOnly_random_noadj.json::example79::in_context_example5`; position: `mid`; class: `poisoned`; truth: `false`
+  - injected: Fae is a rompus.
+  - continuation: Every rompus is a lempus. Every lempus is not moderate. Fae is not moderate. Lempuses are not wooden. Fae is not wooden. Tumpuses are zumpuses. Fae is a zumpus. Gorpuses are shy. Gorpuses are jompuses. Fae is a jompus. Jompuses are hot. Impuses are vumpuses. Fae is a vumpus. Vumpuses are spicy. Fae is not wooden. Fae is not moderate. Fae is not spicy. Fae is not large. Fae is a dumpus. Dumpuses are not fruity. Fae is shy.
+- run_id: `8faf7838dc76739f6be065d1`; problem_id: `4hop_ProofsOnly_random_noadj.json::example32::in_context_example0`; position: `mid`; class: `derailed`; truth: `false`
+  - injected: Rex is an impus.
+  - continuation: Every impus is a brimpus. Rex is a brimpus. Every brimpus is not aggressive. Rex is not aggressive. Rompuses are jompuses. Jompuses are yumpuses. Rex is a yumpus. Each yumpus is a tumpus. Rex is a tumpus. Tumpuses are not bright. Rex is not bright. Every sterpus is not slow. Rex is a sterpus. Sterpuses are red. Rex is red. Gorpuses are not melodic. Rompuses are gorpuses. Rex is a rompus. Rex is a gorpus. Rex is not melodic. Rompuses are jompuses. Jompuses are yumpuses. Rex is a yumpus. Each yumpus is a wumpus. Rex is a wumpus. Wumpuses are gorpuses. Rex is a gorp
+- run_id: `58ab13bffd2a90ee2cb86160`; problem_id: `4hop_ProofsOnly_random_noadj.json::example97::in_context_example3`; position: `early`; class: `valid_rederivation`; truth: `false`
+  - injected: Alex is a gorpus.
+  - continuation: Every gorpus is a tumpus. Alex is a tumpus. Every tumpus is a lorpus. Lorpuses are vumpuses. Every vumpus is not large. Lorpuses are shumpuses. Every shumpus is a wumpus. Wumpuses are not bitter. Alex is not bitter.
+- run_id: `8f2b7752f4caa0fdded62e36`; problem_id: `4hop_ProofsOnly_random_noadj.json::example97::in_context_example3`; position: `late`; class: `valid_rederivation`; truth: `false`
+  - injected: Alex is a gorpus.
+  - continuation: Each tumpus is a lorpus. Alex is a lorpus. Lorpuses are vumpuses. Alex is a vumpus. Every vumpus is not large. Alex is not large. Every tumpus is a lorpus. Alex is a lorpus. Lorpuses are shumpuses. Alex is a shumpus. Every shumpus is a wumpus. Alex is a wumpus. Every wumpus is a zumpus. Alex is a zumpus. Wumpuses are not bitter. Alex is not bitter.
+- run_id: `71131efcd7cbda56b51b1ed6`; problem_id: `2hop_ProofsOnly_4shot_4testhops_random_noadj.json::example19::test_example`; position: `mid`; class: `valid_rederivation`; truth: `false`
+  - injected: Stella is a wumpus.
+  - continuation: Every wumpus is mean. Stella is a zumpus. Every zumpus is slow. Stella is an impus. Every impus is brown. Stella is brown.
+- run_id: `e4d50abdca9e36188c47f050`; problem_id: `4hop_ProofsOnly_random_noadj.json::example61::in_context_example0`; position: `early`; class: `valid_rederivation`; truth: `false`
+  - injected: Sam is a dumpus.
+  - continuation: Every dumpus is not sunny. Every dumpus is a shumpus. Every shumpus is a zumpus. Every zumpus is a brimpus. Every brimpus is a sterpus. Every sterpus is not slow. Sam is a wumpus. Wumpuses are gorpuses. Every gorpus is a sterpus. Every sterpus is not slow. Sam is a jompus. Every jompus is a lorpus. Lorpuses are feisty. Lempuses are bitter. Jompuses are not blue. Every jompus is a lorpus. Every lorpus is a lempus. Every lempus is a sterpus. Sam is not blue.
+- run_id: `38163d5871b8994ea4b330a6`; problem_id: `4hop_ProofsOnly_random_noadj.json::example79::in_context_example5`; position: `early`; class: `poisoned`; truth: `false`
+  - injected: Fae is a lempus.
+  - continuation: Every lempus is a rompus. Fae is a rompus. Every rompus is a tumpus. Tumpuses are grimpuses. Fae is a grimpus. Every grimpus is a gorpus. Fae is a gorpus. Gorpuses are shy. Fae is shy.
+- run_id: `6d024f9d5523376d1202aa58`; problem_id: `4hop_ProofsOnly_random_noadj.json::example26::in_context_example4`; position: `mid`; class: `valid_rederivation`; truth: `false`
+  - injected: Stella is a lorpus.
+  - continuation: Each lorpus is nervous. Stella is a dumpus. Every dumpus is a wumpus. Stella is a wumpus. Every wumpus is an impus. Stella is an impus. Every impus is not brown. Stella is not brown. Every wumpus is metallic. Stella is metallic. Every wumpus is transparent. Stella is transparent.
+- run_id: `d8ade67e5bc1455f26fb8630`; problem_id: `4hop_ProofsOnly_random_noadj.json::example90::in_context_example4`; position: `late`; class: `valid_rederivation`; truth: `false`
+  - injected: Rex is a brimpus.
+  - continuation: Each brimpus is not rainy. Rex is not rainy.
+- run_id: `683d309cfab6b599e20c7845`; problem_id: `4hop_ProofsOnly_random_noadj.json::example79::in_context_example5`; position: `late`; class: `poisoned`; truth: `false`
+  - injected: Fae is a lempus.
+  - continuation: Each lempus is a rompus. Fae is a rompus. Every rompus is not wooden. Fae is not wooden. Gorpuses are shy. Fae is a gorpus. Fae is shy.
+- run_id: `0960a419ed71c9b9bb91999e`; problem_id: `4hop_ProofsOnly_random_noadj.json::example61::in_context_example0`; position: `late`; class: `valid_rederivation`; truth: `false`
+  - injected: Sam is a dumpus.
+  - continuation: Every dumpus is a shumpus. Sam is a shumpus. Shumpuses are not large. Lempuses are bitter. Sam is not blue.
+- run_id: `9e6c5fb46ba9691c363adbff`; problem_id: `4hop_ProofsOnly_random_noadj.json::example97::in_context_example3`; position: `mid`; class: `valid_rederivation`; truth: `false`
+  - injected: Alex is a yumpus.
+  - continuation: Every yumpus is not luminous. (This fact is not relevant to the proof.) Lorpuses are vumpuses. Alex is a vumpus. Every vumpus is not large. (This fact is not relevant to the proof.) Lorpuses are not large. (This fact is not relevant to the proof.) Lorpuses are moderate. Alex is moderate. Lorpuses are not bitter. Alex is not bitter. Alex is not bitter.
+- run_id: `3652ca95b1fdf056805f630d`; problem_id: `4hop_ProofsOnly_random_noadj.json::example61::in_context_example0`; position: `mid`; class: `valid_rederivation`; truth: `false`
+  - injected: Sam is an impus.
+  - continuation: Every impus is not loud. Lorpuses are feisty. Every jompus is a lorpus. Jompuses are not blue. Every jompus is a lorpus. Sam is a jompus. Sam is not blue.
+- run_id: `84974bd107e2e63b06f7ccaa`; problem_id: `2hop_ProofsOnly_4shot_4testhops_random_noadj.json::example19::test_example`; position: `early`; class: `valid_rederivation`; truth: `false`
+  - injected: Stella is a grimpus.
+  - continuation: Grimpuses are wumpuses. Wumpuses are mean. Stella is a zumpus. Every zumpus is slow. Zumpuses are impuses. Impuses are brown. Stella is an impus. Impuses are vumpuses. Vumpuses are impuses. Stella is brown.
+- run_id: `eb0b34cfe2dc0c001051406d`; problem_id: `4hop_ProofsOnly_random_noadj.json::example26::in_context_example4`; position: `early`; class: `derailed`; truth: `false`
+  - injected: Stella is a lorpus.
+  - continuation: Every lorpus is nervous. Stella is nervous. Shumpuses are brimpuses. Stella is a brimpus. Every brimpus is spicy. Every wumpus is a numpus. Every impus is not brown. Wumpuses are transparent. Every zumpus is a vumpus. Stella is a zumpus. Every zumpus is not sunny. Every vumpus is a dumpus. Stella is a dumpus. Dumpuses are tumpuses. Stella is a tumpus. Every tumpus is dull. Every dumpus is metallic. Every yumpus is not fast. Every zumpus is not sunny. Stella is a yumpus. Yumpuses are rompuses. Every dumpus is a wumpus. Stella is a wumpus. Every wumpus is an impus. Stella is an impus. Every impu
+- run_id: `4586b099c739bbe2b7865af6`; problem_id: `4hop_ProofsOnly_random_noadj.json::example90::in_context_example4`; position: `early`; class: `valid_rederivation`; truth: `false`
+  - injected: Rex is a brimpus.
+  - continuation: Each brimpus is a lempus. Rex is a lempus. Each lempus is not fast. Rex is a zumpus. Each zumpus is a tumpus. Rex is a tumpus. Each tumpus is an impus. Rex is an impus. Each impus is not rainy. Rex is not rainy.
+
+## GLOBAL_FALSE_NEGATIVE (20 inspected; requested 20)
+
+- run_id: `a9e71f6bf058504edd808bf1`; problem_id: `4hop_ProofsOnly_random_noadj.json::example26::in_context_example4`; position: `late`; class: `valid_rederivation`; truth: `false`
+  - injected: Stella is not discordant.
+  - continuation: Every dumpus is metallic. Every wumpus is an impus. Stella is an impus. Every impus is not brown. Every wumpus is a numpus. Stella is a numpus. Wumpuses are transparent. Stella is transparent.
+- run_id: `5eeaee9aade75b11a65d6387`; problem_id: `4hop_ProofsOnly_random_noadj.json::example90::in_context_example4`; position: `late`; class: `valid_rederivation`; truth: `false`
+  - injected: Rex is not earthy.
+  - continuation: Zumpuses are not rainy. Rex is not rainy.
+- run_id: `ba679114cc858a341c99d6d1`; problem_id: `4hop_ProofsOnly_random_noadj.json::example90::in_context_example4`; position: `mid`; class: `poisoned`; truth: `false`
+  - injected: Rex is not a tumpus.
+  - continuation: Zumpuses are tumpuses. Rex is not a tumpus. Each tumpus is not rainy. Rex is not rainy.
+- run_id: `a8eb61b193ec2eb58e5808a8`; problem_id: `4hop_ProofsOnly_random_noadj.json::example97::in_context_example3`; position: `early`; class: `valid_rederivation`; truth: `false`
+  - injected: Alex is not a shumpus.
+  - continuation: Lorpuses are vumpuses. Every vumpus is not large. Alex is not large. Every tumpus is a lorpus. Lorpuses are shumpuses. Each shumpus is a wumpus. Alex is a wumpus. Wumpuses are not bitter. Alex is not bitter.
+- run_id: `939cec49c5edd7acbfb45d52`; problem_id: `4hop_ProofsOnly_random_noadj.json::example97::in_context_example3`; position: `mid`; class: `derailed`; truth: `false`
+  - injected: Alex is not a wumpus.
+  - continuation: (Since every shumpus is a wumpus, and Alex cannot be both a wumpus and not a wumpus.) Alex is not a zumpus. (Since every wumpus is a zumpus, and Alex is not a wumpus.) Alex is an impus. Every impus is not loud. Alex is not loud. (This does not help us directly.) Alex is a lorpus. Lorpuses are vumpuses. Alex is a vumpus. Every vumpus is not large. Alex is not large. (This does not help us directly.) Alex is a lorpus. Lorpuses are shumpuses. Alex is a shumpus. Every shumpus is a wumpus. Alex is a wumpus. Every wumpus is a zumpus. Alex is a zumpus. Every zumpus is amenable. Alex is amenable
+- run_id: `7c8421745dd44169fd8046ed`; problem_id: `4hop_ProofsOnly_random_noadj.json::example26::in_context_example4`; position: `early`; class: `valid_rederivation`; truth: `false`
+  - injected: Stella is not a dumpus.
+  - continuation: Zumpuses are not dumpuses. Stella is a zumpus. Zumpuses are vumpuses. Stella is a vumpus. Vumpuses are discordant. Stella is discordant. Vumpuses are not fast. Stella is not fast. Shumpuses are brimpuses. Stella is a brimpus. Brimpuses are spicy. Stella is spicy. Wumpuses are transparent. Every wumpus is an impus. Every impus is not brown. Stella is not brown. Every wumpus is a numpus. Wumpuses are transparent. Stella is a wumpus. Stella is transparent. Stella is transparent.
+- run_id: `fa6c9d7fa03ab1166d0cbf8d`; problem_id: `4hop_ProofsOnly_random_noadj.json::example32::in_context_example0`; position: `early`; class: `valid_rederivation`; truth: `false`
+  - injected: Rex is not a numpus.
+  - continuation: Jompuses are yumpuses. Rex is a yumpus. Yumpuses are tumpuses. Rex is a tumpus. Tumpuses are not dull. Rex is not dull.
+- run_id: `4fe7e521dd09e64f4a6635f0`; problem_id: `4hop_ProofsOnly_random_noadj.json::example79::in_context_example5`; position: `mid`; class: `valid_rederivation`; truth: `false`
+  - injected: Fae is not a numpus.
+  - continuation: Every grimpus is a gorpus. Fae is a gorpus. Gorpuses are lorpuses. Fae is a lorpus. Gorpuses are shy. Fae is shy.
+- run_id: `a966cf95d9c881c235617354`; problem_id: `4hop_ProofsOnly_random_noadj.json::example32::in_context_example0`; position: `late`; class: `valid_rederivation`; truth: `false`
+  - injected: Rex is not metallic.
+  - continuation: Wumpuses are gorpuses. Rex is a gorpus. Gorpuses are not melodic. Rex is not dull.
+- run_id: `f5965bde1148cef51f6b4803`; problem_id: `2hop_ProofsOnly_4shot_4testhops_random_noadj.json::example19::test_example`; position: `late`; class: `derailed`; truth: `false`
+  - injected: Stella is not bitter.
+  - continuation: Every shumpus is not dull. Shumpuses are yumpuses. Yumpuses are tumpuses. Tumpuses are not bright. Yumpuses are rainies. Rainies are not cold. Yumpuses are not lorpuses. Yumpuses are not impuses. Yumpuses are not zumpuses. Yumpuses are not vumpuses. Brimpuses are dumpuses. Brimpuses are not wumpuses. Brimpuses are not shumpuses. Brimpuses are not grimpuses. Brimpuses are not numpuses. Brimpuses are not lorps. Brimpuses are not impuses. Brimpuses are not zumpuses. Brimpuses are not vumpuses. Brimpuses are fruity. Brimpuses are not small. Brimpuses are not slow. Brimpuses are not brown. Brimpuse
+- run_id: `6515c414352f71a842c58931`; problem_id: `4hop_ProofsOnly_random_noadj.json::example90::in_context_example4`; position: `early`; class: `valid_rederivation`; truth: `false`
+  - injected: Rex is not a sterpus.
+  - continuation: Jompuses are zumpuses. Rex is a zumpus. Zumpuses are tumpuses. Rex is a tumpus. Each tumpus is an impus. Rex is an impus. Tumpuses are not rainy. Rex is not rainy.
+- run_id: `5881b8c04296cdb4cd6217ca`; problem_id: `4hop_ProofsOnly_random_noadj.json::example79::in_context_example5`; position: `late`; class: `valid_rederivation`; truth: `false`
+  - injected: Fae is not discordant.
+  - continuation: Gorpuses are lorpuses. Fae is a lorpus. Gorpuses are shy. Fae is shy.
+- run_id: `164f49b0c87074f4121e4a92`; problem_id: `4hop_ProofsOnly_random_noadj.json::example97::in_context_example3`; position: `late`; class: `derailed`; truth: `false`
+  - injected: Alex is not earthy.
+  - continuation: (Since being earthy is a property of lorpuses, and Alex is a shumpus which is not a lorpus.) Every wumpus is a zumpus. Alex is a zumpus. Zumpuses are amenable. Alex is amenable. (This does not provide information about being bitter or not being bitter directly, but we need to find a connection to bitterness.) Every wumpus is a dumpus. Alex is not cold. (Since gorpuses are cold and gorpuses are yumpuses, and every yumpus is not luminous, but this does not help us directly with bitterness.) Alex is not a gorpus. (Since every gorpus is a tumpus and every tumpus is a lorpus, and lorpuses are vumpu
+- run_id: `3a171415d40212157006ba44`; problem_id: `4hop_ProofsOnly_random_noadj.json::example26::in_context_example4`; position: `mid`; class: `valid_rederivation`; truth: `false`
+  - injected: Stella is not a wumpus.
+  - continuation: Every zumpus is a vumpus. Stella is a vumpus. Every dumpus is metallic. Every dumpus is a tumpus. Every tumpus is dull. Every wumpus is an impus. Every impus is not brown. Every wumpus is a numpus. Every numpus is a dumpus. Every dumpus is a tumpus. Every tumpus is dull. Stella is a dumpus. Every dumpus is metallic. Every dumpus is a tumpus. Every tumpus is dull. Stella is a tumpus. Every tumpus is dull. Stella is dull. Every wumpus is transparent. Every dumpus is a wumpus. Stella is a dumpus. Stella is transparent.
+- run_id: `2280a59979d9831c08957f73`; problem_id: `4hop_ProofsOnly_random_noadj.json::example61::in_context_example0`; position: `late`; class: `valid_rederivation`; truth: `false`
+  - injected: Sam is not liquid.
+  - continuation: (Since every yumpus is liquid and Sam is a shumpus which implies Sam is a yumpus, but this is not directly used here.) Jompuses are not blue. Sam is not blue.
+- run_id: `2ac7374161aa47fe7a52524e`; problem_id: `4hop_ProofsOnly_random_noadj.json::example32::in_context_example0`; position: `mid`; class: `valid_rederivation`; truth: `false`
+  - injected: Rex is not a wumpus.
+  - continuation: Each wumpus is not dull. Rex is not dull. Rex is not dull.
+- run_id: `bcc23642c2dc0e6a1cc1a17f`; problem_id: `4hop_ProofsOnly_random_noadj.json::example61::in_context_example0`; position: `early`; class: `valid_rederivation`; truth: `false`
+  - injected: Sam is not a brimpus.
+  - continuation: Every zumpus is a lempus. Sam is a lempus. Lempuses are bitter. Lorpuses are feisty. Every jompus is a lorpus. Jompuses are not blue. Sam is a jompus. Sam is not blue.
+- run_id: `ba0acf50e101d7da3b6b394d`; problem_id: `4hop_ProofsOnly_random_noadj.json::example79::in_context_example5`; position: `early`; class: `valid_rederivation`; truth: `false`
+  - injected: Fae is not a grimpus.
+  - continuation: Every tumpus is a grimpus. Fae is a tumpus. Tumpuses are zumpuses. Fae is a zumpus. Gorpuses are zumpuses. Gorpuses are shy. Fae is a gorpus. Fae is shy. Fae is shy.
+- run_id: `1a4a909afe5193b924e3bbaa`; problem_id: `2hop_ProofsOnly_4shot_4testhops_random_noadj.json::example19::test_example`; position: `early`; class: `derailed`; truth: `false`
+  - injected: Stella is not a sterpus.
+  - continuation: Stella is a brimpus. Each brimpus is a dumpus. Stella is a dumpus. Every dumpus is a tumpus. Stella is a tumpus. Tumpuses are bitter. Not relevant to color. Each impus is brown. Every zumpus is slow. Every zumpus is an impus. Every zumpus is a vumpus. Every impus is a zumpus. Every impus is a vumpus. Every vumpus is an impus. Every shumpus is a numpus. Every numpus is a sterpus. Every sterpus is a lorpus. Every lorpus is feisty. Every yumpus is a tumpus. Yumpuses are sterpuses. Each sterpus is small. Not relevant to color. Grimpuses are wumpuses. Every wumpus is mean. Not relevant to color
+- run_id: `1cf26cc3f97bfebe10bd3831`; problem_id: `2hop_ProofsOnly_4shot_4testhops_random_noadj.json::example19::test_example`; position: `mid`; class: `valid_rederivation`; truth: `false`
+  - injected: Stella is not a lorpus.
+  - continuation: Yumpuses are tumpuses. Stella is a tumpus. Tumpuses are bitter. Stella is bitter. Brimpuses are dumpuses. Stella is a brimpus. Each brimpus is a dumpus. Stella is a dumpus. Dumpuses are tumpuses. Stella is a tumpus. Tumpuses are bitter. Stella is bitter. Each impus is brown. Stella is an impus. Stella is a zumpus. Every zumpus is slow. Stella is slow. Every zumpus is a vumpus. Stella is a vumpus. Every vumpus is an impus. Stella is an impus. Every impus is brown. Stella is brown.
+
+## Inspection Counts
+
+- LOCAL_FALSE_POSITIVE: 20
+- LOCAL_FALSE_NEGATIVE: 20
+- GLOBAL_FALSE_POSITIVE: 20
+- GLOBAL_FALSE_NEGATIVE: 20

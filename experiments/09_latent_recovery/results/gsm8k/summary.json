@@ -1,0 +1,9 @@
+{
+  "n": 57,
+  "recovered_rate": 0.0877,
+  "poisoned_rate": 0.8772,
+  "_gold": {
+    "solved": 57,
+    "attempted": 250
+  }
+}
