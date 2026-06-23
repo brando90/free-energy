@@ -36,12 +36,18 @@ def parse_rule(s):
     m = re.match(r"^(?:Every|Each|All)\s+(\w+)\s+is\s+(?:a|an)\s+(\w+)$", s)
     if m:
         return _sg(m.group(1).lower()), ("cat", _sg(m.group(2).lower()))
+    m = re.match(r"^(?:Every|Each|All)\s+(\w+)\s+is\s+not\s+(?:a|an)\s+(\w+)$", s)
+    if m:
+        return _sg(m.group(1).lower()), ("not_cat", _sg(m.group(2).lower()))
     m = re.match(r"^(?:Every|Each|All)\s+(\w+)\s+is\s+(not\s+)?(\w+)$", s)
     if m:
         return _sg(m.group(1).lower()), ("adj", m.group(3).lower(), not m.group(2))
     m = re.match(r"^(\w+es)\s+are\s+(\w+es)$", s)
     if m:
         return _sg(m.group(1).lower()), ("cat", _sg(m.group(2).lower()))
+    m = re.match(r"^(\w+es)\s+are\s+not\s+(\w+es)$", s)
+    if m:
+        return _sg(m.group(1).lower()), ("not_cat", _sg(m.group(2).lower()))
     m = re.match(r"^(\w+es)\s+are\s+(not\s+)?(\w+)$", s)
     if m:
         return _sg(m.group(1).lower()), ("adj", m.group(3).lower(), not m.group(2))
@@ -53,6 +59,9 @@ def parse_fact(s, entity=None):
     m = re.match(r"^([A-Z]\w*)\s+is\s+(?:a|an)\s+(\w+)$", s)
     if m and (entity is None or m.group(1) == entity):
         return m.group(1), ("cat", _sg(m.group(2).lower()))
+    m = re.match(r"^([A-Z]\w*)\s+is\s+not\s+(?:a|an)\s+(\w+)$", s)
+    if m and (entity is None or m.group(1) == entity):
+        return m.group(1), ("not_cat", _sg(m.group(2).lower()))
     m = re.match(r"^([A-Z]\w*)\s+is\s+(not\s+)?(\w+)$", s)
     if m and (entity is None or m.group(1) == entity):
         return m.group(1), ("adj", m.group(3).lower(), not m.group(2))

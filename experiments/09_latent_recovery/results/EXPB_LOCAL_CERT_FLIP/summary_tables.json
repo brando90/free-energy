@@ -1,0 +1,1832 @@
+{
+  "created_at": "2026-06-18T20:16:01.685478+00:00",
+  "exclusions": "No post-generation exclusions. Failed and unparsed generations are retained in denominators and logged.",
+  "integrity": {
+    "all_original_proofs_validated": true,
+    "duplicate_example_keys": 0,
+    "every_injected_statement_audited": true,
+    "failed_generations_logged": true,
+    "required_result_fields_present": true,
+    "unavailable_perturbations_logged": true,
+    "unique_run_ids": true,
+    "unparsed_generations_logged": true
+  },
+  "metrics": {
+    "by_condition_position": {
+      "GLOBAL_BASELINE|early": {
+        "continuation_length_tokens": {
+          "max": 192,
+          "mean": 104.19,
+          "min": 15
+        },
+        "derailed": {
+          "count": 10,
+          "problem_cluster_bootstrap95": [
+            0.0498,
+            0.1602
+          ],
+          "rate": 0.1,
+          "wilson95": [
+            0.0552,
+            0.1744
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.037
+          ]
+        },
+        "n": 100,
+        "parroted": {
+          "count": 39,
+          "problem_cluster_bootstrap95": [
+            0.29,
+            0.4902
+          ],
+          "rate": 0.39,
+          "wilson95": [
+            0.3002,
+            0.488
+          ]
+        },
+        "poisoned": {
+          "count": 13,
+          "problem_cluster_bootstrap95": [
+            0.06,
+            0.2
+          ],
+          "rate": 0.13,
+          "wilson95": [
+            0.0776,
+            0.2098
+          ]
+        },
+        "problem_n": 100,
+        "triple_n": 100,
+        "unparsed": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0302
+          ],
+          "rate": 0.01,
+          "wilson95": [
+            0.0018,
+            0.0545
+          ]
+        },
+        "valid_rederivation": {
+          "count": 37,
+          "problem_cluster_bootstrap95": [
+            0.2797,
+            0.46
+          ],
+          "rate": 0.37,
+          "wilson95": [
+            0.2818,
+            0.4678
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.037
+          ]
+        }
+      },
+      "GLOBAL_BASELINE|late": {
+        "continuation_length_tokens": {
+          "max": 192,
+          "mean": 60.48,
+          "min": 11
+        },
+        "derailed": {
+          "count": 2,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.05
+          ],
+          "rate": 0.02,
+          "wilson95": [
+            0.0055,
+            0.07
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.037
+          ]
+        },
+        "n": 100,
+        "parroted": {
+          "count": 36,
+          "problem_cluster_bootstrap95": [
+            0.27,
+            0.45
+          ],
+          "rate": 0.36,
+          "wilson95": [
+            0.2727,
+            0.4576
+          ]
+        },
+        "poisoned": {
+          "count": 17,
+          "problem_cluster_bootstrap95": [
+            0.09,
+            0.24
+          ],
+          "rate": 0.17,
+          "wilson95": [
+            0.1089,
+            0.2555
+          ]
+        },
+        "problem_n": 100,
+        "triple_n": 100,
+        "unparsed": {
+          "count": 7,
+          "problem_cluster_bootstrap95": [
+            0.03,
+            0.12
+          ],
+          "rate": 0.07,
+          "wilson95": [
+            0.0343,
+            0.1375
+          ]
+        },
+        "valid_rederivation": {
+          "count": 38,
+          "problem_cluster_bootstrap95": [
+            0.29,
+            0.4802
+          ],
+          "rate": 0.38,
+          "wilson95": [
+            0.291,
+            0.4779
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.037
+          ]
+        }
+      },
+      "GLOBAL_BASELINE|mid": {
+        "continuation_length_tokens": {
+          "max": 192,
+          "mean": 90.14,
+          "min": 19
+        },
+        "derailed": {
+          "count": 7,
+          "problem_cluster_bootstrap95": [
+            0.03,
+            0.13
+          ],
+          "rate": 0.07,
+          "wilson95": [
+            0.0343,
+            0.1375
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.037
+          ]
+        },
+        "n": 100,
+        "parroted": {
+          "count": 35,
+          "problem_cluster_bootstrap95": [
+            0.26,
+            0.43
+          ],
+          "rate": 0.35,
+          "wilson95": [
+            0.2636,
+            0.4475
+          ]
+        },
+        "poisoned": {
+          "count": 16,
+          "problem_cluster_bootstrap95": [
+            0.09,
+            0.23
+          ],
+          "rate": 0.16,
+          "wilson95": [
+            0.101,
+            0.2442
+          ]
+        },
+        "problem_n": 100,
+        "triple_n": 100,
+        "unparsed": {
+          "count": 4,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.09
+          ],
+          "rate": 0.04,
+          "wilson95": [
+            0.0157,
+            0.0984
+          ]
+        },
+        "valid_rederivation": {
+          "count": 38,
+          "problem_cluster_bootstrap95": [
+            0.29,
+            0.48
+          ],
+          "rate": 0.38,
+          "wilson95": [
+            0.291,
+            0.4779
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 3,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.07
+          ],
+          "rate": 0.03,
+          "wilson95": [
+            0.0103,
+            0.0845
+          ]
+        }
+      },
+      "IRRELEVANT_CERTIFICATE_CONTROL|early": {
+        "continuation_length_tokens": {
+          "max": 192,
+          "mean": 90.18,
+          "min": 12
+        },
+        "derailed": {
+          "count": 7,
+          "problem_cluster_bootstrap95": [
+            0.02,
+            0.12
+          ],
+          "rate": 0.07,
+          "wilson95": [
+            0.0343,
+            0.1375
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.037
+          ]
+        },
+        "n": 100,
+        "parroted": {
+          "count": 19,
+          "problem_cluster_bootstrap95": [
+            0.12,
+            0.27
+          ],
+          "rate": 0.19,
+          "wilson95": [
+            0.1251,
+            0.2778
+          ]
+        },
+        "poisoned": {
+          "count": 22,
+          "problem_cluster_bootstrap95": [
+            0.14,
+            0.31
+          ],
+          "rate": 0.22,
+          "wilson95": [
+            0.15,
+            0.3107
+          ]
+        },
+        "problem_n": 100,
+        "triple_n": 100,
+        "unparsed": {
+          "count": 2,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.05
+          ],
+          "rate": 0.02,
+          "wilson95": [
+            0.0055,
+            0.07
+          ]
+        },
+        "valid_rederivation": {
+          "count": 50,
+          "problem_cluster_bootstrap95": [
+            0.41,
+            0.6
+          ],
+          "rate": 0.5,
+          "wilson95": [
+            0.4038,
+            0.5962
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.03
+          ],
+          "rate": 0.01,
+          "wilson95": [
+            0.0018,
+            0.0545
+          ]
+        }
+      },
+      "IRRELEVANT_CERTIFICATE_CONTROL|late": {
+        "continuation_length_tokens": {
+          "max": 192,
+          "mean": 55.24,
+          "min": 11
+        },
+        "derailed": {
+          "count": 2,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.05
+          ],
+          "rate": 0.02,
+          "wilson95": [
+            0.0055,
+            0.07
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.037
+          ]
+        },
+        "n": 100,
+        "parroted": {
+          "count": 20,
+          "problem_cluster_bootstrap95": [
+            0.13,
+            0.28
+          ],
+          "rate": 0.2,
+          "wilson95": [
+            0.1334,
+            0.2888
+          ]
+        },
+        "poisoned": {
+          "count": 27,
+          "problem_cluster_bootstrap95": [
+            0.18,
+            0.35
+          ],
+          "rate": 0.27,
+          "wilson95": [
+            0.1927,
+            0.3643
+          ]
+        },
+        "problem_n": 100,
+        "triple_n": 100,
+        "unparsed": {
+          "count": 4,
+          "problem_cluster_bootstrap95": [
+            0.01,
+            0.08
+          ],
+          "rate": 0.04,
+          "wilson95": [
+            0.0157,
+            0.0984
+          ]
+        },
+        "valid_rederivation": {
+          "count": 47,
+          "problem_cluster_bootstrap95": [
+            0.38,
+            0.5702
+          ],
+          "rate": 0.47,
+          "wilson95": [
+            0.3751,
+            0.5671
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 3,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.07
+          ],
+          "rate": 0.03,
+          "wilson95": [
+            0.0103,
+            0.0845
+          ]
+        }
+      },
+      "IRRELEVANT_CERTIFICATE_CONTROL|mid": {
+        "continuation_length_tokens": {
+          "max": 192,
+          "mean": 78.57,
+          "min": 12
+        },
+        "derailed": {
+          "count": 3,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.07
+          ],
+          "rate": 0.03,
+          "wilson95": [
+            0.0103,
+            0.0845
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.037
+          ]
+        },
+        "n": 100,
+        "parroted": {
+          "count": 16,
+          "problem_cluster_bootstrap95": [
+            0.1,
+            0.24
+          ],
+          "rate": 0.16,
+          "wilson95": [
+            0.101,
+            0.2442
+          ]
+        },
+        "poisoned": {
+          "count": 23,
+          "problem_cluster_bootstrap95": [
+            0.15,
+            0.31
+          ],
+          "rate": 0.23,
+          "wilson95": [
+            0.1584,
+            0.3215
+          ]
+        },
+        "problem_n": 100,
+        "triple_n": 100,
+        "unparsed": {
+          "count": 5,
+          "problem_cluster_bootstrap95": [
+            0.01,
+            0.11
+          ],
+          "rate": 0.05,
+          "wilson95": [
+            0.0215,
+            0.1118
+          ]
+        },
+        "valid_rederivation": {
+          "count": 53,
+          "problem_cluster_bootstrap95": [
+            0.43,
+            0.62
+          ],
+          "rate": 0.53,
+          "wilson95": [
+            0.4329,
+            0.6249
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 3,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.07
+          ],
+          "rate": 0.03,
+          "wilson95": [
+            0.0103,
+            0.0845
+          ]
+        }
+      },
+      "LOCAL_CERTIFICATE|early": {
+        "continuation_length_tokens": {
+          "max": 192,
+          "mean": 109.91,
+          "min": 12
+        },
+        "derailed": {
+          "count": 14,
+          "problem_cluster_bootstrap95": [
+            0.08,
+            0.2
+          ],
+          "rate": 0.14,
+          "wilson95": [
+            0.0853,
+            0.2214
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.037
+          ]
+        },
+        "n": 100,
+        "parroted": {
+          "count": 11,
+          "problem_cluster_bootstrap95": [
+            0.0598,
+            0.18
+          ],
+          "rate": 0.11,
+          "wilson95": [
+            0.0625,
+            0.1863
+          ]
+        },
+        "poisoned": {
+          "count": 2,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.05
+          ],
+          "rate": 0.02,
+          "wilson95": [
+            0.0055,
+            0.07
+          ]
+        },
+        "problem_n": 100,
+        "triple_n": 100,
+        "unparsed": {
+          "count": 21,
+          "problem_cluster_bootstrap95": [
+            0.14,
+            0.3
+          ],
+          "rate": 0.21,
+          "wilson95": [
+            0.1417,
+            0.2998
+          ]
+        },
+        "valid_rederivation": {
+          "count": 52,
+          "problem_cluster_bootstrap95": [
+            0.42,
+            0.6102
+          ],
+          "rate": 0.52,
+          "wilson95": [
+            0.4232,
+            0.6154
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 42,
+          "problem_cluster_bootstrap95": [
+            0.32,
+            0.5002
+          ],
+          "rate": 0.42,
+          "wilson95": [
+            0.328,
+            0.5179
+          ]
+        }
+      },
+      "LOCAL_CERTIFICATE|late": {
+        "continuation_length_tokens": {
+          "max": 192,
+          "mean": 67.51,
+          "min": 17
+        },
+        "derailed": {
+          "count": 2,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.05
+          ],
+          "rate": 0.02,
+          "wilson95": [
+            0.0055,
+            0.07
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.037
+          ]
+        },
+        "n": 100,
+        "parroted": {
+          "count": 13,
+          "problem_cluster_bootstrap95": [
+            0.07,
+            0.1902
+          ],
+          "rate": 0.13,
+          "wilson95": [
+            0.0776,
+            0.2098
+          ]
+        },
+        "poisoned": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.03
+          ],
+          "rate": 0.01,
+          "wilson95": [
+            0.0018,
+            0.0545
+          ]
+        },
+        "problem_n": 100,
+        "triple_n": 100,
+        "unparsed": {
+          "count": 37,
+          "problem_cluster_bootstrap95": [
+            0.27,
+            0.47
+          ],
+          "rate": 0.37,
+          "wilson95": [
+            0.2818,
+            0.4678
+          ]
+        },
+        "valid_rederivation": {
+          "count": 47,
+          "problem_cluster_bootstrap95": [
+            0.37,
+            0.5702
+          ],
+          "rate": 0.47,
+          "wilson95": [
+            0.3751,
+            0.5671
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 36,
+          "problem_cluster_bootstrap95": [
+            0.26,
+            0.46
+          ],
+          "rate": 0.36,
+          "wilson95": [
+            0.2727,
+            0.4576
+          ]
+        }
+      },
+      "LOCAL_CERTIFICATE|mid": {
+        "continuation_length_tokens": {
+          "max": 192,
+          "mean": 97.14,
+          "min": 11
+        },
+        "derailed": {
+          "count": 6,
+          "problem_cluster_bootstrap95": [
+            0.02,
+            0.11
+          ],
+          "rate": 0.06,
+          "wilson95": [
+            0.0278,
+            0.1248
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.037
+          ]
+        },
+        "n": 100,
+        "parroted": {
+          "count": 11,
+          "problem_cluster_bootstrap95": [
+            0.05,
+            0.17
+          ],
+          "rate": 0.11,
+          "wilson95": [
+            0.0625,
+            0.1863
+          ]
+        },
+        "poisoned": {
+          "count": 5,
+          "problem_cluster_bootstrap95": [
+            0.01,
+            0.1
+          ],
+          "rate": 0.05,
+          "wilson95": [
+            0.0215,
+            0.1118
+          ]
+        },
+        "problem_n": 100,
+        "triple_n": 100,
+        "unparsed": {
+          "count": 37,
+          "problem_cluster_bootstrap95": [
+            0.26,
+            0.47
+          ],
+          "rate": 0.37,
+          "wilson95": [
+            0.2818,
+            0.4678
+          ]
+        },
+        "valid_rederivation": {
+          "count": 41,
+          "problem_cluster_bootstrap95": [
+            0.32,
+            0.52
+          ],
+          "rate": 0.41,
+          "wilson95": [
+            0.3187,
+            0.508
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 36,
+          "problem_cluster_bootstrap95": [
+            0.27,
+            0.46
+          ],
+          "rate": 0.36,
+          "wilson95": [
+            0.2727,
+            0.4576
+          ]
+        }
+      }
+    },
+    "pooled_by_condition": {
+      "GLOBAL_BASELINE": {
+        "continuation_length_tokens": {
+          "max": 192,
+          "mean": 84.94,
+          "min": 11
+        },
+        "derailed": {
+          "count": 19,
+          "problem_cluster_bootstrap95": [
+            0.0384,
+            0.0894
+          ],
+          "rate": 0.0633,
+          "wilson95": [
+            0.0409,
+            0.0968
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.0126
+          ]
+        },
+        "n": 300,
+        "parroted": {
+          "count": 110,
+          "problem_cluster_bootstrap95": [
+            0.3052,
+            0.4262
+          ],
+          "rate": 0.3667,
+          "wilson95": [
+            0.3141,
+            0.4226
+          ]
+        },
+        "poisoned": {
+          "count": 46,
+          "problem_cluster_bootstrap95": [
+            0.1122,
+            0.2007
+          ],
+          "rate": 0.1533,
+          "wilson95": [
+            0.117,
+            0.1985
+          ]
+        },
+        "problem_n": 183,
+        "triple_n": 300,
+        "unparsed": {
+          "count": 12,
+          "problem_cluster_bootstrap95": [
+            0.0171,
+            0.0667
+          ],
+          "rate": 0.04,
+          "wilson95": [
+            0.023,
+            0.0686
+          ]
+        },
+        "valid_rederivation": {
+          "count": 113,
+          "problem_cluster_bootstrap95": [
+            0.317,
+            0.4357
+          ],
+          "rate": 0.3767,
+          "wilson95": [
+            0.3237,
+            0.4327
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 3,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0228
+          ],
+          "rate": 0.01,
+          "wilson95": [
+            0.0034,
+            0.029
+          ]
+        }
+      },
+      "IRRELEVANT_CERTIFICATE_CONTROL": {
+        "continuation_length_tokens": {
+          "max": 192,
+          "mean": 74.66,
+          "min": 11
+        },
+        "derailed": {
+          "count": 12,
+          "problem_cluster_bootstrap95": [
+            0.019,
+            0.0607
+          ],
+          "rate": 0.04,
+          "wilson95": [
+            0.023,
+            0.0686
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.0126
+          ]
+        },
+        "n": 300,
+        "parroted": {
+          "count": 55,
+          "problem_cluster_bootstrap95": [
+            0.1429,
+            0.2328
+          ],
+          "rate": 0.1833,
+          "wilson95": [
+            0.1436,
+            0.231
+          ]
+        },
+        "poisoned": {
+          "count": 72,
+          "problem_cluster_bootstrap95": [
+            0.1867,
+            0.2978
+          ],
+          "rate": 0.24,
+          "wilson95": [
+            0.1952,
+            0.2914
+          ]
+        },
+        "problem_n": 183,
+        "triple_n": 300,
+        "unparsed": {
+          "count": 11,
+          "problem_cluster_bootstrap95": [
+            0.0105,
+            0.0655
+          ],
+          "rate": 0.0367,
+          "wilson95": [
+            0.0206,
+            0.0645
+          ]
+        },
+        "valid_rederivation": {
+          "count": 150,
+          "problem_cluster_bootstrap95": [
+            0.4364,
+            0.5642
+          ],
+          "rate": 0.5,
+          "wilson95": [
+            0.4438,
+            0.5562
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 7,
+          "problem_cluster_bootstrap95": [
+            0.0097,
+            0.0408
+          ],
+          "rate": 0.0233,
+          "wilson95": [
+            0.0113,
+            0.0474
+          ]
+        }
+      },
+      "LOCAL_CERTIFICATE": {
+        "continuation_length_tokens": {
+          "max": 192,
+          "mean": 91.52,
+          "min": 11
+        },
+        "derailed": {
+          "count": 22,
+          "problem_cluster_bootstrap95": [
+            0.0444,
+            0.1086
+          ],
+          "rate": 0.0733,
+          "wilson95": [
+            0.0489,
+            0.1085
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.0126
+          ]
+        },
+        "n": 300,
+        "parroted": {
+          "count": 35,
+          "problem_cluster_bootstrap95": [
+            0.0821,
+            0.1596
+          ],
+          "rate": 0.1167,
+          "wilson95": [
+            0.0851,
+            0.1579
+          ]
+        },
+        "poisoned": {
+          "count": 8,
+          "problem_cluster_bootstrap95": [
+            0.0102,
+            0.0431
+          ],
+          "rate": 0.0267,
+          "wilson95": [
+            0.0136,
+            0.0517
+          ]
+        },
+        "problem_n": 183,
+        "triple_n": 300,
+        "unparsed": {
+          "count": 95,
+          "problem_cluster_bootstrap95": [
+            0.2602,
+            0.371
+          ],
+          "rate": 0.3167,
+          "wilson95": [
+            0.2666,
+            0.3713
+          ]
+        },
+        "valid_rederivation": {
+          "count": 140,
+          "problem_cluster_bootstrap95": [
+            0.4019,
+            0.5379
+          ],
+          "rate": 0.4667,
+          "wilson95": [
+            0.411,
+            0.5232
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 114,
+          "problem_cluster_bootstrap95": [
+            0.3188,
+            0.4453
+          ],
+          "rate": 0.38,
+          "wilson95": [
+            0.3269,
+            0.4361
+          ]
+        }
+      }
+    }
+  },
+  "mixed_effects_logistic": {
+    "poisoned": {
+      "coefficients": {
+        "condition=IRRELEVANT_CERTIFICATE_CONTROL": {
+          "ci95_or": [
+            0.907,
+            4.269
+          ],
+          "log_or": 0.6769,
+          "or": 1.9677,
+          "se": 0.3952
+        },
+        "condition=IRRELEVANT_CERTIFICATE_CONTROL:position=late": {
+          "ci95_or": [
+            0.3372,
+            2.7618
+          ],
+          "log_or": -0.0356,
+          "or": 0.965,
+          "se": 0.5365
+        },
+        "condition=IRRELEVANT_CERTIFICATE_CONTROL:position=mid": {
+          "ci95_or": [
+            0.2833,
+            2.3938
+          ],
+          "log_or": -0.1942,
+          "or": 0.8235,
+          "se": 0.5444
+        },
+        "condition=LOCAL_CERTIFICATE": {
+          "ci95_or": [
+            0.0276,
+            0.5924
+          ],
+          "log_or": -2.0559,
+          "or": 0.128,
+          "se": 0.7818
+        },
+        "condition=LOCAL_CERTIFICATE:position=late": {
+          "ci95_or": [
+            0.027,
+            4.504
+          ],
+          "log_or": -1.0538,
+          "or": 0.3486,
+          "se": 1.3055
+        },
+        "condition=LOCAL_CERTIFICATE:position=mid": {
+          "ci95_or": [
+            0.3136,
+            13.1232
+          ],
+          "log_or": 0.7074,
+          "or": 2.0287,
+          "se": 0.9525
+        },
+        "intercept": {
+          "ci95_or": [
+            0.0724,
+            0.2551
+          ],
+          "log_or": -1.9959,
+          "or": 0.1359,
+          "se": 0.3212
+        },
+        "position=late": {
+          "ci95_or": [
+            0.5429,
+            2.8483
+          ],
+          "log_or": 0.2179,
+          "or": 1.2435,
+          "se": 0.4229
+        },
+        "position=mid": {
+          "ci95_or": [
+            0.5561,
+            2.9516
+          ],
+          "log_or": 0.2478,
+          "or": 1.2812,
+          "se": 0.4258
+        }
+      },
+      "formula": "poisoned ~ condition * position + (1 | problem_id)",
+      "method": "penalized logistic random-intercept approximation",
+      "n": 900,
+      "problem_n": 183,
+      "status": "ok"
+    },
+    "valid_rederivation": {
+      "coefficients": {
+        "condition=IRRELEVANT_CERTIFICATE_CONTROL": {
+          "ci95_or": [
+            0.9913,
+            3.224
+          ],
+          "log_or": 0.5809,
+          "or": 1.7877,
+          "se": 0.3009
+        },
+        "condition=IRRELEVANT_CERTIFICATE_CONTROL:position=late": {
+          "ci95_or": [
+            0.3644,
+            1.9325
+          ],
+          "log_or": -0.1754,
+          "or": 0.8392,
+          "se": 0.4256
+        },
+        "condition=IRRELEVANT_CERTIFICATE_CONTROL:position=mid": {
+          "ci95_or": [
+            0.4727,
+            2.4986
+          ],
+          "log_or": 0.0832,
+          "or": 1.0868,
+          "se": 0.4247
+        },
+        "condition=LOCAL_CERTIFICATE": {
+          "ci95_or": [
+            1.0815,
+            3.519
+          ],
+          "log_or": 0.6683,
+          "or": 1.9509,
+          "se": 0.301
+        },
+        "condition=LOCAL_CERTIFICATE:position=late": {
+          "ci95_or": [
+            0.3339,
+            1.7711
+          ],
+          "log_or": -0.2627,
+          "or": 0.769,
+          "se": 0.4257
+        },
+        "condition=LOCAL_CERTIFICATE:position=mid": {
+          "ci95_or": [
+            0.2548,
+            1.3552
+          ],
+          "log_or": -0.5316,
+          "or": 0.5877,
+          "se": 0.4263
+        },
+        "intercept": {
+          "ci95_or": [
+            0.3411,
+            0.8558
+          ],
+          "log_or": -0.6156,
+          "or": 0.5403,
+          "se": 0.2347
+        },
+        "position=late": {
+          "ci95_or": [
+            0.5802,
+            2.0086
+          ],
+          "log_or": 0.0766,
+          "or": 1.0796,
+          "se": 0.3168
+        },
+        "position=mid": {
+          "ci95_or": [
+            0.5851,
+            2.0145
+          ],
+          "log_or": 0.0822,
+          "or": 1.0856,
+          "se": 0.3154
+        }
+      },
+      "formula": "valid_rederivation ~ condition * position + (1 | problem_id)",
+      "method": "penalized logistic random-intercept approximation",
+      "n": 900,
+      "problem_n": 183,
+      "status": "ok"
+    },
+    "verbalized_doubt": {
+      "coefficients": {
+        "condition=IRRELEVANT_CERTIFICATE_CONTROL": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": 5.8207,
+          "or": 337.192,
+          "se": 16.4614
+        },
+        "condition=IRRELEVANT_CERTIFICATE_CONTROL:position=late": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": 2.7591,
+          "or": 15.7856,
+          "se": 35.2623
+        },
+        "condition=IRRELEVANT_CERTIFICATE_CONTROL:position=mid": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": -5.8198,
+          "or": 0.003,
+          "se": 16.4803
+        },
+        "condition=LOCAL_CERTIFICATE": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": 10.2131,
+          "or": 27259.1207,
+          "se": 16.4362
+        },
+        "condition=LOCAL_CERTIFICATE:position=late": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": 1.379,
+          "or": 3.971,
+          "se": 35.2497
+        },
+        "condition=LOCAL_CERTIFICATE:position=mid": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": -7.1824,
+          "or": 0.0008,
+          "se": 16.4464
+        },
+        "intercept": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": -10.5187,
+          "or": 0.0,
+          "se": 16.4353
+        },
+        "position=late": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": -1.7506,
+          "or": 0.1737,
+          "se": 35.2489
+        },
+        "position=mid": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": 6.8787,
+          "or": 971.3783,
+          "se": 16.4442
+        }
+      },
+      "formula": "verbalized_doubt ~ condition * position + (1 | problem_id)",
+      "method": "penalized logistic random-intercept approximation",
+      "n": 900,
+      "problem_n": 183,
+      "status": "ok"
+    }
+  },
+  "multiple_comparisons": "LOCAL_CERTIFICATE vs GLOBAL_BASELINE and LOCAL_CERTIFICATE vs IRRELEVANT_CERTIFICATE_CONTROL on valid_rederivation, poisoning, and verbalized_doubt are primary for Experiment B; other contrasts are exploratory.",
+  "paired_tests": {
+    "poisoned": {
+      "LOCAL_CERTIFICATE_vs_GLOBAL_BASELINE": {
+        "early": {
+          "ci95_problem_cluster_bootstrap": [
+            -0.18,
+            -0.0498
+          ],
+          "diff_a_minus_b": -0.11,
+          "mcnemar_a0_b1": 12,
+          "mcnemar_a1_b0": 1,
+          "mcnemar_exact_p": 0.003418,
+          "n_pairs": 100,
+          "problem_n": 100
+        },
+        "late": {
+          "ci95_problem_cluster_bootstrap": [
+            -0.24,
+            -0.09
+          ],
+          "diff_a_minus_b": -0.16,
+          "mcnemar_a0_b1": 17,
+          "mcnemar_a1_b0": 1,
+          "mcnemar_exact_p": 0.000145,
+          "n_pairs": 100,
+          "problem_n": 100
+        },
+        "mid": {
+          "ci95_problem_cluster_bootstrap": [
+            -0.2,
+            -0.03
+          ],
+          "diff_a_minus_b": -0.11,
+          "mcnemar_a0_b1": 16,
+          "mcnemar_a1_b0": 5,
+          "mcnemar_exact_p": 0.026604,
+          "n_pairs": 100,
+          "problem_n": 100
+        },
+        "pooled": {
+          "ci95_problem_cluster_bootstrap": [
+            -0.1751,
+            -0.08
+          ],
+          "diff_a_minus_b": -0.1267,
+          "mcnemar_a0_b1": 45,
+          "mcnemar_a1_b0": 7,
+          "mcnemar_exact_p": 0.0,
+          "n_pairs": 300,
+          "problem_n": 183
+        }
+      },
+      "LOCAL_CERTIFICATE_vs_IRRELEVANT_CERTIFICATE_CONTROL": {
+        "early": {
+          "ci95_problem_cluster_bootstrap": [
+            -0.29,
+            -0.12
+          ],
+          "diff_a_minus_b": -0.2,
+          "mcnemar_a0_b1": 22,
+          "mcnemar_a1_b0": 2,
+          "mcnemar_exact_p": 3.6e-05,
+          "n_pairs": 100,
+          "problem_n": 100
+        },
+        "late": {
+          "ci95_problem_cluster_bootstrap": [
+            -0.35,
+            -0.17
+          ],
+          "diff_a_minus_b": -0.26,
+          "mcnemar_a0_b1": 27,
+          "mcnemar_a1_b0": 1,
+          "mcnemar_exact_p": 0.0,
+          "n_pairs": 100,
+          "problem_n": 100
+        },
+        "mid": {
+          "ci95_problem_cluster_bootstrap": [
+            -0.26,
+            -0.1
+          ],
+          "diff_a_minus_b": -0.18,
+          "mcnemar_a0_b1": 19,
+          "mcnemar_a1_b0": 1,
+          "mcnemar_exact_p": 4e-05,
+          "n_pairs": 100,
+          "problem_n": 100
+        },
+        "pooled": {
+          "ci95_problem_cluster_bootstrap": [
+            -0.2718,
+            -0.1579
+          ],
+          "diff_a_minus_b": -0.2133,
+          "mcnemar_a0_b1": 68,
+          "mcnemar_a1_b0": 4,
+          "mcnemar_exact_p": 0.0,
+          "n_pairs": 300,
+          "problem_n": 183
+        }
+      }
+    },
+    "valid_rederivation": {
+      "LOCAL_CERTIFICATE_vs_GLOBAL_BASELINE": {
+        "early": {
+          "ci95_problem_cluster_bootstrap": [
+            0.03,
+            0.26
+          ],
+          "diff_a_minus_b": 0.15,
+          "mcnemar_a0_b1": 12,
+          "mcnemar_a1_b0": 27,
+          "mcnemar_exact_p": 0.023703,
+          "n_pairs": 100,
+          "problem_n": 100
+        },
+        "late": {
+          "ci95_problem_cluster_bootstrap": [
+            -0.04,
+            0.21
+          ],
+          "diff_a_minus_b": 0.09,
+          "mcnemar_a0_b1": 17,
+          "mcnemar_a1_b0": 26,
+          "mcnemar_exact_p": 0.222053,
+          "n_pairs": 100,
+          "problem_n": 100
+        },
+        "mid": {
+          "ci95_problem_cluster_bootstrap": [
+            -0.09,
+            0.17
+          ],
+          "diff_a_minus_b": 0.03,
+          "mcnemar_a0_b1": 20,
+          "mcnemar_a1_b0": 23,
+          "mcnemar_exact_p": 0.760792,
+          "n_pairs": 100,
+          "problem_n": 100
+        },
+        "pooled": {
+          "ci95_problem_cluster_bootstrap": [
+            0.0032,
+            0.1758
+          ],
+          "diff_a_minus_b": 0.09,
+          "mcnemar_a0_b1": 49,
+          "mcnemar_a1_b0": 76,
+          "mcnemar_exact_p": 0.019677,
+          "n_pairs": 300,
+          "problem_n": 183
+        }
+      },
+      "LOCAL_CERTIFICATE_vs_IRRELEVANT_CERTIFICATE_CONTROL": {
+        "early": {
+          "ci95_problem_cluster_bootstrap": [
+            -0.13,
+            0.16
+          ],
+          "diff_a_minus_b": 0.02,
+          "mcnemar_a0_b1": 25,
+          "mcnemar_a1_b0": 27,
+          "mcnemar_exact_p": 0.889884,
+          "n_pairs": 100,
+          "problem_n": 100
+        },
+        "late": {
+          "ci95_problem_cluster_bootstrap": [
+            -0.14,
+            0.14
+          ],
+          "diff_a_minus_b": 0.0,
+          "mcnemar_a0_b1": 25,
+          "mcnemar_a1_b0": 25,
+          "mcnemar_exact_p": 1.0,
+          "n_pairs": 100,
+          "problem_n": 100
+        },
+        "mid": {
+          "ci95_problem_cluster_bootstrap": [
+            -0.25,
+            0.0
+          ],
+          "diff_a_minus_b": -0.12,
+          "mcnemar_a0_b1": 30,
+          "mcnemar_a1_b0": 18,
+          "mcnemar_exact_p": 0.111403,
+          "n_pairs": 100,
+          "problem_n": 100
+        },
+        "pooled": {
+          "ci95_problem_cluster_bootstrap": [
+            -0.1287,
+            0.0561
+          ],
+          "diff_a_minus_b": -0.0333,
+          "mcnemar_a0_b1": 80,
+          "mcnemar_a1_b0": 70,
+          "mcnemar_exact_p": 0.46255,
+          "n_pairs": 300,
+          "problem_n": 183
+        }
+      }
+    },
+    "verbalized_doubt": {
+      "LOCAL_CERTIFICATE_vs_GLOBAL_BASELINE": {
+        "early": {
+          "ci95_problem_cluster_bootstrap": [
+            0.33,
+            0.52
+          ],
+          "diff_a_minus_b": 0.42,
+          "mcnemar_a0_b1": 0,
+          "mcnemar_a1_b0": 42,
+          "mcnemar_exact_p": 0.0,
+          "n_pairs": 100,
+          "problem_n": 100
+        },
+        "late": {
+          "ci95_problem_cluster_bootstrap": [
+            0.26,
+            0.45
+          ],
+          "diff_a_minus_b": 0.36,
+          "mcnemar_a0_b1": 0,
+          "mcnemar_a1_b0": 36,
+          "mcnemar_exact_p": 0.0,
+          "n_pairs": 100,
+          "problem_n": 100
+        },
+        "mid": {
+          "ci95_problem_cluster_bootstrap": [
+            0.24,
+            0.43
+          ],
+          "diff_a_minus_b": 0.33,
+          "mcnemar_a0_b1": 0,
+          "mcnemar_a1_b0": 33,
+          "mcnemar_exact_p": 0.0,
+          "n_pairs": 100,
+          "problem_n": 100
+        },
+        "pooled": {
+          "ci95_problem_cluster_bootstrap": [
+            0.3095,
+            0.4309
+          ],
+          "diff_a_minus_b": 0.37,
+          "mcnemar_a0_b1": 0,
+          "mcnemar_a1_b0": 111,
+          "mcnemar_exact_p": 0.0,
+          "n_pairs": 300,
+          "problem_n": 183
+        }
+      },
+      "LOCAL_CERTIFICATE_vs_IRRELEVANT_CERTIFICATE_CONTROL": {
+        "early": {
+          "ci95_problem_cluster_bootstrap": [
+            0.3197,
+            0.51
+          ],
+          "diff_a_minus_b": 0.41,
+          "mcnemar_a0_b1": 0,
+          "mcnemar_a1_b0": 41,
+          "mcnemar_exact_p": 0.0,
+          "n_pairs": 100,
+          "problem_n": 100
+        },
+        "late": {
+          "ci95_problem_cluster_bootstrap": [
+            0.23,
+            0.43
+          ],
+          "diff_a_minus_b": 0.33,
+          "mcnemar_a0_b1": 2,
+          "mcnemar_a1_b0": 35,
+          "mcnemar_exact_p": 0.0,
+          "n_pairs": 100,
+          "problem_n": 100
+        },
+        "mid": {
+          "ci95_problem_cluster_bootstrap": [
+            0.24,
+            0.43
+          ],
+          "diff_a_minus_b": 0.33,
+          "mcnemar_a0_b1": 0,
+          "mcnemar_a1_b0": 33,
+          "mcnemar_exact_p": 0.0,
+          "n_pairs": 100,
+          "problem_n": 100
+        },
+        "pooled": {
+          "ci95_problem_cluster_bootstrap": [
+            0.2928,
+            0.4184
+          ],
+          "diff_a_minus_b": 0.3567,
+          "mcnemar_a0_b1": 2,
+          "mcnemar_a1_b0": 109,
+          "mcnemar_exact_p": 0.0,
+          "n_pairs": 300,
+          "problem_n": 183
+        }
+      }
+    }
+  },
+  "reproducibility": {
+    "conditions": [
+      "GLOBAL_BASELINE",
+      "LOCAL_CERTIFICATE",
+      "IRRELEVANT_CERTIFICATE_CONTROL"
+    ],
+    "created_at": "2026-06-18T19:59:57.644767+00:00",
+    "decoding": {
+      "do_sample": false,
+      "max_new_tokens": 192,
+      "num_return_sequences": 1,
+      "temperature": null,
+      "top_p": null
+    },
+    "experiment": "EXPB_LOCAL_CERT_FLIP",
+    "git_commit_hash": "d860dc734e285ac148100b3d8da74fc2721dbcaa",
+    "git_dirty_status": [
+      " M experiments/09_latent_recovery/PLAN.md",
+      " M experiments/09_latent_recovery/src/common.py",
+      " M experiments/09_latent_recovery/src/validator.py",
+      " M paper_latex/papers/latent_recovery/main.pdf",
+      " M paper_latex/papers/latent_recovery/main.tex",
+      "?? experiments/09_latent_recovery/results/EXPA_GLOBAL_EXPANSION/",
+      "?? experiments/09_latent_recovery/results/EXPA_GLOBAL_EXPANSION_SMOKE/",
+      "?? experiments/09_latent_recovery/results/EXPB_LOCAL_CERT_FLIP/",
+      "?? experiments/09_latent_recovery/results/EXPB_LOCAL_CERT_FLIP_FAILED_PROMPTIDS/",
+      "?? experiments/09_latent_recovery/results/EXPB_LOCAL_CERT_FLIP_PREP/",
+      "?? experiments/09_latent_recovery/results/EXPB_LOCAL_CERT_FLIP_SMOKE/",
+      "?? experiments/09_latent_recovery/results/EXPB_LOCAL_CERT_FLIP_SMOKE_FIXED/",
+      "?? experiments/09_latent_recovery/results/EXPB_LOCAL_CERT_FLIP_SMOKE_MASK/",
+      "?? experiments/09_latent_recovery/results/EXPB_LOCAL_CERT_FLIP_TEST/",
+      "?? experiments/09_latent_recovery/results_ctx/",
+      "?? experiments/09_latent_recovery/results_doubt/",
+      "?? experiments/09_latent_recovery/results_llama/",
+      "?? experiments/09_latent_recovery/results_mistral/",
+      "?? experiments/09_latent_recovery/src/cluster_stats.py",
+      "?? experiments/09_latent_recovery/src/context_check.py",
+      "?? experiments/09_latent_recovery/src/doubt_suppress.py",
+      "?? experiments/09_latent_recovery/src/expa_global_expansion.py",
+      "?? experiments/09_latent_recovery/src/expa_tests.py",
+      "?? experiments/09_latent_recovery/src/expb_local_cert_flip.py",
+      "?? experiments/09_latent_recovery/src/expb_tests.py",
+      "?? experiments/09_latent_recovery/src/fig_verbalization_spectrum.py",
+      "?? experiments/09_latent_recovery/src/gsm8k_gradient.py",
+      "?? experiments/09_latent_recovery/src/make_workshop_figures.py",
+      "?? experiments/09_latent_recovery/src/val3.py",
+      "?? paper_latex/papers/latent_recovery/fig_dose_response.pdf",
+      "?? paper_latex/papers/latent_recovery/fig_dose_response.png",
+      "?? paper_latex/papers/latent_recovery/fig_dose_response.tex",
+      "?? paper_latex/papers/latent_recovery/fig_regime_map.pdf",
+      "?? paper_latex/papers/latent_recovery/fig_regime_map.png",
+      "?? paper_latex/papers/latent_recovery/fig_regime_map.tex",
+      "?? paper_latex/papers/latent_recovery/fig_verbalization_spectrum.pdf",
+      "?? paper_latex/papers/latent_recovery/fig_verbalization_spectrum.png",
+      "?? paper_latex/papers/latent_recovery/fig_verbalization_spectrum.tex",
+      "?? paper_latex/papers/latent_recovery/main.tex.bak",
+      "?? paper_latex/papers/latent_recovery/versions/"
+    ],
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "model_revision_error": null,
+    "model_revision_pinned": true,
+    "positions": [
+      "early",
+      "mid",
+      "late"
+    ],
+    "prompt": {
+      "fewshot": "Q: Every yumpus is a dumpus. Dumpuses are tumpuses. Tumpuses are not bright. Sam is a yumpus. Prove: Sam is not bright.\nA: Sam is a yumpus. Every yumpus is a dumpus. Sam is a dumpus. Dumpuses are tumpuses. Sam is a tumpus. Tumpuses are not bright. Sam is not bright.\n\nQ: Each gorpus is a sterpus. Sterpuses are red. Every borpus is a gorpus. Alex is a borpus. Prove: Alex is red.\nA: Alex is a borpus. Every borpus is a gorpus. Alex is a gorpus. Each gorpus is a sterpus. Alex is a sterpus. Sterpuses are red. Alex is red.\n\n",
+      "instruction": "You will be given facts and rules about fictional creatures, then asked to prove a statement. Answer with only the proof: a sequence of statements, one deduction at a time, in the exact style of the examples. End with the statement to be proven.\n\n"
+    },
+    "python": "3.11.15 (main, Jun  2 2026, 22:26:03) [Clang 22.1.3 ]",
+    "seed": 0,
+    "target_paired_triples_per_position": 100
+  },
+  "sample_size": {
+    "manifest_rows": 900,
+    "paired_triples_by_position": {
+      "early": 100,
+      "late": 100,
+      "mid": 100
+    },
+    "problem_clusters": 183,
+    "target_paired_triples_per_position": 100,
+    "validated_rows": 900
+  },
+  "sanity_checks": {
+    "certificate_char_length_delta_local_minus_irrelevant": {
+      "max": 1,
+      "mean": -0.023,
+      "min": -1
+    },
+    "falsehood_false_rate": 1.0,
+    "irrelevant_certificate_locally_falsifies_count": 0,
+    "irrelevant_certificate_true_rate": 1.0,
+    "local_certificate_true_rate": 1.0,
+    "prompt_formatting": true
+  },
+  "validator_quality": {
+    "strict_validator_available": false,
+    "strict_validator_did_not_overwrite_closure_validator": true,
+    "unit_test_marker_exists": true
+  }
+}

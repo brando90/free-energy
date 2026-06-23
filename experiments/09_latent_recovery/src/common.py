@@ -6,7 +6,9 @@ import torch
 MODEL = os.environ.get("LR_MODEL", "Qwen/Qwen2.5-7B-Instruct")
 _N_LAYERS = {"Qwen/Qwen2.5-1.5B-Instruct": 28, "Qwen/Qwen2.5-7B-Instruct": 28,
              "Qwen/Qwen2.5-32B-Instruct": 64,
-             "allenai/OLMo-2-1124-7B-Instruct": 32}.get(MODEL, 28)
+             "allenai/OLMo-2-1124-7B-Instruct": 32,
+             "mistralai/Mistral-7B-Instruct-v0.2": 32,
+             "NousResearch/Meta-Llama-3.1-8B-Instruct": 32}.get(MODEL, 28)
 LAYERS = [0] + [round(_N_LAYERS * f) for f in (0.25, 0.5, 0.75, 1.0)]  # emb..final
 BASE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 DATA = os.path.join(BASE, "data")
