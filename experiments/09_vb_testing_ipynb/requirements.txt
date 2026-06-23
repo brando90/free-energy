@@ -7,4 +7,4 @@ sentencepiece
 torch>=2.4
 transformers>=4.44
 tqdm
-
+sglang[all]==0.5.2
