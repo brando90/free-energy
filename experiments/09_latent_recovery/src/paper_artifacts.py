@@ -232,18 +232,32 @@ def range_for_summary(path, metric):
     return min(vals), max(vals)
 
 
+def range_for_expa_condition(condition, metric):
+    vals = []
+    for p in ("early", "mid", "late"):
+        c = expa_condition_position_cell(condition, p)
+        vals.append(c[metric]["rate"])
+    return min(vals), max(vals)
+
+
 def table_scale_lineage():
     specs = [
         ("Qwen2.5-1.5B", "results_1p5b"),
-        ("Qwen2.5-7B", "results"),
+        ("Qwen2.5-7B (primary)", None),
         ("Qwen2.5-32B", "results_32b"),
     ]
     rows = []
     for label, d in specs:
-        gv = range_for_summary(f"{d}/validated_summary_falsehood.json", "valid_rederivation")
-        gp = range_for_summary(f"{d}/validated_summary_falsehood.json", "poisoned")
-        gd = range_for_summary(f"{d}/validated_summary_falsehood.json", "acknowledged")
-        nd = range_for_summary(f"{d}/validated_summary_negstep.json", "acknowledged")
+        if d is None:
+            gv = range_for_expa_condition("global_falsehood", "valid_rederivation")
+            gp = range_for_expa_condition("global_falsehood", "poisoned")
+            gd = range_for_expa_condition("global_falsehood", "verbalized_doubt")
+            nd = range_for_expa_condition("one_hop_falsehood", "verbalized_doubt")
+        else:
+            gv = range_for_summary(f"{d}/validated_summary_falsehood.json", "valid_rederivation")
+            gp = range_for_summary(f"{d}/validated_summary_falsehood.json", "poisoned")
+            gd = range_for_summary(f"{d}/validated_summary_falsehood.json", "acknowledged")
+            nd = range_for_summary(f"{d}/validated_summary_negstep.json", "acknowledged")
         rows.append(
             f"{label} & {fmt_rate(gv[0])}--{fmt_rate(gv[1])} & {fmt_rate(gp[0])}--{fmt_rate(gp[1])} & "
             f"{fmt_rate(gd[0])}--{fmt_rate(gd[1])} & {fmt_rate(nd[0])}--{fmt_rate(nd[1])} \\\\"
@@ -352,17 +366,22 @@ def table_strict_stepwise():
     expc = jl("results/EXPC_POLARITY_CONTROL/validated_outputs.jsonl")
     expb = jl("results/EXPB_LOCAL_CERT_FLIP/validated_outputs.jsonl")
     c = Counter(r["strict_validation"]["strict_class"] for r in expc)
-    strict_ok = c.get("strict_noncanonical_recovery", 0)
-    strict_bad = c.get("strict_final_mismatch", 0)
+    strict_match = c.get("strict_noncanonical_recovery", 0)
+    strict_mismatch = c.get("strict_final_mismatch", 0)
     closure_valid = class_count(expc, "valid_rederivation")
+    expb_closure_valid = class_count(expb, "valid_rederivation")
+
+    def count_rate(k, n):
+        return f"{k} ({fmt_rate(k / n)})"
+
     rows = [
-        f"Lexical-polarity control & {len(expc)} & available & {closure_valid} & {strict_ok} noncanonical recoveries; {strict_bad} final mismatches \\\\",
-        f"Local-certificate flip & {len(expb)} & unavailable & {class_count(expb, 'valid_rederivation')} & closure validator retained; stepwise recovery not imputed \\\\",
+        f"Lexical-polarity control & {len(expc)} & yes & {count_rate(closure_valid, len(expc))} & {count_rate(strict_match, len(expc))} & {count_rate(strict_mismatch, len(expc))} \\\\",
+        f"Local-certificate flip & {len(expb)} & no & {count_rate(expb_closure_valid, len(expb))} & --- & --- \\\\",
     ]
     return r"""\newcommand{\PaperTableStrictStepwise}{%
-\begin{tabular}{@{}p{0.20\linewidth}cccp{0.31\linewidth}@{}}
+\begin{tabular}{@{}p{0.21\linewidth}ccccc@{}}
 \toprule
-Control & $n$ & Strict val. & Closure-valid & Strict-stepwise outcome \\
+Control & $n$ & \begin{tabular}[c]{@{}c@{}}Strict\\replay?\end{tabular} & Closure-valid & \begin{tabular}[c]{@{}c@{}}Strict final\\target match\end{tabular} & \begin{tabular}[c]{@{}c@{}}Strict final\\mismatch\end{tabular} \\
 \midrule
 """ + "\n".join(rows) + r"""
 \bottomrule
@@ -376,8 +395,14 @@ def macros():
     expc = j("results/EXPC_POLARITY_CONTROL/summary_tables.json")
     expa = j("results/EXPA_GLOBAL_EXPANSION/summary_tables.json")
     expa_meta = j("results/EXPA_GLOBAL_EXPANSION/run_metadata.json")
+    verify_global_mid = j("results_verify/validated_summary_falsehood_verify.json")["mid"]
+    verify_onehop_mid = j("results_verify/validated_summary_negstep_verify.json")["mid"]
     b = expb["metrics"]["pooled_by_condition"]
     paired = expb["paired_tests"]
+
+    def flat_rate(cell, key):
+        return fmt_rate(cell.get(key, 0) / cell["n"])
+
     lines = [
         rf"\newcommand{{\CertProblemClusters}}{{{expb['sample_size']['problem_clusters']}}}",
         rf"\newcommand{{\CertPerPositionN}}{{{expb['sample_size']['paired_triples_by_position']['early']}}}",
@@ -403,6 +428,13 @@ def macros():
         rf"\newcommand{{\ExpansionTargetPerPosition}}{{{expa_meta['target_eligible_per_position']}}}",
         rf"\newcommand{{\ExpansionProblems}}{{{expa['availability']['global_falsehood_problem_n']}}}",
         rf"\newcommand{{\ExpansionRows}}{{{expa['integrity']['validated_rows']}}}",
+        rf"\newcommand{{\VerifyGlobalMidN}}{{{verify_global_mid['n']}}}",
+        rf"\newcommand{{\VerifyGlobalMidValid}}{{{flat_rate(verify_global_mid, 'valid_rederivation')}}}",
+        rf"\newcommand{{\VerifyGlobalMidPoison}}{{{flat_rate(verify_global_mid, 'poisoned')}}}",
+        rf"\newcommand{{\VerifyGlobalMidDoubt}}{{{flat_rate(verify_global_mid, 'acknowledged')}}}",
+        rf"\newcommand{{\VerifyOneHopMidN}}{{{verify_onehop_mid['n']}}}",
+        rf"\newcommand{{\VerifyOneHopMidValid}}{{{flat_rate(verify_onehop_mid, 'valid_rederivation')}}}",
+        rf"\newcommand{{\VerifyOneHopMidDoubt}}{{{flat_rate(verify_onehop_mid, 'acknowledged')}}}",
     ]
     return "\n".join(lines) + "\n"
 
@@ -433,6 +465,8 @@ def write_paper_results():
         "results/validated_summary_falsehood.json",
         "results/gsm8k/summary.json",
         "results/arith/summary.json",
+        "results_verify/validated_summary_falsehood_verify.json",
+        "results_verify/validated_summary_negstep_verify.json",
         "results_1p5b/validated_summary_falsehood.json",
         "results_1p5b/validated_summary_negstep.json",
         "results_32b/validated_summary_falsehood.json",

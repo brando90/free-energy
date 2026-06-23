@@ -24,6 +24,13 @@
 \newcommand{\ExpansionTargetPerPosition}{150}
 \newcommand{\ExpansionProblems}{150}
 \newcommand{\ExpansionRows}{1800}
+\newcommand{\VerifyGlobalMidN}{35}
+\newcommand{\VerifyGlobalMidValid}{0.343}
+\newcommand{\VerifyGlobalMidPoison}{0.371}
+\newcommand{\VerifyGlobalMidDoubt}{0.029}
+\newcommand{\VerifyOneHopMidN}{130}
+\newcommand{\VerifyOneHopMidValid}{0.469}
+\newcommand{\VerifyOneHopMidDoubt}{0.423}
 \newcommand{\PaperTableFalsifiability}{%
 \begin{tabular}{llcccccc}
 \toprule
@@ -73,7 +80,7 @@ Chained arithmetic (no redundancy) & 0.020 & 0.990 & 99 \\
 Model & closure-valid & inj.-dep. & doubt & doubt \\
 \midrule
 Qwen2.5-1.5B & 0.154--0.462 & 0.308--0.615 & 0.000--0.000 & 0.000--0.018 \\
-Qwen2.5-7B & 0.229--0.343 & 0.286--0.600 & 0.000--0.057 & 0.185--0.392 \\
+Qwen2.5-7B (primary) & 0.360--0.447 & 0.233--0.420 & 0.007--0.020 & 0.267--0.467 \\
 Qwen2.5-32B & 0.600--0.733 & 0.100--0.367 & 0.033--0.067 & 0.129--0.280 \\
 \bottomrule
 \end{tabular}%
@@ -114,12 +121,12 @@ global falsehood & 450 & 0.393 [0.342,0.442] & 0.342 [0.293,0.384] & 0.013 [0.00
 \end{tabular}%
 }
 \newcommand{\PaperTableStrictStepwise}{%
-\begin{tabular}{@{}p{0.20\linewidth}cccp{0.31\linewidth}@{}}
+\begin{tabular}{@{}p{0.21\linewidth}ccccc@{}}
 \toprule
-Control & $n$ & Strict val. & Closure-valid & Strict-stepwise outcome \\
+Control & $n$ & \begin{tabular}[c]{@{}c@{}}Strict\\replay?\end{tabular} & Closure-valid & \begin{tabular}[c]{@{}c@{}}Strict final\\target match\end{tabular} & \begin{tabular}[c]{@{}c@{}}Strict final\\mismatch\end{tabular} \\
 \midrule
-Lexical-polarity control & 84 & available & 55 & 66 noncanonical recoveries; 18 final mismatches \\
-Local-certificate flip & 900 & unavailable & 403 & closure validator retained; stepwise recovery not imputed \\
+Lexical-polarity control & 84 & yes & 55 (0.655) & 66 (0.786) & 18 (0.214) \\
+Local-certificate flip & 900 & no & 403 (0.448) & --- & --- \\
 \bottomrule
 \end{tabular}%
 }

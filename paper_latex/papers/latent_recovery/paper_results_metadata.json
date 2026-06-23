@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-06-23T19:07:07.689092+00:00",
+  "created_at": "2026-06-23T19:24:59.059395+00:00",
   "generated": "../../paper_latex/papers/latent_recovery/paper_results.tex",
-  "git_commit": "d860dc734e285ac148100b3d8da74fc2721dbcaa",
+  "git_commit": "8894a05c4703b8c58745bb8c0f8acba33a54dfee",
   "sources": [
     {
       "path": "data/pilot.jsonl",
@@ -134,6 +134,14 @@
     {
       "path": "results_32b/validated_summary_negstep.json",
       "sha256": "1f1031b1e2416c12f743ee31cc0ead4446de7e1adc05dd04fec9b5f45f7a9437"
+    },
+    {
+      "path": "results_verify/validated_summary_falsehood_verify.json",
+      "sha256": "1658e4f67bfea1a0668e270f7d1d7651b7f569b9f6e3392772bcaf8b8916265a"
+    },
+    {
+      "path": "results_verify/validated_summary_negstep_verify.json",
+      "sha256": "5da5a8e38e8f8921715cabe55344ea3878052e774aa5b6c3396ce9a41f2a4e45"
     }
   ]
 }

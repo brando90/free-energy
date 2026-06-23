@@ -32,13 +32,14 @@ inside by intercepting a proof the model already solves, planting a single false
 step, and formally validating the subsequent reasoning trace. We find that recovery
 is strongly shaped by local verification cost. When a false step
 contradicts nearby evidence, models frequently catch and correct the error, often
-voicing explicit doubt. Conversely, errors requiring a global proof search are
+voicing explicit doubt. Conversely, errors requiring broader proof search are often
 silently absorbed and built upon. This falsifiability gradient holds across models
-from 1.5B to 32B parameters. While targeted control experiments confirm the causal
-role of local evidence, they also reveal the difficulty of fully isolating these
-dynamics from grammatical and lexical confounds. Ultimately, our results refine the
-compounding-error debate: per-step errors do compound silently, but primarily when
-they evade local checkability.
+from 1.5B to 32B parameters. While targeted control experiments support a causal role
+for local evidence in explicit error-flagging and reduced injection-dependence, they
+also reveal the difficulty of fully isolating these dynamics from grammatical and
+lexical confounds. Ultimately, our results refine the compounding-error debate:
+per-step errors do compound silently, but primarily when they evade local
+checkability.
 \end{abstract}
 
 
@@ -265,16 +266,20 @@ absolute robustness without removing the distance dependence.
 
 \paragraph{Verification prompting does not reliably fix errors without nearby evidence.}
 Explicitly instructing the model to verify facts against the rules before using them
-fails to mitigate the dangerous case in the available verification run. The instruction
-raises visible caution most clearly when the lie can already be checked against nearby
-context; errors requiring broader proof search remain prone to being used without
-flagging. It is easier to induce cautionary language than to induce checking of claims
-with no nearby evidence against them.
+fails to mitigate the dangerous case in the available verification run. At the middle
+injection position, globally-checkable falsehoods still show injection-dependence
+\VerifyGlobalMidPoison\ and closure-valid completion \VerifyGlobalMidValid\
+($n=\VerifyGlobalMidN$), with only \VerifyGlobalMidDoubt\ verbalized doubt. By
+contrast, one-hop falsehoods under the same prompting condition produce
+\VerifyOneHopMidDoubt\ doubt ($n=\VerifyOneHopMidN$). The instruction raises visible
+caution most clearly when the lie can already be checked against nearby context; it is
+easier to induce cautionary language than to induce checking of claims with no nearby
+evidence against them.
 
 \subsection{Targeted Artifact-Locked Controls}
 Following the primary sweep, we executed two strictly paired, artifact-locked
-control experiments to evaluate the causal role of local evidence and rule out
-potential lexical confounds.
+control experiments to probe the role of local evidence and rule out potential lexical
+confounds.
 
 \paragraph{Local-Certificate Flip.}
 We tested whether artificially injecting local evidence changes the model's response
@@ -327,10 +332,12 @@ stricter audit is reported separately in Table~\ref{tab:strict}; crucially, it n
 overwrites the closure validator used for our headline metrics.
 
 \begin{table}[h]
-\centering\small
+\centering\scriptsize
 \PaperTableStrictStepwise
-\caption{Strict stepwise validation audit for new controls. The closure validator used
-for headline metrics is retained; strict replay is reported only where implemented.}
+\caption{Strict stepwise validation audit for new controls. Counts are shown with
+rates in parentheses. The strict replay audit records whether the continuation reaches
+the stored final target under the suffix comparison; it is not substituted for the
+closure validator used in headline metrics and is reported only where implemented.}
 \label{tab:strict}
 \end{table}
 
@@ -368,7 +375,9 @@ recompute, so recoverability depends on task structure as much as model architec
 \PaperTableTaskStructure
 \caption{Mid-trajectory corruption across task structures. Numbers are regenerated
 from the task summary artifacts; the PrOntoQA row uses the expanded
-globally-checkable falsehood cell.}
+globally-checkable falsehood cell. $^{*}$In PrOntoQA, absorption is measured as
+injection-dependence under the proof validator; in arithmetic tasks, absorption
+corresponds to propagation of the corrupted value.}
 \label{tab:regime}
 \end{table}
 
@@ -415,14 +424,17 @@ closure-valid completion.
 \centering\small
 \PaperTableScaleLineage
 \caption{Scale sweep over Qwen2.5 models. Ranges are over early, middle, and late
-injection positions and are regenerated from summary artifacts.}
+injection positions and are regenerated from summary artifacts. The Qwen2.5-7B row
+uses the expanded primary artifact, making it numerically comparable to
+Table~\ref{tab:main}; the other size rows use the matched cross-model summary
+artifacts.}
 \label{tab:scale}
 \end{table}
 The same nearby-evidence pattern appears across architectural lineages. Both
 OLMo-2-7B-Instruct and Llama-3.1-8B-Instruct show the behavioral gradient in the
-legacy summaries. Crucially, both models can recover from errors with nearby evidence
-against them while showing little explicit doubt, indicating that successful error
-repair does not require the model to explicitly flag the mistake.
+cross-model summary artifacts. Crucially, both models can recover from errors with
+nearby evidence against them while showing little explicit doubt, indicating that
+successful error repair does not require the model to explicitly flag the mistake.
 
 Finally, evaluating DeepSeek-R1-Distill-Qwen-7B isolates the impact of
 reasoning-specific reinforcement learning. While closure-valid completion remains broadly in
@@ -437,6 +449,8 @@ proxy for closure-valid completion.
 \caption{\textbf{Explicit doubt and recovery dissociate.} Across six models
 (1-hop falsehood, mid injection), verbalized doubt varies much more than closure-valid
 completion. Points are cell rates with the per-model $n$ printed on the labels.
+The Qwen-7B point uses the expanded primary artifact; the other points use the matched
+cross-model summaries.
 Reasoning-RL training
 (R1-Distill) increases explicit flagging at flat closure-valid completion; the base/instruct models
 recover at comparable rates while saying little. Verbalizing a caught error and
@@ -510,13 +524,7 @@ when the contradiction is easy to recover from nearby context. Explicitly flaggi
 error and actually recovering from it are different behaviors.
 For evaluation, this means that planted-error studies should specify not only whether
 an injected step is false, but how locally that falsehood can be discovered. For model
-design, it suggests that useful robustness may come less from generic exhortations to
-``check your work'' than from mechanisms that make counterevidence salient at the
-point where a continuation would otherwise reuse a bad intermediate state. The
-dangerous errors are not merely wrong; they are wrong in ways the current context
-does not make cheap to refute. Future systems and evaluations should therefore treat
-local falsifying evidence as a first-class part of the reasoning state, not merely as
-background context available somewhere in the prompt.
+design, counterevidence should be salient before a bad intermediate state is reused.
 
 \bibliographystyle{plainnat}
 \begin{thebibliography}{9}

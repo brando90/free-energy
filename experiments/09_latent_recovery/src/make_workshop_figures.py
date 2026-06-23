@@ -177,13 +177,18 @@ def negstep_mid(resdir):
     return c.get("acknowledged", 0) / n, c["valid_rederivation"] / n, n
 
 
+def expa_onehop_mid():
+    c = j("results/EXPA_GLOBAL_EXPANSION/summary_tables.json")["metrics"]["by_condition_position"]["one_hop_falsehood|mid"]
+    return c["verbalized_doubt"]["rate"], c["valid_rederivation"]["rate"], c["n"]
+
+
 def verbalization_spectrum():
     r1 = j(os.path.join("results", "r1", "summary.json"))["negstep"]
     pts = [
         ("Qwen-1.5B", *negstep_mid("results_1p5b"), "gray", "0.090,0.505", "west"),
         ("OLMo-2-7B", *negstep_mid("results_olmo"), "green!55!black", "0.090,0.475", "west"),
         ("Llama-3.1-8B", *negstep_mid("results_llama"), "olive", "0.055,0.565", "west"),
-        ("Qwen-7B", *negstep_mid("results"), "blue", "0.300,0.615", "west"),
+        ("Qwen-7B", *expa_onehop_mid(), "black!45", "0.310,0.615", "west"),
         ("Qwen-32B", *negstep_mid("results_32b"), "cyan!70!black", "0.168,0.754", "west"),
         ("R1-Distill-7B", r1["ack_visible"], r1["valid_rederivation"], r1["n"], "red!70!black", "0.655,0.662", "east"),
     ]
