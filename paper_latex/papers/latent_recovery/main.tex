@@ -26,20 +26,21 @@ to Planted Errors in Their Own Reasoning}
 
 \begin{abstract}
 Can an autoregressive language model recover from a planted error in its own
-reasoning without external feedback? Simple compounding-error arguments often assume
-that false intermediate steps are unrecoverable. We test this assumption from the
-inside by intercepting a proof the model already solves, planting a single false
-step, and formally validating the subsequent reasoning trace. We find that recovery
-is strongly shaped by local verification cost. When a false step
-contradicts nearby evidence, models frequently catch and correct the error, often
-voicing explicit doubt. Conversely, errors requiring broader proof search are often
-silently absorbed and built upon. This falsifiability gradient holds across models
-from 1.5B to 32B parameters. While targeted control experiments support a causal role
-for local evidence in explicit error-flagging and reduced injection-dependence, they
-also reveal the difficulty of fully isolating these dynamics from grammatical and
-lexical confounds. Ultimately, our results refine the compounding-error debate:
-per-step errors do compound silently, but primarily when they evade local
-checkability.
+reasoning trace? Long-horizon reasoning is fragile because a false intermediate step
+can become part of the context the model must reason from. Simple compounding-error
+arguments turn this concern into a strong assumption: once a step is false, later
+reasoning cannot recover. We test a different possibility. Recovery may depend less
+on falsehood itself than on local falsifiability: whether the current proof state
+contains cheap counterevidence. We instantiate this test by intercepting proofs the
+model already solves, planting a single audited false step at controlled positions
+and proof-search costs, and formally validating the continuation. Across models from
+1.5B to 32B parameters, nearby contradictions often elicit doubt and repair, whereas
+errors requiring broader proof search are often silently absorbed and reused. The
+result is a falsifiability gradient: per-step errors do compound, but primarily when
+the current context provides no cheap counterevidence. This refines the
+compounding-error debate and gives a practical diagnostic for reasoning traces: the
+riskiest errors are not merely wrong, but wrong where the surrounding context gives
+the model little reason to doubt.
 \end{abstract}
 
 
@@ -48,12 +49,14 @@ Autoregressive language models generate one token at a time, so long-horizon rea
 can be fragile. A standard compounding argument says that if each step is correct with
 probability $(1-\varepsilon)$ and a wrong step can never be repaired, then the chance
 that a $T$-step derivation is fully correct decays like $(1-\varepsilon)^T$
-\citep{lecun2022path,dziri2023faith}. The argument relies on independence, a constant
-error rate, and unrecoverability; the last premise carries much of the force. Rather
-than add an external verifier, tool, or search procedure, we ask what happens inside a
-single generation. If we plant one error in a model's own proof and remove external
-feedback, does the model build on the error, route around it, or complete a valid proof
-anyway?
+\citep{dziri2023faith}. The argument relies on independence, a constant error rate,
+and unrecoverability; the last premise carries much of the force. The intrinsic
+question is therefore not just whether a trace contains an error, but when the model
+treats that error as something to doubt. Reasoning systems still consume, route, and
+act on model-generated traces, so their failure modes depend on which errors the base
+rollout flags, absorbs, or repairs. We therefore study the unassisted rollout: if we
+plant one error in a model's own proof, does the model build on the error, route
+around it, or complete a valid proof anyway?
 
 Prior work gives reasons to expect both fragility and robustness. Interventional
 studies perturb visible chain-of-thought and report surprising robustness
@@ -507,24 +510,21 @@ step-specific representational trajectories with correctness signals. Our
 style-propagation result (benign $\approx$ falsehood in both functional and geometric
 divergence) is a caution for cross-trace comparisons in that line.
 
-\textbf{Compounding.} \citet{dziri2023faith,lecun2022path} supply the ingredients of
-the compounding frame our results sharpen: the model can build on a planted error when
-the surrounding proof lacks nearby evidence against it, and task derivation structure
-(\S\ref{sec:task-structure}) determines the price.
+\textbf{Compounding.} The analysis in \citet{dziri2023faith} supplies the ingredients
+of the compounding frame our results sharpen: the model can build on a planted error
+when the surrounding proof lacks nearby evidence against it, and task derivation
+structure (\S\ref{sec:task-structure}) determines the price.
 
 \section{Conclusion}
 Single-pass autoregressive reasoning is neither uniformly brittle nor reliably
 self-correcting. In our controlled setting, recovery depends partly on whether the
-planted error can be checked against nearby context. Errors contradicted by nearby
-statements are often survived; errors that require a broader proof search are more
-often used without being flagged. This reconciles part of the compounding-error
-argument with robustness results: compounding is a better failure model when the
-surrounding proof lacks nearby evidence against the error, but it overstates fragility
-when the contradiction is easy to recover from nearby context. Explicitly flagging an
-error and actually recovering from it are different behaviors.
-For evaluation, this means that planted-error studies should specify not only whether
-an injected step is false, but how locally that falsehood can be discovered. For model
-design, counterevidence should be salient before a bad intermediate state is reused.
+planted error can be checked against nearby context. Nearby contradictions are often
+survived; broader-search errors are often reused silently. Thus, compounding arguments
+fit best when the proof lacks cheap counterevidence and overstate fragility when
+contradiction is local. Evaluations should track local refutability, not just falsity.
+For systems that rely on model-generated traces, this makes counterevidence a
+first-class part of the reasoning state. The risky errors are not merely wrong; they
+are wrong in ways the current context does not make cheap to doubt.
 
 \bibliographystyle{plainnat}
 \begin{thebibliography}{9}
@@ -534,8 +534,6 @@ design, counterevidence should be salient before a bad intermediate state is reu
 \bibitem[Lad et al.(2024)]{lad2024stages} V. Lad, J.H. Lee, W. Gurnee, M. Tegmark.
 \newblock The Remarkable Robustness of LLMs: Stages of Inference?
 \newblock arXiv:2406.19384, 2024.
-\bibitem[LeCun(2022)]{lecun2022path} Y. LeCun.
-\newblock A Path Towards Autonomous Machine Intelligence. OpenReview, 2022.
 \bibitem[McGrath et al.(2023)]{mcgrath2023hydra} T. McGrath et al.
 \newblock The Hydra Effect: Emergent Self-repair in Language Model Computations.
 \newblock arXiv:2307.15771, 2023.
