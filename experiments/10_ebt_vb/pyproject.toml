@@ -1,0 +1,37 @@
+[project]
+name = "experiments-10-ebt-vb"
+version = "0.1.0"
+description = "10_ebt_vb VeriBench dataloader and HF-backed Goedel v2 experiments"
+authors = [
+  {name = "free-energy"},
+]
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+  "torch",
+  "transformers>=4.47,<5",
+  "huggingface-hub>=0.24,<1",
+  "accelerate>=1.0.0",
+  "numpy>=1.26",
+  "safetensors>=0.4",
+  "tqdm>=4.66"
+]
+
+[project.optional-dependencies]
+train = [
+  "datasets>=2.21"
+]
+
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = [
+  "convert_hidden_states_to_safetensors",
+  "veribench_task",
+  "prepare_context_gold_dataset",
+  "train_context_gold_ebt",
+  "veribench_context_gold_dataloader",
+  "veribench_dataloader",
+]

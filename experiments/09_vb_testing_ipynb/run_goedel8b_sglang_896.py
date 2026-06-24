@@ -131,6 +131,8 @@ class GenerationRecord:
     elapsed_sec: float
     raw_output_text: str
     output_text: str
+    hidden_states_path: str
+    hidden_states_saved: bool
 
 
 def parse_args() -> argparse.Namespace:
@@ -160,6 +162,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--mem-fraction-static", type=float, default=0.85)
     parser.add_argument("--context-length", type=int, default=8192)
     parser.add_argument("--disable-cuda-graph", action="store_true")
+    parser.add_argument(
+        "--enable-return-hidden-states",
+        action="store_true",
+        help="Ask the backend to return hidden states in generation responses.",
+    )
     parser.add_argument("--max-tasks", type=int, default=None)
     parser.add_argument("--start-index", type=int, default=0)
     parser.add_argument("--overwrite", action="store_true")
@@ -240,6 +247,40 @@ def load_split_tasks(split_jsonls: list[pathlib.Path], out_dir: pathlib.Path) ->
 
 def read_text(path: pathlib.Path) -> str:
     return path.expanduser().read_text(encoding="utf-8").strip()
+
+
+def extract_hidden_states(response: Any) -> Any:
+    if isinstance(response, dict):
+        for key in (
+            "hidden_states",
+            "hidden_state",
+            "all_hidden_states",
+            "hidden_states_all",
+            "output_hidden_states",
+        ):
+            value = response.get(key)
+            if value is not None:
+                return value
+        meta_info = response.get("meta_info")
+        if isinstance(meta_info, dict):
+            for key in ("hidden_states", "all_hidden_states", "hidden_states_all", "output_hidden_states"):
+                value = meta_info.get(key)
+                if value is not None:
+                    return value
+
+        if "outputs" in response and isinstance(response["outputs"], list):
+            for item in response["outputs"]:
+                value = extract_hidden_states(item)
+                if value is not None:
+                    return value
+    return None
+
+
+def make_hidden_states_payload(raw: Any) -> str:
+    try:
+        return json.dumps(raw, ensure_ascii=False)
+    except TypeError:
+        return json.dumps(str(raw), ensure_ascii=False)
 
 
 def build_prompt(task: Task, example_py_code: str, example_lean_code: str) -> str:
@@ -452,6 +493,10 @@ def write_json(path: pathlib.Path, obj: Any) -> None:
     path.write_text(json.dumps(obj, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
+def hidden_states_path_for_task(out_dir: pathlib.Path, task_name: str) -> pathlib.Path:
+    return out_dir / "hidden_states" / f"{task_name}.json"
+
+
 def main() -> int:
     args = parse_args()
 
@@ -522,6 +567,7 @@ def main() -> int:
         "mem_fraction_static": args.mem_fraction_static,
         "disable_cuda_graph": args.disable_cuda_graph,
         "raw_prompt": args.raw_prompt,
+        "enable_return_hidden_states": args.enable_return_hidden_states,
     }
     write_json(metadata_path, metadata)
 
@@ -541,6 +587,7 @@ def main() -> int:
         dp_size=args.data_parallel_size,
         tp_size=args.tensor_parallel_size,
         load_balance_method="round_robin",
+        enable_return_hidden_states=args.enable_return_hidden_states,
         context_length=args.context_length,
         mem_fraction_static=args.mem_fraction_static,
         disable_cuda_graph=args.disable_cuda_graph,
@@ -571,7 +618,11 @@ def main() -> int:
                     for task in batch
                 ]
                 started = time.time()
-                responses = engine.generate(prompt=prompts, sampling_params=sampling_params)
+                responses = engine.generate(
+                    prompt=prompts,
+                    sampling_params=sampling_params,
+                    return_hidden_states=args.enable_return_hidden_states,
+                )
                 elapsed = time.time() - started
                 if isinstance(responses, dict):
                     responses = [responses]
@@ -583,12 +634,19 @@ def main() -> int:
                     out_path = output_path_for_task(args.out_dir, task.task_name)
                     raw_path = raw_output_path_for_task(args.out_dir, task.task_name)
                     prompt_path = prompt_path_for_task(args.out_dir, task.task_name)
+                    hs_path = hidden_states_path_for_task(args.out_dir, task.task_name)
                     out_path.parent.mkdir(parents=True, exist_ok=True)
                     raw_path.parent.mkdir(parents=True, exist_ok=True)
                     prompt_path.parent.mkdir(parents=True, exist_ok=True)
+                    hs_path.parent.mkdir(parents=True, exist_ok=True)
                     out_path.write_text(lean_text.rstrip() + "\n", encoding="utf-8")
                     raw_path.write_text(text, encoding="utf-8")
                     prompt_path.write_text(prompt, encoding="utf-8")
+                    hidden_states_payload = extract_hidden_states(response)
+                    hidden_states_saved = False
+                    if args.enable_return_hidden_states and hidden_states_payload is not None:
+                        hs_path.write_text(make_hidden_states_payload(hidden_states_payload), encoding="utf-8")
+                        hidden_states_saved = True
 
                     record = GenerationRecord(
                         task_name=task.task_name,
@@ -603,6 +661,8 @@ def main() -> int:
                         raw_generated_chars=len(text),
                         generated_chars=len(lean_text),
                         elapsed_sec=per_item_elapsed,
+                        hidden_states_path=str(hs_path if hidden_states_saved else ""),
+                        hidden_states_saved=hidden_states_saved,
                         raw_output_text=text,
                         output_text=lean_text,
                     )
