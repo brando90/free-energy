@@ -223,11 +223,16 @@
     ]
   },
   "split_dir": "/lfs/skampere1/0/eshaanb/free-energy/experiments/08_vb_train_val_test/splits",
+  "target_cleaning": {
+    "comments_removed": true,
+    "empty_lines_removed": true,
+    "keeps_newlines_between_nonempty_lines": true
+  },
   "tokenizer": "Goedel-LM/Goedel-Prover-V2-8B",
   "usable_by_split": {
     "test": 74,
     "train": 550,
     "val": 65
   },
-  "vocab_size": 12596
+  "vocab_size": 6724
 }

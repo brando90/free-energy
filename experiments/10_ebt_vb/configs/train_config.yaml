@@ -1,0 +1,104 @@
+defaults:
+  - _self_
+
+seed: 17
+allow_cpu: false
+allow_non_val_split: false
+compile_model: false
+matmul_precision: medium
+
+ebt_reference:
+  source: third_party/EBT/job_scripts/nlp/pretrain/ebt_s1.sh
+  profile: nlp_s1_xxs
+  tokenizer: EleutherAI/gpt-neox-20b
+  dataset_name: fineweb
+  validation_split_pct: 0.0005
+  val_check_interval: 15000
+
+data:
+  data_dir: ${hydra:runtime.cwd}/data/context_gold
+  split: val
+  families: null
+  label_field: labels
+  # EBT NLP s1 uses context_length=256. For this VeriBench trainer this caps
+  # the target Lean sequence length, while Goedel context activations remain
+  # available through cross-attention.
+  max_target_tokens: 256
+  max_items: null
+  activation_dtype: bf16
+  validate_context: true
+  model_name: null
+  model_revision: null
+
+loader:
+  # EBT NLP s1: batch_size_per_device=32.
+  batch_size: 32
+  max_target_tokens_per_batch: 8192
+  shuffle: true
+  num_workers: 12
+  pin_memory: true
+  persistent_workers: true
+  prefetch_factor: 2
+  drop_last: false
+
+model:
+  model_name: Goedel-LM/Goedel-Prover-V2-8B
+  revision: null
+  vocab_size: dataset
+  pad_token_id: dataset
+  context_dim: 4096
+  # EBT NLP s1 uses model_size=xxs: 6 layers, 6 heads, embedding_dim=384.
+  hidden_dim: 4096
+  num_layers: 4
+  num_heads: 6
+  dim_feedforward: 8192
+  dropout: 0.0
+  mcmc_num_steps: 2
+  mcmc_step_size: 0.5
+  mcmc_step_size_learnable: true
+  gaussian_random_noise_scaling: 1.0
+  langevin_dynamics_noise: 0.0
+  truncate_mcmc: false
+  no_mcmc_detach: false
+  clamp_futures_grad: false
+  clamp_futures_grad_max_change: 9.0
+  reconstruction_coeff: 1.0
+  soften_target_prob_dist: 0.0
+
+  # normalization initial conditions
+  denoising_initial_condition: random_noise
+  normalize_initial_condition: true
+  normalize_initial_condition_only_first_step: false
+
+  # reg during langevin step
+  absolute_clamp: 0.0
+  norm_pred: false
+  norm_pred_not_final_step: false
+  sharpen_predicted_distribution: 0.0
+
+optim:
+  lr: 0.0012
+  weight_decay: 0.01
+  betas: [0.9, 0.999]
+  eps: 1.0e-8
+  fused: true
+  mcmc_step_size_lr_multiplier: 1.5
+  use_scheduler: true
+  min_lr_scale: 10
+  max_scheduling_steps: 1000000
+  warm_up_steps: 10000
+  warm_up_base_lr_divider: -1
+
+train:
+  max_steps: 1000000
+  # EBT NLP s1 single-node script: accumulate_grad_batches=2.
+  grad_accum_steps: 2
+  amp_bf16: true
+  grad_clip_norm: 1.0
+  log_every: 5
+  save_every: 100
+  keep_last_checkpoints: 3
+
+hydra:
+  run:
+    dir: ${hydra:runtime.cwd}/runs/val_overfit/${now:%Y%m%d_%H%M%S}

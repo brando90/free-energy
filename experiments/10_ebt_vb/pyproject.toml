@@ -12,6 +12,8 @@ dependencies = [
   "transformers>=4.47,<5",
   "huggingface-hub>=0.24,<1",
   "accelerate>=1.0.0",
+  "hydra-core>=1.3,<2",
+  "omegaconf>=2.3,<3",
   "numpy>=1.26",
   "safetensors>=0.4",
   "tqdm>=4.66"
@@ -29,9 +31,12 @@ build-backend = "setuptools.build_meta"
 [tool.setuptools]
 py-modules = [
   "convert_hidden_states_to_safetensors",
+  "ebt",
   "veribench_task",
   "prepare_context_gold_dataset",
   "train_context_gold_ebt",
   "veribench_context_gold_dataloader",
   "veribench_dataloader",
+  "veribench_embedding_dataloader",
+  "train_ebt",
 ]

@@ -20,7 +20,10 @@ from statistics import median
 import sys
 from safetensors.torch import load_file
 
-from veribench_context_gold_dataloader import DEFAULT_DATA_DIR
+try:
+    from veribench_context_gold_dataloader import DEFAULT_DATA_DIR  # type: ignore[import-not-found]
+except Exception:  # pragma: no cover - fallback when optional module is unavailable
+    DEFAULT_DATA_DIR = Path(__file__).resolve().parent / "data" / "context_gold"
 
 
 def _read_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -96,6 +99,40 @@ def _analyze_theorems(source: str) -> tuple[int, int, int, list[str]]:
     total = len(blocks)
     sorry_count = sum(1 for block in blocks if SORRY_ADMIT_RE.search(block))
     return total, total - sorry_count, sorry_count, names
+
+
+def _score_examples(source: str, *, compile_success: bool, compile_stderr: str) -> tuple[float, dict[str, Any]]:
+    n_examples = _count_examples(source)
+    if n_examples == 0:
+        return 0.0, {"n_tests": 0, "reason": "no_tests"}
+    if not compile_success:
+        test_errors = len(re.findall(r"(native_decide.*failed|tactic.*failed|: error:)", compile_stderr))
+        return max(0.0, (n_examples - test_errors) / n_examples), {
+            "n_tests": n_examples,
+            "n_errors": test_errors,
+            "compile_success": False,
+        }
+    return 1.0, {"n_tests": n_examples, "all_pass": True}
+
+
+def _score_theorems(source: str, *, compile_success: bool) -> tuple[float, dict[str, Any]]:
+    theorem_total, theorem_proven, theorem_sorry, theorem_names = _analyze_theorems(source)
+    if theorem_total == 0:
+        return 0.0, {"total": 0, "reason": "no_theorems"}
+    if not compile_success:
+        return 0.0, {
+            "total": theorem_total,
+            "proven": 0,
+            "sorry": theorem_sorry,
+            "compile_success": False,
+        }
+    return theorem_proven / theorem_total, {
+        "total": theorem_total,
+        "proven": theorem_proven,
+        "sorry": theorem_sorry,
+        "theorem_names": theorem_names,
+        "compile_success": True,
+    }
 
 
 def _compile_lean_file(
@@ -199,10 +236,6 @@ class VeriBenchTask:
     def default_lake_dir(self) -> Path:
         return self.default_veribench_root / "veribench_dataset" / "lean_src"
 
-    @property
-    def default_lake_dir_or_none(self) -> Path | None:
-        return self.default_lake_dir if self.default_lake_dir.exists() else None
-
     def resolve_gold_lean_path(self, veribench_root: Path | None = None) -> Path | None:
         """Resolve this task's reference gold Lean file path, if available."""
         if not self.rel_lean_path:
@@ -240,8 +273,8 @@ class VeriBenchTask:
         - D1/D2: same checks on gold file.
         """
         source = _strip_code_fences(lean_output)
-        lake_dir = Path(lake_dir) if lake_dir is not None else self.default_lake_dir_or_none
-        if lake_dir is None:
+        lake_dir = Path(lake_dir) if lake_dir is not None else self.default_lake_dir
+        if not lake_dir.exists():
             lake_dir = Path("/tmp")
 
         tmp_root = str(lake_dir) if lake_dir.exists() else None
@@ -255,46 +288,8 @@ class VeriBenchTask:
             candidate_success = candidate_compile[0]
             candidate_return_code = candidate_compile[3]
 
-            candidate_examples = _count_examples(source)
-            if candidate_examples == 0:
-                ic1_score = 0.0
-                ic1_info: dict[str, Any] = {
-                    "n_tests": 0,
-                    "reason": "no_tests",
-                }
-            elif candidate_success:
-                ic1_score = 1.0
-                ic1_info = {"n_tests": candidate_examples, "all_pass": True}
-            else:
-                test_errors = len(re.findall(r"(native_decide.*failed|tactic.*failed|: error:)", candidate_stderr))
-                ic1_score = max(0.0, (candidate_examples - test_errors) / candidate_examples)
-                ic1_info = {
-                    "n_tests": candidate_examples,
-                    "n_errors": test_errors,
-                    "compile_success": False,
-                }
-
-            theorem_total, theorem_proven, theorem_sorry, theorem_names = _analyze_theorems(source)
-            if theorem_total == 0:
-                ic2_score = 0.0
-                ic2_info = {"total": 0, "reason": "no_theorems"}
-            elif not candidate_success:
-                ic2_score = 0.0
-                ic2_info = {
-                    "total": theorem_total,
-                    "proven": 0,
-                    "sorry": theorem_sorry,
-                    "compile_success": False,
-                }
-            else:
-                ic2_score = theorem_proven / theorem_total if theorem_total > 0 else 0.0
-                ic2_info = {
-                    "total": theorem_total,
-                    "proven": theorem_proven,
-                    "sorry": theorem_sorry,
-                    "theorem_names": theorem_names,
-                    "compile_success": True,
-                }
+            ic1_score, ic1_info = _score_examples(source, compile_success=candidate_success, compile_stderr=candidate_stderr)
+            ic2_score, ic2_info = _score_theorems(source, compile_success=candidate_success)
 
             gold_path = self.resolve_gold_lean_path(veribench_root=veribench_root)
             gold_stdout = ""
@@ -320,33 +315,10 @@ class VeriBenchTask:
                 gold_stderr = gold_compile[2]
                 gold_return_code = gold_compile[3]
 
-                gold_examples = _count_examples(gold_source)
-                if gold_examples == 0:
-                    d1_score = 0.0
-                    d1_info = {"n_tests": 0, "reason": "no_tests"}
-                elif not gold_success:
-                    d1_score = 0.0
-                    d1_info = {"n_tests": gold_examples, "compile_success": False}
-                else:
-                    d1_score = 1.0
-                    d1_info = {"n_tests": gold_examples, "compile_success": True}
-
-                gold_total, gold_proven, gold_sorry, gold_names = _analyze_theorems(gold_source)
-                if gold_total == 0:
-                    d2_score = 0.0
-                    d2_info = {"total": 0, "reason": "no_theorems"}
-                elif not gold_success:
-                    d2_score = 0.0
-                    d2_info = {"total": gold_total, "proven": 0, "sorry": gold_sorry, "compile_success": False}
-                else:
-                    d2_score = gold_proven / gold_total if gold_total > 0 else 0.0
-                    d2_info = {
-                        "total": gold_total,
-                        "proven": gold_proven,
-                        "sorry": gold_sorry,
-                        "theorem_names": gold_names,
-                        "compile_success": True,
-                    }
+                d1_score, d1_info = _score_examples(
+                    gold_source, compile_success=gold_success, compile_stderr=gold_stderr
+                )
+                d2_score, d2_info = _score_theorems(gold_source, compile_success=gold_success)
 
                 if skip_te1:
                     te1_score = 0.0
@@ -415,7 +387,7 @@ class VeriBenchTask:
             else None
         )
 
-        vocab = _read_vocab(Path(data_dir) / "vocab.json")
+        vocab, _ = cls.load_vocab(data_dir=data_dir)
         return cls(
             task_name=str(row["task_name"]),
             split=str(row["split"]),
@@ -471,9 +443,9 @@ class VeriBenchTask:
     ) -> Iterator["VeriBenchTask"]:
         rows = _read_jsonl(Path(data_dir) / "manifest.jsonl")
         if split is not None:
-            rows = [row for row in rows if row["split"] == split]
+            rows = [row for row in rows if str(row.get("split")) == split]
         if max_items is not None:
-            rows = rows[:max_items]
+            rows = rows[: max_items]
         for row in rows:
             yield cls.from_manifest_row(row, data_dir=data_dir, activation_dtype=activation_dtype)
 
@@ -497,12 +469,6 @@ class VeriBenchTask:
         object.__setattr__(self, "_context_activations", activations)
         return activations
 
-    def read_prompt_tokens(self) -> int:
-        return self.prompt_tokens
-
-    def read_target_tokens(self) -> tuple[int, ...]:
-        return self.target_local_ids
-
     def as_ebt_sample(self) -> dict[str, torch.Tensor]:
         context = self.load_prompt_activations()
         target = torch.tensor(self.target_local_ids, dtype=torch.long)
@@ -514,21 +480,4 @@ class VeriBenchTask:
             "labels": labels,
             "context_token_count": torch.tensor(context.shape[0], dtype=torch.long),
             "target_token_count": torch.tensor(labels.shape[0], dtype=torch.long),
-        }
-
-    def to_dict(self) -> dict[str, Any]:
-        return {
-            "task_name": self.task_name,
-            "split": self.split,
-            "family": self.family,
-            "prompt_tokens": self.prompt_tokens,
-            "generated_tokens": self.generated_tokens,
-            "hidden_dim": self.hidden_dim,
-            "safetensors_path": self.safetensors_path,
-            "target_local_ids": list(self.target_local_ids),
-            "target_original_ids": list(self.target_original_ids) if self.target_original_ids is not None else None,
-            "source_kind": self.source_kind,
-            "rel_py_path": self.rel_py_path,
-            "rel_lean_path": self.rel_lean_path,
-            "task_id": self.task_id,
         }

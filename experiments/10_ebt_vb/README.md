@@ -17,6 +17,11 @@ Included in this folder:
 - `veribench_task.py`: one-task abstraction that binds prompt token count, Goedel
   8B hidden-state activations, and gold target Lean local tokens; includes
   helpers to create a single EBT sample.
+- `veribench_embedding_dataloader.py`: wraps `VeriBenchTask` samples and returns
+  Goedel context activations plus cleaned gold target token ids.
+- `ebt.py`: scaffold EBT module that internally optimizes dense full-vocab token
+  logits, maps them through a learned `vocab_to_embed` projection, and feeds an
+  `nn.TransformerDecoder`.
 
 Typical context/gold preparation:
 
@@ -42,4 +47,10 @@ task = next(VeriBenchTask.iter_tasks(split="val", data_dir=Path("data/context_go
 sample = task.as_ebt_sample()
 print(task.task_name, sample["context_activations"].shape, sample["labels"].shape)
 PY
+```
+
+EBT dataloader smoke:
+
+```bash
+uv run python veribench_embedding_dataloader.py --split val --batch-size 2 --max-items 2
 ```
