@@ -20,14 +20,24 @@ def _load_vocab(data_dir: Path) -> dict[str, Any]:
     return json.loads((data_dir / "vocab.json").read_text(encoding="utf-8"))
 
 
+def _as_filter(value: str | list[str] | tuple[str, ...] | None) -> set[str] | None:
+    if value is None:
+        return None
+    return {value} if isinstance(value, str) else {str(item) for item in value}
+
+
+def _has_hidden_states(path: Path) -> bool:
+    try:
+        with safe_open(path, framework="pt", device="cpu") as handle:
+            return "hidden_states" in handle.keys()
+    except Exception:
+        return False
+
+
 class GoedelIdMapper:
     """Maps compact local dataset ids to original Goedel tokenizer ids."""
 
     local_to_original: torch.Tensor
-    model_name: str
-    vocab_size: int
-    pad_original_id: int
-    eos_original_id: int
 
     def __init__(
         self,
@@ -53,10 +63,6 @@ class GoedelIdMapper:
         local_to_original[int(vocab["local_unk_id"])] = unk_original_id
 
         self.local_to_original = local_to_original
-        self.model_name = model_name
-        self.vocab_size = int(len(tokenizer))
-        self.pad_original_id = pad_original_id
-        self.eos_original_id = eos_original_id
 
     def original_ids(self, local_ids: torch.Tensor) -> torch.Tensor:
         local_ids = local_ids.to(dtype=torch.long, device=self.local_to_original.device)
@@ -106,18 +112,8 @@ class VeriBenchEmbeddingDataset(Dataset[dict[str, Any]]):
         validate_context: bool,
     ) -> list[VeriBenchTask]:
         tasks: list[VeriBenchTask] = []
-        split_filter: set[str] | None = None
-        if split is not None:
-            if isinstance(split, str):
-                split_filter = {split}
-            else:
-                split_filter = {str(item) for item in split}
-        family_filter: set[str] | None = None
-        if families:
-            if isinstance(families, str):
-                family_filter = {families}
-            else:
-                family_filter = {str(family) for family in families}
+        split_filter = _as_filter(split)
+        family_filter = _as_filter(families)
         for task in VeriBenchTask.iter_tasks(
             split=None,
             data_dir=self.data_dir,
@@ -129,13 +125,8 @@ class VeriBenchEmbeddingDataset(Dataset[dict[str, Any]]):
                 continue
             if not task.context_activations_path.exists():
                 continue
-            if validate_context:
-                try:
-                    with safe_open(task.context_activations_path, framework="pt", device="cpu") as handle:
-                        if "hidden_states" not in handle.keys():
-                            continue
-                except Exception:
-                    continue
+            if validate_context and not _has_hidden_states(task.context_activations_path):
+                continue
             tasks.append(task)
             if max_items is not None and len(tasks) >= max_items:
                 break
@@ -189,18 +180,22 @@ def collate_veribench_embedding_samples(samples: list[dict[str, Any]]) -> dict[s
     decoder_input_ids = torch.zeros(batch, max_decoder, dtype=torch.long)
     decoder_input_original_ids = torch.zeros(batch, max_decoder, dtype=torch.long)
 
+    def copy_1d(dst: torch.Tensor, key: str, i: int) -> int:
+        value = samples[i][key]
+        length = int(value.shape[0])
+        dst[i, :length] = value
+        return length
+
     for i, sample in enumerate(samples):
         c_len = int(sample["context_activations"].shape[0])
-        t_len = int(sample["labels"].shape[0])
-        d_len = int(sample["decoder_input_ids"].shape[0])
         context[i, :c_len] = sample["context_activations"]
         context_mask[i, :c_len] = True
+        t_len = copy_1d(labels, "labels", i)
+        copy_1d(label_original_ids, "label_original_ids", i)
         label_mask[i, :t_len] = True
+        d_len = copy_1d(decoder_input_ids, "decoder_input_ids", i)
+        copy_1d(decoder_input_original_ids, "decoder_input_original_ids", i)
         decoder_mask[i, :d_len] = True
-        labels[i, :t_len] = sample["labels"]
-        label_original_ids[i, :t_len] = sample["label_original_ids"]
-        decoder_input_ids[i, :d_len] = sample["decoder_input_ids"]
-        decoder_input_original_ids[i, :d_len] = sample["decoder_input_original_ids"]
 
     return {
         "task_name": [sample["task_name"] for sample in samples],
@@ -257,9 +252,8 @@ def main() -> None:
     print(f"dataset_size={len(loader.dataset)}")
     print(f"task_name={batch['task_name']}")
     print(f"context_activations={tuple(batch['context_activations'].shape)} {batch['context_activations'].dtype}")
-    print(f"labels={tuple(batch['labels'].shape)} {batch['labels'].dtype}")
-    print(f"label_original_ids={tuple(batch['label_original_ids'].shape)} {batch['label_original_ids'].dtype}")
-    print(f"decoder_input_original_ids={tuple(batch['decoder_input_original_ids'].shape)} {batch['decoder_input_original_ids'].dtype}")
+    for key in ("labels", "label_original_ids", "decoder_input_original_ids"):
+        print(f"{key}={tuple(batch[key].shape)} {batch[key].dtype}")
 
 
 if __name__ == "__main__":

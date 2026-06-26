@@ -23,6 +23,15 @@ from veribench_embedding_dataloader import (
     collate_veribench_embedding_samples,
 )
 
+TOKEN_WEIGHTED_METRICS = (
+    "loss",
+    "initial_loss",
+    "final_step_loss",
+    "perplexity",
+    "final_energy",
+    "final_token_accuracy",
+)
+
 
 def _as_path(value: str | Path) -> Path:
     return Path(value).expanduser().resolve()
@@ -202,6 +211,28 @@ def _prefixed(metrics: dict[str, float], prefix: str) -> dict[str, float]:
     return {f"{prefix}/{key}": value for key, value in metrics.items()}
 
 
+def _append_jsonl(path: Path, row: dict[str, float]) -> None:
+    with path.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(row, sort_keys=True) + "\n")
+
+
+def _batch_loss(
+    *,
+    model: torch.nn.Module,
+    batch: dict[str, Any],
+    cfg: DictConfig,
+    learning: bool,
+) -> dict[str, torch.Tensor]:
+    return model.loss(
+        batch["context_activations"],
+        batch[str(cfg.data.label_field)],
+        context_attention_mask=batch["context_attention_mask"],
+        label_attention_mask=batch["label_attention_mask"],
+        task_indices=batch["task_index"],
+        learning=learning,
+    )
+
+
 def _evaluate(
     *,
     model: torch.nn.Module,
@@ -213,14 +244,7 @@ def _evaluate(
 ) -> dict[str, float]:
     was_training = model.training
     model.eval()
-    totals: dict[str, float] = {
-        "loss": 0.0,
-        "initial_loss": 0.0,
-        "final_step_loss": 0.0,
-        "perplexity": 0.0,
-        "final_energy": 0.0,
-        "final_token_accuracy": 0.0,
-    }
+    totals = dict.fromkeys(TOKEN_WEIGHTED_METRICS, 0.0)
     exact_total = 0.0
     total_tokens = 0
     total_rows = 0
@@ -231,16 +255,9 @@ def _evaluate(
         tokens = int(batch["label_attention_mask"].sum().detach().cpu())
         rows = int(batch["label_attention_mask"].shape[0])
         with torch.autocast(device_type="cuda", dtype=torch.bfloat16, enabled=amp_enabled):
-            loss_dict = model.loss(
-                batch["context_activations"],
-                batch[str(cfg.data.label_field)],
-                context_attention_mask=batch["context_attention_mask"],
-                label_attention_mask=batch["label_attention_mask"],
-                task_indices=batch["task_index"],
-                learning=False,
-            )
+            loss_dict = _batch_loss(model=model, batch=batch, cfg=cfg, learning=False)
         weight = max(tokens, 1)
-        for key in totals:
+        for key in TOKEN_WEIGHTED_METRICS:
             totals[key] += _metric_value(loss_dict[key]) * weight
         exact_total += _metric_value(loss_dict["final_exact_accuracy"]) * rows
         total_tokens += tokens
@@ -273,40 +290,34 @@ def _resolve_dataset_int(value: Any, dataset: VeriBenchEmbeddingDataset, key: st
 
 
 def _make_model(cfg: DictConfig, dataset: VeriBenchEmbeddingDataset) -> GoedelVocabEBT:
-    return GoedelVocabEBT(
-        model_name=cfg.model.model_name,
-        revision=cfg.model.revision,
-        vocab_size=_resolve_dataset_int(cfg.model.vocab_size, dataset, "vocab_size"),
-        pad_token_id=_resolve_dataset_int(cfg.model.pad_token_id, dataset, "local_pad_id"),
-        context_dim=cfg.model.context_dim,
-        hidden_dim=cfg.model.hidden_dim,
-        num_layers=int(cfg.model.num_layers),
-        num_heads=int(cfg.model.num_heads),
-        dim_feedforward=int(cfg.model.dim_feedforward),
-        dropout=float(cfg.model.dropout),
-        mcmc_num_steps=int(cfg.model.mcmc_num_steps),
-        mcmc_step_size=float(cfg.model.mcmc_step_size),
-        mcmc_step_size_learnable=bool(cfg.model.mcmc_step_size_learnable),
-        gaussian_random_noise_scaling=float(cfg.model.gaussian_random_noise_scaling),
-        denoising_initial_condition=cfg.model.denoising_initial_condition,
-        normalize_initial_condition=bool(cfg.model.normalize_initial_condition),
-        normalize_initial_condition_only_first_step=bool(cfg.model.normalize_initial_condition_only_first_step),
-        langevin_dynamics_noise=float(cfg.model.langevin_dynamics_noise),
-        truncate_mcmc=bool(cfg.model.truncate_mcmc),
-        no_mcmc_detach=bool(cfg.model.no_mcmc_detach),
-        clamp_futures_grad=bool(cfg.model.clamp_futures_grad),
-        clamp_futures_grad_max_change=float(cfg.model.clamp_futures_grad_max_change),
-        absolute_clamp=float(cfg.model.absolute_clamp),
-        sharpen_predicted_distribution=float(cfg.model.sharpen_predicted_distribution),
-        norm_pred=bool(cfg.model.norm_pred),
-        norm_pred_not_final_step=bool(cfg.model.norm_pred_not_final_step),
-        reconstruction_coeff=float(cfg.model.reconstruction_coeff),
-        soften_target_prob_dist=float(cfg.model.soften_target_prob_dist),
-        loss_on_final_step_only=bool(cfg.model.loss_on_final_step_only),
-        use_context_activations=bool(cfg.model.use_context_activations),
-        max_task_embeddings=int(cfg.model.max_task_embeddings),
-        max_target_positions=int(cfg.model.max_target_positions),
+    model_cfg = cfg.model
+    kwargs: dict[str, Any] = {
+        "model_name": model_cfg.model_name,
+        "revision": model_cfg.revision,
+        "vocab_size": _resolve_dataset_int(model_cfg.vocab_size, dataset, "vocab_size"),
+        "pad_token_id": _resolve_dataset_int(model_cfg.pad_token_id, dataset, "local_pad_id"),
+        "context_dim": model_cfg.context_dim,
+        "hidden_dim": model_cfg.hidden_dim,
+        "denoising_initial_condition": model_cfg.denoising_initial_condition,
+    }
+    int_keys = ("num_layers", "num_heads", "dim_feedforward", "mcmc_num_steps", "max_task_embeddings", "max_target_positions")
+    float_keys = (
+        "dropout", "mcmc_step_size", "gaussian_random_noise_scaling", "langevin_dynamics_noise",
+        "clamp_futures_grad_max_change", "absolute_clamp", "sharpen_predicted_distribution",
+        "reconstruction_coeff", "soften_target_prob_dist",
     )
+    bool_keys = (
+        "mcmc_step_size_learnable", "normalize_initial_condition", "normalize_initial_condition_only_first_step",
+        "truncate_mcmc", "no_mcmc_detach", "clamp_futures_grad", "norm_pred", "norm_pred_not_final_step",
+        "loss_on_final_step_only", "use_context_activations",
+    )
+    for key in int_keys:
+        kwargs[key] = int(model_cfg[key])
+    for key in float_keys:
+        kwargs[key] = float(model_cfg[key])
+    for key in bool_keys:
+        kwargs[key] = bool(model_cfg[key])
+    return GoedelVocabEBT(**kwargs)
 
 
 def _make_optimizer(model: torch.nn.Module, cfg: DictConfig) -> torch.optim.Optimizer:
@@ -477,13 +488,7 @@ def main(cfg: DictConfig) -> None:
             batch = _move_batch(batch, device)
             token_count = int(batch["label_attention_mask"].sum().detach().cpu())
             with torch.autocast(device_type="cuda", dtype=torch.bfloat16, enabled=amp_enabled):
-                loss_dict = model.loss(
-                    batch["context_activations"],
-                    batch[str(cfg.data.label_field)],
-                    context_attention_mask=batch["context_attention_mask"],
-                    label_attention_mask=batch["label_attention_mask"],
-                    task_indices=batch["task_index"],
-                )
+                loss_dict = _batch_loss(model=model, batch=batch, cfg=cfg, learning=True)
                 loss = loss_dict["loss"] / grad_accum_steps
 
             if not torch.isfinite(loss.detach()):
@@ -532,8 +537,7 @@ def main(cfg: DictConfig) -> None:
                     latest_metrics[f"lr_group_{i}"] = float(group["lr"])
 
                 if step == 1 or step % log_every == 0:
-                    with metrics_path.open("a", encoding="utf-8") as handle:
-                        handle.write(json.dumps(latest_metrics, sort_keys=True) + "\n")
+                    _append_jsonl(metrics_path, latest_metrics)
                     if wandb_run is not None:
                         wandb_run.log(_prefixed(latest_metrics, "train"), step=step)
                     print(
@@ -558,8 +562,7 @@ def main(cfg: DictConfig) -> None:
                         max_batches=(None if cfg.validation.max_batches is None else int(cfg.validation.max_batches)),
                     )
                     latest_validation_metrics["step"] = float(step)
-                    with (run_dir / "validation_metrics.jsonl").open("a", encoding="utf-8") as handle:
-                        handle.write(json.dumps(latest_validation_metrics, sort_keys=True) + "\n")
+                    _append_jsonl(run_dir / "validation_metrics.jsonl", latest_validation_metrics)
                     if wandb_run is not None:
                         wandb_run.log(_prefixed(latest_validation_metrics, "validation"), step=step)
                     print(

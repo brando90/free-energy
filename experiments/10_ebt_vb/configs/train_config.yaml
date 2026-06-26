@@ -21,10 +21,8 @@ data:
   splits: null
   families: null
   label_field: labels
-  # EBT NLP s1 uses context_length=256. For this VeriBench trainer this caps
-  # the target Lean sequence length, while Goedel context activations remain
-  # available through cross-attention.
-  max_target_tokens: 256
+  # Full 7k-token run setting used for the latest val/train+test experiments.
+  max_target_tokens: 7000
   max_items: null
   activation_dtype: bf16
   validate_context: true
@@ -32,9 +30,8 @@ data:
   model_revision: null
 
 loader:
-  # EBT NLP s1: batch_size_per_device=32.
-  batch_size: 32
-  max_target_tokens_per_batch: 8192
+  batch_size: 2
+  max_target_tokens_per_batch: 14000
   shuffle: true
   num_workers: 12
   pin_memory: true
@@ -52,11 +49,11 @@ model:
   # to project 4096-d Goedel hidden states into this space.
   hidden_dim: 384
   num_layers: 4
-  num_heads: 6
+  num_heads: 4
   dim_feedforward: 384
   use_context_activations: true
   max_task_embeddings: 4096
-  max_target_positions: 4096
+  max_target_positions: 16384
   dropout: 0.0
   mcmc_num_steps: 2
   mcmc_step_size: 0.5
@@ -97,8 +94,7 @@ optim:
 
 train:
   max_steps: 1000000
-  # EBT NLP s1 single-node script: accumulate_grad_batches=2.
-  grad_accum_steps: 2
+  grad_accum_steps: 32
   amp_bf16: true
   grad_clip_norm: 1.0
   log_every: 5
@@ -115,9 +111,9 @@ wandb:
   enabled: true
   project: free-energy-10-ebt-vb
   entity: null
-  name: null
+  name: ebt_val_7k_4h_bs2_mcmc2_validate_val_1m
   tags: []
 
 hydra:
   run:
-    dir: ${hydra:runtime.cwd}/runs/val_overfit/${now:%Y%m%d_%H%M%S}
+    dir: ${hydra:runtime.cwd}/runs/target7k_4h_bs2_val_1m_${now:%Y%m%d_%H%M%S}

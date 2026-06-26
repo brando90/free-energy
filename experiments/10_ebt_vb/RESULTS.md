@@ -488,3 +488,39 @@ Run directory:
 - `runs/goedel_acts_4096_l1_overfit5_full_zero_finalonly_lr1e4_clip025/20260625_205124`
 
 Conclusion: with real Goedel prompt activations and `4096`-d EBT state, `GoedelVocabEBT` overfits the 5-example validation subset at 5 tokens, 50 tokens, and full target length.
+
+## EBT validation sampling and VeriBench metrics
+
+Note that I compacted + cleaned the veribench repo a lot to ~3k unique tokens (as opposed to ~105k unique tokens!)
+
+Evaluated the two most recent 7k-token, 4-head EBT checkpoints by sampling on the `val` split and scoring generated Lean with `VeriBenchTask.evaluate_lean_output(..., skip_te1=true)`. TE1 was intentionally skipped, so TE1 and `S_tilde` are reported as `0.0` by the evaluator.
+
+Sampling/evaluation command:
+
+```bash
+CUDA_VISIBLE_DEVICES=0 uv run python helper/sample_and_evaluate_ebt_val.py \
+  --workers 16 \
+  --compile-timeout 300 \
+  --out-dir results/ebt_val_sampling_eval
+```
+
+Checkpoints:
+
+- `val_train`: `runs/target7k_4h_bs2_val_1m_20260625_232609/checkpoint_step_9500.pt`
+- `train_test_train`: `runs/target7k_4h_bs2_train_test_1m_20260625_232609/checkpoint_step_10000.pt`
+
+Artifacts:
+
+- `results/ebt_val_sampling_eval/aggregate.csv`
+- `results/ebt_val_sampling_eval/scores.csv`
+- `results/ebt_val_sampling_eval/val_train/samples.jsonl`
+- `results/ebt_val_sampling_eval/train_test_train/samples.jsonl`
+
+Results on `val`:
+
+| Run | Rows | Exact tokens | Token acc | IC1 | IC2 | TE1 | D1 | D2 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| `val_train` | 65 | 65/65 | 1.0000 | 1.0000 | 0.8429 | 0.0000 | 1.0000 | 0.9362 |
+| `train_test_train` | 65 | 0/65 | 0.0551 | 0.5538 | 0.0000 | 0.0000 | 1.0000 | 0.9362 |
+
+Interpretation: `val_train` exactly reproduces the cleaned/anonymized validation target tokens, but only 57/65 compile because the cleaned validation targets themselves are not all compile-valid under the current Lean validation setup. Thus token exactness and Lean compile pass measure different things here.

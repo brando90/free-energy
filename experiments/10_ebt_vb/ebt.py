@@ -69,20 +69,14 @@ class GoedelVocabEBT(nn.Module):
         max_target_positions: int = 4096,
     ) -> None:
         super().__init__()
-        self.model_name = model_name
-        self.revision = revision
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name, revision=revision, trust_remote_code=True)
-        self.config = AutoConfig.from_pretrained(model_name, revision=revision, trust_remote_code=True)
+        tokenizer = AutoTokenizer.from_pretrained(model_name, revision=revision, trust_remote_code=True)
+        config = AutoConfig.from_pretrained(model_name, revision=revision, trust_remote_code=True)
 
-        self.vocab_size = int(vocab_size or len(self.tokenizer))
-        self.hidden_dim = int(hidden_dim or getattr(self.config, "hidden_size", 4096))
+        self.vocab_size = int(vocab_size or len(tokenizer))
+        self.hidden_dim = int(hidden_dim or getattr(config, "hidden_size", 4096))
         self.context_dim = int(context_dim or self.hidden_dim)
         if pad_token_id is None:
-            pad_token_id = (
-                self.tokenizer.pad_token_id
-                if self.tokenizer.pad_token_id is not None
-                else self.tokenizer.eos_token_id
-            )
+            pad_token_id = tokenizer.pad_token_id if tokenizer.pad_token_id is not None else tokenizer.eos_token_id
         self.pad_token_id = int(pad_token_id)
         self.mcmc_num_steps = int(mcmc_num_steps)
         self.gaussian_random_noise_scaling = float(gaussian_random_noise_scaling)
@@ -168,6 +162,26 @@ class GoedelVocabEBT(nn.Module):
         """
         return torch.triu(torch.ones(target_len, target_len, device=device, dtype=torch.bool), diagonal=1)
 
+    def _memory(
+        self,
+        context_activations: torch.Tensor,
+        target_embeddings: torch.Tensor,
+        context_attention_mask: torch.Tensor | None,
+        task_indices: torch.Tensor | None,
+    ) -> tuple[torch.Tensor, torch.Tensor | None]:
+        if self.use_context_activations:
+            memory = context_activations.to(device=target_embeddings.device, dtype=target_embeddings.dtype)
+            if memory.shape[-1] != self.context_dim:
+                raise ValueError(f"Expected context dimension {self.context_dim}, got {memory.shape[-1]}")
+            memory_mask = ~context_attention_mask.bool() if context_attention_mask is not None else None
+            return self.context_to_hidden(memory), memory_mask
+
+        if task_indices is None:
+            raise ValueError("task_indices are required when use_context_activations=False")
+        task_indices = task_indices.to(device=target_embeddings.device, dtype=torch.long)
+        memory = self.task_embeddings(task_indices).to(dtype=target_embeddings.dtype).unsqueeze(1)
+        return memory, None
+
     def energy(
         self,
         x: torch.Tensor,
@@ -188,26 +202,23 @@ class GoedelVocabEBT(nn.Module):
         target_embeddings = target_embeddings + self.target_position_embeddings(positions).to(
             dtype=target_embeddings.dtype
         ).unsqueeze(0)
-        if self.use_context_activations:
-            memory = context_activations.to(device=target_embeddings.device, dtype=target_embeddings.dtype)
-            if memory.shape[-1] != self.context_dim:
-                raise ValueError(f"Expected context dimension {self.context_dim}, got {memory.shape[-1]}")
-            memory = self.context_to_hidden(memory)
-            memory_key_padding_mask = ~context_attention_mask.bool() if context_attention_mask is not None else None
-        else:
-            if task_indices is None:
-                raise ValueError("task_indices are required when use_context_activations=False")
-            task_indices = task_indices.to(device=target_embeddings.device, dtype=torch.long)
-            memory = self.task_embeddings(task_indices).to(dtype=target_embeddings.dtype).unsqueeze(1)
-            memory_key_padding_mask = None
+
+        memory, memory_key_padding_mask = self._memory(
+            context_activations,
+            target_embeddings,
+            context_attention_mask,
+            task_indices,
+        )
         tgt_len = int(target_embeddings.shape[1])
         target_self_attention_mask = self.target_causal_mask(tgt_len, device=target_embeddings.device)
+        target_key_padding_mask = ~decoder_attention_mask.bool() if decoder_attention_mask is not None else None
+
         with torch.nn.attention.sdpa_kernel(torch.nn.attention.SDPBackend.MATH):
             hidden = self.downstream_model(
                 tgt=target_embeddings,
                 memory=memory,
                 tgt_mask=target_self_attention_mask,
-                tgt_key_padding_mask=(~decoder_attention_mask.bool() if decoder_attention_mask is not None else None),
+                tgt_key_padding_mask=target_key_padding_mask,
                 memory_key_padding_mask=memory_key_padding_mask,
             )
         token_energy = self.energy_head(hidden).squeeze(-1)

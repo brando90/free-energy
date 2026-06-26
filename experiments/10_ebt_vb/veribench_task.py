@@ -7,17 +7,17 @@ its prompt token count, Goedel hidden states, and target Lean proof tokens.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+import json
 import re
+import subprocess
+import sys
+import tempfile
+from dataclasses import dataclass
 from pathlib import Path
+from statistics import median
 from typing import Any, Iterator
 
-import json
-import tempfile
 import torch
-import subprocess
-from statistics import median
-import sys
 from safetensors.torch import load_file
 
 try:
@@ -27,12 +27,7 @@ except Exception:  # pragma: no cover - fallback when optional module is unavail
 
 
 def _read_jsonl(path: Path) -> list[dict[str, Any]]:
-    rows: list[dict[str, Any]] = []
-    with path.open("r", encoding="utf-8") as handle:
-        for line in handle:
-            if line.strip():
-                rows.append(json.loads(line))
-    return rows
+    return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
 
 
 def _read_vocab(path: Path) -> dict[str, Any]:
@@ -85,20 +80,20 @@ def _count_examples(source: str) -> int:
     return len(EXAMPLE_DECL_RE.findall(source))
 
 
-def _extract_theorem_blocks(source: str) -> list[str]:
-    return [
-        block
-        for block in re.split(r"(?=^(?:noncomputable\s+)?(?:@\[[^\]]*\]\s*)?theorem\s+)", source, flags=re.MULTILINE)
-        if THEOREM_DECL_RE.match(block)
-    ]
+def _extract_theorem_blocks(source: str) -> list[tuple[str, str]]:
+    blocks: list[tuple[str, str]] = []
+    for block in re.split(r"(?=^(?:noncomputable\s+)?(?:@\[[^\]]*\]\s*)?theorem\s+)", source, flags=re.MULTILINE):
+        match = THEOREM_DECL_RE.match(block)
+        if match:
+            blocks.append((match.group(1), block))
+    return blocks
 
 
 def _analyze_theorems(source: str) -> tuple[int, int, int, list[str]]:
     blocks = _extract_theorem_blocks(source)
-    names = [THEOREM_DECL_RE.match(block).group(1) for block in blocks if THEOREM_DECL_RE.match(block)]  # type: ignore[union-attr]
     total = len(blocks)
-    sorry_count = sum(1 for block in blocks if SORRY_ADMIT_RE.search(block))
-    return total, total - sorry_count, sorry_count, names
+    sorry_count = sum(1 for _, block in blocks if SORRY_ADMIT_RE.search(block))
+    return total, total - sorry_count, sorry_count, [name for name, _ in blocks]
 
 
 def _score_examples(source: str, *, compile_success: bool, compile_stderr: str) -> tuple[float, dict[str, Any]]:
@@ -158,6 +153,31 @@ def _compile_lean_file(
         return False, "", "timeout", -1
     except FileNotFoundError:
         return False, "", "lake not found", -1
+
+
+def _compile_detail(
+    path: Path,
+    *,
+    lake_dir: Path,
+    timeout: int,
+) -> tuple[bool, str, str, int, dict[str, Any]]:
+    success, stdout, stderr, return_code = _compile_lean_file(str(path), lake_dir=lake_dir, timeout=timeout)
+    return success, stdout, stderr, return_code, {
+        "success": success,
+        "return_code": return_code,
+        "stderr": stderr[:1024],
+        "stdout": stdout[:1024],
+    }
+
+
+def _score_source(source: str, *, compile_success: bool, compile_stderr: str) -> tuple[float, dict[str, Any], float, dict[str, Any]]:
+    examples_score, examples_info = _score_examples(
+        source,
+        compile_success=compile_success,
+        compile_stderr=compile_stderr,
+    )
+    theorem_score, theorem_info = _score_theorems(source, compile_success=compile_success)
+    return examples_score, examples_info, theorem_score, theorem_info
 
 
 def _judge_equivalence_te1(candidate_src: str, gold_src: str, model: str = "claude-opus-4-20250514", repeats: int = 1) -> tuple[float, dict[str, Any]]:
@@ -282,20 +302,25 @@ class VeriBenchTask:
             candidate_path = Path(work_dir) / f"{self.task_name.replace('/', '_')}.lean"
             candidate_path.write_text(source if source else "", encoding="utf-8")
 
-            candidate_compile = _compile_lean_file(candidate_path, lake_dir=lake_dir, timeout=compile_timeout)
-            candidate_stdout = candidate_compile[1]
-            candidate_stderr = candidate_compile[2]
-            candidate_success = candidate_compile[0]
-            candidate_return_code = candidate_compile[3]
-
-            ic1_score, ic1_info = _score_examples(source, compile_success=candidate_success, compile_stderr=candidate_stderr)
-            ic2_score, ic2_info = _score_theorems(source, compile_success=candidate_success)
+            candidate_success, _, candidate_stderr, _, candidate_detail = _compile_detail(
+                candidate_path,
+                lake_dir=lake_dir,
+                timeout=compile_timeout,
+            )
+            ic1_score, ic1_info, ic2_score, ic2_info = _score_source(
+                source,
+                compile_success=candidate_success,
+                compile_stderr=candidate_stderr,
+            )
 
             gold_path = self.resolve_gold_lean_path(veribench_root=veribench_root)
-            gold_stdout = ""
-            gold_stderr = ""
-            gold_success = False
-            gold_return_code = None
+            gold_detail: dict[str, Any] = {
+                "path": None,
+                "success": None,
+                "return_code": None,
+                "stderr": "",
+                "stdout": "",
+            }
             if gold_path is None:
                 d1_score = 0.0
                 d2_score = 0.0
@@ -305,20 +330,18 @@ class VeriBenchTask:
                 te1_info: dict[str, Any] = {"reason": "gold_file_missing", "skipped": True}
             else:
                 gold_source = _read_text_file(gold_path) or ""
-                gold_compile = _compile_lean_file(
-                    str(gold_path),
+                gold_success, _, gold_stderr, _, gold_detail = _compile_detail(
+                    gold_path,
                     lake_dir=lake_dir,
                     timeout=compile_timeout,
                 )
-                gold_success = gold_compile[0]
-                gold_stdout = gold_compile[1]
-                gold_stderr = gold_compile[2]
-                gold_return_code = gold_compile[3]
+                gold_detail["path"] = str(gold_path)
 
-                d1_score, d1_info = _score_examples(
-                    gold_source, compile_success=gold_success, compile_stderr=gold_stderr
+                d1_score, d1_info, d2_score, d2_info = _score_source(
+                    gold_source,
+                    compile_success=gold_success,
+                    compile_stderr=gold_stderr,
                 )
-                d2_score, d2_info = _score_theorems(gold_source, compile_success=gold_success)
 
                 if skip_te1:
                     te1_score = 0.0
@@ -347,19 +370,8 @@ class VeriBenchTask:
                 "D1": d1_info,
                 "D2": d2_info,
                 "compile": {
-                    "candidate": {
-                        "success": candidate_success,
-                        "return_code": candidate_return_code,
-                        "stderr": candidate_stderr[:1024],
-                        "stdout": candidate_stdout[:1024],
-                    },
-                    "gold": {
-                        "path": str(gold_path) if gold_path is not None else None,
-                        "success": gold_success if gold_path is not None else None,
-                        "return_code": gold_return_code if gold_path is not None else None,
-                        "stderr": gold_stderr[:1024] if gold_path is not None else "",
-                        "stdout": gold_stdout[:1024] if gold_path is not None else "",
-                    },
+                    "candidate": candidate_detail,
+                    "gold": gold_detail,
                 },
             },
         }
