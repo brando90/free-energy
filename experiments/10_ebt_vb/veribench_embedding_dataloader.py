@@ -70,7 +70,7 @@ class VeriBenchEmbeddingDataset(Dataset[dict[str, Any]]):
         self,
         *,
         data_dir: Path = DEFAULT_DATA_DIR,
-        split: str | None = None,
+        split: str | list[str] | tuple[str, ...] | None = None,
         families: list[str] | tuple[str, ...] | str | None = None,
         max_items: int | None = None,
         max_target_tokens: int | None = None,
@@ -99,13 +99,19 @@ class VeriBenchEmbeddingDataset(Dataset[dict[str, Any]]):
     def _load_tasks(
         self,
         *,
-        split: str | None,
+        split: str | list[str] | tuple[str, ...] | None,
         families: list[str] | tuple[str, ...] | str | None,
         max_items: int | None,
         activation_dtype: str,
         validate_context: bool,
     ) -> list[VeriBenchTask]:
         tasks: list[VeriBenchTask] = []
+        split_filter: set[str] | None = None
+        if split is not None:
+            if isinstance(split, str):
+                split_filter = {split}
+            else:
+                split_filter = {str(item) for item in split}
         family_filter: set[str] | None = None
         if families:
             if isinstance(families, str):
@@ -113,10 +119,12 @@ class VeriBenchEmbeddingDataset(Dataset[dict[str, Any]]):
             else:
                 family_filter = {str(family) for family in families}
         for task in VeriBenchTask.iter_tasks(
-            split=split,
+            split=None,
             data_dir=self.data_dir,
             activation_dtype=activation_dtype,
         ):
+            if split_filter is not None and str(task.split) not in split_filter:
+                continue
             if family_filter is not None and str(task.family or "") not in family_filter:
                 continue
             if not task.context_activations_path.exists():
@@ -148,6 +156,7 @@ class VeriBenchEmbeddingDataset(Dataset[dict[str, Any]]):
 
         return {
             "task_name": task.task_name,
+            "task_index": torch.tensor(index, dtype=torch.long),
             "split": task.split,
             "family": task.family or "",
             "context_activations": sample["context_activations"],
@@ -195,6 +204,7 @@ def collate_veribench_embedding_samples(samples: list[dict[str, Any]]) -> dict[s
 
     return {
         "task_name": [sample["task_name"] for sample in samples],
+        "task_index": torch.stack([sample["task_index"] for sample in samples]),
         "split": [sample["split"] for sample in samples],
         "family": [sample["family"] for sample in samples],
         "context_activations": context,

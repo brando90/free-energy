@@ -16,7 +16,15 @@ dependencies = [
   "omegaconf>=2.3,<3",
   "numpy>=1.26",
   "safetensors>=0.4",
-  "tqdm>=4.66"
+  "tqdm>=4.66",
+  "pytorch-lightning>=2.6.5",
+  "torchmetrics>=1.9.0",
+  "torchvision>=0.27.1",
+  "diffusers>=0.38.0",
+  "pillow>=12.2.0",
+  "tree-sitter==0.20.4",
+  "tree-sitter-languages>=1.10.2",
+  "wandb>=0.17,<1",
 ]
 
 [project.optional-dependencies]

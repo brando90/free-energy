@@ -1,6 +1,8 @@
 {
   "candidate_rows": 689,
   "exclude_zero_context": true,
+  "old_target_tokens": 616998,
+  "old_vocab_size": 3574,
   "out_dir": "/lfs/skampere1/0/eshaanb/free-energy/experiments/10_ebt_vb/data/context_gold",
   "requested_splits": [
     "train",
@@ -226,13 +228,19 @@
   "target_cleaning": {
     "comments_removed": true,
     "empty_lines_removed": true,
-    "keeps_newlines_between_nonempty_lines": true
+    "import_std_removed": false,
+    "imports_preserved": true,
+    "keeps_newlines_between_nonempty_lines": true,
+    "namespaces_unwrapped": true,
+    "unused_variable_linter_option_removed": true,
+    "user_identifiers_anonymized": true
   },
+  "target_tokens": 616863,
   "tokenizer": "Goedel-LM/Goedel-Prover-V2-8B",
   "usable_by_split": {
     "test": 74,
     "train": 550,
     "val": 65
   },
-  "vocab_size": 6724
+  "vocab_size": 3565
 }

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Hydra trainer for overfitting the VeriBench validation split with EBT."""
+"""Hydra trainer for VeriBench EBT runs."""
 
 from __future__ import annotations
 
@@ -126,13 +126,21 @@ class TargetTokenBatchSampler(Sampler[list[int]]):
         return count + int(current_size > 0)
 
 
-def _make_loader(cfg: DictConfig) -> DataLoader[dict[str, Any]]:
+def _make_loader(
+    cfg: DictConfig,
+    *,
+    split: str | list[str] | None = None,
+    shuffle: bool | None = None,
+    max_items: int | None = None,
+) -> DataLoader[dict[str, Any]]:
     families = _optional_container(cfg.data.families)
+    configured_splits = _optional_container(cfg.data.get("splits")) if "splits" in cfg.data else None
+    selected_split = split if split is not None else (configured_splits if configured_splits is not None else cfg.data.split)
     dataset = VeriBenchEmbeddingDataset(
         data_dir=_as_path(cfg.data.data_dir),
-        split=cfg.data.split,
+        split=selected_split,
         families=families,
-        max_items=cfg.data.max_items,
+        max_items=cfg.data.max_items if max_items is None else max_items,
         max_target_tokens=cfg.data.max_target_tokens,
         activation_dtype=cfg.data.activation_dtype,
         model_name=cfg.data.model_name or cfg.model.model_name,
@@ -155,16 +163,105 @@ def _make_loader(cfg: DictConfig) -> DataLoader[dict[str, Any]]:
             dataset,
             max_items_per_batch=int(cfg.loader.batch_size),
             max_target_tokens_per_batch=int(cfg.loader.max_target_tokens_per_batch),
-            shuffle=bool(cfg.loader.shuffle),
+            shuffle=bool(cfg.loader.shuffle) if shuffle is None else bool(shuffle),
             seed=int(cfg.seed),
         )
     else:
         loader_kwargs["batch_size"] = int(cfg.loader.batch_size)
-        loader_kwargs["shuffle"] = bool(cfg.loader.shuffle)
+        loader_kwargs["shuffle"] = bool(cfg.loader.shuffle) if shuffle is None else bool(shuffle)
         loader_kwargs["drop_last"] = bool(cfg.loader.drop_last)
     if int(cfg.loader.num_workers) > 0:
         loader_kwargs["prefetch_factor"] = int(cfg.loader.prefetch_factor)
     return DataLoader(**loader_kwargs)
+
+
+def _init_wandb(cfg: DictConfig, run_dir: Path, dataset_size: int, validation_size: int) -> Any:
+    if not bool(cfg.wandb.enabled):
+        return None
+    try:
+        import wandb
+    except Exception as exc:
+        print(f"wandb_unavailable={exc!r}", flush=True)
+        return None
+    run = wandb.init(
+        project=str(cfg.wandb.project),
+        entity=(None if cfg.wandb.entity is None else str(cfg.wandb.entity)),
+        name=(None if cfg.wandb.name is None else str(cfg.wandb.name)),
+        dir=str(run_dir),
+        config={
+            **OmegaConf.to_container(cfg, resolve=True),
+            "dataset_size": dataset_size,
+            "validation_size": validation_size,
+        },
+        tags=list(_optional_container(cfg.wandb.tags) or []),
+    )
+    return run
+
+
+def _prefixed(metrics: dict[str, float], prefix: str) -> dict[str, float]:
+    return {f"{prefix}/{key}": value for key, value in metrics.items()}
+
+
+def _evaluate(
+    *,
+    model: torch.nn.Module,
+    loader: DataLoader[dict[str, Any]],
+    cfg: DictConfig,
+    device: torch.device,
+    amp_enabled: bool,
+    max_batches: int | None = None,
+) -> dict[str, float]:
+    was_training = model.training
+    model.eval()
+    totals: dict[str, float] = {
+        "loss": 0.0,
+        "initial_loss": 0.0,
+        "final_step_loss": 0.0,
+        "perplexity": 0.0,
+        "final_energy": 0.0,
+        "final_token_accuracy": 0.0,
+    }
+    exact_total = 0.0
+    total_tokens = 0
+    total_rows = 0
+    batches = 0
+    start = time.perf_counter()
+    for batch in loader:
+        batch = _move_batch(batch, device)
+        tokens = int(batch["label_attention_mask"].sum().detach().cpu())
+        rows = int(batch["label_attention_mask"].shape[0])
+        with torch.autocast(device_type="cuda", dtype=torch.bfloat16, enabled=amp_enabled):
+            loss_dict = model.loss(
+                batch["context_activations"],
+                batch[str(cfg.data.label_field)],
+                context_attention_mask=batch["context_attention_mask"],
+                label_attention_mask=batch["label_attention_mask"],
+                task_indices=batch["task_index"],
+                learning=False,
+            )
+        weight = max(tokens, 1)
+        for key in totals:
+            totals[key] += _metric_value(loss_dict[key]) * weight
+        exact_total += _metric_value(loss_dict["final_exact_accuracy"]) * rows
+        total_tokens += tokens
+        total_rows += rows
+        batches += 1
+        if max_batches is not None and batches >= max_batches:
+            break
+    denom = max(total_tokens, 1)
+    metrics = {key: value / denom for key, value in totals.items()}
+    metrics["final_exact_accuracy"] = exact_total / max(total_rows, 1)
+    metrics.update(
+        {
+            "tokens": float(total_tokens),
+            "rows": float(total_rows),
+            "batches": float(batches),
+            "elapsed_sec": time.perf_counter() - start,
+        }
+    )
+    if was_training:
+        model.train()
+    return metrics
 
 
 def _resolve_dataset_int(value: Any, dataset: VeriBenchEmbeddingDataset, key: str) -> int | None:
@@ -205,6 +302,10 @@ def _make_model(cfg: DictConfig, dataset: VeriBenchEmbeddingDataset) -> GoedelVo
         norm_pred_not_final_step=bool(cfg.model.norm_pred_not_final_step),
         reconstruction_coeff=float(cfg.model.reconstruction_coeff),
         soften_target_prob_dist=float(cfg.model.soften_target_prob_dist),
+        loss_on_final_step_only=bool(cfg.model.loss_on_final_step_only),
+        use_context_activations=bool(cfg.model.use_context_activations),
+        max_task_embeddings=int(cfg.model.max_task_embeddings),
+        max_target_positions=int(cfg.model.max_target_positions),
     )
 
 
@@ -312,8 +413,11 @@ def _prune_checkpoints(run_dir: Path, keep: int) -> None:
 
 @hydra.main(version_base=None, config_path="configs", config_name="train_config")
 def main(cfg: DictConfig) -> None:
-    if cfg.data.split != "val" and not bool(cfg.allow_non_val_split):
-        raise ValueError("This trainer is configured for validation overfit only; set data.split=val")
+    configured_splits = _optional_container(cfg.data.get("splits")) if "splits" in cfg.data else None
+    if configured_splits is None and cfg.data.split != "val" and not bool(cfg.allow_non_val_split):
+        raise ValueError("This trainer defaults to validation overfit only; set allow_non_val_split=true")
+    if configured_splits is not None and any(split != "val" for split in configured_splits) and not bool(cfg.allow_non_val_split):
+        raise ValueError("Non-val training splits require allow_non_val_split=true")
 
     if not torch.cuda.is_available() and not bool(cfg.allow_cpu):
         raise RuntimeError("CUDA is required by default. Set allow_cpu=true only for debugging.")
@@ -329,9 +433,17 @@ def main(cfg: DictConfig) -> None:
 
     loader = _make_loader(cfg)
     dataset = loader.dataset
+    validation_loader = _make_loader(
+        cfg,
+        split=str(cfg.validation.split),
+        shuffle=False,
+        max_items=(None if cfg.validation.max_items is None else int(cfg.validation.max_items)),
+    )
+    validation_dataset = validation_loader.dataset
     print(f"run_dir={run_dir}")
     print(f"device={device}")
-    print(f"dataset_size={len(dataset)} split={cfg.data.split} families={cfg.data.families}")
+    print(f"dataset_size={len(dataset)} split={configured_splits or cfg.data.split} families={cfg.data.families}")
+    print(f"validation_size={len(validation_dataset)} split={cfg.validation.split}")
 
     model = _make_model(cfg, dataset).to(device)
     if bool(cfg.compile_model):
@@ -344,7 +456,9 @@ def main(cfg: DictConfig) -> None:
     grad_accum_steps = max(1, int(cfg.train.grad_accum_steps))
     log_every = max(1, int(cfg.train.log_every))
     save_every = max(1, int(cfg.train.save_every))
+    val_every = max(1, int(cfg.validation.every_steps))
     amp_enabled = bool(cfg.train.amp_bf16) and device.type == "cuda"
+    wandb_run = _init_wandb(cfg, run_dir, len(dataset), len(validation_dataset))
 
     step = 0
     accum = 0
@@ -355,6 +469,7 @@ def main(cfg: DictConfig) -> None:
     running_tokens = 0
     running_batches = 0
     latest_metrics: dict[str, float] = {}
+    latest_validation_metrics: dict[str, float] = {}
 
     while step < max_steps:
         for batch in loader:
@@ -367,6 +482,7 @@ def main(cfg: DictConfig) -> None:
                     batch[str(cfg.data.label_field)],
                     context_attention_mask=batch["context_attention_mask"],
                     label_attention_mask=batch["label_attention_mask"],
+                    task_indices=batch["task_index"],
                 )
                 loss = loss_dict["loss"] / grad_accum_steps
 
@@ -401,6 +517,8 @@ def main(cfg: DictConfig) -> None:
                     "final_step_loss": _metric_value(loss_dict["final_step_loss"]),
                     "perplexity": _metric_value(loss_dict["perplexity"]),
                     "final_energy": _metric_value(loss_dict["final_energy"]),
+                    "final_token_accuracy": _metric_value(loss_dict["final_token_accuracy"]),
+                    "final_exact_accuracy": _metric_value(loss_dict["final_exact_accuracy"]),
                     "grad_norm": grad_norm,
                     "tokens": float(running_tokens),
                     "tokens_per_sec": running_tokens / max(now - last_log, 1e-9),
@@ -416,8 +534,11 @@ def main(cfg: DictConfig) -> None:
                 if step == 1 or step % log_every == 0:
                     with metrics_path.open("a", encoding="utf-8") as handle:
                         handle.write(json.dumps(latest_metrics, sort_keys=True) + "\n")
+                    if wandb_run is not None:
+                        wandb_run.log(_prefixed(latest_metrics, "train"), step=step)
                     print(
                         "step={step} loss={loss:.4f} final={final_step_loss:.4f} "
+                        "acc={final_token_accuracy:.3f} exact={final_exact_accuracy:.3f} "
                         "ppl={perplexity:.3f} tok/s={tokens_per_sec:.1f} "
                         "mem={cuda_max_mem_gb:.2f}GB".format(**latest_metrics),
                         flush=True,
@@ -426,6 +547,27 @@ def main(cfg: DictConfig) -> None:
                     running_tokens = 0
                     running_batches = 0
                     last_log = now
+
+                if step == 1 or step % val_every == 0:
+                    latest_validation_metrics = _evaluate(
+                        model=model,
+                        loader=validation_loader,
+                        cfg=cfg,
+                        device=device,
+                        amp_enabled=amp_enabled,
+                        max_batches=(None if cfg.validation.max_batches is None else int(cfg.validation.max_batches)),
+                    )
+                    latest_validation_metrics["step"] = float(step)
+                    with (run_dir / "validation_metrics.jsonl").open("a", encoding="utf-8") as handle:
+                        handle.write(json.dumps(latest_validation_metrics, sort_keys=True) + "\n")
+                    if wandb_run is not None:
+                        wandb_run.log(_prefixed(latest_validation_metrics, "validation"), step=step)
+                    print(
+                        "validation step={step:.0f} loss={loss:.4f} "
+                        "acc={final_token_accuracy:.3f} exact={final_exact_accuracy:.3f} "
+                        "rows={rows:.0f}".format(**latest_validation_metrics),
+                        flush=True,
+                    )
 
                 if step % save_every == 0:
                     _save_checkpoint(
@@ -452,13 +594,18 @@ def main(cfg: DictConfig) -> None:
     summary = {
         "step": step,
         "dataset_size": len(dataset),
-        "split": cfg.data.split,
+        "validation_dataset_size": len(validation_dataset),
+        "split": configured_splits or cfg.data.split,
+        "validation_split": cfg.validation.split,
         "families": _optional_container(cfg.data.families),
         "latest_metrics": latest_metrics,
+        "latest_validation_metrics": latest_validation_metrics,
         "run_dir": str(run_dir),
     }
     (run_dir / "summary.json").write_text(json.dumps(summary, indent=2, sort_keys=True), encoding="utf-8")
     print(json.dumps(summary, indent=2, sort_keys=True))
+    if wandb_run is not None:
+        wandb_run.finish()
 
 
 if __name__ == "__main__":

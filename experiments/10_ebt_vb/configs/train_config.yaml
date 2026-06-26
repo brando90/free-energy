@@ -18,6 +18,7 @@ ebt_reference:
 data:
   data_dir: ${hydra:runtime.cwd}/data/context_gold
   split: val
+  splits: null
   families: null
   label_field: labels
   # EBT NLP s1 uses context_length=256. For this VeriBench trainer this caps
@@ -47,11 +48,15 @@ model:
   vocab_size: dataset
   pad_token_id: dataset
   context_dim: 4096
-  # EBT NLP s1 uses model_size=xxs: 6 layers, 6 heads, embedding_dim=384.
-  hidden_dim: 4096
+  # Default sanity profile uses a 384-d EBT state. Set use_context_activations=true
+  # to project 4096-d Goedel hidden states into this space.
+  hidden_dim: 384
   num_layers: 4
   num_heads: 6
-  dim_feedforward: 8192
+  dim_feedforward: 384
+  use_context_activations: true
+  max_task_embeddings: 4096
+  max_target_positions: 4096
   dropout: 0.0
   mcmc_num_steps: 2
   mcmc_step_size: 0.5
@@ -64,6 +69,7 @@ model:
   clamp_futures_grad_max_change: 9.0
   reconstruction_coeff: 1.0
   soften_target_prob_dist: 0.0
+  loss_on_final_step_only: false
 
   # normalization initial conditions
   denoising_initial_condition: random_noise
@@ -98,6 +104,19 @@ train:
   log_every: 5
   save_every: 100
   keep_last_checkpoints: 3
+
+validation:
+  split: val
+  every_steps: 100
+  max_items: null
+  max_batches: null
+
+wandb:
+  enabled: true
+  project: free-energy-10-ebt-vb
+  entity: null
+  name: null
+  tags: []
 
 hydra:
   run:
