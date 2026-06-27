@@ -5,12 +5,13 @@ from __future__ import annotations
 
 import argparse
 import json
+import random
 from pathlib import Path
 from typing import Any
 
 import torch
 from safetensors import safe_open
-from torch.utils.data import DataLoader, Dataset
+from torch.utils.data import DataLoader, Dataset, Sampler
 from transformers import AutoTokenizer
 
 from veribench_task import DEFAULT_DATA_DIR, VeriBenchTask
@@ -147,7 +148,6 @@ class VeriBenchEmbeddingDataset(Dataset[dict[str, Any]]):
 
         return {
             "task_name": task.task_name,
-            "task_index": torch.tensor(index, dtype=torch.long),
             "split": task.split,
             "family": task.family or "",
             "context_activations": sample["context_activations"],
@@ -158,6 +158,61 @@ class VeriBenchEmbeddingDataset(Dataset[dict[str, Any]]):
             "context_token_count": sample["context_token_count"],
             "target_token_count": torch.tensor(labels.shape[0], dtype=torch.long),
         }
+
+
+class TargetTokenBatchSampler(Sampler[list[int]]):
+    """Groups examples by target length under a token budget."""
+
+    def __init__(
+        self,
+        dataset: VeriBenchEmbeddingDataset,
+        *,
+        max_items_per_batch: int,
+        max_target_tokens_per_batch: int,
+        shuffle: bool,
+        seed: int,
+    ) -> None:
+        cap = dataset.max_target_tokens
+        self.lengths = [
+            min(int(task.target_tokens) + 1, int(cap)) if cap is not None else int(task.target_tokens) + 1
+            for task in dataset.tasks
+        ]
+        self.max_items_per_batch = int(max_items_per_batch)
+        self.max_target_tokens_per_batch = int(max_target_tokens_per_batch)
+        self.shuffle = bool(shuffle)
+        self.seed = int(seed)
+        self.epoch = 0
+
+    def __iter__(self):
+        batches = self._batches()
+        if self.shuffle:
+            random.Random(self.seed + self.epoch).shuffle(batches)
+        self.epoch += 1
+        yield from batches
+
+    def __len__(self) -> int:
+        return len(self._batches())
+
+    def _batches(self) -> list[list[int]]:
+        batches: list[list[int]] = []
+        current: list[int] = []
+        current_max = 0
+        for idx in sorted(range(len(self.lengths)), key=lambda i: self.lengths[i]):
+            length = self.lengths[idx]
+            next_size = len(current) + 1
+            next_max = max(current_max, length)
+            if current and (
+                next_size > self.max_items_per_batch
+                or next_size * next_max > self.max_target_tokens_per_batch
+            ):
+                batches.append(current)
+                current = []
+                current_max = 0
+            current.append(idx)
+            current_max = max(current_max, length)
+        if current:
+            batches.append(current)
+        return batches
 
 
 def collate_veribench_embedding_samples(samples: list[dict[str, Any]]) -> dict[str, Any]:
@@ -199,7 +254,6 @@ def collate_veribench_embedding_samples(samples: list[dict[str, Any]]) -> dict[s
 
     return {
         "task_name": [sample["task_name"] for sample in samples],
-        "task_index": torch.stack([sample["task_index"] for sample in samples]),
         "split": [sample["split"] for sample in samples],
         "family": [sample["family"] for sample in samples],
         "context_activations": context,
@@ -220,16 +274,36 @@ def make_veribench_embedding_dataloader(
     batch_size: int = 1,
     shuffle: bool = False,
     num_workers: int = 0,
+    max_target_tokens_per_batch: int | None = None,
+    seed: int = 0,
+    pin_memory: bool = False,
+    persistent_workers: bool = False,
+    prefetch_factor: int | None = None,
+    drop_last: bool = False,
     **dataset_kwargs: Any,
 ) -> DataLoader[dict[str, Any]]:
     dataset = VeriBenchEmbeddingDataset(**dataset_kwargs)
-    return DataLoader(
-        dataset,
-        batch_size=batch_size,
-        shuffle=shuffle,
-        num_workers=num_workers,
-        collate_fn=collate_veribench_embedding_samples,
-    )
+    persistent_workers = bool(persistent_workers) and int(num_workers) > 0
+    loader_kwargs: dict[str, Any] = {
+        "dataset": dataset,
+        "num_workers": int(num_workers),
+        "pin_memory": bool(pin_memory),
+        "persistent_workers": persistent_workers,
+        "collate_fn": collate_veribench_embedding_samples,
+    }
+    if max_target_tokens_per_batch is None:
+        loader_kwargs.update(batch_size=int(batch_size), shuffle=bool(shuffle), drop_last=bool(drop_last))
+    else:
+        loader_kwargs["batch_sampler"] = TargetTokenBatchSampler(
+            dataset,
+            max_items_per_batch=int(batch_size),
+            max_target_tokens_per_batch=int(max_target_tokens_per_batch),
+            shuffle=bool(shuffle),
+            seed=int(seed),
+        )
+    if int(num_workers) > 0 and prefetch_factor is not None:
+        loader_kwargs["prefetch_factor"] = int(prefetch_factor)
+    return DataLoader(**loader_kwargs)
 
 
 def main() -> None:

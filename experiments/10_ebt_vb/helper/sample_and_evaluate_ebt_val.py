@@ -101,8 +101,6 @@ def build_model(cfg: Any, dataset: VeriBenchEmbeddingDataset, device: torch.devi
         reconstruction_coeff=float(cfg.model.reconstruction_coeff),
         soften_target_prob_dist=float(cfg.model.soften_target_prob_dist),
         loss_on_final_step_only=bool(cfg.model.loss_on_final_step_only),
-        use_context_activations=bool(cfg.model.use_context_activations),
-        max_task_embeddings=int(cfg.model.max_task_embeddings),
         max_target_positions=int(cfg.model.max_target_positions),
     ).to(device)
     return model
@@ -200,7 +198,6 @@ def sample_run(
                         batch["context_activations"],
                         target_len=target_len,
                         context_attention_mask=batch["context_attention_mask"],
-                        task_indices=batch["task_index"],
                     )
             pred_batch = sampled["token_ids"].detach().cpu()
             labels = batch["labels"].detach().cpu()

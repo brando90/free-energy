@@ -15,12 +15,12 @@ import numpy as np
 import torch
 from hydra.core.hydra_config import HydraConfig
 from omegaconf import DictConfig, OmegaConf
-from torch.utils.data import DataLoader, Sampler
+from torch.utils.data import DataLoader
 
 from ebt import GoedelVocabEBT
 from veribench_embedding_dataloader import (
     VeriBenchEmbeddingDataset,
-    collate_veribench_embedding_samples,
+    make_veribench_embedding_dataloader,
 )
 
 TOKEN_WEIGHTED_METRICS = (
@@ -66,75 +66,6 @@ def _optional_container(value: Any) -> Any:
     return OmegaConf.to_container(value, resolve=True)
 
 
-class TargetTokenBatchSampler(Sampler[list[int]]):
-    """Groups examples by target length under a token budget."""
-
-    def __init__(
-        self,
-        dataset: VeriBenchEmbeddingDataset,
-        *,
-        max_items_per_batch: int,
-        max_target_tokens_per_batch: int,
-        shuffle: bool,
-        seed: int,
-    ) -> None:
-        cap = dataset.max_target_tokens
-        self.lengths = [
-            min(int(task.target_tokens) + 1, int(cap)) if cap is not None else int(task.target_tokens) + 1
-            for task in dataset.tasks
-        ]
-        self.max_items_per_batch = int(max_items_per_batch)
-        self.max_target_tokens_per_batch = int(max_target_tokens_per_batch)
-        self.shuffle = bool(shuffle)
-        self.seed = int(seed)
-        self.epoch = 0
-
-    def __iter__(self):
-        order = sorted(range(len(self.lengths)), key=lambda i: self.lengths[i])
-        batches: list[list[int]] = []
-        current: list[int] = []
-        current_max = 0
-        for idx in order:
-            length = self.lengths[idx]
-            proposed_max = max(current_max, length)
-            proposed_size = len(current) + 1
-            proposed_tokens = proposed_max * proposed_size
-            over_items = proposed_size > self.max_items_per_batch
-            over_tokens = proposed_tokens > self.max_target_tokens_per_batch
-            if current and (over_items or over_tokens):
-                batches.append(current)
-                current = []
-                current_max = 0
-            current.append(idx)
-            current_max = max(current_max, length)
-        if current:
-            batches.append(current)
-
-        if self.shuffle:
-            rng = random.Random(self.seed + self.epoch)
-            rng.shuffle(batches)
-        self.epoch += 1
-        yield from batches
-
-    def __len__(self) -> int:
-        count = 0
-        current_size = 0
-        current_max = 0
-        for length in sorted(self.lengths):
-            proposed_size = current_size + 1
-            proposed_max = max(current_max, length)
-            if current_size and (
-                proposed_size > self.max_items_per_batch
-                or proposed_size * proposed_max > self.max_target_tokens_per_batch
-            ):
-                count += 1
-                current_size = 0
-                current_max = 0
-            current_size += 1
-            current_max = max(current_max, length)
-        return count + int(current_size > 0)
-
-
 def _make_loader(
     cfg: DictConfig,
     *,
@@ -145,7 +76,7 @@ def _make_loader(
     families = _optional_container(cfg.data.families)
     configured_splits = _optional_container(cfg.data.get("splits")) if "splits" in cfg.data else None
     selected_split = split if split is not None else (configured_splits if configured_splits is not None else cfg.data.split)
-    dataset = VeriBenchEmbeddingDataset(
+    loader = make_veribench_embedding_dataloader(
         data_dir=_as_path(cfg.data.data_dir),
         split=selected_split,
         families=families,
@@ -155,33 +86,23 @@ def _make_loader(
         model_name=cfg.data.model_name or cfg.model.model_name,
         model_revision=cfg.data.model_revision or cfg.model.revision,
         validate_context=cfg.data.validate_context,
+        batch_size=int(cfg.loader.batch_size),
+        shuffle=bool(cfg.loader.shuffle) if shuffle is None else bool(shuffle),
+        num_workers=int(cfg.loader.num_workers),
+        max_target_tokens_per_batch=(
+            None
+            if cfg.loader.max_target_tokens_per_batch is None
+            else int(cfg.loader.max_target_tokens_per_batch)
+        ),
+        seed=int(cfg.seed),
+        pin_memory=bool(cfg.loader.pin_memory),
+        persistent_workers=bool(cfg.loader.persistent_workers),
+        prefetch_factor=(None if int(cfg.loader.num_workers) == 0 else int(cfg.loader.prefetch_factor)),
+        drop_last=bool(cfg.loader.drop_last),
     )
-    if len(dataset) == 0:
+    if len(loader.dataset) == 0:
         raise ValueError("No VeriBench samples matched the configured split/family filters")
-
-    persistent_workers = bool(cfg.loader.persistent_workers) and int(cfg.loader.num_workers) > 0
-    loader_kwargs: dict[str, Any] = {
-        "dataset": dataset,
-        "num_workers": int(cfg.loader.num_workers),
-        "pin_memory": bool(cfg.loader.pin_memory),
-        "persistent_workers": persistent_workers,
-        "collate_fn": collate_veribench_embedding_samples,
-    }
-    if cfg.loader.max_target_tokens_per_batch is not None:
-        loader_kwargs["batch_sampler"] = TargetTokenBatchSampler(
-            dataset,
-            max_items_per_batch=int(cfg.loader.batch_size),
-            max_target_tokens_per_batch=int(cfg.loader.max_target_tokens_per_batch),
-            shuffle=bool(cfg.loader.shuffle) if shuffle is None else bool(shuffle),
-            seed=int(cfg.seed),
-        )
-    else:
-        loader_kwargs["batch_size"] = int(cfg.loader.batch_size)
-        loader_kwargs["shuffle"] = bool(cfg.loader.shuffle) if shuffle is None else bool(shuffle)
-        loader_kwargs["drop_last"] = bool(cfg.loader.drop_last)
-    if int(cfg.loader.num_workers) > 0:
-        loader_kwargs["prefetch_factor"] = int(cfg.loader.prefetch_factor)
-    return DataLoader(**loader_kwargs)
+    return loader
 
 
 def _init_wandb(cfg: DictConfig, run_dir: Path, dataset_size: int, validation_size: int) -> Any:
@@ -216,6 +137,17 @@ def _append_jsonl(path: Path, row: dict[str, float]) -> None:
         handle.write(json.dumps(row, sort_keys=True) + "\n")
 
 
+def _raw_model(model: torch.nn.Module) -> torch.nn.Module:
+    return model._orig_mod if hasattr(model, "_orig_mod") else model
+
+
+def _mcmc_step_size(model: torch.nn.Module) -> float:
+    alpha = getattr(_raw_model(model), "alpha", None)
+    if alpha is None:
+        return math.nan
+    return float(torch.clamp(alpha.detach().float().cpu(), min=0.0001))
+
+
 def _batch_loss(
     *,
     model: torch.nn.Module,
@@ -228,7 +160,6 @@ def _batch_loss(
         batch[str(cfg.data.label_field)],
         context_attention_mask=batch["context_attention_mask"],
         label_attention_mask=batch["label_attention_mask"],
-        task_indices=batch["task_index"],
         learning=learning,
     )
 
@@ -274,6 +205,7 @@ def _evaluate(
             "rows": float(total_rows),
             "batches": float(batches),
             "elapsed_sec": time.perf_counter() - start,
+            "mcmc_step_size": _mcmc_step_size(model),
         }
     )
     if was_training:
@@ -300,7 +232,7 @@ def _make_model(cfg: DictConfig, dataset: VeriBenchEmbeddingDataset) -> GoedelVo
         "hidden_dim": model_cfg.hidden_dim,
         "denoising_initial_condition": model_cfg.denoising_initial_condition,
     }
-    int_keys = ("num_layers", "num_heads", "dim_feedforward", "mcmc_num_steps", "max_task_embeddings", "max_target_positions")
+    int_keys = ("num_layers", "num_heads", "dim_feedforward", "mcmc_num_steps", "max_target_positions")
     float_keys = (
         "dropout", "mcmc_step_size", "gaussian_random_noise_scaling", "langevin_dynamics_noise",
         "clamp_futures_grad_max_change", "absolute_clamp", "sharpen_predicted_distribution",
@@ -309,7 +241,7 @@ def _make_model(cfg: DictConfig, dataset: VeriBenchEmbeddingDataset) -> GoedelVo
     bool_keys = (
         "mcmc_step_size_learnable", "normalize_initial_condition", "normalize_initial_condition_only_first_step",
         "truncate_mcmc", "no_mcmc_detach", "clamp_futures_grad", "norm_pred", "norm_pred_not_final_step",
-        "loss_on_final_step_only", "use_context_activations",
+        "loss_on_final_step_only",
     )
     for key in int_keys:
         kwargs[key] = int(model_cfg[key])
@@ -529,6 +461,7 @@ def main(cfg: DictConfig) -> None:
                     "tokens_per_sec": running_tokens / max(now - last_log, 1e-9),
                     "batch_sec": now - batch_start,
                     "elapsed_sec": now - train_start,
+                    "mcmc_step_size": _mcmc_step_size(model),
                     "cuda_max_mem_gb": (
                         torch.cuda.max_memory_allocated(device) / (1024**3) if device.type == "cuda" else 0.0
                     ),

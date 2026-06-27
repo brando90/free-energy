@@ -44,36 +44,46 @@ model:
   revision: null
   vocab_size: dataset
   pad_token_id: dataset
-  context_dim: 4096
-  # Default sanity profile uses a 384-d EBT state. Set use_context_activations=true
-  # to project 4096-d Goedel hidden states into this space.
-  hidden_dim: 384
+
+  # Transformer model
+  context_dim: 4096 # size coming from conditioning (Goedel Prover)
+  hidden_dim: 384 # internal EBT model
   num_layers: 4
   num_heads: 4
   dim_feedforward: 384
-  use_context_activations: true
-  max_task_embeddings: 4096
-  max_target_positions: 16384
+  max_target_positions: 16384 # target positional encoding size (for EBT training)
   dropout: 0.0
+  
+  # Langevin steps
   mcmc_num_steps: 2
   mcmc_step_size: 0.5
-  mcmc_step_size_learnable: true
-  gaussian_random_noise_scaling: 1.0
-  langevin_dynamics_noise: 0.0
-  truncate_mcmc: false
-  no_mcmc_detach: false
-  clamp_futures_grad: false
-  clamp_futures_grad_max_change: 9.0
-  reconstruction_coeff: 1.0
-  soften_target_prob_dist: 0.0
+  mcmc_step_size_learnable: true # set the step size to be learnable.
+  langevin_dynamics_noise: 0.0 # noise during langevin process
+
+  # System 1/System 2 control
+  # if true, the backwards computation graph will only be recorded on the LAST timestamp
+  # if true, it also only does the reconstruct loss on the LAST timestamp
+  truncate_mcmc: false   
+
+  # if true, doesn't detach gradient every timestamp at all
+  # if false, then it detaches the grad per timestamp
+  no_mcmc_detach: false  
+  
+  # apply loss on only the final timestamp. If false, then it does an AVERAGE
   loss_on_final_step_only: false
 
-  # normalization initial conditions
-  denoising_initial_condition: random_noise
-  normalize_initial_condition: true
-  normalize_initial_condition_only_first_step: false
+  clamp_futures_grad: false
+  clamp_futures_grad_max_change: 9.0
+  reconstruction_coeff: 1.0 # coef of the final loss term (not clue why this is here)
+  soften_target_prob_dist: 0.0
 
-  # reg during langevin step
+  # normalization initial conditions
+  denoising_initial_condition: random_noise # the "potential" will be this.
+  gaussian_random_noise_scaling: 1.0 # how much noise to init with; N(0,I)
+  normalize_initial_condition: true # turn it into a softmax FIRST
+  normalize_initial_condition_only_first_step: false # if false, we ALWAYS softmax before going to the EBT
+
+  # reg after updating w/ grad (none of these actually happen)
   absolute_clamp: 0.0
   norm_pred: false
   norm_pred_not_final_step: false

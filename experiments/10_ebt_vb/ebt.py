@@ -64,8 +64,6 @@ class GoedelVocabEBT(nn.Module):
         reconstruction_coeff: float = 1.0,
         soften_target_prob_dist: float = 0.0,
         loss_on_final_step_only: bool = False,
-        use_context_activations: bool = True,
-        max_task_embeddings: int = 4096,
         max_target_positions: int = 4096,
     ) -> None:
         super().__init__()
@@ -94,7 +92,6 @@ class GoedelVocabEBT(nn.Module):
         self.reconstruction_coeff = float(reconstruction_coeff)
         self.soften_target_prob_dist = float(soften_target_prob_dist)
         self.loss_on_final_step_only = bool(loss_on_final_step_only)
-        self.use_context_activations = bool(use_context_activations)
         self.alpha = nn.Parameter(torch.tensor(float(mcmc_step_size)), requires_grad=mcmc_step_size_learnable)
         self.langevin_dynamics_noise_std = nn.Parameter(
             torch.tensor(float(langevin_dynamics_noise)),
@@ -107,7 +104,6 @@ class GoedelVocabEBT(nn.Module):
             if self.context_dim != self.hidden_dim
             else nn.Identity()
         )
-        self.task_embeddings = nn.Embedding(int(max_task_embeddings), self.hidden_dim)
         self.target_position_embeddings = nn.Embedding(int(max_target_positions), self.hidden_dim)
         if self.norm_pred:
             self.pred_norm = nn.RMSNorm(self.vocab_size)
@@ -147,9 +143,14 @@ class GoedelVocabEBT(nn.Module):
     ) -> torch.Tensor:
         if x.shape[-1] != self.vocab_size:
             raise ValueError(f"Expected vocab dimension {self.vocab_size}, got {x.shape[-1]}")
+        
+        # we initialize the normal initial condition  
+        # we ALWAYS softmax before turning into the EBT model
         if self.normalize_initial_condition and not already_normalized:
             if not self.normalize_initial_condition_only_first_step or mcmc_step == 0:
                 x = torch.softmax(x, dim=-1)
+        
+        # this is a nn.Linear basically (not an nn.Embedding, could be a "mixture")
         return self.vocab_to_embed(x)
 
     @staticmethod
@@ -167,20 +168,12 @@ class GoedelVocabEBT(nn.Module):
         context_activations: torch.Tensor,
         target_embeddings: torch.Tensor,
         context_attention_mask: torch.Tensor | None,
-        task_indices: torch.Tensor | None,
     ) -> tuple[torch.Tensor, torch.Tensor | None]:
-        if self.use_context_activations:
-            memory = context_activations.to(device=target_embeddings.device, dtype=target_embeddings.dtype)
-            if memory.shape[-1] != self.context_dim:
-                raise ValueError(f"Expected context dimension {self.context_dim}, got {memory.shape[-1]}")
-            memory_mask = ~context_attention_mask.bool() if context_attention_mask is not None else None
-            return self.context_to_hidden(memory), memory_mask
-
-        if task_indices is None:
-            raise ValueError("task_indices are required when use_context_activations=False")
-        task_indices = task_indices.to(device=target_embeddings.device, dtype=torch.long)
-        memory = self.task_embeddings(task_indices).to(dtype=target_embeddings.dtype).unsqueeze(1)
-        return memory, None
+        memory = context_activations.to(device=target_embeddings.device, dtype=target_embeddings.dtype)
+        if memory.shape[-1] != self.context_dim:
+            raise ValueError(f"Expected context dimension {self.context_dim}, got {memory.shape[-1]}")
+        memory_mask = ~context_attention_mask.bool() if context_attention_mask is not None else None
+        return self.context_to_hidden(memory), memory_mask
 
     def energy(
         self,
@@ -191,28 +184,32 @@ class GoedelVocabEBT(nn.Module):
         context_attention_mask: torch.Tensor | None = None,
         decoder_attention_mask: torch.Tensor | None = None,
         state_already_normalized: bool = False,
-        task_indices: torch.Tensor | None = None,
     ) -> tuple[torch.Tensor, torch.Tensor]:
+        # get embeddings from vocab state
         target_embeddings = self.vocab_state_to_embeddings(
             x,
             mcmc_step=mcmc_step,
             already_normalized=state_already_normalized,
         )
+        
+        # do positional embedding
         positions = torch.arange(target_embeddings.shape[1], device=target_embeddings.device)
         target_embeddings = target_embeddings + self.target_position_embeddings(positions).to(
             dtype=target_embeddings.dtype
         ).unsqueeze(0)
 
+        # Goedel activations (aka context/memory activations to the EBT);  
+        # we perform a linear projection if the context h_dim != ebt h_dim
         memory, memory_key_padding_mask = self._memory(
             context_activations,
             target_embeddings,
             context_attention_mask,
-            task_indices,
         )
         tgt_len = int(target_embeddings.shape[1])
         target_self_attention_mask = self.target_causal_mask(tgt_len, device=target_embeddings.device)
         target_key_padding_mask = ~decoder_attention_mask.bool() if decoder_attention_mask is not None else None
 
+        # Run through the energy based transformer
         with torch.nn.attention.sdpa_kernel(torch.nn.attention.SDPBackend.MATH):
             hidden = self.downstream_model(
                 tgt=target_embeddings,
@@ -221,6 +218,8 @@ class GoedelVocabEBT(nn.Module):
                 tgt_key_padding_mask=target_key_padding_mask,
                 memory_key_padding_mask=memory_key_padding_mask,
             )
+        
+        # run through the energy head. Note that at the gradient, we take the SUM across ALL tokens!
         token_energy = self.energy_head(hidden).squeeze(-1)
         if decoder_attention_mask is not None:
             token_energy = token_energy.masked_fill(~decoder_attention_mask.bool(), 0.0)
@@ -234,19 +233,20 @@ class GoedelVocabEBT(nn.Module):
         decoder_input_logits: torch.Tensor | None = None,
         context_attention_mask: torch.Tensor | None = None,
         decoder_attention_mask: torch.Tensor | None = None,
-        task_indices: torch.Tensor | None = None,
         learning: bool = True,
         return_raw_logits: bool = True,
         return_all_steps: bool = False,
     ) -> EBTOutput:
-        if decoder_input_logits is None:
+        if decoder_input_logits is None: # dhether we want to pre-initialize with something
             if target_len is None:
                 raise ValueError("target_len is required when decoder_input_logits is None")
-            x = self.init_logits(
+            x = self.init_logits( # usually, set the random noise
                 batch_size=int(context_activations.shape[0]),
                 target_len=target_len,
                 device=context_activations.device,
-            )
+            ) 
+            # size: (batch_size, target_len, self.vocab_size)
+            # (2, target_len, 3565) --> (2, target_len, 384) when embedding
         else:
             x = decoder_input_logits
 
@@ -260,11 +260,12 @@ class GoedelVocabEBT(nn.Module):
         energies: list[torch.Tensor] = []
         hidden = None
         with torch.set_grad_enabled(True):
+            # langevin steps
             for step in range(total_steps):
                 if self.no_mcmc_detach:
                     x.requires_grad_(True)
                 else:
-                    x = x.detach().requires_grad_()
+                    x = x.detach().requires_grad_() # detach gradients (by default)
 
                 if float(self.langevin_dynamics_noise_std.detach()) != 0.0:
                     x = x + torch.randn_like(x.detach()) * langevin_std
@@ -273,33 +274,36 @@ class GoedelVocabEBT(nn.Module):
                 state_already_normalized = False
                 if self.normalize_initial_condition:
                     if not self.normalize_initial_condition_only_first_step or mcmc_step == 0:
-                        x = torch.softmax(x, dim=-1)
+                        x = torch.softmax(x, dim=-1) # we turn this to a softmax at the very FIRST step (aka from the random noise)
                         state_already_normalized = True
 
+                # go through forward pass
                 energy, hidden = self.energy(
-                    x,
-                    context_activations,
+                    x, # initial "guess"
+                    context_activations, # conditioned on Goedel Activations
                     mcmc_step=mcmc_step,
-                    context_attention_mask=context_attention_mask,
+                    context_attention_mask=context_attention_mask, # masked context and decoder 
                     decoder_attention_mask=decoder_attention_mask,
                     state_already_normalized=state_already_normalized,
-                    task_indices=task_indices,
                 )
                 energies.append(energy)
 
+                # calculate gradient
                 create_graph = bool(learning)
                 if self.truncate_mcmc and step != total_steps - 1:
                     create_graph = False
                 grad_x = torch.autograd.grad(energy.sum(), x, create_graph=create_graph)[0]
+                
+                # clamp grad
                 if self.clamp_futures_grad:
                     min_and_max = self.clamp_futures_grad_max_change / torch.clamp(self.alpha.detach(), min=0.0001)
                     grad_x = torch.clamp(grad_x, min=-min_and_max, max=min_and_max)
                 if torch.isnan(grad_x).any() or torch.isinf(grad_x).any():
                     raise ValueError("NaN or Inf gradients detected during MCMC.")
 
+                # update x
                 x = x - alpha * grad_x
-
-                if self.absolute_clamp != 0.0:
+                if self.absolute_clamp != 0.0: # none of these actually happen in practice
                     x = torch.clamp(x, min=-self.absolute_clamp, max=self.absolute_clamp)
                 if self.sharpen_predicted_distribution != 0.0:
                     x = x / self.sharpen_predicted_distribution
@@ -328,16 +332,15 @@ class GoedelVocabEBT(nn.Module):
         *,
         context_attention_mask: torch.Tensor | None = None,
         label_attention_mask: torch.Tensor | None = None,
-        task_indices: torch.Tensor | None = None,
         learning: bool = True,
     ) -> dict[str, torch.Tensor]:
+        # inference with the energy based transformer model
         target_len = int(label_original_ids.shape[1])
         out = self.forward(
             context_activations,
             target_len=target_len,
             context_attention_mask=context_attention_mask,
             decoder_attention_mask=label_attention_mask,
-            task_indices=task_indices,
             learning=learning,
             return_raw_logits=True,
             return_all_steps=True,
@@ -357,8 +360,12 @@ class GoedelVocabEBT(nn.Module):
         perplexity = None
         final_token_accuracy = None
         final_exact_accuracy = None
+        
+        # iterate over ALL the steps (aka n=1, n=2)
         for step, (predicted_distribution, predicted_energy) in enumerate(zip(out.predicted_distributions, out.energies)):
             logits = predicted_distribution.reshape(-1, self.vocab_size)
+            
+            # some label smoothing
             if self.soften_target_prob_dist != 0.0:
                 if total_steps <= 1:
                     label_smoothing = 0.0
@@ -370,6 +377,8 @@ class GoedelVocabEBT(nn.Module):
                     ignore_index=ignore_index,
                     label_smoothing=label_smoothing,
                 )
+            
+            # however, we do this usually; just maximizing -log probability
             else:
                 step_loss = F.nll_loss(
                     F.log_softmax(logits, dim=-1),
@@ -377,12 +386,14 @@ class GoedelVocabEBT(nn.Module):
                     ignore_index=ignore_index,
                 )
 
+            # update reconstruction step
             if self.truncate_mcmc or self.loss_on_final_step_only:
                 if step == total_steps - 1:
                     reconstruction_loss = step_loss
             else:
                 reconstruction_loss = reconstruction_loss + step_loss
 
+            # some logging
             if step == 0:
                 initial_loss = step_loss.detach()
                 initial_energy = predicted_energy.squeeze().mean().detach()
@@ -403,9 +414,10 @@ class GoedelVocabEBT(nn.Module):
                     has_any = valid_mask.any(dim=1)
                     final_exact_accuracy = (per_row_correct & has_any).float().mean()
 
-        if not self.truncate_mcmc:
+        if not self.truncate_mcmc: # take the average of the reconstruction loss across ALL steps
             reconstruction_loss = reconstruction_loss / max(1, total_steps)
-        loss = self.reconstruction_coeff * reconstruction_loss
+        loss = self.reconstruction_coeff * reconstruction_loss 
+
         return {
             "loss": loss,
             "initial_loss": initial_loss if initial_loss is not None else loss.detach(),
@@ -431,7 +443,6 @@ class GoedelVocabEBT(nn.Module):
         *,
         target_len: int,
         context_attention_mask: torch.Tensor | None = None,
-        task_indices: torch.Tensor | None = None,
         steps: int | None = None,
     ) -> dict[str, Any]:
         old_steps = self.mcmc_num_steps
@@ -442,7 +453,6 @@ class GoedelVocabEBT(nn.Module):
                 context_activations,
                 target_len=target_len,
                 context_attention_mask=context_attention_mask,
-                task_indices=task_indices,
                 learning=False,
                 return_all_steps=True,
             )
