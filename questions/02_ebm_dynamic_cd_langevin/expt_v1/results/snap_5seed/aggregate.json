@@ -1,0 +1,421 @@
+{
+  "input_dir": "expt_v1/results/snap_5seed",
+  "num_reports": 5,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "methods": {
+    "cd1": {
+      "train_seconds": {
+        "mean": 2.3105367183685304,
+        "std": 0.46010086402539
+      },
+      "coverage_1pct": {
+        "mean": 8.0,
+        "std": 0.0
+      },
+      "normalized_mode_entropy": {
+        "mean": 0.9959404468536377,
+        "std": 0.002070660452059326
+      },
+      "tv_to_uniform_modes": {
+        "mean": 0.05263671875,
+        "std": 0.017333640511554088
+      },
+      "mean_nearest_mode_distance": {
+        "mean": 0.9024017930030823,
+        "std": 0.010168727157264702
+      },
+      "mean_radial_error": {
+        "mean": 0.7563196063041687,
+        "std": 0.012832328135817398
+      },
+      "eval_data_energy": {
+        "mean": 0.008622815134003758,
+        "std": 0.018948632522247384
+      },
+      "eval_generated_energy": {
+        "mean": 0.03451299164444208,
+        "std": 0.023573588269448238
+      },
+      "eval_uniform_noise_energy": {
+        "mean": 1.66835675239563,
+        "std": 0.07474801738685224
+      }
+    },
+    "dynamic_weighted_cd": {
+      "train_seconds": {
+        "mean": 5.205628252029419,
+        "std": 0.2753854907646879
+      },
+      "coverage_1pct": {
+        "mean": 8.0,
+        "std": 0.0
+      },
+      "normalized_mode_entropy": {
+        "mean": 0.9963440060615539,
+        "std": 0.0014762208720481436
+      },
+      "tv_to_uniform_modes": {
+        "mean": 0.051171875,
+        "std": 0.016731739167852654
+      },
+      "mean_nearest_mode_distance": {
+        "mean": 0.7827731966972351,
+        "std": 0.021591248866837543
+      },
+      "mean_radial_error": {
+        "mean": 0.6301309585571289,
+        "std": 0.025066713940386755
+      },
+      "eval_data_energy": {
+        "mean": -0.5110550105571747,
+        "std": 0.012370509283100881
+      },
+      "eval_generated_energy": {
+        "mean": -0.703441071510315,
+        "std": 0.055541414556637976
+      },
+      "eval_uniform_noise_energy": {
+        "mean": 5.766008472442627,
+        "std": 0.5001231804982869
+      }
+    }
+  },
+  "rows": [
+    {
+      "seed": 0,
+      "method": "cd1",
+      "train_seconds": 2.883387327194214,
+      "mode_counts": [
+        212,
+        204,
+        224,
+        265,
+        272,
+        307,
+        307,
+        257
+      ],
+      "mode_probs": [
+        0.103515625,
+        0.099609375,
+        0.109375,
+        0.12939453125,
+        0.1328125,
+        0.14990234375,
+        0.14990234375,
+        0.12548828125
+      ],
+      "coverage_1pct": 8.0,
+      "normalized_mode_entropy": 0.9948384761810303,
+      "tv_to_uniform_modes": 0.0625,
+      "mean_nearest_mode_distance": 0.8921476006507874,
+      "mean_radial_error": 0.7466350197792053,
+      "eval_data_energy": 0.0024498554412275553,
+      "eval_generated_energy": 0.009204966016113758,
+      "eval_uniform_noise_energy": 1.7351348400115967
+    },
+    {
+      "seed": 0,
+      "method": "dynamic_weighted_cd",
+      "train_seconds": 5.64471960067749,
+      "mode_counts": [
+        301,
+        238,
+        220,
+        220,
+        209,
+        281,
+        286,
+        293
+      ],
+      "mode_probs": [
+        0.14697265625,
+        0.1162109375,
+        0.107421875,
+        0.107421875,
+        0.10205078125,
+        0.13720703125,
+        0.1396484375,
+        0.14306640625
+      ],
+      "coverage_1pct": 8.0,
+      "normalized_mode_entropy": 0.9953640699386597,
+      "tv_to_uniform_modes": 0.06689453125,
+      "mean_nearest_mode_distance": 0.7951391935348511,
+      "mean_radial_error": 0.6443986892700195,
+      "eval_data_energy": -0.5153326988220215,
+      "eval_generated_energy": -0.7364251613616943,
+      "eval_uniform_noise_energy": 5.844706058502197
+    },
+    {
+      "seed": 1,
+      "method": "cd1",
+      "train_seconds": 2.6816720962524414,
+      "mode_counts": [
+        260,
+        226,
+        257,
+        281,
+        287,
+        263,
+        220,
+        254
+      ],
+      "mode_probs": [
+        0.126953125,
+        0.1103515625,
+        0.12548828125,
+        0.13720703125,
+        0.14013671875,
+        0.12841796875,
+        0.107421875,
+        0.1240234375
+      ],
+      "coverage_1pct": 8.0,
+      "normalized_mode_entropy": 0.9982122182846069,
+      "tv_to_uniform_modes": 0.033203125,
+      "mean_nearest_mode_distance": 0.8920480012893677,
+      "mean_radial_error": 0.741715669631958,
+      "eval_data_energy": 0.009931053966283798,
+      "eval_generated_energy": 0.07068491727113724,
+      "eval_uniform_noise_energy": 1.702756404876709
+    },
+    {
+      "seed": 1,
+      "method": "dynamic_weighted_cd",
+      "train_seconds": 4.892115116119385,
+      "mode_counts": [
+        209,
+        261,
+        259,
+        298,
+        256,
+        220,
+        283,
+        262
+      ],
+      "mode_probs": [
+        0.10205078125,
+        0.12744140625,
+        0.12646484375,
+        0.1455078125,
+        0.125,
+        0.107421875,
+        0.13818359375,
+        0.1279296875
+      ],
+      "coverage_1pct": 8.0,
+      "normalized_mode_entropy": 0.9971709847450256,
+      "tv_to_uniform_modes": 0.04052734375,
+      "mean_nearest_mode_distance": 0.8130426406860352,
+      "mean_radial_error": 0.6640231609344482,
+      "eval_data_energy": -0.5290158987045288,
+      "eval_generated_energy": -0.7807720899581909,
+      "eval_uniform_noise_energy": 5.818781852722168
+    },
+    {
+      "seed": 2,
+      "method": "cd1",
+      "train_seconds": 2.2322847843170166,
+      "mode_counts": [
+        266,
+        298,
+        274,
+        317,
+        283,
+        213,
+        197,
+        200
+      ],
+      "mode_probs": [
+        0.1298828125,
+        0.1455078125,
+        0.1337890625,
+        0.15478515625,
+        0.13818359375,
+        0.10400390625,
+        0.09619140625,
+        0.09765625
+      ],
+      "coverage_1pct": 8.0,
+      "normalized_mode_entropy": 0.9929413795471191,
+      "tv_to_uniform_modes": 0.0771484375,
+      "mean_nearest_mode_distance": 0.9141668081283569,
+      "mean_radial_error": 0.7708460092544556,
+      "eval_data_energy": 0.01664646714925766,
+      "eval_generated_energy": 0.0192241333425045,
+      "eval_uniform_noise_energy": 1.625760555267334
+    },
+    {
+      "seed": 2,
+      "method": "dynamic_weighted_cd",
+      "train_seconds": 5.219123840332031,
+      "mode_counts": [
+        261,
+        225,
+        208,
+        260,
+        238,
+        317,
+        257,
+        282
+      ],
+      "mode_probs": [
+        0.12744140625,
+        0.10986328125,
+        0.1015625,
+        0.126953125,
+        0.1162109375,
+        0.15478515625,
+        0.12548828125,
+        0.1376953125
+      ],
+      "coverage_1pct": 8.0,
+      "normalized_mode_entropy": 0.9963542222976685,
+      "tv_to_uniform_modes": 0.04736328125,
+      "mean_nearest_mode_distance": 0.7626534700393677,
+      "mean_radial_error": 0.6030919551849365,
+      "eval_data_energy": -0.5117930769920349,
+      "eval_generated_energy": -0.6404470205307007,
+      "eval_uniform_noise_energy": 5.306316375732422
+    },
+    {
+      "seed": 3,
+      "method": "cd1",
+      "train_seconds": 1.877021074295044,
+      "mode_counts": [
+        279,
+        252,
+        263,
+        245,
+        313,
+        246,
+        210,
+        240
+      ],
+      "mode_probs": [
+        0.13623046875,
+        0.123046875,
+        0.12841796875,
+        0.11962890625,
+        0.15283203125,
+        0.1201171875,
+        0.1025390625,
+        0.1171875
+      ],
+      "coverage_1pct": 8.0,
+      "normalized_mode_entropy": 0.9970871806144714,
+      "tv_to_uniform_modes": 0.04248046875,
+      "mean_nearest_mode_distance": 0.9033774137496948,
+      "mean_radial_error": 0.7543836832046509,
+      "eval_data_energy": -0.01871531270444393,
+      "eval_generated_energy": 0.03282594680786133,
+      "eval_uniform_noise_energy": 1.5578992366790771
+    },
+    {
+      "seed": 3,
+      "method": "dynamic_weighted_cd",
+      "train_seconds": 5.170761823654175,
+      "mode_counts": [
+        310,
+        266,
+        242,
+        253,
+        252,
+        245,
+        243,
+        237
+      ],
+      "mode_probs": [
+        0.1513671875,
+        0.1298828125,
+        0.1181640625,
+        0.12353515625,
+        0.123046875,
+        0.11962890625,
+        0.11865234375,
+        0.11572265625
+      ],
+      "coverage_1pct": 8.0,
+      "normalized_mode_entropy": 0.9982945322990417,
+      "tv_to_uniform_modes": 0.03125,
+      "mean_nearest_mode_distance": 0.7632301449775696,
+      "mean_radial_error": 0.6093980669975281,
+      "eval_data_energy": -0.5013994574546814,
+      "eval_generated_energy": -0.6702027916908264,
+      "eval_uniform_noise_energy": 6.53275203704834
+    },
+    {
+      "seed": 4,
+      "method": "cd1",
+      "train_seconds": 1.8783183097839355,
+      "mode_counts": [
+        257,
+        248,
+        212,
+        240,
+        302,
+        307,
+        247,
+        235
+      ],
+      "mode_probs": [
+        0.12548828125,
+        0.12109375,
+        0.103515625,
+        0.1171875,
+        0.1474609375,
+        0.14990234375,
+        0.12060546875,
+        0.11474609375
+      ],
+      "coverage_1pct": 8.0,
+      "normalized_mode_entropy": 0.9966229796409607,
+      "tv_to_uniform_modes": 0.0478515625,
+      "mean_nearest_mode_distance": 0.9102691411972046,
+      "mean_radial_error": 0.7680176496505737,
+      "eval_data_energy": 0.03280201181769371,
+      "eval_generated_energy": 0.04062499478459358,
+      "eval_uniform_noise_energy": 1.7202327251434326
+    },
+    {
+      "seed": 4,
+      "method": "dynamic_weighted_cd",
+      "train_seconds": 5.101420879364014,
+      "mode_counts": [
+        223,
+        213,
+        285,
+        306,
+        314,
+        262,
+        215,
+        230
+      ],
+      "mode_probs": [
+        0.10888671875,
+        0.10400390625,
+        0.13916015625,
+        0.1494140625,
+        0.1533203125,
+        0.1279296875,
+        0.10498046875,
+        0.1123046875
+      ],
+      "coverage_1pct": 8.0,
+      "normalized_mode_entropy": 0.9945362210273743,
+      "tv_to_uniform_modes": 0.06982421875,
+      "mean_nearest_mode_distance": 0.779800534248352,
+      "mean_radial_error": 0.6297429203987122,
+      "eval_data_energy": -0.4977339208126068,
+      "eval_generated_energy": -0.6893582940101624,
+      "eval_uniform_noise_energy": 5.327486038208008
+    }
+  ]
+}
