@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""EBT scaffold over full-vocab token logits conditioned on VeriBench context."""
+"""Chunk-aware EBT over compact Lean token logits conditioned on Goedel context."""
 
 from __future__ import annotations
 
@@ -24,12 +24,13 @@ class EBTOutput:
 
 
 class GoedelVocabEBT(nn.Module):
-    """Energy model over differentiable full-vocab token logits.
+    """Energy model over differentiable chunked compact-vocab token logits.
 
     This follows the NLP EBT pattern from alexiglad/EBT: token ids enter only as
-    conditioning/targets; the optimized state is an internal `[B, T, vocab]`
-    tensor. A learned projection maps that dense vocab state into 4096-d token
-    embeddings before the Transformer decoder.
+    conditioning/targets; the optimized state is an internal
+    `[B, T_chunk, chunk_size, vocab]` tensor. Each EBT target position represents
+    `chunk_size` compact Lean token slots. A learned projection maps the
+    flattened chunk distribution into one decoder hidden state.
     """
 
     def __init__(
@@ -65,17 +66,29 @@ class GoedelVocabEBT(nn.Module):
         soften_target_prob_dist: float = 0.0,
         loss_on_final_step_only: bool = False,
         max_target_positions: int = 4096,
+        chunk_size: int = 1,
+        eos_token_id: int | None = None,
+        bos_token_id: int | None = None,
     ) -> None:
         super().__init__()
         tokenizer = AutoTokenizer.from_pretrained(model_name, revision=revision, trust_remote_code=True)
         config = AutoConfig.from_pretrained(model_name, revision=revision, trust_remote_code=True)
 
         self.vocab_size = int(vocab_size or len(tokenizer))
+        self.chunk_size = int(chunk_size)
+        if self.chunk_size <= 0:
+            raise ValueError("chunk_size must be positive")
         self.hidden_dim = int(hidden_dim or getattr(config, "hidden_size", 4096))
         self.context_dim = int(context_dim or self.hidden_dim)
         if pad_token_id is None:
             pad_token_id = tokenizer.pad_token_id if tokenizer.pad_token_id is not None else tokenizer.eos_token_id
         self.pad_token_id = int(pad_token_id)
+        self.eos_token_id = int(eos_token_id if eos_token_id is not None else tokenizer.eos_token_id)
+        self.bos_token_id = int(
+            bos_token_id
+            if bos_token_id is not None
+            else (tokenizer.bos_token_id if tokenizer.bos_token_id is not None else tokenizer.eos_token_id)
+        )
         self.mcmc_num_steps = int(mcmc_num_steps)
         self.gaussian_random_noise_scaling = float(gaussian_random_noise_scaling)
         self.denoising_initial_condition = denoising_initial_condition
@@ -98,7 +111,7 @@ class GoedelVocabEBT(nn.Module):
             requires_grad=False,
         )
 
-        self.vocab_to_embed = nn.Linear(self.vocab_size, self.hidden_dim, bias=False)
+        self.vocab_to_embed = nn.Linear(self.chunk_size * self.vocab_size, self.hidden_dim, bias=False)
         self.context_to_hidden = (
             nn.Linear(self.context_dim, self.hidden_dim, bias=False)
             if self.context_dim != self.hidden_dim
@@ -117,6 +130,10 @@ class GoedelVocabEBT(nn.Module):
         )
         self.downstream_model = nn.TransformerDecoder(layer, num_layers=num_layers)
         self.energy_head = nn.Sequential(nn.LayerNorm(self.hidden_dim), nn.Linear(self.hidden_dim, 1))
+        self.prediction_head = nn.Sequential(
+            nn.LayerNorm(self.hidden_dim),
+            nn.Linear(self.hidden_dim, self.chunk_size * self.vocab_size),
+        )
 
     def init_logits(
         self,
@@ -125,7 +142,7 @@ class GoedelVocabEBT(nn.Module):
         target_len: int,
         device: torch.device | str,
     ) -> torch.Tensor:
-        shape = (batch_size, target_len, self.vocab_size)
+        shape = (batch_size, target_len, self.chunk_size, self.vocab_size)
         if self.denoising_initial_condition == "random_noise":
             return torch.randn(*shape, device=device) * self.gaussian_random_noise_scaling
         if self.denoising_initial_condition == "zeros":
@@ -141,8 +158,10 @@ class GoedelVocabEBT(nn.Module):
         mcmc_step: int,
         already_normalized: bool = False,
     ) -> torch.Tensor:
-        if x.shape[-1] != self.vocab_size:
-            raise ValueError(f"Expected vocab dimension {self.vocab_size}, got {x.shape[-1]}")
+        if x.shape[-2:] != (self.chunk_size, self.vocab_size):
+            raise ValueError(
+                f"Expected chunk/vocab dimensions {(self.chunk_size, self.vocab_size)}, got {tuple(x.shape[-2:])}"
+            )
         
         # we initialize the normal initial condition  
         # we ALWAYS softmax before turning into the EBT model
@@ -151,7 +170,25 @@ class GoedelVocabEBT(nn.Module):
                 x = torch.softmax(x, dim=-1)
         
         # this is a nn.Linear basically (not an nn.Embedding, could be a "mixture")
-        return self.vocab_to_embed(x)
+        return self.vocab_to_embed(x.reshape(*x.shape[:-2], self.chunk_size * self.vocab_size))
+
+    def ids_to_logits(self, ids: torch.Tensor, *, true_logit: float = 10.0, false_logit: float = 0.0) -> torch.Tensor:
+        if ids.dim() != 3:
+            raise ValueError(f"Expected chunked ids [B, T, C], got shape {tuple(ids.shape)}")
+        if ids.shape[-1] != self.chunk_size:
+            raise ValueError(f"Expected chunk_size {self.chunk_size}, got {ids.shape[-1]}")
+        clamped = ids.clamp(min=0, max=self.vocab_size - 1).to(dtype=torch.long)
+        logits = torch.full(
+            (*clamped.shape, self.vocab_size),
+            float(false_logit),
+            device=ids.device,
+            dtype=torch.float32,
+        )
+        return logits.scatter_(-1, clamped.unsqueeze(-1), float(true_logit))
+
+    def predict_from_hidden(self, hidden: torch.Tensor) -> torch.Tensor:
+        logits = self.prediction_head(hidden)
+        return logits.reshape(hidden.shape[0], hidden.shape[1], self.chunk_size, self.vocab_size)
 
     @staticmethod
     def target_causal_mask(target_len: int, *, device: torch.device | str) -> torch.Tensor:
@@ -250,6 +287,8 @@ class GoedelVocabEBT(nn.Module):
         else:
             x = decoder_input_logits
 
+        if x.dim() != 4:
+            raise ValueError(f"Expected decoder state [B, T, C, V], got shape {tuple(x.shape)}")
         batch_size = int(x.shape[0])
         target_len = int(x.shape[1])
         alpha = torch.clamp(self.alpha, min=0.0001)
@@ -259,6 +298,7 @@ class GoedelVocabEBT(nn.Module):
         predicted_distributions: list[torch.Tensor] = []
         energies: list[torch.Tensor] = []
         hidden = None
+        prediction_logits = None
         with torch.set_grad_enabled(True):
             # langevin steps
             for step in range(total_steps):
@@ -287,6 +327,7 @@ class GoedelVocabEBT(nn.Module):
                     state_already_normalized=state_already_normalized,
                 )
                 energies.append(energy)
+                prediction_logits = self.predict_from_hidden(hidden)
 
                 # calculate gradient
                 create_graph = bool(learning)
@@ -310,16 +351,20 @@ class GoedelVocabEBT(nn.Module):
                 if self.norm_pred and not (self.norm_pred_not_final_step and step == total_steps - 1):
                     x = self.pred_norm(x)
 
-                predicted_distribution = x if return_raw_logits else F.log_softmax(x, dim=-1).reshape(
-                    batch_size * target_len,
-                    self.vocab_size,
+                predicted_distribution = (
+                    prediction_logits
+                    if return_raw_logits
+                    else F.log_softmax(prediction_logits, dim=-1).reshape(
+                        batch_size * target_len * self.chunk_size,
+                        self.vocab_size,
+                    )
                 )
                 predicted_distributions.append(predicted_distribution)
 
         selected_energies = energies if return_all_steps else energies[-1:]
         selected_distributions = predicted_distributions if return_all_steps else predicted_distributions[-1:]
         return EBTOutput(
-            logits=x,
+            logits=prediction_logits if prediction_logits is not None else x,
             predicted_distributions=selected_distributions,
             energies=selected_energies,
             decoder_hidden=hidden,
@@ -328,24 +373,34 @@ class GoedelVocabEBT(nn.Module):
     def loss(
         self,
         context_activations: torch.Tensor,
-        label_original_ids: torch.Tensor,
+        label_ids: torch.Tensor,
         *,
+        decoder_input_ids: torch.Tensor | None = None,
         context_attention_mask: torch.Tensor | None = None,
         label_attention_mask: torch.Tensor | None = None,
+        decoder_attention_mask: torch.Tensor | None = None,
         learning: bool = True,
     ) -> dict[str, torch.Tensor]:
         # inference with the energy based transformer model
-        target_len = int(label_original_ids.shape[1])
+        if label_ids.dim() != 3:
+            raise ValueError(f"Expected chunked labels [B, T, C], got shape {tuple(label_ids.shape)}")
+        target_len = int(label_ids.shape[1])
+        decoder_input_logits = None
+        if decoder_input_ids is not None:
+            decoder_input_logits = self.ids_to_logits(decoder_input_ids.to(device=context_activations.device))
+        if decoder_attention_mask is None and label_attention_mask is not None:
+            decoder_attention_mask = label_attention_mask.any(dim=-1)
         out = self.forward(
             context_activations,
             target_len=target_len,
+            decoder_input_logits=decoder_input_logits,
             context_attention_mask=context_attention_mask,
-            decoder_attention_mask=label_attention_mask,
+            decoder_attention_mask=decoder_attention_mask,
             learning=learning,
             return_raw_logits=True,
             return_all_steps=True,
         )
-        targets = label_original_ids.reshape(-1).to(device=context_activations.device)
+        targets = label_ids.reshape(-1).to(device=context_activations.device)
         ignore_index = -100
         if label_attention_mask is not None:
             mask = label_attention_mask.reshape(-1).to(device=targets.device).bool()
@@ -403,15 +458,15 @@ class GoedelVocabEBT(nn.Module):
                 perplexity = torch.exp(step_loss).detach()
                 with torch.no_grad():
                     predictions = predicted_distribution.argmax(dim=-1)
-                    target_2d = label_original_ids.to(device=predictions.device)
+                    target_2d = label_ids.to(device=predictions.device)
                     if label_attention_mask is None:
                         valid_mask = target_2d != ignore_index
                     else:
                         valid_mask = label_attention_mask.to(device=predictions.device).bool()
                     correct = (predictions == target_2d) & valid_mask
                     final_token_accuracy = correct.sum().float() / valid_mask.sum().clamp_min(1).float()
-                    per_row_correct = (correct | ~valid_mask).all(dim=1)
-                    has_any = valid_mask.any(dim=1)
+                    per_row_correct = (correct | ~valid_mask).flatten(1).all(dim=1)
+                    has_any = valid_mask.flatten(1).any(dim=1)
                     final_exact_accuracy = (per_row_correct & has_any).float().mean()
 
         if not self.truncate_mcmc: # take the average of the reconstruction loss across ALL steps
@@ -444,6 +499,7 @@ class GoedelVocabEBT(nn.Module):
         target_len: int,
         context_attention_mask: torch.Tensor | None = None,
         steps: int | None = None,
+        eos_token_id: int | None = None,
     ) -> dict[str, Any]:
         old_steps = self.mcmc_num_steps
         if steps is not None:
@@ -458,8 +514,18 @@ class GoedelVocabEBT(nn.Module):
             )
         finally:
             self.mcmc_num_steps = old_steps
+        chunk_ids = out.logits.argmax(dim=-1).detach()
+        eos_id = int(self.eos_token_id if eos_token_id is None else eos_token_id)
+        token_ids: list[torch.Tensor] = []
+        for row in chunk_ids:
+            flat = row.reshape(-1)
+            eos_hits = (flat == eos_id).nonzero(as_tuple=False)
+            if eos_hits.numel():
+                flat = flat[: int(eos_hits[0].item())]
+            token_ids.append(flat.detach())
         return {
             "logits": out.logits.detach(),
-            "token_ids": out.logits.argmax(dim=-1).detach(),
+            "chunk_token_ids": chunk_ids,
+            "token_ids": token_ids,
             "energies": [energy.detach() for energy in out.energies],
         }

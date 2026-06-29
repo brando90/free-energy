@@ -49,13 +49,14 @@ class InteractiveThread(threading.Thread):
     def send_cmd(self, cmd: dict[str, object]) -> None:
         self.session.sendline(json.dumps(cmd, ensure_ascii=False) + "\n")
 
-    def submit_and_receive(self, cmd: dict[str, object]) -> dict[str, object] | None:
+    def submit_and_receive(self, cmd: dict[str, object], *, timeout: float | None = None) -> dict[str, object] | None:
         if self.stop_flag:
             return None
         self.init_complete.wait()
         self.send_cmd(cmd)
         self.cmd_query_condition.set()
-        self.cmd_response_condition.wait()
+        if not self.cmd_response_condition.wait(timeout=timeout):
+            return None
         self.cmd_response_condition.clear()
         if self.response:
             output = self.response
@@ -132,12 +133,15 @@ def compile_theorem(
         expect_timeout=expect_timeout,
     )
     thread.start()
-    thread.init_complete.wait()
+    if not thread.init_complete.wait(timeout=expect_timeout):
+        thread.stop()
+        thread.join(timeout=5)
+        return False, None
     try:
-        outcome = thread.submit_and_receive({"cmd": theorem_code, "env": 0})
+        outcome = thread.submit_and_receive({"cmd": theorem_code, "env": 0}, timeout=timeout)
     finally:
         thread.stop()
-        thread.join()
+        thread.join(timeout=5)
     if outcome is None:
         return False, None
     messages = outcome.get("messages", [])

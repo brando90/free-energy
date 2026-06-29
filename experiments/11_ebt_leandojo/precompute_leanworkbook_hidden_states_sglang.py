@@ -58,6 +58,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--disable-cuda-graph", action="store_true")
     parser.add_argument("--start-index", type=int, default=0)
     parser.add_argument("--max-items", type=int, default=None)
+    parser.add_argument("--row-indices-file", type=pathlib.Path, default=None)
     parser.add_argument("--overwrite", action="store_true")
     return parser.parse_args()
 
@@ -166,6 +167,17 @@ def load_rows(data_file: pathlib.Path) -> list[dict[str, Any]]:
     return [json.loads(line) for line in data_file.read_text(encoding="utf-8").splitlines() if line.strip()]
 
 
+def load_row_indices(path: pathlib.Path) -> list[int]:
+    if path.suffix == ".json":
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        if isinstance(payload, dict):
+            payload = payload.get("indices", [])
+        if not isinstance(payload, list):
+            raise ValueError(f"Expected JSON list or {{\"indices\": [...]}} in {path}")
+        return [int(item) for item in payload]
+    return [int(line.strip()) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+
+
 def safetensors_path(out_dir: pathlib.Path, row_index: int) -> pathlib.Path:
     return out_dir / "hidden_states_safetensors" / f"{row_index:06d}.safetensors"
 
@@ -201,15 +213,21 @@ def main() -> int:
     from sglang import Engine
 
     data_file = args.data_file or download_dataset(args.dataset)
-    rows = load_rows(data_file)
-    rows = rows[args.start_index :]
-    if args.max_items is not None:
-        rows = rows[: args.max_items]
+    all_rows = load_rows(data_file)
+    if args.row_indices_file is not None:
+        selected_indices = load_row_indices(args.row_indices_file)
+        selected = [(row_index, all_rows[row_index]) for row_index in selected_indices]
+    else:
+        rows = all_rows[args.start_index :]
+        if args.max_items is not None:
+            rows = rows[: args.max_items]
+        selected = [(args.start_index + i, row) for i, row in enumerate(rows)]
 
     args.out_dir.mkdir(parents=True, exist_ok=True)
     manifest_path = args.out_dir / "manifest.jsonl"
+    errors_path = args.out_dir / "errors.json"
     completed = set() if args.overwrite else read_completed(manifest_path)
-    pending = [(args.start_index + i, row) for i, row in enumerate(rows) if (args.start_index + i) not in completed]
+    pending = [(row_index, row) for row_index, row in selected if row_index not in completed]
 
     tokenizer = AutoTokenizer.from_pretrained(args.model, trust_remote_code=True)
     if tokenizer.pad_token_id is None:
@@ -226,11 +244,14 @@ def main() -> int:
         "max_new_tokens": args.max_new_tokens,
         "context_length": args.context_length,
         "mem_fraction_static": args.mem_fraction_static,
+        "row_indices_file": str(args.row_indices_file) if args.row_indices_file else None,
         "pending": len(pending),
     }
     (args.out_dir / "run_metadata.json").write_text(json.dumps(metadata, indent=2, sort_keys=True), encoding="utf-8")
-    print(f"rows_total={len(rows)} pending={len(pending)} out_dir={args.out_dir}", flush=True)
+    print(f"rows_total={len(selected)} pending={len(pending)} out_dir={args.out_dir}", flush=True)
     if not pending:
+        if errors_path.exists():
+            errors_path.unlink()
         return 0
 
     engine = Engine(
@@ -261,7 +282,8 @@ def main() -> int:
     errors: list[dict[str, Any]] = []
     try:
         with manifest_path.open("a", encoding="utf-8") as manifest:
-            for offset in tqdm(range(0, len(pending), args.batch_size), desc="Precomputing hidden states"):
+            progress = tqdm(total=len(pending), desc="Precomputing hidden states", unit="item")
+            for offset in range(0, len(pending), args.batch_size):
                 batch = pending[offset : offset + args.batch_size]
                 prompts = [
                     make_prompt(str(row["id"]), str(row["natural_language_statement"]), str(row["formal_statement"]))
@@ -317,16 +339,22 @@ def main() -> int:
                         manifest.flush()
                     except Exception as exc:
                         errors.append({"row_index": row_index, "task_id": row.get("id"), "error": repr(exc)})
-                        (args.out_dir / "errors.json").write_text(json.dumps(errors, indent=2), encoding="utf-8")
+                        errors_path.write_text(json.dumps(errors, indent=2), encoding="utf-8")
+                progress.update(len(batch))
+            progress.close()
     finally:
         engine.shutdown()
 
     summary = {
-        "rows_selected": len(rows),
+        "rows_selected": len(selected),
         "completed_now": len(pending) - len(errors),
         "errors": len(errors),
         "manifest": str(manifest_path),
     }
+    if errors:
+        errors_path.write_text(json.dumps(errors, indent=2), encoding="utf-8")
+    elif errors_path.exists():
+        errors_path.unlink()
     (args.out_dir / "summary.json").write_text(json.dumps(summary, indent=2, sort_keys=True), encoding="utf-8")
     print(json.dumps(summary, indent=2, sort_keys=True))
     return 0 if not errors else 1

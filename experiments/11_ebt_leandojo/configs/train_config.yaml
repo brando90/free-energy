@@ -1,0 +1,150 @@
+defaults:
+  - _self_
+
+# Reference experiment sweep, launched on 2026-06-27.
+# Model defaults below are the intended Lean Workbook EBT setting:
+# hidden_dim=512, num_layers=2, num_heads=8, chunked compact-token targets.
+#
+# OOM-probed A100 batch sizes for the 4-run chunk-size sweep:
+#   chunk_size=1   loader.batch_size=8    # batch 16 OOM
+#   chunk_size=8   loader.batch_size=64   # batch 80 OOM
+#   chunk_size=32  loader.batch_size=96   # batch 128 OOM
+#   chunk_size=64  loader.batch_size=96   # batch 128 OOM
+#
+# Current default is the chunk_size=8 run. Override data.chunk_size and
+# loader.batch_size with the table above when reproducing another sweep member.
+seed: 17
+allow_cpu: false
+compile_model: false
+matmul_precision: medium
+
+data:
+  # Cleaned Lean Workbook compact-token targets and fixed 500-row validation split.
+  data_dir: ${hydra:runtime.cwd}/data/context_gold
+  activations_dir: ${hydra:runtime.cwd}/results/leanworkbook_plus_goedel_hidden_states_gpus0_3_contextonly/hidden_states_safetensors
+  indices_file: ${hydra:runtime.cwd}/data/leanworkbook_plus_val500_indices.json
+  split: train
+  label_field: labels
+  max_target_tokens: null
+  # One EBT target position predicts this many compact Lean tokens.
+  chunk_size: 8
+  max_items: null
+  activation_dtype: bf16
+  validate_context: true
+  model_name: null
+  model_revision: null
+
+loader:
+  # Default batch size matches the OOM-probed chunk_size=8 run above.
+  batch_size: 64
+  max_target_chunks_per_batch: null
+  shuffle: true
+  num_workers: 8
+  pin_memory: true
+  persistent_workers: true
+  prefetch_factor: 2
+  drop_last: false
+
+model:
+  model_name: Goedel-LM/Goedel-Prover-V2-8B
+  revision: null
+  vocab_size: dataset
+  pad_token_id: dataset
+  eos_token_id: dataset
+  bos_token_id: dataset
+
+  # Goedel context activations are 4096-dim; project them into the EBT width.
+  context_dim: 4096
+  hidden_dim: 512
+  num_layers: 2
+  num_heads: 8
+  dim_feedforward: 8192
+  max_target_positions: 4096
+  dropout: 0.0
+
+  mcmc_num_steps: 2
+  mcmc_step_size: 0.5
+  mcmc_step_size_learnable: true
+  langevin_dynamics_noise: 0.0
+
+  truncate_mcmc: false
+  no_mcmc_detach: false
+  loss_on_final_step_only: false
+
+  clamp_futures_grad: false
+  clamp_futures_grad_max_change: 9.0
+  reconstruction_coeff: 1.0
+  soften_target_prob_dist: 0.0
+
+  denoising_initial_condition: random_noise
+  gaussian_random_noise_scaling: 1.0
+  normalize_initial_condition: true
+  normalize_initial_condition_only_first_step: false
+
+  absolute_clamp: 0.0
+  norm_pred: false
+  norm_pred_not_final_step: false
+  sharpen_predicted_distribution: 0.0
+
+optim:
+  name: muon
+  lr: 0.001
+  weight_decay: 0.05
+  momentum: 0.95
+  nesterov: true
+  ns_coefficients: [3.4445, -4.775, 2.0315]
+  ns_steps: 5
+  betas: [0.9, 0.999]
+  eps: 1.0e-7
+  adjust_lr_fn: null
+  fused: true
+  mcmc_step_size_lr_multiplier: 1.5
+  use_scheduler: true
+  min_lr_scale: 10
+  max_scheduling_steps: 1000000
+  warm_up_steps: 10000
+  warm_up_base_lr_divider: -1
+
+train:
+  max_steps: 1000000
+  grad_accum_steps: 32
+  amp_bf16: true
+  grad_clip_norm: 1.0
+  log_every: 5
+  # User-requested checkpoint cadence for these runs.
+  save_every_steps: 1000
+  keep_last_checkpoints: 3
+
+validation:
+  split: val
+  # Compile validation cadence. Step 0 validation is always run before training.
+  every_steps: 100
+  max_items: null
+  # Compile validation uses a deterministic random 50-row subset of the fixed
+  # 500 validation indices to keep validation fast enough for frequent checks.
+  random_sample_size: 50
+  random_sample_seed: 17
+  max_batches: null
+  compile_enabled: true
+  # Compile generated Lean proofs in parallel; sampling remains batched on GPU.
+  compile_workers: 8
+  sample_steps: null
+  max_target_chunks: 4096
+  target_chunks_from_labels: true
+  compile_timeout: 600
+  compile_expect_timeout: 120
+  # Print every validation batch so validation does not appear hung.
+  progress_every: 1
+  repl_path: ${hydra:runtime.cwd}/repl
+  lean_env_path: ${hydra:runtime.cwd}/repl/test/Mathlib
+
+wandb:
+  enabled: true
+  project: free-energy-11-ebt-leandojo
+  entity: null
+  name: leanworkbook_chunk8_h4096_l3_bs64_val50_compile_val
+  tags: []
+
+hydra:
+  run:
+    dir: ${hydra:runtime.cwd}/runs/leanworkbook_chunk8_h4096_l3_bs64_val50_${now:%Y%m%d_%H%M%S}
