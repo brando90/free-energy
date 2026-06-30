@@ -1,0 +1,3 @@
+# Verdict
+
+H03 is supported in the probability-level sense and weakened in the ranking-only sense. In this finite world, all non-identity transforms preserved ranking: True. However the same rank order produced materially different probability objects: worst total variation from the base distribution was 0.394, worst KL was 0.385, worst latent-marginal TV was 0.280, and worst composed-posterior TV was 0.267. Expected-utility actions changed under: rank_preserving_bad_calibration. So normalization is not needed for argmax/top-k search or same-support ratio tests where constants cancel, but it gives concrete mathematical power for calibrated abstention, entropy, exact sampling, marginal probabilities, and posterior/expected-utility decisions.

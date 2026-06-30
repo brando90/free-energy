@@ -1,0 +1,222 @@
+{
+  "hypothesis": "H03 normalization probability power",
+  "python": "3.11.6",
+  "platform": "macOS-26.5-arm64-arm-64bit",
+  "candidates": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "base_scores": [
+    2.25,
+    1.65,
+    0.2,
+    -0.55,
+    -1.7
+  ],
+  "base_probabilities": [
+    0.568954,
+    0.312249,
+    0.073244,
+    0.034598,
+    0.010955
+  ],
+  "transforms": [
+    "identity",
+    "affine_shift_scale",
+    "temperature_hot",
+    "temperature_cold",
+    "nonlinear_monotone",
+    "rank_preserving_bad_calibration"
+  ],
+  "task_summary": [
+    {
+      "transform": "identity",
+      "rank_agreement": true,
+      "top1_agreement": true,
+      "top2_agreement": true,
+      "p_A": 0.568954,
+      "entropy": 1.041603,
+      "tv_from_base_probability": 0.0,
+      "kl_base_to_transform": 0.0,
+      "cross_entropy_under_base": 1.041603,
+      "expected_brier_under_base": 0.57211,
+      "chosen_action": "commit_top2",
+      "action_regret_under_base": 0.0,
+      "abstain_if_top_p_below_0_55": false,
+      "latent_marginal_tv_from_base": 0.0,
+      "posterior_tv_from_base": 0.0
+    },
+    {
+      "transform": "affine_shift_scale",
+      "rank_agreement": true,
+      "top1_agreement": true,
+      "top2_agreement": true,
+      "p_A": 0.756524,
+      "entropy": 0.62174,
+      "tv_from_base_probability": 0.18757,
+      "kl_base_to_transform": 0.192713,
+      "cross_entropy_under_base": 1.234315,
+      "expected_brier_under_base": 0.619225,
+      "chosen_action": "commit_top2",
+      "action_regret_under_base": 0.0,
+      "abstain_if_top_p_below_0_55": false,
+      "latent_marginal_tv_from_base": 0.097214,
+      "posterior_tv_from_base": 0.147407
+    },
+    {
+      "transform": "temperature_hot",
+      "rank_agreement": true,
+      "top1_agreement": true,
+      "top2_agreement": true,
+      "p_A": 0.341902,
+      "entropy": 1.49551,
+      "tv_from_base_probability": 0.262161,
+      "kl_base_to_transform": 0.198805,
+      "cross_entropy_under_base": 1.240408,
+      "expected_brier_under_base": 0.648041,
+      "chosen_action": "commit_top2",
+      "action_regret_under_base": 0.0,
+      "abstain_if_top_p_below_0_55": true,
+      "latent_marginal_tv_from_base": 0.204787,
+      "posterior_tv_from_base": 0.256182
+    },
+    {
+      "transform": "temperature_cold",
+      "rank_agreement": true,
+      "top1_agreement": true,
+      "top2_agreement": true,
+      "p_A": 0.786694,
+      "entropy": 0.561326,
+      "tv_from_base_probability": 0.21774,
+      "kl_base_to_transform": 0.273019,
+      "cross_entropy_under_base": 1.314621,
+      "expected_brier_under_base": 0.63675,
+      "chosen_action": "commit_top2",
+      "action_regret_under_base": 0.0,
+      "abstain_if_top_p_below_0_55": false,
+      "latent_marginal_tv_from_base": 0.106087,
+      "posterior_tv_from_base": 0.172383
+    },
+    {
+      "transform": "nonlinear_monotone",
+      "rank_agreement": true,
+      "top1_agreement": true,
+      "top2_agreement": true,
+      "p_A": 0.746563,
+      "entropy": 0.727808,
+      "tv_from_base_probability": 0.177609,
+      "kl_base_to_transform": 0.084941,
+      "cross_entropy_under_base": 1.126544,
+      "expected_brier_under_base": 0.617323,
+      "chosen_action": "commit_top2",
+      "action_regret_under_base": 0.0,
+      "abstain_if_top_p_below_0_55": false,
+      "latent_marginal_tv_from_base": 0.054215,
+      "posterior_tv_from_base": 0.027672
+    },
+    {
+      "transform": "rank_preserving_bad_calibration",
+      "rank_agreement": true,
+      "top1_agreement": true,
+      "top2_agreement": true,
+      "p_A": 0.265634,
+      "entropy": 1.589143,
+      "tv_from_base_probability": 0.393692,
+      "kl_base_to_transform": 0.385488,
+      "cross_entropy_under_base": 1.427091,
+      "expected_brier_under_base": 0.724156,
+      "chosen_action": "collect_more_evidence",
+      "action_regret_under_base": 0.336947,
+      "abstain_if_top_p_below_0_55": true,
+      "latent_marginal_tv_from_base": 0.280319,
+      "posterior_tv_from_base": 0.267068
+    }
+  ],
+  "capability_matrix": [
+    {
+      "task": "argmax / top-k search",
+      "minimal_object": "ordering",
+      "rank_only": "yes",
+      "score_difference": "yes",
+      "unnormalized_score": "yes",
+      "normalized_probability_required": "no",
+      "note": "Any strictly monotone transform preserves the answer."
+    },
+    {
+      "task": "Metropolis-Hastings accept/reject ratio",
+      "minimal_object": "score difference or unnormalized density ratio",
+      "rank_only": "no",
+      "score_difference": "yes",
+      "unnormalized_score": "yes",
+      "normalized_probability_required": "no",
+      "note": "The global partition constant cancels in same-x ratios."
+    },
+    {
+      "task": "calibrated abstention",
+      "minimal_object": "calibrated probability",
+      "rank_only": "no",
+      "score_difference": "no",
+      "unnormalized_score": "no",
+      "normalized_probability_required": "yes",
+      "note": "A threshold such as P(top)>0.55 is meaningless without calibration."
+    },
+    {
+      "task": "expected utility decision",
+      "minimal_object": "calibrated probability over outcomes",
+      "rank_only": "no",
+      "score_difference": "no",
+      "unnormalized_score": "no",
+      "normalized_probability_required": "yes",
+      "note": "Utilities integrate over possible states, not only the top state."
+    },
+    {
+      "task": "entropy / uncertainty",
+      "minimal_object": "normalized probability distribution",
+      "rank_only": "no",
+      "score_difference": "no",
+      "unnormalized_score": "no",
+      "normalized_probability_required": "yes",
+      "note": "Entropy changes under rank-preserving temperature transforms."
+    },
+    {
+      "task": "exact categorical sampling",
+      "minimal_object": "normalized probability or equivalent exact sampler",
+      "rank_only": "no",
+      "score_difference": "no",
+      "unnormalized_score": "partial",
+      "normalized_probability_required": "yes",
+      "note": "Finite enumeration can normalize internally; rank alone cannot sample."
+    },
+    {
+      "task": "latent-variable marginalization",
+      "minimal_object": "summed weights and final probability scale",
+      "rank_only": "no",
+      "score_difference": "partial",
+      "unnormalized_score": "partial",
+      "normalized_probability_required": "yes",
+      "note": "Multiplicity over hidden states is lost under max/rank-only summaries."
+    },
+    {
+      "task": "Bayesian evidence composition",
+      "minimal_object": "calibrated log-ratios plus posterior normalization",
+      "rank_only": "no",
+      "score_difference": "partial",
+      "unnormalized_score": "partial",
+      "normalized_probability_required": "yes",
+      "note": "Log-ratios combine, but posterior decisions need calibrated scale."
+    },
+    {
+      "task": "compare likelihoods across different inputs",
+      "minimal_object": "input-specific normalized likelihood",
+      "rank_only": "no",
+      "score_difference": "no",
+      "unnormalized_score": "no",
+      "normalized_probability_required": "yes",
+      "note": "Different partition functions no longer cancel."
+    }
+  ],
+  "verdict": "# Verdict\n\nH03 is supported in the probability-level sense and weakened in the ranking-only sense. In this finite world, all non-identity transforms preserved ranking: True. However the same rank order produced materially different probability objects: worst total variation from the base distribution was 0.394, worst KL was 0.385, worst latent-marginal TV was 0.280, and worst composed-posterior TV was 0.267. Expected-utility actions changed under: rank_preserving_bad_calibration. So normalization is not needed for argmax/top-k search or same-support ratio tests where constants cancel, but it gives concrete mathematical power for calibrated abstention, entropy, exact sampling, marginal probabilities, and posterior/expected-utility decisions.\n"
+}
