@@ -12,7 +12,7 @@ from pathlib import Path
 from typing import Any, Callable, Sequence
 
 
-HERE = Path(__file__).resolve().parent
+HERE = Path(__file__).resolve().parent.parent
 DEFAULT_DATA_DIR = HERE / "data"
 DEFAULT_DATASET = "internlm/Lean-Workbook"
 DEFAULT_SEED = 3407
@@ -262,4 +262,3 @@ def benchmark_compile_success(
     )
     summary_path.write_text(json.dumps(asdict(summary), indent=2, sort_keys=True), encoding="utf-8")
     return summary
-

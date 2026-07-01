@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Chunk-aware EBT over compact Lean token logits conditioned on Goedel context."""
+"""Chunk-aware EBT over Lean token logits conditioned on Goedel context."""
 
 from __future__ import annotations
 
@@ -24,13 +24,15 @@ class EBTOutput:
 
 
 class GoedelVocabEBT(nn.Module):
-    """Energy model over differentiable chunked compact-vocab token logits.
+    """Energy model over differentiable chunked full-vocab token logits.
 
     This follows the NLP EBT pattern from alexiglad/EBT: token ids enter only as
     conditioning/targets; the optimized state is an internal
     `[B, T_chunk, chunk_size, vocab]` tensor. Each EBT target position represents
-    `chunk_size` compact Lean token slots. A learned projection maps the
-    flattened chunk distribution into one decoder hidden state.
+    `chunk_size` Lean token slots. A shared token projection maps each
+    vocabulary distribution to `token_embed_dim`, and chunk slots are
+    concatenated into one decoder hidden state of size
+    `token_embed_dim * chunk_size`.
     """
 
     def __init__(
@@ -67,6 +69,7 @@ class GoedelVocabEBT(nn.Module):
         loss_on_final_step_only: bool = False,
         max_target_positions: int = 4096,
         chunk_size: int = 1,
+        token_embed_dim: int = 256,
         eos_token_id: int | None = None,
         bos_token_id: int | None = None,
     ) -> None:
@@ -78,7 +81,16 @@ class GoedelVocabEBT(nn.Module):
         self.chunk_size = int(chunk_size)
         if self.chunk_size <= 0:
             raise ValueError("chunk_size must be positive")
-        self.hidden_dim = int(hidden_dim or getattr(config, "hidden_size", 4096))
+        self.token_embed_dim = int(token_embed_dim)
+        if self.token_embed_dim <= 0:
+            raise ValueError("token_embed_dim must be positive")
+        inferred_hidden_dim = self.token_embed_dim * self.chunk_size
+        if hidden_dim is not None and int(hidden_dim) != inferred_hidden_dim:
+            raise ValueError(
+                f"hidden_dim must equal token_embed_dim * chunk_size "
+                f"({self.token_embed_dim} * {self.chunk_size} = {inferred_hidden_dim}), got {hidden_dim}"
+            )
+        self.hidden_dim = inferred_hidden_dim
         self.context_dim = int(context_dim or self.hidden_dim)
         if pad_token_id is None:
             pad_token_id = tokenizer.pad_token_id if tokenizer.pad_token_id is not None else tokenizer.eos_token_id
@@ -111,7 +123,7 @@ class GoedelVocabEBT(nn.Module):
             requires_grad=False,
         )
 
-        self.vocab_to_embed = nn.Linear(self.chunk_size * self.vocab_size, self.hidden_dim, bias=False)
+        self.vocab_to_token_embed = nn.Linear(self.vocab_size, self.token_embed_dim, bias=False)
         self.context_to_hidden = (
             nn.Linear(self.context_dim, self.hidden_dim, bias=False)
             if self.context_dim != self.hidden_dim
@@ -130,10 +142,8 @@ class GoedelVocabEBT(nn.Module):
         )
         self.downstream_model = nn.TransformerDecoder(layer, num_layers=num_layers)
         self.energy_head = nn.Sequential(nn.LayerNorm(self.hidden_dim), nn.Linear(self.hidden_dim, 1))
-        self.prediction_head = nn.Sequential(
-            nn.LayerNorm(self.hidden_dim),
-            nn.Linear(self.hidden_dim, self.chunk_size * self.vocab_size),
-        )
+        self.prediction_norm = nn.LayerNorm(self.hidden_dim)
+        self.token_embed_to_vocab = nn.Linear(self.token_embed_dim, self.vocab_size, bias=False)
 
     def init_logits(
         self,
@@ -169,8 +179,8 @@ class GoedelVocabEBT(nn.Module):
             if not self.normalize_initial_condition_only_first_step or mcmc_step == 0:
                 x = torch.softmax(x, dim=-1)
         
-        # this is a nn.Linear basically (not an nn.Embedding, could be a "mixture")
-        return self.vocab_to_embed(x.reshape(*x.shape[:-2], self.chunk_size * self.vocab_size))
+        token_embeddings = self.vocab_to_token_embed(x)
+        return token_embeddings.reshape(*x.shape[:-2], self.chunk_size * self.token_embed_dim)
 
     def ids_to_logits(self, ids: torch.Tensor, *, true_logit: float = 10.0, false_logit: float = 0.0) -> torch.Tensor:
         if ids.dim() != 3:
@@ -187,8 +197,9 @@ class GoedelVocabEBT(nn.Module):
         return logits.scatter_(-1, clamped.unsqueeze(-1), float(true_logit))
 
     def predict_from_hidden(self, hidden: torch.Tensor) -> torch.Tensor:
-        logits = self.prediction_head(hidden)
-        return logits.reshape(hidden.shape[0], hidden.shape[1], self.chunk_size, self.vocab_size)
+        normalized = self.prediction_norm(hidden)
+        token_hidden = normalized.reshape(hidden.shape[0], hidden.shape[1], self.chunk_size, self.token_embed_dim)
+        return self.token_embed_to_vocab(token_hidden)
 
     @staticmethod
     def target_causal_mask(target_len: int, *, device: torch.device | str) -> torch.Tensor:

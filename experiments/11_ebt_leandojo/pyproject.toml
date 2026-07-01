@@ -13,9 +13,10 @@ dependencies = [
   "pexpect>=4.9.0",
   "safetensors>=0.4",
   "sglang>=0.4.8",
-  "torch>=2.6.0",
+  "torch>=2.12,<2.13",
   "tqdm>=4.67.0",
-  "transformers>=4.51.0",
+  "transformers==4.51.*",
+  "tree-sitter>=0.25.2",
   "wandb>=0.17,<1",
 ]
 

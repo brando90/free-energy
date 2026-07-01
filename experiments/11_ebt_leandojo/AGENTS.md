@@ -2,20 +2,17 @@
 
 ## What this repo is
 Lean Workbook Plus pipeline for two things:
-- prepare compact target data and vocab;
 - precompute Goedel hidden states;
 - run Goedel-Prover baseline + compile-based validation;
 - train and validate EBT (`train_ebt.py`) using those hidden states.
 
 ## Top-level layout
 - `configs/train_config.yaml` – Hydra defaults for EBT.
-- `leanworkbook_dataloader.py` – dataset + dataloader utilities (includes `--split`, `--chunk-size`, `--batch-size` smoke test).
+- `dataloader.py` – dataset + dataloader utilities (includes `--split`, `--chunk-size`, `--batch-size` smoke test).
 - `train_ebt.py` – Hydra trainer for EBT.
-- `precompute_leanworkbook_hidden_states_sglang.py` – generate and save `*.safetensors` context activations.
-- `run_goedel_leanworkbook_plus_sglang.py` + `leanworkbook_plus_benchmark.py` – benchmark generation + compile-eval helper.
-- `data/clean_leanworkbook_targets.py` – clean raw formal statements into compact token ids.
-- `data/validate_cleaned_lean_targets.py` – validate cleaned `target_text` by compiling with Lean.
-- `lean_compile.py` + `lean_repl.py` – shared Lean REPL compile primitives.
+- `precompute_states.py` – generate and save `*.safetensors` context activations.
+- `run_goedel.py` + `helpers/benchmark.py` – benchmark generation + compile-eval helper.
+- `helpers/lean_compile.py` + `helpers/lean_repl.py` – shared Lean REPL compile primitives.
 - `results/`, `runs/` – existing artifacts and experiment outputs.
 
 ## Environment
@@ -32,45 +29,33 @@ Lean Workbook Plus pipeline for two things:
 - Raw data: `data/leanworkbook_plus_train.jsonl`
 - Cleaned manifest: `data/context_gold/manifest.jsonl`
 - Vocab: `data/context_gold/vocab.json`
-- Val indices: `data/leanworkbook_plus_val500_indices.json` (500-row val split)
-- Precomputed hidden states dir currently used by train: `results/leanworkbook_plus_goedel_hidden_states_gpus0_3_contextonly/hidden_states_safetensors`
+- Precomputed hidden states dir currently used by train: `results/leandojo_hidden_states/hidden_states_safetensors`
 
 ## Important command set
 
 ### Quick sanity checks
 - Test dataset/dataloader integration:
-  - `python leanworkbook_dataloader.py`
-- Preview cleaned rows:
-  - `python data/clean_leanworkbook_targets.py --preview 3`
-
-### Regenerate cleaned targets
-- Full clean:
-  - `python data/clean_leanworkbook_targets.py --input data/leanworkbook_plus_train.jsonl --out-dir data/context_gold --tokenizer Goedel-LM/Goedel-Prover-V2-8B`
-
-### Validate cleaned targets in Lean
-- Validate all (or subset):
-  - `python data/validate_cleaned_lean_targets.py --data-dir data/context_gold --workers 16 --limit 0`
-  - outputs: `results/cleaned_leanworkbook_validation_full/summary.json` and `compile_results.csv`
+  - `python dataloader.py`
 
 ### Missing hidden-state bookkeeping
 - Identify missing rows:
-  - `python write_missing_hidden_state_indices.py --out-dir results/leanworkbook_plus_goedel_hidden_states_gpus0_3_contextonly --total-rows 25214`
+  - `python helpers/missing_states.py --out-dir results/leandojo_hidden_states --total-rows 25214`
 
 ### Precompute hidden states
 - Full pass (default GPUs 0,1,2,3):
-  - `python precompute_leanworkbook_hidden_states_sglang.py`
+  - `python precompute_states.py`
 - Resume from missing-row list:
-  - `python precompute_leanworkbook_hidden_states_sglang.py --out-dir results/leanworkbook_plus_goedel_hidden_states_gpus0_3_contextonly --row-indices-file results/leanworkbook_plus_goedel_hidden_states_gpus0_3_contextonly/missing_row_indices.json`
+  - `python precompute_states.py --out-dir results/leandojo_hidden_states --row-indices-file results/leandojo_hidden_states/missing_row_indices.json`
 - Force rewrite:
-  - `python precompute_leanworkbook_hidden_states_sglang.py --out-dir ... --overwrite`
+  - `python precompute_states.py --out-dir ... --overwrite`
 
 ### Baseline benchmark / compile pass
 - Default 500-item val generation (and compile eval):
-  - `python run_goedel_leanworkbook_plus_sglang.py`
+  - `python run_goedel.py`
 - Just fetch/download dataset+indices:
-  - `python run_goedel_leanworkbook_plus_sglang.py --download-only`
+  - `python run_goedel.py --download-only`
 - Sample new validation subset from another seed:
-  - `python run_goedel_leanworkbook_plus_sglang.py --sample-validation --seed 3407 --val-size 500`
+  - `python run_goedel.py --sample-validation --seed 3407 --val-size 500`
 
 ### EBT training
 - Default run (uses Hydra config in `configs/train_config.yaml`):

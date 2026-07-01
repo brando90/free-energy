@@ -20,11 +20,11 @@ from omegaconf import DictConfig, OmegaConf
 from torch.utils.data import DataLoader
 
 from ebt import GoedelVocabEBT
-from lean_compile import compile_theorem
-from leanworkbook_dataloader import (
+from dataloader import (
     LeanWorkbookEmbeddingDataset,
     make_leanworkbook_embedding_dataloader,
 )
+from helpers.lean_compile import compile_theorem
 
 TOKEN_WEIGHTED_METRICS = (
     "loss",
@@ -70,6 +70,12 @@ def _as_path(value: str | Path) -> Path:
     return Path(value).expanduser().resolve()
 
 
+def _optional_path(value: Any) -> Path | None:
+    if value is None or str(value).lower() in {"none", "null", ""}:
+        return None
+    return _as_path(value)
+
+
 def _seed_everything(seed: int) -> None:
     random.seed(seed)
     np.random.seed(seed)
@@ -109,11 +115,27 @@ def _make_loader(
     random_sample_seed: int | None = None,
 ) -> DataLoader[dict[str, Any]]:
     selected_split = split if split is not None else cfg.data.split
+    data_sources = getattr(cfg.data, "sources", None)
+    sources = None
+    if data_sources is not None:
+        sources = []
+        for source in data_sources:
+            source_dict = dict(OmegaConf.to_container(source, resolve=True))
+            if "data_dir" in source_dict:
+                source_dict["data_dir"] = _as_path(source_dict["data_dir"])
+            if "activations_dir" in source_dict:
+                source_dict["activations_dir"] = _as_path(source_dict["activations_dir"])
+            if "indices_file" in source_dict:
+                source_dict["indices_file"] = _optional_path(source_dict["indices_file"])
+            source_dict.setdefault("split", selected_split)
+            sources.append(source_dict)
     loader = make_leanworkbook_embedding_dataloader(
         data_dir=_as_path(cfg.data.data_dir),
         activations_dir=_as_path(cfg.data.activations_dir),
-        indices_file=_as_path(cfg.data.indices_file),
+        indices_file=_optional_path(cfg.data.indices_file),
         split=selected_split,
+        dataset_format=cfg.data.dataset_format,
+        sources=sources,
         max_items=cfg.data.max_items if max_items is None else max_items,
         random_sample_items=random_sample_items,
         random_sample_seed=int(cfg.seed) if random_sample_seed is None else int(random_sample_seed),
@@ -140,6 +162,70 @@ def _make_loader(
     if len(loader.dataset) == 0:
         raise ValueError(f"No Lean Workbook samples matched split={selected_split!r}")
     return loader
+
+
+def _make_source_loader(
+    cfg: DictConfig,
+    source_cfg: Any,
+    *,
+    shuffle: bool = False,
+) -> DataLoader[dict[str, Any]]:
+    source = dict(OmegaConf.to_container(source_cfg, resolve=True))
+    source.pop("name", None)
+    random_sample_items = source.pop("random_sample_size", None)
+    random_sample_seed = source.pop("random_sample_seed", cfg.validation.random_sample_seed)
+    max_items = source.pop("max_items", None)
+    source["data_dir"] = _as_path(source["data_dir"])
+    source["activations_dir"] = _as_path(source["activations_dir"])
+    source["indices_file"] = _optional_path(source.get("indices_file"))
+    loader = make_leanworkbook_embedding_dataloader(
+        **source,
+        max_items=max_items,
+        random_sample_items=random_sample_items,
+        random_sample_seed=int(random_sample_seed),
+        max_target_tokens=cfg.data.max_target_tokens,
+        chunk_size=int(cfg.data.chunk_size),
+        activation_dtype=cfg.data.activation_dtype,
+        model_name=cfg.data.model_name or cfg.model.model_name,
+        model_revision=cfg.data.model_revision or cfg.model.revision,
+        validate_context=cfg.data.validate_context,
+        batch_size=int(cfg.loader.batch_size),
+        shuffle=shuffle,
+        num_workers=int(cfg.loader.num_workers),
+        max_target_chunks_per_batch=(
+            None
+            if cfg.loader.max_target_chunks_per_batch is None
+            else int(cfg.loader.max_target_chunks_per_batch)
+        ),
+        seed=int(cfg.seed),
+        pin_memory=bool(cfg.loader.pin_memory),
+        persistent_workers=bool(cfg.loader.persistent_workers),
+        prefetch_factor=(None if int(cfg.loader.num_workers) == 0 else int(cfg.loader.prefetch_factor)),
+        drop_last=False,
+    )
+    if len(loader.dataset) == 0:
+        raise ValueError(f"No validation samples matched source={source_cfg}")
+    return loader
+
+
+def _make_validation_loaders(cfg: DictConfig) -> dict[str, DataLoader[dict[str, Any]]]:
+    sources = getattr(cfg.validation, "sources", None)
+    if sources is None:
+        return {"val": _make_loader(
+            cfg,
+            split=str(cfg.validation.split),
+            shuffle=False,
+            max_items=(None if cfg.validation.max_items is None else int(cfg.validation.max_items)),
+            random_sample_items=(
+                None if cfg.validation.random_sample_size is None else int(cfg.validation.random_sample_size)
+            ),
+            random_sample_seed=int(cfg.validation.random_sample_seed),
+        )}
+    loaders: dict[str, DataLoader[dict[str, Any]]] = {}
+    for source in sources:
+        name = str(source.name)
+        loaders[name] = _make_source_loader(cfg, source, shuffle=False)
+    return loaders
 
 
 def _init_wandb(cfg: DictConfig, run_dir: Path, dataset_size: int, validation_size: int) -> Any:
@@ -408,6 +494,67 @@ def _run_validation(
     return metrics
 
 
+def _run_validation_suite(
+    *,
+    model: torch.nn.Module,
+    validation_loaders: dict[str, DataLoader[dict[str, Any]]],
+    cfg: DictConfig,
+    device: torch.device,
+    amp_enabled: bool,
+    step: int,
+    examples_seen: int,
+    batches_seen: int,
+    dataset_size: int,
+    batches_per_epoch: int,
+) -> dict[str, dict[str, float]]:
+    return {
+        name: _run_validation(
+            model=model,
+            validation_loader=loader,
+            cfg=cfg,
+            device=device,
+            amp_enabled=amp_enabled,
+            step=step,
+            examples_seen=examples_seen,
+            batches_seen=batches_seen,
+            dataset_size=dataset_size,
+            batches_per_epoch=batches_per_epoch,
+        )
+        for name, loader in validation_loaders.items()
+    }
+
+
+def _flatten_validation_metrics(metrics_by_name: dict[str, dict[str, float]]) -> dict[str, float]:
+    out: dict[str, float] = {}
+    for name, metrics in metrics_by_name.items():
+        out.update(_prefixed(metrics, name))
+    return out
+
+
+def _write_target_position_report(dataset: Any, cfg: DictConfig, run_dir: Path) -> dict[str, Any]:
+    chunk_sizes = [int(x) for x in cfg.validation.get("target_position_report_chunk_sizes", [int(cfg.data.chunk_size)])]
+    max_positions = int(cfg.model.max_target_positions)
+    records = getattr(dataset, "records", [])
+    by_source: dict[str, dict[str, int]] = {}
+    for record in records:
+        source = str(getattr(record, "dataset_name", "unknown"))
+        length = len(record.target_local_ids) + 1
+        stats = by_source.setdefault(source, {"samples": 0, "max_tokens_plus_eos": 0})
+        stats["samples"] += 1
+        stats["max_tokens_plus_eos"] = max(stats["max_tokens_plus_eos"], length)
+        for chunk_size in chunk_sizes:
+            key = f"exceeds_chunk_{chunk_size}"
+            stats[key] = stats.get(key, 0) + int(math.ceil(length / chunk_size) > max_positions)
+    report = {
+        "max_target_positions": max_positions,
+        "chunk_sizes": chunk_sizes,
+        "total_samples": len(records),
+        "by_source": by_source,
+    }
+    (run_dir / "target_position_report.json").write_text(json.dumps(report, indent=2, sort_keys=True), encoding="utf-8")
+    return report
+
+
 def _resolve_dataset_int(value: Any, dataset: LeanWorkbookEmbeddingDataset, key: str) -> int | None:
     if value is None:
         return None
@@ -426,7 +573,8 @@ def _make_model(cfg: DictConfig, dataset: LeanWorkbookEmbeddingDataset) -> Goede
         "eos_token_id": _resolve_dataset_int(model_cfg.eos_token_id, dataset, "local_eos_id"),
         "bos_token_id": _resolve_dataset_int(model_cfg.bos_token_id, dataset, "local_bos_id"),
         "context_dim": model_cfg.context_dim,
-        "hidden_dim": model_cfg.hidden_dim,
+        "hidden_dim": None if model_cfg.hidden_dim is None else int(model_cfg.hidden_dim),
+        "token_embed_dim": int(model_cfg.token_embed_dim),
         "denoising_initial_condition": model_cfg.denoising_initial_condition,
         "chunk_size": int(cfg.data.chunk_size),
     }
@@ -626,21 +774,15 @@ def main(cfg: DictConfig) -> None:
 
     loader = _make_loader(cfg)
     dataset = loader.dataset
-    validation_loader = _make_loader(
-        cfg,
-        split=str(cfg.validation.split),
-        shuffle=False,
-        max_items=(None if cfg.validation.max_items is None else int(cfg.validation.max_items)),
-        random_sample_items=(
-            None if cfg.validation.random_sample_size is None else int(cfg.validation.random_sample_size)
-        ),
-        random_sample_seed=int(cfg.validation.random_sample_seed),
-    )
-    validation_dataset = validation_loader.dataset
+    validation_loaders = _make_validation_loaders(cfg)
+    validation_size_by_name = {name: len(loader.dataset) for name, loader in validation_loaders.items()}
+    validation_size = sum(validation_size_by_name.values())
     print(f"run_dir={run_dir}")
     print(f"device={device}")
     print(f"dataset_size={len(dataset)} split={cfg.data.split}")
-    print(f"validation_size={len(validation_dataset)} split={cfg.validation.split}")
+    print(f"validation_size={validation_size} by_name={validation_size_by_name}")
+    target_position_report = _write_target_position_report(dataset, cfg, run_dir)
+    print(f"target_position_report={json.dumps(target_position_report, sort_keys=True)}", flush=True)
 
     model = _make_model(cfg, dataset).to(device)
     if bool(cfg.compile_model):
@@ -657,7 +799,7 @@ def main(cfg: DictConfig) -> None:
     dataset_size = len(dataset)
     batches_per_epoch = len(loader)
     amp_enabled = bool(cfg.train.amp_bf16) and device.type == "cuda"
-    wandb_run = _init_wandb(cfg, run_dir, len(dataset), len(validation_dataset))
+    wandb_run = _init_wandb(cfg, run_dir, len(dataset), validation_size)
 
     step = 0
     accum = 0
@@ -670,11 +812,11 @@ def main(cfg: DictConfig) -> None:
     examples_seen = 0
     batches_seen = 0
     latest_metrics: dict[str, float] = {}
-    latest_validation_metrics: dict[str, float] = {}
+    latest_validation_metrics: dict[str, dict[str, float]] = {}
 
-    latest_validation_metrics = _run_validation(
+    latest_validation_metrics = _run_validation_suite(
         model=model,
-        validation_loader=validation_loader,
+        validation_loaders=validation_loaders,
         cfg=cfg,
         device=device,
         amp_enabled=amp_enabled,
@@ -684,23 +826,25 @@ def main(cfg: DictConfig) -> None:
         dataset_size=dataset_size,
         batches_per_epoch=batches_per_epoch,
     )
-    _append_jsonl(run_dir / "validation_metrics.jsonl", latest_validation_metrics)
+    for name, metrics in latest_validation_metrics.items():
+        _append_jsonl(run_dir / f"{name}_metrics.jsonl", metrics)
     if wandb_run is not None:
-        wandb_run.log(_prefixed(latest_validation_metrics, "validation"), step=0)
-    if "compile_pass_rate" in latest_validation_metrics:
-        print(
-            "validation step={step:.0f} loss={loss:.4f} acc={final_token_accuracy:.3f} "
-            "ppl={perplexity:.3f} compile_pass={compile_pass_count:.0f}/{rows:.0f} "
-            "rate={compile_pass_rate:.4f} epoch={epoch:.4f}".format(**latest_validation_metrics),
-            flush=True,
-        )
-    else:
-        print(
-            "validation step={step:.0f} loss={loss:.4f} "
-            "acc={final_token_accuracy:.3f} exact={final_exact_accuracy:.3f} "
-            "ppl={perplexity:.3f} rows={rows:.0f} epoch={epoch:.4f}".format(**latest_validation_metrics),
-            flush=True,
-        )
+        wandb_run.log(_flatten_validation_metrics(latest_validation_metrics), step=0)
+    for name, metrics in latest_validation_metrics.items():
+        if "compile_pass_rate" in metrics:
+            print(
+                "{name} step={step:.0f} loss={loss:.4f} acc={final_token_accuracy:.3f} "
+                "ppl={perplexity:.3f} compile_pass={compile_pass_count:.0f}/{rows:.0f} "
+                "rate={compile_pass_rate:.4f} epoch={epoch:.4f}".format(name=name, **metrics),
+                flush=True,
+            )
+        else:
+            print(
+                "{name} step={step:.0f} loss={loss:.4f} "
+                "acc={final_token_accuracy:.3f} exact={final_exact_accuracy:.3f} "
+                "ppl={perplexity:.3f} rows={rows:.0f} epoch={epoch:.4f}".format(name=name, **metrics),
+                flush=True,
+            )
 
     while step < max_steps:
         for batch in loader:
@@ -783,9 +927,9 @@ def main(cfg: DictConfig) -> None:
                     last_log = now
 
                 if step % val_every == 0:
-                    latest_validation_metrics = _run_validation(
+                    latest_validation_metrics = _run_validation_suite(
                         model=model,
-                        validation_loader=validation_loader,
+                        validation_loaders=validation_loaders,
                         cfg=cfg,
                         device=device,
                         amp_enabled=amp_enabled,
@@ -795,23 +939,25 @@ def main(cfg: DictConfig) -> None:
                         dataset_size=dataset_size,
                         batches_per_epoch=batches_per_epoch,
                     )
-                    _append_jsonl(run_dir / "validation_metrics.jsonl", latest_validation_metrics)
+                    for name, metrics in latest_validation_metrics.items():
+                        _append_jsonl(run_dir / f"{name}_metrics.jsonl", metrics)
                     if wandb_run is not None:
-                        wandb_run.log(_prefixed(latest_validation_metrics, "validation"), step=step)
-                    if "compile_pass_rate" in latest_validation_metrics:
-                        print(
-                            "validation step={step:.0f} loss={loss:.4f} acc={final_token_accuracy:.3f} "
-                            "ppl={perplexity:.3f} compile_pass={compile_pass_count:.0f}/{rows:.0f} "
-                            "rate={compile_pass_rate:.4f} epoch={epoch:.4f}".format(**latest_validation_metrics),
-                            flush=True,
-                        )
-                    else:
-                        print(
-                            "validation step={step:.0f} loss={loss:.4f} "
-                            "acc={final_token_accuracy:.3f} exact={final_exact_accuracy:.3f} "
-                            "ppl={perplexity:.3f} rows={rows:.0f} epoch={epoch:.4f}".format(**latest_validation_metrics),
-                            flush=True,
-                        )
+                        wandb_run.log(_flatten_validation_metrics(latest_validation_metrics), step=step)
+                    for name, metrics in latest_validation_metrics.items():
+                        if "compile_pass_rate" in metrics:
+                            print(
+                                "{name} step={step:.0f} loss={loss:.4f} acc={final_token_accuracy:.3f} "
+                                "ppl={perplexity:.3f} compile_pass={compile_pass_count:.0f}/{rows:.0f} "
+                                "rate={compile_pass_rate:.4f} epoch={epoch:.4f}".format(name=name, **metrics),
+                                flush=True,
+                            )
+                        else:
+                            print(
+                                "{name} step={step:.0f} loss={loss:.4f} "
+                                "acc={final_token_accuracy:.3f} exact={final_exact_accuracy:.3f} "
+                                "ppl={perplexity:.3f} rows={rows:.0f} epoch={epoch:.4f}".format(name=name, **metrics),
+                                flush=True,
+                            )
 
                 if step % save_every == 0:
                     _save_checkpoint(
@@ -819,7 +965,7 @@ def main(cfg: DictConfig) -> None:
                         model=model,
                         optimizer=optimizer,
                         step=step,
-                        metrics={**latest_metrics, **_prefixed(latest_validation_metrics, "validation")},
+                        metrics={**latest_metrics, **_flatten_validation_metrics(latest_validation_metrics)},
                         cfg=cfg,
                     )
                     _prune_checkpoints(run_dir, int(cfg.train.keep_last_checkpoints))
@@ -832,13 +978,14 @@ def main(cfg: DictConfig) -> None:
         model=model,
         optimizer=optimizer,
         step=step,
-        metrics={**latest_metrics, **_prefixed(latest_validation_metrics, "validation")},
+        metrics={**latest_metrics, **_flatten_validation_metrics(latest_validation_metrics)},
         cfg=cfg,
     )
     summary = {
         "step": step,
         "dataset_size": len(dataset),
-        "validation_dataset_size": len(validation_dataset),
+        "validation_dataset_size": validation_size,
+        "validation_dataset_size_by_name": validation_size_by_name,
         "split": cfg.data.split,
         "validation_split": cfg.validation.split,
         "latest_metrics": latest_metrics,

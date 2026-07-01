@@ -11,7 +11,7 @@ from dataclasses import asdict
 from pathlib import Path
 from typing import Any, Sequence
 
-from leanworkbook_plus_benchmark import (
+from helpers.benchmark import (
     DEFAULT_DATASET,
     DEFAULT_DATA_DIR,
     DEFAULT_SEED,
@@ -23,11 +23,11 @@ from leanworkbook_plus_benchmark import (
     load_tasks,
     write_validation_indices,
 )
-from lean_repl import DEFAULT_LEAN_ENV_DIR, DEFAULT_REPL_DIR, ensure_repl_env
+from helpers.lean_repl import DEFAULT_LEAN_ENV_DIR, DEFAULT_REPL_DIR, ensure_repl_env
 
 
 DEFAULT_MODEL = "Goedel-LM/Goedel-Prover-V2-8B"
-DEFAULT_OUT_DIR = Path(__file__).resolve().parent / "results" / "goedel_prover_v2_8b_sglang_leanworkbook_plus_val500"
+DEFAULT_OUT_DIR = Path(__file__).resolve().parent / "results" / "goedel_val500"
 
 
 def parse_args() -> argparse.Namespace:

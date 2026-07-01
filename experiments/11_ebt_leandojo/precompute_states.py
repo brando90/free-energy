@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Precompute Goedel hidden states for the full Lean Workbook Plus dataset."""
+"""Precompute Goedel hidden states for Lean proof datasets."""
 
 from __future__ import annotations
 
@@ -14,15 +14,16 @@ from typing import Any
 
 import torch
 from safetensors.torch import save_file
+from safetensors import safe_open
 from tqdm import tqdm
 from transformers import AutoTokenizer
 
-from leanworkbook_plus_benchmark import DEFAULT_DATASET, download_dataset, make_prompt
+from helpers.benchmark import DEFAULT_DATASET, download_dataset, make_prompt
 
 
 HERE = pathlib.Path(__file__).resolve().parent
 DEFAULT_MODEL = "Goedel-LM/Goedel-Prover-V2-8B"
-DEFAULT_OUT_DIR = HERE / "results" / "leanworkbook_plus_goedel_hidden_states_gpus0_3"
+DEFAULT_OUT_DIR = HERE / "results" / "leandojo_hidden_states"
 
 
 @dataclass
@@ -43,6 +44,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dataset", default=DEFAULT_DATASET)
     parser.add_argument("--data-file", type=pathlib.Path, default=None)
+    parser.add_argument("--source-format", choices=["auto", "leanworkbook", "leandojo"], default="auto")
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument("--out-dir", type=pathlib.Path, default=DEFAULT_OUT_DIR)
     parser.add_argument("--gpus", default="0,1,2,3")
@@ -61,6 +63,41 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--row-indices-file", type=pathlib.Path, default=None)
     parser.add_argument("--overwrite", action="store_true")
     return parser.parse_args()
+
+
+def row_source_format(row: dict[str, Any], requested: str) -> str:
+    if requested != "auto":
+        return requested
+    if "input_text" in row or row.get("source") == "leandojo_benchmark_4":
+        return "leandojo"
+    return "leanworkbook"
+
+
+def row_index_from_manifest_position(row: dict[str, Any], manifest_pos: int) -> int:
+    return int(row.get("index", manifest_pos))
+
+
+def row_task_id(row: dict[str, Any], row_index: int) -> str:
+    return str(row.get("task_id", row.get("id", row.get("full_name", row_index))))
+
+
+def row_status(row: dict[str, Any]) -> str:
+    return str(row.get("status", row.get("split", "unknown")))
+
+
+def build_prompt(row: dict[str, Any], *, source_format: str) -> str:
+    source_format = row_source_format(row, source_format)
+    if source_format == "leandojo":
+        if "input_text" not in row:
+            raise KeyError("LeanDojo rows require input_text for activation prompts")
+        return str(row["input_text"])
+    if source_format == "leanworkbook":
+        return make_prompt(
+            row_task_id(row, int(row.get("index", 0))),
+            str(row["natural_language_statement"]),
+            str(row["formal_statement"]),
+        )
+    raise ValueError(f"Unsupported source format: {source_format!r}")
 
 
 def extract_hidden_states(response: Any) -> Any:
@@ -205,6 +242,21 @@ def read_completed(manifest_path: pathlib.Path) -> set[int]:
     return done
 
 
+def read_valid_safetensors(out_dir: pathlib.Path) -> set[int]:
+    hs_dir = out_dir / "hidden_states_safetensors"
+    done: set[int] = set()
+    for path in hs_dir.glob("*.safetensors"):
+        if not path.stem.isdigit():
+            continue
+        try:
+            with safe_open(path, framework="pt", device="cpu") as handle:
+                if "hidden_states" in handle.keys():
+                    done.add(int(path.stem))
+        except Exception:
+            continue
+    return done
+
+
 def main() -> int:
     args = parse_args()
     if args.gpus:
@@ -216,17 +268,18 @@ def main() -> int:
     all_rows = load_rows(data_file)
     if args.row_indices_file is not None:
         selected_indices = load_row_indices(args.row_indices_file)
-        selected = [(row_index, all_rows[row_index]) for row_index in selected_indices]
+        row_by_index = {row_index_from_manifest_position(row, pos): row for pos, row in enumerate(all_rows)}
+        selected = [(row_index, row_by_index[row_index]) for row_index in selected_indices if row_index in row_by_index]
     else:
         rows = all_rows[args.start_index :]
         if args.max_items is not None:
             rows = rows[: args.max_items]
-        selected = [(args.start_index + i, row) for i, row in enumerate(rows)]
+        selected = [(row_index_from_manifest_position(row, args.start_index + i), row) for i, row in enumerate(rows)]
 
     args.out_dir.mkdir(parents=True, exist_ok=True)
     manifest_path = args.out_dir / "manifest.jsonl"
     errors_path = args.out_dir / "errors.json"
-    completed = set() if args.overwrite else read_completed(manifest_path)
+    completed = set() if args.overwrite else (read_completed(manifest_path) | read_valid_safetensors(args.out_dir))
     pending = [(row_index, row) for row_index, row in selected if row_index not in completed]
 
     tokenizer = AutoTokenizer.from_pretrained(args.model, trust_remote_code=True)
@@ -236,6 +289,7 @@ def main() -> int:
     metadata = {
         "dataset": args.dataset,
         "data_file": str(data_file),
+        "source_format": args.source_format,
         "model": args.model,
         "gpus": args.gpus,
         "data_parallel_size": args.data_parallel_size,
@@ -285,10 +339,7 @@ def main() -> int:
             progress = tqdm(total=len(pending), desc="Precomputing hidden states", unit="item")
             for offset in range(0, len(pending), args.batch_size):
                 batch = pending[offset : offset + args.batch_size]
-                prompts = [
-                    make_prompt(str(row["id"]), str(row["natural_language_statement"]), str(row["formal_statement"]))
-                    for _, row in batch
-                ]
+                prompts = [build_prompt(row, source_format=args.source_format) for _, row in batch]
                 started = time.time()
                 responses = engine.generate(
                     prompt=prompts,
@@ -316,17 +367,18 @@ def main() -> int:
                         meta = {
                             **tensor_meta,
                             "row_index": str(row_index),
-                            "task_id": str(row["id"]),
-                            "status": str(row["status"]),
-                            "formal_statement": str(row["formal_statement"]),
+                            "task_id": row_task_id(row, row_index),
+                            "status": row_status(row),
+                            "source_format": row_source_format(row, args.source_format),
+                            "formal_statement": str(row.get("formal_statement", row.get("theorem_statement", ""))),
                             "prompt_path": str(pr_path),
                             "response_path": str(rs_path),
                         }
                         save_file({"hidden_states": tensor}, str(hs_path), metadata=meta)
                         rec = HiddenStateRecord(
                             row_index=row_index,
-                            task_id=str(row["id"]),
-                            status=str(row["status"]),
+                            task_id=row_task_id(row, row_index),
+                            status=row_status(row),
                             prompt_tokens=int(meta["prompt_tokens"]),
                             generated_tokens=int(meta["generated_tokens"]),
                             hidden_dim=int(meta["hidden_dim"]),
@@ -338,7 +390,7 @@ def main() -> int:
                         manifest.write(json.dumps(asdict(rec), sort_keys=True) + "\n")
                         manifest.flush()
                     except Exception as exc:
-                        errors.append({"row_index": row_index, "task_id": row.get("id"), "error": repr(exc)})
+                        errors.append({"row_index": row_index, "task_id": row_task_id(row, row_index), "error": repr(exc)})
                         errors_path.write_text(json.dumps(errors, indent=2), encoding="utf-8")
                 progress.update(len(batch))
             progress.close()

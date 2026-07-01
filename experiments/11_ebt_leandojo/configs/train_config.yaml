@@ -1,32 +1,37 @@
 defaults:
   - _self_
 
-# Reference experiment sweep, launched on 2026-06-27.
-# Model defaults below are the intended Lean Workbook EBT setting:
-# hidden_dim=512, num_layers=2, num_heads=8, chunked compact-token targets.
-#
-# OOM-probed A100 batch sizes for the 4-run chunk-size sweep:
-#   chunk_size=1   loader.batch_size=8    # batch 16 OOM
-#   chunk_size=8   loader.batch_size=64   # batch 80 OOM
-#   chunk_size=32  loader.batch_size=96   # batch 128 OOM
-#   chunk_size=64  loader.batch_size=96   # batch 128 OOM
-#
-# Current default is the chunk_size=8 run. Override data.chunk_size and
-# loader.batch_size with the table above when reproducing another sweep member.
+# Reference experiment sweep defaults, updated on 2026-06-29.
+# Model defaults below use shared 256-dim per-token projections and concatenate
+# chunk slots, so hidden_dim is inferred as 256 * data.chunk_size.
 seed: 17
 allow_cpu: false
 compile_model: false
 matmul_precision: medium
 
 data:
-  # Cleaned Lean Workbook compact-token targets and fixed 500-row validation split.
+  # Lean proof targets, tokenized with the unfiltered Goedel-Prover-V2-8B tokenizer.
   data_dir: ${hydra:runtime.cwd}/data/context_gold
-  activations_dir: ${hydra:runtime.cwd}/results/leanworkbook_plus_goedel_hidden_states_gpus0_3_contextonly/hidden_states_safetensors
-  indices_file: ${hydra:runtime.cwd}/data/leanworkbook_plus_val500_indices.json
+  activations_dir: ${hydra:runtime.cwd}/data/goedel_activations/leanworkbook/hidden_states_safetensors
+  indices_file: ${hydra:runtime.cwd}/data/leanworkbook_val500_indices.json
   split: train
+  dataset_format: auto
+  sources:
+    - dataset_name: leanworkbook
+      data_dir: ${hydra:runtime.cwd}/data/context_gold
+      activations_dir: ${hydra:runtime.cwd}/data/goedel_activations/leanworkbook/hidden_states_safetensors
+      indices_file: ${hydra:runtime.cwd}/data/leanworkbook_val500_indices.json
+      dataset_format: leanworkbook
+      split: train
+    - dataset_name: leandojo
+      data_dir: ${hydra:runtime.cwd}/data/leandojo_context_gold
+      activations_dir: ${hydra:runtime.cwd}/data/goedel_activations/leandojo/hidden_states_safetensors
+      indices_file: null
+      dataset_format: leandojo
+      split: train
   label_field: labels
   max_target_tokens: null
-  # One EBT target position predicts this many compact Lean tokens.
+  # One EBT target position predicts this many full Goedel tokenizer tokens.
   chunk_size: 8
   max_items: null
   activation_dtype: bf16
@@ -35,8 +40,8 @@ data:
   model_revision: null
 
 loader:
-  # Default batch size matches the OOM-probed chunk_size=8 run above.
-  batch_size: 64
+  # Capped batch size used by the current h512/l2/heads8 Muon sweep.
+  batch_size: 32
   max_target_chunks_per_batch: null
   shuffle: true
   num_workers: 8
@@ -55,9 +60,10 @@ model:
 
   # Goedel context activations are 4096-dim; project them into the EBT width.
   context_dim: 4096
-  hidden_dim: 512
+  token_embed_dim: 256
+  hidden_dim: null
   num_layers: 2
-  num_heads: 8
+  num_heads: 16
   dim_feedforward: 8192
   max_target_positions: 4096
   dropout: 0.0
@@ -99,7 +105,7 @@ optim:
   adjust_lr_fn: null
   fused: true
   mcmc_step_size_lr_multiplier: 1.5
-  use_scheduler: true
+  use_scheduler: false
   min_lr_scale: 10
   max_scheduling_steps: 1000000
   warm_up_steps: 10000
@@ -122,8 +128,28 @@ validation:
   max_items: null
   # Compile validation uses a deterministic random 50-row subset of the fixed
   # 500 validation indices to keep validation fast enough for frequent checks.
-  random_sample_size: 50
+  random_sample_size: 25
   random_sample_seed: 17
+  sources:
+    - name: val_leanworkbook
+      dataset_name: leanworkbook
+      data_dir: ${hydra:runtime.cwd}/data/context_gold
+      activations_dir: ${hydra:runtime.cwd}/data/goedel_activations/leanworkbook/hidden_states_safetensors
+      indices_file: ${hydra:runtime.cwd}/data/leanworkbook_val500_indices.json
+      dataset_format: leanworkbook
+      split: val
+      random_sample_size: 25
+      random_sample_seed: 17
+    - name: val_leandojo
+      dataset_name: leandojo
+      data_dir: ${hydra:runtime.cwd}/data/leandojo_context_gold
+      activations_dir: ${hydra:runtime.cwd}/data/goedel_activations/leandojo/hidden_states_safetensors
+      indices_file: null
+      dataset_format: leandojo
+      split: val
+      random_sample_size: 25
+      random_sample_seed: 17
+  target_position_report_chunk_sizes: [1, 4, 8, 16]
   max_batches: null
   compile_enabled: true
   # Compile generated Lean proofs in parallel; sampling remains batched on GPU.
@@ -142,9 +168,9 @@ wandb:
   enabled: true
   project: free-energy-11-ebt-leandojo
   entity: null
-  name: leanworkbook_chunk8_h4096_l3_bs64_val50_compile_val
+  name: leandojo_lwb_chunk8_token256_l2_heads16_bs32
   tags: []
 
 hydra:
   run:
-    dir: ${hydra:runtime.cwd}/runs/leanworkbook_chunk8_h4096_l3_bs64_val50_${now:%Y%m%d_%H%M%S}
+    dir: ${hydra:runtime.cwd}/runs/leandojo_lwb_chunk${data.chunk_size}_token256_bs${loader.batch_size}_${now:%Y%m%d_%H%M%S}

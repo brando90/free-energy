@@ -7,7 +7,7 @@ import subprocess
 from pathlib import Path
 
 
-HERE = Path(__file__).resolve().parent
+HERE = Path(__file__).resolve().parent.parent
 DEFAULT_REPL_DIR = HERE / "repl"
 DEFAULT_LEAN_ENV_DIR = DEFAULT_REPL_DIR / "test" / "Mathlib"
 

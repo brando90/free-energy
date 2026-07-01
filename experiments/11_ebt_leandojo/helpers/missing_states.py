@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write the missing Lean Workbook hidden-state row indices to a JSON file."""
+"""Write missing hidden-state row indices to a JSON file."""
 
 from __future__ import annotations
 
@@ -8,8 +8,8 @@ import json
 from pathlib import Path
 
 
-HERE = Path(__file__).resolve().parent
-DEFAULT_OUT_DIR = HERE / "results" / "leanworkbook_plus_goedel_hidden_states_gpus0_3_contextonly"
+HERE = Path(__file__).resolve().parent.parent
+DEFAULT_OUT_DIR = HERE / "results" / "leandojo_hidden_states"
 DEFAULT_TOTAL_ROWS = 25214
 
 
