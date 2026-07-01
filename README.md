@@ -1,5 +1,9 @@
 # free-energy: Freedom with Energy from the Transformer
 
+**TLDR:** This repo investigates whether post-softmax, energy-based, and
+adaptive-compute architectures can overcome limits of autoregressive systems,
+using Lean/formal verification as the hard correctness test bed.
+
 Post-softmax architectures via free-energy minimization, with Lean as the test bed.
 
 ## Motivation
@@ -45,6 +49,87 @@ Each claim has a baseline and a falsification criterion in `MOTIVATION.md`
 Exploratory. Bets, not promises. The thesis is that the partition function
 and softmax are worth questioning; the experiments will say whether any of
 this cashes out.
+
+## AGI research strategy
+
+Project lead context: Brando Miranda and Srivatsava (Sri) Daruru.
+
+Core objective: define a high-impact independent research project that tests
+whether autoregressive (AR) architectures are sufficient for AGI, where AGI is
+understood economically as an AI system capable of performing any viable human
+activity.
+
+Source docs:
+
+- [Strategy slide deck 1](https://docs.google.com/presentation/d/1kyQWQ74nqj7yPcn2LKFBjYti4Wl0h691vR8_AHbSDL8/edit?slide=id.g3f28065e0d7_0_116#slide=id.g3f28065e0d7_0_116)
+- [Strategy slide deck 2](https://docs.google.com/presentation/d/1mjoYhbMNyGDN87YuUqGWZhS0q42eUhzDNTV-Zys-sOc/edit?slide=id.p1#slide=id.p1)
+- [Working Google Doc](https://docs.google.com/document/d/14uMW6HMjVYEfFlgDlMRe8czxPbMHe5e035DKQk_I9Ts/edit?tab=t.0)
+
+### Core premise
+
+The working assumption is that scaling laws keep holding: vast compute,
+expansive data, and large models remain prerequisites. Given that compute,
+data, and large-model scale are available -- e.g. FineWebEdu-style data,
+B200-class compute, and Marin-style infrastructure -- the remaining variable
+that may determine the capability ceiling is architecture.
+
+Current AR systems are limited by token-by-token generation and the need for
+constant human oversight: agents can produce useful work, but a human still
+has to verify, correct, and restart them. The key question is whether this
+factorization limitation is an intrinsic mathematical barrier or a flaw that
+scaling, tools, verifiers, and feedback can eventually overcome.
+
+### Three project tracks
+
+| Track | Hypothesis | Methodology and execution |
+|---|---|---|
+| **A. Scalable oversight** | AR models are sufficient for AGI, but the human verification bottleneck must be automated. | Develop certifying judges that autonomously verify outputs, such as code unit tests and mathematical theorem proofs. If solved broadly, scalable oversight becomes close to AGI-complete. |
+| **B. Proving insufficiency** | AR models are not sufficient because token-by-token factorization has fundamental mathematical limits. | Provide empirical and theoretical evidence for those limits, using formal environments such as Lean 4 as a forcing function for contradiction-style or impossibility-style arguments. |
+| **C. The EBM alternative** | AR models are not sufficient, so the architecture must change to bypass the sequential generation trap. | Replace AR generation with energy-based models that score candidate sequences holistically. Use Lean as the rigorous benchmark for comparing EBMs against AR systems. |
+
+### Ownership and credibility
+
+Sri should take primary ownership of one track rather than spread focus across
+all three. Cross-collaboration is expected, but deep individual ownership is
+the path to a credible contribution.
+
+The broader goal is real-world technical impact that establishes credibility
+for future investors, collaborators, and venture-building. First authorship is
+valuable, but joint impact on a foundational paper can be equally useful if the
+work becomes a durable signal of technical judgment.
+
+### Immediate next steps
+
+1. Literature review: Sri reviews the free-energy paper to build intuition for
+   EBMs.
+2. Issue triage: Sri reviews the relevant GitHub issues covering current
+   technical hurdles.
+3. Project selection: Sri selects one track based on either intrinsic interest
+   or a practical view of which path reaches AGI fastest.
+4. Reconvene by Monday, June 29, 2026, to finalize the project choice and map
+   concrete engineering and research milestones.
+
+### Theoretical anchors
+
+- **AR bottleneck:** AR models generate one token at a time, conditioned only
+  on the prefix. The concern is that this sequential factorization causes
+  compounding errors on long-horizon exact tasks and forces a human verifier
+  back into the loop.
+- **EBM alternative:** EBMs assign energies to whole configurations rather
+  than requiring normalized next-token probabilities at every step. This makes
+  holistic scoring natural, while moving the hard part into inference,
+  sampling, and normalization.
+- **No Free Lunch and scaling:** No Free Lunch assumes a uniform distribution
+  over all possible problems, which is not the real world. Massive compute and
+  data can bake in useful priors over the task distribution humans actually
+  care about, much as evolution did through search.
+- **Benchmark saturation:** Public benchmarks may saturate before agents become
+  robust at real work. The gap between benchmark scores and one-shot agentic
+  reliability motivates harder formal test beds.
+- **Lean as forcing function:** Lean 4 and formal verification provide a clean
+  setting where long-horizon reasoning has an external correctness signal. If a
+  scalable-oversight or EBM system works there, it becomes stronger evidence
+  for broader economically useful AGI tasks.
 
 ## Paper strategy
 
