@@ -19,8 +19,8 @@ from transformers import AutoTokenizer
 
 HERE = Path(__file__).resolve().parent
 DEFAULT_DATA_DIR = HERE / "data" / "context_gold"
-DEFAULT_INDICES_FILE = HERE / "data" / "leanworkbook_plus_val500_indices.json"
-DEFAULT_ACTIVATIONS_DIR = HERE / "results" / "leandojo_hidden_states" / "hidden_states_safetensors"
+DEFAULT_INDICES_FILE = HERE / "data" / "leanworkbook_val500_indices.json"
+DEFAULT_ACTIVATIONS_DIR = HERE / "data" / "goedel_activations" / "leanworkbook" / "hidden_states_safetensors"
 DEFAULT_MODEL = "Goedel-LM/Goedel-Prover-V2-8B"
 
 
@@ -225,7 +225,9 @@ class LeanWorkbookEmbeddingDataset(Dataset[dict[str, Any]]):
         model_name: str | None = None,
         model_revision: str | None = None,
         validate_context: bool = True,
+        load_context: bool = True,
         dataset_name: str | None = None,
+        contrastive_rollout_chunks: int = 8,
     ) -> None:
         self.data_dir = Path(data_dir)
         self.activations_dir = Path(activations_dir)
@@ -236,6 +238,10 @@ class LeanWorkbookEmbeddingDataset(Dataset[dict[str, Any]]):
         self.chunk_size = int(chunk_size)
         self.activation_dtype = _activation_dtype_from_str(activation_dtype)
         self.dataset_name = dataset_name or self.data_dir.name
+        self.load_context = bool(load_context)
+        self.contrastive_rollout_chunks = int(contrastive_rollout_chunks)
+        if self.contrastive_rollout_chunks <= 0:
+            raise ValueError("contrastive_rollout_chunks must be positive")
         self.model_name = model_name or DEFAULT_MODEL
         self.id_mapper = GoedelIdMapper(model_name=self.model_name, revision=model_revision)
         tokenizer = self.id_mapper.tokenizer
@@ -254,7 +260,7 @@ class LeanWorkbookEmbeddingDataset(Dataset[dict[str, Any]]):
             max_items=max_items,
             random_sample_items=random_sample_items,
             random_sample_seed=random_sample_seed,
-            validate_context=validate_context,
+            validate_context=bool(validate_context) and self.load_context,
         )
 
     def _row_format(self, row: dict[str, Any]) -> str:
@@ -299,9 +305,9 @@ class LeanWorkbookEmbeddingDataset(Dataset[dict[str, Any]]):
             if not self._wanted_split(row, row_index, validation_indices):
                 continue
             path = self.activations_dir / f"{row_index:06d}.safetensors"
-            if not path.exists():
+            if self.load_context and not path.exists():
                 continue
-            if validate_context and not _has_hidden_states(path):
+            if self.load_context and validate_context and not _has_hidden_states(path):
                 continue
             row_format = self._row_format(row)
             if row_format == "leanworkbook":
@@ -358,6 +364,12 @@ class LeanWorkbookEmbeddingDataset(Dataset[dict[str, Any]]):
         decoder_input_ids = chunk_token_ids([self.bos_id] + target, chunk_size=self.chunk_size, pad_id=self.eos_id)
         label_original_ids = self.id_mapper.original_ids(labels)
         decoder_input_original_ids = self.id_mapper.original_ids(decoder_input_ids)
+        sampled_start_chunk = random.randrange(int(labels.shape[0]))
+        prefix_input_ids = labels[:sampled_start_chunk]
+        teacher_target_ids = labels[sampled_start_chunk : sampled_start_chunk + 1]
+        contrastive_target_ids = labels[
+            sampled_start_chunk : sampled_start_chunk + self.contrastive_rollout_chunks
+        ]
 
         return {
             "row_index": torch.tensor(record.row_index, dtype=torch.long),
@@ -369,11 +381,19 @@ class LeanWorkbookEmbeddingDataset(Dataset[dict[str, Any]]):
             "target_text": record.target_text,
             "target_local_ids": torch.tensor(target, dtype=torch.long),
             "target_original_ids": torch.tensor(target_original, dtype=torch.long),
-            "context_activations": self._load_context(record.safetensors_path),
+            "context_activations": (
+                self._load_context(record.safetensors_path)
+                if self.load_context
+                else torch.empty(0, 0, dtype=self.activation_dtype)
+            ),
             "decoder_input_ids": decoder_input_ids,
             "decoder_input_original_ids": decoder_input_original_ids,
             "labels": labels,
             "label_original_ids": label_original_ids,
+            "sampled_start_chunk": torch.tensor(sampled_start_chunk, dtype=torch.long),
+            "prefix_input_ids": prefix_input_ids,
+            "teacher_target_ids": teacher_target_ids,
+            "contrastive_target_ids": contrastive_target_ids,
             "context_token_count": torch.tensor(0, dtype=torch.long),
             "target_token_count": torch.tensor(labels.numel(), dtype=torch.long),
         }
@@ -448,6 +468,8 @@ def collate_leanworkbook_embedding_samples(samples: list[dict[str, Any]]) -> dic
     max_context = max(int(sample["context_activations"].shape[0]) for sample in samples)
     max_chunks = max(int(sample["labels"].shape[0]) for sample in samples)
     max_raw_target = max(int(sample["target_local_ids"].shape[0]) for sample in samples)
+    max_prefix_chunks = max(int(sample["prefix_input_ids"].shape[0]) for sample in samples)
+    max_contrastive_chunks = max(int(sample["contrastive_target_ids"].shape[0]) for sample in samples)
     context_dtype = samples[0]["context_activations"].dtype
 
     context = torch.zeros(batch, max_context, hidden_dim, dtype=context_dtype)
@@ -460,6 +482,13 @@ def collate_leanworkbook_embedding_samples(samples: list[dict[str, Any]]) -> dic
     decoder_attention_mask = torch.zeros(batch, max_chunks, dtype=torch.bool)
     target_local_ids = torch.full((batch, max_raw_target), -100, dtype=torch.long)
     target_original_ids = torch.full((batch, max_raw_target), -100, dtype=torch.long)
+    prefix_input_ids = torch.zeros(batch, max_prefix_chunks, chunk_size, dtype=torch.long)
+    prefix_attention_mask = torch.zeros(batch, max_prefix_chunks, dtype=torch.bool)
+    teacher_target_ids = torch.zeros(batch, 1, chunk_size, dtype=torch.long)
+    teacher_target_mask = torch.ones(batch, 1, chunk_size, dtype=torch.bool)
+    contrastive_target_ids = torch.zeros(batch, max_contrastive_chunks, chunk_size, dtype=torch.long)
+    contrastive_target_mask = torch.zeros(batch, max_contrastive_chunks, chunk_size, dtype=torch.bool)
+    sampled_start_chunk = torch.zeros(batch, dtype=torch.long)
 
     for i, sample in enumerate(samples):
         c_len = int(sample["context_activations"].shape[0])
@@ -475,6 +504,15 @@ def collate_leanworkbook_embedding_samples(samples: list[dict[str, Any]]) -> dic
         raw_len = int(sample["target_local_ids"].shape[0])
         target_local_ids[i, :raw_len] = sample["target_local_ids"]
         target_original_ids[i, :raw_len] = sample["target_original_ids"]
+        prefix_chunks = int(sample["prefix_input_ids"].shape[0])
+        if prefix_chunks:
+            prefix_input_ids[i, :prefix_chunks] = sample["prefix_input_ids"]
+            prefix_attention_mask[i, :prefix_chunks] = True
+        teacher_target_ids[i] = sample["teacher_target_ids"]
+        contrastive_chunks = int(sample["contrastive_target_ids"].shape[0])
+        contrastive_target_ids[i, :contrastive_chunks] = sample["contrastive_target_ids"]
+        contrastive_target_mask[i, :contrastive_chunks] = True
+        sampled_start_chunk[i] = sample["sampled_start_chunk"]
 
     return {
         "row_index": torch.stack([sample["row_index"] for sample in samples]),
@@ -494,6 +532,13 @@ def collate_leanworkbook_embedding_samples(samples: list[dict[str, Any]]) -> dic
         "labels": labels,
         "label_original_ids": label_original_ids,
         "label_attention_mask": label_attention_mask,
+        "sampled_start_chunk": sampled_start_chunk,
+        "prefix_input_ids": prefix_input_ids,
+        "prefix_attention_mask": prefix_attention_mask,
+        "teacher_target_ids": teacher_target_ids,
+        "teacher_target_mask": teacher_target_mask,
+        "contrastive_target_ids": contrastive_target_ids,
+        "contrastive_target_mask": contrastive_target_mask,
         "context_token_count": context_mask.sum(dim=1).to(torch.long),
         "target_token_count": label_attention_mask.sum(dim=(1, 2)).to(torch.long),
     }

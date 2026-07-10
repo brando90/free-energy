@@ -1,0 +1,83 @@
+defaults:
+  - _self_
+
+seed: 17
+allow_cpu: false
+
+data:
+  data_path: ${hydra:runtime.cwd}/EBT-main/data/nlp/synthetic_chain_dataset/synthetic_chain_dataset.jsonl
+  train_split: train
+  val_split: val
+  max_items: null
+  max_prompt_tokens: null
+  max_target_tokens: null
+
+loader:
+  batch_size: 32
+  shuffle: true
+  num_workers: 0
+
+model:
+  vocab_size: local
+  context_dim: 128
+  num_layers: 4
+  num_heads: 4
+  dim_feedforward: 512
+  dropout: 0.1
+  mcmc_num_steps: 2
+  mcmc_step_size: 0.75
+  mcmc_step_size_learnable: false
+  truncate_mcmc: false
+  mcmc_noise: 0.01
+  train_mcmc_num_steps_min: 1
+  train_mcmc_num_steps_max: 5
+  randomize_mcmc_step_size_scale: 1.5
+  replay_buffer_enabled: true
+  replay_buffer_size: 2048
+  replay_buffer_sample_fraction: 0.25
+  best_of_n: 4
+  gaussian_energy_loss_enabled: false
+  gaussian_energy_alpha: 1.0
+  max_target_positions: 32
+  alpha_max_norm: 1.0
+  contrastive_rollout_enabled: false
+  contrastive_rollout_coeff: 0.0
+
+optim:
+  name: muon
+  lr: 2e-3
+  weight_decay: 0.01
+  betas: [0.9, 0.99]
+  eps: 1.0e-8
+  momentum: 0.95
+  nesterov: true
+  ns_coefficients: [3.4445, -4.775, 2.0315]
+  ns_steps: 5
+  adjust_lr_fn: null
+
+train:
+  max_steps: 100000
+  grad_accum_steps: 1
+  amp_bf16: true
+  grad_clip_norm: 1.0
+  log_every: 25
+  save_every_steps: 1000
+
+validation:
+  every_steps: 250
+  max_items: null
+  max_batches: null
+
+wandb:
+  enabled: false
+  project: free-energy-12-ebt-test
+  entity: null
+  group: ebt
+  name: null
+  tags: []
+  notes: null
+  mode: online
+
+hydra:
+  run:
+    dir: ${hydra:runtime.cwd}/runs/ebt_${now:%Y%m%d_%H%M%S}

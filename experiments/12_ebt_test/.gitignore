@@ -1,0 +1,6 @@
+**/*.mp4
+**/*.pyc
+logs/
+analysis/
+EBT-main/assets/
+**/*.jsonl

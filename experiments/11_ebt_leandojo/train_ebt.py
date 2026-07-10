@@ -28,11 +28,25 @@ from helpers.lean_compile import compile_theorem
 
 TOKEN_WEIGHTED_METRICS = (
     "loss",
+    "reconstruction_loss",
+    "contrastive_rollout_loss",
+    "contrastive_rollout_accuracy",
     "initial_loss",
     "final_step_loss",
     "perplexity",
     "final_energy",
     "final_token_accuracy",
+)
+
+TRAIN_WINDOW_SCALAR_METRICS = (
+    "loss",
+    "reconstruction_loss",
+    "contrastive_rollout_loss",
+    "contrastive_rollout_accuracy",
+    "initial_loss",
+    "final_step_loss",
+    "perplexity",
+    "final_energy",
 )
 
 
@@ -99,6 +113,117 @@ def _metric_value(value: Any) -> float:
     return float(value)
 
 
+def _new_train_window() -> dict[str, Any]:
+    return {
+        "scalar_totals": {},
+        "scalar_weights": defaultdict(float),
+        "token_correct": None,
+        "token_count": None,
+        "exact_correct": None,
+        "rows": 0.0,
+        "tokens": 0.0,
+        "batches": 0.0,
+        "data_wait_sec": 0.0,
+        "compute_sec": 0.0,
+        "optimizer_sec": 0.0,
+        "by_source": defaultdict(
+            lambda: {
+                "token_correct": None,
+                "token_count": None,
+                "exact_correct": None,
+                "rows": 0.0,
+            }
+        ),
+    }
+
+
+def _accum_tensor(target: dict[str, Any], key: str, value: torch.Tensor) -> None:
+    detached = value.detach().float()
+    if target[key] is None:
+        target[key] = detached
+    else:
+        target[key] = target[key] + detached
+
+
+def _update_train_window(
+    window: dict[str, Any],
+    *,
+    loss_dict: dict[str, torch.Tensor],
+    batch: dict[str, Any],
+    token_count: int,
+) -> None:
+    rows = int(batch["label_attention_mask"].shape[0])
+    scalar_weight = float(max(token_count, 1))
+    for key in TRAIN_WINDOW_SCALAR_METRICS:
+        value = loss_dict[key].detach().float() * scalar_weight
+        if key not in window["scalar_totals"]:
+            window["scalar_totals"][key] = value
+        else:
+            window["scalar_totals"][key] = window["scalar_totals"][key] + value
+        window["scalar_weights"][key] += scalar_weight
+
+    correct_by_row = loss_dict["final_token_correct_by_row"].detach().float()
+    count_by_row = loss_dict["final_token_count_by_row"].detach().float()
+    exact_by_row = loss_dict["final_exact_correct_by_row"].detach().float()
+
+    _accum_tensor(window, "token_correct", correct_by_row.sum())
+    _accum_tensor(window, "token_count", count_by_row.sum())
+    _accum_tensor(window, "exact_correct", exact_by_row.sum())
+    window["rows"] += float(rows)
+    window["tokens"] += float(token_count)
+    window["batches"] += 1.0
+
+    dataset_names = batch.get("dataset_name")
+    if dataset_names is None:
+        return
+    for i, source in enumerate(dataset_names):
+        stats = window["by_source"][str(source)]
+        _accum_tensor(stats, "token_correct", correct_by_row[i])
+        _accum_tensor(stats, "token_count", count_by_row[i])
+        _accum_tensor(stats, "exact_correct", exact_by_row[i])
+        stats["rows"] += 1.0
+
+
+def _finalize_train_window(window: dict[str, Any]) -> dict[str, float]:
+    metrics: dict[str, float] = {}
+    for key in TRAIN_WINDOW_SCALAR_METRICS:
+        total = window["scalar_totals"].get(key)
+        metrics[key] = 0.0 if total is None else _metric_value(total) / max(window["scalar_weights"][key], 1.0)
+    token_count = _metric_value(window["token_count"]) if window["token_count"] is not None else 0.0
+    token_correct = _metric_value(window["token_correct"]) if window["token_correct"] is not None else 0.0
+    exact_correct = _metric_value(window["exact_correct"]) if window["exact_correct"] is not None else 0.0
+    metrics["final_token_accuracy"] = token_correct / max(token_count, 1.0)
+    metrics["final_exact_accuracy"] = exact_correct / max(window["rows"], 1.0)
+    metrics["tokens"] = float(window["tokens"])
+    metrics["rows"] = float(window["rows"])
+    metrics["batches"] = float(window["batches"])
+    metrics["data_wait_sec"] = float(window["data_wait_sec"])
+    metrics["compute_sec"] = float(window["compute_sec"])
+    metrics["optimizer_sec"] = float(window["optimizer_sec"])
+    for source, stats in window["by_source"].items():
+        prefix = f"source_{source}"
+        source_token_count = _metric_value(stats["token_count"]) if stats["token_count"] is not None else 0.0
+        source_token_correct = _metric_value(stats["token_correct"]) if stats["token_correct"] is not None else 0.0
+        source_exact_correct = _metric_value(stats["exact_correct"]) if stats["exact_correct"] is not None else 0.0
+        metrics[f"{prefix}_final_token_accuracy"] = source_token_correct / max(source_token_count, 1.0)
+        metrics[f"{prefix}_final_exact_accuracy"] = source_exact_correct / max(stats["rows"], 1.0)
+        metrics[f"{prefix}_tokens"] = source_token_count
+        metrics[f"{prefix}_rows"] = float(stats["rows"])
+    return metrics
+
+
+def _update_timing_window(
+    window: dict[str, Any],
+    *,
+    data_wait_sec: float,
+    compute_sec: float,
+    optimizer_sec: float,
+) -> None:
+    window["data_wait_sec"] += float(data_wait_sec)
+    window["compute_sec"] += float(compute_sec)
+    window["optimizer_sec"] += float(optimizer_sec)
+
+
 def _optional_container(value: Any) -> Any:
     if value is None:
         return None
@@ -145,6 +270,8 @@ def _make_loader(
         model_name=cfg.data.model_name or cfg.model.model_name,
         model_revision=cfg.data.model_revision or cfg.model.revision,
         validate_context=cfg.data.validate_context,
+        load_context=bool(cfg.data.load_context),
+        contrastive_rollout_chunks=int(cfg.model.contrastive_rollout_chunks),
         batch_size=int(cfg.loader.batch_size),
         shuffle=bool(cfg.loader.shuffle) if shuffle is None else bool(shuffle),
         num_workers=int(cfg.loader.num_workers),
@@ -189,6 +316,8 @@ def _make_source_loader(
         model_name=cfg.data.model_name or cfg.model.model_name,
         model_revision=cfg.data.model_revision or cfg.model.revision,
         validate_context=cfg.data.validate_context,
+        load_context=bool(cfg.data.load_context),
+        contrastive_rollout_chunks=int(cfg.model.contrastive_rollout_chunks),
         batch_size=int(cfg.loader.batch_size),
         shuffle=shuffle,
         num_workers=int(cfg.loader.num_workers),
@@ -276,6 +405,15 @@ def _prefixed(metrics: dict[str, float], prefix: str) -> dict[str, float]:
     return {f"{prefix}/{key}": value for key, value in metrics.items()}
 
 
+def _with_loss_aliases(metrics: dict[str, float]) -> dict[str, float]:
+    """Add short W&B-friendly aliases while preserving existing metric names."""
+    if "reconstruction_loss" in metrics:
+        metrics["ce_loss"] = metrics["reconstruction_loss"]
+    if "contrastive_rollout_loss" in metrics:
+        metrics["cont_loss"] = metrics["contrastive_rollout_loss"]
+    return metrics
+
+
 def _append_jsonl(path: Path, row: dict[str, float]) -> None:
     with path.open("a", encoding="utf-8") as handle:
         handle.write(json.dumps(row, sort_keys=True) + "\n")
@@ -302,6 +440,12 @@ def _batch_loss(
     return model.loss(
         batch["context_activations"],
         batch[str(cfg.data.label_field)],
+        prefix_input_ids=batch["prefix_input_ids"],
+        prefix_attention_mask=batch["prefix_attention_mask"],
+        teacher_target_ids=batch["teacher_target_ids"],
+        teacher_target_mask=batch["teacher_target_mask"],
+        contrastive_target_ids=batch["contrastive_target_ids"],
+        contrastive_target_mask=batch["contrastive_target_mask"],
         decoder_input_ids=batch["decoder_input_ids"],
         context_attention_mask=batch["context_attention_mask"],
         label_attention_mask=batch["label_attention_mask"],
@@ -328,9 +472,9 @@ def _evaluate_loss(
     batches = 0
     start = time.perf_counter()
     for batch in loader:
-        batch = _move_batch(batch, device)
-        tokens = int(batch["label_attention_mask"].sum().detach().cpu())
         rows = int(batch["label_attention_mask"].shape[0])
+        tokens = int(batch["teacher_target_mask"].sum())
+        batch = _move_batch(batch, device)
         with torch.autocast(device_type="cuda", dtype=torch.bfloat16, enabled=amp_enabled):
             loss_dict = _batch_loss(model=model, batch=batch, cfg=cfg, learning=False)
         weight = max(tokens, 1)
@@ -356,7 +500,7 @@ def _evaluate_loss(
     )
     if was_training:
         model.train()
-    return metrics
+    return _with_loss_aliases(metrics)
 
 
 def _compile_validate(
@@ -577,17 +721,21 @@ def _make_model(cfg: DictConfig, dataset: LeanWorkbookEmbeddingDataset) -> Goede
         "token_embed_dim": int(model_cfg.token_embed_dim),
         "denoising_initial_condition": model_cfg.denoising_initial_condition,
         "chunk_size": int(cfg.data.chunk_size),
+        "architecture": model_cfg.architecture,
     }
-    int_keys = ("num_layers", "num_heads", "dim_feedforward", "mcmc_num_steps", "max_target_positions")
+    int_keys = (
+        "num_layers", "num_heads", "dim_feedforward", "mcmc_num_steps", "max_target_positions",
+        "contrastive_rollout_chunks",
+    )
     float_keys = (
         "dropout", "mcmc_step_size", "gaussian_random_noise_scaling", "langevin_dynamics_noise",
         "clamp_futures_grad_max_change", "absolute_clamp", "sharpen_predicted_distribution",
-        "reconstruction_coeff", "soften_target_prob_dist",
+        "reconstruction_coeff", "soften_target_prob_dist", "contrastive_rollout_coeff",
     )
     bool_keys = (
         "mcmc_step_size_learnable", "normalize_initial_condition", "normalize_initial_condition_only_first_step",
         "truncate_mcmc", "no_mcmc_detach", "clamp_futures_grad", "norm_pred", "norm_pred_not_final_step",
-        "loss_on_final_step_only",
+        "loss_on_final_step_only", "contrastive_rollout_enabled",
     )
     for key in int_keys:
         kwargs[key] = int(model_cfg[key])
@@ -595,6 +743,9 @@ def _make_model(cfg: DictConfig, dataset: LeanWorkbookEmbeddingDataset) -> Goede
         kwargs[key] = float(model_cfg[key])
     for key in bool_keys:
         kwargs[key] = bool(model_cfg[key])
+    kwargs["contrastive_rollout_steps"] = (
+        None if model_cfg.contrastive_rollout_steps is None else int(model_cfg.contrastive_rollout_steps)
+    )
     return GoedelVocabEBT(**kwargs)
 
 
@@ -806,9 +957,7 @@ def main(cfg: DictConfig) -> None:
     optimizer.zero_grad(set_to_none=True)
     train_start = time.perf_counter()
     last_log = train_start
-    running_loss = 0.0
-    running_tokens = 0
-    running_batches = 0
+    train_window = _new_train_window()
     examples_seen = 0
     batches_seen = 0
     latest_metrics: dict[str, float] = {}
@@ -846,12 +995,15 @@ def main(cfg: DictConfig) -> None:
                 flush=True,
             )
 
+    next_batch_ready_time = time.perf_counter()
     while step < max_steps:
         for batch in loader:
             batch_start = time.perf_counter()
-            batch = _move_batch(batch, device)
+            data_wait_sec = batch_start - next_batch_ready_time
             batch_rows = int(batch["label_attention_mask"].shape[0])
-            token_count = int(batch["label_attention_mask"].sum().detach().cpu())
+            token_count = int(batch["teacher_target_mask"].sum())
+            compute_start = time.perf_counter()
+            batch = _move_batch(batch, device)
             with torch.autocast(device_type="cuda", dtype=torch.bfloat16, enabled=amp_enabled):
                 loss_dict = _batch_loss(model=model, batch=batch, cfg=cfg, learning=True)
                 loss = loss_dict["loss"] / grad_accum_steps
@@ -861,13 +1013,19 @@ def main(cfg: DictConfig) -> None:
 
             loss.backward()
             accum += 1
-            running_loss += _metric_value(loss_dict["loss"])
-            running_tokens += token_count
-            running_batches += 1
+            _update_train_window(
+                train_window,
+                loss_dict=loss_dict,
+                batch=batch,
+                token_count=token_count,
+            )
+            compute_sec = time.perf_counter() - compute_start
             examples_seen += batch_rows
             batches_seen += 1
 
+            optimizer_sec = 0.0
             if accum >= grad_accum_steps:
+                optimizer_start = time.perf_counter()
                 if float(cfg.train.grad_clip_norm) > 0:
                     grad_norm = float(
                         torch.nn.utils.clip_grad_norm_(model.parameters(), float(cfg.train.grad_clip_norm))
@@ -878,52 +1036,58 @@ def main(cfg: DictConfig) -> None:
                 if scheduler is not None:
                     scheduler.step()
                 optimizer.zero_grad(set_to_none=True)
+                optimizer_sec = time.perf_counter() - optimizer_start
                 step += 1
                 accum = 0
+                _update_timing_window(
+                    train_window,
+                    data_wait_sec=data_wait_sec,
+                    compute_sec=compute_sec,
+                    optimizer_sec=optimizer_sec,
+                )
 
                 now = time.perf_counter()
-                latest_metrics = {
-                    "step": float(step),
-                    "loss": running_loss / max(1, running_batches),
-                    "initial_loss": _metric_value(loss_dict["initial_loss"]),
-                    "final_step_loss": _metric_value(loss_dict["final_step_loss"]),
-                    "perplexity": _metric_value(loss_dict["perplexity"]),
-                    "final_energy": _metric_value(loss_dict["final_energy"]),
-                    "final_token_accuracy": _metric_value(loss_dict["final_token_accuracy"]),
-                    "final_exact_accuracy": _metric_value(loss_dict["final_exact_accuracy"]),
-                    "grad_norm": grad_norm,
-                    "tokens": float(running_tokens),
-                    "tokens_per_sec": running_tokens / max(now - last_log, 1e-9),
-                    "batch_sec": now - batch_start,
-                    "elapsed_sec": now - train_start,
-                    "mcmc_step_size": _mcmc_step_size(model),
-                    "cuda_max_mem_gb": (
-                        torch.cuda.max_memory_allocated(device) / (1024**3) if device.type == "cuda" else 0.0
-                    ),
-                    **_epoch_metrics(
-                        examples_seen=examples_seen,
-                        batches_seen=batches_seen,
-                        dataset_size=dataset_size,
-                        batches_per_epoch=batches_per_epoch,
-                    ),
-                }
-                for i, group in enumerate(optimizer.param_groups):
-                    latest_metrics[f"lr_group_{i}"] = float(group["lr"])
+                should_log = step == 1 or step % log_every == 0
+                should_save = step % save_every == 0
+                should_stop = step >= max_steps
 
-                if step == 1 or step % log_every == 0:
+                if should_log or should_save or should_stop:
+                    window_metrics = _finalize_train_window(train_window)
+                    latest_metrics = {
+                        "step": float(step),
+                        **window_metrics,
+                        "grad_norm": grad_norm,
+                        "tokens_per_sec": window_metrics["tokens"] / max(now - last_log, 1e-9),
+                        "batch_sec": now - batch_start,
+                        "elapsed_sec": now - train_start,
+                        "mcmc_step_size": _mcmc_step_size(model),
+                        "cuda_max_mem_gb": (
+                            torch.cuda.max_memory_allocated(device) / (1024**3) if device.type == "cuda" else 0.0
+                        ),
+                        **_epoch_metrics(
+                            examples_seen=examples_seen,
+                            batches_seen=batches_seen,
+                            dataset_size=dataset_size,
+                            batches_per_epoch=batches_per_epoch,
+                        ),
+                    }
+                    latest_metrics = _with_loss_aliases(latest_metrics)
+                    for i, group in enumerate(optimizer.param_groups):
+                        latest_metrics[f"lr_group_{i}"] = float(group["lr"])
+
+                if should_log:
                     _append_jsonl(metrics_path, latest_metrics)
                     if wandb_run is not None:
                         wandb_run.log(_prefixed(latest_metrics, "train"), step=step)
                     print(
                         "step={step} loss={loss:.4f} final={final_step_loss:.4f} "
+                        "contrast={contrastive_rollout_loss:.4f} "
                         "acc={final_token_accuracy:.3f} exact={final_exact_accuracy:.3f} "
                         "ppl={perplexity:.3f} epoch={epoch:.4f} tok/s={tokens_per_sec:.1f} "
                         "mem={cuda_max_mem_gb:.2f}GB".format(**latest_metrics),
                         flush=True,
                     )
-                    running_loss = 0.0
-                    running_tokens = 0
-                    running_batches = 0
+                    train_window = _new_train_window()
                     last_log = now
 
                 if step % val_every == 0:
@@ -959,7 +1123,7 @@ def main(cfg: DictConfig) -> None:
                                 flush=True,
                             )
 
-                if step % save_every == 0:
+                if should_save:
                     _save_checkpoint(
                         path=run_dir / f"checkpoint_step_{step}.pt",
                         model=model,
@@ -970,8 +1134,16 @@ def main(cfg: DictConfig) -> None:
                     )
                     _prune_checkpoints(run_dir, int(cfg.train.keep_last_checkpoints))
 
-                if step >= max_steps:
+                if should_stop:
                     break
+            else:
+                _update_timing_window(
+                    train_window,
+                    data_wait_sec=data_wait_sec,
+                    compute_sec=compute_sec,
+                    optimizer_sec=optimizer_sec,
+                )
+            next_batch_ready_time = time.perf_counter()
 
     _save_checkpoint(
         path=run_dir / "checkpoint_final.pt",

@@ -36,13 +36,14 @@ data:
   max_items: null
   activation_dtype: bf16
   validate_context: true
+  load_context: true
   model_name: null
   model_revision: null
 
 loader:
   # Capped batch size used by the current h512/l2/heads8 Muon sweep.
   batch_size: 32
-  max_target_chunks_per_batch: null
+  max_target_chunks_per_batch: 1024
   shuffle: true
   num_workers: 8
   pin_memory: true
@@ -60,6 +61,7 @@ model:
 
   # Goedel context activations are 4096-dim; project them into the EBT width.
   context_dim: 4096
+  architecture: decoder
   token_embed_dim: 256
   hidden_dim: null
   num_layers: 2
@@ -81,6 +83,10 @@ model:
   clamp_futures_grad_max_change: 9.0
   reconstruction_coeff: 1.0
   soften_target_prob_dist: 0.0
+  contrastive_rollout_enabled: true
+  contrastive_rollout_chunks: 8
+  contrastive_rollout_coeff: 1.0
+  contrastive_rollout_steps: null
 
   denoising_initial_condition: random_noise
   gaussian_random_noise_scaling: 1.0
