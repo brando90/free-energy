@@ -1,0 +1,7 @@
+transform,rank_agreement,top1_agreement,top2_agreement,p_A,entropy,tv_from_base_probability,kl_base_to_transform,cross_entropy_under_base,expected_brier_under_base,chosen_action,action_regret_under_base,abstain_if_top_p_below_0_55,latent_marginal_tv_from_base,posterior_tv_from_base
+identity,True,True,True,0.568954,1.041603,0.0,0.0,1.041603,0.57211,commit_top2,0.0,False,0.0,0.0
+affine_shift_scale,True,True,True,0.756524,0.62174,0.18757,0.192713,1.234315,0.619225,commit_top2,0.0,False,0.097214,0.147407
+temperature_hot,True,True,True,0.341902,1.49551,0.262161,0.198805,1.240408,0.648041,commit_top2,0.0,True,0.204787,0.256182
+temperature_cold,True,True,True,0.786694,0.561326,0.21774,0.273019,1.314621,0.63675,commit_top2,0.0,False,0.106087,0.172383
+nonlinear_monotone,True,True,True,0.746563,0.727808,0.177609,0.084941,1.126544,0.617323,commit_top2,0.0,False,0.054215,0.027672
+rank_preserving_bad_calibration,True,True,True,0.265634,1.589143,0.393692,0.385488,1.427091,0.724156,collect_more_evidence,0.336947,True,0.280319,0.267068
