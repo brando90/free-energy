@@ -1,0 +1,154 @@
+{
+  "arm": "A3",
+  "cells": {
+    "k0_bare": {
+      "absorbed": {
+        "count": 8,
+        "rate": 0.0333,
+        "wilson95": [
+          0.017,
+          0.0644
+        ]
+      },
+      "alias": "adjacent_contradiction",
+      "flagged": {
+        "count": 2,
+        "rate": 0.0083,
+        "wilson95": [
+          0.0023,
+          0.0299
+        ]
+      },
+      "label_counts": {
+        "absorbed": 8,
+        "flagged": 2,
+        "silently_corrected": 218,
+        "unresolved": 12
+      },
+      "n": 240,
+      "output_tokens_mean": 224.5,
+      "program_n": 60,
+      "shows_recompute_rate": 0.9875,
+      "silently_corrected": {
+        "count": 218,
+        "rate": 0.9083,
+        "wilson95": [
+          0.8651,
+          0.9387
+        ]
+      },
+      "unresolved": {
+        "count": 12,
+        "rate": 0.05,
+        "wilson95": [
+          0.0288,
+          0.0853
+        ]
+      }
+    },
+    "k1_bare": {
+      "absorbed": {
+        "count": 240,
+        "rate": 1.0,
+        "wilson95": [
+          0.9842,
+          1.0
+        ]
+      },
+      "alias": "onehop_kc1",
+      "flagged": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.0158
+        ]
+      },
+      "label_counts": {
+        "absorbed": 240
+      },
+      "n": 240,
+      "output_tokens_mean": 163.2,
+      "program_n": 60,
+      "shows_recompute_rate": 0.1,
+      "silently_corrected": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.0158
+        ]
+      },
+      "unresolved": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.0158
+        ]
+      }
+    },
+    "k5_bare": {
+      "absorbed": {
+        "count": 240,
+        "rate": 1.0,
+        "wilson95": [
+          0.9842,
+          1.0
+        ]
+      },
+      "alias": "deep_kc5",
+      "flagged": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.0158
+        ]
+      },
+      "label_counts": {
+        "absorbed": 240
+      },
+      "n": 240,
+      "output_tokens_mean": 163.5,
+      "program_n": 60,
+      "shows_recompute_rate": 0.0667,
+      "silently_corrected": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.0158
+        ]
+      },
+      "unresolved": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.0158
+        ]
+      }
+    }
+  },
+  "created_at": "2026-07-28T09:06:40",
+  "experiment": "E12_FIXES_LADDER",
+  "flag_channel": "doubt_lex frozen lexicon (no 32B judge on API arm)",
+  "gold_cohort": {
+    "0": {
+      "eligible": 90,
+      "kept": 60
+    },
+    "1": {
+      "eligible": 80,
+      "kept": 60
+    },
+    "5": {
+      "eligible": 88,
+      "kept": 60
+    }
+  },
+  "instruction_sha256": "5d4e302b53464e5f",
+  "model": "claude-haiku-4-5",
+  "this_run_usd": 2.3588
+}

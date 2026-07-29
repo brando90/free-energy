@@ -1,0 +1,156 @@
+{
+  "arm": "A2",
+  "cells": {
+    "k0_bare": {
+      "absorbed": {
+        "count": 583,
+        "rate": 0.8329,
+        "wilson95": [
+          0.8034,
+          0.8587
+        ]
+      },
+      "alias": "adjacent_contradiction",
+      "flagged": {
+        "count": 7,
+        "rate": 0.01,
+        "wilson95": [
+          0.0049,
+          0.0205
+        ]
+      },
+      "label_counts": {
+        "absorbed": 583,
+        "flagged": 7,
+        "silently_corrected": 63,
+        "unresolved": 47
+      },
+      "n": 700,
+      "output_tokens_mean": null,
+      "program_n": 100,
+      "shows_recompute_rate": 0.1886,
+      "silently_corrected": {
+        "count": 63,
+        "rate": 0.09,
+        "wilson95": [
+          0.071,
+          0.1135
+        ]
+      },
+      "unresolved": {
+        "count": 47,
+        "rate": 0.0671,
+        "wilson95": [
+          0.0509,
+          0.0881
+        ]
+      }
+    },
+    "k1_bare": {
+      "absorbed": {
+        "count": 556,
+        "rate": 0.7943,
+        "wilson95": [
+          0.7628,
+          0.8226
+        ]
+      },
+      "alias": "onehop_kc1",
+      "flagged": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0055
+        ]
+      },
+      "label_counts": {
+        "absorbed": 556,
+        "unresolved": 144
+      },
+      "n": 700,
+      "output_tokens_mean": null,
+      "program_n": 100,
+      "shows_recompute_rate": 0.0843,
+      "silently_corrected": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0055
+        ]
+      },
+      "unresolved": {
+        "count": 144,
+        "rate": 0.2057,
+        "wilson95": [
+          0.1774,
+          0.2372
+        ]
+      }
+    },
+    "k5_bare": {
+      "absorbed": {
+        "count": 69,
+        "rate": 0.9857,
+        "wilson95": [
+          0.9234,
+          0.9975
+        ]
+      },
+      "alias": "deep_kc5",
+      "flagged": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.052
+        ]
+      },
+      "label_counts": {
+        "absorbed": 69,
+        "unresolved": 1
+      },
+      "n": 70,
+      "output_tokens_mean": null,
+      "program_n": 10,
+      "shows_recompute_rate": 0.0,
+      "silently_corrected": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.052
+        ]
+      },
+      "unresolved": {
+        "count": 1,
+        "rate": 0.0143,
+        "wilson95": [
+          0.0025,
+          0.0766
+        ]
+      }
+    }
+  },
+  "created_at": "2026-07-28T09:55:46",
+  "experiment": "E12_FIXES_LADDER_open",
+  "flag_channel": "doubt_lex frozen lexicon (no 32B judge)",
+  "gold_cohort": {
+    "0": {
+      "eligible": 118,
+      "kept": 100
+    },
+    "1": {
+      "eligible": 126,
+      "kept": 100
+    },
+    "5": {
+      "eligible": 10,
+      "kept": 10
+    }
+  },
+  "instruction_sha256": "bef1c3fb61feec16",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "tag": "qwen7b"
+}

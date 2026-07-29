@@ -1,0 +1,1630 @@
+{
+  "cells": {
+    "adjacent_contradiction": {
+      "derailed": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "doubt_broad": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "doubt_lex": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "doubt_lex_parsed_only": 0.0,
+      "final_output_absorbed": {
+        "cluster_boot95": [
+          1.0,
+          1.0
+        ],
+        "count": 5,
+        "n": 5,
+        "rate": 1.0,
+        "wilson95": [
+          0.5655,
+          1.0
+        ]
+      },
+      "final_output_valid": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "generation_failed": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "injection_dependent": {
+        "cluster_boot95": [
+          1.0,
+          1.0
+        ],
+        "count": 5,
+        "n": 5,
+        "rate": 1.0,
+        "wilson95": [
+          0.5655,
+          1.0
+        ]
+      },
+      "judge_doubt": {
+        "cluster_boot95": [
+          null,
+          null
+        ],
+        "count": 0,
+        "n": 0,
+        "rate": null,
+        "wilson95": [
+          null,
+          null
+        ]
+      },
+      "judge_doubt_parsed_only": null,
+      "judge_reject": {
+        "cluster_boot95": [
+          null,
+          null
+        ],
+        "count": 0,
+        "n": 0,
+        "rate": null,
+        "wilson95": [
+          null,
+          null
+        ]
+      },
+      "line_skip_rate": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "n": 5
+      },
+      "n": 5,
+      "next_read_absorbed": {
+        "cluster_boot95": [
+          1.0,
+          1.0
+        ],
+        "count": 5,
+        "n": 5,
+        "rate": 1.0,
+        "wilson95": [
+          0.5655,
+          1.0
+        ]
+      },
+      "next_read_absorbed_parsed_only": 1.0,
+      "next_read_breakdown": {
+        "cf": 5
+      },
+      "no_output_claim": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "parroted": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "parsed_only_n": 5,
+      "program_n": 5,
+      "r1_breakdown": {
+        "cf": 5
+      },
+      "repair_event": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "repair_event_parsed_only": 0.0,
+      "trace_valid": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "unparsed": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      }
+    },
+    "benign_paraphrase": {
+      "derailed": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "doubt_broad": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "doubt_lex": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "doubt_lex_parsed_only": 0.0,
+      "final_output_absorbed": {
+        "cluster_boot95": [
+          null,
+          null
+        ],
+        "count": 0,
+        "n": 0,
+        "rate": null,
+        "wilson95": [
+          null,
+          null
+        ]
+      },
+      "final_output_valid": {
+        "cluster_boot95": [
+          1.0,
+          1.0
+        ],
+        "count": 5,
+        "n": 5,
+        "rate": 1.0,
+        "wilson95": [
+          0.5655,
+          1.0
+        ]
+      },
+      "generation_failed": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "injection_dependent": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "judge_doubt": {
+        "cluster_boot95": [
+          null,
+          null
+        ],
+        "count": 0,
+        "n": 0,
+        "rate": null,
+        "wilson95": [
+          null,
+          null
+        ]
+      },
+      "judge_doubt_parsed_only": null,
+      "judge_reject": {
+        "cluster_boot95": [
+          null,
+          null
+        ],
+        "count": 0,
+        "n": 0,
+        "rate": null,
+        "wilson95": [
+          null,
+          null
+        ]
+      },
+      "line_skip_rate": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "n": 5
+      },
+      "n": 5,
+      "next_read_absorbed": {
+        "cluster_boot95": [
+          null,
+          null
+        ],
+        "count": 0,
+        "n": 0,
+        "rate": null,
+        "wilson95": [
+          null,
+          null
+        ]
+      },
+      "next_read_absorbed_parsed_only": null,
+      "next_read_breakdown": {
+        "none": 5
+      },
+      "no_output_claim": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "parroted": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "parsed_only_n": 5,
+      "program_n": 5,
+      "r1_breakdown": {
+        "true": 5
+      },
+      "repair_event": {
+        "cluster_boot95": [
+          null,
+          null
+        ],
+        "count": 0,
+        "n": 0,
+        "rate": null,
+        "wilson95": [
+          null,
+          null
+        ]
+      },
+      "repair_event_parsed_only": null,
+      "trace_valid": {
+        "cluster_boot95": [
+          1.0,
+          1.0
+        ],
+        "count": 5,
+        "n": 5,
+        "rate": 1.0,
+        "wilson95": [
+          0.5655,
+          1.0
+        ]
+      },
+      "unparsed": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      }
+    },
+    "deep_kc5": {
+      "derailed": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "doubt_broad": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "doubt_lex": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "doubt_lex_parsed_only": 0.0,
+      "final_output_absorbed": {
+        "cluster_boot95": [
+          1.0,
+          1.0
+        ],
+        "count": 5,
+        "n": 5,
+        "rate": 1.0,
+        "wilson95": [
+          0.5655,
+          1.0
+        ]
+      },
+      "final_output_valid": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "generation_failed": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "injection_dependent": {
+        "cluster_boot95": [
+          1.0,
+          1.0
+        ],
+        "count": 5,
+        "n": 5,
+        "rate": 1.0,
+        "wilson95": [
+          0.5655,
+          1.0
+        ]
+      },
+      "judge_doubt": {
+        "cluster_boot95": [
+          null,
+          null
+        ],
+        "count": 0,
+        "n": 0,
+        "rate": null,
+        "wilson95": [
+          null,
+          null
+        ]
+      },
+      "judge_doubt_parsed_only": null,
+      "judge_reject": {
+        "cluster_boot95": [
+          null,
+          null
+        ],
+        "count": 0,
+        "n": 0,
+        "rate": null,
+        "wilson95": [
+          null,
+          null
+        ]
+      },
+      "line_skip_rate": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "n": 5
+      },
+      "n": 5,
+      "next_read_absorbed": {
+        "cluster_boot95": [
+          1.0,
+          1.0
+        ],
+        "count": 5,
+        "n": 5,
+        "rate": 1.0,
+        "wilson95": [
+          0.5655,
+          1.0
+        ]
+      },
+      "next_read_absorbed_parsed_only": 1.0,
+      "next_read_breakdown": {
+        "cf": 5
+      },
+      "no_output_claim": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "parroted": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "parsed_only_n": 5,
+      "program_n": 5,
+      "r1_breakdown": {
+        "cf": 5
+      },
+      "repair_event": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "repair_event_parsed_only": 0.0,
+      "trace_valid": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "unparsed": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      }
+    },
+    "onehop_kc1": {
+      "derailed": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "doubt_broad": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "doubt_lex": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "doubt_lex_parsed_only": 0.0,
+      "final_output_absorbed": {
+        "cluster_boot95": [
+          1.0,
+          1.0
+        ],
+        "count": 5,
+        "n": 5,
+        "rate": 1.0,
+        "wilson95": [
+          0.5655,
+          1.0
+        ]
+      },
+      "final_output_valid": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "generation_failed": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "injection_dependent": {
+        "cluster_boot95": [
+          1.0,
+          1.0
+        ],
+        "count": 5,
+        "n": 5,
+        "rate": 1.0,
+        "wilson95": [
+          0.5655,
+          1.0
+        ]
+      },
+      "judge_doubt": {
+        "cluster_boot95": [
+          null,
+          null
+        ],
+        "count": 0,
+        "n": 0,
+        "rate": null,
+        "wilson95": [
+          null,
+          null
+        ]
+      },
+      "judge_doubt_parsed_only": null,
+      "judge_reject": {
+        "cluster_boot95": [
+          null,
+          null
+        ],
+        "count": 0,
+        "n": 0,
+        "rate": null,
+        "wilson95": [
+          null,
+          null
+        ]
+      },
+      "line_skip_rate": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "n": 5
+      },
+      "n": 5,
+      "next_read_absorbed": {
+        "cluster_boot95": [
+          1.0,
+          1.0
+        ],
+        "count": 5,
+        "n": 5,
+        "rate": 1.0,
+        "wilson95": [
+          0.5655,
+          1.0
+        ]
+      },
+      "next_read_absorbed_parsed_only": 1.0,
+      "next_read_breakdown": {
+        "cf": 5
+      },
+      "no_output_claim": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "parroted": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "parsed_only_n": 5,
+      "program_n": 5,
+      "r1_breakdown": {
+        "cf": 5
+      },
+      "repair_event": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "repair_event_parsed_only": 0.0,
+      "trace_valid": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "unparsed": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      }
+    },
+    "opfree_kr1": {
+      "derailed": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "doubt_broad": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "doubt_lex": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "doubt_lex_parsed_only": 0.0,
+      "final_output_absorbed": {
+        "cluster_boot95": [
+          1.0,
+          1.0
+        ],
+        "count": 5,
+        "n": 5,
+        "rate": 1.0,
+        "wilson95": [
+          0.5655,
+          1.0
+        ]
+      },
+      "final_output_valid": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "generation_failed": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "injection_dependent": {
+        "cluster_boot95": [
+          1.0,
+          1.0
+        ],
+        "count": 5,
+        "n": 5,
+        "rate": 1.0,
+        "wilson95": [
+          0.5655,
+          1.0
+        ]
+      },
+      "judge_doubt": {
+        "cluster_boot95": [
+          null,
+          null
+        ],
+        "count": 0,
+        "n": 0,
+        "rate": null,
+        "wilson95": [
+          null,
+          null
+        ]
+      },
+      "judge_doubt_parsed_only": null,
+      "judge_reject": {
+        "cluster_boot95": [
+          null,
+          null
+        ],
+        "count": 0,
+        "n": 0,
+        "rate": null,
+        "wilson95": [
+          null,
+          null
+        ]
+      },
+      "line_skip_rate": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "n": 5
+      },
+      "n": 5,
+      "next_read_absorbed": {
+        "cluster_boot95": [
+          1.0,
+          1.0
+        ],
+        "count": 5,
+        "n": 5,
+        "rate": 1.0,
+        "wilson95": [
+          0.5655,
+          1.0
+        ]
+      },
+      "next_read_absorbed_parsed_only": 1.0,
+      "next_read_breakdown": {
+        "cf": 5
+      },
+      "no_output_claim": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "parroted": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "parsed_only_n": 5,
+      "program_n": 5,
+      "r1_breakdown": {
+        "cf": 5
+      },
+      "repair_event": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "repair_event_parsed_only": 0.0,
+      "trace_valid": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "unparsed": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      }
+    },
+    "opfree_kr8": {
+      "derailed": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "doubt_broad": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "doubt_lex": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "doubt_lex_parsed_only": 0.0,
+      "final_output_absorbed": {
+        "cluster_boot95": [
+          1.0,
+          1.0
+        ],
+        "count": 5,
+        "n": 5,
+        "rate": 1.0,
+        "wilson95": [
+          0.5655,
+          1.0
+        ]
+      },
+      "final_output_valid": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "generation_failed": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "injection_dependent": {
+        "cluster_boot95": [
+          1.0,
+          1.0
+        ],
+        "count": 5,
+        "n": 5,
+        "rate": 1.0,
+        "wilson95": [
+          0.5655,
+          1.0
+        ]
+      },
+      "judge_doubt": {
+        "cluster_boot95": [
+          null,
+          null
+        ],
+        "count": 0,
+        "n": 0,
+        "rate": null,
+        "wilson95": [
+          null,
+          null
+        ]
+      },
+      "judge_doubt_parsed_only": null,
+      "judge_reject": {
+        "cluster_boot95": [
+          null,
+          null
+        ],
+        "count": 0,
+        "n": 0,
+        "rate": null,
+        "wilson95": [
+          null,
+          null
+        ]
+      },
+      "line_skip_rate": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "n": 5
+      },
+      "n": 5,
+      "next_read_absorbed": {
+        "cluster_boot95": [
+          1.0,
+          1.0
+        ],
+        "count": 5,
+        "n": 5,
+        "rate": 1.0,
+        "wilson95": [
+          0.5655,
+          1.0
+        ]
+      },
+      "next_read_absorbed_parsed_only": 1.0,
+      "next_read_breakdown": {
+        "cf": 5
+      },
+      "no_output_claim": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "parroted": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "parsed_only_n": 5,
+      "program_n": 5,
+      "r1_breakdown": {
+        "cf": 5
+      },
+      "repair_event": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "repair_event_parsed_only": 0.0,
+      "trace_valid": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "unparsed": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      }
+    },
+    "true_interruption": {
+      "derailed": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "doubt_broad": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "doubt_lex": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "doubt_lex_parsed_only": 0.0,
+      "final_output_absorbed": {
+        "cluster_boot95": [
+          null,
+          null
+        ],
+        "count": 0,
+        "n": 0,
+        "rate": null,
+        "wilson95": [
+          null,
+          null
+        ]
+      },
+      "final_output_valid": {
+        "cluster_boot95": [
+          1.0,
+          1.0
+        ],
+        "count": 5,
+        "n": 5,
+        "rate": 1.0,
+        "wilson95": [
+          0.5655,
+          1.0
+        ]
+      },
+      "generation_failed": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "injection_dependent": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "judge_doubt": {
+        "cluster_boot95": [
+          null,
+          null
+        ],
+        "count": 0,
+        "n": 0,
+        "rate": null,
+        "wilson95": [
+          null,
+          null
+        ]
+      },
+      "judge_doubt_parsed_only": null,
+      "judge_reject": {
+        "cluster_boot95": [
+          null,
+          null
+        ],
+        "count": 0,
+        "n": 0,
+        "rate": null,
+        "wilson95": [
+          null,
+          null
+        ]
+      },
+      "line_skip_rate": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "n": 5
+      },
+      "n": 5,
+      "next_read_absorbed": {
+        "cluster_boot95": [
+          null,
+          null
+        ],
+        "count": 0,
+        "n": 0,
+        "rate": null,
+        "wilson95": [
+          null,
+          null
+        ]
+      },
+      "next_read_absorbed_parsed_only": null,
+      "next_read_breakdown": {
+        "none": 5
+      },
+      "no_output_claim": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "parroted": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      },
+      "parsed_only_n": 5,
+      "program_n": 5,
+      "r1_breakdown": {
+        "true": 5
+      },
+      "repair_event": {
+        "cluster_boot95": [
+          null,
+          null
+        ],
+        "count": 0,
+        "n": 0,
+        "rate": null,
+        "wilson95": [
+          null,
+          null
+        ]
+      },
+      "repair_event_parsed_only": null,
+      "trace_valid": {
+        "cluster_boot95": [
+          1.0,
+          1.0
+        ],
+        "count": 5,
+        "n": 5,
+        "rate": 1.0,
+        "wilson95": [
+          0.5655,
+          1.0
+        ]
+      },
+      "unparsed": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "n": 5,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.4345
+        ]
+      }
+    }
+  },
+  "cohort_summary": {
+    "by_shape": {
+      "kc1": {
+        "n": 8,
+        "parse_rate": 1.0,
+        "solve_rate": 1.0
+      },
+      "kc5": {
+        "n": 8,
+        "parse_rate": 1.0,
+        "solve_rate": 1.0
+      },
+      "kr1": {
+        "n": 8,
+        "parse_rate": 1.0,
+        "solve_rate": 1.0
+      },
+      "kr8": {
+        "n": 8,
+        "parse_rate": 1.0,
+        "solve_rate": 1.0
+      }
+    },
+    "failure_taxonomy": {},
+    "n_programs": 32,
+    "parse_rate_line_level": 1.0,
+    "parse_rate_program_level": 1.0,
+    "solve_rate": 1.0
+  },
+  "created_at": "2026-07-02T13:53:36",
+  "denominator_note": "unparsed and generation-failed runs retained in denominators (house convention); *_parsed_only columns give the dual denominator",
+  "experiment": "EXPG_PROGTRACE_PILOT",
+  "gate_A": {
+    "parse_gate_0.90": true,
+    "solve_gate_0.60": true
+  },
+  "gate_A_pass": true,
+  "gate_B": {
+    "branch": "floor_documentation",
+    "criterion": "doubt >= 0.10 OR next-read absorption <= 0.85 on adjacent_contradiction or opfree_kr1",
+    "doubt_dv": "lexical",
+    "full_grid_viable": false,
+    "inputs": {
+      "adjacent_contradiction": {
+        "doubt_lex": 0.0,
+        "doubt_used": 0.0,
+        "judge_doubt": null,
+        "next_read_absorbed": 1.0
+      },
+      "opfree_kr1": {
+        "doubt_lex": 0.0,
+        "doubt_used": 0.0,
+        "judge_doubt": null,
+        "next_read_absorbed": 1.0
+      }
+    }
+  },
+  "kr_gradient_probe": {
+    "doubt_broad": {
+      "delta_kr1_minus_kr8": 0.0,
+      "kr1": 0.0,
+      "kr8": 0.0
+    },
+    "doubt_lex": {
+      "delta_kr1_minus_kr8": 0.0,
+      "kr1": 0.0,
+      "kr8": 0.0
+    },
+    "final_output_absorbed": {
+      "delta_kr1_minus_kr8": 0.0,
+      "kr1": 1.0,
+      "kr8": 1.0
+    },
+    "judge_doubt": {
+      "delta_kr1_minus_kr8": null,
+      "kr1": null,
+      "kr8": null
+    },
+    "judge_reject": {
+      "delta_kr1_minus_kr8": null,
+      "kr1": null,
+      "kr8": null
+    },
+    "next_read_absorbed": {
+      "delta_kr1_minus_kr8": 0.0,
+      "kr1": 1.0,
+      "kr8": 1.0
+    },
+    "repair_event": {
+      "delta_kr1_minus_kr8": 0.0,
+      "kr1": 0.0,
+      "kr8": 0.0
+    },
+    "trace_valid": {
+      "delta_kr1_minus_kr8": 0.0,
+      "kr1": 0.0,
+      "kr8": 0.0
+    }
+  },
+  "stats_note": "wilson95 + program-cluster bootstrap95 (n_boot=1000)"
+}
