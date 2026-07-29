@@ -1,0 +1,113 @@
+% =====================================================================
+% The Recompute Wall -- ICLR 2025 conference style.
+% Section prose is split byte-verbatim from SECTIONS_BUNDLE.tex into
+% sections/*.tex and must not be edited here. Figure floats are wired in
+% this file, placed after the \input of the section that first references
+% each figure, so the section prose files stay byte-identical to the bundle.
+% =====================================================================
+\documentclass{article} % For LaTeX2e
+\usepackage{iclr2025_conference,times}
+
+\input{math_commands.tex}
+
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{array}
+
+\title{The Recompute Wall: Language Models Do Not Re-Verify Computed
+Values in Their Own Reasoning}
+
+% ICLR is double-blind. Anonymous author block for submission; do not
+% uncomment \iclrfinalcopy until camera-ready.
+\author{Anonymous Authors \\ \texttt{Paper under double-blind review}}
+
+%\iclrfinalcopy % Uncomment ONLY for the camera-ready version, never for submission.
+
+\begin{document}
+
+\maketitle
+
+\input{sections/00_abstract}
+
+\input{sections/01_intro}
+\input{sections/02_setup}
+
+% CAPTION DRAFT -- final wording with author
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/fig1.pdf}
+\caption{The protocol plants a single false intermediate value and lets the
+model continue. \textbf{(A) Readable error:} the note \texttt{u = 84}
+contradicts \texttt{u = 48}, already computed two lines up; Haiku ignores the
+note and returns the correct \texttt{output = 127}. \textbf{(B) Computed
+error:} the line \texttt{j = k + c; j = 97} is wrong only if you re-add
+\texttt{70 + 37 = 107}; the model absorbs \texttt{97}, propagates it, and
+returns \texttt{output = 221} (truth \texttt{241}). Both excerpts are real
+Haiku 4.5 continuations from the same program family (seed 507786).}
+\label{fig:protocol}
+\end{figure}
+
+\input{sections/03_wall}
+
+% CAPTION DRAFT -- final wording with author
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/fig2.pdf}
+\caption{Error-absorption rate for a readable contradiction (blue) and a
+one-hop computed error (orange), across 13 models grouped by developer.
+Readable-error absorption collapses from open-weight models to the frontier
+(Opus 4.8, Sonnet 5, GPT-4o/4.1 all $\approx 0$), but computed-error
+absorption is a flat ceiling at $\approx 1.0$ for every capable model. Bars
+are absorption rates; whiskers are 95\% Wilson intervals.}
+\label{fig:wall}
+\end{figure}
+
+\input{sections/04_depth}
+
+% CAPTION DRAFT -- final wording with author
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/fig3.pdf}
+\caption{Absorption of a planted claim as a function of verification depth
+$k$ (the number of operations needed to check it), for three models. At
+$k = 0$ (the claim restates a value already on the page) Haiku 4.5 absorbs
+1.3\% of errors; at $k = 1$ (one operation to verify) it absorbs 100\%, and
+stays there. The jump is the recompute wall: the boundary is a single
+operation, not depth. Bands are 95\% Wilson intervals.}
+\label{fig:depth}
+\end{figure}
+
+\input{sections/05_opacity}
+
+% CAPTION DRAFT -- final wording with author
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/fig4.pdf}
+\caption{Absorption at $k = 1$ under three site opacities: bare (the claim
+only), full (the claim with its arithmetic written out), and partial (one
+operand shown). Making the error fully visible does not help: Qwen 7B actually
+absorbs more when shown the math (0.78 to 0.94), and Haiku and Llama stay
+saturated. The panel below shows the real injected lines: even
+\texttt{n = y + z = 32 + 58; n = 100}, where \texttt{32 + 58 = 90} is written
+on the line, is copied as \texttt{100}. Whiskers are 95\% Wilson intervals.}
+\label{fig:opacity}
+\end{figure}
+
+\input{sections/06_fixes}
+\input{sections/07_related}
+\input{sections/08_discussion}
+\input{sections/09_conclusion}
+
+\bibliographystyle{iclr2025_conference}
+\bibliography{main}
+
+\appendix
+\input{sections/A_appendix}
+
+\end{document}

@@ -1,0 +1,59 @@
+\section{Bookkeeping and provenance}
+\label{sec:appendix}
+
+This appendix records the sampling, calibration, and protocol details behind
+the numbers in the main text. It is a provenance register, not a second results
+section, and each entry states what was run and where the value comes from.
+
+\paragraph{Sampling depth.}
+The fix-ladder specification (E12) called for $R = 8$ sampled rollouts per world
+plus one greedy rollout. In the runs reported here the frontier arm was sampled
+at $R = 3$ and the open-model arms at $R = 6$; the reason for the reduction is
+not recorded in the run logs, so we disclose it rather than reconstruct it. Per
+cell, the frontier arm contributes 240 rollouts over 60 programs. The open-model
+arms contribute 700 rollouts over 100 programs at depths zero and one, and the
+depth-five cells fall below that count because fewer base traces are solved as
+depth grows, so those cells are attrition-limited.
+
+\paragraph{Readable-control drift.}
+One readable-control wrinkle is worth recording. For Qwen2.5-7B the absorption
+of a readable (depth-zero) error was not flat across the instruction arms but
+drifted from 0.75 to 0.86, so the model's readable baseline moves under
+instruction even though its computed-error rate does not. We report the
+computed-side numbers against this moving baseline and flag the drift rather
+than average it away.
+
+\paragraph{Solvability gate.}
+Two open-weight models failed the solvability gate on the hardest cells.
+Qwen2.5-1.5B solved the base program at a rate of 0.105 and OLMo-2-7B at 0.369,
+so after we keep only correctly solved base traces their deepest computed cells
+rest on small samples. We report those cells with widened Wilson intervals and
+do not treat them as settled points.
+
+\paragraph{Bridge versus prefill calibration.}
+The bridge (user-turn) presentation and the prefill presentation were
+cross-calibrated on the models that support both. The computed cells coincide
+across the two methods, so the computed-side result does not depend on
+presentation. The pure-copy cells inflate under the bridge method relative to
+prefill, so we report the copy cells separately rather than pool the two
+presentations.
+
+\paragraph{Fable 5 refusal.}
+Fable 5 returned no usable data. Its safety classifier refused the task format
+on all 360 of 360 attempted rollouts, categorized as cyber, under both the
+thinking and the non-thinking conditions, at a total spend of \$2.93. We report
+Fable 5 as unmeasured rather than as a zero or as a result.
+
+\paragraph{Protocol constants.}
+The protocol constants are fixed across cells. Each program renders to a trace
+of 20 lines carrying 14 arithmetic operations in total, with the planted site at
+line 10 (fractional position 0.5) and its first downstream read two lines later.
+Site operands are two-digit integers drawn from 11 to 99, filler constants are
+drawn from 2 to 60, and intermediate values are capped at 999. Verification
+depth takes values in $\{0, 1, 2, 3, 5\}$ and site opacity in
+$\{\text{bare}, \text{full}, \text{partial}\}$. Worlds are generated
+deterministically from an integer seed; the base seed is 0 and the worked
+example in Figure~\ref{fig:protocol} uses seed 507786. Sampling uses one greedy
+rollout at temperature 0 followed by $R$ sampled rollouts at temperature 0.7.
+These values are taken from the E11 generator header (\texttt{gen\_depth.py})
+and the E10, E11, and E12 specifications.

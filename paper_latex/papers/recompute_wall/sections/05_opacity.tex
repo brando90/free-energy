@@ -1,0 +1,12 @@
+\section{The failure is deference, not inability}
+\label{sec:opacity}
+
+A model might absorb computed errors because recomputing is hard or because the inputs are buried. This section rules both out by making the computation visible and showing that absorption does not fall.
+
+Alongside each computed error we vary how much of its derivation is shown. In the \emph{bare} condition the line states only the result, as \texttt{V = o1 + o2 + o3; V = 173}. In the \emph{full} condition the same line also prints the operands, as \texttt{V = o1 + o2 + o3 = 45 + 63 + 65; V = 173}, and the \emph{partial} condition shows the last few. The three conditions are byte-identical except for the inserted operands. In a perturbed trace the printed operands are the true ones, so when the stated result is false the line contradicts itself: the operands sum to the true value while the result asserts the planted one, and catching the error requires only adding the numbers already on the line.
+
+Showing the operands does not restore checking. For the frontier model absorption stays at 1.00 across bare, full, and partial at every depth; the model reads past a line whose own operands refute its stated result. Llama-3.1-8B is unchanged as well, at 0.99 in all three conditions. For Qwen2.5-7B, showing the operands makes absorption higher, not lower, rising from 0.78 bare to 0.94 full. Making the computation visible either does nothing or deepens the error.
+
+The reading rules out the two innocent explanations. The inputs are not inaccessible, since they sit on the same line as the result, and the arithmetic is not hard, since it is the single addition the model just declined to perform. What remains is deference: the model treats a value written as the result of a computation as settled, and does not check it against operands printed beside it. The more the line looks like finished computation, the more the model trusts it, which is why the full condition raises absorption for the one model it moves at all.
+
+Figure~\ref{fig:opacity} shows absorption under bare, full, and partial presentation for the three models.
