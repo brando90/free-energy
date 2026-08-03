@@ -1,0 +1,1460 @@
+{
+  "coverage_notes": [
+    "legacy family perturbed: rows=522 audited=390 skip-marked=39 not-in-gold-validated-cohort=93 schema-missing=0",
+    "legacy family perturbed_contradiction: rows=522 audited=390 skip-marked=39 not-in-gold-validated-cohort=93 schema-missing=0",
+    "legacy family perturbed_distractor: rows=522 audited=390 skip-marked=39 not-in-gold-validated-cohort=93 schema-missing=0",
+    "legacy family perturbed_falsehood: rows=522 audited=105 skip-marked=378 not-in-gold-validated-cohort=39 schema-missing=0",
+    "legacy family perturbed_neghop2: rows=522 audited=260 skip-marked=204 not-in-gold-validated-cohort=58 schema-missing=0",
+    "legacy family perturbed_neghop3: rows=522 audited=199 skip-marked=269 not-in-gold-validated-cohort=54 schema-missing=0",
+    "legacy family perturbed_neghop4: rows=522 audited=134 skip-marked=347 not-in-gold-validated-cohort=41 schema-missing=0",
+    "legacy family perturbed_neghop5: rows=522 audited=91 skip-marked=402 not-in-gold-validated-cohort=29 schema-missing=0",
+    "legacy family perturbed_negstep: rows=522 audited=390 skip-marked=40 not-in-gold-validated-cohort=92 schema-missing=0",
+    "legacy family perturbed_paraphrase: rows=522 audited=390 skip-marked=39 not-in-gold-validated-cohort=93 schema-missing=0"
+  ],
+  "created_at": "2026-07-02T13:49:26.320695+00:00",
+  "cross_check_disagreements": 0,
+  "distance_distributions": {
+    "EXPA:benign_paraphrase": {
+      "by_position": {
+        "early": {
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5+": 0,
+            "inf": 150,
+            "unparseable": 0
+          },
+          "finite_d_count": 0,
+          "finite_d_fraction": 0.0,
+          "n": 150,
+          "native_max8_disagreements": 0
+        },
+        "late": {
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5+": 0,
+            "inf": 150,
+            "unparseable": 0
+          },
+          "finite_d_count": 0,
+          "finite_d_fraction": 0.0,
+          "n": 150,
+          "native_max8_disagreements": 0
+        },
+        "mid": {
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5+": 0,
+            "inf": 150,
+            "unparseable": 0
+          },
+          "finite_d_count": 0,
+          "finite_d_fraction": 0.0,
+          "n": 150,
+          "native_max8_disagreements": 0
+        }
+      },
+      "designed_d": "true_control(no design)",
+      "pooled": {
+        "counts": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5+": 0,
+          "inf": 450,
+          "unparseable": 0
+        },
+        "finite_d_count": 0,
+        "finite_d_fraction": 0.0,
+        "n": 450,
+        "native_max8_disagreements": 0
+      }
+    },
+    "EXPA:global_falsehood": {
+      "by_position": {
+        "early": {
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5+": 0,
+            "inf": 150,
+            "unparseable": 0
+          },
+          "finite_d_count": 0,
+          "finite_d_fraction": 0.0,
+          "n": 150,
+          "native_max8_disagreements": 0
+        },
+        "late": {
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5+": 0,
+            "inf": 150,
+            "unparseable": 0
+          },
+          "finite_d_count": 0,
+          "finite_d_fraction": 0.0,
+          "n": 150,
+          "native_max8_disagreements": 0
+        },
+        "mid": {
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5+": 0,
+            "inf": 150,
+            "unparseable": 0
+          },
+          "finite_d_count": 0,
+          "finite_d_fraction": 0.0,
+          "n": 150,
+          "native_max8_disagreements": 0
+        }
+      },
+      "designed_d": "inf",
+      "pooled": {
+        "counts": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5+": 0,
+          "inf": 450,
+          "unparseable": 0
+        },
+        "finite_d_count": 0,
+        "finite_d_fraction": 0.0,
+        "n": 450,
+        "native_max8_disagreements": 0
+      }
+    },
+    "EXPA:one_hop_falsehood": {
+      "by_position": {
+        "early": {
+          "counts": {
+            "0": 29,
+            "1": 119,
+            "2": 1,
+            "3": 1,
+            "4": 0,
+            "5+": 0,
+            "inf": 0,
+            "unparseable": 0
+          },
+          "finite_d_count": 150,
+          "finite_d_fraction": 1.0,
+          "n": 150,
+          "native_max8_disagreements": 0
+        },
+        "late": {
+          "counts": {
+            "0": 13,
+            "1": 113,
+            "2": 16,
+            "3": 7,
+            "4": 1,
+            "5+": 0,
+            "inf": 0,
+            "unparseable": 0
+          },
+          "finite_d_count": 150,
+          "finite_d_fraction": 1.0,
+          "n": 150,
+          "native_max8_disagreements": 0
+        },
+        "mid": {
+          "counts": {
+            "0": 25,
+            "1": 113,
+            "2": 11,
+            "3": 1,
+            "4": 0,
+            "5+": 0,
+            "inf": 0,
+            "unparseable": 0
+          },
+          "finite_d_count": 150,
+          "finite_d_fraction": 1.0,
+          "n": 150,
+          "native_max8_disagreements": 0
+        }
+      },
+      "designed_d": "1",
+      "pooled": {
+        "counts": {
+          "0": 67,
+          "1": 345,
+          "2": 28,
+          "3": 9,
+          "4": 1,
+          "5+": 0,
+          "inf": 0,
+          "unparseable": 0
+        },
+        "finite_d_count": 450,
+        "finite_d_fraction": 1.0,
+        "n": 450,
+        "native_max8_disagreements": 0
+      }
+    },
+    "EXPA:true_interruption": {
+      "by_position": {
+        "early": {
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5+": 0,
+            "inf": 150,
+            "unparseable": 0
+          },
+          "finite_d_count": 0,
+          "finite_d_fraction": 0.0,
+          "n": 150,
+          "native_max8_disagreements": 0
+        },
+        "late": {
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5+": 0,
+            "inf": 150,
+            "unparseable": 0
+          },
+          "finite_d_count": 0,
+          "finite_d_fraction": 0.0,
+          "n": 150,
+          "native_max8_disagreements": 0
+        },
+        "mid": {
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5+": 0,
+            "inf": 150,
+            "unparseable": 0
+          },
+          "finite_d_count": 0,
+          "finite_d_fraction": 0.0,
+          "n": 150,
+          "native_max8_disagreements": 0
+        }
+      },
+      "designed_d": "true_control(no design)",
+      "pooled": {
+        "counts": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5+": 0,
+          "inf": 450,
+          "unparseable": 0
+        },
+        "finite_d_count": 0,
+        "finite_d_fraction": 0.0,
+        "n": 450,
+        "native_max8_disagreements": 0
+      }
+    },
+    "legacy:perturbed": {
+      "by_position": {
+        "early": {
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5+": 0,
+            "inf": 130,
+            "unparseable": 0
+          },
+          "finite_d_count": 0,
+          "finite_d_fraction": 0.0,
+          "n": 130,
+          "native_max8_disagreements": 0
+        },
+        "late": {
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5+": 0,
+            "inf": 130,
+            "unparseable": 0
+          },
+          "finite_d_count": 0,
+          "finite_d_fraction": 0.0,
+          "n": 130,
+          "native_max8_disagreements": 0
+        },
+        "mid": {
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5+": 0,
+            "inf": 130,
+            "unparseable": 0
+          },
+          "finite_d_count": 0,
+          "finite_d_fraction": 0.0,
+          "n": 130,
+          "native_max8_disagreements": 0
+        }
+      },
+      "designed_d": "none(wrong-category, v1; often entailed-true)",
+      "pooled": {
+        "counts": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5+": 0,
+          "inf": 390,
+          "unparseable": 0
+        },
+        "finite_d_count": 0,
+        "finite_d_fraction": 0.0,
+        "n": 390,
+        "native_max8_disagreements": 0
+      }
+    },
+    "legacy:perturbed_contradiction": {
+      "by_position": {
+        "early": {
+          "counts": {
+            "0": 130,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5+": 0,
+            "inf": 0,
+            "unparseable": 0
+          },
+          "finite_d_count": 130,
+          "finite_d_fraction": 1.0,
+          "n": 130,
+          "native_max8_disagreements": 0
+        },
+        "late": {
+          "counts": {
+            "0": 130,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5+": 0,
+            "inf": 0,
+            "unparseable": 0
+          },
+          "finite_d_count": 130,
+          "finite_d_fraction": 1.0,
+          "n": 130,
+          "native_max8_disagreements": 0
+        },
+        "mid": {
+          "counts": {
+            "0": 130,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5+": 0,
+            "inf": 0,
+            "unparseable": 0
+          },
+          "finite_d_count": 130,
+          "finite_d_fraction": 1.0,
+          "n": 130,
+          "native_max8_disagreements": 0
+        }
+      },
+      "designed_d": "0",
+      "pooled": {
+        "counts": {
+          "0": 390,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5+": 0,
+          "inf": 0,
+          "unparseable": 0
+        },
+        "finite_d_count": 390,
+        "finite_d_fraction": 1.0,
+        "n": 390,
+        "native_max8_disagreements": 0
+      }
+    },
+    "legacy:perturbed_distractor": {
+      "by_position": {
+        "early": {
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5+": 0,
+            "inf": 0,
+            "unparseable": 130
+          },
+          "finite_d_count": 0,
+          "finite_d_fraction": 0.0,
+          "n": 130,
+          "native_max8_disagreements": 0
+        },
+        "late": {
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5+": 0,
+            "inf": 0,
+            "unparseable": 130
+          },
+          "finite_d_count": 0,
+          "finite_d_fraction": 0.0,
+          "n": 130,
+          "native_max8_disagreements": 0
+        },
+        "mid": {
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5+": 0,
+            "inf": 0,
+            "unparseable": 130
+          },
+          "finite_d_count": 0,
+          "finite_d_fraction": 0.0,
+          "n": 130,
+          "native_max8_disagreements": 0
+        }
+      },
+      "designed_d": "rule-injection(unparseable as entity fact)",
+      "pooled": {
+        "counts": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5+": 0,
+          "inf": 0,
+          "unparseable": 390
+        },
+        "finite_d_count": 0,
+        "finite_d_fraction": 0.0,
+        "n": 390,
+        "native_max8_disagreements": 0
+      }
+    },
+    "legacy:perturbed_falsehood": {
+      "by_position": {
+        "early": {
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5+": 0,
+            "inf": 35,
+            "unparseable": 0
+          },
+          "finite_d_count": 0,
+          "finite_d_fraction": 0.0,
+          "n": 35,
+          "native_max8_disagreements": 0
+        },
+        "late": {
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5+": 0,
+            "inf": 35,
+            "unparseable": 0
+          },
+          "finite_d_count": 0,
+          "finite_d_fraction": 0.0,
+          "n": 35,
+          "native_max8_disagreements": 0
+        },
+        "mid": {
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5+": 0,
+            "inf": 35,
+            "unparseable": 0
+          },
+          "finite_d_count": 0,
+          "finite_d_fraction": 0.0,
+          "n": 35,
+          "native_max8_disagreements": 0
+        }
+      },
+      "designed_d": "inf",
+      "pooled": {
+        "counts": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5+": 0,
+          "inf": 105,
+          "unparseable": 0
+        },
+        "finite_d_count": 0,
+        "finite_d_fraction": 0.0,
+        "n": 105,
+        "native_max8_disagreements": 0
+      }
+    },
+    "legacy:perturbed_neghop2": {
+      "by_position": {
+        "early": {
+          "counts": {
+            "0": 41,
+            "1": 22,
+            "2": 50,
+            "3": 13,
+            "4": 2,
+            "5+": 2,
+            "inf": 0,
+            "unparseable": 0
+          },
+          "finite_d_count": 130,
+          "finite_d_fraction": 1.0,
+          "n": 130,
+          "native_max8_disagreements": 0
+        },
+        "mid": {
+          "counts": {
+            "0": 15,
+            "1": 32,
+            "2": 66,
+            "3": 10,
+            "4": 7,
+            "5+": 0,
+            "inf": 0,
+            "unparseable": 0
+          },
+          "finite_d_count": 130,
+          "finite_d_fraction": 1.0,
+          "n": 130,
+          "native_max8_disagreements": 0
+        }
+      },
+      "designed_d": "2",
+      "pooled": {
+        "counts": {
+          "0": 56,
+          "1": 54,
+          "2": 116,
+          "3": 23,
+          "4": 9,
+          "5+": 2,
+          "inf": 0,
+          "unparseable": 0
+        },
+        "finite_d_count": 260,
+        "finite_d_fraction": 1.0,
+        "n": 260,
+        "native_max8_disagreements": 0
+      }
+    },
+    "legacy:perturbed_neghop3": {
+      "by_position": {
+        "early": {
+          "counts": {
+            "0": 18,
+            "1": 39,
+            "2": 26,
+            "3": 36,
+            "4": 9,
+            "5+": 2,
+            "inf": 0,
+            "unparseable": 0
+          },
+          "finite_d_count": 130,
+          "finite_d_fraction": 1.0,
+          "n": 130,
+          "native_max8_disagreements": 0
+        },
+        "mid": {
+          "counts": {
+            "0": 11,
+            "1": 15,
+            "2": 19,
+            "3": 19,
+            "4": 4,
+            "5+": 1,
+            "inf": 0,
+            "unparseable": 0
+          },
+          "finite_d_count": 69,
+          "finite_d_fraction": 1.0,
+          "n": 69,
+          "native_max8_disagreements": 0
+        }
+      },
+      "designed_d": "3",
+      "pooled": {
+        "counts": {
+          "0": 29,
+          "1": 54,
+          "2": 45,
+          "3": 55,
+          "4": 13,
+          "5+": 3,
+          "inf": 0,
+          "unparseable": 0
+        },
+        "finite_d_count": 199,
+        "finite_d_fraction": 1.0,
+        "n": 199,
+        "native_max8_disagreements": 0
+      }
+    },
+    "legacy:perturbed_neghop4": {
+      "by_position": {
+        "early": {
+          "counts": {
+            "0": 13,
+            "1": 22,
+            "2": 31,
+            "3": 15,
+            "4": 14,
+            "5+": 1,
+            "inf": 0,
+            "unparseable": 0
+          },
+          "finite_d_count": 96,
+          "finite_d_fraction": 1.0,
+          "n": 96,
+          "native_max8_disagreements": 0
+        },
+        "mid": {
+          "counts": {
+            "0": 7,
+            "1": 8,
+            "2": 12,
+            "3": 5,
+            "4": 4,
+            "5+": 2,
+            "inf": 0,
+            "unparseable": 0
+          },
+          "finite_d_count": 38,
+          "finite_d_fraction": 1.0,
+          "n": 38,
+          "native_max8_disagreements": 0
+        }
+      },
+      "designed_d": "4",
+      "pooled": {
+        "counts": {
+          "0": 20,
+          "1": 30,
+          "2": 43,
+          "3": 20,
+          "4": 18,
+          "5+": 3,
+          "inf": 0,
+          "unparseable": 0
+        },
+        "finite_d_count": 134,
+        "finite_d_fraction": 1.0,
+        "n": 134,
+        "native_max8_disagreements": 0
+      }
+    },
+    "legacy:perturbed_neghop5": {
+      "by_position": {
+        "early": {
+          "counts": {
+            "0": 10,
+            "1": 14,
+            "2": 17,
+            "3": 16,
+            "4": 10,
+            "5+": 2,
+            "inf": 0,
+            "unparseable": 0
+          },
+          "finite_d_count": 69,
+          "finite_d_fraction": 1.0,
+          "n": 69,
+          "native_max8_disagreements": 0
+        },
+        "mid": {
+          "counts": {
+            "0": 0,
+            "1": 6,
+            "2": 5,
+            "3": 8,
+            "4": 3,
+            "5+": 0,
+            "inf": 0,
+            "unparseable": 0
+          },
+          "finite_d_count": 22,
+          "finite_d_fraction": 1.0,
+          "n": 22,
+          "native_max8_disagreements": 0
+        }
+      },
+      "designed_d": "5",
+      "pooled": {
+        "counts": {
+          "0": 10,
+          "1": 20,
+          "2": 22,
+          "3": 24,
+          "4": 13,
+          "5+": 2,
+          "inf": 0,
+          "unparseable": 0
+        },
+        "finite_d_count": 91,
+        "finite_d_fraction": 1.0,
+        "n": 91,
+        "native_max8_disagreements": 0
+      }
+    },
+    "legacy:perturbed_negstep": {
+      "by_position": {
+        "early": {
+          "counts": {
+            "0": 14,
+            "1": 110,
+            "2": 2,
+            "3": 3,
+            "4": 1,
+            "5+": 0,
+            "inf": 0,
+            "unparseable": 0
+          },
+          "finite_d_count": 130,
+          "finite_d_fraction": 1.0,
+          "n": 130,
+          "native_max8_disagreements": 0
+        },
+        "late": {
+          "counts": {
+            "0": 21,
+            "1": 91,
+            "2": 9,
+            "3": 6,
+            "4": 2,
+            "5+": 1,
+            "inf": 0,
+            "unparseable": 0
+          },
+          "finite_d_count": 130,
+          "finite_d_fraction": 1.0,
+          "n": 130,
+          "native_max8_disagreements": 0
+        },
+        "mid": {
+          "counts": {
+            "0": 26,
+            "1": 89,
+            "2": 4,
+            "3": 10,
+            "4": 0,
+            "5+": 1,
+            "inf": 0,
+            "unparseable": 0
+          },
+          "finite_d_count": 130,
+          "finite_d_fraction": 1.0,
+          "n": 130,
+          "native_max8_disagreements": 0
+        }
+      },
+      "designed_d": "1",
+      "pooled": {
+        "counts": {
+          "0": 61,
+          "1": 290,
+          "2": 15,
+          "3": 19,
+          "4": 3,
+          "5+": 2,
+          "inf": 0,
+          "unparseable": 0
+        },
+        "finite_d_count": 390,
+        "finite_d_fraction": 1.0,
+        "n": 390,
+        "native_max8_disagreements": 0
+      }
+    },
+    "legacy:perturbed_paraphrase": {
+      "by_position": {
+        "early": {
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5+": 0,
+            "inf": 130,
+            "unparseable": 0
+          },
+          "finite_d_count": 0,
+          "finite_d_fraction": 0.0,
+          "n": 130,
+          "native_max8_disagreements": 0
+        },
+        "late": {
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5+": 0,
+            "inf": 130,
+            "unparseable": 0
+          },
+          "finite_d_count": 0,
+          "finite_d_fraction": 0.0,
+          "n": 130,
+          "native_max8_disagreements": 0
+        },
+        "mid": {
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5+": 0,
+            "inf": 130,
+            "unparseable": 0
+          },
+          "finite_d_count": 0,
+          "finite_d_fraction": 0.0,
+          "n": 130,
+          "native_max8_disagreements": 0
+        }
+      },
+      "designed_d": "unknown",
+      "pooled": {
+        "counts": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5+": 0,
+          "inf": 390,
+          "unparseable": 0
+        },
+        "finite_d_count": 0,
+        "finite_d_fraction": 0.0,
+        "n": 390,
+        "native_max8_disagreements": 0
+      }
+    }
+  },
+  "distance_owner": "src/expc_polarity_control.py:shortest_rule_distance (imported, unmodified)",
+  "expa_global_rebin": {
+    "by_position": {
+      "early": {
+        "contaminated_fraction": 0.0,
+        "rates_full_cell": {
+          "closure_valid": {
+            "count": 67,
+            "rate": 0.4467,
+            "wilson95": [
+              0.3694,
+              0.5266
+            ]
+          },
+          "derailed": {
+            "count": 9,
+            "rate": 0.06,
+            "wilson95": [
+              0.0319,
+              0.1101
+            ]
+          },
+          "doubt": {
+            "count": 1,
+            "rate": 0.0067,
+            "wilson95": [
+              0.0012,
+              0.0368
+            ]
+          },
+          "generation_failed": {
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.025
+            ]
+          },
+          "n": 150,
+          "parroted": {
+            "count": 35,
+            "rate": 0.2333,
+            "wilson95": [
+              0.1728,
+              0.3072
+            ]
+          },
+          "poisoned_injection_dependence": {
+            "count": 35,
+            "rate": 0.2333,
+            "wilson95": [
+              0.1728,
+              0.3072
+            ]
+          },
+          "problem_n": 150,
+          "unparsed": {
+            "count": 4,
+            "rate": 0.0267,
+            "wilson95": [
+              0.0104,
+              0.0666
+            ]
+          }
+        },
+        "rates_strict_d_inf_subset": {
+          "closure_valid": {
+            "count": 67,
+            "rate": 0.4467,
+            "wilson95": [
+              0.3694,
+              0.5266
+            ]
+          },
+          "derailed": {
+            "count": 9,
+            "rate": 0.06,
+            "wilson95": [
+              0.0319,
+              0.1101
+            ]
+          },
+          "doubt": {
+            "count": 1,
+            "rate": 0.0067,
+            "wilson95": [
+              0.0012,
+              0.0368
+            ]
+          },
+          "generation_failed": {
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.025
+            ]
+          },
+          "n": 150,
+          "parroted": {
+            "count": 35,
+            "rate": 0.2333,
+            "wilson95": [
+              0.1728,
+              0.3072
+            ]
+          },
+          "poisoned_injection_dependence": {
+            "count": 35,
+            "rate": 0.2333,
+            "wilson95": [
+              0.1728,
+              0.3072
+            ]
+          },
+          "problem_n": 150,
+          "unparsed": {
+            "count": 4,
+            "rate": 0.0267,
+            "wilson95": [
+              0.0104,
+              0.0666
+            ]
+          }
+        }
+      },
+      "late": {
+        "contaminated_fraction": 0.0,
+        "rates_full_cell": {
+          "closure_valid": {
+            "count": 56,
+            "rate": 0.3733,
+            "wilson95": [
+              0.3,
+              0.453
+            ]
+          },
+          "derailed": {
+            "count": 3,
+            "rate": 0.02,
+            "wilson95": [
+              0.0068,
+              0.0571
+            ]
+          },
+          "doubt": {
+            "count": 3,
+            "rate": 0.02,
+            "wilson95": [
+              0.0068,
+              0.0571
+            ]
+          },
+          "generation_failed": {
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.025
+            ]
+          },
+          "n": 150,
+          "parroted": {
+            "count": 26,
+            "rate": 0.1733,
+            "wilson95": [
+              0.1211,
+              0.2419
+            ]
+          },
+          "poisoned_injection_dependence": {
+            "count": 63,
+            "rate": 0.42,
+            "wilson95": [
+              0.344,
+              0.5
+            ]
+          },
+          "problem_n": 150,
+          "unparsed": {
+            "count": 2,
+            "rate": 0.0133,
+            "wilson95": [
+              0.0037,
+              0.0473
+            ]
+          }
+        },
+        "rates_strict_d_inf_subset": {
+          "closure_valid": {
+            "count": 56,
+            "rate": 0.3733,
+            "wilson95": [
+              0.3,
+              0.453
+            ]
+          },
+          "derailed": {
+            "count": 3,
+            "rate": 0.02,
+            "wilson95": [
+              0.0068,
+              0.0571
+            ]
+          },
+          "doubt": {
+            "count": 3,
+            "rate": 0.02,
+            "wilson95": [
+              0.0068,
+              0.0571
+            ]
+          },
+          "generation_failed": {
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.025
+            ]
+          },
+          "n": 150,
+          "parroted": {
+            "count": 26,
+            "rate": 0.1733,
+            "wilson95": [
+              0.1211,
+              0.2419
+            ]
+          },
+          "poisoned_injection_dependence": {
+            "count": 63,
+            "rate": 0.42,
+            "wilson95": [
+              0.344,
+              0.5
+            ]
+          },
+          "problem_n": 150,
+          "unparsed": {
+            "count": 2,
+            "rate": 0.0133,
+            "wilson95": [
+              0.0037,
+              0.0473
+            ]
+          }
+        }
+      },
+      "mid": {
+        "contaminated_fraction": 0.0,
+        "rates_full_cell": {
+          "closure_valid": {
+            "count": 54,
+            "rate": 0.36,
+            "wilson95": [
+              0.2876,
+              0.4394
+            ]
+          },
+          "derailed": {
+            "count": 9,
+            "rate": 0.06,
+            "wilson95": [
+              0.0319,
+              0.1101
+            ]
+          },
+          "doubt": {
+            "count": 2,
+            "rate": 0.0133,
+            "wilson95": [
+              0.0037,
+              0.0473
+            ]
+          },
+          "generation_failed": {
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.025
+            ]
+          },
+          "n": 150,
+          "parroted": {
+            "count": 29,
+            "rate": 0.1933,
+            "wilson95": [
+              0.1381,
+              0.2639
+            ]
+          },
+          "poisoned_injection_dependence": {
+            "count": 56,
+            "rate": 0.3733,
+            "wilson95": [
+              0.3,
+              0.453
+            ]
+          },
+          "problem_n": 150,
+          "unparsed": {
+            "count": 2,
+            "rate": 0.0133,
+            "wilson95": [
+              0.0037,
+              0.0473
+            ]
+          }
+        },
+        "rates_strict_d_inf_subset": {
+          "closure_valid": {
+            "count": 54,
+            "rate": 0.36,
+            "wilson95": [
+              0.2876,
+              0.4394
+            ]
+          },
+          "derailed": {
+            "count": 9,
+            "rate": 0.06,
+            "wilson95": [
+              0.0319,
+              0.1101
+            ]
+          },
+          "doubt": {
+            "count": 2,
+            "rate": 0.0133,
+            "wilson95": [
+              0.0037,
+              0.0473
+            ]
+          },
+          "generation_failed": {
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.025
+            ]
+          },
+          "n": 150,
+          "parroted": {
+            "count": 29,
+            "rate": 0.1933,
+            "wilson95": [
+              0.1381,
+              0.2639
+            ]
+          },
+          "poisoned_injection_dependence": {
+            "count": 56,
+            "rate": 0.3733,
+            "wilson95": [
+              0.3,
+              0.453
+            ]
+          },
+          "problem_n": 150,
+          "unparsed": {
+            "count": 2,
+            "rate": 0.0133,
+            "wilson95": [
+              0.0037,
+              0.0473
+            ]
+          }
+        }
+      }
+    },
+    "contaminated_examples": [],
+    "contaminated_fraction": 0.0,
+    "contaminated_fraction_wilson95": [
+      0.0,
+      0.0085
+    ],
+    "n_finite_d_contaminated": 0,
+    "n_global_rows": 450,
+    "n_unparseable_planted": 0,
+    "rates_finite_d_subset": {
+      "n": 0
+    },
+    "rates_full_cell": {
+      "closure_valid": {
+        "count": 177,
+        "rate": 0.3933,
+        "wilson95": [
+          0.3493,
+          0.4392
+        ]
+      },
+      "derailed": {
+        "count": 21,
+        "rate": 0.0467,
+        "wilson95": [
+          0.0307,
+          0.0703
+        ]
+      },
+      "doubt": {
+        "count": 6,
+        "rate": 0.0133,
+        "wilson95": [
+          0.0061,
+          0.0288
+        ]
+      },
+      "generation_failed": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "n": 450,
+      "parroted": {
+        "count": 90,
+        "rate": 0.2,
+        "wilson95": [
+          0.1657,
+          0.2394
+        ]
+      },
+      "poisoned_injection_dependence": {
+        "count": 154,
+        "rate": 0.3422,
+        "wilson95": [
+          0.2999,
+          0.3872
+        ]
+      },
+      "problem_n": 150,
+      "unparsed": {
+        "count": 8,
+        "rate": 0.0178,
+        "wilson95": [
+          0.009,
+          0.0347
+        ]
+      }
+    },
+    "rates_strict_d_inf_subset": {
+      "closure_valid": {
+        "count": 177,
+        "rate": 0.3933,
+        "wilson95": [
+          0.3493,
+          0.4392
+        ]
+      },
+      "derailed": {
+        "count": 21,
+        "rate": 0.0467,
+        "wilson95": [
+          0.0307,
+          0.0703
+        ]
+      },
+      "doubt": {
+        "count": 6,
+        "rate": 0.0133,
+        "wilson95": [
+          0.0061,
+          0.0288
+        ]
+      },
+      "generation_failed": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "n": 450,
+      "parroted": {
+        "count": 90,
+        "rate": 0.2,
+        "wilson95": [
+          0.1657,
+          0.2394
+        ]
+      },
+      "poisoned_injection_dependence": {
+        "count": 154,
+        "rate": 0.3422,
+        "wilson95": [
+          0.2999,
+          0.3872
+        ]
+      },
+      "problem_n": 150,
+      "unparsed": {
+        "count": 8,
+        "rate": 0.0178,
+        "wilson95": [
+          0.009,
+          0.0347
+        ]
+      }
+    }
+  },
+  "expa_one_hop_rebin_by_measured_d": {
+    "0": {
+      "closure_valid_rate": 0.5522,
+      "doubt_rate": 0.2836,
+      "n": 67,
+      "poisoned_rate": 0.0
+    },
+    "1": {
+      "closure_valid_rate": 0.6899,
+      "doubt_rate": 0.3681,
+      "n": 345,
+      "poisoned_rate": 0.0145
+    },
+    "2": {
+      "closure_valid_rate": 0.75,
+      "doubt_rate": 0.1786,
+      "n": 28,
+      "poisoned_rate": 0.0714
+    },
+    "3": {
+      "closure_valid_rate": 0.5556,
+      "doubt_rate": 0.0,
+      "n": 9,
+      "poisoned_rate": 0.0
+    },
+    "4": {
+      "closure_valid_rate": 1.0,
+      "doubt_rate": 0.0,
+      "n": 1,
+      "poisoned_rate": 0.0
+    }
+  },
+  "n_rows_audited": 4539,
+  "root": "/lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery"
+}
