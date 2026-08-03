@@ -76,10 +76,8 @@ are absorption rates; whiskers are 95\% Wilson intervals.}
 \includegraphics[width=0.7\textwidth]{figures/fig3.pdf}
 \caption{Absorption of a planted claim as a function of verification depth
 $k$ (the number of operations needed to check it), for three models. At
-$k = 0$ (the claim restates a value already on the page) Haiku 4.5 absorbs
-1.3\% of errors; at $k = 1$ (one operation to verify) it absorbs 100\%, and
-stays there. The jump is the recompute wall: the boundary is a single
-operation, not depth. Bands are 95\% Wilson intervals.}
+$k = 0$ (the claim restates a value already on the page) Haiku 4.5 absorbs 1.9\% of errors; at $k = 1$ (one operation to verify) it absorbs 100\%, and
+stays there. The jump is the recompute wall: the boundary is a single operation, not depth. Bands are program-cluster bootstrap 95\% intervals (cluster = program); Wilson at degenerate ceiling cells. The depth-five Qwen cell rests on 22 solved programs, below the pre-registered 50-program floor, and is drawn unfilled rather than scored; the depth-five Llama cell (56 programs) carries a widened interval.}
 \label{fig:depth}
 \end{figure}
 
@@ -92,17 +90,17 @@ operation, not depth. Bands are 95\% Wilson intervals.}
 \caption{Absorption at $k = 1$ under three site opacities: bare (the claim
 only), full (the claim with its arithmetic written out), and partial (one
 operand shown). Making the error fully visible does not help: Qwen 7B actually
-absorbs more when shown the math (0.78 to 0.94), and Haiku and Llama stay
-saturated. The panel below shows the real injected lines: even
+absorbs more when shown the math (0.78 to 0.94), and Haiku and Llama stay above 0.97. The panel below shows the real injected lines: even
 \texttt{n = y + z = 32 + 58; n = 100}, where \texttt{32 + 58 = 90} is written
-on the line, is copied as \texttt{100}. Whiskers are 95\% Wilson intervals.}
+on the line, is copied as \texttt{100}. Whiskers are program-cluster bootstrap 95\% intervals (cluster = program); Wilson at degenerate ceiling cells.}
 \label{fig:opacity}
 \end{figure}
 
 \input{sections/06_fixes}
-\input{sections/07_related}
-\input{sections/08_discussion}
-\input{sections/09_conclusion}
+\input{sections/07_reasoning}
+\input{sections/08_related}
+\input{sections/09_discussion}
+\input{sections/10_conclusion}
 
 \bibliographystyle{iclr2025_conference}
 \bibliography{main}

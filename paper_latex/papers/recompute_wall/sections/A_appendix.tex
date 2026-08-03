@@ -7,13 +7,28 @@ section, and each entry states what was run and where the value comes from.
 
 \paragraph{Sampling depth.}
 The fix-ladder specification (E12) called for $R = 8$ sampled rollouts per world
-plus one greedy rollout. In the runs reported here the frontier arm was sampled
-at $R = 3$ and the open-model arms at $R = 6$; the reason for the reduction is
-not recorded in the run logs, so we disclose it rather than reconstruct it. Per
-cell, the frontier arm contributes 240 rollouts over 60 programs. The open-model
-arms contribute 700 rollouts over 100 programs at depths zero and one, and the
-depth-five cells fall below that count because fewer base traces are solved as
-depth grows, so those cells are attrition-limited.
+plus one greedy rollout, and the frontier arms are reported at that registered
+depth. They were rerun at $R = 8$ plus greedy, so each depth-ladder cell
+contributes $n = 540$ rollouts over 60 programs, nine per program, and the fix
+ladder was likewise rerun at $R = 8$. The initial $R = 3$ runs are retained for comparison; they reproduce every cell within its confidence interval except depth-one partial opacity (0.996 at $R = 3$ against 0.976 $[0.957, 0.993]$ at $R = 8$), which is why we report the $R = 8$ run.
+The open-model depth arms run at $R = 8$ plus greedy and contribute 1350 rollouts over 150 programs at depths zero through three. The depth-five cells are attrition-limited: 504 rollouts over 56 programs for Llama-3.1-8B and 198 over 22 for Qwen2.5-7B, because few base traces are solved at depth five. Error bands on the depth and opacity figures are program-cluster bootstrap 95 percent intervals (1000 resamples; the cluster is the program), since rollouts of the same program are correlated; where the bootstrap degenerates at a ceiling cell we report Wilson intervals. The wall figure uses Wilson intervals, since each program contributes one continuation per cell.
+
+\paragraph{Matched controls (E13).} Three controls, run on the same worlds with the same gold gates and grader as the depth arms, separate the format of the planted line from the cost of checking it. In the first, the false value is planted in an ordinary trace line with zero operations to check: absorption is 0.98 for Llama-3.1-8B ($n = 279$), 0.79 for Qwen2.5-7B ($n = 225$), and 0.14 for Haiku 4.5 ($n = 240$), against same-run readable anchors of 0.69, 0.67, and 0.03. In the second, the depth-one full-opacity line also prints its operands' true sum: absorption falls to 0.47 for Llama, 0.38 for Qwen, and 0.57 for Haiku. In the third, a grid crossing truth, order, and format on readable errors, Haiku absorbs the false line at 0.45 when the true value precedes it as a note, against 0.008 in the adjacent-contradiction corner. Cells pool greedy and sampled rollouts as in the main arms; per-cell records are under e13/results in the experiment archive and in the paper registry.
+
+\paragraph{Reasoning-arm protocol.}
+The reasoning-channel results of Section~\ref{sec:reasoning} come from two arms
+held apart from the roster. The frontier arm runs GPT-5.1 through the OpenAI
+Responses API at reasoning effort medium with summarized reasoning; because the
+interface returns only a summary of the reasoning rather than the raw trace, the
+channel statistics we report from it are lower bounds on how often the model
+re-derives a value. Its reasoning-off baseline, run at effort none, reproduced
+the substrate-gap bridge row, so the on-versus-off contrast is a pure reasoning
+effect. The open-weight arm runs DeepSeek-R1-Distill-7B, whose gold traces are
+generated through its own think channel rather than by raw completion, because
+raw-completion gold collapses on the deep cells the model can only solve with
+that channel engaged. Both arms are evaluated on the readable, one-operation,
+and five-operation cells at the sample sizes recorded in the reasoning-arm
+report.
 
 \paragraph{Readable-control drift.}
 One readable-control wrinkle is worth recording. For Qwen2.5-7B the absorption
@@ -35,8 +50,7 @@ The bridge (user-turn) presentation and the prefill presentation were
 cross-calibrated on the models that support both. The computed cells coincide
 across the two methods, so the computed-side result does not depend on
 presentation. The pure-copy cells inflate under the bridge method relative to
-prefill, so we report the copy cells separately rather than pool the two
-presentations.
+prefill, so we report the copy cells separately rather than pool the two presentations. Reporting the computed series as the one-operation cell alone, with the copy cells separate, is a deviation from the E10 registration, which pooled copy and computed cells into one recompute-side rate; we adopted the split when calibration showed the copy cells measure presentation rather than recomputation.
 
 \paragraph{Fable 5 refusal.}
 Fable 5 returned no usable data. Its safety classifier refused the task format
@@ -45,9 +59,7 @@ thinking and the non-thinking conditions, at a total spend of \$2.93. We report
 Fable 5 as unmeasured rather than as a zero or as a result.
 
 \paragraph{Protocol constants.}
-The protocol constants are fixed across cells. Each program renders to a trace
-of 20 lines carrying 14 arithmetic operations in total, with the planted site at
-line 10 (fractional position 0.5) and its first downstream read two lines later.
+The protocol constants are fixed across cells within each substrate. In the depth and instruction arms (E11 and E12), each program renders to a trace of 20 lines carrying 14 arithmetic operations in total, with the planted site at line 10 (fractional position 0.5) and its first downstream read two lines later. The wall substrate behind Figures 1 and 2 uses 12-line programs with the planted site at line 6, likewise fixed across its own cells.
 Site operands are two-digit integers drawn from 11 to 99, filler constants are
 drawn from 2 to 60, and intermediate values are capped at 999. Verification
 depth takes values in $\{0, 1, 2, 3, 5\}$ and site opacity in

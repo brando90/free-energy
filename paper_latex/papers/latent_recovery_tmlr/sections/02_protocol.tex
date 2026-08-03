@@ -1,0 +1,137 @@
+\section{Protocol: audited perturb-and-validate}
+\label{sec:protocol}
+
+% source: PAPER_SKELETON Sec 2; EVIDENCE_protocol_prereg P1-P8.
+
+\paragraph{We plant a statement into the model's own trace and formally
+validate what it does next.} The unit of analysis is a single statement
+inserted into a model's in-stream reasoning trace on a formally checkable
+first-order-logic task in the PrOntoQA family \citep{saparov2023prontoqa,
+saparov2023ood}, after which the model continues with no external
+correction. Two audits bracket every row. Before generation, each planted
+statement is truth-audited against rule closure in the closed world, so we
+know whether the plant is actually true or false rather than assuming it.
+After generation, a formal validator assigns each continuation to one of a
+set of mutually exclusive, precedence-ordered outcome classes. The classes,
+in precedence order, are generation-failed, unparsed, derailed (the final
+answer differs from the target), injection-dependent (at least one step is
+derivable only via the planted atom, but the final answer still matches the
+target), parroted (the final answer matches despite an underivable step),
+and closure-valid completion (every step is entailed by the true premises
+and prior valid steps under rule closure).
+% source: EVIDENCE_protocol_prereg P1 (validatorPlan L115-117)
+Two facts anchor these definitions for the rest of the paper.
+Closure-valid is a closure-based standard, so a single continuation
+sentence may legally jump several hops; it is not a strict replay. And the
+word ``recovery'' is reserved throughout for one defined metric, strict
+repair, introduced below; we otherwise say the model rejected, absorbed,
+flagged, or reused a plant.
+% source: EVIDENCE_protocol_prereg P1 caveat (validatorPlan L45, L123-125); STYLE_SHEET Sec 3
+
+\paragraph{The truth audit is load-bearing, not decorative.} An earlier
+version of this instrument treated a ``wrong-category'' perturbation family
+as a family of falsehoods. Under the audit, 355 of its 390 members are
+actually true and only 35 are false, so a headline built on it would have
+measured behavior on mostly-true statements.
+% source: EVIDENCE_protocol_prereg P2 (STRICT_METRICS_REPORT L257, L328)
+On the matched-distance grid used here the audit is clean: every
+planted-false cell is audited false and every anchor cell audited true.
+% source: EVIDENCE_protocol_prereg P2 (EXPD_FULL_REPORT integrity L182-195)
+We report the 355-of-390 inversion in the protocol, not as a result about
+models, because it is the reason the audit exists.
+
+\paragraph{The design matrix crosses the factors so they are pinned, not
+confounded.} The matched-distance grid crosses truth status, polarity,
+derivational usability, and measured inferential distance across 24 cells,
+with parse gaps at most 0.67 percentage points across matched cells, so
+visibility, usability, and polarity can be read separately rather than
+being tangled together (Table~\ref{tab:design}).
+% source: PAPER_SKELETON 2.2; EVIDENCE_protocol_prereg P6 (EXPD grid)
+This is the visual answer to the reviewer question of whether the effects
+are confounded: each row of Table~\ref{tab:design} holds the other factors
+fixed.
+
+\paragraph{Distance is measured per row, not assumed from the design
+label.} We do not trust the designer's intended distance. A mechanical
+breadth-first search over rule applications computes, for each row, the
+shortest number of hops from the visible-prefix state to the evidence that
+would refute the plant. On the generated worlds used for the controlled
+results, designed and measured distance agree and the global design point
+is clean, with zero of 450 rows carrying a finite refutation distance.
+% source: EVIDENCE_protocol_prereg P3 (RETRO_DISTANCE L88-93)
+The audit also exposes why a legacy distance ladder cannot support a
+dose-response reading: its designed one-hop condition measures at distance
+zero on 14.9 percent of rows and at distance two or more on 8.4 percent,
+and its multi-hop rungs are heavily smeared, so any gradient over the
+designed label there is an artifact and we re-bin by measured distance.
+% source: EVIDENCE_protocol_prereg P3 (RETRO 76.7/14.9/8.4, neghop smearing)
+Measured distance is rule-BFS distance in the code-native fragment, not hop
+count in the model's own written proof; we keep that distinction explicit.
+
+\paragraph{One box fixes every dependent-variable definition and the
+backend rule.} To keep the instrument honest we fix, in one place, the
+definitions of the stated-complement rejection measure, closure-valid and
+hop-sound validity, the strict-repair rate, and derivational
+injection-dependence, together with two house rules that bind every number
+in the paper.
+% source: PAPER_SKELETON 2.4; EVIDENCE_protocol_prereg P8
+The first rule is that generation never mixes inference backends within a
+comparison, because the verbalized-doubt measure is backend-sensitive by 8
+to 15 percentage points; the second is that doubt is reported only as a
+contrast, never as an absolute rate, for the same reason.
+% source: EVIDENCE_protocol_prereg P8 (EXPE L9 DV registry; backend sensitivity)
+The verbalized-doubt measure is a lexical proxy that we demoted to
+descriptive before review, and Section~\ref{sec:instrument} shows why.
+
+\paragraph{Planting is justified because the modal natural error lives
+exactly where in-stream checking is hardest.} A design that plants errors
+is only interesting if it plants the errors models actually make. We
+audited every unperturbed rollout in a corpus of 3{,}715 gold rollouts and
+found 236 natural invalid entity-facts.
+% source: EVIDENCE_protocol_prereg P7 (NATURAL_ERRORS n=236, 3715 rollouts)
+The planted families cover 93 percent of the natural invalid entity-facts,
+and the single modal natural error, at 85 percent, is an
+affirmative-unentailed category whose refutation is more than eight hops
+away, which is exactly the global design point; locally refutable natural
+errors are rare, at 8 percent.
+% source: EVIDENCE_protocol_prereg P7 (93% coverage, 85% modal cell, 8% local)
+The natural distribution also reproduces the paper's central asymmetry,
+with naturally usable errors consumed downstream about eleven times more
+often than inert ones (Section~\ref{sec:usability}).
+% source: EVIDENCE_protocol_prereg P7 (0.54 usable vs 0.047 inert natural)
+One honest gap travels with this: the single most frequent natural error
+\emph{object} is a fabricated or mis-spliced rule rather than a false
+entity-fact, which no planted family emulates except in inert form, so we
+scope the paper's claims to entity-fact falsehoods.
+% source: EVIDENCE_protocol_prereg P7 caveat 1 (1118 unentailed rules, 41% load-bearing)
+
+\paragraph{The grid is auditable end-to-end and fails closed.} The
+matched-distance grid generated 2{,}880 worlds across 360 families with zero
+world-audit failures and 11{,}577 validated rows, all with unique run
+identifiers. Injection audits reject fail-closed rather than silently
+passing a mis-audited plant, including 57 rows dropped for a
+measured-distance mismatch.
+% source: EVIDENCE_protocol_prereg P6 (funnel L159-195); PAPER_SKELETON 2.6
+The multi-model replication pipeline re-audits the same way, with zero
+world-audit failures on every model (Section~\ref{sec:usability}).
+% source: E1_ADJUDICATION Sec 2 (0 world-audit failures all 4 models)
+
+\begin{table}[t]
+\centering
+\caption{Design matrix (schematic). The matched-distance grid crosses truth
+status, polarity, derivational usability, and \emph{measured} refutation
+distance, so each factor can be read with the others held fixed. Full
+per-cell rates are in Appendix~\ref{app:strict}. \todo{populate the schematic
+with the exact 24-cell layout from the matched-distance grid report before submission.}}
+\label{tab:design}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Factor & Levels & Held fixed by & Measured? \\
+\midrule
+Truth status & audited-true / audited-false & closed-world closure audit & yes \\
+Polarity & affirmative / negated & matched pairs & yes \\
+Usability & usable / inert & derivational need for target & yes \\
+Distance $d$ & $0,1,2,3,5,\infty$ & rule-BFS per row & yes (not designed) \\
+\bottomrule
+\end{tabular}
+\end{table}

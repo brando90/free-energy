@@ -1,7 +1,7 @@
 \section{Instruction does not restore checking}
 \label{sec:fixes}
 
-Section~\ref{sec:opacity} showed that making the computation visible does not help. This section asks whether asking for the computation does: we tell the model, with increasing force, to verify computed values before using them, and absorption does not move.
+Section~\ref{sec:opacity} showed that making the computation visible does not help. This section asks whether asking for the computation does, the route prompted-verification methods take \citep{madaan2023selfrefine,shinn2023reflexion,dhuliawala2024cove}: we tell the model, with increasing force, to verify computed values before using them, and absorption does not move.
 
 We compare four instruction conditions. The baseline adds nothing. The generic condition adds ``Work carefully and verify your work as you go.'' The targeted condition adds ``Before using any already-computed value in a later step, re-verify it by redoing its computation. If a value is wrong, correct it and continue from the corrected value.'' The demonstrated condition adds the targeted text plus a worked example in which a wrong intermediate value is caught by recomputation, corrected, and the continuation proceeds from the corrected value. The instruction is present, identically, both when the model first solves the program and when it continues the perturbed trace, so the perturbed run is not singled out by a novel prompt.
 

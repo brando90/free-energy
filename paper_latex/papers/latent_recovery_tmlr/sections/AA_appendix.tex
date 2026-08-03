@@ -1,0 +1,212 @@
+\section{Reproducibility and analysis provenance}
+\label{app:provenance}
+
+% source: EVIDENCE_protocol_prereg P5; E1_ADJUDICATION; E1_VERIFICATION;
+% E9_ADJUDICATION; E9_VERIFICATION. This appendix is the single home for the
+% registration mechanics and internal code names that the r2 framing
+% directive removed from the body. One page.
+
+This appendix collects the analysis provenance that the body reports in
+plain language: what was fixed in advance, the internal code names, the
+commit record, the correction structure, the amendment and deviation log,
+and the accounting of which results were confirmatory versus exploratory.
+
+\paragraph{Registration mechanics.} Predictions were fixed and committed
+before any rollouts were generated, on two occasions. (i)~The anchor design
+registered the distance-gradient account on Qwen2.5-7B-Instruct as a
+Holm-corrected family of six hypotheses (plan PLAN2 v1.1, git commit
+\texttt{545b35db}, 2026-07-02T14:05:29-07:00, file sha256
+\texttt{112da1a5\dots}). (ii)~The multi-model replication registered the
+three boundary conditions and the ``$\ge$3-of-4 models fully replicate''
+program rule, with per-condition pass thresholds (visibility diff
+$\ge{+}0.10$; usability diff $\ge{+}0.30$; flatness by conjunctive TOST),
+git commit \texttt{bdb098a1} (2026-07-24), adjudicated in
+\texttt{E1\_ADJUDICATION.md} and independently re-verified in
+\texttt{E1\_VERIFICATION.md}. A third registration governs the motive
+question-flip experiment (commit \texttt{3986290}, 2026-07-24T10:48:09-07:00),
+committed before generation.
+
+\paragraph{Hypothesis registry (internal code $\rightarrow$ plain name in
+body).} The body names none of these codes; the mapping is here for
+reproducibility.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+Code & Plain name in body & Verdict \\
+\midrule
+H1$'$ & rejection falls with distance & failed (slope $+0.011$, $p{=}0.79$) \\
+H4 & reuse rises with distance & failed ($p{=}0.996$; reversed trend exploratory) \\
+H2$'$ & polarity control (aff.\ $=$ neg.) & the one survivor ($p{=}0.0012$; TOST hop-sound $8{\times}10^{-5}$) \\
+H5$'$ & no lexical-priming confound & failed in the guarded direction ($p{=}0.629$) \\
+C-0 & $d{=}0$ visibility contrast & registered but direction-open (motivating) \\
+B1 / B2 / B3 & visibility / usability / flatness & replication conditions (Table~\ref{tab:replication}) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Experiment registry (internal code $\rightarrow$ descriptive name
+in body).} EXPD $=$ the matched-distance grid (anchor Qwen2.5-7B); E1 $=$ the
+multi-model replication; E9 $=$ the question-flip experiment (motive null);
+EXPB $=$ the certificate experiment; EXPC $=$ the polarity control; EXPE $=$
+the lexical-arm / dependent-variable registry; EXPH and EXPH2 $=$ the
+cross-lineage and recompute API panels.
+
+\paragraph{Correction structure.} The anchor family used a Holm correction
+over its six tests; equivalence claims (polarity, flatness) use two
+one-sided tests; the multi-model replication uses family-cluster bootstrap
+confidence intervals; the question-flip primary uses a paired cluster
+bootstrap against a minimum effect size of 0.05.
+
+\paragraph{Amendment and deviation log.} Multi-model replication: no material
+deviations; OLMo-2-7B is reported but not scored (greedy gold-solve 0.199).
+Question-flip experiment: registration amendment \texttt{d367a97} folded the
+crossed verification factor into the confirmatory family and set the
+candidate pool to 750; implementation fix \texttt{f447bc5} extended an
+exhausted nonce-noun pool during CPU world construction before any outcome
+data existed (adjudicated benign, first 9{,}716 yields byte-identical); the
+confirmatory queue omitted the ITT sensitivity invocation, which the
+adjudicator ran separately (sign agrees, both fail the MES bar); the power
+curve is degenerate and plays no role in the verdict.
+
+\paragraph{Confirmatory-versus-exploratory accounting.} Fixed in advance and
+carrying full weight: the polarity control (the one surviving anchor test),
+and the three replication conditions with their thresholds. Fixed in advance
+but direction-open (motivating, not clinching): the $d{=}0$ visibility
+contrast, and the frequency-matched lexical arm. Exploratory, reported as
+suggestive only: the reuse-highest-at-one-hop reversal, and the cheap-one-hop
+checking spike, whose matched follow-up (the question-flip experiment) returns
+a null. Held pending external validation: the
+strict-repair credibility claim (pending the E4 human $\kappa$ audit), and
+the question-flip null (branch~(b), \emph{provisional} pending the blind
+non-author classifier-transfer audit; if per-arm classifier error differs by
+$>0.05$ that primary is reported classifier-confounded, not causal).
+
+\section{Legacy gap decomposition (reviewer Q1)}
+\label{app:legacy}
+
+% source: EVIDENCE_findings_core F-use.5; EVIDENCE_protocol_prereg P3.
+
+The legacy one-hop-versus-global gap is not an artifact of $d{=}0$
+mis-binning. Under identical measurement, excluding the 14.9 percent of
+rows that measure at distance zero keeps or widens every gap, because those
+rows are low-doubt and low-closure. The closure-valid gap moves from
+$+0.278$ to $+0.299$ once $d{=}0$ rows are excluded, and the strict
+hop-sound gap from $+0.087$ to $+0.095$.
+% source: EVIDENCE_findings_core F-use.5 (table, 14/14 anchors exact)
+Identical measurement is not the same as matched claims: this removes
+distance mis-binning, not the polarity and lexical confound, which is
+answered by the polarity deconfound (Section~\ref{sec:reversal}) and the
+frequency-matched arm (Section~\ref{sec:instrument}) instead.
+% source: EVIDENCE_findings_core F-use.5 caveats
+
+\section{The certificate experiment (reviewer W3)}
+\label{app:expb}
+
+Adding a directly-contradicting local certificate does not cleanly convert
+injection-dependent continuations into clean ones; it redistributes the
+whole continuation-style distribution into unparsed, from 4.0 percent to
+31.7 percent. Under honest worst-case accounting of the unparsed rows, only
+the verbalized-doubt contrast survives, at a net $+0.37$ with a McNemar
+$p{=}7.70\times10^{-34}$ and a bootstrap CI of $[0.31, 0.43]$.
+% source: EVIDENCE_lineage_boundaries L-expb.1 (unparsed 0.040->0.317; doubt +0.3700 p=7.70e-34)
+The 32B judge then reads 86 of 95 of those unparsed rows as explicit
+rejection, which both tightens the worst-case bound to about $-0.10$ and
+re-attributes the effect to $d{=}0$ visibility, because the certificate
+states the complement in the prefix. The certificate experiment therefore
+corroborates the visibility cliff rather than a distinct
+counterevidence-accessibility claim.
+% source: EVIDENCE_lineage_boundaries L-expb.2 (86/95 reject; sign fixed -0.10)
+
+\section{Polarity control (EXPC)}
+\label{app:expc}
+
+The affirmative-local cell carries the highest doubt of any cell, which
+rules out an account in which the negation token itself drives the apparent
+rejection.
+% source: PAPER_SKELETON App C (aff-local doubt 0.436 highest cell)
+
+\section{Strict metrics}
+\label{app:strict}
+
+The strict hop-sound standard roughly halves closure-valid completion
+everywhere and surfaces structure that the permissive standard hides. On
+the false-attribute cells, closure-valid rates of 0.90 to 0.96 fall to 0.07
+to 0.25 hop-sound, so only 11 to 27 percent of closure-valid completions are
+genuine step-by-step derivations. The strict pass covers 6{,}147 rows,
+verified three independent ways.
+% source: EVIDENCE_findings_core F-use.3; EVIDENCE_protocol_prereg P4
+Table~\ref{tab:strict} gives the strict-versus-permissive accounting for the
+central cells. \todo{expand to the full per-cell hop-sound and SRR table
+from s1\_strict\_hopsound\_REPORT before submission.}
+
+\begin{table}[h]
+\centering
+\caption{Strict (hop-sound) versus permissive (closure-valid) on
+representative cells, Qwen2.5-7B. Source:
+\texttt{s1\_strict\_hopsound\_REPORT.md} Sec~4,
+\texttt{STRICT\_METRICS\_REPORT.md}.}
+% source: EVIDENCE_findings_core F-vis.4, F-use.3
+\label{tab:strict}
+\small
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Quantity & permissive (closure) & strict (hop-sound) \\
+\midrule
+one-hop falsehood, pooled valid & 0.671 & 0.300 \\
+global falsehood, pooled valid & 0.393 & 0.213 \\
+aff\_false rejection @ $d{=}0$ & (closure flat) & 0.247 \\
+usable reuse @ $d{=}1$ & 0.863 & $\approx 0.000$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{API panel detail}
+\label{app:api}
+
+The descriptive API arm (Section~\ref{sec:production},
+Section~\ref{sec:stakes}) spans EXPH and EXPH2, with a cumulative spend of
+\$30.81 against a \$100 hard stop, full per-cell rates, and exclusion
+records for models no longer served.
+% source: EVIDENCE_lineage_boundaries tier table ($30.81); L-lab.3 (404 models)
+
+\section{Multi-model replication detail}
+\label{app:e1}
+
+Table~\ref{tab:replication} summarizes the pre-registered replication;
+Table~\ref{tab:e1integrity} gives its integrity figures. Every model passed
+its world audits with zero failures; OLMo-2-7B could not sustain the base
+task and is underpowered. The adjudication was independently re-verified
+from raw data, with every headline number reproducing to three decimals.
+% source: E1_ADJUDICATION Sec 2; E1_VERIFICATION Sec 4
+
+\begin{table}[h]
+\centering
+\caption{Replication integrity. Source: \texttt{E1\_ADJUDICATION.md} Sec~2,
+\texttt{E1\_VERIFICATION.md} Sec~4.}
+\label{tab:e1integrity}
+\small
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Model & oversample & gold solve & eligible rate & grid rows & world-audit fails \\
+\midrule
+Qwen2.5-1.5B & 4$\times$ & 0.883 & 0.283 & 6{,}477 & 0 \\
+Llama-3.1-8B & 2$\times$ & 0.982 & 0.541 & 6{,}600 & 0 \\
+OLMo-2-7B & 4$\times$ & 0.199 & 0.044 & 893 & 0 \\
+Qwen2.5-32B & 2$\times$ & 1.000 & 0.995 & 6{,}600 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Response-to-reviewer map and dependent-variable definitions}
+\label{app:dv}
+
+A mapping from the earlier reviewer concerns (W1--W7, Q1--Q4) to the
+experiments that address them, together with the full dependent-variable
+definitions and the 18-item disclosure checklist, is reproduced from the
+revision plan and the validator plan.
+% source: PAPER_SKELETON App G/H
+\todo{paste the W1--W7/Q1--Q4 crosswalk and the validatorPlan Part~2
+checklist here before submission.}
