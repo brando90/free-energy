@@ -1,0 +1,46 @@
+[panel gold gpt-4.1] attempts=50 eligible=30 cum=$4.64
+[panel gold gpt-4.1] attempts=100 eligible=61 cum=$4.87
+[panel gold gpt-4.1] attempts=150 eligible=89 cum=$5.03
+[panel gold gpt-4.1] attempts=200 eligible=119 cum=$5.25
+{"funnel": {"gold_key": "gpt-4.1", "attempts": 200, "solved": 200, "solve_rate": 1.0, "eligible": 119, "world_eligible": 0, "reached_target": true}, "cumulative_usd": 5.25}
+[panel perturb gpt-4.1_instruct] manifest=399 new=399 cum=$6.38
+[panel validate gpt-4.1_instruct] rows=399
+[panel gold gpt-5.1] attempts=50 eligible=31 cum=$6.52
+[panel gold gpt-5.1] attempts=100 eligible=61 cum=$6.66
+[panel gold gpt-5.1] attempts=150 eligible=91 cum=$6.77
+[panel gold gpt-5.1] attempts=200 eligible=118 cum=$6.86
+{"funnel": {"gold_key": "gpt-5.1", "attempts": 200, "solved": 198, "solve_rate": 0.99, "eligible": 118, "world_eligible": 0, "reached_target": true}, "cumulative_usd": 6.86}
+[panel perturb gpt-5.1_instruct] manifest=398 new=398 cum=$8.53
+[panel validate gpt-5.1_instruct] rows=398
+[panel gold gpt-4o] attempts=50 eligible=29 cum=$8.78
+[panel gold gpt-4o] attempts=100 eligible=63 cum=$9.13
+[panel gold gpt-4o] attempts=150 eligible=96 cum=$9.43
+[panel gold gpt-4o] attempts=200 eligible=124 cum=$9.62
+{"funnel": {"gold_key": "gpt-4o", "attempts": 200, "solved": 199, "solve_rate": 0.995, "eligible": 124, "world_eligible": 0, "reached_target": true}, "cumulative_usd": 9.62}
+[panel perturb gpt-4o_instruct] manifest=400 new=400 cum=$11.49
+[panel validate gpt-4o_instruct] rows=400
+[panel gold claude-sonnet-5] attempts=50 eligible=19 cum=$11.85
+[panel gold claude-sonnet-5] attempts=100 eligible=43 cum=$12.13
+[panel gold claude-sonnet-5] attempts=150 eligible=69 cum=$12.45
+[panel gold claude-sonnet-5] attempts=200 eligible=88 cum=$12.91
+[panel gold claude-sonnet-5] attempts=250 eligible=109 cum=$13.36
+{"funnel": {"gold_key": "claude-sonnet-5", "attempts": 250, "solved": 250, "solve_rate": 1.0, "eligible": 109, "world_eligible": 0, "reached_target": true}, "cumulative_usd": 13.36}
+[panel perturb claude-sonnet-5_instruct] manifest=400 new=400 cum=$16.74
+[panel validate claude-sonnet-5_instruct] rows=400
+[panel gold claude-opus-4-8] attempts=50 eligible=20 cum=$17.58
+[panel gold claude-opus-4-8] attempts=100 eligible=41 cum=$18.15
+[panel gold claude-opus-4-8] attempts=150 eligible=63 cum=$18.86
+[panel gold claude-opus-4-8] attempts=200 eligible=81 cum=$19.56
+[panel gold claude-opus-4-8] attempts=250 eligible=101 cum=$20.26
+{"funnel": {"gold_key": "claude-opus-4-8", "attempts": 250, "solved": 250, "solve_rate": 1.0, "eligible": 101, "world_eligible": 0, "reached_target": true}, "cumulative_usd": 20.26}
+[panel perturb claude-opus-4-8_instruct] manifest=400 new=400 cum=$25.99
+[panel validate claude-opus-4-8_instruct] rows=400
+[completions gold gpt-3.5-turbo-instruct] attempts=50 eligible=18 cum=$26.61
+[completions gold gpt-3.5-turbo-instruct] attempts=100 eligible=41 cum=$26.92
+[completions gold gpt-3.5-turbo-instruct] attempts=150 eligible=59 cum=$27.55
+[completions gold gpt-3.5-turbo-instruct] attempts=200 eligible=70 cum=$27.89
+[completions gold gpt-3.5-turbo-instruct] attempts=250 eligible=91 cum=$28.52
+{"funnel": {"gold_key": "gpt-3.5-turbo-instruct", "attempts": 250, "solved": 202, "solve_rate": 0.808, "eligible": 91, "world_eligible": 0, "reached_target": false}, "cumulative_usd": 28.52}
+[completions perturb gpt-3.5-turbo-instruct_completion] manifest=364 new=364 cum=$30.81
+[completions validate gpt-3.5-turbo-instruct_completion] rows=364
+PIPE1_DONE
