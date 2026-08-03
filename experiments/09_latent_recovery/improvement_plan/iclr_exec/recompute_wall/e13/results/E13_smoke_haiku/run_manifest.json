@@ -1,0 +1,42 @@
+{
+  "R": 1,
+  "cells": [
+    "line_k0"
+  ],
+  "conditional_gate": "families ('grid_note_false_before', 'grid_note_true_before_line_false') CONDITIONAL on parse-sanity gate in summary",
+  "created_at": "2026-07-29T09:07:53",
+  "decoding": {
+    "greedy_rollout": 0,
+    "max_new_cont": 384,
+    "max_new_gold": 512,
+    "probe_max_tokens": 64,
+    "sampled_rollouts": 1
+  },
+  "dry": false,
+  "experiment": "E13_MATCHED_CONTROLS_haiku_prefill",
+  "families": {
+    "line_k0": [
+      "anchor_k0",
+      "line_k0",
+      "line_k0_swap"
+    ]
+  },
+  "flag_channel": "doubt_lex frozen lexicon (no 32B judge on API arm)",
+  "gold_policy": "live: own-trace haiku golds regenerated in this run (prefill 'line 1:'); dry: interpreter-true stand-in, labelled",
+  "gold_prefill": "line 1:",
+  "injection_contract": "RW/e13/README.md (Build 1/2, binding)",
+  "model": "claude-haiku-4-5",
+  "n_target_per_cell": 10,
+  "probe_note": "prefix_family=depth_k1_bare (interpretation choice flagged for Review); question as follow-up user turn; raw answers retained",
+  "prompt_sha256": "a1a134d3c0b753c273365be903dba2cd5c5fc2d33fb443891448d4c384de578b",
+  "runner": "e13_api.py",
+  "seed": 0,
+  "temp": 0.7,
+  "worlds": {
+    "line_k0": {
+      "n_worlds": 200,
+      "path": "/lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/recompute_wall/e13/worlds/line_k0.jsonl",
+      "sha256": "5f8f14999e939b95133186e4dd3e03f4d0397ebd15563ade0186886bd4a851b3"
+    }
+  }
+}

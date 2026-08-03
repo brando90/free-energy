@@ -1,0 +1,124 @@
+{
+  "backend": "vllm",
+  "backend_note": "New suites run wholly under one backend; never mix backends within an experiment (vLLM port fidelity report). Backend confound (measured, improvement_plan/tooling/replay_full/REPLAY_FULL_REPORT.md): doubt absolute rates drop 8-15pp under vLLM vs locked HF numbers while structural metrics (valid_recovery, poisoning, unparsed) are cell-level robust (<=5pp deltas). The doubt-anchor comparison vs EXPA locked HF levels is reported WITHOUT a pass/fail verdict; a vLLM-basis EXPA anchor replay is the pending fix (owned upstream). The anchor TOST gate is evaluated on valid_recovery and unparsed only. Do not fail the pilot go/no-go on a doubt-anchor gap alone.",
+  "cells": [
+    "cat_false_usable_d1",
+    "cat_false_usable_d3",
+    "cat_false_usable_dinf",
+    "cat_false_inert_d1",
+    "cat_false_inert_d3",
+    "cat_false_inert_dinf"
+  ],
+  "created_at": "2026-07-24T18:14:26.168895+00:00",
+  "decoding": {
+    "do_sample": false,
+    "max_new_tokens": 192,
+    "num_return_sequences": 1,
+    "temperature": 0.0
+  },
+  "design_references": {
+    "amendments": "reports/verdict.md MAJOR-1, MAJOR-2, MOD-12, MOD-13",
+    "design": "reports/causal2.md section 1.1",
+    "distance_function": "src/expc_polarity_control.py shortest_rule_distance (canonical)",
+    "pre_registration": "PLAN2.md (sections 3, 4, 6, 8)"
+  },
+  "device": "3",
+  "expa_locked_anchor_levels": {
+    "provenance": "results/EXPA_GLOBAL_EXPANSION/summary_tables.json (locked, HF backend)",
+    "values": {
+      "benign_paraphrase": {
+        "n": 450,
+        "unparsed": 0.0244,
+        "valid_rederivation": 0.8489,
+        "verbalized_doubt": 0.08
+      },
+      "true_interruption": {
+        "n": 450,
+        "unparsed": 0.0133,
+        "valid_rederivation": 0.8556,
+        "verbalized_doubt": 0.02
+      }
+    }
+  },
+  "experiment": "EXPD_MATCHED_GRADIENT",
+  "git_commit_hash": "bdb098a1d85b33063274481e53cb9d7130dc32c6",
+  "invocations": [
+    {
+      "at": "2026-07-24T18:10:58.849636+00:00",
+      "cap": 150,
+      "cells": [
+        "aff_false_attr_d0",
+        "aff_false_attr_d1",
+        "aff_false_attr_d3",
+        "aff_false_attr_d5",
+        "neg_false_attr_d0",
+        "neg_false_attr_d1",
+        "neg_false_attr_d3",
+        "neg_false_attr_d5",
+        "benign_paraphrase",
+        "true_interruption"
+      ],
+      "positions": [
+        "early",
+        "mid",
+        "late"
+      ],
+      "world_config": "full"
+    },
+    {
+      "at": "2026-07-24T18:13:47.619679+00:00",
+      "cap": 150,
+      "cells": [
+        "aff_true_attr_d1",
+        "neg_true_attr_d1"
+      ],
+      "positions": [
+        "mid"
+      ],
+      "world_config": "full"
+    },
+    {
+      "at": "2026-07-24T18:14:26.168856+00:00",
+      "cap": 150,
+      "cells": [
+        "cat_false_usable_d1",
+        "cat_false_usable_d3",
+        "cat_false_usable_dinf",
+        "cat_false_inert_d1",
+        "cat_false_inert_d3",
+        "cat_false_inert_dinf"
+      ],
+      "positions": [
+        "early",
+        "mid"
+      ],
+      "world_config": "full"
+    }
+  ],
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "model_revision_error": null,
+  "model_revision_pinned": true,
+  "per_cell_cap": 150,
+  "positions": [
+    "early",
+    "mid"
+  ],
+  "pre_registration_evidence": {
+    "confirm_timestamped_plan2": false,
+    "plan2_commit_timestamp": null,
+    "plan2_file_sha256": null,
+    "plan2_git_commit": null
+  },
+  "prompt": {
+    "fewshot": "Q: Every yumpus is a dumpus. Dumpuses are tumpuses. Tumpuses are not bright. Sam is a yumpus. Prove: Sam is not bright.\nA: Sam is a yumpus. Every yumpus is a dumpus. Sam is a dumpus. Dumpuses are tumpuses. Sam is a tumpus. Tumpuses are not bright. Sam is not bright.\n\nQ: Each gorpus is a sterpus. Sterpuses are red. Every borpus is a gorpus. Alex is a borpus. Prove: Alex is red.\nA: Alex is a borpus. Every borpus is a gorpus. Alex is a gorpus. Each gorpus is a sterpus. Alex is a sterpus. Sterpuses are red. Alex is red.\n\n",
+    "instruction": "You will be given facts and rules about fictional creatures, then asked to prove a statement. Answer with only the proof: a sequence of statements, one deduction at a time, in the exact style of the examples. End with the statement to be proven.\n\n",
+    "sha256": "f668299fe738b58ba81a6b8435bf284ac5eed682b99f5e7d4cccfee62c7ab93c",
+    "shared_across_conditions": true
+  },
+  "python": "3.11.15 (main, Jun  2 2026, 22:26:03) [Clang 22.1.3 ]",
+  "seed": 0,
+  "status_note": "FULL confirmatory grid (PLAN2 v1.1 section C.5), generated under the externally timestamped PLAN2 (section 9.10); timestamp-gate evidence recorded in pre_registration_evidence.",
+  "world_config": "full",
+  "world_seed": 0
+}

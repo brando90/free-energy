@@ -1,0 +1,20 @@
+--- filter: ErrorType==calculation (all models) ---
+asdiv: N=336 absent=127 (38%)
+awps: N=184 absent=18 (10%)
+gsm8k: N=148 absent=9 (6%)
+svamp: N=359 absent=129 (36%)
+pooled: 283/1027
+--- filter: ErrorType==calculation AND gpt-4-0314 ---
+asdiv: N=294 absent=125 (43%)
+awps: N=53 absent=12 (23%)
+gsm8k: N=120 absent=7 (6%)
+svamp: N=333 absent=128 (38%)
+pooled: 272/800
+--- filter: gpt-4-0314 only (any Error Type) ---
+asdiv: N=363 absent=126 (35%)
+awps: N=126 absent=12 (10%)
+gsm8k: N=151 absent=8 (5%)
+svamp: N=352 absent=129 (37%)
+pooled: 275/992
+--- perturbed-value-carried-forward check among ABSENT cases ---
+absent cases: 286, erroneous prefix value present in continuation: 230 (80%)

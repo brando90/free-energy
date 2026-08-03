@@ -1,0 +1,429 @@
+{
+ "qwen1p5b": {
+  "n_rows": 6477,
+  "n_fam_total": 570,
+  "B1": {
+   "rate_d0": 0.2268,
+   "rate_d1": 0.3689,
+   "point_diff_pooled": -0.1421,
+   "boot_ci95": [
+    -0.2152,
+    -0.0723
+   ],
+   "boot_p_onesided": 1.0,
+   "paired_mean_diff": -0.1577,
+   "paired_p_onesided": 0.999977,
+   "n_fam_paired": 74,
+   "n_d0": 441,
+   "n_d1": 450,
+   "min_cellpos_n": 147,
+   "mag_gate_pass": false,
+   "cell_class": "flag(100-149)"
+  },
+  "B2": {
+   "rate_usable": 0.7111,
+   "rate_inert": 0.0111,
+   "point_diff_pooled": 0.7,
+   "boot_ci95": [
+    0.6592,
+    0.7381
+   ],
+   "boot_p_onesided": 0.0,
+   "paired_mean_diff": 0.6999,
+   "paired_p_onesided": 0.0,
+   "n_fam_paired": 188,
+   "n_usable": 900,
+   "n_inert": 900,
+   "min_cellpos_n": 150,
+   "mag_gate_pass": true,
+   "cell_class": "full"
+  },
+  "B3": {
+   "i_stated_d1": 0.3689,
+   "i_stated_d5": 0.2244,
+   "i_mean_diff": 0.1182,
+   "i_ci90": [
+    0.0631,
+    0.1733
+   ],
+   "i_p_raw": 0.707291,
+   "i_margin": 0.1,
+   "ii_deriv_usable_d1": 0.7133,
+   "ii_deriv_usable_dinf": 0.6867,
+   "ii_mean_diff": 0.0741,
+   "ii_ci90": [
+    0.0219,
+    0.1262
+   ],
+   "ii_p_raw": 0.00868,
+   "ii_margin": 0.15,
+   "slot_p": 0.707291,
+   "n_fam_i": 110,
+   "n_fam_ii": 108,
+   "min_cellpos_n": 150,
+   "cell_class": "full"
+  },
+  "holm": {
+   "B2": {
+    "p": 0.0,
+    "holm_thresh": 0.016667,
+    "holm_reject": true
+   },
+   "B3": {
+    "p": 0.707291,
+    "holm_thresh": 0.025,
+    "holm_reject": false
+   },
+   "B1": {
+    "p": 0.999977,
+    "holm_thresh": 0.05,
+    "holm_reject": false
+   }
+  },
+  "B1_pass": false,
+  "B2_pass": true,
+  "B3_pass": false,
+  "fully_replicates": false
+ },
+ "llama8b": {
+  "n_rows": 6600,
+  "n_fam_total": 430,
+  "B1": {
+   "rate_d0": 0.0511,
+   "rate_d1": 0.1956,
+   "point_diff_pooled": -0.1444,
+   "boot_ci95": [
+    -0.1889,
+    -0.1
+   ],
+   "boot_p_onesided": 1.0,
+   "paired_mean_diff": -0.1444,
+   "paired_p_onesided": 1.0,
+   "n_fam_paired": 120,
+   "n_d0": 450,
+   "n_d1": 450,
+   "min_cellpos_n": 150,
+   "mag_gate_pass": false,
+   "cell_class": "full"
+  },
+  "B2": {
+   "rate_usable": 0.9378,
+   "rate_inert": 0.0144,
+   "point_diff_pooled": 0.9233,
+   "boot_ci95": [
+    0.896,
+    0.9479
+   ],
+   "boot_p_onesided": 0.0,
+   "paired_mean_diff": 0.9272,
+   "paired_p_onesided": 0.0,
+   "n_fam_paired": 174,
+   "n_usable": 900,
+   "n_inert": 900,
+   "min_cellpos_n": 150,
+   "mag_gate_pass": true,
+   "cell_class": "full"
+  },
+  "B3": {
+   "i_stated_d1": 0.1956,
+   "i_stated_d5": 0.1333,
+   "i_mean_diff": 0.0614,
+   "i_ci90": [
+    0.0165,
+    0.1063
+   ],
+   "i_p_raw": 0.078551,
+   "i_margin": 0.1,
+   "ii_deriv_usable_d1": 0.9367,
+   "ii_deriv_usable_dinf": 0.9467,
+   "ii_mean_diff": -0.0117,
+   "ii_ci90": [
+    -0.0414,
+    0.018
+   ],
+   "ii_p_raw": 0.0,
+   "ii_margin": 0.15,
+   "slot_p": 0.078551,
+   "n_fam_i": 114,
+   "n_fam_ii": 128,
+   "min_cellpos_n": 150,
+   "cell_class": "full"
+  },
+  "holm": {
+   "B2": {
+    "p": 0.0,
+    "holm_thresh": 0.016667,
+    "holm_reject": true
+   },
+   "B3": {
+    "p": 0.078551,
+    "holm_thresh": 0.025,
+    "holm_reject": false
+   },
+   "B1": {
+    "p": 1.0,
+    "holm_thresh": 0.05,
+    "holm_reject": false
+   }
+  },
+  "B1_pass": false,
+  "B2_pass": true,
+  "B3_pass": false,
+  "fully_replicates": false
+ },
+ "olmo7b": {
+  "n_rows": 893,
+  "n_fam_total": 169,
+  "B1": {
+   "rate_d0": 0.4697,
+   "rate_d1": 0.2778,
+   "point_diff_pooled": 0.1919,
+   "boot_ci95": [
+    0.0,
+    0.3687
+   ],
+   "boot_p_onesided": 0.0265,
+   "paired_mean_diff": 0.3333,
+   "paired_p_onesided": 0.112702,
+   "n_fam_paired": 3,
+   "n_d0": 66,
+   "n_d1": 72,
+   "min_cellpos_n": 22,
+   "mag_gate_pass": true,
+   "cell_class": "INVALID(<50)"
+  },
+  "B2": {
+   "rate_usable": 0.4419,
+   "rate_inert": 0.0,
+   "point_diff_pooled": 0.4419,
+   "boot_ci95": [
+    0.3049,
+    0.5875
+   ],
+   "boot_p_onesided": 0.0,
+   "paired_mean_diff": 0.3981,
+   "paired_p_onesided": 0.000348,
+   "n_fam_paired": 18,
+   "n_usable": 86,
+   "n_inert": 98,
+   "min_cellpos_n": 11,
+   "mag_gate_pass": true,
+   "cell_class": "INVALID(<50)"
+  },
+  "B3": {
+   "i_stated_d1": 0.2778,
+   "i_stated_d5": 0.1667,
+   "i_mean_diff": null,
+   "i_ci90": null,
+   "i_p_raw": null,
+   "i_margin": 0.1,
+   "ii_deriv_usable_d1": 0.4615,
+   "ii_deriv_usable_dinf": 0.5,
+   "ii_mean_diff": 0.1667,
+   "ii_ci90": [
+    -0.32,
+    0.6533
+   ],
+   "ii_p_raw": 0.535267,
+   "ii_margin": 0.15,
+   "slot_p": 0.535267,
+   "n_fam_i": 0,
+   "n_fam_ii": 3,
+   "min_cellpos_n": 4,
+   "cell_class": "INVALID(<50)"
+  },
+  "holm": {
+   "B2": {
+    "p": 0.000348,
+    "holm_thresh": 0.016667,
+    "holm_reject": true
+   },
+   "B1": {
+    "p": 0.112702,
+    "holm_thresh": 0.025,
+    "holm_reject": false
+   },
+   "B3": {
+    "p": 0.535267,
+    "holm_thresh": 0.05,
+    "holm_reject": false
+   }
+  },
+  "B1_pass": false,
+  "B2_pass": false,
+  "B3_pass": false,
+  "fully_replicates": false
+ },
+ "qwen32b": {
+  "n_rows": 6600,
+  "n_fam_total": 301,
+  "B1": {
+   "rate_d0": 0.0133,
+   "rate_d1": 0.0822,
+   "point_diff_pooled": -0.0689,
+   "boot_ci95": [
+    -0.1044,
+    -0.0356
+   ],
+   "boot_p_onesided": 1.0,
+   "paired_mean_diff": -0.0689,
+   "paired_p_onesided": 0.999957,
+   "n_fam_paired": 150,
+   "n_d0": 450,
+   "n_d1": 450,
+   "min_cellpos_n": 150,
+   "mag_gate_pass": false,
+   "cell_class": "full"
+  },
+  "B2": {
+   "rate_usable": 0.0133,
+   "rate_inert": 0.0,
+   "point_diff_pooled": 0.0133,
+   "boot_ci95": [
+    0.0056,
+    0.0222
+   ],
+   "boot_p_onesided": 0.0,
+   "paired_mean_diff": 0.0133,
+   "paired_p_onesided": 0.001218,
+   "n_fam_paired": 150,
+   "n_usable": 900,
+   "n_inert": 900,
+   "min_cellpos_n": 150,
+   "mag_gate_pass": false,
+   "cell_class": "full"
+  },
+  "B3": {
+   "i_stated_d1": 0.0822,
+   "i_stated_d5": 0.0044,
+   "i_mean_diff": 0.0783,
+   "i_ci90": [
+    0.0489,
+    0.1077
+   ],
+   "i_p_raw": 0.112179,
+   "i_margin": 0.1,
+   "ii_deriv_usable_d1": 0.0167,
+   "ii_deriv_usable_dinf": 0.01,
+   "ii_mean_diff": 0.0067,
+   "ii_ci90": [
+    -0.009,
+    0.0223
+   ],
+   "ii_p_raw": 0.0,
+   "ii_margin": 0.15,
+   "slot_p": 0.112179,
+   "n_fam_i": 149,
+   "n_fam_ii": 150,
+   "min_cellpos_n": 150,
+   "cell_class": "full"
+  },
+  "holm": {
+   "B2": {
+    "p": 0.001218,
+    "holm_thresh": 0.016667,
+    "holm_reject": true
+   },
+   "B3": {
+    "p": 0.112179,
+    "holm_thresh": 0.025,
+    "holm_reject": false
+   },
+   "B1": {
+    "p": 0.999957,
+    "holm_thresh": 0.05,
+    "holm_reject": false
+   }
+  },
+  "B1_pass": false,
+  "B2_pass": false,
+  "B3_pass": false,
+  "fully_replicates": false
+ },
+ "qwen7b_anchor": {
+  "n_rows": 11577,
+  "n_fam_total": 354,
+  "B1": {
+   "rate_d0": 0.2467,
+   "rate_d1": 0.0311,
+   "point_diff_pooled": 0.2156,
+   "boot_ci95": [
+    0.1644,
+    0.2689
+   ],
+   "boot_p_onesided": 0.0,
+   "paired_mean_diff": 0.2086,
+   "paired_p_onesided": 0.0,
+   "n_fam_paired": 139,
+   "n_d0": 450,
+   "n_d1": 450,
+   "min_cellpos_n": 150,
+   "mag_gate_pass": true,
+   "cell_class": "full"
+  },
+  "B2": {
+   "rate_usable": 0.8068,
+   "rate_inert": 0.0079,
+   "point_diff_pooled": 0.7989,
+   "boot_ci95": [
+    0.7617,
+    0.8342
+   ],
+   "boot_p_onesided": 0.0,
+   "paired_mean_diff": 0.8052,
+   "paired_p_onesided": 0.0,
+   "n_fam_paired": 166,
+   "n_usable": 880,
+   "n_inert": 884,
+   "min_cellpos_n": 140,
+   "mag_gate_pass": true,
+   "cell_class": "flag(100-149)"
+  },
+  "B3": {
+   "i_stated_d1": 0.0311,
+   "i_stated_d5": 0.0211,
+   "i_mean_diff": 0.0132,
+   "i_ci90": [
+    -0.0078,
+    0.0342
+   ],
+   "i_p_raw": 0.0,
+   "i_margin": 0.1,
+   "ii_deriv_usable_d1": 0.8633,
+   "ii_deriv_usable_dinf": 0.7867,
+   "ii_mean_diff": 0.0839,
+   "ii_ci90": [
+    0.035,
+    0.1329
+   ],
+   "ii_p_raw": 0.013543,
+   "ii_margin": 0.15,
+   "slot_p": 0.013543,
+   "n_fam_i": 126,
+   "n_fam_ii": 137,
+   "min_cellpos_n": 142,
+   "cell_class": "flag(100-149)"
+  },
+  "holm": {
+   "B1": {
+    "p": 0.0,
+    "holm_thresh": 0.016667,
+    "holm_reject": true
+   },
+   "B2": {
+    "p": 0.0,
+    "holm_thresh": 0.025,
+    "holm_reject": true
+   },
+   "B3": {
+    "p": 0.013543,
+    "holm_thresh": 0.05,
+    "holm_reject": true
+   }
+  },
+  "B1_pass": true,
+  "B2_pass": true,
+  "B3_pass": true,
+  "fully_replicates": true
+ }
+}

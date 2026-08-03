@@ -1,0 +1,4445 @@
+{
+  "cells": [
+    "benign_paraphrase",
+    "true_interruption",
+    "adjacent_contradiction",
+    "opfree_kr1",
+    "opfree_kr8",
+    "onehop_kc1",
+    "deep_kc5"
+  ],
+  "created_at": "2026-07-27T19:28:29.200271+00:00",
+  "cumulative_usd": 52.6549,
+  "gold_funnels": {
+    "claude-haiku-4-5": {
+      "by_shape": {
+        "kc1": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        },
+        "kc5": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        },
+        "kr1": {
+          "eligible": 70,
+          "n": 70,
+          "solve_rate": 1.0
+        },
+        "kr8": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        }
+      },
+      "failure_taxonomy": {},
+      "n_programs": 250,
+      "new_generations": 250,
+      "parse_rate": 1.0,
+      "solve_rate": 1.0
+    },
+    "claude-opus-4-8": {
+      "by_shape": {
+        "kc1": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        },
+        "kc5": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        },
+        "kr1": {
+          "eligible": 70,
+          "n": 70,
+          "solve_rate": 1.0
+        },
+        "kr8": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        }
+      },
+      "failure_taxonomy": {},
+      "n_programs": 250,
+      "new_generations": 250,
+      "parse_rate": 1.0,
+      "solve_rate": 1.0
+    },
+    "claude-sonnet-4-5": {
+      "by_shape": {
+        "kc1": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        },
+        "kc5": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        },
+        "kr1": {
+          "eligible": 70,
+          "n": 70,
+          "solve_rate": 1.0
+        },
+        "kr8": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        }
+      },
+      "failure_taxonomy": {},
+      "n_programs": 250,
+      "new_generations": 250,
+      "parse_rate": 1.0,
+      "solve_rate": 1.0
+    },
+    "claude-sonnet-5": {
+      "by_shape": {
+        "kc1": {
+          "eligible": 59,
+          "n": 60,
+          "solve_rate": 0.9833
+        },
+        "kc5": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        },
+        "kr1": {
+          "eligible": 70,
+          "n": 70,
+          "solve_rate": 1.0
+        },
+        "kr8": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        }
+      },
+      "failure_taxonomy": {
+        "parse": 1
+      },
+      "n_programs": 250,
+      "new_generations": 250,
+      "parse_rate": 0.996,
+      "solve_rate": 0.996
+    },
+    "gpt-3.5-turbo-instruct": {
+      "by_shape": {
+        "kc1": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        },
+        "kc5": {
+          "eligible": 59,
+          "n": 60,
+          "solve_rate": 0.9833
+        },
+        "kr1": {
+          "eligible": 70,
+          "n": 70,
+          "solve_rate": 1.0
+        },
+        "kr8": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        }
+      },
+      "failure_taxonomy": {
+        "wrong_value": 1
+      },
+      "n_programs": 250,
+      "new_generations": 250,
+      "parse_rate": 1.0,
+      "solve_rate": 0.996
+    },
+    "gpt-4.1": {
+      "by_shape": {
+        "kc1": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        },
+        "kc5": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        },
+        "kr1": {
+          "eligible": 70,
+          "n": 70,
+          "solve_rate": 1.0
+        },
+        "kr8": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        }
+      },
+      "failure_taxonomy": {},
+      "n_programs": 250,
+      "new_generations": 250,
+      "parse_rate": 1.0,
+      "solve_rate": 1.0
+    },
+    "gpt-4o": {
+      "by_shape": {
+        "kc1": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        },
+        "kc5": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        },
+        "kr1": {
+          "eligible": 70,
+          "n": 70,
+          "solve_rate": 1.0
+        },
+        "kr8": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        }
+      },
+      "failure_taxonomy": {},
+      "n_programs": 250,
+      "new_generations": 250,
+      "parse_rate": 1.0,
+      "solve_rate": 1.0
+    },
+    "gpt-5.1": {
+      "by_shape": {
+        "kc1": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        },
+        "kc5": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        },
+        "kr1": {
+          "eligible": 70,
+          "n": 70,
+          "solve_rate": 1.0
+        },
+        "kr8": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        }
+      },
+      "failure_taxonomy": {},
+      "n_programs": 250,
+      "new_generations": 250,
+      "parse_rate": 1.0,
+      "solve_rate": 1.0
+    }
+  },
+  "models": {
+    "claude-haiku-4-5": {
+      "cells": {
+        "adjacent_contradiction": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "n_cf": 70,
+            "other": {
+              "count": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "silently_corrected": {
+              "count": 70,
+              "n": 70,
+              "rate": 1.0,
+              "wilson95": [
+                0.948,
+                1.0
+              ]
+            }
+          }
+        },
+        "benign_paraphrase": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "final_output_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "flagged": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "n_cf": 0,
+            "other": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            }
+          }
+        },
+        "deep_kc5": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 60,
+          "n_gen_failed": 0,
+          "n_live": 60,
+          "next_read_absorbed": {
+            "count": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 60,
+              "n": 60,
+              "rate": 1.0,
+              "wilson95": [
+                0.9398,
+                1.0
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "n_cf": 60,
+            "other": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            }
+          }
+        },
+        "onehop_kc1": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 60,
+          "n_gen_failed": 0,
+          "n_live": 60,
+          "next_read_absorbed": {
+            "count": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 60,
+              "n": 60,
+              "rate": 1.0,
+              "wilson95": [
+                0.9398,
+                1.0
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "n_cf": 60,
+            "other": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            }
+          }
+        },
+        "opfree_kr1": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 25,
+            "n": 70,
+            "rate": 0.3571,
+            "wilson95": [
+              0.255,
+              0.4741
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 26,
+            "n": 70,
+            "rate": 0.3714,
+            "wilson95": [
+              0.2677,
+              0.4885
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 25,
+              "n": 70,
+              "rate": 0.3571,
+              "wilson95": [
+                0.255,
+                0.4741
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "n_cf": 70,
+            "other": {
+              "count": 3,
+              "n": 70,
+              "rate": 0.0429,
+              "wilson95": [
+                0.0147,
+                0.1186
+              ]
+            },
+            "silently_corrected": {
+              "count": 42,
+              "n": 70,
+              "rate": 0.6,
+              "wilson95": [
+                0.4829,
+                0.7067
+              ]
+            }
+          }
+        },
+        "opfree_kr8": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 17,
+            "n": 60,
+            "rate": 0.2833,
+            "wilson95": [
+              0.1851,
+              0.4077
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 60,
+          "n_gen_failed": 0,
+          "n_live": 60,
+          "next_read_absorbed": {
+            "count": 19,
+            "n": 60,
+            "rate": 0.3167,
+            "wilson95": [
+              0.2131,
+              0.4423
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 17,
+              "n": 60,
+              "rate": 0.2833,
+              "wilson95": [
+                0.1851,
+                0.4077
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "n_cf": 60,
+            "other": {
+              "count": 2,
+              "n": 60,
+              "rate": 0.0333,
+              "wilson95": [
+                0.0092,
+                0.1136
+              ]
+            },
+            "silently_corrected": {
+              "count": 41,
+              "n": 60,
+              "rate": 0.6833,
+              "wilson95": [
+                0.5577,
+                0.7869
+              ]
+            }
+          }
+        },
+        "true_interruption": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "final_output_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "flagged": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "n_cf": 0,
+            "other": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            }
+          }
+        }
+      },
+      "mode": "bridge"
+    },
+    "claude-opus-4-8": {
+      "cells": {
+        "adjacent_contradiction": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "n_cf": 70,
+            "other": {
+              "count": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "silently_corrected": {
+              "count": 70,
+              "n": 70,
+              "rate": 1.0,
+              "wilson95": [
+                0.948,
+                1.0
+              ]
+            }
+          }
+        },
+        "benign_paraphrase": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "final_output_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "flagged": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "n_cf": 0,
+            "other": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            }
+          }
+        },
+        "deep_kc5": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 59,
+            "n": 60,
+            "rate": 0.9833,
+            "wilson95": [
+              0.9114,
+              0.9971
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 60,
+          "n_gen_failed": 0,
+          "n_live": 60,
+          "next_read_absorbed": {
+            "count": 59,
+            "n": 60,
+            "rate": 0.9833,
+            "wilson95": [
+              0.9114,
+              0.9971
+            ]
+          },
+          "repair_event": {
+            "count": 1,
+            "n": 60,
+            "rate": 0.0167,
+            "wilson95": [
+              0.0029,
+              0.0886
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 59,
+              "n": 60,
+              "rate": 0.9833,
+              "wilson95": [
+                0.9114,
+                0.9971
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "n_cf": 60,
+            "other": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "count": 1,
+              "n": 60,
+              "rate": 0.0167,
+              "wilson95": [
+                0.0029,
+                0.0886
+              ]
+            }
+          }
+        },
+        "onehop_kc1": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 60,
+          "n_gen_failed": 0,
+          "n_live": 60,
+          "next_read_absorbed": {
+            "count": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 60,
+              "n": 60,
+              "rate": 1.0,
+              "wilson95": [
+                0.9398,
+                1.0
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "n_cf": 60,
+            "other": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            }
+          }
+        },
+        "opfree_kr1": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 22,
+            "n": 70,
+            "rate": 0.3143,
+            "wilson95": [
+              0.2176,
+              0.4303
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 22,
+            "n": 70,
+            "rate": 0.3143,
+            "wilson95": [
+              0.2176,
+              0.4303
+            ]
+          },
+          "repair_event": {
+            "count": 24,
+            "n": 70,
+            "rate": 0.3429,
+            "wilson95": [
+              0.2425,
+              0.4596
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 22,
+              "n": 70,
+              "rate": 0.3143,
+              "wilson95": [
+                0.2176,
+                0.4303
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "n_cf": 70,
+            "other": {
+              "count": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "silently_corrected": {
+              "count": 48,
+              "n": 70,
+              "rate": 0.6857,
+              "wilson95": [
+                0.5697,
+                0.7824
+              ]
+            }
+          }
+        },
+        "opfree_kr8": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 9,
+            "n": 60,
+            "rate": 0.15,
+            "wilson95": [
+              0.081,
+              0.2611
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 60,
+          "n_gen_failed": 0,
+          "n_live": 60,
+          "next_read_absorbed": {
+            "count": 9,
+            "n": 60,
+            "rate": 0.15,
+            "wilson95": [
+              0.081,
+              0.2611
+            ]
+          },
+          "repair_event": {
+            "count": 39,
+            "n": 60,
+            "rate": 0.65,
+            "wilson95": [
+              0.5236,
+              0.7583
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 9,
+              "n": 60,
+              "rate": 0.15,
+              "wilson95": [
+                0.081,
+                0.2611
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "n_cf": 60,
+            "other": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "count": 51,
+              "n": 60,
+              "rate": 0.85,
+              "wilson95": [
+                0.7389,
+                0.919
+              ]
+            }
+          }
+        },
+        "true_interruption": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "final_output_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "flagged": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "n_cf": 0,
+            "other": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            }
+          }
+        }
+      },
+      "mode": "bridge"
+    },
+    "claude-sonnet-4-5": {
+      "cells": {
+        "adjacent_contradiction": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "n_cf": 70,
+            "other": {
+              "count": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "silently_corrected": {
+              "count": 70,
+              "n": 70,
+              "rate": 1.0,
+              "wilson95": [
+                0.948,
+                1.0
+              ]
+            }
+          }
+        },
+        "benign_paraphrase": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "final_output_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "flagged": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "n_cf": 0,
+            "other": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            }
+          }
+        },
+        "deep_kc5": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 60,
+          "n_gen_failed": 0,
+          "n_live": 60,
+          "next_read_absorbed": {
+            "count": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 60,
+              "n": 60,
+              "rate": 1.0,
+              "wilson95": [
+                0.9398,
+                1.0
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "n_cf": 60,
+            "other": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            }
+          }
+        },
+        "onehop_kc1": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 60,
+          "n_gen_failed": 0,
+          "n_live": 60,
+          "next_read_absorbed": {
+            "count": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 60,
+              "n": 60,
+              "rate": 1.0,
+              "wilson95": [
+                0.9398,
+                1.0
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "n_cf": 60,
+            "other": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            }
+          }
+        },
+        "opfree_kr1": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 6,
+            "n": 70,
+            "rate": 0.0857,
+            "wilson95": [
+              0.0399,
+              0.1747
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 6,
+            "n": 70,
+            "rate": 0.0857,
+            "wilson95": [
+              0.0399,
+              0.1747
+            ]
+          },
+          "repair_event": {
+            "count": 51,
+            "n": 70,
+            "rate": 0.7286,
+            "wilson95": [
+              0.6146,
+              0.8188
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 6,
+              "n": 70,
+              "rate": 0.0857,
+              "wilson95": [
+                0.0399,
+                0.1747
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "n_cf": 70,
+            "other": {
+              "count": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "silently_corrected": {
+              "count": 64,
+              "n": 70,
+              "rate": 0.9143,
+              "wilson95": [
+                0.8253,
+                0.9601
+              ]
+            }
+          }
+        },
+        "opfree_kr8": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 8,
+            "n": 60,
+            "rate": 0.1333,
+            "wilson95": [
+              0.0691,
+              0.2417
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 60,
+          "n_gen_failed": 0,
+          "n_live": 60,
+          "next_read_absorbed": {
+            "count": 8,
+            "n": 60,
+            "rate": 0.1333,
+            "wilson95": [
+              0.0691,
+              0.2417
+            ]
+          },
+          "repair_event": {
+            "count": 27,
+            "n": 60,
+            "rate": 0.45,
+            "wilson95": [
+              0.3309,
+              0.5751
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 8,
+              "n": 60,
+              "rate": 0.1333,
+              "wilson95": [
+                0.0691,
+                0.2417
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "n_cf": 60,
+            "other": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "count": 52,
+              "n": 60,
+              "rate": 0.8667,
+              "wilson95": [
+                0.7583,
+                0.9309
+              ]
+            }
+          }
+        },
+        "true_interruption": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "final_output_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "flagged": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "n_cf": 0,
+            "other": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            }
+          }
+        }
+      },
+      "mode": "bridge"
+    },
+    "claude-sonnet-5": {
+      "cells": {
+        "adjacent_contradiction": {
+          "doubt_lex": {
+            "count": 1,
+            "n": 70,
+            "rate": 0.0143,
+            "wilson95": [
+              0.0025,
+              0.0766
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 1,
+            "n": 70,
+            "rate": 0.0143,
+            "wilson95": [
+              0.0025,
+              0.0766
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 1,
+            "n": 70,
+            "rate": 0.0143,
+            "wilson95": [
+              0.0025,
+              0.0766
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 1,
+              "n": 70,
+              "rate": 0.0143,
+              "wilson95": [
+                0.0025,
+                0.0766
+              ]
+            },
+            "flagged": {
+              "count": 1,
+              "n": 70,
+              "rate": 0.0143,
+              "wilson95": [
+                0.0025,
+                0.0766
+              ]
+            },
+            "n_cf": 70,
+            "other": {
+              "count": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "silently_corrected": {
+              "count": 68,
+              "n": 70,
+              "rate": 0.9714,
+              "wilson95": [
+                0.9017,
+                0.9921
+              ]
+            }
+          }
+        },
+        "benign_paraphrase": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "final_output_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "flagged": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "n_cf": 0,
+            "other": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            }
+          }
+        },
+        "deep_kc5": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 60,
+          "n_gen_failed": 0,
+          "n_live": 60,
+          "next_read_absorbed": {
+            "count": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 60,
+              "n": 60,
+              "rate": 1.0,
+              "wilson95": [
+                0.9398,
+                1.0
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "n_cf": 60,
+            "other": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            }
+          }
+        },
+        "onehop_kc1": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 59,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0611
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 59,
+            "n": 59,
+            "rate": 1.0,
+            "wilson95": [
+              0.9389,
+              1.0
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 59,
+          "n_gen_failed": 0,
+          "n_live": 59,
+          "next_read_absorbed": {
+            "count": 59,
+            "n": 59,
+            "rate": 1.0,
+            "wilson95": [
+              0.9389,
+              1.0
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 59,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0611
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 59,
+              "n": 59,
+              "rate": 1.0,
+              "wilson95": [
+                0.9389,
+                1.0
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 59,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0611
+              ]
+            },
+            "n_cf": 59,
+            "other": {
+              "count": 0,
+              "n": 59,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0611
+              ]
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 59,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0611
+              ]
+            }
+          }
+        },
+        "opfree_kr1": {
+          "doubt_lex": {
+            "count": 12,
+            "n": 70,
+            "rate": 0.1714,
+            "wilson95": [
+              0.1009,
+              0.2762
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 16,
+            "n": 70,
+            "rate": 0.2286,
+            "wilson95": [
+              0.1459,
+              0.3395
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 16,
+            "n": 70,
+            "rate": 0.2286,
+            "wilson95": [
+              0.1459,
+              0.3395
+            ]
+          },
+          "repair_event": {
+            "count": 35,
+            "n": 70,
+            "rate": 0.5,
+            "wilson95": [
+              0.386,
+              0.614
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 13,
+              "n": 70,
+              "rate": 0.1857,
+              "wilson95": [
+                0.1119,
+                0.2923
+              ]
+            },
+            "flagged": {
+              "count": 12,
+              "n": 70,
+              "rate": 0.1714,
+              "wilson95": [
+                0.1009,
+                0.2762
+              ]
+            },
+            "n_cf": 70,
+            "other": {
+              "count": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "silently_corrected": {
+              "count": 45,
+              "n": 70,
+              "rate": 0.6429,
+              "wilson95": [
+                0.5259,
+                0.745
+              ]
+            }
+          }
+        },
+        "opfree_kr8": {
+          "doubt_lex": {
+            "count": 8,
+            "n": 60,
+            "rate": 0.1333,
+            "wilson95": [
+              0.0691,
+              0.2417
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 26,
+            "n": 60,
+            "rate": 0.4333,
+            "wilson95": [
+              0.3157,
+              0.559
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 60,
+          "n_gen_failed": 0,
+          "n_live": 60,
+          "next_read_absorbed": {
+            "count": 26,
+            "n": 60,
+            "rate": 0.4333,
+            "wilson95": [
+              0.3157,
+              0.559
+            ]
+          },
+          "repair_event": {
+            "count": 30,
+            "n": 60,
+            "rate": 0.5,
+            "wilson95": [
+              0.3773,
+              0.6227
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 22,
+              "n": 60,
+              "rate": 0.3667,
+              "wilson95": [
+                0.2562,
+                0.4932
+              ]
+            },
+            "flagged": {
+              "count": 8,
+              "n": 60,
+              "rate": 0.1333,
+              "wilson95": [
+                0.0691,
+                0.2417
+              ]
+            },
+            "n_cf": 60,
+            "other": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "count": 30,
+              "n": 60,
+              "rate": 0.5,
+              "wilson95": [
+                0.3773,
+                0.6227
+              ]
+            }
+          }
+        },
+        "true_interruption": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "final_output_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "flagged": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "n_cf": 0,
+            "other": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            }
+          }
+        }
+      },
+      "mode": "bridge"
+    },
+    "gpt-3.5-turbo-instruct": {
+      "cells": {
+        "adjacent_contradiction": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 68,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0535
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 10,
+            "n": 68,
+            "rate": 0.1471,
+            "wilson95": [
+              0.0819,
+              0.25
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 2,
+          "n_live": 68,
+          "next_read_absorbed": {
+            "count": 10,
+            "n": 68,
+            "rate": 0.1471,
+            "wilson95": [
+              0.0819,
+              0.25
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 68,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0535
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 10,
+              "n": 68,
+              "rate": 0.1471,
+              "wilson95": [
+                0.0819,
+                0.25
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 68,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0535
+              ]
+            },
+            "n_cf": 68,
+            "other": {
+              "count": 0,
+              "n": 68,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0535
+              ]
+            },
+            "silently_corrected": {
+              "count": 58,
+              "n": 68,
+              "rate": 0.8529,
+              "wilson95": [
+                0.75,
+                0.9181
+              ]
+            }
+          }
+        },
+        "benign_paraphrase": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "final_output_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 2,
+          "n_live": 68,
+          "next_read_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "flagged": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "n_cf": 0,
+            "other": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            }
+          }
+        },
+        "deep_kc5": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 59,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0611
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 59,
+            "n": 59,
+            "rate": 1.0,
+            "wilson95": [
+              0.9389,
+              1.0
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 59,
+          "n_gen_failed": 0,
+          "n_live": 59,
+          "next_read_absorbed": {
+            "count": 59,
+            "n": 59,
+            "rate": 1.0,
+            "wilson95": [
+              0.9389,
+              1.0
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 59,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0611
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 59,
+              "n": 59,
+              "rate": 1.0,
+              "wilson95": [
+                0.9389,
+                1.0
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 59,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0611
+              ]
+            },
+            "n_cf": 59,
+            "other": {
+              "count": 0,
+              "n": 59,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0611
+              ]
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 59,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0611
+              ]
+            }
+          }
+        },
+        "onehop_kc1": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 58,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0621
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 58,
+            "n": 58,
+            "rate": 1.0,
+            "wilson95": [
+              0.9379,
+              1.0
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 60,
+          "n_gen_failed": 2,
+          "n_live": 58,
+          "next_read_absorbed": {
+            "count": 58,
+            "n": 58,
+            "rate": 1.0,
+            "wilson95": [
+              0.9379,
+              1.0
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 58,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0621
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 58,
+              "n": 58,
+              "rate": 1.0,
+              "wilson95": [
+                0.9379,
+                1.0
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 58,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0621
+              ]
+            },
+            "n_cf": 58,
+            "other": {
+              "count": 0,
+              "n": 58,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0621
+              ]
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 58,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0621
+              ]
+            }
+          }
+        },
+        "opfree_kr1": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 68,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0535
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 68,
+            "n": 68,
+            "rate": 1.0,
+            "wilson95": [
+              0.9465,
+              1.0
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 2,
+          "n_live": 68,
+          "next_read_absorbed": {
+            "count": 68,
+            "n": 68,
+            "rate": 1.0,
+            "wilson95": [
+              0.9465,
+              1.0
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 68,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0535
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 68,
+              "n": 68,
+              "rate": 1.0,
+              "wilson95": [
+                0.9465,
+                1.0
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 68,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0535
+              ]
+            },
+            "n_cf": 68,
+            "other": {
+              "count": 0,
+              "n": 68,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0535
+              ]
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 68,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0535
+              ]
+            }
+          }
+        },
+        "opfree_kr8": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 60,
+          "n_gen_failed": 0,
+          "n_live": 60,
+          "next_read_absorbed": {
+            "count": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 60,
+              "n": 60,
+              "rate": 1.0,
+              "wilson95": [
+                0.9398,
+                1.0
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "n_cf": 60,
+            "other": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            }
+          }
+        },
+        "true_interruption": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "final_output_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 1,
+          "n_live": 69,
+          "next_read_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "flagged": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "n_cf": 0,
+            "other": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            }
+          }
+        }
+      },
+      "mode": "completion"
+    },
+    "gpt-4.1": {
+      "cells": {
+        "adjacent_contradiction": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 1,
+            "n": 70,
+            "rate": 0.0143,
+            "wilson95": [
+              0.0025,
+              0.0766
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 1,
+            "n": 70,
+            "rate": 0.0143,
+            "wilson95": [
+              0.0025,
+              0.0766
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 1,
+              "n": 70,
+              "rate": 0.0143,
+              "wilson95": [
+                0.0025,
+                0.0766
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "n_cf": 70,
+            "other": {
+              "count": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "silently_corrected": {
+              "count": 69,
+              "n": 70,
+              "rate": 0.9857,
+              "wilson95": [
+                0.9234,
+                0.9975
+              ]
+            }
+          }
+        },
+        "benign_paraphrase": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "final_output_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "flagged": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "n_cf": 0,
+            "other": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            }
+          }
+        },
+        "deep_kc5": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 60,
+          "n_gen_failed": 0,
+          "n_live": 60,
+          "next_read_absorbed": {
+            "count": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 60,
+              "n": 60,
+              "rate": 1.0,
+              "wilson95": [
+                0.9398,
+                1.0
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "n_cf": 60,
+            "other": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            }
+          }
+        },
+        "onehop_kc1": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 60,
+          "n_gen_failed": 0,
+          "n_live": 60,
+          "next_read_absorbed": {
+            "count": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 60,
+              "n": 60,
+              "rate": 1.0,
+              "wilson95": [
+                0.9398,
+                1.0
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "n_cf": 60,
+            "other": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            }
+          }
+        },
+        "opfree_kr1": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 66,
+            "n": 70,
+            "rate": 0.9429,
+            "wilson95": [
+              0.8621,
+              0.9776
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 67,
+            "n": 70,
+            "rate": 0.9571,
+            "wilson95": [
+              0.8814,
+              0.9853
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 66,
+              "n": 70,
+              "rate": 0.9429,
+              "wilson95": [
+                0.8621,
+                0.9776
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "n_cf": 70,
+            "other": {
+              "count": 1,
+              "n": 70,
+              "rate": 0.0143,
+              "wilson95": [
+                0.0025,
+                0.0766
+              ]
+            },
+            "silently_corrected": {
+              "count": 3,
+              "n": 70,
+              "rate": 0.0429,
+              "wilson95": [
+                0.0147,
+                0.1186
+              ]
+            }
+          }
+        },
+        "opfree_kr8": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 58,
+            "n": 60,
+            "rate": 0.9667,
+            "wilson95": [
+              0.8864,
+              0.9908
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 60,
+          "n_gen_failed": 0,
+          "n_live": 60,
+          "next_read_absorbed": {
+            "count": 58,
+            "n": 60,
+            "rate": 0.9667,
+            "wilson95": [
+              0.8864,
+              0.9908
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 58,
+              "n": 60,
+              "rate": 0.9667,
+              "wilson95": [
+                0.8864,
+                0.9908
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "n_cf": 60,
+            "other": {
+              "count": 2,
+              "n": 60,
+              "rate": 0.0333,
+              "wilson95": [
+                0.0092,
+                0.1136
+              ]
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            }
+          }
+        },
+        "true_interruption": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "final_output_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "flagged": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "n_cf": 0,
+            "other": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            }
+          }
+        }
+      },
+      "mode": "bridge"
+    },
+    "gpt-4o": {
+      "cells": {
+        "adjacent_contradiction": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 1,
+            "n": 70,
+            "rate": 0.0143,
+            "wilson95": [
+              0.0025,
+              0.0766
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 1,
+            "n": 70,
+            "rate": 0.0143,
+            "wilson95": [
+              0.0025,
+              0.0766
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 1,
+              "n": 70,
+              "rate": 0.0143,
+              "wilson95": [
+                0.0025,
+                0.0766
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "n_cf": 70,
+            "other": {
+              "count": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "silently_corrected": {
+              "count": 69,
+              "n": 70,
+              "rate": 0.9857,
+              "wilson95": [
+                0.9234,
+                0.9975
+              ]
+            }
+          }
+        },
+        "benign_paraphrase": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "final_output_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "flagged": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "n_cf": 0,
+            "other": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            }
+          }
+        },
+        "deep_kc5": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 57,
+            "n": 60,
+            "rate": 0.95,
+            "wilson95": [
+              0.863,
+              0.9829
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 60,
+          "n_gen_failed": 0,
+          "n_live": 60,
+          "next_read_absorbed": {
+            "count": 57,
+            "n": 60,
+            "rate": 0.95,
+            "wilson95": [
+              0.863,
+              0.9829
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 57,
+              "n": 60,
+              "rate": 0.95,
+              "wilson95": [
+                0.863,
+                0.9829
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "n_cf": 60,
+            "other": {
+              "count": 1,
+              "n": 60,
+              "rate": 0.0167,
+              "wilson95": [
+                0.0029,
+                0.0886
+              ]
+            },
+            "silently_corrected": {
+              "count": 2,
+              "n": 60,
+              "rate": 0.0333,
+              "wilson95": [
+                0.0092,
+                0.1136
+              ]
+            }
+          }
+        },
+        "onehop_kc1": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 60,
+          "n_gen_failed": 0,
+          "n_live": 60,
+          "next_read_absorbed": {
+            "count": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 60,
+              "n": 60,
+              "rate": 1.0,
+              "wilson95": [
+                0.9398,
+                1.0
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "n_cf": 60,
+            "other": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            }
+          }
+        },
+        "opfree_kr1": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 12,
+            "n": 70,
+            "rate": 0.1714,
+            "wilson95": [
+              0.1009,
+              0.2762
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 14,
+            "n": 70,
+            "rate": 0.2,
+            "wilson95": [
+              0.123,
+              0.3082
+            ]
+          },
+          "repair_event": {
+            "count": 29,
+            "n": 70,
+            "rate": 0.4143,
+            "wilson95": [
+              0.3063,
+              0.5312
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 12,
+              "n": 70,
+              "rate": 0.1714,
+              "wilson95": [
+                0.1009,
+                0.2762
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "n_cf": 70,
+            "other": {
+              "count": 6,
+              "n": 70,
+              "rate": 0.0857,
+              "wilson95": [
+                0.0399,
+                0.1747
+              ]
+            },
+            "silently_corrected": {
+              "count": 52,
+              "n": 70,
+              "rate": 0.7429,
+              "wilson95": [
+                0.6297,
+                0.8307
+              ]
+            }
+          }
+        },
+        "opfree_kr8": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 9,
+            "n": 60,
+            "rate": 0.15,
+            "wilson95": [
+              0.081,
+              0.2611
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 60,
+          "n_gen_failed": 0,
+          "n_live": 60,
+          "next_read_absorbed": {
+            "count": 10,
+            "n": 60,
+            "rate": 0.1667,
+            "wilson95": [
+              0.0931,
+              0.2803
+            ]
+          },
+          "repair_event": {
+            "count": 12,
+            "n": 60,
+            "rate": 0.2,
+            "wilson95": [
+              0.1183,
+              0.3178
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 9,
+              "n": 60,
+              "rate": 0.15,
+              "wilson95": [
+                0.081,
+                0.2611
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "n_cf": 60,
+            "other": {
+              "count": 7,
+              "n": 60,
+              "rate": 0.1167,
+              "wilson95": [
+                0.0577,
+                0.2218
+              ]
+            },
+            "silently_corrected": {
+              "count": 44,
+              "n": 60,
+              "rate": 0.7333,
+              "wilson95": [
+                0.6099,
+                0.8287
+              ]
+            }
+          }
+        },
+        "true_interruption": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "final_output_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "flagged": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "n_cf": 0,
+            "other": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            }
+          }
+        }
+      },
+      "mode": "bridge"
+    },
+    "gpt-5.1": {
+      "cells": {
+        "adjacent_contradiction": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 6,
+            "n": 70,
+            "rate": 0.0857,
+            "wilson95": [
+              0.0399,
+              0.1747
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 6,
+            "n": 70,
+            "rate": 0.0857,
+            "wilson95": [
+              0.0399,
+              0.1747
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 6,
+              "n": 70,
+              "rate": 0.0857,
+              "wilson95": [
+                0.0399,
+                0.1747
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "n_cf": 70,
+            "other": {
+              "count": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "silently_corrected": {
+              "count": 64,
+              "n": 70,
+              "rate": 0.9143,
+              "wilson95": [
+                0.8253,
+                0.9601
+              ]
+            }
+          }
+        },
+        "benign_paraphrase": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "final_output_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "flagged": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "n_cf": 0,
+            "other": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            }
+          }
+        },
+        "deep_kc5": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 60,
+          "n_gen_failed": 0,
+          "n_live": 60,
+          "next_read_absorbed": {
+            "count": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 60,
+              "n": 60,
+              "rate": 1.0,
+              "wilson95": [
+                0.9398,
+                1.0
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "n_cf": 60,
+            "other": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            }
+          }
+        },
+        "onehop_kc1": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 60,
+          "n_gen_failed": 0,
+          "n_live": 60,
+          "next_read_absorbed": {
+            "count": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 60,
+              "n": 60,
+              "rate": 1.0,
+              "wilson95": [
+                0.9398,
+                1.0
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "n_cf": 60,
+            "other": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            }
+          }
+        },
+        "opfree_kr1": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 62,
+            "n": 70,
+            "rate": 0.8857,
+            "wilson95": [
+              0.7904,
+              0.9409
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 63,
+            "n": 70,
+            "rate": 0.9,
+            "wilson95": [
+              0.8077,
+              0.9507
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 62,
+              "n": 70,
+              "rate": 0.8857,
+              "wilson95": [
+                0.7904,
+                0.9409
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "n_cf": 70,
+            "other": {
+              "count": 3,
+              "n": 70,
+              "rate": 0.0429,
+              "wilson95": [
+                0.0147,
+                0.1186
+              ]
+            },
+            "silently_corrected": {
+              "count": 5,
+              "n": 70,
+              "rate": 0.0714,
+              "wilson95": [
+                0.0309,
+                0.1566
+              ]
+            }
+          }
+        },
+        "opfree_kr8": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 55,
+            "n": 60,
+            "rate": 0.9167,
+            "wilson95": [
+              0.8193,
+              0.9639
+            ]
+          },
+          "mean_line_skip": 0.0,
+          "n": 60,
+          "n_gen_failed": 0,
+          "n_live": 60,
+          "next_read_absorbed": {
+            "count": 56,
+            "n": 60,
+            "rate": 0.9333,
+            "wilson95": [
+              0.8407,
+              0.9738
+            ]
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 60,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0602
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 55,
+              "n": 60,
+              "rate": 0.9167,
+              "wilson95": [
+                0.8193,
+                0.9639
+              ]
+            },
+            "flagged": {
+              "count": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "n_cf": 60,
+            "other": {
+              "count": 2,
+              "n": 60,
+              "rate": 0.0333,
+              "wilson95": [
+                0.0092,
+                0.1136
+              ]
+            },
+            "silently_corrected": {
+              "count": 3,
+              "n": 60,
+              "rate": 0.05,
+              "wilson95": [
+                0.0171,
+                0.137
+              ]
+            }
+          }
+        },
+        "true_interruption": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "final_output_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "mean_line_skip": 0.0,
+          "n": 70,
+          "n_gen_failed": 0,
+          "n_live": 70,
+          "next_read_absorbed": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "repair_event": {
+            "count": 0,
+            "n": 0,
+            "rate": null,
+            "wilson95": null
+          },
+          "three_way": {
+            "absorbed": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "flagged": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "n_cf": 0,
+            "other": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            },
+            "silently_corrected": {
+              "count": 0,
+              "n": 0,
+              "rate": null,
+              "wilson95": null
+            }
+          }
+        }
+      },
+      "mode": "bridge"
+    }
+  }
+}

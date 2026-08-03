@@ -1,0 +1,13 @@
+{
+  "authorization": "Authorized by Elyas 2026-07-24 in chat via Claude; see E9_REGISTRATION_AMENDMENT.md (commit d367a972818d61c2e2ca2531b2065ce1cec2eec1).",
+  "n_families": 750,
+  "final_n": 300,
+  "gd2_in_family": true,
+  "surprise_control": true,
+  "verifications": [
+    "low",
+    "high"
+  ],
+  "brando_review": "pending",
+  "gd4_licensed_counts": "PROVISIONAL pending blind non-author HARD-RULE-5 audit; >0.05 per-arm error-diff rule applies"
+}

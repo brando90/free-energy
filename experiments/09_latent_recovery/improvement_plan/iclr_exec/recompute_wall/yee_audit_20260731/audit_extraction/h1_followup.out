@@ -1,0 +1,69 @@
+====================================================================================================
+A) SPOT-VERIFY prefix reconstruction vs stimuli JSON (3 rows per dataset, add1)
+====================================================================================================
+  MISMATCH gsm8k: csv_prefix_tail='otal cost for the full price glasses is 8 glasses * $5 = $41' json_tail='otal cost for the full price glasses is 8 glasses * $5 = $41'
+  MISMATCH gsm8k: csv_prefix_tail='rate of 2 GB/minute, it takes her 200 GB / 2 GB/minute = 101' json_tail='rate of 2 GB/minute, it takes her 200 GB / 2 GB/minute = 101'
+  MISMATCH gsm8k: csv_prefix_tail='gular hourly rate, so:\n\nOvertime rate = 1.2 * $10/hour = $13' json_tail='lar hourly rate, so:\r\n\r\nOvertime rate = 1.2 * $10/hour = $13'
+  gsm8k: 0/3 exact prefix matches vs JSON
+  asdiv: 3/3 exact prefix matches vs JSON
+  awps: 0/0 exact prefix matches vs JSON
+  MISMATCH svamp: csv_prefix_tail='he had left from the amount he started with:\n\n\n\n$4 - $3 = $2' json_tail='he had left from the amount he started with:\r\n\r\n$4 - $3 = $2'
+  svamp: 2/3 exact prefix matches vs JSON
+
+====================================================================================================
+B) JSON key counts vs unique CSV questions/problems (duplication probe)
+====================================================================================================
+  gsm8k/random: json_keys=258 uniq_questions=258 uniq_problems=258 problems_with_multiple_prefixes=0 annotated_rows=255
+  gsm8k/add1: json_keys=300 uniq_questions=328 uniq_problems=300 problems_with_multiple_prefixes=28 annotated_rows=295
+      ex prefix tail='er hour and works 15 hours a week, so she makes 30 * 15 = $<<30*15=451' annotated=''
+      ex prefix tail='er hour and works 15 hours a week, so she makes 30 * 15 = $<<30*15=451' annotated='True'
+  gsm8k/add101: json_keys=300 uniq_questions=328 uniq_problems=300 problems_with_multiple_prefixes=28 annotated_rows=295
+  asdiv/random: json_keys=283 uniq_questions=283 uniq_problems=283 problems_with_multiple_prefixes=0 annotated_rows=283
+  asdiv/add1: json_keys=283 uniq_questions=339 uniq_problems=283 problems_with_multiple_prefixes=56 annotated_rows=339
+      ex prefix tail='istle costs 14 cents. So, the total cost is:\n\n24 cents + 14 cents = 39' annotated='True'
+      ex prefix tail='istle costs 14 cents. So, the total cost is:\n\n24 cents + 14 cents = 39' annotated='True'
+  asdiv/add101: json_keys=283 uniq_questions=339 uniq_problems=283 problems_with_multiple_prefixes=56 annotated_rows=339
+  awps/random: json_keys=295 uniq_questions=295 uniq_problems=295 problems_with_multiple_prefixes=0 annotated_rows=295
+  awps/add1: json_keys=295 uniq_questions=590 uniq_problems=295 problems_with_multiple_prefixes=295 annotated_rows=590
+      ex prefix tail=' pieces they ate from the total number of pieces: 74 - 35 = <<74-35=40' annotated='False'
+      ex prefix tail=' pieces they ate from the total number of pieces: 74 - 35 = <<74-35=40' annotated='False'
+  awps/add101: json_keys=295 uniq_questions=590 uniq_problems=295 problems_with_multiple_prefixes=295 annotated_rows=590
+  svamp/random: json_keys=290 uniq_questions=290 uniq_problems=290 problems_with_multiple_prefixes=0 annotated_rows=290
+  svamp/add1: json_keys=290 uniq_questions=319 uniq_problems=290 problems_with_multiple_prefixes=29 annotated_rows=319
+      ex prefix tail=' in all baskets. Since each basket has 7 peaches, there must be only 2' annotated='True'
+      ex prefix tail=' in all baskets. Since each basket has 7 peaches, there must be only 2' annotated='True'
+  svamp/add101: json_keys=290 uniq_questions=319 uniq_problems=290 problems_with_multiple_prefixes=29 annotated_rows=319
+
+====================================================================================================
+C) MAIN TABLE with strict + generous channel tests and artifact decomposition
+====================================================================================================
+ds/pert              n   recov    ratestrictOKstrict_rate   genOKgen_ratexo_totalxo_nonumxo_splicexo_errfwdxo_other
+gsm8k/random       224     176    78.6     154    68.8     170    75.9       6       2       0       1       3
+gsm8k/add1         229     181    79.0     163    71.2     180    78.6       1       0       0       1       0
+gsm8k/add101       227     222    97.8     202    89.0     220    96.9       2       0       0       0       2
+asdiv/random       229     171    74.7     138    60.3     147    64.2      24       1       0      18       5
+asdiv/add1         277     206    74.4     157    56.7     164    59.2      42       3       0      32       7
+asdiv/add101       277     270    97.5     245    88.4     261    94.2       9       2       0       3       4
+awps/random        247     192    77.7     185    74.9     189    76.5       3       1       0       0       2
+awps/add1          494     382    77.3     358    72.5     374    75.7       8       6       0       2       0
+awps/add101        494     494   100.0     478    96.8     494   100.0       0       0       0       0       0
+svamp/random       266     209    78.6     177    66.5     183    68.8      26       3       0      21       2
+svamp/add1         309     228    73.8     182    58.9     192    62.1      36       5       0      27       4
+svamp/add101       309     291    94.2     284    91.9     288    93.2       3       1       0       1       1
+
+  ALL pooled: n=3582 recov=3022 (84.4%) strict=2723 (76.0%) gen=2862 (79.9%) extraction-only=160 (4.5% of n; 5.3% of recoveries) [no-num=24 splice=0 err-fwd=106 other=30]
+  random+add1 pooled: n=2275 recov=1745 (76.7%) strict=1514 (66.5%) gen=1599 (70.3%) extraction-only=146 (6.4% of n; 8.4% of recoveries) [no-num=21 splice=0 err-fwd=102 other=23]
+
+  Among extraction-only recoveries: Answer field long/contains '=' (extraction call visibly reasons/computes): 5/160
+
+  SPLICE examples (perturbed str + cont lead -> target):
+
+====================================================================================================
+D) Correct? vs scorer disagreements (list all, calc rows)
+====================================================================================================
+  gsm8k/random: Correct?=True scorer=False target=32.0 Answer="27. Now, we need to find Trent's age. Since Trent is 5 years older than Jane, an" rb='states correct value'
+  gsm8k/random: Correct?=False scorer=True target=43200.0 Answer='43,200 pounds.' rb=''
+  gsm8k/add1: Correct?=False scorer=True target=93000.0 Answer='93,000 posts.' rb=''
+  gsm8k/add101: Correct?=True scorer=False target=42.0 Answer='7/20 * 120 = 42 teaspoons of sugar.' rb='directly redoes calculation'
+  gsm8k/add101: Correct?=False scorer=True target=93000.0 Answer='93,000 posts.' rb=''
+  asdiv/add1: Correct?=False scorer=True target=1102609.0 Answer='1,102,610.' rb=''

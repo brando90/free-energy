@@ -1,0 +1,2035 @@
+{
+  "per_program": [
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100000",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100002",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100003",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100004",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100007",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100008",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100009",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100011",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100012",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100013",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100014",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100016",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100017",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100018",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100019",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100020",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100022",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100023",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100024",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100025",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100026",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100027",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100028",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100029",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100030",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100032",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100033",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100034",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100035",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100036",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100037",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100038",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100039",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100040",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100041",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100042",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100043",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100045",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100046",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100048",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100049",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100050",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100052",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100053",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100054",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100055",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100056",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100058",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100059",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100061",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100062",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100064",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100065",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100066",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100067",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100068",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100069",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100070",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100071",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100072",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100073",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100074",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100075",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100076",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100077",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100078",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100079",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100081",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100082",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr1_507786_00100083",
+      "reason": "eligible",
+      "shape": "kr1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200000",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200002",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200003",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200004",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200005",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200006",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200007",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200008",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200009",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200010",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200011",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200013",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200014",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200015",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200016",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200017",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200018",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200019",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200021",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200022",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200023",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200024",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200025",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200026",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200028",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200029",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200031",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200032",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200033",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200034",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200037",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200038",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200039",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200040",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200041",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200042",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200043",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200046",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200047",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200048",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200049",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200050",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200051",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200053",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200057",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200058",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200059",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200060",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200061",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200062",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200063",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200064",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200067",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200068",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200069",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200070",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200071",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200072",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200077",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kr8_507786_00200078",
+      "reason": "eligible",
+      "shape": "kr8",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300000",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300001",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300002",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300003",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300006",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300007",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300008",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300010",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300011",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300012",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300013",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300014",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300015",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300017",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300018",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300019",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300020",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300021",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300022",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300023",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300024",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300025",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300026",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300027",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300028",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300029",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300030",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300031",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300032",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300033",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300034",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300035",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300036",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300037",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300038",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300041",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300042",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300043",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300044",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300045",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300046",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300047",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300049",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300050",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300051",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300053",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300055",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300059",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300060",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300062",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300063",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300064",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300066",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300069",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300071",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300073",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": false,
+      "parse_ok": false,
+      "program_id": "kc1_507786_00300075",
+      "reason": "parse",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300076",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300077",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc1_507786_00300078",
+      "reason": "eligible",
+      "shape": "kc1",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400001",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400002",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400003",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400004",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400005",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400006",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400008",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400009",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400011",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400012",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400013",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400014",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400015",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400019",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400021",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400024",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400026",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400027",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400028",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400030",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400032",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400033",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400034",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400035",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400036",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400037",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400038",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400039",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400040",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400041",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400042",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400043",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400044",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400045",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400048",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400049",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400050",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400051",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400053",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400054",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400056",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400057",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400058",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400059",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400060",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400061",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400063",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400064",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400065",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400067",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400068",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400069",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400070",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400071",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400072",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400073",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400074",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400075",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400076",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    },
+    {
+      "eligible": true,
+      "parse_ok": true,
+      "program_id": "kc5_507786_00400077",
+      "reason": "eligible",
+      "shape": "kc5",
+      "solved": true
+    }
+  ],
+  "summary": {
+    "by_shape": {
+      "kc1": {
+        "eligible": 59,
+        "n": 60,
+        "solve_rate": 0.9833
+      },
+      "kc5": {
+        "eligible": 60,
+        "n": 60,
+        "solve_rate": 1.0
+      },
+      "kr1": {
+        "eligible": 70,
+        "n": 70,
+        "solve_rate": 1.0
+      },
+      "kr8": {
+        "eligible": 60,
+        "n": 60,
+        "solve_rate": 1.0
+      }
+    },
+    "failure_taxonomy": {
+      "parse": 1
+    },
+    "n_programs": 250,
+    "new_generations": 250,
+    "parse_rate": 0.996,
+    "solve_rate": 0.996
+  }
+}

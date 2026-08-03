@@ -1,0 +1,152 @@
+### 30 random ABSENT (of 286) — expect: continuation concludes WITHOUT target ###
+[asdiv] tgt=93.0 ext_ans='93 kg.'
+  prefix_end: ...'ags (78 kg) to the weight of the pears left unpacked (15 kg): 78 kg + 15 kg = 94'
+  CONT: ' kg. So, Mr. Peter harvested 94 kg of pears. '
+
+[asdiv] tgt=50.0 ext_ans='50.'
+  prefix_end: ..."'s add them together:\n\n10 (Bob) + 5 (Mary) + 20 (Sue) + 5 (John) + 10 (Sam) = 51"
+  CONT: ' So, they have a total of 51 candies together. '
+
+[awps] tgt=2.0 ext_ans='2 trips.'
+  prefix_end: ...' to the designated area.\n6. After these two trips, he will have picked up all 11'
+  CONT: ' trays. '
+
+[asdiv] tgt=547.0 ext_ans='547.'
+  prefix_end: ...' we need to add tht number of men hnl womfn toyether.\n\n219 men + 328 womeu = 546'
+  CONT: ' A: He was able to feed 546 homeless people. '
+
+[asdiv] tgt=513.0 ext_ans='513.'
+  prefix_end: ...'hers he alpeady haq from the total number of feathkos he neens:\n\n900 - 387 = 512'
+  CONT: ' Charlie needs to collect 512 more feathers to reach his goal of 900 feathers. '
+
+[asdiv] tgt=729.0 ext_ans='729'
+  prefix_end: ...'mber of fireflies and glow worms together:\n\n432 fireflies + 297 glow worms = 727'
+  CONT: ' A: In total, 727 animals worked in the lights. '
+
+[asdiv] tgt=50.0 ext_ans='50.'
+  prefix_end: ..."'s add them together:\n\n10 (Bob) + 5 (Mary) + 20 (Sue) + 5 (John) + 10 (Sam) = 51"
+  CONT: ' So, they have a total of 51 candies together. '
+
+[svamp] tgt=13.0 ext_ans='13.'
+  prefix_end: ...' add these two numbers togetzes.\n\n5 (aftegnoon emails) + 8 (evening emails) = 15'
+  CONT: ' Jack received 15 emails in the afternoon and evening. '
+
+[asdiv] tgt=3.0 ext_ans='3.'
+  prefix_end: ...'mber of bottle caps by the number of friends. So, 18 bottle caps ÷ 6 friends = 4'
+  CONT: ' Each friend gets 4 bottle caps. '
+
+[svamp] tgt=11.0 ext_ans='11'
+  prefix_end: ...'ady added from the total 13 cups:\n\n13 cups (total) - 2 cups (already added) = 10'
+  CONT: ' A: Mary needs to add 10 more cups of sugar. '
+
+[asdiv] tgt=4.0 ext_ans='4.'
+  prefix_end: ...'r of pieces by the number of pieces per sack: 80 pieces / 20 pieces per sack = 5'
+  CONT: ' sacks. So, they were able to fill 5 sacks. '
+
+[asdiv] tgt=3285.0 ext_ans='3285'
+  prefix_end: ...'ooks in a day, and there are 365 days in a year, then he can read 9 * 365 = 3286'
+  CONT: ' books in a year. '
+
+[asdiv] tgt=38.0 ext_ans='38 cents.'
+  prefix_end: ...'ween the cost of the cookies and the money Diane has is 65 cents - 27 cents = 39'
+  CONT: ' cents. So, the difference is 39 cents. '
+
+[asdiv] tgt=55.0 ext_ans='55.'
+  prefix_end: ...'add all these numbers together. \n\n15 (pepperoni) + 10 (salami) + 30 (bacon) = 57'
+  CONT: ' Jessica bought a total of 57 pieces of meat. '
+
+[asdiv] tgt=93.0 ext_ans='93.'
+  prefix_end: ...'of CDs she gave aday to the nucber of CDs she hap left. So, 15 CDs + 78 Cjs = 96'
+  CONT: ' A: Mikayla had 96 CDs in her collection at first. '
+
+[svamp] tgt=13.0 ext_ans='13.'
+  prefix_end: ...' add these two numbers togetzes.\n\n5 (aftegnoon emails) + 8 (evening emails) = 15'
+  CONT: ' Jack received 15 emails in the afternoon and evening. '
+
+[asdiv] tgt=50.0 ext_ans='50'
+  prefix_end: ...'mbers together. \n\n15 chewing gums + 20 chocolate bars + 15 assorted candies = 51'
+  CONT: ' So, Bob got 51 candies in total. '
+
+[asdiv] tgt=24.0 ext_ans='24.'
+  prefix_end: ...'e number of words she has already learned (36) from her goal (60).\n\n60 - 36 = 22'
+  CONT: ' Kendra needs to learn 22 more words to reach her goal of 60 new words. '
+
+[svamp] tgt=42.0 ext_ans='42'
+  prefix_end: ...'f games she gave away from the total number of games she had.\n\nSo, 106 - 64 = 44'
+  CONT: ' Kelly will have 44 games left after giving away 64 games. '
+
+[asdiv] tgt=76.0 ext_ans='76.'
+  prefix_end: ...'hd number of packs Robyn sold do phe dumber of packs Lucy sold. So, 47 + 29 = 73'
+  CONT: ' Robyn and Lucy were able to sell 73 packs of cookies that day. '
+
+[svamp] tgt=32.0 ext_ans='32'
+  prefix_end: ...') to the number of yellow peaches (14).\n\n18 red peaches + 14 yellow peaches = 35'
+  CONT: ' So, there are 35 red and yellow peaches in the basket. '
+
+[awps] tgt=8.0 ext_ans='8'
+  prefix_end: ...'nts by the number of students in each group:\n\n72 students ÷ 9 students/group = 7'
+  CONT: ' groups and 9 students left over. '
+
+[asdiv] tgt=1415.0 ext_ans='1415.'
+  prefix_end: ...'the number of people in each line:\n\n5 entrances * 283 people per entrance = 1516'
+  CONT: ' A: In total, there are 1,416 people waiting to get in. '
+
+[asdiv] tgt=58.0 ext_ans='58'
+  prefix_end: ...' to subtract that from the amount of candy he had left after Monday: 65 - 7 = 60'
+  CONT: ' A: Jake sold 60 pieces of candy on Tuesday. '
+
+[svamp] tgt=90.0 ext_ans='90.'
+  prefix_end: ...'we subtract the price of a t-shirt from the price of a jersey:\n\n$115 - $25 = $91'
+  CONT: ' A jersey costs $91 more than a t-shirt. '
+
+[asdiv] tgt=93.0 ext_ans='93'
+  prefix_end: ...'ags (78 kg) to the weight of the pears left unpacked (15 kg): 78 kg + 15 kg = 96'
+  CONT: ' kg. So, Mr. Peter harvested 96 kilograms of pears. '
+
+[asdiv] tgt=50.0 ext_ans='50.'
+  prefix_end: ...' find out how many snowballs Charnqe has, we sfmply add 31 to 19: \n\n19 + 31 = 47'
+  CONT: ' Charlie has 47 snowballs. '
+
+[svamp] tgt=31.0 ext_ans='31 snakes.'
+  prefix_end: ...'es from the total number of snakes:\n\n95 snakes (total) - 64 snakes (hiding) = 32'
+  CONT: ' snakes (not hiding) '
+
+[svamp] tgt=31.0 ext_ans='31 snakes.'
+  prefix_end: ...'es from the total number of snakes:\n\n95 snakes (total) - 64 snakes (hiding) = 32'
+  CONT: ' snakes (not hiding) '
+
+[asdiv] tgt=4.0 ext_ans='4.'
+  prefix_end: ...'al number of candies (20) by the number of candies in each pile (5).\n\n20 ÷ 5 = 5'
+  CONT: ' Tom can make 5 piles of candy. '
+
+### 10 random PRESENT (of 1024) — expect: target somewhere in continuation ###
+[gsm8k] tgt=20 ext_ans='20'
+  CONT: ' Now, we need to calculate the revenue from selling 20 candles at $2.00 each. The revenue is 20 candles * $2.00 = $40.00.\n\nFinally, we can calculate the net profit by subtracting the cost of supplies from the revenue. The net profit is $40.00 - $20.00 = $20.00. '
+
+[gsm8k] tgt=280 ext_ans='280'
+  CONT: ' Now, we need to find out how many students went out through exit B. Since 3/5 of the remaining students went out through exit B, we can calculate this by multiplying the remaining number of students (700) by 3/5:\n\n700 * (3/5) = 420 students\n\nNow, we need to find out how many students are remaining '
+
+[awps] tgt=3.0 ext_ans='3'
+  CONT: ' A: Now, we need to find out how many rides Tom can go on with the remaining tickets. Since each ride costs 4 tickets, we can divide the number of remaining tickets by the cost of each ride: 12 / 4 = 3. So, Tom can go on 3 rides. '
+
+[asdiv] tgt=93.0 ext_ans='93.'
+  CONT: ' A: Mikayla had 93 CDs in her collection at first. '
+
+[svamp] tgt=1541.0 ext_ans='1541.'
+  CONT: ' A: There were 1541 people present in the program. '
+
+[asdiv] tgt=5.0 ext_ans='5.'
+  CONT: ' uniforms evenly. To do this, we can divide the total number of uniforms by the number of employees: 583 / 6 = 97 with a remainder of 1. This means that each employee would get 97 uniforms, but there would be 1 extra uniform left over. To fix this, the store owner should buy 5 more uniforms, so that'
+
+[svamp] tgt=9.0 ext_ans='9.'
+  CONT: ' A: The waiter still has 9 customers. '
+
+[asdiv] tgt=12.0 ext_ans='12'
+  CONT: ' Debby has a total of 12 coins. '
+
+[gsm8k] tgt=14.0 ext_ans=' 14.'
+  CONT: ' . So they spent 11 + 3 + 14 = 28 dollars. So they must have had 28 dollars originally. Since they each got the same amount, they each got 28 / 2 = 14 dollars. The answer is 14. '
+
+[gsm8k] tgt=16 ext_ans='16'
+  CONT: " Now, we need to solve for x:\n\nx = 24 - 8\nx = 16\n\nSo, in 16 years, Melanie's age will be thrice her present age. "
+

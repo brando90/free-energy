@@ -1,0 +1,182 @@
+{
+  "N_target": 200,
+  "tokenizers": [
+    "qwen7b"
+  ],
+  "cells": {
+    "0": {
+      "k": 0,
+      "target": {
+        "L": 20,
+        "ops": 14,
+        "ws_tokens": 106,
+        "nearest_anc_dist": null
+      },
+      "accepted": 200,
+      "starved": false,
+      "attempts": 295,
+      "accept_rate": 0.678,
+      "rejects": {
+        "build": 49,
+        "fam": 32,
+        "program_error": 14
+      },
+      "measured_min_k_set": [
+        0
+      ],
+      "measured_min_k_all_eq_k": true,
+      "ws_tokens_set": [
+        106
+      ],
+      "nearest_anc_dist_set": [
+        6
+      ],
+      "bpe_qwen7b": {
+        "mean": 197.75,
+        "min": 191,
+        "max": 207,
+        "sd": 3.18
+      }
+    },
+    "1": {
+      "k": 1,
+      "target": {
+        "L": 20,
+        "ops": 14,
+        "ws_tokens": 106,
+        "nearest_anc_dist": 4
+      },
+      "accepted": 200,
+      "starved": false,
+      "attempts": 256,
+      "accept_rate": 0.7812,
+      "rejects": {
+        "build": 37,
+        "program_error": 18,
+        "no_axis_c_delta": 1
+      },
+      "measured_min_k_set": [
+        1
+      ],
+      "measured_min_k_all_eq_k": true,
+      "ws_tokens_set": [
+        106
+      ],
+      "nearest_anc_dist_set": [
+        4
+      ],
+      "bpe_qwen7b": {
+        "mean": 199.45,
+        "min": 193,
+        "max": 205,
+        "sd": 2.67
+      }
+    },
+    "2": {
+      "k": 2,
+      "target": {
+        "L": 20,
+        "ops": 14,
+        "ws_tokens": 106,
+        "nearest_anc_dist": 4
+      },
+      "accepted": 200,
+      "starved": false,
+      "attempts": 367,
+      "accept_rate": 0.545,
+      "rejects": {
+        "audit": 112,
+        "build": 37,
+        "program_error": 18
+      },
+      "measured_min_k_set": [
+        2
+      ],
+      "measured_min_k_all_eq_k": true,
+      "ws_tokens_set": [
+        106
+      ],
+      "nearest_anc_dist_set": [
+        4
+      ],
+      "bpe_qwen7b": {
+        "mean": 198.58,
+        "min": 189,
+        "max": 206,
+        "sd": 3.09
+      }
+    },
+    "3": {
+      "k": 3,
+      "target": {
+        "L": 20,
+        "ops": 14,
+        "ws_tokens": 106,
+        "nearest_anc_dist": 4
+      },
+      "accepted": 200,
+      "starved": false,
+      "attempts": 319,
+      "accept_rate": 0.627,
+      "rejects": {
+        "build": 34,
+        "audit": 70,
+        "program_error": 15
+      },
+      "measured_min_k_set": [
+        3
+      ],
+      "measured_min_k_all_eq_k": true,
+      "ws_tokens_set": [
+        106
+      ],
+      "nearest_anc_dist_set": [
+        4
+      ],
+      "bpe_qwen7b": {
+        "mean": 197.95,
+        "min": 192,
+        "max": 204,
+        "sd": 2.75
+      }
+    },
+    "5": {
+      "k": 5,
+      "target": {
+        "L": 20,
+        "ops": 14,
+        "ws_tokens": 106,
+        "nearest_anc_dist": 4
+      },
+      "accepted": 200,
+      "starved": false,
+      "attempts": 274,
+      "accept_rate": 0.7299,
+      "rejects": {
+        "audit": 39,
+        "build": 21,
+        "program_error": 14
+      },
+      "measured_min_k_set": [
+        5
+      ],
+      "measured_min_k_all_eq_k": true,
+      "ws_tokens_set": [
+        106
+      ],
+      "nearest_anc_dist_set": [
+        4
+      ],
+      "bpe_qwen7b": {
+        "mean": 195.68,
+        "min": 191,
+        "max": 200,
+        "sd": 2.28
+      }
+    }
+  },
+  "all_cells_ws_tokens": [
+    106
+  ],
+  "ws_tokens_matched_across_all_cells": true
+}

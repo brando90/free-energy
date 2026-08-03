@@ -1,0 +1,50 @@
+ASDiv_adjusted_position-calc_perturbation-add101_annotated.csv         styles={'sbs': 931} annotated_by_style={'sbs': 931}
+ASDiv_adjusted_position-calc_perturbation-add1_annotated.csv           styles={'sbs': 1152} annotated_by_style={'sbs': 1152}
+ASDiv_adjusted_position-calc_perturbation-random_annotated.csv         styles={'sbs': 1173, 'sbs_recovery': 1173} annotated_by_style={'sbs': 1173, 'sbs_recovery': 875}
+ASDiv_adjusted_position-calc_perturbation-random_letter_perturbation-t styles={'sbs': 1147} annotated_by_style={'sbs': 828}
+ASDiv_adjusted_position-copy_perturbation-add101_annotated.csv         styles={'sbs': 278} annotated_by_style={'sbs': 278}
+ASDiv_adjusted_position-copy_perturbation-add1_annotated.csv           styles={'sbs': 278} annotated_by_style={'sbs': 278}
+ASDiv_adjusted_position-copy_perturbation-random_annotated.csv         styles={'sbs': 572, 'sbs_recovery': 572} annotated_by_style={'sbs': 572, 'sbs_recovery': 278}
+ASDiv_adjusted_position-copy_perturbation-random_letter_perturbation-t styles={'sbs': 546} annotated_by_style={'sbs': 273}
+ASDiv_adjusted_position-propcalc_perturbation-add101_annotated.csv     styles={'sbs': 252} annotated_by_style={'sbs': 252}
+ASDiv_adjusted_position-propcalc_perturbation-add1_annotated.csv       styles={'sbs': 252} annotated_by_style={'sbs': 252}
+ASDiv_adjusted_position-propcalc_perturbation-random_annotated.csv     styles={'sbs': 539, 'sbs_recovery': 539} annotated_by_style={'sbs': 539, 'sbs_recovery': 252}
+ASDiv_adjusted_position-propcalc_perturbation-random_letter_perturbati styles={'sbs': 433} annotated_by_style={'sbs': 207}
+MultiArith_adjusted_position-calc_perturbation-add101_annotated.csv    styles={'sbs': 1176} annotated_by_style={'sbs': 1176}
+MultiArith_adjusted_position-calc_perturbation-add1_annotated.csv      styles={'sbs': 1176} annotated_by_style={'sbs': 1176}
+MultiArith_adjusted_position-calc_perturbation-random_annotated.csv    styles={'sbs': 1177, 'sbs_recovery': 1177} annotated_by_style={'sbs': 1177, 'sbs_recovery': 881}
+MultiArith_adjusted_position-calc_perturbation-random_letter_perturbat styles={'sbs': 1156} annotated_by_style={'sbs': 837}
+MultiArith_adjusted_position-copy_perturbation-add101_annotated.csv    styles={'sbs': 295} annotated_by_style={'sbs': 295}
+MultiArith_adjusted_position-copy_perturbation-add1_annotated.csv      styles={'sbs': 295} annotated_by_style={'sbs': 295}
+MultiArith_adjusted_position-copy_perturbation-random_annotated.csv    styles={'sbs': 591, 'sbs_recovery': 591} annotated_by_style={'sbs': 591, 'sbs_recovery': 295}
+MultiArith_adjusted_position-copy_perturbation-random_letter_perturbat styles={'sbs': 576} annotated_by_style={'sbs': 297}
+MultiArith_adjusted_position-propcalc_perturbation-add101_annotated.cs styles={'sbs': 295} annotated_by_style={'sbs': 295}
+MultiArith_adjusted_position-propcalc_perturbation-add1_annotated.csv  styles={'sbs': 295} annotated_by_style={'sbs': 295}
+MultiArith_adjusted_position-propcalc_perturbation-random_annotated.cs styles={'sbs': 583, 'sbs_recovery': 583} annotated_by_style={'sbs': 583, 'sbs_recovery': 295}
+MultiArith_adjusted_position-propcalc_perturbation-random_letter_pertu styles={'sbs': 575} annotated_by_style={'sbs': 310}
+test_adjusted_position-calc_perturbation-add101_annotated.csv          styles={'sbs': 925} annotated_by_style={'sbs': 892}
+test_adjusted_position-calc_perturbation-add1_annotated.csv            styles={'sbs': 1192} annotated_by_style={'sbs': 893}
+test_adjusted_position-calc_perturbation-random_annotated.csv          styles={'sbs': 1131, 'sbs_recovery': 1131} annotated_by_style={'sbs': 1128, 'sbs_recovery': 1027}
+test_adjusted_position-calc_perturbation-random_letter_perturbation-ty styles={'sbs': 1923} annotated_by_style={'sbs': 1098}
+test_adjusted_position-copy_perturbation-add101_annotated.csv          styles={'sbs': 295} annotated_by_style={'sbs': 295}
+test_adjusted_position-copy_perturbation-add1_annotated.csv            styles={'sbs': 295} annotated_by_style={'sbs': 295}
+test_adjusted_position-copy_perturbation-random_annotated.csv          styles={'sbs': 595, 'sbs_recovery': 595} annotated_by_style={'sbs': 595, 'sbs_recovery': 295}
+test_adjusted_position-copy_perturbation-random_letter_perturbation-ty styles={'sbs': 860} annotated_by_style={'sbs': 295}
+test_adjusted_position-propcalc_perturbation-add101_annotated.csv      styles={'sbs': 294} annotated_by_style={'sbs': 294}
+test_adjusted_position-propcalc_perturbation-add1_annotated.csv        styles={'sbs': 294} annotated_by_style={'sbs': 294}
+test_adjusted_position-propcalc_perturbation-random_annotated.csv      styles={'sbs': 560, 'sbs_recovery': 560} annotated_by_style={'sbs': 560, 'sbs_recovery': 448}
+test_adjusted_position-propcalc_perturbation-random_letter_perturbatio styles={'sbs': 852} annotated_by_style={'sbs': 266}
+SVAMP_adjusted_position-calc_perturbation-add101_annotated.csv         styles={'sbs': 1053} annotated_by_style={'sbs': 1053}
+SVAMP_adjusted_position-calc_perturbation-add1_annotated.csv           styles={'sbs': 1053} annotated_by_style={'sbs': 1053}
+SVAMP_adjusted_position-calc_perturbation-random_annotated.csv         styles={'sbs': 1161, 'sbs_recovery': 1161} annotated_by_style={'sbs': 1161, 'sbs_recovery': 870}
+SVAMP_adjusted_position-calc_perturbation-random_letter_perturbation-t styles={'sbs': 1500} annotated_by_style={'sbs': 1024}
+SVAMP_adjusted_position-copy_perturbation-add101_annotated.csv         styles={'sbs': 263} annotated_by_style={'sbs': 263}
+SVAMP_adjusted_position-copy_perturbation-add1_annotated.csv           styles={'sbs': 263} annotated_by_style={'sbs': 263}
+SVAMP_adjusted_position-copy_perturbation-random_annotated.csv         styles={'sbs': 563, 'sbs_recovery': 563} annotated_by_style={'sbs': 563, 'sbs_recovery': 263}
+SVAMP_adjusted_position-copy_perturbation-random_letter_perturbation-t styles={'sbs': 526} annotated_by_style={'sbs': 257}
+SVAMP_adjusted_position-propcalc_perturbation-add101_annotated.csv     styles={'sbs': 235} annotated_by_style={'sbs': 235}
+SVAMP_adjusted_position-propcalc_perturbation-add1_annotated.csv       styles={'sbs': 235} annotated_by_style={'sbs': 235}
+SVAMP_adjusted_position-propcalc_perturbation-random_annotated.csv     styles={'sbs': 516, 'sbs_recovery': 516} annotated_by_style={'sbs': 516, 'sbs_recovery': 235}
+SVAMP_adjusted_position-propcalc_perturbation-random_letter_perturbati styles={'sbs': 508} annotated_by_style={'sbs': 235}
+
+GRAND: {'sbs': 32835, 'sbs_recovery': 9161}

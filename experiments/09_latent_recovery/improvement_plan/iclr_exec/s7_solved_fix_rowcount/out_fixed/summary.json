@@ -1,0 +1,346 @@
+{
+  "cohort": {
+    "expa": 2810,
+    "expd": 300,
+    "expe": 386,
+    "legacy": 219
+  },
+  "combined": {
+    "compound_status": {
+      "compound_contains_underivable": 1,
+      "not_compound": 84
+    },
+    "design_usable_toward_target": 30,
+    "echoed_later": 19,
+    "fab_rule_fewshot_leak": 37,
+    "fab_rule_position": {
+      "early": 412,
+      "late": 374,
+      "mid": 391
+    },
+    "fab_rule_reversed_real": 116,
+    "fab_rule_splices_real_vocab": 1046,
+    "fab_rule_true_entailed_implication": 65,
+    "fab_rule_used_downstream": [
+      458,
+      1177
+    ],
+    "fresh_by_source": {
+      "expa": 54,
+      "expd": 101,
+      "expe": 46,
+      "legacy": 35
+    },
+    "fresh_token_in_question": [
+      154,
+      236
+    ],
+    "label": "all auditable sources",
+    "n_failed_rollouts_auditable": 516,
+    "n_fresh_entity_errors": 236,
+    "n_off_entity": 1,
+    "n_rule_fabricated": 1177,
+    "n_unparsed_entity": 85,
+    "official_class": {
+      "derailed": 224,
+      "parroted": 223,
+      "unparsed": 69
+    },
+    "position": {
+      "early": 42,
+      "late": 113,
+      "mid": 81
+    },
+    "refut_dist": {
+      "0": 1,
+      "1": 5,
+      "2": 3,
+      "3": 2,
+      "5": 1,
+      "6-8": 10,
+      "unreachable": 214
+    },
+    "refut_dist_contradicted_only": {
+      "0": 1,
+      "1": 5,
+      "2": 3,
+      "3": 2,
+      "5": 1,
+      "6-8": 10
+    },
+    "rollout_taxonomy": {
+      "format_only_unparsed": 32,
+      "has_fresh_entity_error": 196,
+      "other_error_kinds_only": 266,
+      "truncation_or_derail_no_falsehood": 22
+    },
+    "rollouts_with_error_any_used": [
+      39,
+      196
+    ],
+    "rollouts_with_error_used_or_echoed": [
+      49,
+      196
+    ],
+    "stmt_type": {
+      "attribute_affirmative": 15,
+      "attribute_negated": 12,
+      "category_affirmative": 148,
+      "category_negated": 61
+    },
+    "target_assertion": 2,
+    "truth": {
+      "false_contradicted": 22,
+      "false_cwa_unentailed": 148,
+      "unknown_attr_undecidable": 19,
+      "unknown_negated_cat_open_world": 47
+    },
+    "type_x_truth": {
+      "attribute_affirmative|unknown_attr_undecidable": 15,
+      "attribute_negated|false_contradicted": 8,
+      "attribute_negated|unknown_attr_undecidable": 4,
+      "category_affirmative|false_cwa_unentailed": 148,
+      "category_negated|false_contradicted": 14,
+      "category_negated|unknown_negated_cat_open_world": 47
+    },
+    "used_deriv_given_design_inert": [
+      18,
+      206
+    ],
+    "used_deriv_given_design_usable": [
+      15,
+      30
+    ],
+    "used_downstream_deriv": 33,
+    "used_downstream_joint_only": 6
+  },
+  "control_false_positive": [
+    0,
+    495
+  ],
+  "expd_synthetic": {
+    "compound_status": {
+      "compound_contains_underivable": 1,
+      "not_compound": 52
+    },
+    "design_usable_toward_target": 2,
+    "echoed_later": 8,
+    "fab_rule_fewshot_leak": 0,
+    "fab_rule_position": {
+      "early": 301,
+      "late": 207,
+      "mid": 246
+    },
+    "fab_rule_reversed_real": 72,
+    "fab_rule_splices_real_vocab": 731,
+    "fab_rule_true_entailed_implication": 7,
+    "fab_rule_used_downstream": [
+      346,
+      754
+    ],
+    "fresh_by_source": {
+      "expd": 101
+    },
+    "fresh_token_in_question": [
+      87,
+      101
+    ],
+    "label": "EXPD synthetic in-grammar worlds",
+    "n_failed_rollouts_auditable": 297,
+    "n_fresh_entity_errors": 101,
+    "n_off_entity": 0,
+    "n_rule_fabricated": 754,
+    "n_unparsed_entity": 53,
+    "official_class": {
+      "derailed": 158,
+      "parroted": 100,
+      "unparsed": 39
+    },
+    "position": {
+      "early": 2,
+      "late": 64,
+      "mid": 35
+    },
+    "refut_dist": {
+      "5": 1,
+      "6-8": 10,
+      "unreachable": 90
+    },
+    "refut_dist_contradicted_only": {
+      "5": 1,
+      "6-8": 10
+    },
+    "rollout_taxonomy": {
+      "format_only_unparsed": 11,
+      "has_fresh_entity_error": 89,
+      "other_error_kinds_only": 188,
+      "truncation_or_derail_no_falsehood": 9
+    },
+    "rollouts_with_error_any_used": [
+      15,
+      89
+    ],
+    "rollouts_with_error_used_or_echoed": [
+      19,
+      89
+    ],
+    "stmt_type": {
+      "attribute_affirmative": 12,
+      "attribute_negated": 7,
+      "category_affirmative": 33,
+      "category_negated": 49
+    },
+    "target_assertion": 0,
+    "truth": {
+      "false_contradicted": 11,
+      "false_cwa_unentailed": 33,
+      "unknown_attr_undecidable": 13,
+      "unknown_negated_cat_open_world": 44
+    },
+    "type_x_truth": {
+      "attribute_affirmative|unknown_attr_undecidable": 12,
+      "attribute_negated|false_contradicted": 6,
+      "attribute_negated|unknown_attr_undecidable": 1,
+      "category_affirmative|false_cwa_unentailed": 33,
+      "category_negated|false_contradicted": 5,
+      "category_negated|unknown_negated_cat_open_world": 44
+    },
+    "used_deriv_given_design_inert": [
+      13,
+      99
+    ],
+    "used_deriv_given_design_usable": [
+      0,
+      2
+    ],
+    "used_downstream_deriv": 13,
+    "used_downstream_joint_only": 2
+  },
+  "prontoqa": {
+    "compound_status": {
+      "not_compound": 32
+    },
+    "design_usable_toward_target": 28,
+    "echoed_later": 11,
+    "fab_rule_fewshot_leak": 37,
+    "fab_rule_position": {
+      "early": 111,
+      "late": 167,
+      "mid": 145
+    },
+    "fab_rule_reversed_real": 44,
+    "fab_rule_splices_real_vocab": 315,
+    "fab_rule_true_entailed_implication": 58,
+    "fab_rule_used_downstream": [
+      112,
+      423
+    ],
+    "fresh_by_source": {
+      "expa": 54,
+      "expe": 46,
+      "legacy": 35
+    },
+    "fresh_token_in_question": [
+      67,
+      135
+    ],
+    "label": "PrOntoQA (legacy+EXPA+EXPE), auditable worlds",
+    "n_failed_rollouts_auditable": 219,
+    "n_fresh_entity_errors": 135,
+    "n_off_entity": 1,
+    "n_rule_fabricated": 423,
+    "n_unparsed_entity": 32,
+    "official_class": {
+      "derailed": 66,
+      "parroted": 123,
+      "unparsed": 30
+    },
+    "position": {
+      "early": 40,
+      "late": 49,
+      "mid": 46
+    },
+    "refut_dist": {
+      "0": 1,
+      "1": 5,
+      "2": 3,
+      "3": 2,
+      "unreachable": 124
+    },
+    "refut_dist_contradicted_only": {
+      "0": 1,
+      "1": 5,
+      "2": 3,
+      "3": 2
+    },
+    "rollout_taxonomy": {
+      "format_only_unparsed": 21,
+      "has_fresh_entity_error": 107,
+      "other_error_kinds_only": 78,
+      "truncation_or_derail_no_falsehood": 13
+    },
+    "rollouts_with_error_any_used": [
+      24,
+      107
+    ],
+    "rollouts_with_error_used_or_echoed": [
+      30,
+      107
+    ],
+    "stmt_type": {
+      "attribute_affirmative": 3,
+      "attribute_negated": 5,
+      "category_affirmative": 115,
+      "category_negated": 12
+    },
+    "target_assertion": 2,
+    "truth": {
+      "false_contradicted": 11,
+      "false_cwa_unentailed": 115,
+      "unknown_attr_undecidable": 6,
+      "unknown_negated_cat_open_world": 3
+    },
+    "type_x_truth": {
+      "attribute_affirmative|unknown_attr_undecidable": 3,
+      "attribute_negated|false_contradicted": 2,
+      "attribute_negated|unknown_attr_undecidable": 3,
+      "category_affirmative|false_cwa_unentailed": 115,
+      "category_negated|false_contradicted": 9,
+      "category_negated|unknown_negated_cat_open_world": 3
+    },
+    "used_deriv_given_design_inert": [
+      5,
+      107
+    ],
+    "used_deriv_given_design_usable": [
+      15,
+      28
+    ],
+    "used_downstream_deriv": 20,
+    "used_downstream_joint_only": 4
+  },
+  "revalidates_valid_but_pipeline_failed": [],
+  "segments": {
+    "('expa', False, True)": 2704,
+    "('expa', True, False)": 3,
+    "('expa', True, True)": 103,
+    "('expd', True, False)": 3,
+    "('expd', True, True)": 297,
+    "('expe', True, False)": 318,
+    "('expe', True, True)": 68,
+    "('legacy', True, False)": 171,
+    "('legacy', True, True)": 48
+  },
+  "validator_blind_failed_rollouts": {
+    "by_official_class": {
+      "derailed": 226,
+      "parroted": 989,
+      "unparsed": 1489
+    },
+    "by_source": {
+      "expa": 2704
+    },
+    "n": 2704,
+    "note": "worlds with unparsed premises or unparseable targets (Composed grammar); 'failure' there conflates model error with validator grammar limits"
+  }
+}

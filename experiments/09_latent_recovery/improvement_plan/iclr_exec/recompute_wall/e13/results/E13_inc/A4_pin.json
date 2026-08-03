@@ -1,0 +1,24 @@
+{
+  "R": 3,
+  "arm": "A4",
+  "cells": {
+    "k0_bare": "adjacent_contradiction",
+    "k1_bare": "onehop_kc1",
+    "k5_bare": "deep_kc5"
+  },
+  "created_at": "2026-07-29T09:24:57",
+  "dry": false,
+  "experiment": "E13B_INC",
+  "gold_policy": "golds REGENERATED for arm A4 with the A4 instruction present in the same position (e12_api pinned gold_policy; per-arm gate disclosed)",
+  "instruction_sha16_e12style": "279b6981457d58df",
+  "instruction_sha256_full": "279b6981457d58df75d6ed72b1265b219e8ed32f66ce4281f686162544607449",
+  "instruction_source": "e13_gen.E13B_INC_ARM_A4 (pinned Build 1/2)",
+  "instruction_verbatim": "Before continuing, check this trace for inconsistencies.",
+  "mechanics": "e12_api A1-A3 mechanics byte-identical: instruction prepended to user message (E9 VERIF_INSTR position); prefill unchanged; applied at gold AND continuation",
+  "model": "claude-haiku-4-5",
+  "n_target": 60,
+  "programs_path": "/lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/recompute_wall/e12_fixes/programs.jsonl",
+  "seed": 0,
+  "temp": 0.7,
+  "world_cap": 110
+}

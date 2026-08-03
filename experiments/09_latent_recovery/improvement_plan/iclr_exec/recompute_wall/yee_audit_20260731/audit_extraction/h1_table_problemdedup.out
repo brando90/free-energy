@@ -1,0 +1,19 @@
+ds/pert             n  recov   rate    gengenrate strict strate  xonly xorate
+gsm8k/random      224    176   78.6    170   75.9    154   68.8      6    2.7
+gsm8k/add1        229    181   79.0    180   78.6    163   71.2      1    0.4
+gsm8k/add101      227    222   97.8    220   96.9    202   89.0      2    0.9
+asdiv/random      229    171   74.7    147   64.2    138   60.3     24   10.5
+asdiv/add1        229    173   75.5    138   60.3    131   57.2     35   15.3
+asdiv/add101      229    223   97.4    215   93.9    201   87.8      8    3.5
+awps/random       247    192   77.7    189   76.5    185   74.9      3    1.2
+awps/add1         247    191   77.3    187   75.7    179   72.5      4    1.6
+awps/add101       247    247  100.0    247  100.0    239   96.8      0    0.0
+svamp/random      266    209   78.6    183   68.8    177   66.5     26    9.8
+svamp/add1        280    210   75.0    177   63.2    167   59.6     33   11.8
+svamp/add101      280    264   94.3    261   93.2    257   91.8      3    1.1
+
+pooled random: n=966 published-style 77.4% corrected(gen) 71.3% corrected(strict) 67.7% extraction-only 59 = 7.9% of recoveries
+pooled add1: n=985 published-style 76.6% corrected(gen) 69.2% corrected(strict) 65.0% extraction-only 73 = 9.7% of recoveries
+pooled add101: n=983 published-style 97.3% corrected(gen) 95.9% corrected(strict) 91.5% extraction-only 13 = 1.4% of recoveries
+
+wrote /lfs/skampere2/0/eobbad/scratch/yee_audit/audit_extraction/corrected_rates.csv

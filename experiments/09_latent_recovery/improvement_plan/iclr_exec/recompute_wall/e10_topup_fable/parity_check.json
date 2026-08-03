@@ -1,0 +1,24 @@
+{
+  "checks": [
+    {
+      "bridge_contains_instruction": true,
+      "gold_prefill_no_trailing_ws": true,
+      "program_id": "kr1_507786_00100100",
+      "user_equals_expg_builder": true
+    },
+    {
+      "bridge_contains_instruction": true,
+      "gold_prefill_no_trailing_ws": true,
+      "program_id": "kr1_507786_00100101",
+      "user_equals_expg_builder": true
+    },
+    {
+      "bridge_contains_instruction": true,
+      "gold_prefill_no_trailing_ws": true,
+      "program_id": "kr1_507786_00100102",
+      "user_equals_expg_builder": true
+    }
+  ],
+  "note": "prefill user turn byte-identical to tf.make_user_message (== regime2 batch1 protocol); bridge = instruction/exemplars/program with prefix in the user turn. All scored by classify_run on continuation numbers.",
+  "pass": true
+}

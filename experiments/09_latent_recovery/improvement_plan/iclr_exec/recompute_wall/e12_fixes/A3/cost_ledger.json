@@ -1,0 +1,14 @@
+{
+  "hard_budget_usd": 150.0,
+  "models": {
+    "claude-haiku-4-5": {
+      "input_tokens": 1180108,
+      "output_tokens": 235736,
+      "requests": 1050
+    }
+  },
+  "total_usd": 2.3588,
+  "usd_by_model": {
+    "claude-haiku-4-5": 2.3588
+  }
+}

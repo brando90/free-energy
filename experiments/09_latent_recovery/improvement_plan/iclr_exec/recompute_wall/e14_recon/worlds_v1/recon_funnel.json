@@ -1,0 +1,84 @@
+{
+  "abs_delta_distribution": {
+    "recon_bare_pm1": {
+      "1": 240
+    },
+    "recon_bare_pm10_20": {
+      "10": 129,
+      "20": 111
+    },
+    "recon_full_pm1": {
+      "1": 240
+    },
+    "recon_full_pm10_20": {
+      "10": 129,
+      "20": 111
+    }
+  },
+  "accepted": 240,
+  "anchor_byte_identical_worlds": 240,
+  "attempts": 302,
+  "base_seed": 900911,
+  "example": {
+    "bodies": {
+      "depth_k1_bare": "h = n + g; h = 119",
+      "depth_k1_full": "h = n + g = 73 + 36; h = 119",
+      "depth_k1_partial": "h = n + g = ... + 36; h = 119",
+      "recon_bare_pm1": "h = n + g; h = 110",
+      "recon_bare_pm10_20": "h = n + g; h = 119",
+      "recon_full_pm1": "h = n + g = 73 + 36; h = 110",
+      "recon_full_pm10_20": "h = n + g = 73 + 36; h = 119"
+    },
+    "operands": [
+      73,
+      36
+    ],
+    "program_id": "k1_43d06a_00900911",
+    "site_true_value": 109
+  },
+  "last_seed_tried": 901212,
+  "n_requested": 240,
+  "per_cell_worlds": {
+    "recon_bare_pm1": 240,
+    "recon_bare_pm10_20": 240,
+    "recon_full_pm1": 240,
+    "recon_full_pm10_20": 240
+  },
+  "rejects": {
+    "build:build": 38,
+    "build:program_error": 22,
+    "pm1_starved": 2
+  },
+  "signed_delta_distribution": {
+    "recon_bare_pm1": {
+      "-1": 119,
+      "1": 121
+    },
+    "recon_bare_pm10_20": {
+      "-20": 58,
+      "-10": 69,
+      "10": 60,
+      "20": 53
+    },
+    "recon_full_pm1": {
+      "-1": 119,
+      "1": 121
+    },
+    "recon_full_pm10_20": {
+      "-20": 58,
+      "-10": 69,
+      "10": 60,
+      "20": 53
+    }
+  },
+  "stage_counts": {
+    "built": 242,
+    "postaudit_ok": 240,
+    "postcheck_ok": 240,
+    "preaudit_ok": 242,
+    "recon_attached": 240
+  },
+  "starved": false,
+  "vtrue_max": 190,
+  "vtrue_min": 28
+}

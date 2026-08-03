@@ -1,0 +1,69 @@
+WROTE /lfs/skampere2/0/eobbad/scratch/yee_audit/stimuli/stimulus_audit_joined.csv joined 3307/3393 annotated(Correct? set) 3304
+
+================ RECOVERY (Correct?=True) BY STRATA ================
+
+### copy: annotated n=1132; published-denominator (Error Type=copying) n=1111
+  recovery, all annotated: 1104/1132=97.5% | published-denominator: 1083/1111=97.5%
+    gsm8k  all 281/295=95.3%  pubdenom 265/279=95.0%
+    asdiv  all 271/278=97.5%  pubdenom 267/274=97.4%
+    awps   all 293/295=99.3%  pubdenom 293/295=99.3%
+    svamp  all 259/264=98.1%  pubdenom 258/263=98.1%
+  by loadbearing (pubdenom): changed:206/210=98.1%  not_analyzable:440/457=96.3%  unchanged:437/444=98.4%
+  by collision_any (pubdenom): False:1003/1029=97.5%  True:80/82=97.6%
+  by pert_eq_target (pubdenom): False:1065/1092=97.5%  True:18/19=94.7%
+  by orig_eq_target (pubdenom): False:899/927=97.0%  True:184/184=100.0%
+  by ends_inside_annot (pubdenom): False:968/995=97.3%  True:115/116=99.1%
+  by site_zone (pubdenom): after_last_eq:109/110=99.1%  eq_operand:221/225=98.2%  eq_rhs:3/3=100.0%  no_verified_eqs:397/411=96.6%  prose_mid:353/362=97.5%
+  annotator Error Type dist (all annotated): {'copying': 1111, 'other': 12, 'calculation': 9}
+
+### calc: annotated n=1123; published-denominator (Error Type=calculation) n=967
+  recovery, all annotated: 898/1123=80.0% | published-denominator: 753/967=77.9%
+    gsm8k  all 204/255=80.0%  pubdenom 176/224=78.6%
+    asdiv  all 224/283=79.2%  pubdenom 172/229=75.1%
+    awps   all 235/295=79.7%  pubdenom 192/247=77.7%
+    svamp  all 235/290=81.0%  pubdenom 213/267=79.8%
+  by loadbearing (pubdenom): changed:403/533=75.6%  not_analyzable:339/422=80.3%  unchanged:11/12=91.7%
+  by collision_any (pubdenom): False:712/924=77.1%  True:41/43=95.3%
+  by pert_eq_target (pubdenom): False:753/967=77.9%
+  by orig_eq_target (pubdenom): False:266/362=73.5%  True:487/605=80.5%
+  by ends_inside_annot (pubdenom): False:493/646=76.3%  True:260/321=81.0%
+  by site_zone (pubdenom): after_last_eq:14/17=82.4%  eq_operand:3/3=100.0%  eq_rhs:402/529=76.0%  no_verified_eqs:314/389=80.7%  prose_mid:20/29=69.0%
+  annotator Error Type dist (all annotated): {'calculation': 967, 'copying': 68, 'commonsense': 11, 'other': 77}
+
+### propcalc: annotated n=1049; published-denominator (Error Type=calculation) n=976
+  recovery, all annotated: 446/1049=42.5% | published-denominator: 401/976=41.1%
+    gsm8k  all 76/266=28.6%   pubdenom 64/242=26.4%
+    asdiv  all 141/252=56.0%  pubdenom 108/203=53.2%
+    awps   all 96/295=32.5%   pubdenom 96/295=32.5%
+    svamp  all 133/236=56.4%  pubdenom 133/236=56.4%
+  by loadbearing (pubdenom): changed:189/583=32.4%  not_analyzable:211/388=54.4%  unchanged:1/5=20.0%
+  by collision_any (pubdenom): False:369/917=40.2%  True:32/59=54.2%
+  by pert_eq_target (pubdenom): False:400/969=41.3%  True:1/7=14.3%
+  by orig_eq_target (pubdenom): False:109/424=25.7%  True:292/552=52.9%
+  by ends_inside_annot (pubdenom): False:401/976=41.1%
+  by site_zone (pubdenom): after_last_eq:2/9=22.2%  eq_rhs:186/588=31.6%  no_verified_eqs:203/350=58.0%  prose_mid:10/29=34.5%
+  annotator Error Type dist (all annotated): {'calculation': 976, 'other': 58, 'commonsense': 8, 'copying': 7}
+
+================ THE 36 AWPS/CALC CODE-INCONSISTENT ITEMS ================
+Error Type dist: {'copying': 34, 'calculation': 2}
+Correct? dist: {'True': 36}
+in published calc denominator: n=2 recovery 2/2=100.0%
+Recovery Behavior: {'directly redoes calculation': 29, 'complete hallucination': 7}
+
+================ ANNOTATION-TRUNCATION ARTIFACT (prefix ends inside <<..>>) ================
+  gsm8k/copy: 28/300=9.3%
+  asdiv/copy: 15/295=5.1%
+  awps/copy: 57/295=19.3%
+  svamp/copy: 18/295=6.1%
+  gsm8k/calc: 67/258=26.0%
+  asdiv/calc: 39/283=13.8%
+  awps/calc: 208/295=70.5%
+  svamp/calc: 59/290=20.3%
+  gsm8k/propcalc: 4/271=1.5%
+  asdiv/propcalc: 5/257=1.9%
+
+================ ERROR TYPE vs MY MECHANICAL SITE CLASS ================
+calc pubdenom n=967: question-digit-leak n=1 (recovery 1/1=100.0%), word-leak n=4 (recovery 4/4=100.0%)
+propcalc pubdenom n=976: question-digit-leak n=0 (recovery 0/0), word-leak n=7 (recovery 4/7=57.1%)
+copy pubdenom first-occ=question: recovery 695/714=97.3%
+copy pubdenom first-occ=cot: recovery 388/397=97.7%

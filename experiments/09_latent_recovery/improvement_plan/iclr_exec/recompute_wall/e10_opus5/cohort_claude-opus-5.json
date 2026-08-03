@@ -1,0 +1,945 @@
+{
+  "per_program": [
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100000",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100002",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100003",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100004",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100007",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100008",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100009",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100011",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100012",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100013",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100014",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100016",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100017",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100018",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100019",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100020",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100022",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100023",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100024",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100025",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100026",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100027",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100028",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100029",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100030",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100032",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100033",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100034",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100035",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100036",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100037",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100038",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100039",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100040",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100041",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100042",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100043",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100045",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100046",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100048",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100049",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100050",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100052",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100053",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100054",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100055",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100056",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100058",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100059",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100061",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100062",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100064",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100065",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100066",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100067",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100068",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100069",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100070",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100071",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100072",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100073",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100074",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100075",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100076",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100077",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100078",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100079",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100081",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100082",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kr1_507786_00100083",
+      "reason": "gold_missing_or_failed",
+      "shape": "kr1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300000",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300001",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300002",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300003",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300006",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300007",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300008",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300010",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300011",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300012",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300013",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300014",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300015",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300017",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300018",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300019",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300020",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300021",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300022",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300023",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300024",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300025",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300026",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300027",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300028",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300029",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300030",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300031",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300032",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300033",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300034",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300035",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300036",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300037",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300038",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300041",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300042",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300043",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300044",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300045",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300046",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300047",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300049",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300050",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300051",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300053",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300055",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300059",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300060",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300062",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300063",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300064",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300066",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300069",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300071",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300073",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300075",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300076",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300077",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    },
+    {
+      "eligible": false,
+      "program_id": "kc1_507786_00300078",
+      "reason": "gold_missing_or_failed",
+      "shape": "kc1",
+      "solved": false
+    }
+  ],
+  "summary": {
+    "by_shape": {
+      "kc1": {
+        "eligible": 0,
+        "n": 60,
+        "solve_rate": 0.0
+      },
+      "kc5": {
+        "eligible": 0,
+        "n": 0,
+        "solve_rate": null
+      },
+      "kr1": {
+        "eligible": 0,
+        "n": 70,
+        "solve_rate": 0.0
+      },
+      "kr8": {
+        "eligible": 0,
+        "n": 0,
+        "solve_rate": null
+      }
+    },
+    "failure_taxonomy": {
+      "gold_missing_or_failed": 130
+    },
+    "n_programs": 130,
+    "new_generations": 130,
+    "parse_rate": 0.0,
+    "solve_rate": 0.0
+  }
+}

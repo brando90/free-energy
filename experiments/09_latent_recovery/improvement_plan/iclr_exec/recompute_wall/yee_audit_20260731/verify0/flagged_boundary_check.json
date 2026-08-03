@@ -1,0 +1,1452 @@
+[
+ {
+  "ds": "gsm8k",
+  "pert": "random",
+  "target": "32",
+  "extracted": "27. Now, we need to find Trent's age. Since Trent is 5 years",
+  "cat": "clean",
+  "prefix_tail": " 3 years younger than Quinn, and Quinn is 30, then Jane is 30 - 3 = 24",
+  "cont_head": " 27 years old. ",
+  "cont_tail": " 27 years old. "
+ },
+ {
+  "ds": "gsm8k",
+  "pert": "random",
+  "target": "120000",
+  "extracted": "120,000.00",
+  "cat": "clean",
+  "prefix_tail": "t is now six years ago, the current population is 60,000 * 2 = 120,001",
+  "cont_head": " ,000. ",
+  "cont_tail": " ,000. "
+ },
+ {
+  "ds": "gsm8k",
+  "pert": "random",
+  "target": "18",
+  "extracted": "18 feet long.",
+  "cat": "clean",
+  "prefix_tail": " feet longer than twice the width of the rug, the couch is 16 + 2 = 17",
+  "cont_head": " feet long. ",
+  "cont_tail": " feet long. "
+ },
+ {
+  "ds": "gsm8k",
+  "pert": "random",
+  "target": "14",
+  "extracted": "14",
+  "cat": "clean",
+  "prefix_tail": "hat Tommy caught 3 more fish than Darren. So, Tommy caught 11 + 3 = 13",
+  "cont_head": " fish. ",
+  "cont_tail": " fish. "
+ },
+ {
+  "ds": "gsm8k",
+  "pert": "random",
+  "target": "27",
+  "extracted": "27",
+  "cat": "clean",
+  "prefix_tail": "these 9 grandchildren has 3 babies of their own, so she has 9 * 3 = 25",
+  "cont_head": " 7 great grand-babies to kiss at the family reunion. ",
+  "cont_tail": " 7 great grand-babies to kiss at the family reunion. "
+ },
+ {
+  "ds": "gsm8k",
+  "pert": "random",
+  "target": "16",
+  "extracted": "16",
+  "cat": "clean",
+  "prefix_tail": "car.\n\nForce = 1% of total weight\nForce = 0.01 * 1600 pounds\nForce = 14",
+  "cont_head": " pounds\n\nSo, John needs to apply a force of 14 pounds to push the car. ",
+  "cont_tail": " pounds\n\nSo, John needs to apply a force of 14 pounds to push the car. "
+ },
+ {
+  "ds": "gsm8k",
+  "pert": "add1",
+  "target": "13.0",
+  "extracted": "13",
+  "cat": "clean",
+  "prefix_tail": ", we can find Jerry's age in 3 years:\n\n2x + 3 = 2(5) + 3 = 10 + 3 = 14",
+  "cont_head": " Jerry will be 14 years old in 3 years. ",
+  "cont_tail": " Jerry will be 14 years old in 3 years. "
+ },
+ {
+  "ds": "gsm8k",
+  "pert": "add101",
+  "target": "42.0",
+  "extracted": "7/20 * 120 = 42 teaspoons of sugar.",
+  "cat": "clean",
+  "prefix_tail": " that the total ratio representing the sugar and water is 7 + 13 = 121",
+  "cont_head": " A: Let's think step by step. First, we know that the total ratio representing the sugar and water is 7 + 13 = 20. ",
+  "cont_tail": " A: Let's think step by step. First, we know that the total ratio representing the sugar and water is 7 + 13 = 20. "
+ },
+ {
+  "ds": "gsm8k",
+  "pert": "add101",
+  "target": "1.0",
+  "extracted": "1",
+  "cat": "clean",
+  "prefix_tail": "which is equivalent to two child bowls each. So, they will consume 103",
+  "cont_head": " A: Let's think step by step. First, we need to determine how much soup will be left after dinner. Calvin and his wife will each have one adult bowl, ",
+  "cont_tail": "s. After dinner, there are 8 - 6 = 2 child bowls of soup left.\n\nEach child will be able to have a bowl of soup for lunch from the leftover soup once. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "700.0",
+  "extracted": "700",
+  "cat": "clean",
+  "prefix_tail": "gazines and newspapers she sold:\n\n425 magazines + 275 newspapers = 701",
+  "cont_head": " So, Marie sold a total of 701 reading materials last Saturday. ",
+  "cont_tail": " So, Marie sold a total of 701 reading materials last Saturday. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "55.0",
+  "extracted": "55",
+  "cat": "clean",
+  "prefix_tail": "hese numbers together.\n\n15 (pepperoni) + 10 (salami) + 30 (bacon) = 57",
+  "cont_head": " Jessica bought a total of 57 pieces of meat. ",
+  "cont_tail": " Jessica bought a total of 57 pieces of meat. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "50.0",
+  "extracted": "50",
+  "cat": "clean",
+  "prefix_tail": "ether.\n\n15 chewing gums + 20 chocolate bars + 15 assorted candies = 47",
+  "cont_head": " A: Bob got a total of 47 candies. ",
+  "cont_tail": " A: Bob got a total of 47 candies. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "547.0",
+  "extracted": "547",
+  "cat": "clean",
+  "prefix_tail": "o add the number of men and women together.\n\n219 men + 328 women = 546",
+  "cont_head": " So, he was able to feed 546 homeless people. ",
+  "cont_tail": " So, he was able to feed 546 homeless people. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "729.0",
+  "extracted": "729",
+  "cat": "clean",
+  "prefix_tail": "reflies and glow worms together:\n\n432 fireflies + 297 glow worms = 727",
+  "cont_head": " A: In total, 727 animals worked in the lights. ",
+  "cont_tail": " A: In total, 727 animals worked in the lights. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "18.0",
+  "extracted": "18",
+  "cat": "clean",
+  "prefix_tail": " price: $35.00\nDiscount: $17.00\n\nActual price: $35.00 - $17.00 = $15.0",
+  "cont_head": " 0\n\nJasmine actually spent $15.00 on chips. ",
+  "cont_tail": " 0\n\nJasmine actually spent $15.00 on chips. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "184.0",
+  "extracted": "184 m.",
+  "cat": "clean",
+  "prefix_tail": "r's height.\n\nSo, the height of the Space Needle is 553 m - 369 m = 185",
+  "cont_head": " 4 m. ",
+  "cont_tail": " 4 m. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "738.0",
+  "extracted": "738",
+  "cat": "clean",
+  "prefix_tail": "fication:\n\n246 (igneous) + 246 (metamorphic) + 246 (sedimentary) = 735",
+  "cont_head": " A: He has 735 rocks in all. ",
+  "cont_tail": " A: He has 735 rocks in all. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "17.0",
+  "extracted": "17",
+  "cat": "clean",
+  "prefix_tail": " of cupcakes in each box:\n\n51 lemon cupcakes / 3 cupcakes per box = 14",
+  "cont_head": " boxes with 3 lemon cupcakes each were given away. ",
+  "cont_tail": " boxes with 3 lemon cupcakes each were given away. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "629.0",
+  "extracted": "629",
+  "cat": "clean",
+  "prefix_tail": " number of apples in each basket.\n\n37 baskets * 17 apples/basket = 630",
+  "cont_head": " apples in all. ",
+  "cont_tail": " apples in all. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "220.0",
+  "extracted": "220 stickers.",
+  "cat": "clean",
+  "prefix_tail": "e (10) by the number of pages (22).\n\n10 stickers/page * 22 pages = 222",
+  "cont_head": " 0 stickers. ",
+  "cont_tail": " 0 stickers. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "39.0",
+  "extracted": "39",
+  "cat": "clean",
+  "prefix_tail": "es he gave away from the total number of apples he had.\n\n127 - 88 = 37",
+  "cont_head": " The farmer has 37 apples now. ",
+  "cont_tail": " The farmer has 37 apples now. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "296.0",
+  "extracted": "296",
+  "cat": "clean",
+  "prefix_tail": "mber of pieces each person ate (8).\n\n37 people * 8 pieces/person = 298",
+  "cont_head": " So, they ate 298 pieces of pizza in total. ",
+  "cont_tail": " So, they ate 298 pieces of pizza in total. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "76.0",
+  "extracted": "76",
+  "cat": "clean",
+  "prefix_tail": "jar) + 29 coins (in the second jar) + 13 coins (in the third jar) = 77",
+  "cont_head": " Savant saves a total of 77 coins together. ",
+  "cont_tail": " Savant saves a total of 77 coins together. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "93.0",
+  "extracted": "93",
+  "cat": "clean",
+  "prefix_tail": ") to the weight of the pears left unpacked (15 kg): 78 kg + 15 kg = 96",
+  "cont_head": " kg. So, Mr. Peter harvested 96 kilograms of pears. ",
+  "cont_tail": " kg. So, Mr. Peter harvested 96 kilograms of pears. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "19.0",
+  "extracted": "19",
+  "cat": "clean",
+  "prefix_tail": "cards.\n\n50 (final number of cards) - 31 (initial number of cards) = 17",
+  "cont_head": " Andy got 17 baseball cards from his dad. ",
+  "cont_tail": " Andy got 17 baseball cards from his dad. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "58.0",
+  "extracted": "58",
+  "cat": "clean",
+  "prefix_tail": "ct that from the amount of candy he had left after Monday: 65 - 7 = 60",
+  "cont_head": " A: Jake sold 60 pieces of candy on Tuesday. ",
+  "cont_tail": " A: Jake sold 60 pieces of candy on Tuesday. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "519.0",
+  "extracted": "519",
+  "cat": "clean",
+  "prefix_tail": "inal length of the board in centimeters (528 cm):\n\n528 cm - 9 cm = 516",
+  "cont_head": " cm\n\nSo, the board was 516 centimeters long after the carpenter cut it. ",
+  "cont_tail": " cm\n\nSo, the board was 516 centimeters long after the carpenter cut it. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "32.0",
+  "extracted": "32 tables.",
+  "cat": "clean",
+  "prefix_tail": "ble, we need to round up to the nearest whole number. So, they need 30",
+  "cont_head": " 2 tables to seat all 287 people. ",
+  "cont_tail": " 2 tables to seat all 287 people. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "48.0",
+  "extracted": "48",
+  "cat": "clean",
+  "prefix_tail": "students are in each grade. So, we have:\n\n336 students \u00f7 7 grades = 47",
+  "cont_head": " A: There are 47 students in each grade. ",
+  "cont_tail": " A: There are 47 students in each grade. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "56.0",
+  "extracted": "56 square miles.",
+  "cat": "clean",
+  "prefix_tail": ", to find the area, we simply multiply 7 by 8.\n\n7 miles * 8 miles = 57",
+  "cont_head": " 6 square miles. ",
+  "cont_tail": " 6 square miles. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "15.0",
+  "extracted": "15",
+  "cat": "clean",
+  "prefix_tail": "al number of seeds, we can add these numbers together: 2 + 10 + 3 = 13",
+  "cont_head": " The farmer planted 13 seeds all together. ",
+  "cont_tail": " The farmer planted 13 seeds all together. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "19.0",
+  "extracted": "19",
+  "cat": "clean",
+  "prefix_tail": " numbers together:\n\n2 (flashlights) + 15 (toys) + 2 (controllers) = 18",
+  "cont_head": " Tom used 18 batteries in total. ",
+  "cont_tail": " Tom used 18 batteries in total. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "18.0",
+  "extracted": "18",
+  "cat": "clean",
+  "prefix_tail": "ad, we can add the number of books he read each month: 2 + 6 + 10 = 17",
+  "cont_head": " Tom read 17 books in total. ",
+  "cont_tail": " Tom read 17 books in total. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "11.0",
+  "extracted": "11.",
+  "cat": "clean",
+  "prefix_tail": " can add the four extra plums to the seven plums Paul has: 7 + 4 = 12.",
+  "cont_head": " So, Brian has 12 plums. ",
+  "cont_tail": " So, Brian has 12 plums. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "700.0",
+  "extracted": "700",
+  "cat": "clean",
+  "prefix_tail": "gazines and newspapers she sold:\n\n425 magazines + 275 newspapers = 701",
+  "cont_head": " So, Marie sold a total of 701 reading materials last Saturday. ",
+  "cont_tail": " So, Marie sold a total of 701 reading materials last Saturday. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "50.0",
+  "extracted": "50.",
+  "cat": "clean",
+  "prefix_tail": "tal number of cookies.\n\nSo, 86 (total cookies) - 36 (red cookies) = 51",
+  "cont_head": " Mrs. Snyder made 51 pink cookies. ",
+  "cont_tail": " Mrs. Snyder made 51 pink cookies. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "50.0",
+  "extracted": "50",
+  "cat": "clean",
+  "prefix_tail": "how many snowballs Charlie has, we simply add 31 to 19: \n\n19 + 31 = 51",
+  "cont_head": " Charlie has 51 snowballs. ",
+  "cont_tail": " Charlie has 51 snowballs. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "55.0",
+  "extracted": "55.",
+  "cat": "clean",
+  "prefix_tail": "ese numbers together. \n\n15 (pepperoni) + 10 (salami) + 30 (bacon) = 56",
+  "cont_head": " Jessica bought a total of 56 pieces of meat. ",
+  "cont_tail": " Jessica bought a total of 56 pieces of meat. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "50.0",
+  "extracted": "50.",
+  "cat": "clean",
+  "prefix_tail": "m together:\n\n10 (Bob) + 5 (Mary) + 20 (Sue) + 5 (John) + 10 (Sam) = 51",
+  "cont_head": " So, they have a total of 51 candies together. ",
+  "cont_tail": " So, they have a total of 51 candies together. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "50.0",
+  "extracted": "50",
+  "cat": "clean",
+  "prefix_tail": "ther. \n\n15 chewing gums + 20 chocolate bars + 15 assorted candies = 51",
+  "cont_head": " So, Bob got 51 candies in total. ",
+  "cont_tail": " So, Bob got 51 candies in total. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "738.0",
+  "extracted": "738.",
+  "cat": "clean",
+  "prefix_tail": "fication:\n\n246 (igneous) + 246 (metamorphic) + 246 (sedimentary) = 739",
+  "cont_head": " So, he has 739 rocks in all. ",
+  "cont_tail": " So, he has 739 rocks in all. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "6538.0",
+  "extracted": "6538.",
+  "cat": "clean",
+  "prefix_tail": ") by the number of crowns (934).\n\n7 feathers/crown * 934 crowns = 6539",
+  "cont_head": " 8 feathers. ",
+  "cont_tail": " 8 feathers. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "3285.0",
+  "extracted": "3285",
+  "cat": "clean",
+  "prefix_tail": "day, and there are 365 days in a year, then he can read 9 * 365 = 3286",
+  "cont_head": " books in a year. ",
+  "cont_tail": " books in a year. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "4.0",
+  "extracted": "4.",
+  "cat": "clean",
+  "prefix_tail": "s by the number of pieces per sack: 80 pieces / 20 pieces per sack = 5",
+  "cont_head": " sacks. So, they were able to fill 5 sacks. ",
+  "cont_tail": " sacks. So, they were able to fill 5 sacks. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "11.0",
+  "extracted": "11.",
+  "cat": "clean",
+  "prefix_tail": "elets she wants to make (8).\n\n88 pink flower stones \u00f7 8 bracelets = 12",
+  "cont_head": " So, each bracelet will have 12 pink flower stones. ",
+  "cont_tail": " So, each bracelet will have 12 pink flower stones. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "332.0",
+  "extracted": "332 legs.",
+  "cat": "clean",
+  "prefix_tail": " the number of legs from the elephants and the tigers: 140 + 192 = 333",
+  "cont_head": " 2 legs. ",
+  "cont_tail": " 2 legs. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "629.0",
+  "extracted": "629.",
+  "cat": "clean",
+  "prefix_tail": " number of apples in each basket.\n\n37 baskets * 17 apples/basket = 630",
+  "cont_head": " apples in all. ",
+  "cont_tail": " apples in all. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "220.0",
+  "extracted": "220 stickers.",
+  "cat": "clean",
+  "prefix_tail": "e (10) by the number of pages (22).\n\n10 stickers/page * 22 pages = 221",
+  "cont_head": " 0 stickers. ",
+  "cont_tail": " 0 stickers. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "296.0",
+  "extracted": "296",
+  "cat": "clean",
+  "prefix_tail": "ber of pieces each person ate (8). \n\n37 people * 8 pieces/person = 297",
+  "cont_head": " So, they ate 297 pieces of pizza in total. ",
+  "cont_tail": " So, they ate 297 pieces of pizza in total. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "76.0",
+  "extracted": "76.",
+  "cat": "clean",
+  "prefix_tail": "jar) + 29 coins (in the second jar) + 13 coins (in the third jar) = 77",
+  "cont_head": " Savant saves a total of 77 coins together. ",
+  "cont_tail": " Savant saves a total of 77 coins together. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "93.0",
+  "extracted": "93 kg.",
+  "cat": "clean",
+  "prefix_tail": ") to the weight of the pears left unpacked (15 kg): 78 kg + 15 kg = 94",
+  "cont_head": " kg. So, Mr. Peter harvested 94 kg of pears. ",
+  "cont_tail": " kg. So, Mr. Peter harvested 94 kg of pears. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "8.0",
+  "extracted": "8.",
+  "cat": "clean",
+  "prefix_tail": "ashing machine, we need to round up to the nearest whole number. So, 9",
+  "cont_head": " washing machines are needed to wash 200 pounds of clothes per day. ",
+  "cont_tail": " washing machines are needed to wash 200 pounds of clothes per day. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "19.0",
+  "extracted": "19.",
+  "cat": "clean",
+  "prefix_tail": "cards.\n\n50 (final number of cards) - 31 (initial number of cards) = 20",
+  "cont_head": " Andy got 20 baseball cards from his dad. ",
+  "cont_tail": " Andy got 20 baseball cards from his dad. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "92.0",
+  "extracted": "92",
+  "cat": "clean",
+  "prefix_tail": "les from both days:\n\n37 miles (first day) + 55 miles (second day) = 93",
+  "cont_head": " miles (total)\n\nSo, Erin and Dana rode 93 miles altogether. ",
+  "cont_tail": " miles (total)\n\nSo, Erin and Dana rode 93 miles altogether. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "25.0",
+  "extracted": "25.",
+  "cat": "clean",
+  "prefix_tail": "d be 5 + 1 = 6.\n\nTherefore, the Wholesome Bakery will bake 19 + 6 = 26",
+  "cont_head": " loaves of bread on Monday. ",
+  "cont_tail": " loaves of bread on Monday. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "38.0",
+  "extracted": "38 cents.",
+  "cat": "clean",
+  "prefix_tail": "ost of the cookies and the money Diane has is 65 cents - 27 cents = 39",
+  "cont_head": " cents. So, the difference is 39 cents. ",
+  "cont_tail": " cents. So, the difference is 39 cents. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "32.0",
+  "extracted": "32 tables.",
+  "cat": "clean",
+  "prefix_tail": "ble, we need to round up to the nearest whole number. So, they need 33",
+  "cont_head": " 2 tables to seat all 287 people. ",
+  "cont_tail": " 2 tables to seat all 287 people. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "142.0",
+  "extracted": "142.",
+  "cat": "clean",
+  "prefix_tail": "ate bars in each box:\n\n710 chocolate bars \u00f7 5 chocolate bars/box = 143",
+  "cont_head": " Kaleb needs to sell 143 boxes to get the prize. ",
+  "cont_tail": " Kaleb needs to sell 143 boxes to get the prize. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "48.0",
+  "extracted": "48",
+  "cat": "clean",
+  "prefix_tail": "students are in each grade. So, we have:\n\n336 students \u00f7 7 grades = 49",
+  "cont_head": " students per grade\n\nTherefore, there are 49 students in each grade. ",
+  "cont_tail": " students per grade\n\nTherefore, there are 49 students in each grade. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "140.0",
+  "extracted": "140 dollars per day.",
+  "cat": "clean",
+  "prefix_tail": "made by the number of days they were open.\n\n420 dollars / 3 days = 141",
+  "cont_head": " 40 dollars per day. ",
+  "cont_tail": " 40 dollars per day. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "56.0",
+  "extracted": "56 square miles.",
+  "cat": "clean",
+  "prefix_tail": ", to find the area, we simply multiply 7 by 8.\n\n7 miles * 8 miles = 57",
+  "cont_head": " 6 square miles. ",
+  "cont_tail": " 6 square miles. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "8.0",
+  "extracted": "8.",
+  "cat": "clean",
+  "prefix_tail": "ings by the number of rings per game:\n\n48 rings / 6 rings per game = 9",
+  "cont_head": " Jerry played 9 games. ",
+  "cont_tail": " Jerry played 9 games. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "4.0",
+  "extracted": "4.",
+  "cat": "clean",
+  "prefix_tail": "of candies (20) by the number of candies in each pile (5).\n\n20 \u00f7 5 = 5",
+  "cont_head": " Tom can make 5 piles of candy. ",
+  "cont_tail": " Tom can make 5 piles of candy. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "7.0",
+  "extracted": "7 stops.",
+  "cat": "clean",
+  "prefix_tail": "r of stops, we can add the two amounts together: 3 stops + 4 stops = 8",
+  "cont_head": " stops. So, the delivery driver made a total of 8 stops. ",
+  "cont_tail": " stops. So, the delivery driver made a total of 8 stops. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "18.0",
+  "extracted": "18.",
+  "cat": "clean",
+  "prefix_tail": "ad, we can add the number of books he read each month: 2 + 6 + 10 = 19",
+  "cont_head": " Tom read 19 books in total. ",
+  "cont_tail": " Tom read 19 books in total. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "14.0",
+  "extracted": "14.",
+  "cat": "clean",
+  "prefix_tail": " tickets for each item:\n\n2 (hat) + 10 (stuffed animal) + 2 (yoyo) = 15",
+  "cont_head": " Debby spent a total of 15 tickets. ",
+  "cont_tail": " Debby spent a total of 15 tickets. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "13.0",
+  "extracted": "13.",
+  "cat": "clean",
+  "prefix_tail": " pictures painted in each month: 2 (June) + 2 (July) + 9 (August) = 14",
+  "cont_head": " The artist painted a total of 14 pictures. ",
+  "cont_tail": " The artist painted a total of 14 pictures. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "3.0",
+  "extracted": "3.",
+  "cat": "clean",
+  "prefix_tail": "ttle caps by the number of friends. So, 18 bottle caps \u00f7 6 friends = 4",
+  "cont_head": " Each friend gets 4 bottle caps. ",
+  "cont_tail": " Each friend gets 4 bottle caps. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add101",
+  "target": "547.0",
+  "extracted": "547",
+  "cat": "clean",
+  "prefix_tail": " add the number of men and women together. \n\n219 men + 328 women = 648",
+  "cont_head": " So, he was able to feed 648 homeless people. ",
+  "cont_tail": " So, he was able to feed 648 homeless people. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add101",
+  "target": "184.0",
+  "extracted": "184 m.",
+  "cat": "clean",
+  "prefix_tail": "r's height.\n\nSo, the height of the Space Needle is 553 m - 369 m = 285",
+  "cont_head": " m. ",
+  "cont_tail": " m. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add101",
+  "target": "513.0",
+  "extracted": "513.",
+  "cat": "clean",
+  "prefix_tail": "ready has from the total number of feathers he needs:\n\n900 - 387 = 614",
+  "cont_head": " Charlie needs to collect 614 more feathers. ",
+  "cont_tail": " Charlie needs to collect 614 more feathers. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add101",
+  "target": "1415.0",
+  "extracted": "1415.",
+  "cat": "clean",
+  "prefix_tail": " of people in each line:\n\n5 entrances * 283 people per entrance = 1516",
+  "cont_head": " A: In total, there are 1,416 people waiting to get in. ",
+  "cont_tail": " A: In total, there are 1,416 people waiting to get in. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add101",
+  "target": "3285.0",
+  "extracted": "3285 books in a year.",
+  "cat": "clean",
+  "prefix_tail": "day, and there are 365 days in a year, then he can read 9 * 365 = 3386",
+  "cont_head": " books in a year. ",
+  "cont_tail": " books in a year. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add101",
+  "target": "8.0",
+  "extracted": "8.",
+  "cat": "clean",
+  "prefix_tail": "hing machine, we need to round up to the nearest whole number. So, 109",
+  "cont_head": " washing machines are needed to wash 200 pounds of clothes per day. ",
+  "cont_tail": " washing machines are needed to wash 200 pounds of clothes per day. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add101",
+  "target": "32.0",
+  "extracted": "32 tables.",
+  "cat": "clean",
+  "prefix_tail": "le, we need to round up to the nearest whole number. So, they need 133",
+  "cont_head": " 2 tables to seat all 287 people. ",
+  "cont_tail": " 2 tables to seat all 287 people. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add101",
+  "target": "56.0",
+  "extracted": "56 square miles.",
+  "cat": "clean",
+  "prefix_tail": " to find the area, we simply multiply 7 by 8.\n\n7 miles * 8 miles = 157",
+  "cont_head": " 6 square miles. ",
+  "cont_tail": " 6 square miles. "
+ },
+ {
+  "ds": "awps",
+  "pert": "random",
+  "target": "45.0",
+  "extracted": "45 minutes.",
+  "cat": "clean",
+  "prefix_tail": "ook. So, to cook the remaining 9 potatoes, it will take him 9 * 5 = 44",
+  "cont_head": " 5 minutes. ",
+  "cont_tail": " 5 minutes. "
+ },
+ {
+  "ds": "awps",
+  "pert": "random",
+  "target": "8.0",
+  "extracted": "8",
+  "cat": "clean",
+  "prefix_tail": " number of students in each group:\n\n72 students \u00f7 9 students/group = 7",
+  "cont_head": " groups and 9 students left over. ",
+  "cont_tail": " groups and 9 students left over. "
+ },
+ {
+  "ds": "awps",
+  "pert": "random",
+  "target": "8.0",
+  "extracted": "8 groups.",
+  "cat": "clean",
+  "prefix_tail": "number of students in each group:\n\n56 students \u00f7 7 students/group = 10",
+  "cont_head": " groups ",
+  "cont_tail": " groups "
+ },
+ {
+  "ds": "awps",
+  "pert": "add1",
+  "target": "18.0",
+  "extracted": "18 cats left.",
+  "cat": "clean",
+  "prefix_tail": " cats sold from the total number of cats:\n\n63 cats - 45 cats sold = 19",
+  "cont_head": " cats left ",
+  "cont_tail": " cats left "
+ },
+ {
+  "ds": "awps",
+  "pert": "add1",
+  "target": "10.0",
+  "extracted": "10",
+  "cat": "clean",
+  "prefix_tail": " were left in the bin.\n\nThen, they added 7 new oranges. So, 3 + 7 = 11",
+  "cont_head": " There would be 11 oranges in the bin. ",
+  "cont_tail": " There would be 11 oranges in the bin. "
+ },
+ {
+  "ds": "awps",
+  "pert": "add1",
+  "target": "8.0",
+  "extracted": "8 groups.",
+  "cat": "clean",
+  "prefix_tail": " number of students in each group:\n\n56 students \u00f7 7 students/group = 9",
+  "cont_head": " groups ",
+  "cont_tail": " groups "
+ },
+ {
+  "ds": "awps",
+  "pert": "add1",
+  "target": "2.0",
+  "extracted": "2.",
+  "cat": "clean",
+  "prefix_tail": "e and 7 trays from the second table in one trip. So, Jerry will make 3",
+  "cont_head": " trips in total. ",
+  "cont_tail": " trips in total. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "10.0",
+  "extracted": "10",
+  "cat": "clean",
+  "prefix_tail": " number of bananas in each group:\n\n180 bananas \u00f7 18 bananas/group = 12",
+  "cont_head": " There are 12 groups in Philip's banana collection. ",
+  "cont_tail": " There are 12 groups in Philip's banana collection. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "13.0",
+  "extracted": "13",
+  "cat": "clean",
+  "prefix_tail": " two numbers together.\n\n5 (afternoon emails) + 8 (evening emails) = 15",
+  "cont_head": " Jack received 15 emails in the afternoon and evening. ",
+  "cont_tail": " Jack received 15 emails in the afternoon and evening. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "8.0",
+  "extracted": "8",
+  "cat": "clean",
+  "prefix_tail": "the initial number of marbles he had.\n\nSo, 19 marbles - 11 marbles = 7",
+  "cont_head": " Josh has 7 marbles now. ",
+  "cont_tail": " Josh has 7 marbles now. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "154.0",
+  "extracted": "154 pencils.",
+  "cat": "clean",
+  "prefix_tail": " by the number of pencils in each row.\n\n14 rows * 11 pencils/row = 151",
+  "cont_head": " 54 pencils. ",
+  "cont_tail": " 54 pencils. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "42.0",
+  "extracted": "42",
+  "cat": "clean",
+  "prefix_tail": "e gave away from the total number of games she had.\n\nSo, 106 - 64 = 44",
+  "cont_head": " Kelly will have 44 games left after giving away 64 games. ",
+  "cont_tail": " Kelly will have 44 games left after giving away 64 games. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "217.0",
+  "extracted": "217",
+  "cat": "clean",
+  "prefix_tail": "umber of cakes he still has.\n\n145 cakes (sold) + 72 cakes (left) = 218",
+  "cont_head": " Baker made 218 cakes. ",
+  "cont_tail": " Baker made 218 cakes. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "11.0",
+  "extracted": "11",
+  "cat": "clean",
+  "prefix_tail": "from the total 13 cups:\n\n13 cups (total) - 2 cups (already added) = 10",
+  "cont_head": " A: Mary needs to add 10 more cups of sugar. ",
+  "cont_tail": " A: Mary needs to add 10 more cups of sugar. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "9.0",
+  "extracted": "9 cookies.",
+  "cat": "clean",
+  "prefix_tail": "to find out how many cookies are in each bag.\n\n36 cookies \u00f7 4 bags = 6",
+  "cont_head": " So, each bag has 6 cookies. ",
+  "cont_tail": " So, each bag has 6 cookies. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "455.0",
+  "extracted": "455",
+  "cat": "clean",
+  "prefix_tail": "of cards she has now.\n\n301 cards (given away) + 154 cards (left) = 456",
+  "cont_head": " Nell initially had 456 baseball cards. ",
+  "cont_tail": " Nell initially had 456 baseball cards. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "42.0",
+  "extracted": "42",
+  "cat": "clean",
+  "prefix_tail": "66) from the number of books he had initially (108). So, 108 - 66 = 39",
+  "cont_head": " Paul sold 39 books in the garage sale. ",
+  "cont_tail": " Paul sold 39 books in the garage sale. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "14.0",
+  "extracted": "14",
+  "cat": "clean",
+  "prefix_tail": "number of pieces by the number of pieces in each package: 42 \u00f7 3 = 13.",
+  "cont_head": " Robin has 13 packages of gum. ",
+  "cont_tail": " Robin has 13 packages of gum. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "64.0",
+  "extracted": "64",
+  "cat": "clean",
+  "prefix_tail": "on the bus now, we need to add the two numbers together: 26 + 38 = 67.",
+  "cont_head": " So, there are 67 children on the bus now. ",
+  "cont_tail": " So, there are 67 children on the bus now. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "15.0",
+  "extracted": "15 inches.",
+  "cat": "clean",
+  "prefix_tail": " inches to find out how far the frog jumped: 19 inches - 4 inches = 16",
+  "cont_head": " inches. So, the frog jumped 16 inches. ",
+  "cont_tail": " inches. So, the frog jumped 16 inches. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "3.0",
+  "extracted": "3",
+  "cat": "clean",
+  "prefix_tail": "ceived in the morning:\n\n10 (morning emails) - 7 (afternoon emails) = 1",
+  "cont_head": " 0 (more emails in the morning than in the afternoon). ",
+  "cont_tail": " 0 (more emails in the morning than in the afternoon). "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "15.0",
+  "extracted": "15",
+  "cat": "clean",
+  "prefix_tail": "rd chapter from the number of pages in the second chapter: 18 - 3 = 14",
+  "cont_head": " So, the second chapter has 14 more pages than the third chapter. ",
+  "cont_tail": " So, the second chapter has 14 more pages than the third chapter. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "348.0",
+  "extracted": "348",
+  "cat": "clean",
+  "prefix_tail": "oes:\n\n182 students (mashed potatoes) + 166 students (difference) = 351",
+  "cont_head": " A: 351 students suggested adding bacon to the menu. ",
+  "cont_tail": " A: 351 students suggested adding bacon to the menu. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "574.0",
+  "extracted": "574",
+  "cat": "clean",
+  "prefix_tail": "s chocolate chip cookies) + 484 (today's chocolate chip cookies) = 577",
+  "cont_head": " Helen baked 577 chocolate chip cookies. ",
+  "cont_tail": " Helen baked 577 chocolate chip cookies. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "29.0",
+  "extracted": "29",
+  "cat": "clean",
+  "prefix_tail": "nas by the number of groups. So, we have:\n\n203 bananas \u00f7 7 groups = 32",
+  "cont_head": " A: Each group of bananas has 32 bananas. ",
+  "cont_tail": " A: Each group of bananas has 32 bananas. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "28.0",
+  "extracted": "28",
+  "cat": "clean",
+  "prefix_tail": "by the number of pages he read per day:\n\n392 pages \u00f7 14 pages/day = 25",
+  "cont_head": " A: Frank took 25 days to finish the book. ",
+  "cont_tail": " A: Frank took 25 days to finish the book. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "11.0",
+  "extracted": "11",
+  "cat": "clean",
+  "prefix_tail": "ought:\n\n5 (Allan's balloons) + 6 (the extra balloons Jake brought) = 9",
+  "cont_head": " Jake brought 9 balloons to the park. ",
+  "cont_tail": " Jake brought 9 balloons to the park. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "32.0",
+  "extracted": "32",
+  "cat": "clean",
+  "prefix_tail": "umber of yellow peaches (14).\n\n18 red peaches + 14 yellow peaches = 35",
+  "cont_head": " So, there are 35 red and yellow peaches in the basket. ",
+  "cont_tail": " So, there are 35 red and yellow peaches in the basket. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "7.0",
+  "extracted": "7",
+  "cat": "clean",
+  "prefix_tail": " the total amount he earns by the number of weeks.\n\nSo, $133 \u00f7 19 = $5",
+  "cont_head": " Lewis earns $5 each week. ",
+  "cont_tail": " Lewis earns $5 each week. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "2436.0",
+  "extracted": "2436",
+  "cat": "clean",
+  "prefix_tail": "bookshelves:\n\n84 books and magazines/bookshelf * 29 bookshelves = 2435",
+  "cont_head": " books and magazines in total. ",
+  "cont_tail": " books and magazines in total. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "21.0",
+  "extracted": "21",
+  "cat": "clean",
+  "prefix_tail": "se two numbers together.\n\n13 (books read) + 8 (books yet to read) = 19",
+  "cont_head": " So, there are 19 books in the 'crazy silly school' series. ",
+  "cont_tail": " So, there are 19 books in the 'crazy silly school' series. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "76.0",
+  "extracted": "The harvest lasted for 76 weeks.",
+  "cat": "clean",
+  "prefix_tail": " harvest last?\n\nA: Let's think step by step. The harvest lasted for 77",
+  "cont_head": " weeks. ",
+  "cont_tail": " weeks. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "92.0",
+  "extracted": "92",
+  "cat": "clean",
+  "prefix_tail": "er friends have:\n\n84 (Katie's new games) + 8 (friends' new games) = 89",
+  "cont_head": " Q: How many old games do they have together? ",
+  "cont_tail": " Q: How many old games do they have together? "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "10.0",
+  "extracted": "10",
+  "cat": "clean",
+  "prefix_tail": " number of bananas in each group:\n\n180 bananas \u00f7 18 bananas/group = 11",
+  "cont_head": " There are 11 groups in Philip's banana collection. ",
+  "cont_tail": " There are 11 groups in Philip's banana collection. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "13.0",
+  "extracted": "13.",
+  "cat": "clean",
+  "prefix_tail": " two numbers together.\n\n5 (afternoon emails) + 8 (evening emails) = 14",
+  "cont_head": " Jack received 14 emails in the afternoon and evening. ",
+  "cont_tail": " Jack received 14 emails in the afternoon and evening. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "154.0",
+  "extracted": "154.",
+  "cat": "clean",
+  "prefix_tail": " by the number of pencils in each row.\n\n14 rows * 11 pencils/row = 155",
+  "cont_head": " Faye has 155 pencils. ",
+  "cont_tail": " Faye has 155 pencils. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "72.0",
+  "extracted": "72.",
+  "cat": "clean",
+  "prefix_tail": "number of pages he read per day.\n\nSo, 576 pages \u00f7 8 pages per day = 73",
+  "cont_head": " days. It took Frank 73 days to finish the book. ",
+  "cont_tail": " days. It took Frank 73 days to finish the book. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "58.0",
+  "extracted": "58.",
+  "cat": "clean",
+  "prefix_tail": " soda bottles:\n\n67 (regular soda bottles) - 9 (diet soda bottles) = 59",
+  "cont_head": " So, the grocery store had 59 more bottles of regular soda than diet soda. ",
+  "cont_tail": " So, the grocery store had 59 more bottles of regular soda than diet soda. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "83.0",
+  "extracted": "83.",
+  "cat": "clean",
+  "prefix_tail": "gular soda bottles:\n\n4 (diet soda) + 79 (additional regular soda) = 84",
+  "cont_head": " So, the grocery store had 84 bottles of regular soda. ",
+  "cont_tail": " So, the grocery store had 84 bottles of regular soda. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "183.0",
+  "extracted": "183.",
+  "cat": "clean",
+  "prefix_tail": "om the total number of crayons he had.\n\n253 crayons - 70 crayons = 184",
+  "cont_head": " Paul had 184 crayons left by the end of the school year. ",
+  "cont_tail": " Paul had 184 crayons left by the end of the school year. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "217.0",
+  "extracted": "217",
+  "cat": "clean",
+  "prefix_tail": "mber of cakes he still has. \n\n145 cakes (sold) + 72 cakes (left) = 218",
+  "cont_head": " Baker made 218 cakes in total. ",
+  "cont_tail": " Baker made 218 cakes in total. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "455.0",
+  "extracted": "455",
+  "cat": "clean",
+  "prefix_tail": "f cards she has now. \n\n301 cards (given away) + 154 cards (left) = 456",
+  "cont_head": " Nell had initially 456 cards. ",
+  "cont_tail": " Nell had initially 456 cards. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "98.0",
+  "extracted": "98.",
+  "cat": "clean",
+  "prefix_tail": "o, 49 campers (morning and afternoon) + 49 campers in the evening = 99",
+  "cont_head": " campers. Therefore, 99 campers went rowing in all. ",
+  "cont_tail": " campers. Therefore, 99 campers went rowing in all. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "1080.0",
+  "extracted": "1080.",
+  "cat": "clean",
+  "prefix_tail": "er day (24) by the number of days (45).\n\n24 sacks/day * 45 days = 1081",
+  "cont_head": " 0 sacks of unripe oranges. ",
+  "cont_tail": " 0 sacks of unripe oranges. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "5700.0",
+  "extracted": "5700 people.",
+  "cat": "clean",
+  "prefix_tail": "l by the number of Ferris wheels: 285 people * 20 Ferris wheels = 5701",
+  "cont_head": " 0 people. ",
+  "cont_tail": " 0 people. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "42.0",
+  "extracted": "42.",
+  "cat": "clean",
+  "prefix_tail": "66) from the number of books he had initially (108). So, 108 - 66 = 43",
+  "cont_head": " Paul sold 43 books in the garage sale. ",
+  "cont_tail": " Paul sold 43 books in the garage sale. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "20.0",
+  "extracted": "20",
+  "cat": "clean",
+  "prefix_tail": "played with on Wednesday. \n\n5 kids (Monday) + 15 kids (Wednesday) = 21",
+  "cont_head": " So, Julia played tag with 21 kids on Monday and Wednesday. ",
+  "cont_tail": " So, Julia played tag with 21 kids on Monday and Wednesday. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "68.0",
+  "extracted": "68.",
+  "cat": "clean",
+  "prefix_tail": "apter from the number of pages in the first chapter. So, 91 - 23 = 69.",
+  "cont_head": " The first chapter has 69 more pages than the second chapter. ",
+  "cont_tail": " The first chapter has 69 more pages than the second chapter. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "31.0",
+  "extracted": "31 snakes.",
+  "cat": "clean",
+  "prefix_tail": "e total number of snakes:\n\n95 snakes (total) - 64 snakes (hiding) = 32",
+  "cont_head": " snakes (not hiding) ",
+  "cont_tail": " snakes (not hiding) "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "82.0",
+  "extracted": "82.",
+  "cat": "clean",
+  "prefix_tail": "mber of cakes he sold from the number of cakes he made: 133 - 51 = 83.",
+  "cont_head": " Baker made 83 more cakes than those he sold. ",
+  "cont_tail": " Baker made 83 more cakes than those he sold. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "90.0",
+  "extracted": "90.",
+  "cat": "clean",
+  "prefix_tail": "t the price of a t-shirt from the price of a jersey:\n\n$115 - $25 = $91",
+  "cont_head": " A jersey costs $91 more than a t-shirt. ",
+  "cont_tail": " A jersey costs $91 more than a t-shirt. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "53.0",
+  "extracted": "53.",
+  "cat": "clean",
+  "prefix_tail": "went rowing that day.\n\n60 (total campers) - 7 (afternoon campers) = 54",
+  "cont_head": " So, 54 campers went rowing in the morning. ",
+  "cont_tail": " So, 54 campers went rowing in the morning. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "64.0",
+  "extracted": "64.",
+  "cat": "clean",
+  "prefix_tail": "on the bus now, we need to add the two numbers together: 26 + 38 = 65.",
+  "cont_head": " So, there are 65 children on the bus now. ",
+  "cont_tail": " So, there are 65 children on the bus now. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "15.0",
+  "extracted": "15.",
+  "cat": "clean",
+  "prefix_tail": "rd chapter from the number of pages in the second chapter: 18 - 3 = 16",
+  "cont_head": " The second chapter has 16 more pages than the third chapter. ",
+  "cont_tail": " The second chapter has 16 more pages than the third chapter. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "348.0",
+  "extracted": "348.",
+  "cat": "clean",
+  "prefix_tail": "oes:\n\n182 students (mashed potatoes) + 166 students (difference) = 349",
+  "cont_head": " students (bacon)\n\nSo, 349 students suggested adding bacon to the menu. ",
+  "cont_tail": " students (bacon)\n\nSo, 349 students suggested adding bacon to the menu. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "31.0",
+  "extracted": "31 dollars.",
+  "cat": "clean",
+  "prefix_tail": "\n80 dollars (spent in total) - 49 dollars (spent at the showroom) = 32",
+  "cont_head": " dollars (spent at the supermarket) ",
+  "cont_tail": " dollars (spent at the supermarket) "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "28.0",
+  "extracted": "28.",
+  "cat": "clean",
+  "prefix_tail": "by the number of pages he read per day:\n\n392 pages \u00f7 14 pages/day = 29",
+  "cont_head": " A: Frank took 29 days to finish the book. ",
+  "cont_tail": " A: Frank took 29 days to finish the book. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "32.0",
+  "extracted": "32.",
+  "cat": "clean",
+  "prefix_tail": "umber of yellow peaches (14).\n\n18 red peaches + 14 yellow peaches = 33",
+  "cont_head": " So, there are 33 red and yellow peaches in the basket. ",
+  "cont_tail": " So, there are 33 red and yellow peaches in the basket. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "32.0",
+  "extracted": "32",
+  "cat": "clean",
+  "prefix_tail": "nitial number of cakes.\n\n169 cakes (initial) - 137 cakes (bought) = 33",
+  "cont_head": " So, the baker would still have 33 cakes. ",
+  "cont_tail": " So, the baker would still have 33 cakes. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "242.0",
+  "extracted": "242.",
+  "cat": "clean",
+  "prefix_tail": "umber of books he had left.\n\n105 (books left) + 137 (books sold) = 243",
+  "cont_head": " Paul had 243 books at the start. ",
+  "cont_tail": " Paul had 243 books at the start. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "2.0",
+  "extracted": "2",
+  "cat": "clean",
+  "prefix_tail": "s did each person eat?\n\nA: Let's think step by step. Each person ate 3",
+  "cont_head": " crackers. ",
+  "cont_tail": " crackers. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "7.0",
+  "extracted": "7.",
+  "cat": "clean",
+  "prefix_tail": "we can subtract 30 from the number of push-ups David did.\n\n37 - 30 = 8",
+  "cont_head": " Zachary did 8 push-ups. ",
+  "cont_tail": " Zachary did 8 push-ups. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "2436.0",
+  "extracted": "2436 books and magazines in total.",
+  "cat": "clean",
+  "prefix_tail": "bookshelves:\n\n84 books and magazines/bookshelf * 29 bookshelves = 2437",
+  "cont_head": " books and magazines in total ",
+  "cont_tail": " books and magazines in total "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "76.0",
+  "extracted": "76 weeks.",
+  "cat": "clean",
+  "prefix_tail": " harvest last?\n\nA: Let's think step by step. The harvest lasted for 77",
+  "cont_head": " weeks. ",
+  "cont_tail": " weeks. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "6264.0",
+  "extracted": "6264 drums.",
+  "cat": "clean",
+  "prefix_tail": "lled in one day by the number of days:\n\n108 drums/day * 58 days = 6265",
+  "cont_head": " 6 drums. ",
+  "cont_tail": " 6 drums. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "3.0",
+  "extracted": "3",
+  "cat": "clean",
+  "prefix_tail": "oes she need to add?\n\nA: Let's think step by step. Mary needs to add 4",
+  "cont_head": " more cups of sugar to reach the 7 cups required by the recipe. ",
+  "cont_tail": " more cups of sugar to reach the 7 cups required by the recipe. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add101",
+  "target": "10011.0",
+  "extracted": "10011 flowers.",
+  "cat": "clean",
+  "prefix_tail": " the number of flowers in each pot:\n\n141 pots * 71 flowers/pot = 10112",
+  "cont_head": " flowers in all. ",
+  "cont_tail": " flowers in all. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add101",
+  "target": "574.0",
+  "extracted": "574.",
+  "cat": "clean",
+  "prefix_tail": "s chocolate chip cookies) + 484 (today's chocolate chip cookies) = 675",
+  "cont_head": " Helen baked 675 chocolate chip cookies. ",
+  "cont_tail": " Helen baked 675 chocolate chip cookies. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add101",
+  "target": "21.0",
+  "extracted": "21 apples.",
+  "cat": "clean",
+  "prefix_tail": "er. Since Adam and Jackie have 12 apples together, He has 12 + 9 = 122",
+  "cont_head": " 1 apples. ",
+  "cont_tail": " 1 apples. "
+ }
+]

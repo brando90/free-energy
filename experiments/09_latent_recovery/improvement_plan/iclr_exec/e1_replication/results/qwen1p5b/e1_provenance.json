@@ -1,0 +1,25 @@
+{
+  "created_at": "2026-07-24T18:10:58.507486+00:00",
+  "e1_registration_commit": "bdb098a1d85b33063274481e53cb9d7130dc32c6",
+  "generator": "gen_worlds_expd.py (LOCKED, reused unchanged)",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "oversample_factor": 4,
+  "oversample_seeds": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "per_world_audits_passed": 11520,
+  "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "seeds": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "stage": "prepare_e1",
+  "world_config": "full",
+  "world_count": 11520,
+  "worlds_json_sha256": "9f6ff76b58a6bd8b5645bf46836eea3ca125ed9cc6aae50c07b474398fb3462e"
+}

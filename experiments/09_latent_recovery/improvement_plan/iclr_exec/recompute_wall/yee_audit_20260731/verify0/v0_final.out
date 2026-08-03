@@ -1,0 +1,9 @@
+MAX-ADVERSARIAL sensitivity (reclassify every flagged row whose continuation starts with a digit):
+  random: flagged 59 -> 49; extraction-only 7.9% -> 6.6% of recoveries; corrected_gen 71.3% -> 72.4%
+  add1: flagged 73 -> 64; extraction-only 9.7% -> 8.5% of recoveries; corrected_gen 69.2% -> 70.2%
+  add101: flagged 13 -> 10; extraction-only 1.4% -> 1.0% of recoveries; corrected_gen 95.9% -> 96.2%
+
+error-carried-to-conclusion (cont last num == prefix perturbed num), flagged rows:
+  {'random': 38, 'add1': 50, 'add101': 3} total 91/145 = 63%  (their claim: 102/146 on random+add1)
+
+extraction Answer starts with digit/$: 144/145; strictly bare number: 110/145 (their claim 155/160)

@@ -1,0 +1,98 @@
+{
+  "R_samples": 8,
+  "created_at": "2026-07-28T08:09:03",
+  "decoding": {
+    "R_at_T": 0.7,
+    "greedy_rollout": true,
+    "max_new_cont": 384,
+    "max_new_gold": 512
+  },
+  "dknobs": {
+    "L_target": 20,
+    "filler_const_max": 60,
+    "filler_const_min": 2,
+    "forward_use_gap": 2,
+    "max_attempts_per_world": 4000,
+    "operand_max": 99,
+    "operand_min": 11,
+    "ops_target": 14,
+    "site_j": 10,
+    "value_max": 999,
+    "value_min": 1,
+    "vtrue_floor": 25
+  },
+  "doubt_lexicon": "\\b(?:bug|typo|re-?check|hold\\s+on|off\\s+by|should\\s+be|contradict\\w*|inconsist\\w*)\\b",
+  "experiment": "E11_DEPTH_OPACITY",
+  "flag_channel": "judge_reject if judged else doubt_lex (frozen lexicon)",
+  "generator_funnels": {
+    "0": {
+      "accepted": 1800,
+      "attempts": 2596,
+      "rejects": {
+        "build": 466,
+        "fam": 185,
+        "program_error": 145
+      },
+      "starved": false
+    },
+    "1": {
+      "accepted": 1800,
+      "attempts": 2292,
+      "rejects": {
+        "build": 342,
+        "no_axis_c_delta": 2,
+        "program_error": 148
+      },
+      "starved": false
+    },
+    "2": {
+      "accepted": 1800,
+      "attempts": 3348,
+      "rejects": {
+        "audit": 1009,
+        "build": 378,
+        "program_error": 161
+      },
+      "starved": false
+    },
+    "3": {
+      "accepted": 1800,
+      "attempts": 2782,
+      "rejects": {
+        "audit": 590,
+        "build": 275,
+        "program_error": 117
+      },
+      "starved": false
+    },
+    "5": {
+      "accepted": 1800,
+      "attempts": 2618,
+      "rejects": {
+        "audit": 515,
+        "build": 201,
+        "fam": 9,
+        "program_error": 93
+      },
+      "starved": false
+    }
+  },
+  "gold_prefill": "line 1:",
+  "ks": [
+    0,
+    1,
+    2,
+    3,
+    5
+  ],
+  "n_target_per_cell": 150,
+  "opacities": [
+    "bare",
+    "full",
+    "partial"
+  ],
+  "prompt_sha256": "a1a134d3c0b753c273365be903dba2cd5c5fc2d33fb443891448d4c384de578b",
+  "sampling_temperature": 0.7,
+  "seed": 0,
+  "world_pool_per_k": 1800
+}

@@ -1,0 +1,362 @@
+[
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "348.0",
+  "answer": "348",
+  "word_form_present": false,
+  "cont_tail": " A: 351 students suggested adding bacon to the menu. ",
+  "question_head": "Q: Because of the decision Sofia asked the students to suggest specific types of food. 182 students suggested adding mashed potatoes while others suggested addi"
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "76.0",
+  "answer": "The harvest lasted for 76 weeks.",
+  "word_form_present": false,
+  "cont_tail": " weeks. ",
+  "question_head": "Q: Lewis earns a total of $ 1216 during the harvest. If he earns $ 16 each week How many weeks did the harvest last?\n\nA: Let's think step by step. The harvest l"
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "55.0",
+  "answer": "55",
+  "word_form_present": false,
+  "cont_tail": " Jessica bought a total of 57 pieces of meat. ",
+  "question_head": "Q: Annie is about to celebrate her birthday next week so her friends decided to throw her a surprise birthday party. Jessica, Annie's best friend, is hosting th"
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "13.0",
+  "answer": "13.",
+  "word_form_present": false,
+  "cont_tail": " The artist painted a total of 14 pictures. ",
+  "question_head": "Q: An artist painted 2 pictures in June. He painted 2 more in July and in August he painted 9. How many pictures did he paint total? \n\nA: Let's think step by st"
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "348.0",
+  "answer": "348.",
+  "word_form_present": false,
+  "cont_tail": " students (bacon)\n\nSo, 349 students suggested adding bacon to the menu. ",
+  "question_head": "Q: Because of the decision Sofia asked the students to suggest specific types of food. 182 students suggested adding mashed potatoes while others suggested addi"
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "31.0",
+  "answer": "31 snakes.",
+  "word_form_present": false,
+  "cont_tail": " snakes (not hiding) ",
+  "question_head": "Q: At the zoo, a cage had 95 snakes and 61 alligators. If 64 snakes were hiding How many snakes were not hiding?\n\nA: Let's think step by step. First, we know th"
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "32.0",
+  "answer": "32",
+  "word_form_present": false,
+  "cont_tail": " So, there are 35 red and yellow peaches in the basket. ",
+  "question_head": "Q: 18 red peaches, 14 yellow peaches and 17 green peaches are in the basket. How many red and yellow peaches are in the basket?\n\nA: Let's think step by step. Fi"
+ },
+ {
+  "ds": "awps",
+  "pert": "random",
+  "target": "8.0",
+  "answer": "8",
+  "word_form_present": false,
+  "cont_tail": " groups and 9 students left over. ",
+  "question_head": "Q:  The schools debate team had 26 boys and 46 girls on it. If they were split into groups of 9 how many groups could they make?\n\nA: Let's think step by step. F"
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "20.0",
+  "answer": "20",
+  "word_form_present": false,
+  "cont_tail": " So, Julia played tag with 21 kids on Monday and Wednesday. ",
+  "question_head": "Q: Julia played tag with 5 kids on monday, 9 kids on tuesday and 15 kids on wednesday. How many kids did she play with on monday and wednesday?\n\nA: Let's think "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "455.0",
+  "answer": "455",
+  "word_form_present": false,
+  "cont_tail": " Nell initially had 456 baseball cards. ",
+  "question_head": "Q: Nell collects baseball cards. She gave 301 of her cards to Jeff and now has 154 cards left.. How many cards did Nell have initially?\n\nA: Let's think step by "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "38.0",
+  "answer": "38 cents.",
+  "word_form_present": false,
+  "cont_tail": " cents. So, the difference is 39 cents. ",
+  "question_head": "Q: Diane wants to buy a package of cookies. The cookies cost 65 cents. Diane has 27 cents. What's the difference between the cost of the cookies and the money o"
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "15.0",
+  "answer": "15.",
+  "word_form_present": false,
+  "cont_tail": " The second chapter has 16 more pages than the third chapter. ",
+  "question_head": "Q: A book has 3 chapters. The first chapter is 35 pages long the second chapter is 18 pages long and the third chapter is 3 pages long. How many more pages does"
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "50.0",
+  "answer": "50.",
+  "word_form_present": false,
+  "cont_tail": " Mrs. Snyder made 51 pink cookies. ",
+  "question_head": "Q: Mrs. Snyder made 86 heart cookies. She made 36 red cookies and the rest are pink. How many pink cookies did she make?\n\nA: Let's think step by step. First, we"
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add101",
+  "target": "3285.0",
+  "answer": "3285 books in a year.",
+  "word_form_present": false,
+  "cont_tail": " books in a year. ",
+  "question_head": "Q: Having this kind of collection made Jack a fast reader. If he can read 9 books in a day, how many books can he read in a year (a year = 365 days)?\n\nA: Let's "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "28.0",
+  "answer": "28.",
+  "word_form_present": false,
+  "cont_tail": " A: Frank took 29 days to finish the book. ",
+  "question_head": "Q: Frank was reading through his favorite book. The book had 392 pages and he read 14 pages per day. How many days did he take to finish the book?\n\nA: Let's thi"
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "19.0",
+  "answer": "19",
+  "word_form_present": false,
+  "cont_tail": " Andy got 17 baseball cards from his dad. ",
+  "question_head": "Q: Andy had 31 baseball cards. His dad gave him some more. Then Andy had 50 baseball cards. How many baseball cards did Andy get from his dad?\n\nA: Let's think s"
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "18.0",
+  "answer": "18.",
+  "word_form_present": false,
+  "cont_tail": " Tom read 19 books in total. ",
+  "question_head": "Q: Tom read 2 books in May, 6 in June and 10 in July. How many books did Tom read? \n\nA: Let's think step by step. Tom read 2 books in May, 6 in June, and 10 in "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "55.0",
+  "answer": "55.",
+  "word_form_present": false,
+  "cont_tail": " Jessica bought a total of 56 pieces of meat. ",
+  "question_head": "Q: Annie is about to celebrate her birthday next week so her friends decided to throw her a surprise birthday party. Jessica, Annie's best friend, is hosting th"
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "50.0",
+  "answer": "50",
+  "word_form_present": false,
+  "cont_tail": " So, Bob got 51 candies in total. ",
+  "question_head": "Q: Bob who is Sam's next door neighbor decided that he will accompany Sam home. He also took his share which consists of 15 chewing gums, 20 chocolate bars and "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "547.0",
+  "answer": "547",
+  "word_form_present": false,
+  "cont_tail": " So, he was able to feed 546 homeless people. ",
+  "question_head": "Q: After giving out clothes, he invited the homeless to the nearest soup kitchen to give them a proper meal. If he fed 219 men and 328 women, how many homeless "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "14.0",
+  "answer": "14",
+  "word_form_present": false,
+  "cont_tail": " Robin has 13 packages of gum. ",
+  "question_head": "Q: Robin has some packages of gum. There are 3 pieces in each package and a total of 42 pieces of gum. How many packages does Robin have?\n\nA: Let's think step b"
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "700.0",
+  "answer": "700",
+  "word_form_present": false,
+  "cont_tail": " So, Marie sold a total of 701 reading materials last Saturday. ",
+  "question_head": "Q: Last Saturday, Marie sold 425 magazines and 275 newspapers. What is the total number of reading materials she sold?\n\nA: Let's think step by step. First, we n"
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "183.0",
+  "answer": "183.",
+  "word_form_present": false,
+  "cont_tail": " Paul had 184 crayons left by the end of the school year. ",
+  "question_head": "Q: Paul got a box of 253 crayons for his birthday. By the end of the school year he had either lost or given away 70 of them. How many crayons did he have left "
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "92.0",
+  "answer": "92",
+  "word_form_present": false,
+  "cont_tail": " Q: How many old games do they have together? ",
+  "question_head": "Q: Katie had 84 new games and 19 old games. Her friends had 8 new games and 69 old games. How many new games do they have together?\n\nA: Let's think step by step"
+ },
+ {
+  "ds": "svamp",
+  "pert": "random",
+  "target": "42.0",
+  "answer": "42",
+  "word_form_present": false,
+  "cont_tail": " Kelly will have 44 games left after giving away 64 games. ",
+  "question_head": "Q: Kelly has 106 nintendo games. How many will she have left if she gives away 64 games?\n\nA: Let's think step by step. Kelly has 106 games and gives away 64 gam"
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "3285.0",
+  "answer": "3285",
+  "word_form_present": false,
+  "cont_tail": " books in a year. ",
+  "question_head": "Q: Having this kind of collection made Jack a fast reader. If he can read 9 books in a day, how many books can he read in a year (a year = 365 days)?\n\nA: Let's "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "56.0",
+  "answer": "56 square miles.",
+  "word_form_present": false,
+  "cont_tail": " 6 square miles. ",
+  "question_head": "Q: A farm was 7 miles wide and 8 miles long. What is the area of the farm?\n\nA: Let's think step by step. The area of a rectangle is calculated by multiplying it"
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add101",
+  "target": "1415.0",
+  "answer": "1415.",
+  "word_form_present": false,
+  "cont_tail": " A: In total, there are 1,416 people waiting to get in. ",
+  "question_head": "Q: When they got there, they saw that SFL is already filled with people. Every entrance has a long line, with 283 people waiting to get in. If SFL has 5 entranc"
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "82.0",
+  "answer": "82.",
+  "word_form_present": false,
+  "cont_tail": " Baker made 83 more cakes than those he sold. ",
+  "question_head": "Q: Baker made 133 cakes. If he sold 51 of them How many more cakes did baker make than those he sold?\n\nA: Let's think step by step. Baker made 133 cakes and sol"
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "332.0",
+  "answer": "332 legs.",
+  "word_form_present": false,
+  "cont_tail": " 2 legs. ",
+  "question_head": "Q: At the zoo, I see 35 elephants and 48 tigers. How many legs do I see?\n\nA: Let's think step by step. First, let's find out how many legs the elephants have. E"
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "32.0",
+  "answer": "32",
+  "word_form_present": false,
+  "cont_tail": " So, the baker would still have 33 cakes. ",
+  "question_head": "Q: Baker's friend bought 137 cakes from him. If he had made 169 cakes initially How many cakes would baker still have?\n\nA: Let's think step by step. The baker i"
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "738.0",
+  "answer": "738.",
+  "word_form_present": false,
+  "cont_tail": " So, he has 739 rocks in all. ",
+  "question_head": "Q: He then classified some of the rocks into igneous, metamorphic and sedimentary. If each classification has 246 samples each, how many rocks does he have in a"
+ },
+ {
+  "ds": "awps",
+  "pert": "random",
+  "target": "8.0",
+  "answer": "8 groups.",
+  "word_form_present": false,
+  "cont_tail": " groups ",
+  "question_head": "Q:  The schools debate team had 11 boys and 45 girls on it. If they were split into groups of 7 how many groups could they make?\n\nA: Let's think step by step. F"
+ },
+ {
+  "ds": "awps",
+  "pert": "add1",
+  "target": "8.0",
+  "answer": "8 groups.",
+  "word_form_present": false,
+  "cont_tail": " groups ",
+  "question_head": "Q:  The schools debate team had 11 boys and 45 girls on it. If they were split into groups of 7 how many groups could they make? \n\nA: Let's think step by step. "
+ },
+ {
+  "ds": "asdiv",
+  "pert": "random",
+  "target": "519.0",
+  "answer": "519",
+  "word_form_present": false,
+  "cont_tail": " cm\n\nSo, the board was 516 centimeters long after the carpenter cut it. ",
+  "question_head": "Q: A carpenter had a board that was 5.28 m long. She used her circular saw to cut 9 cm off the end of the board. How many centimeters long was the board after t"
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add101",
+  "target": "513.0",
+  "answer": "513.",
+  "word_form_present": false,
+  "cont_tail": " Charlie needs to collect 614 more feathers. ",
+  "question_head": "Q: Charlie, an aspiring inventor, is planning to make some wings to fulfill his dream to fly around the world. He started by collecting feathers. He needs 900 f"
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "8.0",
+  "answer": "8.",
+  "word_form_present": false,
+  "cont_tail": " Jerry played 9 games. ",
+  "question_head": "Q: Jerry was playing the ring toss at the carnival. All together he used forty-eight rings. If each game you get six rings, how many games did he play?\n\nA: Let'"
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "32.0",
+  "answer": "32 tables.",
+  "word_form_present": false,
+  "cont_tail": " 2 tables to seat all 287 people. ",
+  "question_head": "Q: There are two hundred eighty-seven people attending a luncheon. If a table can hold nine people, how many tables do they need?\n\nA: Let's think step by step. "
+ },
+ {
+  "ds": "svamp",
+  "pert": "add1",
+  "target": "3.0",
+  "answer": "3",
+  "word_form_present": false,
+  "cont_tail": " more cups of sugar to reach the 7 cups required by the recipe. ",
+  "question_head": "Q: Mary is baking a cake. The recipe calls for 7 cups of sugar and 10 cups of flour. She already put in 4 cups of sugar. How many more cups of sugar does she ne"
+ },
+ {
+  "ds": "asdiv",
+  "pert": "add1",
+  "target": "11.0",
+  "answer": "11.",
+  "word_form_present": false,
+  "cont_tail": " So, Brian has 12 plums. ",
+  "question_head": "Q: Brian has four more plums than Paul. Paul has seven plums. How many plums does Brian have?\n\nA: Let's think step by step. Brian has four more plums than Paul,"
+ }
+]

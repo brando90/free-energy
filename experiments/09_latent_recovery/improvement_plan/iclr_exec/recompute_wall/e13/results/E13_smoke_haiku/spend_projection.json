@@ -1,0 +1,37 @@
+{
+  "continuations": {
+    "per_arm": {
+      "anchor_k0": {
+        "input_tokens_est": 9460,
+        "n_calls": 20,
+        "output_tokens_est": 6000,
+        "usd_est": 0.04
+      },
+      "line_k0": {
+        "input_tokens_est": 9510,
+        "n_calls": 20,
+        "output_tokens_est": 6000,
+        "usd_est": 0.04
+      },
+      "line_k0_swap": {
+        "input_tokens_est": 9512,
+        "n_calls": 20,
+        "output_tokens_est": 6000,
+        "usd_est": 0.04
+      }
+    },
+    "total_usd_est": 0.12
+  },
+  "golds": {
+    "per_arm": {
+      "__gold__": {
+        "input_tokens_est": 82276,
+        "n_calls": 200,
+        "output_tokens_est": 90000,
+        "usd_est": 0.53
+      }
+    },
+    "total_usd_est": 0.53
+  },
+  "total_usd_est": 0.65
+}

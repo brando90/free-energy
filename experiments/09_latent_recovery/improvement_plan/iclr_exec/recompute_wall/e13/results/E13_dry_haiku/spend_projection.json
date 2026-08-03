@@ -1,0 +1,127 @@
+{
+  "continuations": {
+    "per_arm": {
+      "adjacent_contradiction": {
+        "input_tokens_est": 99412,
+        "n_calls": 240,
+        "output_tokens_est": 72000,
+        "usd_est": 0.46
+      },
+      "anchor_k0": {
+        "input_tokens_est": 113496,
+        "n_calls": 240,
+        "output_tokens_est": 72000,
+        "usd_est": 0.47
+      },
+      "depth_k1_bare": {
+        "input_tokens_est": 113864,
+        "n_calls": 240,
+        "output_tokens_est": 72000,
+        "usd_est": 0.47
+      },
+      "depth_k1_full": {
+        "input_tokens_est": 114432,
+        "n_calls": 240,
+        "output_tokens_est": 72000,
+        "usd_est": 0.47
+      },
+      "depth_k1_partial": {
+        "input_tokens_est": 114532,
+        "n_calls": 240,
+        "output_tokens_est": 72000,
+        "usd_est": 0.47
+      },
+      "dose_large": {
+        "input_tokens_est": 99528,
+        "n_calls": 240,
+        "output_tokens_est": 72000,
+        "usd_est": 0.46
+      },
+      "dose_off1": {
+        "input_tokens_est": 99412,
+        "n_calls": 240,
+        "output_tokens_est": 72000,
+        "usd_est": 0.46
+      },
+      "dose_off10_20": {
+        "input_tokens_est": 99412,
+        "n_calls": 240,
+        "output_tokens_est": 72000,
+        "usd_est": 0.46
+      },
+      "grid_line_false_copy_true": {
+        "input_tokens_est": 100008,
+        "n_calls": 240,
+        "output_tokens_est": 72000,
+        "usd_est": 0.46
+      },
+      "grid_line_false_note_true": {
+        "input_tokens_est": 99412,
+        "n_calls": 240,
+        "output_tokens_est": 72000,
+        "usd_est": 0.46
+      },
+      "grid_note_false_before": {
+        "input_tokens_est": 99412,
+        "n_calls": 240,
+        "output_tokens_est": 72000,
+        "usd_est": 0.46
+      },
+      "grid_note_true_before_line_false": {
+        "input_tokens_est": 99412,
+        "n_calls": 240,
+        "output_tokens_est": 72000,
+        "usd_est": 0.46
+      },
+      "k1_full_sum": {
+        "input_tokens_est": 114796,
+        "n_calls": 240,
+        "output_tokens_est": 72000,
+        "usd_est": 0.47
+      },
+      "k1_probe": {
+        "input_tokens_est": 113864,
+        "n_calls": 240,
+        "output_tokens_est": 72000,
+        "usd_est": 0.47
+      },
+      "k1_tentative": {
+        "input_tokens_est": 115252,
+        "n_calls": 240,
+        "output_tokens_est": 72000,
+        "usd_est": 0.48
+      },
+      "line_k0": {
+        "input_tokens_est": 114088,
+        "n_calls": 240,
+        "output_tokens_est": 72000,
+        "usd_est": 0.47
+      },
+      "line_k0_swap": {
+        "input_tokens_est": 114092,
+        "n_calls": 240,
+        "output_tokens_est": 72000,
+        "usd_est": 0.47
+      },
+      "opfree_kr1": {
+        "input_tokens_est": 100008,
+        "n_calls": 240,
+        "output_tokens_est": 72000,
+        "usd_est": 0.46
+      }
+    },
+    "total_usd_est": 8.38
+  },
+  "golds": {
+    "per_arm": {
+      "__gold__": {
+        "input_tokens_est": 240753,
+        "n_calls": 600,
+        "output_tokens_est": 270000,
+        "usd_est": 1.59
+      }
+    },
+    "total_usd_est": 1.59
+  },
+  "total_usd_est": 9.97
+}

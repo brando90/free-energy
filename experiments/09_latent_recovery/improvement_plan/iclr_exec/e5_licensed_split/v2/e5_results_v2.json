@@ -1,0 +1,3631 @@
+{
+  "meta": {
+    "nboot": 5000,
+    "seed": 20260722,
+    "cluster_unit": "problem_id",
+    "n_rows_total": 13681,
+    "n_stated_complement": 449,
+    "classifier": "e5_classify.classify_row (validated; conservative on licensed)",
+    "elapsed_s": 50.1
+  },
+  "anchors": {
+    "EXPD:aff_false_attr_d0": {
+      "n_all": 450,
+      "n_stated_complement": 111,
+      "sc_rate": 0.2467,
+      "published": 0.247,
+      "match": true
+    },
+    "EXPD:aff_false_attr_d1": {
+      "n_all": 450,
+      "n_stated_complement": 14,
+      "sc_rate": 0.0311,
+      "published": 0.031,
+      "match": true
+    },
+    "EXPD:cat_false_inert_d1": {
+      "n_all": 300,
+      "n_stated_complement": 58,
+      "sc_rate": 0.1933,
+      "published": 0.193,
+      "match": true
+    },
+    "EXPD:cat_false_usable_d1": {
+      "n_all": 300,
+      "n_stated_complement": 7,
+      "sc_rate": 0.0233,
+      "published": 0.023,
+      "match": true
+    },
+    "EXPE:REFUTING_d1": {
+      "n_all": 612,
+      "n_stated_complement": 70,
+      "sc_rate": 0.1144,
+      "published": 0.114,
+      "match": true
+    },
+    "EXPE:FREQ_MATCHED_NONREFUTING": {
+      "n_all": 220,
+      "n_stated_complement": 26,
+      "sc_rate": 0.1182,
+      "published": 0.118,
+      "match": true
+    }
+  },
+  "per_cell": {
+    "EXPD:aff_false_attr_d0": {
+      "designed_d": 0,
+      "n_all": 450,
+      "n_stated_complement": 111,
+      "sc_rate_of_all": [
+        0.2467,
+        0.1978,
+        0.2956,
+        111,
+        450
+      ],
+      "counts": {
+        "licensed": 0,
+        "visible_unshown": 0,
+        "unlicensed": 0,
+        "d0_visible": 111
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          111
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          111
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          111
+        ],
+        "d0_visible": [
+          1.0,
+          1.0,
+          1.0,
+          111,
+          111
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "d0_visible": [
+          0.2467,
+          0.1978,
+          0.2956,
+          111,
+          450
+        ]
+      },
+      "unlicensed_reasons": {},
+      "measured_d_hist": {
+        "0": 111
+      }
+    },
+    "EXPD:aff_false_attr_d1": {
+      "designed_d": 1,
+      "n_all": 450,
+      "n_stated_complement": 14,
+      "sc_rate_of_all": [
+        0.0311,
+        0.0156,
+        0.0489,
+        14,
+        450
+      ],
+      "counts": {
+        "licensed": 12,
+        "visible_unshown": 2,
+        "unlicensed": 0,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          0.8571,
+          0.6429,
+          1.0,
+          12,
+          14
+        ],
+        "visible_unshown": [
+          0.1429,
+          0.0,
+          0.3571,
+          2,
+          14
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          14
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          14
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0267,
+          0.0111,
+          0.0422,
+          12,
+          450
+        ],
+        "visible_unshown": [
+          0.0044,
+          0.0,
+          0.0111,
+          2,
+          450
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ]
+      },
+      "unlicensed_reasons": {},
+      "measured_d_hist": {
+        "1": 14
+      }
+    },
+    "EXPD:aff_false_attr_d2": {
+      "designed_d": 2,
+      "n_all": 450,
+      "n_stated_complement": 22,
+      "sc_rate_of_all": [
+        0.0489,
+        0.0311,
+        0.0689,
+        22,
+        450
+      ],
+      "counts": {
+        "licensed": 9,
+        "visible_unshown": 0,
+        "unlicensed": 13,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          0.4091,
+          0.2273,
+          0.6364,
+          9,
+          22
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          22
+        ],
+        "unlicensed": [
+          0.5909,
+          0.3636,
+          0.7727,
+          13,
+          22
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          22
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.02,
+          0.0089,
+          0.0333,
+          9,
+          450
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "unlicensed": [
+          0.0289,
+          0.0156,
+          0.0444,
+          13,
+          450
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ]
+      },
+      "unlicensed_reasons": {
+        "derivable_ge2_unshown": 13
+      },
+      "measured_d_hist": {
+        "2": 22
+      }
+    },
+    "EXPD:aff_false_attr_d3": {
+      "designed_d": 3,
+      "n_all": 441,
+      "n_stated_complement": 22,
+      "sc_rate_of_all": [
+        0.0499,
+        0.0317,
+        0.0703,
+        22,
+        441
+      ],
+      "counts": {
+        "licensed": 19,
+        "visible_unshown": 0,
+        "unlicensed": 3,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          0.8636,
+          0.7273,
+          1.0,
+          19,
+          22
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          22
+        ],
+        "unlicensed": [
+          0.1364,
+          0.0,
+          0.2727,
+          3,
+          22
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          22
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0431,
+          0.0249,
+          0.0612,
+          19,
+          441
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          441
+        ],
+        "unlicensed": [
+          0.0068,
+          0.0,
+          0.0159,
+          3,
+          441
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          441
+        ]
+      },
+      "unlicensed_reasons": {
+        "derivable_ge2_unshown": 3
+      },
+      "measured_d_hist": {
+        "3": 22
+      }
+    },
+    "EXPD:aff_false_attr_d5": {
+      "designed_d": 5,
+      "n_all": 426,
+      "n_stated_complement": 9,
+      "sc_rate_of_all": [
+        0.0211,
+        0.0094,
+        0.0352,
+        9,
+        426
+      ],
+      "counts": {
+        "licensed": 6,
+        "visible_unshown": 0,
+        "unlicensed": 3,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          0.6667,
+          0.3333,
+          1.0,
+          6,
+          9
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          9
+        ],
+        "unlicensed": [
+          0.3333,
+          0.0,
+          0.6667,
+          3,
+          9
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          9
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0141,
+          0.0047,
+          0.0258,
+          6,
+          426
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          426
+        ],
+        "unlicensed": [
+          0.007,
+          0.0,
+          0.0164,
+          3,
+          426
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          426
+        ]
+      },
+      "unlicensed_reasons": {
+        "derivable_ge2_unshown": 3
+      },
+      "measured_d_hist": {
+        "5": 9
+      }
+    },
+    "EXPD:aff_true_attr_d0": {
+      "designed_d": 0,
+      "n_all": 450,
+      "n_stated_complement": 0,
+      "sc_rate_of_all": [
+        0.0,
+        0.0,
+        0.0,
+        0,
+        450
+      ],
+      "counts": {
+        "licensed": 0,
+        "visible_unshown": 0,
+        "unlicensed": 0,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "visible_unshown": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "unlicensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "d0_visible": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ]
+      },
+      "unlicensed_reasons": {},
+      "measured_d_hist": {}
+    },
+    "EXPD:aff_true_attr_d1": {
+      "designed_d": 1,
+      "n_all": 450,
+      "n_stated_complement": 0,
+      "sc_rate_of_all": [
+        0.0,
+        0.0,
+        0.0,
+        0,
+        450
+      ],
+      "counts": {
+        "licensed": 0,
+        "visible_unshown": 0,
+        "unlicensed": 0,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "visible_unshown": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "unlicensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "d0_visible": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ]
+      },
+      "unlicensed_reasons": {},
+      "measured_d_hist": {}
+    },
+    "EXPD:aff_true_attr_d2": {
+      "designed_d": 2,
+      "n_all": 450,
+      "n_stated_complement": 0,
+      "sc_rate_of_all": [
+        0.0,
+        0.0,
+        0.0,
+        0,
+        450
+      ],
+      "counts": {
+        "licensed": 0,
+        "visible_unshown": 0,
+        "unlicensed": 0,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "visible_unshown": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "unlicensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "d0_visible": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ]
+      },
+      "unlicensed_reasons": {},
+      "measured_d_hist": {}
+    },
+    "EXPD:aff_true_attr_d3": {
+      "designed_d": 3,
+      "n_all": 447,
+      "n_stated_complement": 0,
+      "sc_rate_of_all": [
+        0.0,
+        0.0,
+        0.0,
+        0,
+        447
+      ],
+      "counts": {
+        "licensed": 0,
+        "visible_unshown": 0,
+        "unlicensed": 0,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "visible_unshown": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "unlicensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "d0_visible": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          447
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          447
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          447
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          447
+        ]
+      },
+      "unlicensed_reasons": {},
+      "measured_d_hist": {}
+    },
+    "EXPD:aff_true_attr_d5": {
+      "designed_d": 5,
+      "n_all": 450,
+      "n_stated_complement": 0,
+      "sc_rate_of_all": [
+        0.0,
+        0.0,
+        0.0,
+        0,
+        450
+      ],
+      "counts": {
+        "licensed": 0,
+        "visible_unshown": 0,
+        "unlicensed": 0,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "visible_unshown": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "unlicensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "d0_visible": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ]
+      },
+      "unlicensed_reasons": {},
+      "measured_d_hist": {}
+    },
+    "EXPD:benign_paraphrase": {
+      "designed_d": "inf",
+      "n_all": 450,
+      "n_stated_complement": 0,
+      "sc_rate_of_all": [
+        0.0,
+        0.0,
+        0.0,
+        0,
+        450
+      ],
+      "counts": {
+        "licensed": 0,
+        "visible_unshown": 0,
+        "unlicensed": 0,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "visible_unshown": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "unlicensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "d0_visible": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ]
+      },
+      "unlicensed_reasons": {},
+      "measured_d_hist": {}
+    },
+    "EXPD:cat_false_inert_d1": {
+      "designed_d": 1,
+      "n_all": 300,
+      "n_stated_complement": 58,
+      "sc_rate_of_all": [
+        0.1933,
+        0.1533,
+        0.2367,
+        58,
+        300
+      ],
+      "counts": {
+        "licensed": 56,
+        "visible_unshown": 2,
+        "unlicensed": 0,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          0.9655,
+          0.9123,
+          1.0,
+          56,
+          58
+        ],
+        "visible_unshown": [
+          0.0345,
+          0.0,
+          0.0877,
+          2,
+          58
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          58
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          58
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.1867,
+          0.1467,
+          0.23,
+          56,
+          300
+        ],
+        "visible_unshown": [
+          0.0067,
+          0.0,
+          0.0167,
+          2,
+          300
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          300
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          300
+        ]
+      },
+      "unlicensed_reasons": {},
+      "measured_d_hist": {
+        "1": 58
+      }
+    },
+    "EXPD:cat_false_inert_d3": {
+      "designed_d": 3,
+      "n_all": 284,
+      "n_stated_complement": 15,
+      "sc_rate_of_all": [
+        0.0528,
+        0.0282,
+        0.081,
+        15,
+        284
+      ],
+      "counts": {
+        "licensed": 7,
+        "visible_unshown": 0,
+        "unlicensed": 8,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          0.4667,
+          0.2,
+          0.7333,
+          7,
+          15
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          15
+        ],
+        "unlicensed": [
+          0.5333,
+          0.2667,
+          0.8,
+          8,
+          15
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          15
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0246,
+          0.007,
+          0.0423,
+          7,
+          284
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          284
+        ],
+        "unlicensed": [
+          0.0282,
+          0.0106,
+          0.0493,
+          8,
+          284
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          284
+        ]
+      },
+      "unlicensed_reasons": {
+        "derivable_ge2_unshown": 8
+      },
+      "measured_d_hist": {
+        "3": 15
+      }
+    },
+    "EXPD:cat_false_inert_dinf": {
+      "designed_d": "inf",
+      "n_all": 300,
+      "n_stated_complement": 7,
+      "sc_rate_of_all": [
+        0.0233,
+        0.0067,
+        0.0433,
+        7,
+        300
+      ],
+      "counts": {
+        "licensed": 0,
+        "visible_unshown": 0,
+        "unlicensed": 7,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          7
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          7
+        ],
+        "unlicensed": [
+          1.0,
+          1.0,
+          1.0,
+          7,
+          7
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          7
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          300
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          300
+        ],
+        "unlicensed": [
+          0.0233,
+          0.0067,
+          0.0433,
+          7,
+          300
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          300
+        ]
+      },
+      "unlicensed_reasons": {
+        "not_derivable_in_world": 7
+      },
+      "measured_d_hist": {
+        "None": 7
+      }
+    },
+    "EXPD:cat_false_usable_d1": {
+      "designed_d": 1,
+      "n_all": 300,
+      "n_stated_complement": 7,
+      "sc_rate_of_all": [
+        0.0233,
+        0.0067,
+        0.04,
+        7,
+        300
+      ],
+      "counts": {
+        "licensed": 7,
+        "visible_unshown": 0,
+        "unlicensed": 0,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          1.0,
+          1.0,
+          1.0,
+          7,
+          7
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          7
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          7
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          7
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0233,
+          0.0067,
+          0.04,
+          7,
+          300
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          300
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          300
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          300
+        ]
+      },
+      "unlicensed_reasons": {},
+      "measured_d_hist": {
+        "1": 7
+      }
+    },
+    "EXPD:cat_false_usable_d3": {
+      "designed_d": 3,
+      "n_all": 280,
+      "n_stated_complement": 4,
+      "sc_rate_of_all": [
+        0.0143,
+        0.0036,
+        0.0286,
+        4,
+        280
+      ],
+      "counts": {
+        "licensed": 3,
+        "visible_unshown": 0,
+        "unlicensed": 1,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          0.75,
+          0.25,
+          1.0,
+          3,
+          4
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          4
+        ],
+        "unlicensed": [
+          0.25,
+          0.0,
+          0.75,
+          1,
+          4
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          4
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0107,
+          0.0,
+          0.025,
+          3,
+          280
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          280
+        ],
+        "unlicensed": [
+          0.0036,
+          0.0,
+          0.0107,
+          1,
+          280
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          280
+        ]
+      },
+      "unlicensed_reasons": {
+        "derivable_ge2_unshown": 1
+      },
+      "measured_d_hist": {
+        "3": 4
+      }
+    },
+    "EXPD:cat_false_usable_dinf": {
+      "designed_d": "inf",
+      "n_all": 300,
+      "n_stated_complement": 1,
+      "sc_rate_of_all": [
+        0.0033,
+        0.0,
+        0.01,
+        1,
+        300
+      ],
+      "counts": {
+        "licensed": 0,
+        "visible_unshown": 0,
+        "unlicensed": 1,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          1
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          1
+        ],
+        "unlicensed": [
+          1.0,
+          1.0,
+          1.0,
+          1,
+          1
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          1
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          300
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          300
+        ],
+        "unlicensed": [
+          0.0033,
+          0.0,
+          0.01,
+          1,
+          300
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          300
+        ]
+      },
+      "unlicensed_reasons": {
+        "not_derivable_in_world": 1
+      },
+      "measured_d_hist": {
+        "None": 1
+      }
+    },
+    "EXPD:neg_false_attr_d0": {
+      "designed_d": 0,
+      "n_all": 450,
+      "n_stated_complement": 6,
+      "sc_rate_of_all": [
+        0.0133,
+        0.0,
+        0.0311,
+        6,
+        450
+      ],
+      "counts": {
+        "licensed": 0,
+        "visible_unshown": 0,
+        "unlicensed": 0,
+        "d0_visible": 6
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          6
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          6
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          6
+        ],
+        "d0_visible": [
+          1.0,
+          1.0,
+          1.0,
+          6,
+          6
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "d0_visible": [
+          0.0133,
+          0.0,
+          0.0311,
+          6,
+          450
+        ]
+      },
+      "unlicensed_reasons": {},
+      "measured_d_hist": {
+        "0": 6
+      }
+    },
+    "EXPD:neg_false_attr_d1": {
+      "designed_d": 1,
+      "n_all": 450,
+      "n_stated_complement": 5,
+      "sc_rate_of_all": [
+        0.0111,
+        0.0022,
+        0.0244,
+        5,
+        450
+      ],
+      "counts": {
+        "licensed": 5,
+        "visible_unshown": 0,
+        "unlicensed": 0,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          1.0,
+          1.0,
+          1.0,
+          5,
+          5
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          5
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          5
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          5
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0111,
+          0.0022,
+          0.0244,
+          5,
+          450
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ]
+      },
+      "unlicensed_reasons": {},
+      "measured_d_hist": {
+        "1": 5
+      }
+    },
+    "EXPD:neg_false_attr_d2": {
+      "designed_d": 2,
+      "n_all": 450,
+      "n_stated_complement": 6,
+      "sc_rate_of_all": [
+        0.0133,
+        0.0044,
+        0.0244,
+        6,
+        450
+      ],
+      "counts": {
+        "licensed": 5,
+        "visible_unshown": 0,
+        "unlicensed": 1,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          0.8333,
+          0.5,
+          1.0,
+          5,
+          6
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          6
+        ],
+        "unlicensed": [
+          0.1667,
+          0.0,
+          0.5,
+          1,
+          6
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          6
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0111,
+          0.0022,
+          0.0222,
+          5,
+          450
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "unlicensed": [
+          0.0022,
+          0.0,
+          0.0067,
+          1,
+          450
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ]
+      },
+      "unlicensed_reasons": {
+        "derivable_ge2_unshown": 1
+      },
+      "measured_d_hist": {
+        "2": 6
+      }
+    },
+    "EXPD:neg_false_attr_d3": {
+      "designed_d": 3,
+      "n_all": 435,
+      "n_stated_complement": 5,
+      "sc_rate_of_all": [
+        0.0115,
+        0.0023,
+        0.023,
+        5,
+        435
+      ],
+      "counts": {
+        "licensed": 2,
+        "visible_unshown": 0,
+        "unlicensed": 3,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          0.4,
+          0.0,
+          0.8,
+          2,
+          5
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          5
+        ],
+        "unlicensed": [
+          0.6,
+          0.2,
+          1.0,
+          3,
+          5
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          5
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0046,
+          0.0,
+          0.0115,
+          2,
+          435
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          435
+        ],
+        "unlicensed": [
+          0.0069,
+          0.0,
+          0.0161,
+          3,
+          435
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          435
+        ]
+      },
+      "unlicensed_reasons": {
+        "derivable_ge2_unshown": 3
+      },
+      "measured_d_hist": {
+        "3": 5
+      }
+    },
+    "EXPD:neg_false_attr_d5": {
+      "designed_d": 5,
+      "n_all": 414,
+      "n_stated_complement": 2,
+      "sc_rate_of_all": [
+        0.0048,
+        0.0,
+        0.0121,
+        2,
+        414
+      ],
+      "counts": {
+        "licensed": 1,
+        "visible_unshown": 0,
+        "unlicensed": 1,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          0.5,
+          0.0,
+          1.0,
+          1,
+          2
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          2
+        ],
+        "unlicensed": [
+          0.5,
+          0.0,
+          1.0,
+          1,
+          2
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          2
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0024,
+          0.0,
+          0.0072,
+          1,
+          414
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          414
+        ],
+        "unlicensed": [
+          0.0024,
+          0.0,
+          0.0072,
+          1,
+          414
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          414
+        ]
+      },
+      "unlicensed_reasons": {
+        "derivable_ge2_unshown": 1
+      },
+      "measured_d_hist": {
+        "5": 2
+      }
+    },
+    "EXPD:neg_true_attr_d0": {
+      "designed_d": 0,
+      "n_all": 450,
+      "n_stated_complement": 0,
+      "sc_rate_of_all": [
+        0.0,
+        0.0,
+        0.0,
+        0,
+        450
+      ],
+      "counts": {
+        "licensed": 0,
+        "visible_unshown": 0,
+        "unlicensed": 0,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "visible_unshown": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "unlicensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "d0_visible": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ]
+      },
+      "unlicensed_reasons": {},
+      "measured_d_hist": {}
+    },
+    "EXPD:neg_true_attr_d1": {
+      "designed_d": 1,
+      "n_all": 450,
+      "n_stated_complement": 0,
+      "sc_rate_of_all": [
+        0.0,
+        0.0,
+        0.0,
+        0,
+        450
+      ],
+      "counts": {
+        "licensed": 0,
+        "visible_unshown": 0,
+        "unlicensed": 0,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "visible_unshown": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "unlicensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "d0_visible": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ]
+      },
+      "unlicensed_reasons": {},
+      "measured_d_hist": {}
+    },
+    "EXPD:neg_true_attr_d2": {
+      "designed_d": 2,
+      "n_all": 450,
+      "n_stated_complement": 0,
+      "sc_rate_of_all": [
+        0.0,
+        0.0,
+        0.0,
+        0,
+        450
+      ],
+      "counts": {
+        "licensed": 0,
+        "visible_unshown": 0,
+        "unlicensed": 0,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "visible_unshown": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "unlicensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "d0_visible": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ]
+      },
+      "unlicensed_reasons": {},
+      "measured_d_hist": {}
+    },
+    "EXPD:neg_true_attr_d3": {
+      "designed_d": 3,
+      "n_all": 450,
+      "n_stated_complement": 0,
+      "sc_rate_of_all": [
+        0.0,
+        0.0,
+        0.0,
+        0,
+        450
+      ],
+      "counts": {
+        "licensed": 0,
+        "visible_unshown": 0,
+        "unlicensed": 0,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "visible_unshown": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "unlicensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "d0_visible": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ]
+      },
+      "unlicensed_reasons": {},
+      "measured_d_hist": {}
+    },
+    "EXPD:neg_true_attr_d5": {
+      "designed_d": 5,
+      "n_all": 450,
+      "n_stated_complement": 0,
+      "sc_rate_of_all": [
+        0.0,
+        0.0,
+        0.0,
+        0,
+        450
+      ],
+      "counts": {
+        "licensed": 0,
+        "visible_unshown": 0,
+        "unlicensed": 0,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "visible_unshown": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "unlicensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "d0_visible": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ]
+      },
+      "unlicensed_reasons": {},
+      "measured_d_hist": {}
+    },
+    "EXPD:true_interruption": {
+      "designed_d": "inf",
+      "n_all": 450,
+      "n_stated_complement": 0,
+      "sc_rate_of_all": [
+        0.0,
+        0.0,
+        0.0,
+        0,
+        450
+      ],
+      "counts": {
+        "licensed": 0,
+        "visible_unshown": 0,
+        "unlicensed": 0,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "visible_unshown": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "unlicensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "d0_visible": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ]
+      },
+      "unlicensed_reasons": {},
+      "measured_d_hist": {}
+    },
+    "EXPE:BASELINE_FILLER": {
+      "designed_d": "inf",
+      "n_all": 612,
+      "n_stated_complement": 0,
+      "sc_rate_of_all": [
+        0.0,
+        0.0,
+        0.0,
+        0,
+        612
+      ],
+      "counts": {
+        "licensed": 0,
+        "visible_unshown": 0,
+        "unlicensed": 0,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "visible_unshown": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "unlicensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "d0_visible": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          612
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          612
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          612
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          612
+        ]
+      },
+      "unlicensed_reasons": {},
+      "measured_d_hist": {}
+    },
+    "EXPE:FREQ_MATCHED_NONREFUTING": {
+      "designed_d": "inf",
+      "n_all": 220,
+      "n_stated_complement": 26,
+      "sc_rate_of_all": [
+        0.1182,
+        0.0773,
+        0.1636,
+        26,
+        220
+      ],
+      "counts": {
+        "licensed": 0,
+        "visible_unshown": 0,
+        "unlicensed": 26,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          26
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          26
+        ],
+        "unlicensed": [
+          1.0,
+          1.0,
+          1.0,
+          26,
+          26
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          26
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          220
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          220
+        ],
+        "unlicensed": [
+          0.1182,
+          0.0773,
+          0.1636,
+          26,
+          220
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          220
+        ]
+      },
+      "unlicensed_reasons": {
+        "not_derivable_in_world": 26
+      },
+      "measured_d_hist": {
+        "None": 26
+      }
+    },
+    "EXPE:REFUTING_d1": {
+      "designed_d": 1,
+      "n_all": 612,
+      "n_stated_complement": 70,
+      "sc_rate_of_all": [
+        0.1144,
+        0.0881,
+        0.1424,
+        70,
+        612
+      ],
+      "counts": {
+        "licensed": 60,
+        "visible_unshown": 10,
+        "unlicensed": 0,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          0.8571,
+          0.7606,
+          0.9412,
+          60,
+          70
+        ],
+        "visible_unshown": [
+          0.1429,
+          0.0588,
+          0.2394,
+          10,
+          70
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          70
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          70
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.098,
+          0.0731,
+          0.1248,
+          60,
+          612
+        ],
+        "visible_unshown": [
+          0.0163,
+          0.0065,
+          0.0279,
+          10,
+          612
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          612
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          612
+        ]
+      },
+      "unlicensed_reasons": {},
+      "measured_d_hist": {
+        "1": 70
+      }
+    },
+    "EXPE:REFUTING_d2": {
+      "designed_d": 2,
+      "n_all": 220,
+      "n_stated_complement": 29,
+      "sc_rate_of_all": [
+        0.1318,
+        0.0864,
+        0.1773,
+        29,
+        220
+      ],
+      "counts": {
+        "licensed": 21,
+        "visible_unshown": 0,
+        "unlicensed": 8,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          0.7241,
+          0.5517,
+          0.8621,
+          21,
+          29
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          29
+        ],
+        "unlicensed": [
+          0.2759,
+          0.1379,
+          0.4483,
+          8,
+          29
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          29
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0955,
+          0.0591,
+          0.1364,
+          21,
+          220
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          220
+        ],
+        "unlicensed": [
+          0.0364,
+          0.0136,
+          0.0636,
+          8,
+          220
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          220
+        ]
+      },
+      "unlicensed_reasons": {
+        "derivable_ge2_unshown": 8
+      },
+      "measured_d_hist": {
+        "2": 29
+      }
+    },
+    "EXPE:REFUTING_d3": {
+      "designed_d": 3,
+      "n_all": 220,
+      "n_stated_complement": 30,
+      "sc_rate_of_all": [
+        0.1364,
+        0.0909,
+        0.1818,
+        30,
+        220
+      ],
+      "counts": {
+        "licensed": 22,
+        "visible_unshown": 0,
+        "unlicensed": 8,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          0.7333,
+          0.5667,
+          0.8667,
+          22,
+          30
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          30
+        ],
+        "unlicensed": [
+          0.2667,
+          0.1333,
+          0.4333,
+          8,
+          30
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          30
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.1,
+          0.0636,
+          0.1409,
+          22,
+          220
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          220
+        ],
+        "unlicensed": [
+          0.0364,
+          0.0136,
+          0.0636,
+          8,
+          220
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          220
+        ]
+      },
+      "unlicensed_reasons": {
+        "derivable_ge2_unshown": 8
+      },
+      "measured_d_hist": {
+        "3": 30
+      }
+    },
+    "EXPE:TEMPLATE_IRRELEVANT": {
+      "designed_d": "inf",
+      "n_all": 220,
+      "n_stated_complement": 0,
+      "sc_rate_of_all": [
+        0.0,
+        0.0,
+        0.0,
+        0,
+        220
+      ],
+      "counts": {
+        "licensed": 0,
+        "visible_unshown": 0,
+        "unlicensed": 0,
+        "d0_visible": 0
+      },
+      "class_frac_of_SC": {
+        "licensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "visible_unshown": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "unlicensed": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "d0_visible": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ]
+      },
+      "class_rate_of_all": {
+        "licensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          220
+        ],
+        "visible_unshown": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          220
+        ],
+        "unlicensed": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          220
+        ],
+        "d0_visible": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          220
+        ]
+      },
+      "unlicensed_reasons": {},
+      "measured_d_hist": {}
+    }
+  },
+  "designed_vs_measured_d_xtab": {
+    "1": {
+      "1": 154
+    },
+    "3": {
+      "3": 76
+    },
+    "inf": {
+      "None": 34
+    },
+    "2": {
+      "2": 57
+    },
+    "0": {
+      "0": 117
+    },
+    "5": {
+      "5": 11
+    }
+  },
+  "headline": {
+    "B_designed_d>=1_incl_controls": {
+      "n_stated_complement": 332,
+      "counts": {
+        "licensed": 235,
+        "visible_unshown": 14,
+        "unlicensed": 83,
+        "d0_visible": 0
+      },
+      "licensed_frac": [
+        0.7078,
+        0.6597,
+        0.7553,
+        235,
+        332
+      ],
+      "licensed_lenient_frac": [
+        0.8223,
+        0.7791,
+        0.8632,
+        273,
+        332
+      ],
+      "unlicensed_frac": [
+        0.25,
+        0.2061,
+        0.2943,
+        83,
+        332
+      ]
+    },
+    "A_measured_d>=1_derivable_only": {
+      "n_stated_complement": 298,
+      "counts": {
+        "licensed": 235,
+        "visible_unshown": 14,
+        "unlicensed": 49,
+        "d0_visible": 0
+      },
+      "licensed_frac": [
+        0.7886,
+        0.7423,
+        0.8333,
+        235,
+        298
+      ],
+      "licensed_lenient_frac": [
+        0.9161,
+        0.8822,
+        0.9463,
+        273,
+        298
+      ],
+      "unlicensed_frac": [
+        0.1644,
+        0.1246,
+        0.2077,
+        49,
+        298
+      ]
+    },
+    "CONTROL_measured_d_None": {
+      "n_stated_complement": 34,
+      "counts": {
+        "licensed": 0,
+        "visible_unshown": 0,
+        "unlicensed": 34,
+        "d0_visible": 0
+      },
+      "licensed_frac": [
+        0.0,
+        0.0,
+        0.0,
+        0,
+        34
+      ],
+      "licensed_lenient_frac": [
+        0.0,
+        0.0,
+        0.0,
+        0,
+        34
+      ],
+      "unlicensed_frac": [
+        1.0,
+        1.0,
+        1.0,
+        34,
+        34
+      ]
+    },
+    "EXPE_REFUTING_all": {
+      "n_stated_complement": 129,
+      "counts": {
+        "licensed": 103,
+        "visible_unshown": 10,
+        "unlicensed": 16,
+        "d0_visible": 0
+      },
+      "licensed_frac": [
+        0.7984,
+        0.7293,
+        0.8632,
+        103,
+        129
+      ],
+      "licensed_lenient_frac": [
+        0.876,
+        0.8125,
+        0.9315,
+        113,
+        129
+      ],
+      "unlicensed_frac": [
+        0.124,
+        0.0726,
+        0.1811,
+        16,
+        129
+      ]
+    },
+    "EXPD_designed_d>=1": {
+      "n_stated_complement": 177,
+      "counts": {
+        "licensed": 132,
+        "visible_unshown": 4,
+        "unlicensed": 41,
+        "d0_visible": 0
+      },
+      "licensed_frac": [
+        0.7458,
+        0.678,
+        0.8101,
+        132,
+        177
+      ],
+      "licensed_lenient_frac": [
+        0.904,
+        0.8571,
+        0.9444,
+        160,
+        177
+      ],
+      "unlicensed_frac": [
+        0.2316,
+        0.1703,
+        0.2971,
+        41,
+        177
+      ]
+    },
+    "EXPE_designed_d>=1": {
+      "n_stated_complement": 155,
+      "counts": {
+        "licensed": 103,
+        "visible_unshown": 10,
+        "unlicensed": 42,
+        "d0_visible": 0
+      },
+      "licensed_frac": [
+        0.6645,
+        0.5906,
+        0.7343,
+        103,
+        155
+      ],
+      "licensed_lenient_frac": [
+        0.729,
+        0.6541,
+        0.8,
+        113,
+        155
+      ],
+      "unlicensed_frac": [
+        0.271,
+        0.2092,
+        0.3333,
+        42,
+        155
+      ]
+    },
+    "measured_d>=2_derivable_only": {
+      "n_stated_complement": 144,
+      "counts": {
+        "licensed": 95,
+        "visible_unshown": 0,
+        "unlicensed": 49,
+        "d0_visible": 0
+      },
+      "licensed_frac": [
+        0.6597,
+        0.5833,
+        0.7343,
+        95,
+        144
+      ],
+      "licensed_lenient_frac": [
+        0.9236,
+        0.8776,
+        0.9653,
+        133,
+        144
+      ],
+      "unlicensed_frac": [
+        0.3403,
+        0.2657,
+        0.4167,
+        49,
+        144
+      ]
+    }
+  },
+  "cliff_within_licensed": {
+    "EXPD_aff_false_attr": {
+      "aff_false_attr_d0": {
+        "designed_d": 0,
+        "n_all": 450,
+        "sc_rate": [
+          0.2467,
+          0.1978,
+          0.2956,
+          111,
+          450
+        ],
+        "licensed_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "d0_visible_rate": [
+          0.2467,
+          0.1978,
+          0.2956,
+          111,
+          450
+        ],
+        "visible_unshown_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "unlicensed_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ]
+      },
+      "aff_false_attr_d1": {
+        "designed_d": 1,
+        "n_all": 450,
+        "sc_rate": [
+          0.0311,
+          0.0156,
+          0.0489,
+          14,
+          450
+        ],
+        "licensed_rate": [
+          0.0267,
+          0.0111,
+          0.0422,
+          12,
+          450
+        ],
+        "d0_visible_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "visible_unshown_rate": [
+          0.0044,
+          0.0,
+          0.0111,
+          2,
+          450
+        ],
+        "unlicensed_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ]
+      },
+      "aff_false_attr_d2": {
+        "designed_d": 2,
+        "n_all": 450,
+        "sc_rate": [
+          0.0489,
+          0.0311,
+          0.0689,
+          22,
+          450
+        ],
+        "licensed_rate": [
+          0.02,
+          0.0089,
+          0.0333,
+          9,
+          450
+        ],
+        "d0_visible_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "visible_unshown_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          450
+        ],
+        "unlicensed_rate": [
+          0.0289,
+          0.0156,
+          0.0444,
+          13,
+          450
+        ]
+      },
+      "aff_false_attr_d3": {
+        "designed_d": 3,
+        "n_all": 441,
+        "sc_rate": [
+          0.0499,
+          0.0317,
+          0.0703,
+          22,
+          441
+        ],
+        "licensed_rate": [
+          0.0431,
+          0.0249,
+          0.0612,
+          19,
+          441
+        ],
+        "d0_visible_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          441
+        ],
+        "visible_unshown_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          441
+        ],
+        "unlicensed_rate": [
+          0.0068,
+          0.0,
+          0.0159,
+          3,
+          441
+        ]
+      },
+      "aff_false_attr_d5": {
+        "designed_d": 5,
+        "n_all": 426,
+        "sc_rate": [
+          0.0211,
+          0.0094,
+          0.0352,
+          9,
+          426
+        ],
+        "licensed_rate": [
+          0.0141,
+          0.0047,
+          0.0258,
+          6,
+          426
+        ],
+        "d0_visible_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          426
+        ],
+        "visible_unshown_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          426
+        ],
+        "unlicensed_rate": [
+          0.007,
+          0.0,
+          0.0164,
+          3,
+          426
+        ]
+      }
+    },
+    "EXPD_cat_false_inert": {
+      "cat_false_inert_d1": {
+        "designed_d": 1,
+        "n_all": 300,
+        "sc_rate": [
+          0.1933,
+          0.1533,
+          0.2367,
+          58,
+          300
+        ],
+        "licensed_rate": [
+          0.1867,
+          0.1467,
+          0.23,
+          56,
+          300
+        ],
+        "d0_visible_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          300
+        ],
+        "visible_unshown_rate": [
+          0.0067,
+          0.0,
+          0.0167,
+          2,
+          300
+        ],
+        "unlicensed_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          300
+        ]
+      },
+      "cat_false_inert_d3": {
+        "designed_d": 3,
+        "n_all": 284,
+        "sc_rate": [
+          0.0528,
+          0.0282,
+          0.081,
+          15,
+          284
+        ],
+        "licensed_rate": [
+          0.0246,
+          0.007,
+          0.0423,
+          7,
+          284
+        ],
+        "d0_visible_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          284
+        ],
+        "visible_unshown_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          284
+        ],
+        "unlicensed_rate": [
+          0.0282,
+          0.0106,
+          0.0493,
+          8,
+          284
+        ]
+      },
+      "cat_false_inert_dinf": {
+        "designed_d": "inf",
+        "n_all": 300,
+        "sc_rate": [
+          0.0233,
+          0.0067,
+          0.0433,
+          7,
+          300
+        ],
+        "licensed_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          300
+        ],
+        "d0_visible_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          300
+        ],
+        "visible_unshown_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          300
+        ],
+        "unlicensed_rate": [
+          0.0233,
+          0.0067,
+          0.0433,
+          7,
+          300
+        ]
+      }
+    },
+    "EXPD_cat_false_usable": {
+      "cat_false_usable_d1": {
+        "designed_d": 1,
+        "n_all": 300,
+        "sc_rate": [
+          0.0233,
+          0.0067,
+          0.04,
+          7,
+          300
+        ],
+        "licensed_rate": [
+          0.0233,
+          0.0067,
+          0.04,
+          7,
+          300
+        ],
+        "d0_visible_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          300
+        ],
+        "visible_unshown_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          300
+        ],
+        "unlicensed_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          300
+        ]
+      },
+      "cat_false_usable_d3": {
+        "designed_d": 3,
+        "n_all": 280,
+        "sc_rate": [
+          0.0143,
+          0.0036,
+          0.0286,
+          4,
+          280
+        ],
+        "licensed_rate": [
+          0.0107,
+          0.0,
+          0.025,
+          3,
+          280
+        ],
+        "d0_visible_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          280
+        ],
+        "visible_unshown_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          280
+        ],
+        "unlicensed_rate": [
+          0.0036,
+          0.0,
+          0.0107,
+          1,
+          280
+        ]
+      },
+      "cat_false_usable_dinf": {
+        "designed_d": "inf",
+        "n_all": 300,
+        "sc_rate": [
+          0.0033,
+          0.0,
+          0.01,
+          1,
+          300
+        ],
+        "licensed_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          300
+        ],
+        "d0_visible_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          300
+        ],
+        "visible_unshown_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          300
+        ],
+        "unlicensed_rate": [
+          0.0033,
+          0.0,
+          0.01,
+          1,
+          300
+        ]
+      }
+    },
+    "EXPE_REFUTING": {
+      "REFUTING_d1": {
+        "designed_d": 1,
+        "n_all": 612,
+        "sc_rate": [
+          0.1144,
+          0.0881,
+          0.1424,
+          70,
+          612
+        ],
+        "licensed_rate": [
+          0.098,
+          0.0731,
+          0.1248,
+          60,
+          612
+        ],
+        "d0_visible_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          612
+        ],
+        "visible_unshown_rate": [
+          0.0163,
+          0.0065,
+          0.0279,
+          10,
+          612
+        ],
+        "unlicensed_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          612
+        ]
+      },
+      "REFUTING_d2": {
+        "designed_d": 2,
+        "n_all": 220,
+        "sc_rate": [
+          0.1318,
+          0.0864,
+          0.1773,
+          29,
+          220
+        ],
+        "licensed_rate": [
+          0.0955,
+          0.0591,
+          0.1364,
+          21,
+          220
+        ],
+        "d0_visible_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          220
+        ],
+        "visible_unshown_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          220
+        ],
+        "unlicensed_rate": [
+          0.0364,
+          0.0136,
+          0.0636,
+          8,
+          220
+        ]
+      },
+      "REFUTING_d3": {
+        "designed_d": 3,
+        "n_all": 220,
+        "sc_rate": [
+          0.1364,
+          0.0909,
+          0.1818,
+          30,
+          220
+        ],
+        "licensed_rate": [
+          0.1,
+          0.0636,
+          0.1409,
+          22,
+          220
+        ],
+        "d0_visible_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          220
+        ],
+        "visible_unshown_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0,
+          220
+        ],
+        "unlicensed_rate": [
+          0.0364,
+          0.0136,
+          0.0636,
+          8,
+          220
+        ]
+      }
+    }
+  }
+}

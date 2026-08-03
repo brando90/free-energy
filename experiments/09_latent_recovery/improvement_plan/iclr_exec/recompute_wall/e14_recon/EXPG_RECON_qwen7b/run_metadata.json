@@ -1,0 +1,76 @@
+{
+  "R_samples": 8,
+  "attainable_window": [
+    22,
+    198
+  ],
+  "cells": [
+    "recon_bare_pm10_20",
+    "recon_bare_pm1",
+    "recon_bare_large",
+    "recon_full_pm10_20",
+    "recon_full_pm1",
+    "recon_full_large"
+  ],
+  "created_at": "2026-08-03T08:50:37",
+  "decoding": {
+    "R_at_T": 0.7,
+    "greedy_rollout": true,
+    "max_new_cont": 384,
+    "max_new_gold": 512
+  },
+  "design": {
+    "anchors": {
+      "recon_bare_pm10_20": "k1_bare",
+      "recon_full_pm10_20": "k1_full"
+    },
+    "factor_A_delta": {
+      "large": "|delta| in [100,400] inside the attainable-sum window, last digit CHANGES (decoupler)",
+      "pm1": "|delta| == 1, last digit CHANGES (Yee-like)",
+      "pm10_20": "last-digit-PRESERVING +/-10/20 (ours)"
+    },
+    "factor_B_opacity": {
+      "bare": "result only (ours)",
+      "full": "operands printed on the site line (Yee-like)"
+    },
+    "large_arm_interpretation": "if `large` behaves like pm10_20 the effect is delta magnitude / plausibility; if it behaves like pm1 the effect is the last-digit cue; if neither, both channels are live",
+    "pairing": "all six cells ride ONE shared world (within-world paired)",
+    "prediction": "absorption collapses in recon_full_pm1 (Yee corner) and stays ~1.0 in recon_bare_pm10_20 (ours); the other two intermediate",
+    "separation_note": "|out_cf - out_true| = 2*|delta| (out = Q1 + Q2, Q1 = V + c, Q2 = V + c'): 2 in pm1, 20/40 in pm10_20, >=200 in large. The DV is unchanged; see contrasts.separation_bias for the bound.",
+    "shape": "3x2 (delta regime x opacity)",
+    "sign_convention": "every contrast is FULL minus BARE and <regime> minus <reference regime>; the key names state their own direction",
+    "site": "computed k=1 (kc1 shape: V = o1 + o2, operands stated above)"
+  },
+  "dknobs": {
+    "L_target": 20,
+    "filler_const_max": 60,
+    "filler_const_min": 2,
+    "forward_use_gap": 2,
+    "max_attempts_per_world": 4000,
+    "operand_max": 99,
+    "operand_min": 11,
+    "ops_target": 14,
+    "site_j": 10,
+    "value_max": 999,
+    "value_min": 1,
+    "vtrue_floor": 25
+  },
+  "doubt_lexicon": "\\b(?:bug|typo|re-?check|hold\\s+on|off\\s+by|should\\s+be|contradict\\w*|inconsist\\w*)\\b",
+  "experiment": "E14_RECON_YEE",
+  "flag_channel": "judge_reject if judged else doubt_lex (frozen lexicon)",
+  "gold_prefill": "line 1:",
+  "ks": [
+    1
+  ],
+  "model_at_prepare": "Qwen/Qwen2.5-7B-Instruct",
+  "n_target_per_cell": 150,
+  "near_window": 3,
+  "prepare_postchecks": "recon_gen.post_checks re-run fail-closed",
+  "prepare_rejects": {},
+  "prompt_sha256": "a1a134d3c0b753c273365be903dba2cd5c5fc2d33fb443891448d4c384de578b",
+  "sampling_temperature": 0.7,
+  "seed": 0,
+  "worlds_admitted": 1800,
+  "worlds_offered": 1800,
+  "worlds_source": "/lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/recompute_wall/e14_recon/worlds/recon_worlds_pool1800.jsonl"
+}

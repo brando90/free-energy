@@ -1,0 +1,143 @@
+{
+  "pooled_d1_d3": {
+    "closure_valid": {
+      "metric": "closure_valid",
+      "margin": 0.1,
+      "diff": 0.0542,
+      "ci95": [
+        0.0249,
+        0.0835
+      ],
+      "p_raw": 0.001202,
+      "pass_0.05": true,
+      "pass_holm": true,
+      "aff": 0.9351,
+      "neg": 0.8783,
+      "fams": 163,
+      "rows": [
+        832,
+        830
+      ]
+    },
+    "hop_sound_valid": {
+      "metric": "hop_sound_valid",
+      "margin": 0.1,
+      "diff": -0.0419,
+      "ci95": [
+        -0.0716,
+        -0.0122
+      ],
+      "p_raw": 8e-05,
+      "pass_0.05": true,
+      "pass_holm": true,
+      "aff": 0.1082,
+      "neg": 0.153,
+      "fams": 163,
+      "rows": [
+        832,
+        830
+      ]
+    }
+  },
+  "d1_only": {
+    "closure_valid": {
+      "metric": "closure_valid",
+      "margin": 0.1,
+      "diff": 0.0139,
+      "ci95": [
+        -0.0245,
+        0.0522
+      ],
+      "p_raw": 9e-06,
+      "pass_0.05": true,
+      "pass_holm": true,
+      "aff": 0.9231,
+      "neg": 0.9042,
+      "fams": 144,
+      "rows": [
+        429,
+        428
+      ]
+    },
+    "hop_sound_valid": {
+      "metric": "hop_sound_valid",
+      "margin": 0.1,
+      "diff": -0.0602,
+      "ci95": [
+        -0.0967,
+        -0.0237
+      ],
+      "p_raw": 0.016448,
+      "pass_0.05": true,
+      "pass_holm": false,
+      "aff": 0.1049,
+      "neg": 0.1589,
+      "fams": 144,
+      "rows": [
+        429,
+        428
+      ]
+    }
+  },
+  "d3_only": {
+    "closure_valid": {
+      "metric": "closure_valid",
+      "margin": 0.1,
+      "diff": 0.097,
+      "ci95": [
+        0.0644,
+        0.1296
+      ],
+      "p_raw": 0.42834,
+      "pass_0.05": false,
+      "pass_holm": false,
+      "aff": 0.9479,
+      "neg": 0.8507,
+      "fams": 134,
+      "rows": [
+        403,
+        402
+      ]
+    },
+    "hop_sound_valid": {
+      "metric": "hop_sound_valid",
+      "margin": 0.1,
+      "diff": -0.0373,
+      "ci95": [
+        -0.0747,
+        0.0001
+      ],
+      "p_raw": 0.000589,
+      "pass_0.05": true,
+      "pass_holm": true,
+      "aff": 0.1117,
+      "neg": 0.1468,
+      "fams": 134,
+      "rows": [
+        403,
+        402
+      ]
+    }
+  },
+  "pooled_tighter_margin_0.05": {
+    "hop_sound_valid": {
+      "metric": "hop_sound_valid",
+      "margin": 0.05,
+      "diff": -0.0419,
+      "ci95": [
+        -0.0716,
+        -0.0122
+      ],
+      "p_raw": 0.295826,
+      "pass_0.05": false,
+      "pass_holm": false,
+      "aff": 0.1082,
+      "neg": 0.153,
+      "fams": 163,
+      "rows": [
+        832,
+        830
+      ]
+    }
+  }
+}

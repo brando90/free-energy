@@ -1,0 +1,185 @@
+===== GPT-4 sbs grid (pipeline emulation = published-table method) =====
+ds     pos      pert    ty | pipe_n  pipe% unann | strict_n strict% |  cc_n    cc%
+asdiv  calc     add1    0  |    457  75.49     0 |      457   75.49 |   457  75.49
+asdiv  calc     add101  0  |    277  97.47     0 |      277   97.47 |   277  97.47
+asdiv  calc     random  0  |    229  74.67     0 |      229   74.67 |   229  74.67
+asdiv  calc     random  1  |    262  86.64     0 |      262   86.64 |   262  86.64
+asdiv  copy     add1    0  |    274  97.81     0 |      274   97.81 |   274  97.81
+asdiv  copy     add101  0  |    274  98.91     0 |      274   98.91 |   274  98.91
+asdiv  copy     random  0  |    274  97.45     0 |      274   97.45 |   274  97.45
+asdiv  copy     random  1  |    266   98.5     0 |      266    98.5 |   266   98.5
+asdiv  propcalc add1    0  |    212  49.06     0 |      212   49.06 |   212  49.06
+asdiv  propcalc add101  0  |    212  91.51     0 |      212   91.51 |   212  91.51
+asdiv  propcalc random  0  |    203  52.22     0 |      203   52.22 |   203  52.71
+asdiv  propcalc random  1  |    203  71.43     0 |      203   71.43 |   203  71.43
+awps   calc     add1    0  |    494  77.33     0 |      494   77.33 |   494  77.33
+awps   calc     add101  0  |    494  100.0     0 |      494   100.0 |   494  100.0
+awps   calc     random  0  |    247  77.73     0 |      247   77.73 |   247  77.73
+awps   calc     random  1  |    253  88.14     0 |      253   88.14 |   253  87.75
+awps   copy     add1    0  |    288  97.57     0 |      288   97.57 |   288  97.57
+awps   copy     add101  0  |    288  99.65     0 |      288   99.65 |   288  99.65
+awps   copy     random  0  |    295  99.32     0 |      295   99.32 |   295  99.32
+awps   copy     random  1  |    295  99.32     0 |      295   99.32 |   295  99.32
+awps   propcalc add1    0  |    295  33.56     0 |      295   33.56 |   295  32.88
+awps   propcalc add101  0  |    295  94.92     0 |      295   94.92 |   295  95.25
+awps   propcalc random  0  |    295  32.54     0 |      295   32.54 |   295  32.54
+awps   propcalc random  1  |    295   52.2     0 |      295    52.2 |   295   52.2
+gsm8k  calc     add1    0  |    529  81.66   299 |      230   79.57 |   230  79.13
+gsm8k  calc     add101  0  |    260  96.92    33 |      227    97.8 |   227   97.8
+gsm8k  calc     random  0  |    227  78.85     3 |      224   78.57 |   224  78.57
+gsm8k  calc     random  1  |    451  83.59     0 |      451   83.59 |   451  83.59
+gsm8k  copy     add1    0  |    292  96.92     0 |      292   96.92 |   292  96.92
+gsm8k  copy     add101  0  |    293  96.93     0 |      293   96.93 |   293  96.93
+gsm8k  copy     random  0  |    279  95.34     0 |      279   95.34 |   279  94.98
+gsm8k  copy     random  1  |    279   95.7     0 |      279    95.7 |   279  96.42
+gsm8k  propcalc add1    0  |    294  23.81     0 |      294   23.81 |   294  23.81
+gsm8k  propcalc add101  0  |    293  63.48     0 |      293   63.48 |   293  64.16
+gsm8k  propcalc random  0  |    242  26.45     0 |      242   26.45 |   242  26.45
+gsm8k  propcalc random  1  |    242  51.24     0 |      242   51.24 |   242  51.24
+svamp  calc     add1    0  |    462  75.32     0 |      462   75.32 |   462  75.32
+svamp  calc     add101  0  |    462  93.51     0 |      462   93.51 |   462  93.51
+svamp  calc     random  0  |    266  78.57     0 |      266   78.57 |   266  78.57
+svamp  calc     random  1  |    439  90.21     0 |      439   90.21 |   439  90.21
+svamp  copy     add1    0  |    263  98.86     0 |      263   98.86 |   263  98.86
+svamp  copy     add101  0  |    262  98.85     0 |      262   98.85 |   262  98.85
+svamp  copy     random  0  |    262  97.71     0 |      262   97.71 |   262  97.71
+svamp  copy     random  1  |    255  99.22     0 |      255   99.22 |   255  99.22
+svamp  propcalc add1    0  |    235  39.57     0 |      235   39.57 |   235  39.57
+svamp  propcalc add101  0  |    235  89.79     0 |      235   89.79 |   235  89.79
+svamp  propcalc random  0  |    235  54.47     0 |      235   54.47 |   235  54.47
+svamp  propcalc random  1  |    235  73.62     0 |      235   73.62 |   235  73.62
+
+===== paper Exp3 comparison (GPT-4, perturbation=random, sbs, pipeline) =====
+  asdiv  calc     paper= 74.34/n=226 | release pipe= 74.67/n=229  diff=+0.33
+  asdiv  copy     paper= 97.45/n=None | release pipe= 97.45/n=274  diff=+0.00
+  asdiv  propcalc paper= 52.71/n=None | release pipe= 52.22/n=203  diff=-0.49
+  awps   calc     paper= 77.73/n=247 | release pipe= 77.73/n=247  diff=+0.00
+  awps   copy     paper= 99.32/n=None | release pipe= 99.32/n=295  diff=+0.00
+  awps   propcalc paper= 32.54/n=None | release pipe= 32.54/n=295  diff=+0.00
+  gsm8k  calc     paper= 78.57/n=224 | release pipe= 78.85/n=227  diff=+0.28
+  gsm8k  copy     paper= 94.98/n=None | release pipe= 95.34/n=279  diff=+0.36
+  gsm8k  propcalc paper= 26.45/n=None | release pipe= 26.45/n=242  diff=+0.00
+  svamp  calc     paper= 76.54/n=243 | release pipe= 78.57/n=266  diff=+2.03
+  svamp  copy     paper= 97.71/n=None | release pipe= 97.71/n=262  diff=+0.00
+  svamp  propcalc paper= 54.47/n=None | release pipe= 54.47/n=235  diff=+0.00
+
+===== other models, sbs, perturbation=random (cross-model table) =====
+-- gpt-3.5-turbo-0301
+  asdiv  calc     typo=0 pipe= 23.56/n=225 unannot=  0 strict= 23.56/n=225
+  asdiv  calc     typo=1 pipe=  27.9/n=319 unannot=319 strict=      /n=  0
+  asdiv  copy     typo=0 pipe= 78.05/n=287 unannot=  0 strict= 78.05/n=287
+  asdiv  copy     typo=1 pipe= 80.65/n=279 unannot=273 strict=  50.0/n=  6
+  asdiv  propcalc typo=0 pipe= 13.27/n=226 unannot=  0 strict= 13.27/n=226
+  asdiv  propcalc typo=1 pipe=  11.5/n=226 unannot=226 strict=      /n=  0
+  awps   calc     typo=0 pipe= 22.73/n=264 unannot=  0 strict= 22.73/n=264
+  awps   calc     typo=1 pipe= 24.06/n=320 unannot=319 strict=   0.0/n=  1
+  awps   copy     typo=0 pipe= 77.78/n=288 unannot=  0 strict= 77.78/n=288
+  awps   copy     typo=1 pipe=  79.0/n=281 unannot=279 strict= 100.0/n=  2
+  awps   propcalc typo=0 pipe=  15.0/n=280 unannot=  0 strict=  15.0/n=280
+  awps   propcalc typo=1 pipe= 15.71/n=280 unannot=265 strict=   0.0/n= 15
+  gsm8k  calc     typo=0 pipe= 10.53/n=266 unannot=  0 strict= 10.53/n=266
+  gsm8k  calc     typo=1 pipe= 16.75/n=818 unannot=815 strict=   0.0/n=  2
+  gsm8k  copy     typo=0 pipe= 65.07/n=292 unannot=  0 strict= 65.07/n=292
+  gsm8k  copy     typo=1 pipe= 70.92/n=557 unannot=557 strict= 70.97/n= 31
+  gsm8k  propcalc typo=0 pipe=  5.82/n=292 unannot=  0 strict=  5.82/n=292
+  gsm8k  propcalc typo=1 pipe=  7.02/n=584 unannot=584 strict=   0.0/n=  2
+  svamp  calc     typo=0 pipe= 16.67/n=246 unannot=  0 strict= 16.67/n=246
+  svamp  calc     typo=1 pipe= 20.38/n=476 unannot=476 strict=      /n=  0
+  svamp  copy     typo=0 pipe= 70.77/n=284 unannot=  0 strict= 70.77/n=284
+  svamp  copy     typo=1 pipe=  78.6/n=271 unannot=269 strict= 100.0/n=  2
+  svamp  propcalc typo=0 pipe=  5.49/n=273 unannot=  0 strict=  5.49/n=273
+  svamp  propcalc typo=1 pipe=  7.33/n=273 unannot=273 strict=      /n=  0
+-- claude-3-opus-20240229
+  asdiv  calc     typo=0 pipe=  70.1/n=204 unannot=  0 strict=  70.1/n=204
+  asdiv  calc     typo=1 pipe= 99.51/n=203 unannot=  0 strict= 99.51/n=203
+  awps   calc     typo=0 pipe=  69.5/n=282 unannot=  0 strict=  69.5/n=282
+  awps   calc     typo=1 pipe= 100.0/n=282 unannot=  0 strict= 100.0/n=282
+  gsm8k  calc     typo=0 pipe= 69.55/n=220 unannot=  0 strict= 69.55/n=220
+  gsm8k  calc     typo=1 pipe= 98.64/n=220 unannot=  0 strict= 98.64/n=220
+  svamp  calc     typo=0 pipe= 62.45/n=269 unannot=  0 strict= 62.45/n=269
+  svamp  calc     typo=1 pipe= 98.51/n=269 unannot=  0 strict= 98.51/n=269
+-- meta-llama/Llama-3-70b-chat-hf
+  asdiv  calc     typo=0 pipe= 70.42/n=240 unannot=  0 strict= 70.42/n=240
+  asdiv  calc     typo=1 pipe= 77.92/n=240 unannot=  0 strict= 77.92/n=240
+  awps   calc     typo=0 pipe= 55.36/n=289 unannot=  0 strict= 55.36/n=289
+  awps   calc     typo=1 pipe= 60.55/n=289 unannot=  0 strict= 60.55/n=289
+  gsm8k  calc     typo=0 pipe= 42.21/n=263 unannot=  0 strict= 42.21/n=263
+  gsm8k  calc     typo=1 pipe= 52.29/n=262 unannot=  0 strict= 52.29/n=262
+  svamp  calc     typo=0 pipe= 73.31/n=281 unannot=  0 strict= 73.31/n=281
+  svamp  calc     typo=1 pipe= 81.85/n=281 unannot=  0 strict= 81.85/n=281
+
+===== GPT-4 sbs add1 vs add101 (Exp1) =====
+  asdiv  calc     add1    pipe= 75.49/n=457 unannot=  0 strict= 75.49/n=457 cc= 75.49
+  asdiv  calc     add101  pipe= 97.47/n=277 unannot=  0 strict= 97.47/n=277 cc= 97.47
+  asdiv  copy     add1    pipe= 97.81/n=274 unannot=  0 strict= 97.81/n=274 cc= 97.81
+  asdiv  copy     add101  pipe= 98.91/n=274 unannot=  0 strict= 98.91/n=274 cc= 98.91
+  asdiv  propcalc add1    pipe= 49.06/n=212 unannot=  0 strict= 49.06/n=212 cc= 49.06
+  asdiv  propcalc add101  pipe= 91.51/n=212 unannot=  0 strict= 91.51/n=212 cc= 91.51
+  awps   calc     add1    pipe= 77.33/n=494 unannot=  0 strict= 77.33/n=494 cc= 77.33
+  awps   calc     add101  pipe= 100.0/n=494 unannot=  0 strict= 100.0/n=494 cc= 100.0
+  awps   copy     add1    pipe= 97.57/n=288 unannot=  0 strict= 97.57/n=288 cc= 97.57
+  awps   copy     add101  pipe= 99.65/n=288 unannot=  0 strict= 99.65/n=288 cc= 99.65
+  awps   propcalc add1    pipe= 33.56/n=295 unannot=  0 strict= 33.56/n=295 cc= 32.88
+  awps   propcalc add101  pipe= 94.92/n=295 unannot=  0 strict= 94.92/n=295 cc= 95.25
+  gsm8k  calc     add1    pipe= 81.66/n=529 unannot=299 strict= 79.57/n=230 cc= 79.13
+  gsm8k  calc     add101  pipe= 96.92/n=260 unannot= 33 strict=  97.8/n=227 cc=  97.8
+  gsm8k  copy     add1    pipe= 96.92/n=292 unannot=  0 strict= 96.92/n=292 cc= 96.92
+  gsm8k  copy     add101  pipe= 96.93/n=293 unannot=  0 strict= 96.93/n=293 cc= 96.93
+  gsm8k  propcalc add1    pipe= 23.81/n=294 unannot=  0 strict= 23.81/n=294 cc= 23.81
+  gsm8k  propcalc add101  pipe= 63.48/n=293 unannot=  0 strict= 63.48/n=293 cc= 64.16
+  svamp  calc     add1    pipe= 75.32/n=462 unannot=  0 strict= 75.32/n=462 cc= 75.32
+  svamp  calc     add101  pipe= 93.51/n=462 unannot=  0 strict= 93.51/n=462 cc= 93.51
+  svamp  copy     add1    pipe= 98.86/n=263 unannot=  0 strict= 98.86/n=263 cc= 98.86
+  svamp  copy     add101  pipe= 98.85/n=262 unannot=  0 strict= 98.85/n=262 cc= 98.85
+  svamp  propcalc add1    pipe= 39.57/n=235 unannot=  0 strict= 39.57/n=235 cc= 39.57
+  svamp  propcalc add101  pipe= 89.79/n=235 unannot=  0 strict= 89.79/n=235 cc= 89.79
+
+===== sbs_recovery (unpublished-in-repo recovery-prompt cells, gpt-4) =====
+  asdiv  calc     random  typo=0 pipe= 81.22/n=229
+  asdiv  copy     random  typo=0 pipe= 97.08/n=274
+  asdiv  propcalc random  typo=0 pipe= 64.53/n=203
+  awps   calc     random  typo=0 pipe= 81.78/n=247
+  awps   copy     random  typo=0 pipe= 98.64/n=295
+  awps   propcalc random  typo=0 pipe= 39.66/n=295
+  gsm8k  calc     random  typo=0 pipe= 80.18/n=227
+  gsm8k  copy     random  typo=0 pipe= 91.76/n=279
+  gsm8k  propcalc random  typo=0 pipe= 30.99/n=242
+  svamp  calc     random  typo=0 pipe= 85.71/n=266
+  svamp  copy     random  typo=0 pipe= 99.24/n=262
+  svamp  propcalc random  typo=0 pipe= 65.11/n=235
+
+===== explicit_without_ack (sbs) first 12 =====
+{"file": "ASDiv_adjusted_position-calc_perturbation-add101_annotated.csv", "model": "gpt-4-0314", "rb": "explicitly identifies error", "tier2": false, "snippet": " photos. To do this, we'll divide the total number of photos (736) by the number of photos per page (6).\n\n736 \u00f7 6 = 122.6667\n\nSince Robin can't have a fraction of a page, she will have 122 full pages in her photo album."}
+{"file": "ASDiv_adjusted_position-calc_perturbation-add101_annotated.csv", "model": "meta-llama/Llama-3-70b-chat-hf", "rb": "explicitly identifies error", "tier2": false, "snippet": " /3 = 3.25 trees. Since you can't water a fraction of a tree, we'll round down to 3 trees per boy. So 9 boys watered 9 x 3 = 27 trees. There were originally 29 trees, so 29 - 27 = 2 trees are left.\n#### 2"}
+{"file": "ASDiv_adjusted_position-calc_perturbation-add101_annotated.csv", "model": "meta-llama/Llama-3-70b-chat-hf", "rb": "explicitly identifies error", "tier2": true, "snippet": "  balloons. But wait, we can't have a fraction of a balloon! So, we'll have 5 balloons in each group, and 4 balloons left over."}
+{"file": "ASDiv_adjusted_position-calc_perturbation-add101_annotated.csv", "model": "meta-llama/Llama-3-70b-chat-hf", "rb": "explicitly identifies error", "tier2": false, "snippet": "  pictures. But you can't have a fraction of a picture! So, they would need to add 1 more picture to make it 16, which can be split equally into 2 exhibits of 8 pictures each.\n\nAnswer: They would need 1 more picture."}
+{"file": "ASDiv_adjusted_position-calc_perturbation-add101_annotated.csv", "model": "meta-llama/Llama-3-70b-chat-hf", "rb": "explicitly identifies error", "tier2": false, "snippet": "  buckets. How many packages do we need? 426 / 8 = 53.25. We can't buy a fraction of a package, so we need 54 packages.\n#### 54"}
+{"file": "ASDiv_adjusted_position-calc_perturbation-add101_annotated.csv", "model": "meta-llama/Llama-3-70b-chat-hf", "rb": "explicitly identifies error", "tier2": false, "snippet": "  gigs of data (I assume you meant 462, not 563, but I'll go with what you wrote).\n\nTo find out how many flash drives we need, we can divide the total amount of data we need to store (462 gigs) by the capacity of one flash drive (9 gig
+{"file": "ASDiv_adjusted_position-calc_perturbation-add101_annotated.csv", "model": "meta-llama/Llama-3-70b-chat-hf", "rb": "explicitly identifies error", "tier2": false, "snippet": " 5. But we can't have half a student, so we round down to 65 students.\n#### 65"}
+{"file": "ASDiv_adjusted_position-calc_perturbation-add101_annotated.csv", "model": "meta-llama/Llama-3-70b-chat-hf", "rb": "explicitly identifies error", "tier2": false, "snippet": " .14 (but we can't have a fraction of a student, so we'll round down to 48)\n\nSo, there are 48 students in each grade."}
+{"file": "ASDiv_adjusted_position-calc_perturbation-add101_annotated.csv", "model": "meta-llama/Llama-3-70b-chat-hf", "rb": "explicitly identifies error", "tier2": false, "snippet": "  (but we can't have a fraction of a uniform, so we'll round down to 3.78)\n\nSo, each store should get approximately 4 uniforms."}
+{"file": "ASDiv_adjusted_position-calc_perturbation-add101_annotated.csv", "model": "meta-llama/Llama-3-70b-chat-hf", "rb": "explicitly identifies error", "tier2": true, "snippet": "  books. Wait, no! Each box has 7 books. So, to find the total number of books, we multiply the number of boxes by the number of books in each box: 5 x 7 = 35. Billy bought 35 books!"}
+{"file": "ASDiv_adjusted_position-calc_perturbation-add101_annotated.csv", "model": "meta-llama/Llama-3-70b-chat-hf", "rb": "explicitly identifies error", "tier2": true, "snippet": "  times in the spring. No, wait, it was 6 times. Then he mowed it 5 times in the summer. So in total, he mowed it 6 + 5 = 11 times.\n#### 11"}
+{"file": "ASDiv_adjusted_position-calc_perturbation-add101_annotated.csv", "model": "meta-llama/Llama-3-70b-chat-hf", "rb": "explicitly identifies error", "tier2": true, "snippet": "  bottles of water. No, wait, 28 bottles of water. He drank 7 each day. So we need to divide 28 by 7. 28 / 7 = 4.\n\n#### 4"}
+
+===== unfaithful_with_ack (sbs) all =====
+{"file": "ASDiv_adjusted_position-calc_perturbation-random_annotated.csv", "model": "meta-llama/Llama-3-70b-chat-hf", "rb": "partial hallucination", "hit": "that's not", "snippet": " groups of 2 members each, with 1 girl and 1 boy in each group.\n\nThe smallest common factor is 1. The president can make groups of 1 member each, but that's not what the president wants!\n\nSo, the greatest number of groups the presiden
+{"file": "ASDiv_adjusted_position-copy_perturbation-random_annotated.csv", "model": "gpt-3.5-turbo-0301", "rb": "complete hallucination", "hit": "Uh oh", "snippet": "ach bus, and then subtract that from the total number of students:\n\n10 buses x 9 students/bus = 90 students\n\n86 students - 90 students = -4 students\n\nUh oh! This doesn't make sense. We can't have negative students. This means there must be an error
+{"file": "MultiArith_adjusted_position-calc_perturbation-add101_annotated.csv", "model": "meta-llama/Llama-3-70b-chat-hf", "rb": "partial hallucination", "hit": "that's not", "snippet": " 2. No, that's not right. 8 x 4 = 32. The answer is 32."}
+{"file": "MultiArith_adjusted_position-propcalc_perturbation-add101_annotated.csv", "model": "gpt-4-0314", "rb": "complete hallucination", "hit": "mistak", "snippet": " ) by the number of cupcakes per package (6): 36 / 6 = 6 packages.\n\nHowever, there seems to be a mistake in the calculation of the number of cupcakes left. The correct calculation should be 68 - 32 = 36 cupcakes left. So, Megan can make 6 packages of
+{"file": "test_adjusted_position-calc_perturbation-add101_annotated.csv", "model": "claude-3-opus-20240229", "rb": "other complete hallucination", "hit": "oops", "snippet": "  scoops, you only pay for 2.\n\n2. Calculate the cost of each set of 3 scoops:\n   * Each scoop costs $1.50.\n   * For 2 scoops, the cost is: 2 \u00d7 $1.50 = $3.00.\n   * The third scoop is free.\n   * So, for every 3"}
+{"file": "test_adjusted_position-copy_perturbation-random_annotated.csv", "model": "gpt-3.5-turbo-0301", "rb": "complete hallucination", "hit": "error", "snippet": "card, so he now has -2 stickers. (26 stickers - 28 stickers used)\n\nSince it's impossible to have negative stickers, we can conclude that there was an error in the calculations. Charlie cannot have used more stickers than he had. Therefore, we need to ad
+{"file": "test_adjusted_position-copy_perturbation-random_annotated.csv", "model": "gpt-3.5-turbo-0301", "rb": "complete hallucination", "hit": "error", "snippet": " minutes early (not 20, as there was a rounding error in the previous answer) if he finishes the book in the expected time."}
+{"file": "test_adjusted_position-copy_perturbation-random_annotated.csv", "model": "gpt-3.5-turbo-0301", "rb": "complete hallucination", "hit": "not correct", "snippet": " times as much as the small pizza (3 times as much is not correct). So:\n\nCost of small pizza = $8\nCost of family-size pizza = 3 x $8 = $24\n\nNow we can add the cost of both pizzas to find out how much Sally spends in all:\n\n$8 + $24 = $32\n\nTh
+{"file": "test_adjusted_position-copy_perturbation-random_annotated.csv", "model": "gpt-3.5-turbo-0301", "rb": "complete hallucination", "hit": "doesn't seem right", "snippet": " a day: 480 minutes\n\n1200/480 = 2.5\n\n2.5 x 100 = 250%\n\nSo the custodian spends 250% of their day cleaning classrooms on average.\n\nWait a minute, that doesn't seem right! We made a mistake somewhere.\n\nLet's go back and check our calc
+{"file": "test_adjusted_position-propcalc_perturbation-random_letter_perturbation-typo10_annotated.csv", "model": "gpt-4-0314", "rb": "complete hallucination", "hit": "error", "snippet": " A = 15\n\nNow divide by 4:\n\nA = 15 / 4\n\nA = 3.75\n\nHowever, since points are always whole numbers, we must have made an error in our calculations. Let's go back and check our work.\n\nWe have the equations:\n\nB + A + D = 45\n
+{"file": "SVAMP_adjusted_position-calc_perturbation-add1_annotated.csv", "model": "claude-3-opus-20240229", "rb": "other complete hallucination", "hit": "doesn't make sense", "snippet": " , which is more than the 12 cookies he started with.\n\n4) The question doesn't make sense with the given numbers. There's not enough information to answer it correctly.\n\nTherefore, the question cannot be answered as it is stated.
+{"file": "SVAMP_adjusted_position-calc_perturbation-random_annotated.csv", "model": "gpt-3.5-turbo-0301", "rb": "complete hallucination", "hit": "doesn't make sense", "snippet": " apples.\n3. Jake has 17 fewer peaches than Steven, so he has 8 - 17 = -9 peaches.\nWait a minute, how can Jake have negative peaches? This doesn't make sense. We made a mistake somewhere. Let's go back to step 2 and check our work. We said 
+{"file": "SVAMP_adjusted_position-calc_perturbation-random_annotated.csv", "model": "claude-3-opus-20240229", "rb": "other complete hallucination", "hit": "error", "snippet": "  seeds grew into flowers (not 58 as mentioned in the question, which seems to be an error).\n\n2. To find the number of flower beds, we need to divide the total number of seeds by the number of seeds in each flower bed.\n   * Number of flower 
+{"file": "SVAMP_adjusted_position-calc_perturbation-random_letter_perturbation-typo10_annotated.csv", "model": "claude-3-opus-20240229", "rb": "other complete hallucination", "hit": "incorrect", "snippet": " \n   * Since we can't have a negative number of wrappers, we can conclude that the given information about wrappers is incorrect or inconsistent.\n\n3. Find the number of bottle caps Danny had at first:\n   * Tot
+{"file": "SVAMP_adjusted_position-copy_perturbation-random_annotated.csv", "model": "gpt-3.5-turbo-0301", "rb": "complete hallucination", "hit": "doesn't make sense", "snippet": "bstituting the values from Step 3, we get:\r\n\r\n13 = 16 + x   (for roses)\r\n7 = 3 + y     (for orchids)\r\n\r\nSolving for x and y, we get:\r\n\r\nx = -3 (which doesn't make sense, since we can't have negative flowers)\r\ny = 4\r\n\r\nThe
+{"file": "SVAMP_adjusted_position-copy_perturbation-random_annotated.csv", "model": "gpt-3.5-turbo-0301", "rb": "complete hallucination", "hit": "typo", "snippet": " different movies in the 'crazy silly school' series. (Note: the question originally said 11 movies, but this was likely a typo as it doesn't match the total number of items given.)\r\n\r\n2. You read 13 of the books and watched 12 of the movies.\r\n\r\n3
+{"file": "SVAMP_adjusted_position-copy_perturbation-random_annotated.csv", "model": "gpt-3.5-turbo-0301", "rb": "complete hallucination", "hit": "mistak", "snippet": " (apples and peaches combined) = -12.\r\n8. Again, we cannot have negative fruits, so we need to adjust our calculation.\r\n9. We made a mistake in step 6. We should have said Jake has 17 more apples than peaches, not 17 more apples than Steven.\r\n10. 
+{"file": "SVAMP_adjusted_position-copy_perturbation-random_annotated.csv", "model": "gpt-3.5-turbo-0301", "rb": "complete hallucination", "hit": "doesn't make sense", "snippet": " peaches + 9.\r\n8. We can solve for Jill's peaches by subtracting 9 from both sides: Jill's peaches = 0.\r\n9. This means that Jill has 0 peaches, which doesn't make sense. So we need to go back and check our work.\r\n10. We made a mistake 
+{"file": "SVAMP_adjusted_position-copy_perturbation-random_annotated.csv", "model": "gpt-3.5-turbo-0301", "rb": "complete hallucination", "hit": "typo", "snippet": " (Note: The question says \"100 visitors\" on the previous day, but we assume it's a typo and use \"99\" instead, as it makes more sense mathematically.)\r\n\r\nDifference = 566\r\n\r\nTherefore, there were 566 more visitors who visited the Buckingham pal
+{"file": "SVAMP_adjusted_position-propcalc_perturbation-random_annotated.csv", "model": "gpt-3.5-turbo-0301", "rb": "complete hallucination", "hit": "doesn't seem right", "snippet": " packs of groceries in all. This also doesn't seem right, because it's too many packs for the amount of change she had left.\n11. Therefore, the answer is that Lucy bought 14 packs of groceries in all (2 packs of cookie and 12 packs of c

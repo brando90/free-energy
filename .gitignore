@@ -230,3 +230,7 @@ experiments/00_ar_pros_cons/data/splits/
 
 # large model checkpoints (exceed GitHub 100MB limit)
 *.pt
+
+# session additions 2026-08-03
+experiments/09_latent_recovery/improvement_plan/tooling/.venv-vllm/
+experiments/09_latent_recovery/improvement_plan/iclr_exec/recompute_wall/stress_reasoning/logs/olmo7b_sft.log

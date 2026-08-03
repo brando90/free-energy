@@ -1,0 +1,14 @@
+[EXPD] read 11577 rows from /lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/results/EXPD_MATCHED_GRADIENT/validated_outputs.jsonl
+[EXPD] wrote 11577 rows -> /lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/e7_judge/inputs/expd_full_grid.jsonl
+[EXPB] read 900 total rows from /lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/results/EXPB_LOCAL_CERT_FLIP/validated_outputs.jsonl; 118 have class=='unparsed'
+  GLOBAL_BASELINE: 12/300 unparsed = 4.0%
+  IRRELEVANT_CERTIFICATE_CONTROL: 11/300 unparsed = 3.7%
+  LOCAL_CERTIFICATE: 95/300 unparsed = 31.7%
+[EXPB] wrote 118 rows -> /lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/e7_judge/inputs/expb_unparsed.jsonl
+[jobs] wrote /lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/e7_judge/jobs_e7.json
+[jobs] total rows across both jobs: 11695 (11695 rows x 2 prompts/row = 23390 judge calls)
+[preview] wrote 5-sample prompt preview -> /lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/e7_judge/prompt_preview_5rows.txt
+[wiring] inputs dir exists: True (/lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/e7_judge/inputs)
+[wiring] outputs dir exists: True (/lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/e7_judge/outputs)
+[wiring] expd out_prefix -> /lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/e7_judge/outputs/expd_full_verdicts.jsonl + _summary.json
+[wiring] expb out_prefix -> /lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/e7_judge/outputs/expb_unparsed_verdicts.jsonl + _summary.json

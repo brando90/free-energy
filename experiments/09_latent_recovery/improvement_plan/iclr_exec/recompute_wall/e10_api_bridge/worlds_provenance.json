@@ -1,0 +1,12 @@
+{
+  "n_programs": 250,
+  "note": "identical worlds as regime2 prefill models (claude-haiku-4-5, claude-sonnet-4-5)",
+  "program_id_fingerprint": "64583365b3ad48dc46b168be",
+  "shapes": {
+    "kc1": 60,
+    "kc5": 60,
+    "kr1": 70,
+    "kr8": 60
+  },
+  "source": "/lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/results/EXPH2_FRONTIER_FOLLOWUPS/regime2/programs.jsonl"
+}

@@ -1,0 +1,94 @@
+{
+  "job": "EXPE_EVIDENCE_MOVER_SMOKE",
+  "input": "/lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/results/EXPE_EVIDENCE_MOVER_SMOKE/validated_outputs.jsonl",
+  "n_rows": 120,
+  "judge_model": "Qwen/Qwen2.5-32B-Instruct",
+  "continuation_field": "continuation",
+  "statement_field": "falsehood_statement",
+  "cell_field": "arm",
+  "lexical_field": "verbalized_doubt",
+  "filter": null,
+  "sample_n": null,
+  "stratify_field": null,
+  "seed": 0,
+  "n_unparsed_verdicts": 0,
+  "cells": {
+    "BASELINE_FILLER": {
+      "n": 20,
+      "lexical_doubt_rate": 0.0,
+      "judge_doubt_rate": 0.0,
+      "explicit_rejection_rate": 0.2,
+      "judge_lex_agreement": 1.0,
+      "judge_and_lex": 0,
+      "judge_not_lex": 0,
+      "reject_not_judge": 4,
+      "stated_complement_of_falsehood_rate": 0.0
+    },
+    "FREQ_MATCHED_NONREFUTING": {
+      "n": 20,
+      "lexical_doubt_rate": 0.1,
+      "judge_doubt_rate": 0.1,
+      "explicit_rejection_rate": 0.2,
+      "judge_lex_agreement": 1.0,
+      "judge_and_lex": 2,
+      "judge_not_lex": 0,
+      "reject_not_judge": 2,
+      "stated_complement_of_falsehood_rate": 0.05
+    },
+    "REFUTING_d1": {
+      "n": 20,
+      "lexical_doubt_rate": 0.0,
+      "judge_doubt_rate": 0.0,
+      "explicit_rejection_rate": 0.4,
+      "judge_lex_agreement": 1.0,
+      "judge_and_lex": 0,
+      "judge_not_lex": 0,
+      "reject_not_judge": 8,
+      "stated_complement_of_falsehood_rate": 0.2
+    },
+    "REFUTING_d2": {
+      "n": 20,
+      "lexical_doubt_rate": 0.0,
+      "judge_doubt_rate": 0.0,
+      "explicit_rejection_rate": 0.45,
+      "judge_lex_agreement": 1.0,
+      "judge_and_lex": 0,
+      "judge_not_lex": 0,
+      "reject_not_judge": 9,
+      "stated_complement_of_falsehood_rate": 0.15
+    },
+    "REFUTING_d3": {
+      "n": 20,
+      "lexical_doubt_rate": 0.0,
+      "judge_doubt_rate": 0.0,
+      "explicit_rejection_rate": 0.3,
+      "judge_lex_agreement": 1.0,
+      "judge_and_lex": 0,
+      "judge_not_lex": 0,
+      "reject_not_judge": 6,
+      "stated_complement_of_falsehood_rate": 0.1
+    },
+    "TEMPLATE_IRRELEVANT": {
+      "n": 20,
+      "lexical_doubt_rate": 0.05,
+      "judge_doubt_rate": 0.05,
+      "explicit_rejection_rate": 0.15,
+      "judge_lex_agreement": 1.0,
+      "judge_and_lex": 1,
+      "judge_not_lex": 0,
+      "reject_not_judge": 3,
+      "stated_complement_of_falsehood_rate": 0.0
+    }
+  },
+  "overall": {
+    "n": 120,
+    "lexical_doubt_rate": 0.025,
+    "judge_doubt_rate": 0.025,
+    "explicit_rejection_rate": 0.2833,
+    "judge_lex_agreement": 1.0,
+    "judge_and_lex": 3,
+    "judge_not_lex": 0,
+    "reject_not_judge": 32,
+    "stated_complement_of_falsehood_rate": 0.0833
+  }
+}

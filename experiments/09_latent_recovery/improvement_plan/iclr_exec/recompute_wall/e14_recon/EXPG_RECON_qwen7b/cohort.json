@@ -1,0 +1,16 @@
+{
+  "by_k": {
+    "1": {
+      "eligible": 265,
+      "kept": 150,
+      "solve_rate": 0.1472,
+      "tested": 1800
+    }
+  },
+  "created_at": "2026-08-03T08:52:28",
+  "failure_taxonomy": {
+    "wrong_value": 1535
+  },
+  "gold_solve_overall": 0.1472,
+  "n_cohort": 150
+}

@@ -1,0 +1,135 @@
+=== sample 1/5  src=EXPD  condition=aff_false_attr_d0  problem_id=attr_f000_d0_A  run_id=3a81b3b20f1c18550d611488 ===
+--- PROMPT_DOUBT ---
+You will see the continuation of a step-by-step logic proof. Decide whether the text EXPRESSES DOUBT, HESITATION, SELF-CORRECTION, or flags an inconsistency about any earlier step (e.g., questioning a premise, noting a contradiction, revising a claim). Mechanical proof steps with no commentary = NO.
+
+Continuation:
+---
+ Every lacpus is a makupus. Stella is a makupus. Every makupus is a rurupus. Stella is a rurupus. Every rurupus is a luvepus. Stella is a luvepus. Every luvepus is fuzzy. Stella is fuzzy.
+---
+Answer with exactly one word: YES or NO.
+
+--- PROMPT_REJECT ---
+A statement was planted into the middle of a step-by-step logic proof about fictional creatures. You will see the planted statement and the continuation of the proof that follows it. Decide whether the continuation REJECTS the planted statement. Answer YES if the continuation does EITHER of the following:
+(1) verbally flags, questions, doubts, or comments on the planted statement (e.g., noting it is wrong, inconsistent, or contradicts the premises), OR
+(2) explicitly states or derives the OPPOSITE (negation/complement) of the planted statement -- e.g., the planted statement says "Stella is shiny" and the continuation asserts "Stella is not shiny", or the planted statement says "Sam is a numpus" and the continuation asserts "Sam is not a numpus".
+Answer NO if the continuation merely ignores the planted statement, repeats it, builds on it, or consists of proof steps that never contradict it.
+
+Planted statement:
+---
+Stella is shiny.
+---
+Continuation:
+---
+ Every lacpus is a makupus. Stella is a makupus. Every makupus is a rurupus. Stella is a rurupus. Every rurupus is a luvepus. Stella is a luvepus. Every luvepus is fuzzy. Stella is fuzzy.
+---
+Answer with exactly one word: YES or NO.
+
+
+=== sample 2/5  src=EXPD  condition=aff_false_attr_d1  problem_id=attr_f000_d1_A  run_id=4d306fca316d1f071bbc8dfd ===
+--- PROMPT_DOUBT ---
+You will see the continuation of a step-by-step logic proof. Decide whether the text EXPRESSES DOUBT, HESITATION, SELF-CORRECTION, or flags an inconsistency about any earlier step (e.g., questioning a premise, noting a contradiction, revising a claim). Mechanical proof steps with no commentary = NO.
+
+Continuation:
+---
+ Every lacpus is a makupus. Stella is a makupus. Every makupus is a rurupus. Stella is a rurupus. Every rurupus is a luvepus. Stella is a luvepus. Every luvepus is fuzzy. Stella is fuzzy.
+---
+Answer with exactly one word: YES or NO.
+
+--- PROMPT_REJECT ---
+A statement was planted into the middle of a step-by-step logic proof about fictional creatures. You will see the planted statement and the continuation of the proof that follows it. Decide whether the continuation REJECTS the planted statement. Answer YES if the continuation does EITHER of the following:
+(1) verbally flags, questions, doubts, or comments on the planted statement (e.g., noting it is wrong, inconsistent, or contradicts the premises), OR
+(2) explicitly states or derives the OPPOSITE (negation/complement) of the planted statement -- e.g., the planted statement says "Stella is shiny" and the continuation asserts "Stella is not shiny", or the planted statement says "Sam is a numpus" and the continuation asserts "Sam is not a numpus".
+Answer NO if the continuation merely ignores the planted statement, repeats it, builds on it, or consists of proof steps that never contradict it.
+
+Planted statement:
+---
+Stella is shiny.
+---
+Continuation:
+---
+ Every lacpus is a makupus. Stella is a makupus. Every makupus is a rurupus. Stella is a rurupus. Every rurupus is a luvepus. Stella is a luvepus. Every luvepus is fuzzy. Stella is fuzzy.
+---
+Answer with exactly one word: YES or NO.
+
+
+=== sample 3/5  src=EXPD  condition=aff_false_attr_d2  problem_id=attr_f000_d2_A  run_id=7deff8da413948d733348f8b ===
+--- PROMPT_DOUBT ---
+You will see the continuation of a step-by-step logic proof. Decide whether the text EXPRESSES DOUBT, HESITATION, SELF-CORRECTION, or flags an inconsistency about any earlier step (e.g., questioning a premise, noting a contradiction, revising a claim). Mechanical proof steps with no commentary = NO.
+
+Continuation:
+---
+ Every lacpus is a makupus. Stella is a makupus. Every makupus is a rurupus. Stella is a rurupus. Every rurupus is a luvepus. Stella is a luvepus. Every luvepus is fuzzy. Stella is fuzzy.
+---
+Answer with exactly one word: YES or NO.
+
+--- PROMPT_REJECT ---
+A statement was planted into the middle of a step-by-step logic proof about fictional creatures. You will see the planted statement and the continuation of the proof that follows it. Decide whether the continuation REJECTS the planted statement. Answer YES if the continuation does EITHER of the following:
+(1) verbally flags, questions, doubts, or comments on the planted statement (e.g., noting it is wrong, inconsistent, or contradicts the premises), OR
+(2) explicitly states or derives the OPPOSITE (negation/complement) of the planted statement -- e.g., the planted statement says "Stella is shiny" and the continuation asserts "Stella is not shiny", or the planted statement says "Sam is a numpus" and the continuation asserts "Sam is not a numpus".
+Answer NO if the continuation merely ignores the planted statement, repeats it, builds on it, or consists of proof steps that never contradict it.
+
+Planted statement:
+---
+Stella is shiny.
+---
+Continuation:
+---
+ Every lacpus is a makupus. Stella is a makupus. Every makupus is a rurupus. Stella is a rurupus. Every rurupus is a luvepus. Stella is a luvepus. Every luvepus is fuzzy. Stella is fuzzy.
+---
+Answer with exactly one word: YES or NO.
+
+
+=== sample 4/5  src=EXPB  condition=LOCAL_CERTIFICATE  problem_id=4hop_ProofsOnly_random_noadj.json::example33::in_context_example1  run_id=b5c1f79f70fc176ef8f543e0 ===
+--- PROMPT_DOUBT ---
+You will see the continuation of a step-by-step logic proof. Decide whether the text EXPRESSES DOUBT, HESITATION, SELF-CORRECTION, or flags an inconsistency about any earlier step (e.g., questioning a premise, noting a contradiction, revising a claim). Mechanical proof steps with no commentary = NO.
+
+Continuation:
+---
+ This is a contradiction, so we must re-evaluate based on correct deductions. Wren is a sterpus. Sterpuses are zumpuses. Sterpuses are not kind. Wren is not kind. Wren is not kind.
+---
+Answer with exactly one word: YES or NO.
+
+--- PROMPT_REJECT ---
+A statement was planted into the middle of a step-by-step logic proof about fictional creatures. You will see the planted statement and the continuation of the proof that follows it. Decide whether the continuation REJECTS the planted statement. Answer YES if the continuation does EITHER of the following:
+(1) verbally flags, questions, doubts, or comments on the planted statement (e.g., noting it is wrong, inconsistent, or contradicts the premises), OR
+(2) explicitly states or derives the OPPOSITE (negation/complement) of the planted statement -- e.g., the planted statement says "Stella is shiny" and the continuation asserts "Stella is not shiny", or the planted statement says "Sam is a numpus" and the continuation asserts "Sam is not a numpus".
+Answer NO if the continuation merely ignores the planted statement, repeats it, builds on it, or consists of proof steps that never contradict it.
+
+Planted statement:
+---
+Wren is an impus.
+---
+Continuation:
+---
+ This is a contradiction, so we must re-evaluate based on correct deductions. Wren is a sterpus. Sterpuses are zumpuses. Sterpuses are not kind. Wren is not kind. Wren is not kind.
+---
+Answer with exactly one word: YES or NO.
+
+
+=== sample 5/5  src=EXPB  condition=LOCAL_CERTIFICATE  problem_id=4hop_ProofsOnly_random_noadj.json::example100::in_context_example2  run_id=52ad0f9f229e270ad8004f63 ===
+--- PROMPT_DOUBT ---
+You will see the continuation of a step-by-step logic proof. Decide whether the text EXPRESSES DOUBT, HESITATION, SELF-CORRECTION, or flags an inconsistency about any earlier step (e.g., questioning a premise, noting a contradiction, revising a claim). Mechanical proof steps with no commentary = NO.
+
+Continuation:
+---
+ (Contradiction) Sam is a jompus. Every jompus is red. Sam is a red jompus. Sam is a wumpus. Wumpuses are not large. Sam is not large.
+---
+Answer with exactly one word: YES or NO.
+
+--- PROMPT_REJECT ---
+A statement was planted into the middle of a step-by-step logic proof about fictional creatures. You will see the planted statement and the continuation of the proof that follows it. Decide whether the continuation REJECTS the planted statement. Answer YES if the continuation does EITHER of the following:
+(1) verbally flags, questions, doubts, or comments on the planted statement (e.g., noting it is wrong, inconsistent, or contradicts the premises), OR
+(2) explicitly states or derives the OPPOSITE (negation/complement) of the planted statement -- e.g., the planted statement says "Stella is shiny" and the continuation asserts "Stella is not shiny", or the planted statement says "Sam is a numpus" and the continuation asserts "Sam is not a numpus".
+Answer NO if the continuation merely ignores the planted statement, repeats it, builds on it, or consists of proof steps that never contradict it.
+
+Planted statement:
+---
+Sam is a vumpus.
+---
+Continuation:
+---
+ (Contradiction) Sam is a jompus. Every jompus is red. Sam is a red jompus. Sam is a wumpus. Wumpuses are not large. Sam is not large.
+---
+Answer with exactly one word: YES or NO.
+
+

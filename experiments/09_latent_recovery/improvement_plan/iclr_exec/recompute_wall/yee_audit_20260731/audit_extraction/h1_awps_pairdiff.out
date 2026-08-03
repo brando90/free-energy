@@ -1,0 +1,32 @@
+awps/add1: 295 problems with 2 Question variants
+  lens 609 vs 608, first divergence at 200
+  A: ..."ight, how many pieces do they have left? \n\nA: Let's think step by step. First, we need to "
+  B: ..."ight, how many pieces do they have left?\n\nA: Let's think step by step. First, we need to f"
+  continuations identical: True; Answers identical: True
+  annotations: [('False', ''), ('False', '')]
+  pairs with identical continuation AND Answer: 292/295
+
+asdiv/add1: 56 problems with 2 Question variants
+  lens 380 vs 379, first divergence at 273
+  A: ...'of the yoyo and the cost of the whistle. \n\nThe yoyo costs 24 cents and the whistle costs 1'
+  B: ...'of the yoyo and the cost of the whistle.\n\nThe yoyo costs 24 cents and the whistle costs 14'
+  continuations identical: True; Answers identical: True
+  annotations: [('True', 'complete hallucination'), ('True', 'complete hallucination')]
+  pairs with identical continuation AND Answer: 49/56
+
+gsm8k/add1: 28 problems with 2 Question variants
+  lens 510 vs 509, first divergence at 292
+  A: ...'w much Jill earns per week for each job. \n\nFor teaching, she earns $20 per hour and works '
+  B: ...'w much Jill earns per week for each job.\n\nFor teaching, she earns $20 per hour and works 3'
+  continuations identical: False; Answers identical: True
+  annotations: [('', ''), ('True', 'directly redoes calculation')]
+  pairs with identical continuation AND Answer: 23/28
+
+svamp/add1: 29 problems with 2 Question variants
+  lens 461 vs 460, first divergence at 335
+  A: ...'basket has a total of 4 + 3 = 7 peaches. \n\nNow, we are given that there are a total of 7 p'
+  B: ...'basket has a total of 4 + 3 = 7 peaches.\n\nNow, we are given that there are a total of 7 pe'
+  continuations identical: True; Answers identical: True
+  annotations: [('True', 'states correct value'), ('True', 'states correct value')]
+  pairs with identical continuation AND Answer: 22/29
+

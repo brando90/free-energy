@@ -1,0 +1,69 @@
+{
+  "_run": {
+    "cost_usd_assumed_pricing": 1.55,
+    "mode": "bridge",
+    "model_id": "claude-opus-5"
+  },
+  "_shipped_fig2_for_comparison": {
+    "gpt-5.1": {
+      "computed": 1.0,
+      "readable": 0.0857
+    },
+    "opus-4-8": {
+      "computed": 1.0,
+      "readable": 0.0
+    },
+    "sonnet-5": {
+      "computed": 1.0,
+      "readable": 0.0105
+    }
+  },
+  "adjacent_contradiction": {
+    "absorbed_flag_first": {
+      "k": 0,
+      "rate": null,
+      "wilson95": [
+        null,
+        null
+      ]
+    },
+    "absorbed_plain": {
+      "k": 0,
+      "rate": null,
+      "wilson95": [
+        null,
+        null
+      ]
+    },
+    "doubt_lex": 0,
+    "generation_failed": 0,
+    "n_live": 0,
+    "n_manifest": 0,
+    "no_output_claim": 0,
+    "silently_corrected_like": 0
+  },
+  "onehop_kc1": {
+    "absorbed_flag_first": {
+      "k": 0,
+      "rate": null,
+      "wilson95": [
+        null,
+        null
+      ]
+    },
+    "absorbed_plain": {
+      "k": 0,
+      "rate": null,
+      "wilson95": [
+        null,
+        null
+      ]
+    },
+    "doubt_lex": 0,
+    "generation_failed": 0,
+    "n_live": 0,
+    "n_manifest": 0,
+    "no_output_claim": 0,
+    "silently_corrected_like": 0
+  }
+}

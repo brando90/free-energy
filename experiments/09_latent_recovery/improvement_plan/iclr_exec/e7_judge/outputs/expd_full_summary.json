@@ -1,0 +1,307 @@
+{
+  "job": "EXPD_MATCHED_GRADIENT_FULL",
+  "input": "/lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/e7_judge/inputs/expd_full_grid.jsonl",
+  "n_rows": 11577,
+  "judge_model": "Qwen/Qwen2.5-32B-Instruct",
+  "continuation_field": "continuation",
+  "statement_field": "injected_statement",
+  "cell_field": "condition",
+  "lexical_field": "verbalized_doubt",
+  "filter": null,
+  "sample_n": null,
+  "stratify_field": null,
+  "seed": 0,
+  "n_unparsed_verdicts": 0,
+  "cells": {
+    "aff_false_attr_d0": {
+      "n": 450,
+      "lexical_doubt_rate": 0.12,
+      "judge_doubt_rate": 0.1267,
+      "explicit_rejection_rate": 0.4467,
+      "judge_lex_agreement": 0.9267,
+      "judge_and_lex": 39,
+      "judge_not_lex": 18,
+      "reject_not_judge": 148
+    },
+    "aff_false_attr_d1": {
+      "n": 450,
+      "lexical_doubt_rate": 0.0267,
+      "judge_doubt_rate": 0.0289,
+      "explicit_rejection_rate": 0.2111,
+      "judge_lex_agreement": 0.9756,
+      "judge_and_lex": 7,
+      "judge_not_lex": 6,
+      "reject_not_judge": 82
+    },
+    "aff_false_attr_d2": {
+      "n": 450,
+      "lexical_doubt_rate": 0.0289,
+      "judge_doubt_rate": 0.0378,
+      "explicit_rejection_rate": 0.1311,
+      "judge_lex_agreement": 0.9733,
+      "judge_and_lex": 9,
+      "judge_not_lex": 8,
+      "reject_not_judge": 44
+    },
+    "aff_false_attr_d3": {
+      "n": 441,
+      "lexical_doubt_rate": 0.0204,
+      "judge_doubt_rate": 0.0272,
+      "explicit_rejection_rate": 0.1043,
+      "judge_lex_agreement": 0.9841,
+      "judge_and_lex": 7,
+      "judge_not_lex": 5,
+      "reject_not_judge": 35
+    },
+    "aff_false_attr_d5": {
+      "n": 426,
+      "lexical_doubt_rate": 0.0235,
+      "judge_doubt_rate": 0.0258,
+      "explicit_rejection_rate": 0.0775,
+      "judge_lex_agreement": 0.9883,
+      "judge_and_lex": 8,
+      "judge_not_lex": 3,
+      "reject_not_judge": 22
+    },
+    "aff_true_attr_d0": {
+      "n": 450,
+      "lexical_doubt_rate": 0.0022,
+      "judge_doubt_rate": 0.0044,
+      "explicit_rejection_rate": 0.0089,
+      "judge_lex_agreement": 0.9933,
+      "judge_and_lex": 0,
+      "judge_not_lex": 2,
+      "reject_not_judge": 3
+    },
+    "aff_true_attr_d1": {
+      "n": 450,
+      "lexical_doubt_rate": 0.0022,
+      "judge_doubt_rate": 0.0044,
+      "explicit_rejection_rate": 0.0533,
+      "judge_lex_agreement": 0.9978,
+      "judge_and_lex": 1,
+      "judge_not_lex": 1,
+      "reject_not_judge": 24
+    },
+    "aff_true_attr_d2": {
+      "n": 450,
+      "lexical_doubt_rate": 0.0111,
+      "judge_doubt_rate": 0.0089,
+      "explicit_rejection_rate": 0.0378,
+      "judge_lex_agreement": 0.98,
+      "judge_and_lex": 0,
+      "judge_not_lex": 4,
+      "reject_not_judge": 14
+    },
+    "aff_true_attr_d3": {
+      "n": 447,
+      "lexical_doubt_rate": 0.0022,
+      "judge_doubt_rate": 0.0022,
+      "explicit_rejection_rate": 0.0291,
+      "judge_lex_agreement": 0.9955,
+      "judge_and_lex": 0,
+      "judge_not_lex": 1,
+      "reject_not_judge": 13
+    },
+    "aff_true_attr_d5": {
+      "n": 450,
+      "lexical_doubt_rate": 0.0067,
+      "judge_doubt_rate": 0.0044,
+      "explicit_rejection_rate": 0.0222,
+      "judge_lex_agreement": 0.9933,
+      "judge_and_lex": 1,
+      "judge_not_lex": 1,
+      "reject_not_judge": 8
+    },
+    "benign_paraphrase": {
+      "n": 450,
+      "lexical_doubt_rate": 0.0,
+      "judge_doubt_rate": 0.0,
+      "explicit_rejection_rate": 0.0,
+      "judge_lex_agreement": 1.0,
+      "judge_and_lex": 0,
+      "judge_not_lex": 0,
+      "reject_not_judge": 0
+    },
+    "cat_false_inert_d1": {
+      "n": 300,
+      "lexical_doubt_rate": 0.0867,
+      "judge_doubt_rate": 0.09,
+      "explicit_rejection_rate": 0.4233,
+      "judge_lex_agreement": 0.97,
+      "judge_and_lex": 22,
+      "judge_not_lex": 5,
+      "reject_not_judge": 102
+    },
+    "cat_false_inert_d3": {
+      "n": 284,
+      "lexical_doubt_rate": 0.0634,
+      "judge_doubt_rate": 0.1021,
+      "explicit_rejection_rate": 0.2113,
+      "judge_lex_agreement": 0.9542,
+      "judge_and_lex": 17,
+      "judge_not_lex": 12,
+      "reject_not_judge": 34
+    },
+    "cat_false_inert_dinf": {
+      "n": 300,
+      "lexical_doubt_rate": 0.0267,
+      "judge_doubt_rate": 0.0733,
+      "explicit_rejection_rate": 0.1767,
+      "judge_lex_agreement": 0.9467,
+      "judge_and_lex": 7,
+      "judge_not_lex": 15,
+      "reject_not_judge": 32
+    },
+    "cat_false_usable_d1": {
+      "n": 300,
+      "lexical_doubt_rate": 0.02,
+      "judge_doubt_rate": 0.01,
+      "explicit_rejection_rate": 0.0567,
+      "judge_lex_agreement": 0.99,
+      "judge_and_lex": 3,
+      "judge_not_lex": 0,
+      "reject_not_judge": 15
+    },
+    "cat_false_usable_d3": {
+      "n": 280,
+      "lexical_doubt_rate": 0.0036,
+      "judge_doubt_rate": 0.0036,
+      "explicit_rejection_rate": 0.0429,
+      "judge_lex_agreement": 1.0,
+      "judge_and_lex": 1,
+      "judge_not_lex": 0,
+      "reject_not_judge": 11
+    },
+    "cat_false_usable_dinf": {
+      "n": 300,
+      "lexical_doubt_rate": 0.0067,
+      "judge_doubt_rate": 0.0067,
+      "explicit_rejection_rate": 0.0267,
+      "judge_lex_agreement": 1.0,
+      "judge_and_lex": 2,
+      "judge_not_lex": 0,
+      "reject_not_judge": 6
+    },
+    "neg_false_attr_d0": {
+      "n": 450,
+      "lexical_doubt_rate": 0.0311,
+      "judge_doubt_rate": 0.0267,
+      "explicit_rejection_rate": 0.0711,
+      "judge_lex_agreement": 0.9689,
+      "judge_and_lex": 6,
+      "judge_not_lex": 6,
+      "reject_not_judge": 21
+    },
+    "neg_false_attr_d1": {
+      "n": 450,
+      "lexical_doubt_rate": 0.04,
+      "judge_doubt_rate": 0.04,
+      "explicit_rejection_rate": 0.1044,
+      "judge_lex_agreement": 0.96,
+      "judge_and_lex": 9,
+      "judge_not_lex": 9,
+      "reject_not_judge": 31
+    },
+    "neg_false_attr_d2": {
+      "n": 450,
+      "lexical_doubt_rate": 0.0422,
+      "judge_doubt_rate": 0.0356,
+      "explicit_rejection_rate": 0.1444,
+      "judge_lex_agreement": 0.9667,
+      "judge_and_lex": 10,
+      "judge_not_lex": 6,
+      "reject_not_judge": 53
+    },
+    "neg_false_attr_d3": {
+      "n": 435,
+      "lexical_doubt_rate": 0.0437,
+      "judge_doubt_rate": 0.0437,
+      "explicit_rejection_rate": 0.1149,
+      "judge_lex_agreement": 0.954,
+      "judge_and_lex": 9,
+      "judge_not_lex": 10,
+      "reject_not_judge": 37
+    },
+    "neg_false_attr_d5": {
+      "n": 414,
+      "lexical_doubt_rate": 0.0459,
+      "judge_doubt_rate": 0.0604,
+      "explicit_rejection_rate": 0.1135,
+      "judge_lex_agreement": 0.9517,
+      "judge_and_lex": 12,
+      "judge_not_lex": 13,
+      "reject_not_judge": 28
+    },
+    "neg_true_attr_d0": {
+      "n": 450,
+      "lexical_doubt_rate": 0.0,
+      "judge_doubt_rate": 0.0022,
+      "explicit_rejection_rate": 0.0289,
+      "judge_lex_agreement": 0.9978,
+      "judge_and_lex": 0,
+      "judge_not_lex": 1,
+      "reject_not_judge": 13
+    },
+    "neg_true_attr_d1": {
+      "n": 450,
+      "lexical_doubt_rate": 0.0067,
+      "judge_doubt_rate": 0.0,
+      "explicit_rejection_rate": 0.0289,
+      "judge_lex_agreement": 0.9933,
+      "judge_and_lex": 0,
+      "judge_not_lex": 0,
+      "reject_not_judge": 13
+    },
+    "neg_true_attr_d2": {
+      "n": 450,
+      "lexical_doubt_rate": 0.0022,
+      "judge_doubt_rate": 0.0111,
+      "explicit_rejection_rate": 0.0311,
+      "judge_lex_agreement": 0.9911,
+      "judge_and_lex": 1,
+      "judge_not_lex": 4,
+      "reject_not_judge": 11
+    },
+    "neg_true_attr_d3": {
+      "n": 450,
+      "lexical_doubt_rate": 0.0022,
+      "judge_doubt_rate": 0.0067,
+      "explicit_rejection_rate": 0.0333,
+      "judge_lex_agreement": 0.9956,
+      "judge_and_lex": 1,
+      "judge_not_lex": 2,
+      "reject_not_judge": 13
+    },
+    "neg_true_attr_d5": {
+      "n": 450,
+      "lexical_doubt_rate": 0.0067,
+      "judge_doubt_rate": 0.0067,
+      "explicit_rejection_rate": 0.0422,
+      "judge_lex_agreement": 0.9956,
+      "judge_and_lex": 2,
+      "judge_not_lex": 1,
+      "reject_not_judge": 19
+    },
+    "true_interruption": {
+      "n": 450,
+      "lexical_doubt_rate": 0.0022,
+      "judge_doubt_rate": 0.0,
+      "explicit_rejection_rate": 0.0089,
+      "judge_lex_agreement": 0.9978,
+      "judge_and_lex": 0,
+      "judge_not_lex": 0,
+      "reject_not_judge": 4
+    }
+  },
+  "overall": {
+    "n": 11577,
+    "lexical_doubt_rate": 0.0231,
+    "judge_doubt_rate": 0.0265,
+    "explicit_rejection_rate": 0.0948,
+    "judge_lex_agreement": 0.9804,
+    "judge_and_lex": 174,
+    "judge_not_lex": 133,
+    "reject_not_judge": 836
+  }
+}

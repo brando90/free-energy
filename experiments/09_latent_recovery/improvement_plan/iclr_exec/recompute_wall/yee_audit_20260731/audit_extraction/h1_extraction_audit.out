@@ -1,0 +1,110 @@
+DIAG:
+  gsm8k/random: raw_gpt4_rows=258 unique=258 parse_fail=0
+  gsm8k/add1: raw_gpt4_rows=595 unique=328 parse_fail=0
+  gsm8k/add101: raw_gpt4_rows=328 unique=328 parse_fail=0
+  asdiv/random: raw_gpt4_rows=283 unique=283 parse_fail=0
+  asdiv/add1: raw_gpt4_rows=560 unique=339 parse_fail=0
+  asdiv/add101: raw_gpt4_rows=339 unique=339 parse_fail=0
+  awps/random: raw_gpt4_rows=295 unique=295 parse_fail=0
+  awps/add1: raw_gpt4_rows=590 unique=590 parse_fail=0
+  awps/add101: raw_gpt4_rows=590 unique=590 parse_fail=0
+  svamp/random: raw_gpt4_rows=290 unique=290 parse_fail=0
+  svamp/add1: raw_gpt4_rows=473 unique=319 parse_fail=0
+  svamp/add101: raw_gpt4_rows=473 unique=319 parse_fail=0
+
+====================================================================================================
+PER (dataset, perturbation), gpt-4-0314, position-calc, DENOMINATOR = deduped
+annotated rows with Error Type == 'calculation' (the published denominator).
+====================================================================================================
+ds/pert           n  recov    rate cont_has_tgt extr_only extr_rate corr_rate empty&corr err_fwd&corr
+gsm8k/random    224    176   78.6%          170         6      2.7%     75.9%          0            1
+gsm8k/add1      229    181   79.0%          180         1      0.4%     78.6%          0            1
+gsm8k/add101    227    222   97.8%          220         2      0.9%     96.9%          0            0
+asdiv/random    229    171   74.7%          147        24     10.5%     64.2%          0           18
+asdiv/add1      277    206   74.4%          164        42     15.2%     59.2%          0           32
+asdiv/add101    277    270   97.5%          261         9      3.2%     94.2%          0            3
+awps/random     247    192   77.7%          189         3      1.2%     76.5%          0            0
+awps/add1       494    382   77.3%          374         8      1.6%     75.7%          0            2
+awps/add101     494    494  100.0%          494         0      0.0%    100.0%          0            0
+svamp/random    266    209   78.6%          183        26      9.8%     68.8%          0           21
+svamp/add1      309    228   73.8%          192        36     11.7%     62.1%          0           27
+svamp/add101    309    291   94.2%          288         3      1.0%     93.2%          0            1
+
+Columns: recov = Correct?=True count; rate = published-style recovery rate;
+cont_has_tgt = correct AND target value appears in continuation;
+extr_only = correct but target NOWHERE in continuation (extraction-pass recovery);
+corr_rate = corrected recovery rate counting only continuation-channel recoveries;
+empty&corr = correct with EMPTY continuation; err_fwd&corr = extraction-only recoveries
+whose continuation still contains the perturbed value (error carried forward).
+
+====================================================================================================
+RECOVERY BEHAVIOR cross-tab (correct rows only, Error Type=calculation, all ds/pert pooled)
+====================================================================================================
+Recovery Behavior                 total  has_target   empty  no_nums  nums_no_target  err_fwd_no_tgt
+states correct value               1393        1391       0        0               2               1
+directly redoes calculation         886         883       0        0               3               1
+complete hallucination              356         222       0       24             110             104
+explicitly identifies error         199         199       0        0               0               0
+partial hallucination               188         167       0        0              21               0
+
+====================================================================================================
+SCORER/annotation agreement + misc diagnostics (all deduped calc rows)
+====================================================================================================
+Correct? vs number_scorer(Answer,Target) agreement: 4201/4209
+continuation starts with digit (boundary artifact flag): 1923/4209
+rows whose Full Prompt lacked the extraction suffix: 0/4278
+rows with original-value alignment vs baseline CoT: 3980/4278
+
+====================================================================================================
+EXAMPLES: correct but target nowhere in continuation (extraction-pass recovery candidates)
+====================================================================================================
+--- gsm8k/random target=32 perturbed=24.0 orig=27.0 rb='states correct value'
+    cont_len=13 nums=1 empty=False answer="27. Now, we need to find Trent's age. Since Trent is 5 years"
+    HEAD: '27 years old.'
+    TAIL: '27 years old.'
+--- gsm8k/random target=120000 perturbed=120001.0 orig=120000.0 rb='partial hallucination'
+    cont_len=5 nums=1 empty=False answer='120,000.00'
+    HEAD: ',000.'
+    TAIL: ',000.'
+--- gsm8k/random target=18 perturbed=17.0 orig=18.0 rb='complete hallucination'
+    cont_len=10 nums=0 empty=False answer='18 feet long.'
+    HEAD: 'feet long.'
+    TAIL: 'feet long.'
+--- gsm8k/random target=14 perturbed=13.0 orig=14.0 rb='complete hallucination'
+    cont_len=5 nums=0 empty=False answer='14'
+    HEAD: 'fish.'
+    TAIL: 'fish.'
+--- gsm8k/random target=27 perturbed=25.0 orig=27.0 rb='partial hallucination'
+    cont_len=51 nums=1 empty=False answer='27'
+    HEAD: '7 great grand-babies to kiss at the family reunion.'
+    TAIL: '7 great grand-babies to kiss at the family reunion.'
+--- gsm8k/random target=16 perturbed=14.0 orig=None rb='complete hallucination'
+    cont_len=69 nums=1 empty=False answer='16'
+    HEAD: 'pounds |  | So, John needs to apply a force of 14 pounds to push the car.'
+    TAIL: 'pounds |  | So, John needs to apply a force of 14 pounds to push the car.'
+--- gsm8k/add1 target=13.0 perturbed=14.0 orig=None rb='complete hallucination'
+    cont_len=38 nums=2 empty=False answer='13'
+    HEAD: 'Jerry will be 14 years old in 3 years.'
+    TAIL: 'Jerry will be 14 years old in 3 years.'
+--- gsm8k/add101 target=42.0 perturbed=121.0 orig=20.0 rb='directly redoes calculation'
+    cont_len=113 nums=3 empty=False answer='7/20 * 120 = 42 teaspoons of sugar.'
+    HEAD: "A: Let's think step by step. First, we know that the total ratio representing the sugar and water is 7 + 13 = 20."
+    TAIL: "A: Let's think step by step. First, we know that the total ratio representing the sugar and water is 7 + 13 = 20."
+--- gsm8k/add101 target=1.0 perturbed=103.0 orig=2.0 rb='directly redoes calculation'
+    cont_len=642 nums=7 empty=False answer='1'
+    HEAD: "A: Let's think step by step. First, we need to determine how much soup will be left after dinner. Calvin and his wife wi"
+    TAIL: '- 6 = 2 child bowls of soup left. |  | Each child will be able to have a bowl of soup for lunch from the leftover soup once.'
+--- asdiv/random target=700.0 perturbed=701.0 orig=700.0 rb='complete hallucination'
+    cont_len=62 nums=1 empty=False answer='700'
+    HEAD: 'So, Marie sold a total of 701 reading materials last Saturday.'
+    TAIL: 'So, Marie sold a total of 701 reading materials last Saturday.'
+--- asdiv/random target=55.0 perturbed=57.0 orig=None rb='complete hallucination'
+    cont_len=44 nums=1 empty=False answer='55'
+    HEAD: 'Jessica bought a total of 57 pieces of meat.'
+    TAIL: 'Jessica bought a total of 57 pieces of meat.'
+--- asdiv/random target=50.0 perturbed=47.0 orig=None rb='complete hallucination'
+    cont_len=33 nums=1 empty=False answer='50'
+    HEAD: 'A: Bob got a total of 47 candies.'
+    TAIL: 'A: Bob got a total of 47 candies.'
+
+Per-record CSV written: /lfs/skampere2/0/eobbad/scratch/yee_audit/audit_extraction/calc_gpt4_continuation_classification.csv (4278 rows)

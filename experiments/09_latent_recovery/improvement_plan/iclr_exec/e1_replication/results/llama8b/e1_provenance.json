@@ -1,0 +1,21 @@
+{
+  "created_at": "2026-07-24T18:15:40.657887+00:00",
+  "e1_registration_commit": "bdb098a1d85b33063274481e53cb9d7130dc32c6",
+  "generator": "gen_worlds_expd.py (LOCKED, reused unchanged)",
+  "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "oversample_factor": 2,
+  "oversample_seeds": [
+    0,
+    1
+  ],
+  "per_world_audits_passed": 5760,
+  "revision": "d10aef7999a2b5ba950ab3974312feeedbfe0b77",
+  "seeds": [
+    0,
+    1
+  ],
+  "stage": "prepare_e1",
+  "world_config": "full",
+  "world_count": 5760,
+  "worlds_json_sha256": "3c2a95bea5af7c6c42e809ba56627ea60f7203306df12468dec725d3d0736844"
+}
