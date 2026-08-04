@@ -1,4 +1,0 @@
-arm,closure_valid_prop,injection_dependent_prop,parroted_prop,derailed_prop,unparsed_prop,generation_failed_prop,closure_valid_count,injection_dependent_count,parroted_count,derailed_count,unparsed_count,generation_failed_count,n
-no-cert,0.3767,0.1533,0.3667,0.0633,0.04,0.0,113,46,110,19,12,0,300
-local-cert,0.4667,0.0267,0.1167,0.0733,0.3167,0.0,140,8,35,22,95,0,300
-irrelevant-cert,0.5,0.24,0.1833,0.04,0.0367,0.0,150,72,55,12,11,0,300

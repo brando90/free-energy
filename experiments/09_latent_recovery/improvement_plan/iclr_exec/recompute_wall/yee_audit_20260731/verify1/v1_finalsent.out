@@ -1,5 +1,0 @@
-ds         n  w2r absent in-final-sent mid-text-only  corrected-solver-bound
-gsm8k    673   56      5            51             0  5 (0.7pp) vs claimed 8.3pp
-asdiv    771  101     69            31             1  70 (9.1pp) vs claimed 13.1pp
-awps    1221   40      4            36             0  4 (0.3pp) vs claimed 3.3pp
-svamp    866   76     56            18             2  58 (6.7pp) vs claimed 8.8pp
