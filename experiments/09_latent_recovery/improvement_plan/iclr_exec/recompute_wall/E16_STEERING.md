@@ -149,6 +149,41 @@ only).
   Qwen and Llama (prior experience: steering fragility in the sibling
   project). Confidence moderate.
 
+## Positioning amendment (2026-08-10, pre-run; outcome of go-checklist step 1)
+
+The lit check found the original headline pre-empted and the literature
+split; the experiment proceeds with the claim repositioned. arXiv:2603.16331
+("Decoding the Critique Mechanism in Large Reasoning Models") already steers
+R1-family/Qwen3 reasoning models toward detecting and correcting arithmetic
+errors planted in reasoning traces, via a difference-in-means "critique
+vector" (error-run vs clean-run activations); their prompted-detection and
+final-answer-recovery DVs improve monotonically, and their own baseline
+(< 6% explicit in-CoT corrections) independently corroborates the wall.
+Conversely, arXiv:2605.09502 finds correctness-direction steering fails to
+repair CoT errors ("diagnostic, not causal"), and Self-Correction Bench v3
+(2507.02778) reports a framing-contrast vector unlocking corrections of
+readable errors only.
+
+E16 therefore no longer claims "steering unlocks checking." It asks whether
+the recompute wall is a MODE-SELECTION failure: does the direction separating
+probe-framing from continue-framing — the contrast in which the capability is
+demonstrably present — transfer checking into continuation of committed
+computed values? What no prior work measures: unprompted re-verification of
+committed computed values under a re-execution DV, per-value false-correction
+specificity on true values, and non-reasoning-trained models at absorption
+ceiling. A negative result extends 2605.09502 to mode directions on a
+substrate where restart is excluded; a positive result identifies the lever
+the published designs left untested. Placement is appendix-or-follow-up
+regardless of outcome.
+
+**Registered design change:** the V3 escalation becomes the critique-vector-
+style contrast of 2603.16331 adapted to this substrate (final-token
+activations, perturbed-prefix continuations vs unperturbed-gold
+continuations), replacing LinEAS, for direct comparability with the published
+positive result. LinEAS moves to optional future work. Additional
+method/context citations: 2506.18167, 2504.14379, 2510.04128, 2601.03595,
+2502.11771.
+
 ## Go checklist (in order, before the first GPU job)
 
 1. Scoped lit check (~30 min) on steering-of-reasoning/backtracking-vector
