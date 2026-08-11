@@ -147,6 +147,23 @@ def conditions(model_key):
     return conds
 
 
+def norm_matched_conditions(model_key):
+    """Doses matched to the UNNORMALIZED diff-in-means convention of
+    arXiv:2603.16331 (h + alpha*v with raw v, alpha<=1): since our Steer
+    normalizes v, alpha = ||v|| * scale reconstructs their natural
+    magnitude. DEVIATIONS.md item 4."""
+    man = json.load(open(os.path.join(L.VEC_DIR, model_key,
+                                      "extract_manifest.json")))
+    out = []
+    for vec in ("V1", "V2"):
+        for layer in L.LAYERS[model_key]:
+            nrm = man["vectors"]["%s_L%d" % (vec, layer)]["norm"]
+            for scale in (0.5, 1.0):
+                out.append({"vector": vec, "layer": layer,
+                            "alpha": round(nrm * scale, 1)})
+    return out
+
+
 def cond_key(c):
     return "%s_L%d_a%g" % (c["vector"], c["layer"], c["alpha"])
 
@@ -160,7 +177,10 @@ def stage_screen(model, tok, pool):
     k1_screen = pool.part["depth_k1_bare"]["screen"]
     onehop = eval_rows(pool, "depth_k1_bare", k1_screen)
     ctrl = eval_rows(pool, "depth_k1_bare", k1_screen[:20])
-    for c in conditions(ARGS.model):
+    conds = conditions(ARGS.model)
+    if ARGS.norm_matched:
+        conds = conds + norm_matched_conditions(ARGS.model)
+    for c in conds:
         ck = cond_key(c)
         if ck in done:
             continue
@@ -317,6 +337,9 @@ if __name__ == "__main__":
     ap.add_argument("--device", default="cuda:0")
     ap.add_argument("--conditions", default="[]",
                     help='confirm only: JSON list of {"vector","layer","alpha"}')
+    ap.add_argument("--norm-matched", action="store_true",
+                    help="screen only: add doses matched to the unnormalized "
+                         "diff-in-means convention of arXiv:2603.16331")
     ARGS = ap.parse_args()
     pool = L.load_pool(ARGS.model)
     model, tok = L.load_model(ARGS.model, ARGS.device)

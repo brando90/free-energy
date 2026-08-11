@@ -18,3 +18,12 @@
 3. **V3 escalation swapped** from LinEAS to the critique-vector-style
    contrast (per the positioning amendment in E16_STEERING.md, committed
    pre-run after the lit check).
+4. **Norm-matched screen extension (post-screen, pre-confirm-adjudication).**
+   Reading arXiv:2603.16331 in full showed their steering convention adds the
+   UNNORMALIZED diff-in-means vector with alpha <= 1.0, i.e. doses up to the
+   full natural magnitude of the contrast (our raw norms: 12.7-101.6). The
+   registered grid (unit vector, alpha <= 16) therefore reached only
+   ~16-30% of that dose at the mid/late layers. Twelve conditions are added:
+   alpha = ||v|| x {0.5, 1.0} per vector x layer. Disclosed extension, same
+   worlds, same breach rule; motivated by dose comparability with the
+   published positive result, not by the screen outcome.
