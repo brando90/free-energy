@@ -1,0 +1,1267 @@
+{
+  "metadata": {
+    "python": "3.11.6",
+    "platform": "macOS-26.5-arm64-arm-64bit",
+    "machine": "arm64",
+    "hostname": "DNa81a129.SUNet",
+    "cwd": "/Users/brandomiranda/free-energy",
+    "value_vocab": 32,
+    "recurrent_window": 16,
+    "examples_per_seed_length": 500,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "length_metrics": [
+    {
+      "seed": 0,
+      "length": 16,
+      "model": "recurrent_last16",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9499999999999923,
+      "ece": 0.050000000000007705,
+      "latency_us_per_example": 1.8875817768275738,
+      "checksum": 7687
+    },
+    {
+      "seed": 0,
+      "length": 16,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 0.7649161852896214,
+      "checksum": 7687
+    },
+    {
+      "seed": 0,
+      "length": 16,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 10.093916207551956,
+      "checksum": 7687
+    },
+    {
+      "seed": 0,
+      "length": 16,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.146,
+      "avg_confidence": 0.06995833333333325,
+      "ece": 0.0760416666666668,
+      "latency_us_per_example": 8.825665805488825,
+      "checksum": 5194
+    },
+    {
+      "seed": 0,
+      "length": 32,
+      "model": "recurrent_last16",
+      "accuracy": 0.514,
+      "avg_confidence": 0.49062499999999776,
+      "ece": 0.026625000000002078,
+      "latency_us_per_example": 2.1256678737699986,
+      "checksum": 7636
+    },
+    {
+      "seed": 0,
+      "length": 32,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 1.0914183221757412,
+      "checksum": 7809
+    },
+    {
+      "seed": 0,
+      "length": 32,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 10.255749803036451,
+      "checksum": 7809
+    },
+    {
+      "seed": 0,
+      "length": 32,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.098,
+      "avg_confidence": 0.07104166666666661,
+      "ece": 0.026958333333333463,
+      "latency_us_per_example": 8.82474984973669,
+      "checksum": 5480
+    },
+    {
+      "seed": 0,
+      "length": 64,
+      "model": "recurrent_last16",
+      "accuracy": 0.262,
+      "avg_confidence": 0.2572625000000005,
+      "ece": 0.01986249999999952,
+      "latency_us_per_example": 2.581083681434393,
+      "checksum": 7522
+    },
+    {
+      "seed": 0,
+      "length": 64,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 2.347332425415516,
+      "checksum": 7361
+    },
+    {
+      "seed": 0,
+      "length": 64,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 11.509666219353676,
+      "checksum": 7361
+    },
+    {
+      "seed": 0,
+      "length": 64,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.06,
+      "avg_confidence": 0.06962499999999996,
+      "ece": 0.009624999999999915,
+      "latency_us_per_example": 10.050833690911531,
+      "checksum": 5000
+    },
+    {
+      "seed": 0,
+      "length": 128,
+      "model": "recurrent_last16",
+      "accuracy": 0.168,
+      "avg_confidence": 0.16538750000000021,
+      "ece": 0.01198749999999981,
+      "latency_us_per_example": 2.9877503402531147,
+      "checksum": 8116
+    },
+    {
+      "seed": 0,
+      "length": 128,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 3.3489163033664227,
+      "checksum": 7599
+    },
+    {
+      "seed": 0,
+      "length": 128,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 12.113582342863083,
+      "checksum": 7599
+    },
+    {
+      "seed": 0,
+      "length": 128,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.07,
+      "avg_confidence": 0.06999999999999992,
+      "ece": 0.0014166666666665829,
+      "latency_us_per_example": 9.326249826699495,
+      "checksum": 5077
+    },
+    {
+      "seed": 0,
+      "length": 256,
+      "model": "recurrent_last16",
+      "accuracy": 0.092,
+      "avg_confidence": 0.09923750000000005,
+      "ece": 0.01463750000000002,
+      "latency_us_per_example": 4.280750174075365,
+      "checksum": 7770
+    },
+    {
+      "seed": 0,
+      "length": 256,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 7.1287499740719795,
+      "checksum": 8166
+    },
+    {
+      "seed": 0,
+      "length": 256,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 17.51941628754139,
+      "checksum": 8166
+    },
+    {
+      "seed": 0,
+      "length": 256,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.048,
+      "avg_confidence": 0.07095833333333326,
+      "ece": 0.022958333333333206,
+      "latency_us_per_example": 9.695500135421753,
+      "checksum": 5084
+    },
+    {
+      "seed": 0,
+      "length": 512,
+      "model": "recurrent_last16",
+      "accuracy": 0.064,
+      "avg_confidence": 0.06248749999999998,
+      "ece": 0.0018875000000000096,
+      "latency_us_per_example": 5.416834261268377,
+      "checksum": 7859
+    },
+    {
+      "seed": 0,
+      "length": 512,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 15.562916174530983,
+      "checksum": 7949
+    },
+    {
+      "seed": 0,
+      "length": 512,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 22.81283400952816,
+      "checksum": 7949
+    },
+    {
+      "seed": 0,
+      "length": 512,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.036,
+      "avg_confidence": 0.07149999999999992,
+      "ece": 0.03549999999999988,
+      "latency_us_per_example": 15.793000347912312,
+      "checksum": 5386
+    },
+    {
+      "seed": 1,
+      "length": 16,
+      "model": "recurrent_last16",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9499999999999923,
+      "ece": 0.050000000000007705,
+      "latency_us_per_example": 2.097915858030319,
+      "checksum": 7871
+    },
+    {
+      "seed": 1,
+      "length": 16,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 0.7670819759368896,
+      "checksum": 7871
+    },
+    {
+      "seed": 1,
+      "length": 16,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 11.45541574805975,
+      "checksum": 7871
+    },
+    {
+      "seed": 1,
+      "length": 16,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.148,
+      "avg_confidence": 0.07129166666666661,
+      "ece": 0.07670833333333342,
+      "latency_us_per_example": 9.810918010771275,
+      "checksum": 5690
+    },
+    {
+      "seed": 1,
+      "length": 32,
+      "model": "recurrent_last16",
+      "accuracy": 0.546,
+      "avg_confidence": 0.5163499999999975,
+      "ece": 0.02965000000000243,
+      "latency_us_per_example": 3.890249878168106,
+      "checksum": 7889
+    },
+    {
+      "seed": 1,
+      "length": 32,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 1.311583910137415,
+      "checksum": 7843
+    },
+    {
+      "seed": 1,
+      "length": 32,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 10.903249960392714,
+      "checksum": 7843
+    },
+    {
+      "seed": 1,
+      "length": 32,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.104,
+      "avg_confidence": 0.07120833333333336,
+      "ece": 0.03279166666666673,
+      "latency_us_per_example": 9.26475040614605,
+      "checksum": 5474
+    },
+    {
+      "seed": 1,
+      "length": 64,
+      "model": "recurrent_last16",
+      "accuracy": 0.284,
+      "avg_confidence": 0.27563750000000026,
+      "ece": 0.01823749999999948,
+      "latency_us_per_example": 2.8231656178832054,
+      "checksum": 7824
+    },
+    {
+      "seed": 1,
+      "length": 64,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 1.8209158442914486,
+      "checksum": 7855
+    },
+    {
+      "seed": 1,
+      "length": 64,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 13.168834149837494,
+      "checksum": 7855
+    },
+    {
+      "seed": 1,
+      "length": 64,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.068,
+      "avg_confidence": 0.07024999999999994,
+      "ece": 0.002249999999999874,
+      "latency_us_per_example": 9.48316603899002,
+      "checksum": 5089
+    },
+    {
+      "seed": 1,
+      "length": 128,
+      "model": "recurrent_last16",
+      "accuracy": 0.158,
+      "avg_confidence": 0.1617125000000002,
+      "ece": 0.017912499999999817,
+      "latency_us_per_example": 2.967500127851963,
+      "checksum": 7790
+    },
+    {
+      "seed": 1,
+      "length": 128,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 3.1787496991455555,
+      "checksum": 7721
+    },
+    {
+      "seed": 1,
+      "length": 128,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 12.130999937653542,
+      "checksum": 7721
+    },
+    {
+      "seed": 1,
+      "length": 128,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.06,
+      "avg_confidence": 0.0714583333333333,
+      "ece": 0.012458333333333212,
+      "latency_us_per_example": 9.573166258633137,
+      "checksum": 5203
+    },
+    {
+      "seed": 1,
+      "length": 256,
+      "model": "recurrent_last16",
+      "accuracy": 0.112,
+      "avg_confidence": 0.09740000000000004,
+      "ece": 0.014600000000000023,
+      "latency_us_per_example": 4.0115839801728725,
+      "checksum": 7656
+    },
+    {
+      "seed": 1,
+      "length": 256,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 5.685916170477867,
+      "checksum": 7910
+    },
+    {
+      "seed": 1,
+      "length": 256,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 14.288915786892176,
+      "checksum": 7910
+    },
+    {
+      "seed": 1,
+      "length": 256,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.042,
+      "avg_confidence": 0.06899999999999991,
+      "ece": 0.02699999999999987,
+      "latency_us_per_example": 10.03591576591134,
+      "checksum": 5403
+    },
+    {
+      "seed": 1,
+      "length": 512,
+      "model": "recurrent_last16",
+      "accuracy": 0.058,
+      "avg_confidence": 0.05881249999999998,
+      "ece": 0.0038125000000000064,
+      "latency_us_per_example": 7.258833851665258,
+      "checksum": 7424
+    },
+    {
+      "seed": 1,
+      "length": 512,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 14.633581973612309,
+      "checksum": 7657
+    },
+    {
+      "seed": 1,
+      "length": 512,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 19.982750061899424,
+      "checksum": 7657
+    },
+    {
+      "seed": 1,
+      "length": 512,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.024,
+      "avg_confidence": 0.07012499999999992,
+      "ece": 0.046124999999999874,
+      "latency_us_per_example": 10.135333985090256,
+      "checksum": 5181
+    },
+    {
+      "seed": 2,
+      "length": 16,
+      "model": "recurrent_last16",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9499999999999923,
+      "ece": 0.050000000000007705,
+      "latency_us_per_example": 2.667081542313099,
+      "checksum": 7675
+    },
+    {
+      "seed": 2,
+      "length": 16,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 1.0071657598018646,
+      "checksum": 7675
+    },
+    {
+      "seed": 2,
+      "length": 16,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 10.790165979415178,
+      "checksum": 7675
+    },
+    {
+      "seed": 2,
+      "length": 16,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.17,
+      "avg_confidence": 0.07045833333333326,
+      "ece": 0.0995416666666668,
+      "latency_us_per_example": 9.165331721305847,
+      "checksum": 5289
+    },
+    {
+      "seed": 2,
+      "length": 32,
+      "model": "recurrent_last16",
+      "accuracy": 0.52,
+      "avg_confidence": 0.4979749999999977,
+      "ece": 0.028775000000002222,
+      "latency_us_per_example": 2.386000007390976,
+      "checksum": 7618
+    },
+    {
+      "seed": 2,
+      "length": 32,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 1.1717500165104866,
+      "checksum": 7581
+    },
+    {
+      "seed": 2,
+      "length": 32,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 11.020750273019075,
+      "checksum": 7581
+    },
+    {
+      "seed": 2,
+      "length": 32,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.1,
+      "avg_confidence": 0.07112499999999997,
+      "ece": 0.0288750000000001,
+      "latency_us_per_example": 9.420165792107582,
+      "checksum": 5551
+    },
+    {
+      "seed": 2,
+      "length": 64,
+      "model": "recurrent_last16",
+      "accuracy": 0.28,
+      "avg_confidence": 0.2738000000000003,
+      "ece": 0.020199999999999486,
+      "latency_us_per_example": 3.4819156862795353,
+      "checksum": 7507
+    },
+    {
+      "seed": 2,
+      "length": 64,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 1.8004160374403,
+      "checksum": 7457
+    },
+    {
+      "seed": 2,
+      "length": 64,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 18.255415838211775,
+      "checksum": 7457
+    },
+    {
+      "seed": 2,
+      "length": 64,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.078,
+      "avg_confidence": 0.07062499999999994,
+      "ece": 0.007375000000000113,
+      "latency_us_per_example": 9.155165869742632,
+      "checksum": 5422
+    },
+    {
+      "seed": 2,
+      "length": 128,
+      "model": "recurrent_last16",
+      "accuracy": 0.16,
+      "avg_confidence": 0.14701250000000018,
+      "ece": 0.012987499999999865,
+      "latency_us_per_example": 3.006999846547842,
+      "checksum": 7837
+    },
+    {
+      "seed": 2,
+      "length": 128,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 3.126665949821472,
+      "checksum": 7764
+    },
+    {
+      "seed": 2,
+      "length": 128,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 12.111000251024961,
+      "checksum": 7764
+    },
+    {
+      "seed": 2,
+      "length": 128,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.058,
+      "avg_confidence": 0.07133333333333329,
+      "ece": 0.013333333333333178,
+      "latency_us_per_example": 10.196584276854992,
+      "checksum": 5383
+    },
+    {
+      "seed": 2,
+      "length": 256,
+      "model": "recurrent_last16",
+      "accuracy": 0.1,
+      "avg_confidence": 0.10107500000000004,
+      "ece": 0.008675000000000009,
+      "latency_us_per_example": 3.5764998756349087,
+      "checksum": 7613
+    },
+    {
+      "seed": 2,
+      "length": 256,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 6.039666011929512,
+      "checksum": 7547
+    },
+    {
+      "seed": 2,
+      "length": 256,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 15.106999780982733,
+      "checksum": 7547
+    },
+    {
+      "seed": 2,
+      "length": 256,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.058,
+      "avg_confidence": 0.07149999999999995,
+      "ece": 0.013499999999999856,
+      "latency_us_per_example": 9.839834179729223,
+      "checksum": 5513
+    },
+    {
+      "seed": 2,
+      "length": 512,
+      "model": "recurrent_last16",
+      "accuracy": 0.064,
+      "avg_confidence": 0.06983749999999998,
+      "ece": 0.010037500000000015,
+      "latency_us_per_example": 3.0064182355999947,
+      "checksum": 7935
+    },
+    {
+      "seed": 2,
+      "length": 512,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 10.618334170430899,
+      "checksum": 7500
+    },
+    {
+      "seed": 2,
+      "length": 512,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 19.918834324926138,
+      "checksum": 7500
+    },
+    {
+      "seed": 2,
+      "length": 512,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.05,
+      "avg_confidence": 0.07045833333333328,
+      "ece": 0.0204583333333332,
+      "latency_us_per_example": 9.260332211852074,
+      "checksum": 5431
+    },
+    {
+      "seed": 3,
+      "length": 16,
+      "model": "recurrent_last16",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9499999999999923,
+      "ece": 0.050000000000007705,
+      "latency_us_per_example": 2.1904162131249905,
+      "checksum": 7831
+    },
+    {
+      "seed": 3,
+      "length": 16,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 0.8916659280657768,
+      "checksum": 7831
+    },
+    {
+      "seed": 3,
+      "length": 16,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 10.128084104508162,
+      "checksum": 7831
+    },
+    {
+      "seed": 3,
+      "length": 16,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.174,
+      "avg_confidence": 0.07091666666666659,
+      "ece": 0.10308333333333347,
+      "latency_us_per_example": 8.911500219255686,
+      "checksum": 5683
+    },
+    {
+      "seed": 3,
+      "length": 32,
+      "model": "recurrent_last16",
+      "accuracy": 0.518,
+      "avg_confidence": 0.4887874999999978,
+      "ece": 0.029212500000002067,
+      "latency_us_per_example": 2.1836659871041775,
+      "checksum": 7981
+    },
+    {
+      "seed": 3,
+      "length": 32,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 1.1186660267412663,
+      "checksum": 7940
+    },
+    {
+      "seed": 3,
+      "length": 32,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 11.134333908557892,
+      "checksum": 7940
+    },
+    {
+      "seed": 3,
+      "length": 32,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.086,
+      "avg_confidence": 0.07079166666666659,
+      "ece": 0.015208333333333482,
+      "latency_us_per_example": 9.058165829628706,
+      "checksum": 5238
+    },
+    {
+      "seed": 3,
+      "length": 64,
+      "model": "recurrent_last16",
+      "accuracy": 0.288,
+      "avg_confidence": 0.27931250000000024,
+      "ece": 0.018312499999999503,
+      "latency_us_per_example": 2.512499690055847,
+      "checksum": 7649
+    },
+    {
+      "seed": 3,
+      "length": 64,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 1.795915886759758,
+      "checksum": 7879
+    },
+    {
+      "seed": 3,
+      "length": 64,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 11.004084255546331,
+      "checksum": 7879
+    },
+    {
+      "seed": 3,
+      "length": 64,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.058,
+      "avg_confidence": 0.07074999999999995,
+      "ece": 0.0127499999999999,
+      "latency_us_per_example": 9.084749966859818,
+      "checksum": 5172
+    },
+    {
+      "seed": 3,
+      "length": 128,
+      "model": "recurrent_last16",
+      "accuracy": 0.156,
+      "avg_confidence": 0.13966250000000016,
+      "ece": 0.016337499999999887,
+      "latency_us_per_example": 2.578750252723694,
+      "checksum": 7518
+    },
+    {
+      "seed": 3,
+      "length": 128,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 2.850581891834736,
+      "checksum": 7980
+    },
+    {
+      "seed": 3,
+      "length": 128,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 12.24549999460578,
+      "checksum": 7980
+    },
+    {
+      "seed": 3,
+      "length": 128,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.052,
+      "avg_confidence": 0.07054166666666664,
+      "ece": 0.01854166666666653,
+      "latency_us_per_example": 9.29433386772871,
+      "checksum": 5376
+    },
+    {
+      "seed": 3,
+      "length": 256,
+      "model": "recurrent_last16",
+      "accuracy": 0.084,
+      "avg_confidence": 0.08453750000000003,
+      "ece": 0.006337500000000027,
+      "latency_us_per_example": 3.4335837699472904,
+      "checksum": 7384
+    },
+    {
+      "seed": 3,
+      "length": 256,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 6.361749954521656,
+      "checksum": 7270
+    },
+    {
+      "seed": 3,
+      "length": 256,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 14.974999707192183,
+      "checksum": 7270
+    },
+    {
+      "seed": 3,
+      "length": 256,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.04,
+      "avg_confidence": 0.07120833333333328,
+      "ece": 0.031208333333333234,
+      "latency_us_per_example": 9.693500120192766,
+      "checksum": 5228
+    },
+    {
+      "seed": 3,
+      "length": 512,
+      "model": "recurrent_last16",
+      "accuracy": 0.068,
+      "avg_confidence": 0.064325,
+      "ece": 0.0036750000000000094,
+      "latency_us_per_example": 4.236582200974226,
+      "checksum": 7598
+    },
+    {
+      "seed": 3,
+      "length": 512,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 11.271083727478981,
+      "checksum": 7943
+    },
+    {
+      "seed": 3,
+      "length": 512,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 18.327918369323015,
+      "checksum": 7943
+    },
+    {
+      "seed": 3,
+      "length": 512,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.028,
+      "avg_confidence": 0.07070833333333325,
+      "ece": 0.04270833333333325,
+      "latency_us_per_example": 9.818915743380785,
+      "checksum": 5500
+    },
+    {
+      "seed": 4,
+      "length": 16,
+      "model": "recurrent_last16",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9499999999999923,
+      "ece": 0.050000000000007705,
+      "latency_us_per_example": 2.1157502196729183,
+      "checksum": 7926
+    },
+    {
+      "seed": 4,
+      "length": 16,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 0.7940842770040035,
+      "checksum": 7926
+    },
+    {
+      "seed": 4,
+      "length": 16,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 9.93033405393362,
+      "checksum": 7926
+    },
+    {
+      "seed": 4,
+      "length": 16,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.152,
+      "avg_confidence": 0.07062499999999991,
+      "ece": 0.08137500000000011,
+      "latency_us_per_example": 7.345249876379967,
+      "checksum": 5330
+    },
+    {
+      "seed": 4,
+      "length": 32,
+      "model": "recurrent_last16",
+      "accuracy": 0.516,
+      "avg_confidence": 0.4795999999999979,
+      "ece": 0.03640000000000197,
+      "latency_us_per_example": 1.8292502500116825,
+      "checksum": 7754
+    },
+    {
+      "seed": 4,
+      "length": 32,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 0.9708339348435402,
+      "checksum": 7503
+    },
+    {
+      "seed": 4,
+      "length": 32,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 8.849499747157097,
+      "checksum": 7503
+    },
+    {
+      "seed": 4,
+      "length": 32,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.104,
+      "avg_confidence": 0.07041666666666664,
+      "ece": 0.04008333333333342,
+      "latency_us_per_example": 9.128166362643242,
+      "checksum": 5295
+    },
+    {
+      "seed": 4,
+      "length": 64,
+      "model": "recurrent_last16",
+      "accuracy": 0.274,
+      "avg_confidence": 0.26828750000000035,
+      "ece": 0.020087499999999495,
+      "latency_us_per_example": 2.477250061929226,
+      "checksum": 7712
+    },
+    {
+      "seed": 4,
+      "length": 64,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 1.7753341235220432,
+      "checksum": 7749
+    },
+    {
+      "seed": 4,
+      "length": 64,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 11.057584080845118,
+      "checksum": 7749
+    },
+    {
+      "seed": 4,
+      "length": 64,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.05,
+      "avg_confidence": 0.07129166666666661,
+      "ece": 0.021291666666666553,
+      "latency_us_per_example": 9.425166063010693,
+      "checksum": 5523
+    },
+    {
+      "seed": 4,
+      "length": 128,
+      "model": "recurrent_last16",
+      "accuracy": 0.164,
+      "avg_confidence": 0.14333750000000015,
+      "ece": 0.020662499999999882,
+      "latency_us_per_example": 2.7949181385338306,
+      "checksum": 7619
+    },
+    {
+      "seed": 4,
+      "length": 128,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 3.0640000477433205,
+      "checksum": 7608
+    },
+    {
+      "seed": 4,
+      "length": 128,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 12.617833912372589,
+      "checksum": 7608
+    },
+    {
+      "seed": 4,
+      "length": 128,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.044,
+      "avg_confidence": 0.07129166666666663,
+      "ece": 0.02729166666666653,
+      "latency_us_per_example": 9.645584039390087,
+      "checksum": 5628
+    },
+    {
+      "seed": 4,
+      "length": 256,
+      "model": "recurrent_last16",
+      "accuracy": 0.1,
+      "avg_confidence": 0.09740000000000004,
+      "ece": 0.004600000000000018,
+      "latency_us_per_example": 3.0054179951548576,
+      "checksum": 7622
+    },
+    {
+      "seed": 4,
+      "length": 256,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 5.161583889275789,
+      "checksum": 7843
+    },
+    {
+      "seed": 4,
+      "length": 256,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 12.510417960584164,
+      "checksum": 7843
+    },
+    {
+      "seed": 4,
+      "length": 256,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.032,
+      "avg_confidence": 0.0709166666666666,
+      "ece": 0.03891666666666658,
+      "latency_us_per_example": 7.949583698064088,
+      "checksum": 5164
+    },
+    {
+      "seed": 4,
+      "length": 512,
+      "model": "recurrent_last16",
+      "accuracy": 0.046,
+      "avg_confidence": 0.056974999999999984,
+      "ece": 0.013775000000000004,
+      "latency_us_per_example": 3.731667995452881,
+      "checksum": 8026
+    },
+    {
+      "seed": 4,
+      "length": 512,
+      "model": "transformer_attention_lookup",
+      "accuracy": 1.0,
+      "avg_confidence": 0.9900000000000061,
+      "ece": 0.009999999999993903,
+      "latency_us_per_example": 11.244750116020441,
+      "checksum": 7457
+    },
+    {
+      "seed": 4,
+      "length": 512,
+      "model": "ebm_full_context_reranker",
+      "accuracy": 1.0,
+      "avg_confidence": 0.08061744789631518,
+      "ece": 0.9193825521036848,
+      "latency_us_per_example": 17.118749674409628,
+      "checksum": 7457
+    },
+    {
+      "seed": 4,
+      "length": 512,
+      "model": "ebm_recent_only_reranker",
+      "accuracy": 0.036,
+      "avg_confidence": 0.07187499999999995,
+      "ece": 0.03587499999999988,
+      "latency_us_per_example": 9.052168112248182,
+      "checksum": 5524
+    }
+  ],
+  "aggregate": [
+    {
+      "model": "ebm_full_context_reranker",
+      "accuracy_mean": 1.0,
+      "accuracy_std": 0.0,
+      "avg_confidence_mean": 0.08061744789631518,
+      "avg_confidence_std": 0.0,
+      "ece_mean": 0.9193825521036848,
+      "ece_std": 0.0,
+      "latency_us_per_example_mean": 13.444594557707509,
+      "latency_us_per_example_std": 3.5290097137414955
+    },
+    {
+      "model": "ebm_recent_only_reranker",
+      "accuracy_mean": 0.0758,
+      "accuracy_std": 0.04279672884695745,
+      "avg_confidence_mean": 0.07077499999999995,
+      "avg_confidence_std": 0.0006152573987094164,
+      "ece_mean": 0.03404166666666664,
+      "ece_std": 0.02681267104754219,
+      "latency_us_per_example_mean": 9.54212493573626,
+      "latency_us_per_example_std": 1.302342256455709
+    },
+    {
+      "model": "recurrent_last16",
+      "accuracy_mean": 0.3532,
+      "accuracy_std": 0.3269497820766975,
+      "avg_confidence_mean": 0.3375612499999984,
+      "avg_confidence_std": 0.30910666183222385,
+      "ece_mean": 0.02197625000000154,
+      "ece_std": 0.014936403847510006,
+      "latency_us_per_example_mean": 3.1181195129950843,
+      "latency_us_per_example_std": 1.1187766636348795
+    },
+    {
+      "model": "transformer_attention_lookup",
+      "accuracy_mean": 1.0,
+      "accuracy_std": 0.0,
+      "avg_confidence_mean": 0.9900000000000061,
+      "avg_confidence_std": 0.0,
+      "ece_mean": 0.009999999999993903,
+      "ece_std": 0.0,
+      "latency_us_per_example_mean": 4.290210890273253,
+      "latency_us_per_example_std": 4.220132405063725
+    }
+  ]
+}
