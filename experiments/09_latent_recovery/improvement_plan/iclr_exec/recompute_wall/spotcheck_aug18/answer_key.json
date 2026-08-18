@@ -1,0 +1,352 @@
+[
+ {
+  "row": 1,
+  "run_id": "E11_qwen7b:k1_43d06a_00701461:depth_k1_partial:5",
+  "src": "E11_qwen7b",
+  "cell": "depth_k1_partial",
+  "label": "absorbed"
+ },
+ {
+  "row": 2,
+  "run_id": "E11_llama8b:k3_43d06a_00703462:depth_k3_full:8",
+  "src": "E11_llama8b",
+  "cell": "depth_k3_full",
+  "label": "unresolved"
+ },
+ {
+  "row": 3,
+  "run_id": "E11_qwen7b:k3_43d06a_00704897:depth_k3_full:0",
+  "src": "E11_qwen7b",
+  "cell": "depth_k3_full",
+  "label": "absorbed"
+ },
+ {
+  "row": 4,
+  "run_id": "E11_qwen7b:k0_43d06a_00701556:anchor_k0:3",
+  "src": "E11_qwen7b",
+  "cell": "anchor_k0",
+  "label": "silently_corrected"
+ },
+ {
+  "row": 5,
+  "run_id": "e10:claude-sonnet-4-5:kc5_507786_00400161:deep_kc5:0",
+  "src": "e10:claude-sonnet-4-5",
+  "cell": "deep_kc5",
+  "label": "absorbed"
+ },
+ {
+  "row": 6,
+  "run_id": "E11_llama8b:k0_43d06a_00700378:anchor_k0:1",
+  "src": "E11_llama8b",
+  "cell": "anchor_k0",
+  "label": "absorbed"
+ },
+ {
+  "row": 7,
+  "run_id": "E11_qwen7b:k2_43d06a_00702079:depth_k2_bare:8",
+  "src": "E11_qwen7b",
+  "cell": "depth_k2_bare",
+  "label": "silently_corrected"
+ },
+ {
+  "row": 8,
+  "run_id": "e10:claude-sonnet-4-5:kc1_507786_00300158:onehop_kc1:0",
+  "src": "e10:claude-sonnet-4-5",
+  "cell": "onehop_kc1",
+  "label": "absorbed"
+ },
+ {
+  "row": 9,
+  "run_id": "E11_llama8b:k0_43d06a_00700033:anchor_k0:4",
+  "src": "E11_llama8b",
+  "cell": "anchor_k0",
+  "label": "flagged"
+ },
+ {
+  "row": 10,
+  "run_id": "E11_qwen7b:k3_43d06a_00704815:depth_k3_partial:5",
+  "src": "E11_qwen7b",
+  "cell": "depth_k3_partial",
+  "label": "silently_corrected"
+ },
+ {
+  "row": 11,
+  "run_id": "E11_qwen7b:k3_43d06a_00704815:depth_k3_full:0",
+  "src": "E11_qwen7b",
+  "cell": "depth_k3_full",
+  "label": "silently_corrected"
+ },
+ {
+  "row": 12,
+  "run_id": "e10:claude-sonnet-4-5:kr1_507786_00100178:adjacent_contradiction:0",
+  "src": "e10:claude-sonnet-4-5",
+  "cell": "adjacent_contradiction",
+  "label": "silently_corrected"
+ },
+ {
+  "row": 13,
+  "run_id": "E11_llama8b:k0_43d06a_00700813:anchor_k0:6",
+  "src": "E11_llama8b",
+  "cell": "anchor_k0",
+  "label": "flagged"
+ },
+ {
+  "row": 14,
+  "run_id": "E11_qwen7b:k2_43d06a_00702375:depth_k2_bare:2",
+  "src": "E11_qwen7b",
+  "cell": "depth_k2_bare",
+  "label": "unresolved"
+ },
+ {
+  "row": 15,
+  "run_id": "E11_llama8b:k2_43d06a_00702879:depth_k2_partial:7",
+  "src": "E11_llama8b",
+  "cell": "depth_k2_partial",
+  "label": "flagged"
+ },
+ {
+  "row": 16,
+  "run_id": "E11_llama8b:k1_43d06a_00701271:depth_k1_full:4",
+  "src": "E11_llama8b",
+  "cell": "depth_k1_full",
+  "label": "unresolved"
+ },
+ {
+  "row": 17,
+  "run_id": "E11_llama8b:k5_43d06a_00706649:depth_k5_partial:4",
+  "src": "E11_llama8b",
+  "cell": "depth_k5_partial",
+  "label": "flagged"
+ },
+ {
+  "row": 18,
+  "run_id": "E11_llama8b:k0_43d06a_00700220:anchor_k0:4",
+  "src": "E11_llama8b",
+  "cell": "anchor_k0",
+  "label": "flagged"
+ },
+ {
+  "row": 19,
+  "run_id": "E11_qwen7b:k2_43d06a_00703141:depth_k2_partial:1",
+  "src": "E11_qwen7b",
+  "cell": "depth_k2_partial",
+  "label": "absorbed"
+ },
+ {
+  "row": 20,
+  "run_id": "E11_llama8b:k1_43d06a_00701689:depth_k1_partial:8",
+  "src": "E11_llama8b",
+  "cell": "depth_k1_partial",
+  "label": "silently_corrected"
+ },
+ {
+  "row": 21,
+  "run_id": "e10:gpt-4o:kc1_507786_00300064:onehop_kc1:0",
+  "src": "e10:gpt-4o",
+  "cell": "onehop_kc1",
+  "label": "absorbed"
+ },
+ {
+  "row": 22,
+  "run_id": "e10:gpt-5.1:kc5_507786_00400068:deep_kc5:0",
+  "src": "e10:gpt-5.1",
+  "cell": "deep_kc5",
+  "label": "absorbed"
+ },
+ {
+  "row": 23,
+  "run_id": "E11_llama8b:k5_43d06a_00705013:depth_k5_full:7",
+  "src": "E11_llama8b",
+  "cell": "depth_k5_full",
+  "label": "flagged"
+ },
+ {
+  "row": 24,
+  "run_id": "E11_llama8b:k0_43d06a_00700844:anchor_k0:5",
+  "src": "E11_llama8b",
+  "cell": "anchor_k0",
+  "label": "flagged"
+ },
+ {
+  "row": 25,
+  "run_id": "e10:claude-sonnet-4-5:kc1_507786_00300190:onehop_kc1:0",
+  "src": "e10:claude-sonnet-4-5",
+  "cell": "onehop_kc1",
+  "label": "unresolved"
+ },
+ {
+  "row": 26,
+  "run_id": "E11_llama8b:k1_43d06a_00701102:depth_k1_bare:8",
+  "src": "E11_llama8b",
+  "cell": "depth_k1_bare",
+  "label": "absorbed"
+ },
+ {
+  "row": 27,
+  "run_id": "E11_llama8b:k3_43d06a_00703846:depth_k3_bare:4",
+  "src": "E11_llama8b",
+  "cell": "depth_k3_bare",
+  "label": "unresolved"
+ },
+ {
+  "row": 28,
+  "run_id": "E11_llama8b:k2_43d06a_00701876:depth_k2_partial:1",
+  "src": "E11_llama8b",
+  "cell": "depth_k2_partial",
+  "label": "unresolved"
+ },
+ {
+  "row": 29,
+  "run_id": "E11_qwen7b:k3_43d06a_00703359:depth_k3_partial:6",
+  "src": "E11_qwen7b",
+  "cell": "depth_k3_partial",
+  "label": "absorbed"
+ },
+ {
+  "row": 30,
+  "run_id": "E11_qwen7b:k1_43d06a_00701257:depth_k1_full:2",
+  "src": "E11_qwen7b",
+  "cell": "depth_k1_full",
+  "label": "unresolved"
+ },
+ {
+  "row": 31,
+  "run_id": "e10:gpt-4.1:kc1_507786_00300030:onehop_kc1:0",
+  "src": "e10:gpt-4.1",
+  "cell": "onehop_kc1",
+  "label": "absorbed"
+ },
+ {
+  "row": 32,
+  "run_id": "E11_llama8b:k5_43d06a_00705676:depth_k5_full:4",
+  "src": "E11_llama8b",
+  "cell": "depth_k5_full",
+  "label": "absorbed"
+ },
+ {
+  "row": 33,
+  "run_id": "E11_llama8b:k3_43d06a_00703435:depth_k3_partial:8",
+  "src": "E11_llama8b",
+  "cell": "depth_k3_partial",
+  "label": "silently_corrected"
+ },
+ {
+  "row": 34,
+  "run_id": "E11_qwen7b:k3_43d06a_00703398:depth_k3_partial:4",
+  "src": "E11_qwen7b",
+  "cell": "depth_k3_partial",
+  "label": "unresolved"
+ },
+ {
+  "row": 35,
+  "run_id": "e10:claude-sonnet-4-5:kc5_507786_00400123:deep_kc5:0",
+  "src": "e10:claude-sonnet-4-5",
+  "cell": "deep_kc5",
+  "label": "silently_corrected"
+ },
+ {
+  "row": 36,
+  "run_id": "E11_qwen7b:k0_43d06a_00700083:anchor_k0:8",
+  "src": "E11_qwen7b",
+  "cell": "anchor_k0",
+  "label": "unresolved"
+ },
+ {
+  "row": 37,
+  "run_id": "E11_qwen7b:k2_43d06a_00702347:depth_k2_full:7",
+  "src": "E11_qwen7b",
+  "cell": "depth_k2_full",
+  "label": "absorbed"
+ },
+ {
+  "row": 38,
+  "run_id": "e10:claude-haiku-4-5:kc1_507786_00300171:onehop_kc1:0",
+  "src": "e10:claude-haiku-4-5",
+  "cell": "onehop_kc1",
+  "label": "absorbed"
+ },
+ {
+  "row": 39,
+  "run_id": "E11_llama8b:k5_43d06a_00704868:depth_k5_full:4",
+  "src": "E11_llama8b",
+  "cell": "depth_k5_full",
+  "label": "flagged"
+ },
+ {
+  "row": 40,
+  "run_id": "E11_qwen7b:k5_43d06a_00705865:depth_k5_full:0",
+  "src": "E11_qwen7b",
+  "cell": "depth_k5_full",
+  "label": "absorbed"
+ },
+ {
+  "row": 41,
+  "run_id": "E11_qwen7b:k1_43d06a_00702189:depth_k1_full:4",
+  "src": "E11_qwen7b",
+  "cell": "depth_k1_full",
+  "label": "absorbed"
+ },
+ {
+  "row": 42,
+  "run_id": "E11_llama8b:k1_43d06a_00701458:depth_k1_partial:7",
+  "src": "E11_llama8b",
+  "cell": "depth_k1_partial",
+  "label": "unresolved"
+ },
+ {
+  "row": 43,
+  "run_id": "e10:gpt-4o:kc5_507786_00400001:deep_kc5:0",
+  "src": "e10:gpt-4o",
+  "cell": "deep_kc5",
+  "label": "silently_corrected"
+ },
+ {
+  "row": 44,
+  "run_id": "e10:claude-sonnet-5:kr1_507786_00100219:adjacent_contradiction:0",
+  "src": "e10:claude-sonnet-5",
+  "cell": "adjacent_contradiction",
+  "label": "silently_corrected"
+ },
+ {
+  "row": 45,
+  "run_id": "e10:gpt-3.5-turbo-instruct:kr1_507786_00100004:adjacent_contradiction:0",
+  "src": "e10:gpt-3.5-turbo-instruct",
+  "cell": "adjacent_contradiction",
+  "label": "absorbed"
+ },
+ {
+  "row": 46,
+  "run_id": "E11_qwen7b:k1_43d06a_00702185:depth_k1_partial:3",
+  "src": "E11_qwen7b",
+  "cell": "depth_k1_partial",
+  "label": "silently_corrected"
+ },
+ {
+  "row": 47,
+  "run_id": "e10:claude-haiku-4-5:kc5_507786_00400181:deep_kc5:0",
+  "src": "e10:claude-haiku-4-5",
+  "cell": "deep_kc5",
+  "label": "absorbed"
+ },
+ {
+  "row": 48,
+  "run_id": "E11_qwen7b:k3_43d06a_00704508:depth_k3_bare:0",
+  "src": "E11_qwen7b",
+  "cell": "depth_k3_bare",
+  "label": "absorbed"
+ },
+ {
+  "row": 49,
+  "run_id": "e10:claude-opus-4-8:kc5_507786_00400178:deep_kc5:0",
+  "src": "e10:claude-opus-4-8",
+  "cell": "deep_kc5",
+  "label": "absorbed"
+ },
+ {
+  "row": 50,
+  "run_id": "e10:claude-opus-4-8:kc5_507786_00400226:deep_kc5:0",
+  "src": "e10:claude-opus-4-8",
+  "cell": "deep_kc5",
+  "label": "silently_corrected"
+ }
+]
