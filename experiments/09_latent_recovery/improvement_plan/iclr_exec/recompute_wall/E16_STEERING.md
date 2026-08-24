@@ -184,6 +184,29 @@ positive result. LinEAS moves to optional future work. Additional
 method/context citations: 2506.18167, 2504.14379, 2510.04128, 2601.03595,
 2502.11771.
 
+## Amendment 2 (2026-08-24, pre-run): error-presence probe + multi-layer arm
+
+Both suggested by C. Amo Alonso after reviewing the single-layer null.
+
+**V3 error-presence probe runs FIRST and gates the rest.** Contrast: the
+minimal pair of prefixes identical except the site line's value (planted vs
+the model's own true line). Representations at EVERY layer (final token +
+site-line span), held-out AUC per layer. If AUC >= 0.8 at any layer, the
+error is linearly represented and the V3 steering arm proceeds (+alpha =
+amplify error salience on perturbed continuations). If AUC is ~chance at
+every layer, the wall includes a representation-level absence — a finding
+that would soften the deference-only interpretation — and V3 steering is
+skipped as uninterpretable.
+
+**Multi-layer steering arm:** per-layer diff-in-means vectors; layer sets
+{all layers, early third, mid third, late third}; unit-vector alpha in
++/-{1, 2, 4} (compounding across depth motivates the smaller grid) plus
+per-layer norm-fractions {0.25, 0.5} of each layer's raw ||v|| on the
+all-layer set. Vectors V1 and V3-if-gated (V2 behaved identically to V1 in
+the single-layer screen). Same worlds, DV, breach rule, and controls as the
+original screen. qwen7b first; llama8b replication only if any condition
+moves absorption with controls intact.
+
 ## Go checklist (in order, before the first GPU job)
 
 1. Scoped lit check (~30 min) on steering-of-reasoning/backtracking-vector
