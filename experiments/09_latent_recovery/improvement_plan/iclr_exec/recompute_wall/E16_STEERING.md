@@ -207,6 +207,31 @@ the single-layer screen). Same worlds, DV, breach rule, and controls as the
 original screen. qwen7b first; llama8b replication only if any condition
 moves absorption with controls intact.
 
+## Amendment 3 (2026-08-26, pre-run): stub-position steering arm
+
+The last rung of the intervention ladder: steer with the wrongness direction
+extracted at GENERATION-type positions (the neutral stub), where the signal
+is verified sign-invariant, surface-proof, position-proof, and linear
+(L26-27; probe gate + subset signature + transfer checks of 08-25).
+
+Directions: sign-balanced group-weighted diff-in-means (pos- and neg-delta
+pair groups contribute equally), computed ONLY from the 60-program
+extraction partition of the saved stub representations (evaluation worlds
+remain disjoint). Vectors: S26 (layer 26), S26+27 (both layers, each its own
+vector; the two share one feature, cos 0.615). Exploratory secondary: S28
+(the orthogonal late feature of unresolved semantics) at a reduced grid —
+labeled exploratory, not part of the primary hypothesis.
+
+Grid: unit-vector alpha in +/-{1,2,4,8} for S26 and S26+27, plus per-layer
+norm-fractions {0.5, 1.0}; S28 at +/-{2,8}. Screen tier (n=40 onehop + 20
+unperturbed controls, greedy), standard breach rule and controls; confirm
+battery only if any condition moves with controls intact. Registered
+prediction: breach prior ~15-20% (the depth argument — even the right
+direction at L26 has <=2 layers plus the logit path to act through);
+a breach would indicate a causally coupled but subthreshold signal, and the
+first follow-up would be whether steering flips emitted tokens (the
+emission escape hatch).
+
 ## Go checklist (in order, before the first GPU job)
 
 1. Scoped lit check (~30 min) on steering-of-reasoning/backtracking-vector
