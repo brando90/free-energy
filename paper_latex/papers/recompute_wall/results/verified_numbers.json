@@ -1,491 +1,1443 @@
 {
-  "_sources": {
-    "readable_and_computed_claude": "e10_topup_fable/topup_analysis.json job1_pooled[model].cells.{adjacent_contradiction,onehop_kc1}.pooled (batch1+batch2)",
-    "readable_and_computed_gpt": "e10_api_bridge/bridge_analysis.json models[model].cells.{adjacent_contradiction,onehop_kc1}.absorbed",
-    "readable_and_computed_open": "e10_widen/results_skampere1/EXPG_PROGTRACE_<m>/summary_tables.json cells.{adjacent_contradiction,onehop_kc1}.final_output_absorbed",
-    "depth": "e11_run/results/E11_llama8b|E11_qwen7b/summary_tables.json cells.k{0,1,2,3,5}_bare.absorbed; haiku from e11_run/results/E11_haiku_r8/summary_tables.json (registered R=8+greedy run, n=540/cell; supersedes the R=3 pilot E11_haiku)",
-    "deference": "e11_run/results/E11_<m>/summary_tables.json cells.k1_{bare,full,partial}.absorbed; haiku from E11_haiku_r8 (registered R=8 run)",
-    "fig1_readable_example": "results/EXPH2_FRONTIER_FOLLOWUPS/regime2 program kr1_507786_00100000 + raw_pert_claude-haiku-4-5 continuation",
-    "fig1_computed_example": "results/EXPH2_FRONTIER_FOLLOWUPS/regime2 program kc1_507786_00300000 + e10_api_bridge/raw_pert_claude-haiku-4-5 continuation",
-    "fig4_inset_lines": "e11_run/results/E11_llama8b/manifest.jsonl real injected_trace_line (bare/full/partial) at k=1",
-    "ci_policy_fig3_fig4": "wlo/whi = program-cluster bootstrap 95% (cluster_boot95, n_boot=1000, cluster = program family) because cells pool 9 (open) / 9 (haiku r8) rollouts per program; Wilson95 fallback where the bootstrap is degenerate (zero between-program variance at ceiling cells). fig2 remains Wilson95: one completion per program per cell, no nesting.",
-    "e13": "e13/results/{E13_haiku,E13_open_llama8b,E13_open_qwen7b}/summary_tables.json cells.{line_k0,k1_deference,grid_kr1}.all \u2014 matched controls cited in Secs 4-5 and the appendix; pooled greedy+sampled rollouts, program-cluster bootstrap CIs"
+ "_sources": {
+  "ci_policy_fig3_fig4": "wlo/whi = program-cluster bootstrap 95% (cluster_boot95, n_boot=1000, cluster = program family) because cells pool 9 (open) / 9 (haiku r8) rollouts per program; Wilson95 fallback where the bootstrap is degenerate (zero between-program variance at ceiling cells). fig2 remains Wilson95: one completion per program per cell, no nesting.",
+  "deference": "e11_run/results/E11_<m>/summary_tables.json cells.k1_{bare,full,partial}.absorbed; haiku from E11_haiku_r8 (registered R=8 run)",
+  "depth": "e11_run/results/E11_llama8b|E11_qwen7b/summary_tables.json cells.k{0,1,2,3,5}_bare.absorbed; haiku from e11_run/results/E11_haiku_r8/summary_tables.json (registered R=8+greedy run, n=540/cell; supersedes the R=3 pilot E11_haiku)",
+  "e13": "e13/results/{E13_haiku,E13_open_llama8b,E13_open_qwen7b}/summary_tables.json cells.{line_k0,k1_deference,grid_kr1}.all \u2014 matched controls cited in Secs 4-5 and the appendix; pooled greedy+sampled rollouts, program-cluster bootstrap CIs",
+  "e13_bridge": "e13/results/E13_bridge/summary_attribution.json models.<m>.'<arm>|<cell>'.absorbed \u2014 E13c attribution arms (baseline/self/other_model/human framings over byte-identical perturbed traces), bridge presentation, greedy, one continuation per program (n=60=program_n) so Wilson95 CIs; cited in Sec 5, Sec 9, and app:attribution",
+  "e13_tentative_probe": "e13/results/{E13_haiku,E13_open_llama8b,E13_open_qwen7b}/summary_tables.json cells.k1_deference.all.{k1_tentative.absorbed, k1_probe.probe_answer_anywhere_rate/probe_planted_echo_rate} \u2014 tentative '(unverified)' tag + direct-probe cells; probe reported as answer-anywhere (first-integer metric is a restating artifact, disclosed in appendix); cited in Sec 5 and the matched-controls appendix paragraph",
+  "fig1_computed_example": "results/EXPH2_FRONTIER_FOLLOWUPS/regime2 program kc1_507786_00300000 + e10_api_bridge/raw_pert_claude-haiku-4-5 continuation",
+  "fig1_readable_example": "results/EXPH2_FRONTIER_FOLLOWUPS/regime2 program kr1_507786_00100000 + raw_pert_claude-haiku-4-5 continuation",
+  "fig4_inset_lines": "e11_run/results/E11_llama8b/manifest.jsonl real injected_trace_line (bare/full/partial) at k=1",
+  "readable_and_computed_claude": "e10_topup_fable/topup_analysis.json job1_pooled[model].cells.{adjacent_contradiction,onehop_kc1}.pooled (batch1+batch2)",
+  "readable_and_computed_gpt": "e10_api_bridge/bridge_analysis.json models[model].cells.{adjacent_contradiction,onehop_kc1}.absorbed",
+  "readable_and_computed_open": "e10_widen/results_skampere1/EXPG_PROGTRACE_<m>/summary_tables.json cells.{adjacent_contradiction,onehop_kc1}.final_output_absorbed"
+ },
+ "e13": {
+  "haiku": {
+   "anchor_k0": {
+    "cboot": [
+     0.0,
+     0.0875
+    ],
+    "n": 240,
+    "rate": 0.0333
+   },
+   "grid_adjacent_contradiction": {
+    "cboot": [
+     0.0,
+     0.0208
+    ],
+    "n": 240,
+    "rate": 0.0083
+   },
+   "grid_note_true_before_line_false": {
+    "cboot": [
+     0.3375,
+     0.5542
+    ],
+    "n": 240,
+    "rate": 0.4458
+   },
+   "k1_full_sum": {
+    "cboot": [
+     0.4583,
+     0.6833
+    ],
+    "n": 240,
+    "rate": 0.5708
+   },
+   "k1_probe": {
+    "answer_anywhere": 1.0,
+    "n": 240,
+    "planted_echo": 0.0125
+   },
+   "k1_tentative": {
+    "cboot": [
+     0.8583,
+     0.9708
+    ],
+    "n": 240,
+    "rate": 0.9208
+   },
+   "line_k0": {
+    "cboot": [
+     0.0583,
+     0.2292
+    ],
+    "n": 240,
+    "rate": 0.1375
+   }
   },
-  "fig2": {
-    "order": [
-      "qwen1p5b",
-      "qwen7b",
-      "qwen32b",
-      "olmo7b",
-      "llama8b",
-      "gpt-3.5-instruct",
-      "gpt-4o",
-      "gpt-4.1",
-      "gpt-5.1",
-      "haiku-4-5",
-      "sonnet-4-5",
-      "sonnet-5",
-      "opus-4-8"
+  "llama8b": {
+   "anchor_k0": {
+    "cboot": [
+     0.5771,
+     0.7921
     ],
-    "labels": [
-      "Qwen 1.5B",
-      "Qwen 7B",
-      "Qwen 32B",
-      "OLMo 7B",
-      "Llama 8B",
-      "GPT-3.5-instruct",
-      "GPT-4o",
-      "GPT-4.1",
-      "GPT-5.1",
-      "Haiku 4.5",
-      "Sonnet 4.5",
-      "Sonnet 5",
-      "Opus 4.8"
+    "n": 279,
+    "rate": 0.6882
+   },
+   "grid_adjacent_contradiction": {
+    "cboot": [
+     0.6163,
+     0.7052
     ],
-    "developer": [
-      "Qwen",
-      "Qwen",
-      "Qwen",
-      "OLMo",
-      "Llama",
-      "OpenAI",
-      "OpenAI",
-      "OpenAI",
-      "OpenAI",
-      "Anthropic",
-      "Anthropic",
-      "Anthropic",
-      "Anthropic"
+    "n": 1350,
+    "rate": 0.6607
+   },
+   "grid_note_true_before_line_false": {
+    "cboot": [
+     0.6556,
+     0.7319
     ],
-    "readable": {
-      "rate": [
-        0.541,
-        0.7267,
-        0.06,
-        0.6533,
-        0.58,
-        0.1471,
-        0.0143,
-        0.0143,
-        0.0857,
-        0.0,
-        0.0,
-        0.0105,
-        0.0
-      ],
-      "n": [
-        61,
-        150,
-        150,
-        150,
-        150,
-        68,
-        70,
-        70,
-        70,
-        190,
-        190,
-        190,
-        190
-      ],
-      "wlo": [
-        0.4172,
-        0.6504,
-        0.0319,
-        0.5742,
-        0.5,
-        0.0819,
-        0.0025,
-        0.0025,
-        0.0399,
-        0.0,
-        0.0,
-        0.0029,
-        0.0
-      ],
-      "whi": [
-        0.6599,
-        0.7917,
-        0.1101,
-        0.7248,
-        0.656,
-        0.25,
-        0.0766,
-        0.0766,
-        0.1747,
-        0.0198,
-        0.0198,
-        0.0376,
-        0.0198
-      ]
-    },
-    "computed": {
-      "rate": [
-        0.5,
-        0.88,
-        1.0,
-        0.7273,
-        1.0,
-        1.0,
-        1.0,
-        1.0,
-        1.0,
-        1.0,
-        0.9722,
-        1.0,
-        1.0
-      ],
-      "n": [
-        30,
-        150,
-        150,
-        66,
-        150,
-        58,
-        60,
-        60,
-        60,
-        180,
-        180,
-        178,
-        180
-      ],
-      "wlo": [
-        0.3315,
-        0.8183,
-        0.975,
-        0.6096,
-        0.975,
-        0.9379,
-        0.9398,
-        0.9398,
-        0.9398,
-        0.9791,
-        0.9366,
-        0.9789,
-        0.9791
-      ],
-      "whi": [
-        0.6685,
-        0.9227,
-        1.0,
-        0.82,
-        1.0,
-        1.0,
-        1.0,
-        1.0,
-        1.0,
-        1.0,
-        0.9881,
-        1.0,
-        1.0
-      ]
-    }
+    "n": 1350,
+    "rate": 0.6956
+   },
+   "k1_full_sum": {
+    "cboot": [
+     0.3864,
+     0.553
+    ],
+    "n": 396,
+    "rate": 0.4722
+   },
+   "k1_probe": {
+    "answer_anywhere": 1.0,
+    "n": 396,
+    "planted_echo": 0.096
+   },
+   "k1_tentative": {
+    "cboot": [
+     0.9495,
+     0.9924
+    ],
+    "n": 396,
+    "rate": 0.9747
+   },
+   "line_k0": {
+    "cboot": [
+     0.9462,
+     1.0
+    ],
+    "n": 279,
+    "rate": 0.9821
+   }
   },
-  "fig3": {
-    "k": [
-      0,
-      1,
-      2,
-      3,
-      5
+  "qwen7b": {
+   "anchor_k0": {
+    "cboot": [
+     0.56,
+     0.7733
     ],
-    "haiku": {
-      "rate": [
-        0.0185,
-        1.0,
-        1.0,
-        1.0,
-        1.0
-      ],
-      "wlo": [
-        0.0056,
-        0.9929,
-        0.9929,
-        0.9929,
-        0.9929
-      ],
-      "whi": [
-        0.0352,
-        1.0,
-        1.0,
-        1.0,
-        1.0
-      ],
-      "n": [
-        540,
-        540,
-        540,
-        540,
-        540
-      ]
-    },
-    "llama8b": {
-      "rate": [
-        0.5963,
-        0.9859,
-        0.997,
-        0.9867,
-        0.9464
-      ],
-      "wlo": [
-        0.5519,
-        0.9726,
-        0.9926,
-        0.9667,
-        0.8929
-      ],
-      "whi": [
-        0.6415,
-        0.9956,
-        1.0,
-        1.0,
-        0.9901
-      ],
-      "n": [
-        1350,
-        1350,
-        1350,
-        1350,
-        504
-      ]
-    },
-    "qwen7b": {
-      "rate": [
-        0.7126,
-        0.7844,
-        0.943,
-        0.9326,
-        0.9444
-      ],
-      "wlo": [
-        0.6652,
-        0.7296,
-        0.9089,
-        0.8941,
-        0.8485
-      ],
-      "whi": [
-        0.7548,
-        0.8319,
-        0.9704,
-        0.9667,
-        1.0
-      ],
-      "n": [
-        1350,
-        1350,
-        1350,
-        1350,
-        198
-      ]
-    }
-  },
-  "fig4": {
-    "arms": [
-      "bare",
-      "full",
-      "partial"
+    "n": 225,
+    "rate": 0.6711
+   },
+   "grid_adjacent_contradiction": {
+    "cboot": [
+     0.6474,
+     0.7341
     ],
-    "haiku": {
-      "rate": [
-        1.0,
-        0.9944,
-        0.9759
-      ],
-      "wlo": [
-        0.9929,
-        0.9833,
-        0.9574
-      ],
-      "whi": [
-        1.0,
-        1.0,
-        0.9926
-      ],
-      "n": [
-        540,
-        540,
-        540
-      ]
-    },
-    "llama8b": {
-      "rate": [
-        0.9859,
-        0.9926,
-        0.9881
-      ],
-      "wlo": [
-        0.9726,
-        0.9859,
-        0.9763
-      ],
-      "whi": [
-        0.9956,
-        0.9978,
-        0.9963
-      ],
-      "n": [
-        1350,
-        1350,
-        1350
-      ]
-    },
-    "qwen7b": {
-      "rate": [
-        0.7844,
-        0.9363,
-        0.9259
-      ],
-      "wlo": [
-        0.7296,
-        0.9119,
-        0.8978
-      ],
-      "whi": [
-        0.8319,
-        0.9563,
-        0.9519
-      ],
-      "n": [
-        1350,
-        1350,
-        1350
-      ]
-    },
-    "inset_lines": {
-      "bare": "line 10: n = y + z; n = 100",
-      "full": "line 10: n = y + z = 32 + 58; n = 100",
-      "partial": "line 10: n = y + z = ... + 58; n = 100",
-      "note": "true value 90; planted 100 (real E11_llama8b k=1 injected line)"
-    }
-  },
-  "e13": {
-    "haiku": {
-      "line_k0": {
-        "rate": 0.1375,
-        "n": 240,
-        "cboot": [
-          0.0583,
-          0.2292
-        ]
-      },
-      "anchor_k0": {
-        "rate": 0.0333,
-        "n": 240,
-        "cboot": [
-          0.0,
-          0.0875
-        ]
-      },
-      "k1_full_sum": {
-        "rate": 0.5708,
-        "n": 240,
-        "cboot": [
-          0.4583,
-          0.6833
-        ]
-      },
-      "grid_note_true_before_line_false": {
-        "rate": 0.4458,
-        "n": 240,
-        "cboot": [
-          0.3375,
-          0.5542
-        ]
-      },
-      "grid_adjacent_contradiction": {
-        "rate": 0.0083,
-        "n": 240,
-        "cboot": [
-          0.0,
-          0.0208
-        ]
-      }
-    },
-    "llama8b": {
-      "line_k0": {
-        "rate": 0.9821,
-        "n": 279,
-        "cboot": [
-          0.9462,
-          1.0
-        ]
-      },
-      "anchor_k0": {
-        "rate": 0.6882,
-        "n": 279,
-        "cboot": [
-          0.5771,
-          0.7921
-        ]
-      },
-      "k1_full_sum": {
-        "rate": 0.4722,
-        "n": 396,
-        "cboot": [
-          0.3864,
-          0.553
-        ]
-      },
-      "grid_note_true_before_line_false": {
-        "rate": 0.6956,
-        "n": 1350,
-        "cboot": [
-          0.6556,
-          0.7319
-        ]
-      },
-      "grid_adjacent_contradiction": {
-        "rate": 0.6607,
-        "n": 1350,
-        "cboot": [
-          0.6163,
-          0.7052
-        ]
-      }
-    },
-    "qwen7b": {
-      "line_k0": {
-        "rate": 0.7867,
-        "n": 225,
-        "cboot": [
-          0.6978,
-          0.8711
-        ]
-      },
-      "anchor_k0": {
-        "rate": 0.6711,
-        "n": 225,
-        "cboot": [
-          0.56,
-          0.7733
-        ]
-      },
-      "k1_full_sum": {
-        "rate": 0.3796,
-        "n": 324,
-        "cboot": [
-          0.2932,
-          0.4722
-        ]
-      },
-      "grid_note_true_before_line_false": {
-        "rate": 0.9326,
-        "n": 1350,
-        "cboot": [
-          0.9037,
-          0.9593
-        ]
-      },
-      "grid_adjacent_contradiction": {
-        "rate": 0.6904,
-        "n": 1350,
-        "cboot": [
-          0.6474,
-          0.7341
-        ]
-      }
-    }
+    "n": 1350,
+    "rate": 0.6904
+   },
+   "grid_note_true_before_line_false": {
+    "cboot": [
+     0.9037,
+     0.9593
+    ],
+    "n": 1350,
+    "rate": 0.9326
+   },
+   "k1_full_sum": {
+    "cboot": [
+     0.2932,
+     0.4722
+    ],
+    "n": 324,
+    "rate": 0.3796
+   },
+   "k1_probe": {
+    "answer_anywhere": 0.963,
+    "n": 324,
+    "planted_echo": 0.037
+   },
+   "k1_tentative": {
+    "cboot": [
+     0.8395,
+     0.9383
+    ],
+    "n": 324,
+    "rate": 0.8951
+   },
+   "line_k0": {
+    "cboot": [
+     0.6978,
+     0.8711
+    ],
+    "n": 225,
+    "rate": 0.7867
+   }
   }
+ },
+ "e13_bridge": {
+  "_prose": {
+   "computed_max_across_arms_models": 1.0,
+   "computed_min_across_arms_models": 0.9833,
+   "gpt41_copy_max": 0.9667,
+   "gpt41_copy_min": 0.8833,
+   "models": [
+    "claude-opus-4-8",
+    "claude-sonnet-5",
+    "gpt-4.1"
+   ],
+   "n_note": "sonnet-5 onehop_kc1 n=59 in all four arms (arm-uniform program exclusion); all other cells n=60",
+   "n_per_cell_max": 60,
+   "n_per_cell_min": 59,
+   "opus_copy_by_arm": {
+    "baseline": 0.2667,
+    "human": 0.3167,
+    "other_model": 0.15,
+    "self": 0.1333
+   },
+   "readable_max_across_arms_models": 0.0167,
+   "source_created_at": "2026-07-29T16:37:02.448982+00:00"
+  },
+  "claude-opus-4-8": {
+   "baseline|adjacent_contradiction": {
+    "n": 60,
+    "rate": 0.0,
+    "wilson95": [
+     -0.0,
+     0.0602
+    ]
+   },
+   "baseline|onehop_kc1": {
+    "n": 60,
+    "rate": 1.0,
+    "wilson95": [
+     0.9398,
+     1.0
+    ]
+   },
+   "baseline|opfree_kr1": {
+    "n": 60,
+    "rate": 0.2667,
+    "wilson95": [
+     0.1713,
+     0.3901
+    ]
+   },
+   "human|adjacent_contradiction": {
+    "n": 60,
+    "rate": 0.0,
+    "wilson95": [
+     -0.0,
+     0.0602
+    ]
+   },
+   "human|onehop_kc1": {
+    "n": 60,
+    "rate": 1.0,
+    "wilson95": [
+     0.9398,
+     1.0
+    ]
+   },
+   "human|opfree_kr1": {
+    "n": 60,
+    "rate": 0.3167,
+    "wilson95": [
+     0.2131,
+     0.4423
+    ]
+   },
+   "other_model|adjacent_contradiction": {
+    "n": 60,
+    "rate": 0.0,
+    "wilson95": [
+     -0.0,
+     0.0602
+    ]
+   },
+   "other_model|onehop_kc1": {
+    "n": 60,
+    "rate": 0.9833,
+    "wilson95": [
+     0.9114,
+     0.9971
+    ]
+   },
+   "other_model|opfree_kr1": {
+    "n": 60,
+    "rate": 0.15,
+    "wilson95": [
+     0.081,
+     0.2611
+    ]
+   },
+   "self|adjacent_contradiction": {
+    "n": 60,
+    "rate": 0.0,
+    "wilson95": [
+     -0.0,
+     0.0602
+    ]
+   },
+   "self|onehop_kc1": {
+    "n": 60,
+    "rate": 1.0,
+    "wilson95": [
+     0.9398,
+     1.0
+    ]
+   },
+   "self|opfree_kr1": {
+    "n": 60,
+    "rate": 0.1333,
+    "wilson95": [
+     0.0691,
+     0.2417
+    ]
+   }
+  },
+  "claude-sonnet-5": {
+   "baseline|adjacent_contradiction": {
+    "n": 60,
+    "rate": 0.0167,
+    "wilson95": [
+     0.0029,
+     0.0886
+    ]
+   },
+   "baseline|onehop_kc1": {
+    "n": 59,
+    "rate": 1.0,
+    "wilson95": [
+     0.9389,
+     1.0
+    ]
+   },
+   "baseline|opfree_kr1": {
+    "n": 60,
+    "rate": 0.1667,
+    "wilson95": [
+     0.0931,
+     0.2803
+    ]
+   },
+   "human|adjacent_contradiction": {
+    "n": 60,
+    "rate": 0.0,
+    "wilson95": [
+     -0.0,
+     0.0602
+    ]
+   },
+   "human|onehop_kc1": {
+    "n": 59,
+    "rate": 1.0,
+    "wilson95": [
+     0.9389,
+     1.0
+    ]
+   },
+   "human|opfree_kr1": {
+    "n": 60,
+    "rate": 0.0667,
+    "wilson95": [
+     0.0262,
+     0.1593
+    ]
+   },
+   "other_model|adjacent_contradiction": {
+    "n": 60,
+    "rate": 0.0167,
+    "wilson95": [
+     0.0029,
+     0.0886
+    ]
+   },
+   "other_model|onehop_kc1": {
+    "n": 59,
+    "rate": 1.0,
+    "wilson95": [
+     0.9389,
+     1.0
+    ]
+   },
+   "other_model|opfree_kr1": {
+    "n": 60,
+    "rate": 0.0,
+    "wilson95": [
+     -0.0,
+     0.0602
+    ]
+   },
+   "self|adjacent_contradiction": {
+    "n": 60,
+    "rate": 0.0167,
+    "wilson95": [
+     0.0029,
+     0.0886
+    ]
+   },
+   "self|onehop_kc1": {
+    "n": 59,
+    "rate": 1.0,
+    "wilson95": [
+     0.9389,
+     1.0
+    ]
+   },
+   "self|opfree_kr1": {
+    "n": 60,
+    "rate": 0.0,
+    "wilson95": [
+     -0.0,
+     0.0602
+    ]
+   }
+  },
+  "gpt-4.1": {
+   "baseline|adjacent_contradiction": {
+    "n": 60,
+    "rate": 0.0167,
+    "wilson95": [
+     0.0029,
+     0.0886
+    ]
+   },
+   "baseline|onehop_kc1": {
+    "n": 60,
+    "rate": 1.0,
+    "wilson95": [
+     0.9398,
+     1.0
+    ]
+   },
+   "baseline|opfree_kr1": {
+    "n": 60,
+    "rate": 0.9667,
+    "wilson95": [
+     0.8864,
+     0.9908
+    ]
+   },
+   "human|adjacent_contradiction": {
+    "n": 60,
+    "rate": 0.0167,
+    "wilson95": [
+     0.0029,
+     0.0886
+    ]
+   },
+   "human|onehop_kc1": {
+    "n": 60,
+    "rate": 1.0,
+    "wilson95": [
+     0.9398,
+     1.0
+    ]
+   },
+   "human|opfree_kr1": {
+    "n": 60,
+    "rate": 0.95,
+    "wilson95": [
+     0.863,
+     0.9829
+    ]
+   },
+   "other_model|adjacent_contradiction": {
+    "n": 60,
+    "rate": 0.0,
+    "wilson95": [
+     -0.0,
+     0.0602
+    ]
+   },
+   "other_model|onehop_kc1": {
+    "n": 60,
+    "rate": 1.0,
+    "wilson95": [
+     0.9398,
+     1.0
+    ]
+   },
+   "other_model|opfree_kr1": {
+    "n": 60,
+    "rate": 0.9167,
+    "wilson95": [
+     0.8193,
+     0.9639
+    ]
+   },
+   "self|adjacent_contradiction": {
+    "n": 60,
+    "rate": 0.0167,
+    "wilson95": [
+     0.0029,
+     0.0886
+    ]
+   },
+   "self|onehop_kc1": {
+    "n": 60,
+    "rate": 1.0,
+    "wilson95": [
+     0.9398,
+     1.0
+    ]
+   },
+   "self|opfree_kr1": {
+    "n": 60,
+    "rate": 0.8833,
+    "wilson95": [
+     0.7782,
+     0.9423
+    ]
+   }
+  }
+ },
+ "e14_recon": {
+  "models": {
+   "llama8b": {
+    "recon_bare_large": {
+     "absorbed": 0.9681,
+     "flagged": 0.0,
+     "n": 1350,
+     "near_miss_max_shift": 0.0022,
+     "silently_corrected": 0.0,
+     "unresolved": 0.0319
+    },
+    "recon_bare_pm1": {
+     "absorbed": 0.9467,
+     "flagged": 0.0,
+     "n": 1350,
+     "near_miss_max_shift": 0.0459,
+     "silently_corrected": 0.0,
+     "unresolved": 0.0533
+    },
+    "recon_bare_pm10_20": {
+     "absorbed": 0.9867,
+     "flagged": 0.0,
+     "n": 1350,
+     "near_miss_max_shift": 0.0015,
+     "silently_corrected": 0.0,
+     "unresolved": 0.0133
+    },
+    "recon_full_large": {
+     "absorbed": 0.9763,
+     "flagged": 0.0,
+     "n": 1350,
+     "near_miss_max_shift": 0.0052,
+     "silently_corrected": 0.0022,
+     "unresolved": 0.0215
+    },
+    "recon_full_pm1": {
+     "absorbed": 0.9904,
+     "flagged": 0.0,
+     "n": 1350,
+     "near_miss_max_shift": 0.003,
+     "silently_corrected": 0.0,
+     "unresolved": 0.0096
+    },
+    "recon_full_pm10_20": {
+     "absorbed": 0.9933,
+     "flagged": 0.0,
+     "n": 1350,
+     "near_miss_max_shift": 0.0,
+     "silently_corrected": 0.0,
+     "unresolved": 0.0067
+    }
+   },
+   "qwen7b": {
+    "recon_bare_large": {
+     "absorbed": 0.5689,
+     "flagged": 0.0,
+     "n": 1350,
+     "near_miss_max_shift": 0.0615,
+     "silently_corrected": 0.003,
+     "unresolved": 0.4281
+    },
+    "recon_bare_pm1": {
+     "absorbed": 0.9067,
+     "flagged": 0.0,
+     "n": 1350,
+     "near_miss_max_shift": 0.0659,
+     "silently_corrected": 0.0022,
+     "unresolved": 0.0911
+    },
+    "recon_bare_pm10_20": {
+     "absorbed": 0.8681,
+     "flagged": 0.0,
+     "n": 1350,
+     "near_miss_max_shift": 0.0207,
+     "silently_corrected": 0.0,
+     "unresolved": 0.1319
+    },
+    "recon_full_large": {
+     "absorbed": 0.7185,
+     "flagged": 0.0,
+     "n": 1350,
+     "near_miss_max_shift": 0.0444,
+     "silently_corrected": 0.0141,
+     "unresolved": 0.2674
+    },
+    "recon_full_pm1": {
+     "absorbed": 0.9481,
+     "flagged": 0.0,
+     "n": 1350,
+     "near_miss_max_shift": 0.0267,
+     "silently_corrected": 0.0007,
+     "unresolved": 0.0511
+    },
+    "recon_full_pm10_20": {
+     "absorbed": 0.9385,
+     "flagged": 0.0,
+     "n": 1350,
+     "near_miss_max_shift": 0.0237,
+     "silently_corrected": 0.0,
+     "unresolved": 0.0615
+    }
+   }
+  },
+  "source": "/lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/recompute_wall/e14_recon/EXPG_RECON_*/summary_tables.json"
+ },
+ "e15_nl": {
+  "models": {
+   "Meta-Llama-3.1-8B-Instruct": {
+    "nl_computed_bare": {
+     "absorbed": 0.887,
+     "control_pass": null,
+     "corrected": 0.0711,
+     "n": 239,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 1
+    },
+    "nl_computed_worked": {
+     "absorbed": 0.9667,
+     "control_pass": null,
+     "corrected": 0.0042,
+     "n": 240,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_readable": {
+     "absorbed": 0.6,
+     "control_pass": null,
+     "corrected": 0.4,
+     "n": 140,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_true_control": {
+     "absorbed": null,
+     "control_pass": 0.9708,
+     "corrected": null,
+     "n": 240,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    }
+   },
+   "OLMo-2-1124-7B-Instruct": {
+    "nl_computed_bare": {
+     "absorbed": 0.9956,
+     "control_pass": null,
+     "corrected": 0.0044,
+     "n": 228,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_computed_worked": {
+     "absorbed": 0.9957,
+     "control_pass": null,
+     "corrected": 0.0,
+     "n": 232,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_readable": {
+     "absorbed": 0.9605,
+     "control_pass": null,
+     "corrected": 0.0219,
+     "n": 228,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_true_control": {
+     "absorbed": null,
+     "control_pass": 0.9957,
+     "corrected": null,
+     "n": 232,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    }
+   },
+   "Qwen2.5-1.5B-Instruct": {
+    "nl_computed_bare": {
+     "absorbed": 0.5537,
+     "control_pass": null,
+     "corrected": 0.2542,
+     "n": 177,
+     "n_ambiguous": 1,
+     "n_parser_disagree": 0
+    },
+    "nl_computed_worked": {
+     "absorbed": 0.8202,
+     "control_pass": null,
+     "corrected": 0.0,
+     "n": 178,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_readable": {
+     "absorbed": 0.6735,
+     "control_pass": null,
+     "corrected": 0.1633,
+     "n": 98,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_true_control": {
+     "absorbed": null,
+     "control_pass": 0.8764,
+     "corrected": null,
+     "n": 178,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    }
+   },
+   "Qwen2.5-32B-Instruct": {
+    "nl_computed_bare": {
+     "absorbed": 0.7017,
+     "control_pass": null,
+     "corrected": 0.2983,
+     "n": 238,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_computed_worked": {
+     "absorbed": 0.9958,
+     "control_pass": null,
+     "corrected": 0.0042,
+     "n": 238,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_readable": {
+     "absorbed": 0.0378,
+     "control_pass": null,
+     "corrected": 0.9622,
+     "n": 238,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_true_control": {
+     "absorbed": null,
+     "control_pass": 1.0,
+     "corrected": null,
+     "n": 238,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    }
+   },
+   "Qwen2.5-7B-Instruct": {
+    "nl_computed_bare": {
+     "absorbed": 0.8398,
+     "control_pass": null,
+     "corrected": 0.0087,
+     "n": 231,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_computed_worked": {
+     "absorbed": 0.9913,
+     "control_pass": null,
+     "corrected": 0.0,
+     "n": 231,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_readable": {
+     "absorbed": 0.2944,
+     "control_pass": null,
+     "corrected": 0.7013,
+     "n": 231,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_true_control": {
+     "absorbed": null,
+     "control_pass": 1.0,
+     "corrected": null,
+     "n": 231,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    }
+   },
+   "claude-haiku-4-5": {
+    "nl_computed_bare": {
+     "absorbed": 0.9,
+     "control_pass": null,
+     "corrected": 0.1,
+     "n": 150,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_computed_worked": {
+     "absorbed": 1.0,
+     "control_pass": null,
+     "corrected": 0.0,
+     "n": 150,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_readable": {
+     "absorbed": 0.0,
+     "control_pass": null,
+     "corrected": 1.0,
+     "n": 150,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_true_control": {
+     "absorbed": null,
+     "control_pass": 1.0,
+     "corrected": null,
+     "n": 150,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    }
+   },
+   "claude-opus-4-8": {
+    "nl_computed_bare": {
+     "absorbed": 0.4533,
+     "control_pass": null,
+     "corrected": 0.5467,
+     "n": 150,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_computed_worked": {
+     "absorbed": 0.8133,
+     "control_pass": null,
+     "corrected": 0.1867,
+     "n": 150,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_true_control": {
+     "absorbed": null,
+     "control_pass": 1.0,
+     "corrected": null,
+     "n": 150,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    }
+   },
+   "claude-sonnet-4-5": {
+    "nl_computed_bare": {
+     "absorbed": 0.3267,
+     "control_pass": null,
+     "corrected": 0.6733,
+     "n": 150,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_computed_worked": {
+     "absorbed": 0.6933,
+     "control_pass": null,
+     "corrected": 0.28,
+     "n": 150,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_readable": {
+     "absorbed": 0.0067,
+     "control_pass": null,
+     "corrected": 0.9933,
+     "n": 150,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_true_control": {
+     "absorbed": null,
+     "control_pass": 1.0,
+     "corrected": null,
+     "n": 150,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    }
+   },
+   "claude-sonnet-5": {
+    "nl_computed_bare": {
+     "absorbed": 0.66,
+     "control_pass": null,
+     "corrected": 0.34,
+     "n": 150,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_computed_worked": {
+     "absorbed": 0.8933,
+     "control_pass": null,
+     "corrected": 0.1067,
+     "n": 150,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_readable": {
+     "absorbed": 0.0,
+     "control_pass": null,
+     "corrected": 1.0,
+     "n": 26,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_true_control": {
+     "absorbed": null,
+     "control_pass": 1.0,
+     "corrected": null,
+     "n": 150,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    }
+   },
+   "gpt-4.1": {
+    "nl_computed_bare": {
+     "absorbed": 0.82,
+     "control_pass": null,
+     "corrected": 0.1733,
+     "n": 150,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_computed_worked": {
+     "absorbed": 0.8993,
+     "control_pass": null,
+     "corrected": 0.1007,
+     "n": 149,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 1
+    },
+    "nl_readable": {
+     "absorbed": 0.18,
+     "control_pass": null,
+     "corrected": 0.82,
+     "n": 150,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_true_control": {
+     "absorbed": null,
+     "control_pass": 1.0,
+     "corrected": null,
+     "n": 150,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    }
+   },
+   "gpt-4o": {
+    "nl_computed_bare": {
+     "absorbed": 0.8467,
+     "control_pass": null,
+     "corrected": 0.1533,
+     "n": 150,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_computed_worked": {
+     "absorbed": 0.92,
+     "control_pass": null,
+     "corrected": 0.08,
+     "n": 150,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_readable": {
+     "absorbed": 0.1,
+     "control_pass": null,
+     "corrected": 0.9,
+     "n": 150,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_true_control": {
+     "absorbed": null,
+     "control_pass": 1.0,
+     "corrected": null,
+     "n": 150,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    }
+   },
+   "gpt-5.1": {
+    "nl_computed_bare": {
+     "absorbed": 0.84,
+     "control_pass": null,
+     "corrected": 0.1,
+     "n": 150,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_computed_worked": {
+     "absorbed": 0.8467,
+     "control_pass": null,
+     "corrected": 0.08,
+     "n": 150,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_readable": {
+     "absorbed": 0.9667,
+     "control_pass": null,
+     "corrected": 0.02,
+     "n": 150,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    },
+    "nl_true_control": {
+     "absorbed": null,
+     "control_pass": 0.9467,
+     "corrected": null,
+     "n": 150,
+     "n_ambiguous": 0,
+     "n_parser_disagree": 0
+    }
+   }
+  },
+  "source": "/lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/recompute_wall/e15_nl/run/summary_*.json"
+ },
+ "fig2": {
+  "computed": {
+   "n": [
+    30,
+    150,
+    150,
+    66,
+    150,
+    58,
+    60,
+    60,
+    60,
+    180,
+    180,
+    178,
+    180
+   ],
+   "rate": [
+    0.5,
+    0.88,
+    1.0,
+    0.7273,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.9722,
+    1.0,
+    1.0
+   ],
+   "whi": [
+    0.6685,
+    0.9227,
+    1.0,
+    0.82,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.9881,
+    1.0,
+    1.0
+   ],
+   "wlo": [
+    0.3315,
+    0.8183,
+    0.975,
+    0.6096,
+    0.975,
+    0.9379,
+    0.9398,
+    0.9398,
+    0.9398,
+    0.9791,
+    0.9366,
+    0.9789,
+    0.9791
+   ]
+  },
+  "developer": [
+   "Qwen",
+   "Qwen",
+   "Qwen",
+   "OLMo",
+   "Llama",
+   "OpenAI",
+   "OpenAI",
+   "OpenAI",
+   "OpenAI",
+   "Anthropic",
+   "Anthropic",
+   "Anthropic",
+   "Anthropic"
+  ],
+  "labels": [
+   "Qwen 1.5B",
+   "Qwen 7B",
+   "Qwen 32B",
+   "OLMo 7B",
+   "Llama 8B",
+   "GPT-3.5-instruct",
+   "GPT-4o",
+   "GPT-4.1",
+   "GPT-5.1",
+   "Haiku 4.5",
+   "Sonnet 4.5",
+   "Sonnet 5",
+   "Opus 4.8"
+  ],
+  "order": [
+   "qwen1p5b",
+   "qwen7b",
+   "qwen32b",
+   "olmo7b",
+   "llama8b",
+   "gpt-3.5-instruct",
+   "gpt-4o",
+   "gpt-4.1",
+   "gpt-5.1",
+   "haiku-4-5",
+   "sonnet-4-5",
+   "sonnet-5",
+   "opus-4-8"
+  ],
+  "readable": {
+   "n": [
+    61,
+    150,
+    150,
+    150,
+    150,
+    68,
+    70,
+    70,
+    70,
+    190,
+    190,
+    190,
+    190
+   ],
+   "rate": [
+    0.541,
+    0.7267,
+    0.06,
+    0.6533,
+    0.58,
+    0.1471,
+    0.0143,
+    0.0143,
+    0.0857,
+    0.0,
+    0.0,
+    0.0105,
+    0.0
+   ],
+   "whi": [
+    0.6599,
+    0.7917,
+    0.1101,
+    0.7248,
+    0.656,
+    0.25,
+    0.0766,
+    0.0766,
+    0.1747,
+    0.0198,
+    0.0198,
+    0.0376,
+    0.0198
+   ],
+   "wlo": [
+    0.4172,
+    0.6504,
+    0.0319,
+    0.5742,
+    0.5,
+    0.0819,
+    0.0025,
+    0.0025,
+    0.0399,
+    0.0,
+    0.0,
+    0.0029,
+    0.0
+   ]
+  }
+ },
+ "fig3": {
+  "haiku": {
+   "n": [
+    540,
+    540,
+    540,
+    540,
+    540
+   ],
+   "rate": [
+    0.0185,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "whi": [
+    0.0352,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "wlo": [
+    0.0056,
+    0.9929,
+    0.9929,
+    0.9929,
+    0.9929
+   ]
+  },
+  "k": [
+   0,
+   1,
+   2,
+   3,
+   5
+  ],
+  "llama8b": {
+   "n": [
+    1350,
+    1350,
+    1350,
+    1350,
+    504
+   ],
+   "rate": [
+    0.5963,
+    0.9859,
+    0.997,
+    0.9867,
+    0.9464
+   ],
+   "whi": [
+    0.6415,
+    0.9956,
+    1.0,
+    1.0,
+    0.9901
+   ],
+   "wlo": [
+    0.5519,
+    0.9726,
+    0.9926,
+    0.9667,
+    0.8929
+   ]
+  },
+  "qwen7b": {
+   "n": [
+    1350,
+    1350,
+    1350,
+    1350,
+    198
+   ],
+   "rate": [
+    0.7126,
+    0.7844,
+    0.943,
+    0.9326,
+    0.9444
+   ],
+   "whi": [
+    0.7548,
+    0.8319,
+    0.9704,
+    0.9667,
+    1.0
+   ],
+   "wlo": [
+    0.6652,
+    0.7296,
+    0.9089,
+    0.8941,
+    0.8485
+   ]
+  }
+ },
+ "fig4": {
+  "arms": [
+   "bare",
+   "full",
+   "partial"
+  ],
+  "haiku": {
+   "n": [
+    540,
+    540,
+    540
+   ],
+   "rate": [
+    1.0,
+    0.9944,
+    0.9759
+   ],
+   "whi": [
+    1.0,
+    1.0,
+    0.9926
+   ],
+   "wlo": [
+    0.9929,
+    0.9833,
+    0.9574
+   ]
+  },
+  "inset_lines": {
+   "bare": "line 10: n = y + z; n = 100",
+   "full": "line 10: n = y + z = 32 + 58; n = 100",
+   "note": "true value 90; planted 100 (real E11_llama8b k=1 injected line)",
+   "partial": "line 10: n = y + z = ... + 58; n = 100"
+  },
+  "llama8b": {
+   "n": [
+    1350,
+    1350,
+    1350
+   ],
+   "rate": [
+    0.9859,
+    0.9926,
+    0.9881
+   ],
+   "whi": [
+    0.9956,
+    0.9978,
+    0.9963
+   ],
+   "wlo": [
+    0.9726,
+    0.9859,
+    0.9763
+   ]
+  },
+  "qwen7b": {
+   "n": [
+    1350,
+    1350,
+    1350
+   ],
+   "rate": [
+    0.7844,
+    0.9363,
+    0.9259
+   ],
+   "whi": [
+    0.8319,
+    0.9563,
+    0.9519
+   ],
+   "wlo": [
+    0.7296,
+    0.9119,
+    0.8978
+   ]
+  }
+ },
+ "natural_persistence": {
+  "per_model": {
+   "llama8b": {
+    "discriminating": 176,
+    "explicit_recovery_claims": 0,
+    "recovered_at_output": 0,
+    "slips": 177
+   },
+   "olmo7b": {
+    "discriminating": 473,
+    "explicit_recovery_claims": 4,
+    "recovered_at_output": 2,
+    "slips": 600
+   },
+   "qwen1p5b": {
+    "discriminating": 601,
+    "explicit_recovery_claims": 16,
+    "recovered_at_output": 8,
+    "slips": 840
+   },
+   "qwen32b": {
+    "discriminating": 15,
+    "explicit_recovery_claims": 0,
+    "recovered_at_output": 0,
+    "slips": 15
+   },
+   "qwen7b": {
+    "discriminating": 131,
+    "explicit_recovery_claims": 0,
+    "recovered_at_output": 0,
+    "slips": 143
+   }
+  },
+  "source": "/lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/recompute_wall/natural_persistence/summary.json",
+  "total": {
+   "discriminating": 1396,
+   "explicit_recovery_claims": 20,
+   "recovered_at_output": 10,
+   "recovery_rate_of_discriminating": 0.0072,
+   "slips": 1775
+  }
+ },
+ "yee_renumber": {
+  "gpt-4.1": {
+   "flips_rec_to_prop": 0,
+   "orig": {
+    "n": 106,
+    "rate_pct": 94.3,
+    "recovered": 100
+   },
+   "renum": {
+    "n": 106,
+    "rate_pct": 93.4,
+    "recovered": 99
+   },
+   "restarts_per_arm": [
+    106,
+    106
+   ],
+   "reverse_flips": 0
+  },
+  "gpt-4o": {
+   "flips_rec_to_prop": 19,
+   "mcnemar_p": 0.0041,
+   "orig": {
+    "n": 106,
+    "rate_pct": 66.0,
+    "recovered": 70
+   },
+   "renum": {
+    "n": 106,
+    "rate_pct": 51.9,
+    "recovered": 55
+   },
+   "restarts_per_arm": [
+    29,
+    29
+   ],
+   "reverse_flips": 2
+  },
+  "protocol": "Yee et al. GSM8K random-perturbation arm, quantities renumbered GSM-Symbolic-style, 106 paired items",
+  "source": "/lfs/skampere2/0/eobbad/scratch/yee_memo/results.txt"
+ }
 }
