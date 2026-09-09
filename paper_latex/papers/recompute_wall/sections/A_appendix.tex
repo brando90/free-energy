@@ -6,12 +6,12 @@ Five checks probe the wall outside the main protocol: whether error salience res
 \subsection{Salience does not rescue checking}
 \label{app:salience}
 
-If absorption reflected a failure to notice small discrepancies, larger discrepancies should be caught more often. We re-ran the computed cell on two open-weight models with the planted offset in three bands (last-digit-preserving $\pm1$; $\pm10$--$20$; large offsets of 100--400) crossed with whether the planted line shows its expression or only the value, 1{,}350 rows per cell. No correction is ever flagged (flag rate 0.000 in all twelve cells) and silent correction stays at or below 1.4\% in every cell. For Llama-3.1-8B-Instruct absorption spans 0.95--0.99 across the six cells. For Qwen2.5-7B-Instruct the large-offset cells show lower raw absorption (0.57--0.72), but the shortfall is unresolved continuations rather than corrections (silent correction 0.3--1.4\% there), and the audited near-miss bound caps possible label mis-assignment at 0.07. A larger error is not a caught error; at worst it is a derailed continuation.
+If absorption reflected a failure to notice small discrepancies, larger discrepancies should be caught more often. We re-ran the computed-error condition on two open-weight models with the planted offset in three bands (last-digit-preserving $\pm1$; $\pm10$--$20$; large offsets of 100--400) crossed with whether the planted line shows its expression or only the value, 1{,}350 rows per condition. No correction is ever flagged (flag rate 0.000 in all twelve conditions) and silent correction stays at or below 1.4\% in every condition. For Llama-3.1-8B-Instruct absorption spans 0.95--0.99 across the six conditions. For Qwen2.5-7B-Instruct the large-offset conditions show lower raw absorption (0.57--0.72), but the shortfall is unresolved continuations rather than corrections (silent correction 0.3--1.4\% there), and the audited near-miss bound caps possible label mis-assignment at 0.07. A larger error is not a caught error; at worst it is a derailed continuation.
 
 \subsection{Transfer to natural-language word problems}
 \label{app:nl}
 
-We rebuilt the protocol on two-quantity word problems: two named parties hold $o_1$ and $o_2$ items, their total $V=o_1+o_2$ feeds two downstream quantities, and the output is the sum of those. Each model solves 240 problems in prose; a solution enters the cohort only if its final answer is correct and it states $V$ (the gold gate). We then plant a false value in the model's own solution and let it continue, in four cells: \emph{readable} corrupts a restated given before $V$ is computed; \emph{computed-worked} replaces $V$ where the solution shows its equation, so the false arithmetic is visible; \emph{computed-bare} states the false total without the equation; and a \emph{true control} plants the correct value. In more than 2{,}700 gold solutions, no model ever stated the computed total without also showing the arithmetic in the same sentence, so the bare cell replaces the model's arithmetic sentence with an authored equation-free restatement (the worked cell's rewrite sentence with the equation removed); the worked and bare prefixes are otherwise identical, forming a minimal pair, and rewritten rows are flagged in the manifests. Grading follows the main protocol, with two independently implemented parsers; rows where they disagree or where the answer is hedged are excluded (at most two per model).
+We rebuilt the protocol on two-quantity word problems: two named parties hold $o_1$ and $o_2$ items, their total $V=o_1+o_2$ feeds two downstream quantities, and the output is the sum of those. Each model solves 240 problems in prose; a solution enters the cohort only if its final answer is correct and it states $V$ (the gold gate). We then plant a false value in the model's own solution and let it continue, in four conditions: \emph{readable} corrupts a restated given before $V$ is computed; \emph{computed-worked} replaces $V$ where the solution shows its equation, so the false arithmetic is visible; \emph{computed-bare} states the false total without the equation; and a \emph{true control} plants the correct value. In more than 2{,}700 gold solutions, no model ever stated the computed total without also showing the arithmetic in the same sentence, so the bare condition replaces the model's arithmetic sentence with an authored equation-free restatement (the worked condition's rewrite sentence with the equation removed); the worked and bare prefixes are otherwise identical, forming a minimal pair, and rewritten rows are flagged in the manifests. Grading follows the main protocol, with two independently implemented parsers; rows where they disagree or where the answer is hedged are excluded (at most two per model).
 
 \begin{table}[h]
 \centering
@@ -35,7 +35,7 @@ GPT-4.1 & 0.18 & 0.82 & 0.90 & 1.00 \\
 GPT-5.1 & 0.97 & 0.84 & 0.85 & 0.95 \\
 \hline
 \end{tabular}
-\caption{Word-problem substrate: absorption of planted errors by cell ($n=150$ per cell for API models, up to 240 for open-weight). Opus 4.8 never restates a given before computing, so its readable cell is empty by honest starvation; Sonnet 5 fills it rarely ($n=26$).}
+\caption{Word-problem substrate: absorption of planted errors by condition ($n=150$ per condition for API models, up to 240 for open-weight). Opus 4.8 never restates a given before computing, so its readable condition is empty by honest starvation; Sonnet 5 fills it rarely ($n=26$).}
 \label{tab:e15}
 \end{table}
 
@@ -49,9 +49,9 @@ The gold-generation stage also yields natural errors: attempts in which the mode
 \subsection{Attribution does not move the wall}
 \label{app:attribution}
 
-Planting raises the objection that the model did not produce the false step itself, so absorption might reflect trust in its own past work rather than a general failure to check. We test this by varying who the trace is said to come from while holding its bytes fixed. Each perturbed trace from the wall substrate's readable, one-operation, and copy cells is presented under four framings: the standard continuation with no attribution, and prefaces stating that the model itself produced the trace, that a different language model produced it, or that a human wrote it by hand. The test runs on three models measured under the user-turn presentation, where a preface about the trace's origin is natural to add (Claude Opus 4.8, Claude Sonnet 5, GPT-4.1; 60 programs per cell, 59 in Sonnet 5's one-operation cell).
+Planting raises the objection that the model did not produce the false step itself, so absorption might reflect trust in its own past work rather than a general failure to check. We test this by varying who the trace is said to come from while holding its bytes fixed. Each perturbed trace from the wall substrate's readable, one-operation, and copy conditions is presented under four framings: the standard continuation with no attribution, and prefaces stating that the model itself produced the trace, that a different language model produced it, or that a human wrote it by hand. The test runs on three models measured under the user-turn presentation, where a preface about the trace's origin is natural to add (Claude Opus 4.8, Claude Sonnet 5, GPT-4.1; 60 programs per condition, 59 in Sonnet 5's one-operation condition).
 
-Attribution changes nothing at the wall. The one-operation computed cell is absorbed at 0.98--1.00 in every arm on every model, and the readable cell is caught in every arm (absorbed $\leq 0.02$). The framing is not inert as an instrument: the operation-free copy cell, already reported separately because it is presentation-sensitive (Appendix~\ref{sec:appendix}), moves with attribution for Opus 4.8 (0.27 unattributed, 0.13 self, 0.15 other model, 0.32 human), so where provenance can matter, the protocol registers it; GPT-4.1 absorbs the copy cell at 0.88--0.97 in all arms, in line with the copy-cell inflation under this presentation recorded there. On committed computed values, attribution is irrelevant: a model told outright that the trace is not its own work absorbs the computed falsehood at the same ceiling.
+Attribution changes nothing at the wall. The one-operation computed error is absorbed at 0.98--1.00 in every arm on every model, and the readable error is caught in every arm (absorbed $\leq 0.02$). The framing is not inert as an instrument: the operation-free copy condition, already reported separately because it is presentation-sensitive (Appendix~\ref{sec:appendix}), moves with attribution for Opus 4.8 (0.27 unattributed, 0.13 self, 0.15 other model, 0.32 human), so where provenance can matter, the protocol registers it; GPT-4.1 absorbs the copy condition at 0.88--0.97 in all arms, in line with the copy-condition inflation under this presentation recorded there. On committed computed values, attribution is irrelevant: a model told outright that the trace is not its own work absorbs the computed falsehood at the same ceiling.
 
 \subsection{Renumbered replication of the Yee et al.\ protocol}
 \label{app:renumber}
@@ -68,12 +68,12 @@ section, and each entry states what was run and where the value comes from.
 \paragraph{Sampling depth.}
 The fix-ladder specification (E12) called for $R = 8$ sampled rollouts per world
 plus one greedy rollout, and the frontier arms are reported at that registered
-depth. They were rerun at $R = 8$ plus greedy, so each depth-ladder cell
+depth. They were rerun at $R = 8$ plus greedy, so each depth-ladder condition
 contributes $n = 540$ rollouts over 60 programs, nine per program, and the fix
-ladder was likewise rerun at $R = 8$. The initial $R = 3$ runs are retained for comparison; they reproduce every cell within its confidence interval except depth-one partial opacity (0.996 at $R = 3$ against 0.976 $[0.957, 0.993]$ at $R = 8$), which is why we report the $R = 8$ run.
-The open-model depth arms run at $R = 8$ plus greedy and contribute 1350 rollouts over 150 programs at depths zero through three. The depth-five cells are attrition-limited: 504 rollouts over 56 programs for Llama-3.1-8B and 198 over 22 for Qwen2.5-7B, because few base traces are solved at depth five. Error bands on the depth and opacity figures are program-cluster bootstrap 95 percent intervals (1000 resamples; the cluster is the program), since rollouts of the same program are correlated; where the bootstrap degenerates at a ceiling cell we report Wilson intervals. The wall figure uses Wilson intervals, since each program contributes one continuation per cell.
+ladder was likewise rerun at $R = 8$. The initial $R = 3$ runs are retained for comparison; they reproduce every condition within its confidence interval except depth-one partial opacity (0.996 at $R = 3$ against 0.976 $[0.957, 0.993]$ at $R = 8$), which is why we report the $R = 8$ run.
+The open-model depth arms run at $R = 8$ plus greedy and contribute 1350 rollouts over 150 programs at depths zero through three. The depth-five conditions are attrition-limited: 504 rollouts over 56 programs for Llama-3.1-8B and 198 over 22 for Qwen2.5-7B, because few base traces are solved at depth five. Error bands on the depth and opacity figures are program-cluster bootstrap 95 percent intervals (1000 resamples; the cluster is the program), since rollouts of the same program are correlated; where the bootstrap degenerates for a condition at the ceiling we report Wilson intervals. The wall figure uses Wilson intervals, since each program contributes one continuation per condition.
 
-\paragraph{Matched controls (E13).} Three controls, run on the same worlds with the same gold gates and grader as the depth arms, separate the format of the planted line from the cost of checking it. In the first, the false value is planted in an ordinary trace line with zero operations to check: absorption is 0.98 for Llama-3.1-8B ($n = 279$), 0.79 for Qwen2.5-7B ($n = 225$), and 0.14 for Haiku 4.5 ($n = 240$), against same-run readable anchors of 0.69, 0.67, and 0.03. In the second, the depth-one full-opacity line also prints its operands' true sum: absorption falls to 0.47 for Llama, 0.38 for Qwen, and 0.57 for Haiku. In the third, a grid crossing truth, order, and format on readable errors, Haiku absorbs the false line at 0.45 when the true value precedes it as a note, against 0.008 in the adjacent-contradiction corner. Cells pool greedy and sampled rollouts as in the main arms; per-cell records are under e13/results in the experiment archive and in the paper registry. Two further E13 cells probe the same boundary. A tentative-marker cell appends ``(unverified)'' to the planted line's value: absorption is 0.92 for Haiku 4.5 ($n = 240$), 0.97 for Llama-3.1-8B ($n = 396$), and 0.90 for Qwen2.5-7B ($n = 324$). A direct-probe cell replaces the continuation request with the question ``What is $a + b$?'' for the planted line's operands: the correct sum appears in 100, 100, and 96 percent of replies respectively, and the planted value is echoed in at most 10 percent; replies typically open by restating the operands, so we report the answer-anywhere rate rather than a first-token match.
+\paragraph{Matched controls (E13).} Three controls, run on the same worlds with the same gold gates and grader as the depth arms, separate the format of the planted line from the cost of checking it. In the first, the false value is planted in an ordinary trace line with zero operations to check: absorption is 0.98 for Llama-3.1-8B ($n = 279$), 0.79 for Qwen2.5-7B ($n = 225$), and 0.14 for Haiku 4.5 ($n = 240$), against same-run readable anchors of 0.69, 0.67, and 0.03. In the second, the depth-one full-opacity line also prints its operands' true sum: absorption falls to 0.47 for Llama, 0.38 for Qwen, and 0.57 for Haiku. In the third, a grid crossing truth, order, and format on readable errors, Haiku absorbs the false line at 0.45 when the true value precedes it as a note, against 0.008 in the adjacent-contradiction corner. Conditions pool greedy and sampled rollouts as in the main arms; per-condition records are under e13/results in the experiment archive and in the paper registry. Two further E13 conditions probe the same boundary. A tentative-marker condition appends ``(unverified)'' to the planted line's value: absorption is 0.92 for Haiku 4.5 ($n = 240$), 0.97 for Llama-3.1-8B ($n = 396$), and 0.90 for Qwen2.5-7B ($n = 324$). A direct-probe condition replaces the continuation request with the question ``What is $a + b$?'' for the planted line's operands: the correct sum appears in 100, 100, and 96 percent of replies respectively, and the planted value is echoed in at most 10 percent; replies typically open by restating the operands, so we report the answer-anywhere rate rather than a first-token match.
 
 \paragraph{Reasoning-arm protocol.}
 The reasoning-channel results of Section~\ref{sec:reasoning} come from two arms
@@ -85,9 +85,9 @@ re-derives a value. Its reasoning-off baseline, run at effort none, reproduced
 the substrate-gap bridge row, so the on-versus-off contrast is a pure reasoning
 effect. The open-weight arm runs DeepSeek-R1-Distill-7B, whose gold traces are
 generated through its own think channel rather than by raw completion, because
-raw-completion gold collapses on the deep cells the model can only solve with
+raw-completion gold collapses on the five-operation errors the model can only solve with
 that channel engaged. Both arms are evaluated on the readable, one-operation,
-and five-operation cells at the sample sizes recorded in the reasoning-arm
+and five-operation conditions at the sample sizes recorded in the reasoning-arm
 report.
 
 \paragraph{Readable-control drift.}
@@ -99,18 +99,18 @@ computed-side numbers against this moving baseline and flag the drift rather
 than average it away.
 
 \paragraph{Solvability gate.}
-Two open-weight models failed the solvability gate on the hardest cells.
+Two open-weight models failed the solvability gate on the hardest conditions.
 Qwen2.5-1.5B solved the base program at a rate of 0.105 and OLMo-2-7B at 0.369,
-so after we keep only correctly solved base traces their deepest computed cells
-rest on small samples. We report those cells with widened Wilson intervals and
+so after we keep only correctly solved base traces their deepest computed conditions
+rest on small samples. We report those conditions with widened Wilson intervals and
 do not treat them as settled points.
 
 \paragraph{Bridge versus prefill calibration.}
 The bridge (user-turn) presentation and the prefill presentation were
-cross-calibrated on the models that support both. The computed cells coincide
+cross-calibrated on the models that support both. The computed-error conditions coincide
 across the two methods, so the computed-side result does not depend on
-presentation. The pure-copy cells inflate under the bridge method relative to
-prefill, so we report the copy cells separately rather than pool the two presentations. Reporting the computed series as the one-operation cell alone, with the copy cells separate, is a deviation from the E10 registration, which pooled copy and computed cells into one recompute-side rate; we adopted the split when calibration showed the copy cells measure presentation rather than recomputation.
+presentation. The pure-copy conditions inflate under the bridge method relative to
+prefill, so we report the copy conditions separately rather than pool the two presentations. Reporting the computed series as the one-operation error alone, with the copy conditions separate, is a deviation from the E10 registration, which pooled copy and computed conditions into one recompute-side rate; we adopted the split when calibration showed the copy conditions measure presentation rather than recomputation.
 
 \paragraph{Fable 5 refusal.}
 Fable 5 returned no usable data. Its safety classifier refused the task format
@@ -119,7 +119,7 @@ thinking and the non-thinking conditions, at a total spend of \$2.93. We report
 Fable 5 as unmeasured rather than as a zero or as a result.
 
 \paragraph{Protocol constants.}
-The protocol constants are fixed across cells within each substrate. In the depth and instruction arms (E11 and E12), each program renders to a trace of 20 lines carrying 14 arithmetic operations in total, with the planted site at line 10 (fractional position 0.5) and its first downstream read two lines later. The wall substrate behind Figures 1 and 2 uses 12-line programs with the planted site at line 6, likewise fixed across its own cells.
+The protocol constants are fixed across conditions within each substrate. In the depth and instruction arms (E11 and E12), each program renders to a trace of 20 lines carrying 14 arithmetic operations in total, with the planted site at line 10 (fractional position 0.5) and its first downstream read two lines later. The wall substrate behind Figures 1 and 2 uses 12-line programs with the planted site at line 6, likewise fixed across its own conditions.
 Site operands are two-digit integers drawn from 11 to 99, filler constants are
 drawn from 2 to 60, and intermediate values are capped at 999. Verification
 depth takes values in $\{0, 1, 2, 3, 5\}$ and site opacity in

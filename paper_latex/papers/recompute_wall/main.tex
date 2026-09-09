@@ -63,7 +63,7 @@ Haiku 4.5 continuations from the same program family (seed 507786).}
 one-hop computed error (orange), across 13 models grouped by developer.
 Readable-error absorption collapses from open-weight models to the frontier
 (Opus 4.8, Sonnet 5, GPT-4o/4.1 all $\approx 0$), but computed-error
-absorption is a flat ceiling at $\approx 1.0$ for every capable model. The readable cell uses an annotation-line construction; matched-construction controls (Section~\ref{sec:depth}) show the frontier's catching is format-robust, while open-weight models' catching is partly annotation-bound. Bars
+absorption is a flat ceiling at $\approx 1.0$ for every capable model. The readable error is planted as a note beside the model's own line; matched-construction controls (Section~\ref{sec:depth}) show the frontier's catching is format-robust, while open-weight models' catching is partly annotation-bound. Bars
 are absorption rates; whiskers are 95\% Wilson intervals.}
 \label{fig:wall}
 \end{figure}
@@ -77,7 +77,7 @@ are absorption rates; whiskers are 95\% Wilson intervals.}
 \caption{Absorption of a planted claim as a function of verification depth
 $k$ (the number of operations needed to check it), for three models. At
 $k = 0$ (the claim restates a value already on the page) Haiku 4.5 absorbs 1.9\% of errors; at $k = 1$ (one operation to verify) it absorbs 100\%, and
-stays there. The jump is the recompute wall: the boundary is a single operation, not depth. Bands are program-cluster bootstrap 95\% intervals (cluster = program); Wilson at degenerate ceiling cells. The depth-five Qwen cell rests on 22 solved programs, below the pre-registered 50-program floor, and is drawn unfilled rather than scored; the depth-five Llama cell (56 programs) carries a widened interval.}
+stays there. The jump is the recompute wall: the boundary is a single operation, not depth. Bands are program-cluster bootstrap 95\% intervals (cluster = program), with Wilson intervals where a condition sits at the ceiling. The depth-five Qwen measurement rests on 22 solved programs, below the pre-registered 50-program floor, and is drawn unfilled rather than scored; the depth-five Llama measurement (56 programs) carries a widened interval.}
 \label{fig:depth}
 \end{figure}
 
@@ -92,7 +92,7 @@ only), full (the claim with its arithmetic written out), and partial (one
 operand shown). Making the error fully visible does not help: Qwen 7B actually
 absorbs more when shown the math (0.78 to 0.94), and Haiku and Llama stay above 0.97. The panel below shows the real injected lines: even
 \texttt{n = y + z = 32 + 58; n = 100}, where \texttt{32 + 58 = 90} is written
-on the line, is copied as \texttt{100}. Whiskers are program-cluster bootstrap 95\% intervals (cluster = program); Wilson at degenerate ceiling cells.}
+on the line, is copied as \texttt{100}. Whiskers are program-cluster bootstrap 95\% intervals (cluster = program), with Wilson intervals where a condition sits at the ceiling.}
 \label{fig:opacity}
 \end{figure}
 
