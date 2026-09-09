@@ -3,7 +3,7 @@
 
 The thirteen models of Section~\ref{sec:wall} generate directly. Reasoning models spend test-time computation deliberating before and while they write, and their training is a bet that deliberation catches errors that direct generation misses \citep{deepseekr1,snell2024testtime}. This section tests that bet on two reasoning-channel models and finds the wall largely intact. Deliberation completes the readable side and reaches the deepest computed errors, but a one-operation computed error still passes at 99 percent.
 
-Enabling reasoning on GPT-5.1 gives a within-model contrast on the same worlds. With reasoning off,
+Enabling reasoning on GPT-5.1 gives a within-model contrast on the same programs. With reasoning off,
 the model absorbs the readable error at 0.06 and both computed errors at 1.00. With reasoning on, the
 readable side goes to the floor at 0.004. The one-operation computed error does not move: 0.988. Only
 the five-operation error falls, from 1.00 to 0.875. The model spends its reasoning budget where the
@@ -15,16 +15,13 @@ A reasoning model whose deliberation we can read shows the same default with no 
 DeepSeek-R1-Distill-7B \citep{deepseekr1} absorbs computed errors at 0.98 and 0.95 on the one- and
 five-operation errors when continuing directly, and at 0.93 on both with its thinking channel on.
 Reading the channel explains why. On readable errors it routinely re-derives the contradicted value
-and corrects it. On computed errors it almost never revisits the planted value: no re-derivation
-appears in 96 percent of five-operation rollouts for R1-Distill and in 85 percent for GPT-5.1 (among
-rollouts with a non-empty reasoning summary; 92 percent if empty summaries are counted as
+and corrects it. On computed errors it almost never revisits the planted value: no re-derivation appears in 96 percent of five-operation continuations for R1-Distill and in 85 percent for GPT-5.1 (among continuations with a non-empty reasoning summary; 92 percent if empty summaries are counted as
 containing none). The deliberation that was trained to check work rereads; it does not recompute.
 
 The channel data also contains the most direct evidence in the paper that the failure is deference.
 When the true value does surface in the model's own reasoning on a five-operation error, the final answer
-still builds on the planted value in a fifth to a third of cases: 2 of 9 such rollouts for
-R1-Distill, 7 of 20 for GPT-5.1. The counts are small but the direction is the same in both arms.
+still builds on the planted value in a fifth to a third of cases: 2 of 9 such continuations for R1-Distill, 7 of 20 for GPT-5.1. The counts are small but the direction is the same for both models.
 The model derives the truth, writes it in its deliberation, and continues from the value formatted
 as settled computation.
 
-These runs use each model's native deliberation interface rather than the roster's continuation protocols, so they are reported as their own arm and not pooled into Section~\ref{sec:wall}. GPT-5.1's reasoning is available only in summarized form, which makes its channel statistics a lower bound on re-derivation. Pooled over the three error conditions, 43 percent of its reasoning-on rollouts return an empty summary, and channel statistics condition on a non-empty summary except where stated. Reading a channel as evidence about process has known limits: stated reasoning can diverge from the computation that produces the answer \citep{lanham2023,turpin2023unfaithful,arcuschin2025wild,chen2025unfaithful}. In both arms the planted error sits in the committed trace, as in every experiment in this paper; the deliberation channel itself is never corrupted, only read. Corrupting values while they are still being written is the in-flight regime discussed in Section~\ref{sec:related}.
+These runs use each model's native deliberation interface rather than the roster's continuation protocols, so they are reported separately and not pooled into Section~\ref{sec:wall}. GPT-5.1's reasoning is available only in summarized form, which makes its channel statistics a lower bound on re-derivation. Pooled over the three error conditions, 43 percent of its reasoning-on continuations return an empty summary, and channel statistics condition on a non-empty summary except where stated. Reading a channel as evidence about process has known limits: stated reasoning can diverge from the computation that produces the answer \citep{lanham2023,turpin2023unfaithful,arcuschin2025wild,chen2025unfaithful}. For both models the planted error sits in the committed trace, as in every experiment in this paper; the deliberation channel itself is never corrupted, only read. Corrupting values while they are still being written is the in-flight regime discussed in Section~\ref{sec:related}.
