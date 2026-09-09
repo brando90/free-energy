@@ -44,7 +44,7 @@ Three regularities. First, the wall transfers: with the false equation displayed
 \subsection{Naturally occurring computed slips persist}
 \label{app:persistence}
 
-The gold-generation stage also yields natural errors: attempts in which the model mis-computes an intermediate in its own trace with no perturbation applied. Re-executing each failed attempt against ground truth identifies the first self-produced computed slip. Across the five open-weight gold runs, 1{,}775 traces contain one, and in 1{,}396 the slip changes the final answer if carried forward. In 10 of the 1{,}396 (0.7\%) the continuation nevertheless reaches the correct output, and an explicit correction remark appears in 20 traces. The modal fate of a model's own computed slip is silent carriage into the answer, matching the planted-error rates and confirming that the wall is not an artifact of planting.
+The gold-generation stage also yields natural errors: attempts in which the model mis-computes an intermediate in its own trace with no perturbation applied. Re-executing each failed attempt against ground truth identifies the first self-produced computed slip. Across the five open-weight gold runs, 1{,}775 traces contain one, and in 1{,}396 the slip changes the final answer if carried forward. In 10 of the 1{,}396 (0.7\%) the continuation nevertheless reaches the correct output, and an explicit correction remark appears in 20 traces. The usual fate of a model's own computed slip is to be carried silently into the answer, matching the planted-error rates and confirming that the wall is not an artifact of planting.
 
 \subsection{Attribution does not move the wall}
 \label{app:attribution}
