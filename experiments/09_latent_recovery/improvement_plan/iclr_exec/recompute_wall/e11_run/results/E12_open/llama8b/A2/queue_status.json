@@ -1,0 +1,20 @@
+{
+  "arm": "A2",
+  "done": true,
+  "gold_cohort": {
+    "0": {
+      "eligible": 172,
+      "kept": 100
+    },
+    "1": {
+      "eligible": 167,
+      "kept": 100
+    },
+    "5": {
+      "eligible": 21,
+      "kept": 21
+    }
+  },
+  "stage": "done",
+  "updated_at": "2026-07-28T10:25:55"
+}

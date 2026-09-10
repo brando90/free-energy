@@ -1,0 +1,32 @@
+{
+  "R": 3,
+  "arm": "A2",
+  "arms_all": {
+    "A0": "",
+    "A1": "Work carefully and verify your work as you go.",
+    "A2": "Before using any already-computed value in a later step, re-verify it by redoing its computation. If a value is wrong, correct it and continue from the corrected value.",
+    "A3": "Before using any already-computed value in a later step, re-verify it by redoing its computation. If a value is wrong, correct it and continue from the corrected value.\nWorked example (illustration only; not part of the task below and unrelated to it): an earlier step recorded total_apples = 6 + 5 = 12. Before reusing total_apples, re-add: 6 + 5 = 11, not 12, so the recorded value is wrong. Correct it to total_apples = 11, then continue every later step from 11 (e.g. if the next step is baskets = total_apples - 3, compute 11 - 3 = 8, not 9)."
+  },
+  "created_at": "2026-07-28T08:59:00",
+  "doubt_lexicon": "\\b(?:bug|typo|re-?check|hold\\s+on|off\\s+by|should\\s+be|contradict\\w*|inconsist\\w*)\\b",
+  "experiment": "E12_FIXES_LADDER",
+  "flag_channel": "doubt_lex frozen lexicon (no 32B judge on API arm)",
+  "gold_policy": "golds REGENERATED per arm with the arm instruction present in the same position",
+  "gold_prefill": "line 1:",
+  "instruction_position": "prepended to user message (E9 VERIF_INSTR position); prefill unchanged",
+  "instruction_sha256": "bef1c3fb61feec16",
+  "instruction_verbatim": "Before using any already-computed value in a later step, re-verify it by redoing its computation. If a value is wrong, correct it and continue from the corrected value.",
+  "model": "claude-haiku-4-5",
+  "n_programs_in_target_ks": 330,
+  "n_target_per_cell": 60,
+  "programs_path": "/lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/recompute_wall/e12_fixes/programs.jsonl",
+  "prompt_sha256": "a1a134d3c0b753c273365be903dba2cd5c5fc2d33fb443891448d4c384de578b",
+  "recompute_signature_def": "Mechanical, grep-able signature of explicit recomputation of the plant.\n\n    Defined per non-blank continuation line:\n      verb_lines        : lines that name the planted variable AND contain a\n                          recompute/verify/correct verb (regex _RECOMP_VERB).\n      true_rederive     : lines that name the planted variable AND contain the\n                          TRUE value string (a re-derivation to the correct value).\n      planted_flagged   : lines that name the planted variable AND contain the\n                          PLANTED value string AND a recompute/correction verb\n                          (an explicit call-out of the wrong value).\n    All three are counts (>=0). A rollout \"shows recomputation\" iff\n    (verb_lines + true_rederive) > 0. Var/value matching is substring on the\n    rendered token; documented as coarse-but-conservative in the report.",
+  "seed": 0,
+  "target_cells": {
+    "0_bare": "adjacent_contradiction",
+    "1_bare": "onehop_kc1",
+    "5_bare": "deep_kc5"
+  },
+  "temp": 0.7
+}

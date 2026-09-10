@@ -1,0 +1,22 @@
+{
+  "api_keys": "environment only; never logged",
+  "budget": {
+    "cumulative_enforcement": "multi-ledger sum (EXPH + all EXPH2 subdirs) checked per ~20 requests",
+    "hard_stop_usd": 100.0
+  },
+  "created_at": "2026-07-06T19:57:48.387130+00:00",
+  "experiment": "EXPH2_FRONTIER_FOLLOWUPS",
+  "git_commit_hash": "545b35db420d1826b69ca9bdd6e47b5720bb54de",
+  "prompt": {
+    "note": "PrOntoQA block byte-identical to EXPH/src; regime2 uses trace_format.INSTRUCTION+EXEMPLARS (sha in regime2 parity file)",
+    "sha256": "3a1cefde23578a72a8cd47da65d979e155c61a5ba3b417a62bf1307a4ad31992"
+  },
+  "python": "3.12.3 (main, Jan 22 2026, 20:57:42) [GCC 13.3.0]",
+  "status": "descriptive/exploratory; NOT confirmatory; author-approved follow-up package to EXPH",
+  "subexperiments": {
+    "A_regime2": "EXPG program-trace regime, prefill, claude-haiku-4-5 + claude-sonnet-4-5; pilot knobs + pilot seed bases; 7 cells x mid x n<=75; channels per EXPG validate.py; judge pass not run (lexical doubt floors at 0; rejection measured derivationally)",
+    "B_ladder": "claude-opus-4-1 prefill on the six EXPH cells (opus-4-0/sonnet-4-0 404); n<=100 core / 75 reuse; gold cap 300",
+    "C_instruct_panel": "registered bridge instruct prompt; gpt-4.1, gpt-5.1(reasoning none), gpt-4o, claude-sonnet-5(thinking disabled), claude-opus-4-8; 4 core cells n<=100; PRIMARY metric = echo-corrected plant-dependence on global_falsehood (format-robust per bridge); appendix-only",
+    "D_completions_probe": "gpt-3.5-turbo-instruct via v1/completions, TRUE text-completion continuation identical to common.py rendering; stop=[\"\nQ:\"]; 4 core cells n<=91"
+  }
+}

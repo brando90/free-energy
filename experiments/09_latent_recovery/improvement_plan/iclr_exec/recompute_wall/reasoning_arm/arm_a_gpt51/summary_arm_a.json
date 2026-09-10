@@ -1,0 +1,471 @@
+{
+  "arm_a_gpt51_usd": 5.3587,
+  "by_cell_cond": {
+    "adjacent_contradiction": {
+      "off": {
+        "absorbed": {
+          "count": 17,
+          "n": 280,
+          "rate": 0.0607,
+          "wilson95": [
+            0.0382,
+            0.0951
+          ]
+        },
+        "doubt_lex": {
+          "count": 0,
+          "n": 280,
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.0135
+          ]
+        },
+        "final_output_absorbed": {
+          "count": 17,
+          "n": 280,
+          "rate": 0.0607,
+          "wilson95": [
+            0.0382,
+            0.0951
+          ]
+        },
+        "flagged": {
+          "count": 0,
+          "n": 280,
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.0135
+          ]
+        },
+        "mean_reasoning_tokens": 0.0,
+        "n": 280,
+        "n_cf": 280,
+        "other": {
+          "count": 0,
+          "n": 280,
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.0135
+          ]
+        },
+        "silently_corrected": {
+          "count": 263,
+          "n": 280,
+          "rate": 0.9393,
+          "wilson95": [
+            0.9049,
+            0.9618
+          ]
+        }
+      },
+      "on": {
+        "absorbed": {
+          "count": 1,
+          "n": 280,
+          "rate": 0.0036,
+          "wilson95": [
+            0.0006,
+            0.0199
+          ]
+        },
+        "doubt_lex": {
+          "count": 0,
+          "n": 280,
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.0135
+          ]
+        },
+        "final_output_absorbed": {
+          "count": 1,
+          "n": 280,
+          "rate": 0.0036,
+          "wilson95": [
+            0.0006,
+            0.0199
+          ]
+        },
+        "flagged": {
+          "count": 0,
+          "n": 280,
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.0135
+          ]
+        },
+        "mean_reasoning_tokens": 257.7,
+        "n": 280,
+        "n_cf": 280,
+        "other": {
+          "count": 0,
+          "n": 280,
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.0135
+          ]
+        },
+        "silently_corrected": {
+          "count": 279,
+          "n": 280,
+          "rate": 0.9964,
+          "wilson95": [
+            0.9801,
+            0.9994
+          ]
+        }
+      }
+    },
+    "deep_kc5": {
+      "off": {
+        "absorbed": {
+          "count": 240,
+          "n": 240,
+          "rate": 1.0,
+          "wilson95": [
+            0.9842,
+            1.0
+          ]
+        },
+        "doubt_lex": {
+          "count": 0,
+          "n": 240,
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0158
+          ]
+        },
+        "final_output_absorbed": {
+          "count": 240,
+          "n": 240,
+          "rate": 1.0,
+          "wilson95": [
+            0.9842,
+            1.0
+          ]
+        },
+        "flagged": {
+          "count": 0,
+          "n": 240,
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0158
+          ]
+        },
+        "mean_reasoning_tokens": 0.0,
+        "n": 240,
+        "n_cf": 240,
+        "other": {
+          "count": 0,
+          "n": 240,
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0158
+          ]
+        },
+        "silently_corrected": {
+          "count": 0,
+          "n": 240,
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0158
+          ]
+        }
+      },
+      "on": {
+        "absorbed": {
+          "count": 210,
+          "n": 240,
+          "rate": 0.875,
+          "wilson95": [
+            0.8272,
+            0.911
+          ]
+        },
+        "doubt_lex": {
+          "count": 0,
+          "n": 240,
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0158
+          ]
+        },
+        "final_output_absorbed": {
+          "count": 210,
+          "n": 240,
+          "rate": 0.875,
+          "wilson95": [
+            0.8272,
+            0.911
+          ]
+        },
+        "flagged": {
+          "count": 0,
+          "n": 240,
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0158
+          ]
+        },
+        "mean_reasoning_tokens": 360.1,
+        "n": 240,
+        "n_cf": 240,
+        "other": {
+          "count": 0,
+          "n": 240,
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0158
+          ]
+        },
+        "silently_corrected": {
+          "count": 30,
+          "n": 240,
+          "rate": 0.125,
+          "wilson95": [
+            0.089,
+            0.1728
+          ]
+        }
+      }
+    },
+    "onehop_kc1": {
+      "off": {
+        "absorbed": {
+          "count": 240,
+          "n": 240,
+          "rate": 1.0,
+          "wilson95": [
+            0.9842,
+            1.0
+          ]
+        },
+        "doubt_lex": {
+          "count": 0,
+          "n": 240,
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0158
+          ]
+        },
+        "final_output_absorbed": {
+          "count": 240,
+          "n": 240,
+          "rate": 1.0,
+          "wilson95": [
+            0.9842,
+            1.0
+          ]
+        },
+        "flagged": {
+          "count": 0,
+          "n": 240,
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0158
+          ]
+        },
+        "mean_reasoning_tokens": 0.0,
+        "n": 240,
+        "n_cf": 240,
+        "other": {
+          "count": 0,
+          "n": 240,
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0158
+          ]
+        },
+        "silently_corrected": {
+          "count": 0,
+          "n": 240,
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0158
+          ]
+        }
+      },
+      "on": {
+        "absorbed": {
+          "count": 237,
+          "n": 240,
+          "rate": 0.9875,
+          "wilson95": [
+            0.9639,
+            0.9957
+          ]
+        },
+        "doubt_lex": {
+          "count": 0,
+          "n": 240,
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0158
+          ]
+        },
+        "final_output_absorbed": {
+          "count": 237,
+          "n": 240,
+          "rate": 0.9875,
+          "wilson95": [
+            0.9639,
+            0.9957
+          ]
+        },
+        "flagged": {
+          "count": 0,
+          "n": 240,
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0158
+          ]
+        },
+        "mean_reasoning_tokens": 148.1,
+        "n": 240,
+        "n_cf": 240,
+        "other": {
+          "count": 0,
+          "n": 240,
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0158
+          ]
+        },
+        "silently_corrected": {
+          "count": 3,
+          "n": 240,
+          "rate": 0.0125,
+          "wilson95": [
+            0.0043,
+            0.0361
+          ]
+        }
+      }
+    }
+  },
+  "cells": [
+    "adjacent_contradiction",
+    "onehop_kc1",
+    "deep_kc5"
+  ],
+  "created_at": "2026-07-28T22:25:39.690522+00:00",
+  "cumulative_usd": 96.805,
+  "model": "gpt-5.1",
+  "rederive_taxonomy": {
+    "adjacent_contradiction": {
+      "any_summary_present": 154,
+      "loose_token": {
+        "never_rederive": {
+          "count": 55,
+          "rate": 0.3571
+        },
+        "rederive_and_absorb": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "rederive_and_correct": {
+          "count": 99,
+          "rate": 0.6429
+        }
+      },
+      "n": 154,
+      "strict_assign": {
+        "never_rederive": {
+          "count": 113,
+          "rate": 0.7338
+        },
+        "rederive_and_absorb": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "rederive_and_correct": {
+          "count": 41,
+          "rate": 0.2662
+        }
+      }
+    },
+    "deep_kc5": {
+      "any_summary_present": 132,
+      "loose_token": {
+        "never_rederive": {
+          "count": 73,
+          "rate": 0.553
+        },
+        "rederive_and_absorb": {
+          "count": 32,
+          "rate": 0.2424
+        },
+        "rederive_and_correct": {
+          "count": 27,
+          "rate": 0.2045
+        }
+      },
+      "n": 132,
+      "strict_assign": {
+        "never_rederive": {
+          "count": 112,
+          "rate": 0.8485
+        },
+        "rederive_and_absorb": {
+          "count": 7,
+          "rate": 0.053
+        },
+        "rederive_and_correct": {
+          "count": 13,
+          "rate": 0.0985
+        }
+      }
+    },
+    "onehop_kc1": {
+      "any_summary_present": 150,
+      "loose_token": {
+        "never_rederive": {
+          "count": 136,
+          "rate": 0.9067
+        },
+        "rederive_and_absorb": {
+          "count": 12,
+          "rate": 0.08
+        },
+        "rederive_and_correct": {
+          "count": 2,
+          "rate": 0.0133
+        }
+      },
+      "n": 150,
+      "strict_assign": {
+        "never_rederive": {
+          "count": 148,
+          "rate": 0.9867
+        },
+        "rederive_and_absorb": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "rederive_and_correct": {
+          "count": 2,
+          "rate": 0.0133
+        }
+      }
+    }
+  }
+}

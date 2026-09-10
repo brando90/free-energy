@@ -1,0 +1,92 @@
+{
+  "per_model": {
+    "claude-opus-4-8": {
+      "per_arm": {
+        "baseline": {
+          "input_tokens_est": 97203,
+          "n_calls": 200,
+          "output_tokens_est": 60000,
+          "usd_est": 1.99
+        },
+        "human": {
+          "input_tokens_est": 96504,
+          "n_calls": 200,
+          "output_tokens_est": 60000,
+          "usd_est": 1.98
+        },
+        "other_model": {
+          "input_tokens_est": 96904,
+          "n_calls": 200,
+          "output_tokens_est": 60000,
+          "usd_est": 1.98
+        },
+        "self": {
+          "input_tokens_est": 96657,
+          "n_calls": 200,
+          "output_tokens_est": 60000,
+          "usd_est": 1.98
+        }
+      },
+      "total_usd_est": 7.93
+    },
+    "claude-sonnet-5": {
+      "per_arm": {
+        "baseline": {
+          "input_tokens_est": 96747,
+          "n_calls": 199,
+          "output_tokens_est": 59700,
+          "usd_est": 1.19
+        },
+        "human": {
+          "input_tokens_est": 96051,
+          "n_calls": 199,
+          "output_tokens_est": 59700,
+          "usd_est": 1.18
+        },
+        "other_model": {
+          "input_tokens_est": 96449,
+          "n_calls": 199,
+          "output_tokens_est": 59700,
+          "usd_est": 1.18
+        },
+        "self": {
+          "input_tokens_est": 96204,
+          "n_calls": 199,
+          "output_tokens_est": 59700,
+          "usd_est": 1.18
+        }
+      },
+      "total_usd_est": 4.73
+    },
+    "gpt-4.1": {
+      "per_arm": {
+        "baseline": {
+          "input_tokens_est": 97773,
+          "n_calls": 200,
+          "output_tokens_est": 60000,
+          "usd_est": 0.68
+        },
+        "human": {
+          "input_tokens_est": 97064,
+          "n_calls": 200,
+          "output_tokens_est": 60000,
+          "usd_est": 0.67
+        },
+        "other_model": {
+          "input_tokens_est": 97464,
+          "n_calls": 200,
+          "output_tokens_est": 60000,
+          "usd_est": 0.67
+        },
+        "self": {
+          "input_tokens_est": 97218,
+          "n_calls": 200,
+          "output_tokens_est": 60000,
+          "usd_est": 0.67
+        }
+      },
+      "total_usd_est": 2.69
+    }
+  },
+  "total_usd_est": 15.35
+}

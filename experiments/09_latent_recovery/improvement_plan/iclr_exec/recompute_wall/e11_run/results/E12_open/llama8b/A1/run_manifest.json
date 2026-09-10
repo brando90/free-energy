@@ -1,0 +1,23 @@
+{
+  "R": 6,
+  "arm": "A1",
+  "created_at": "2026-07-28T10:11:06",
+  "doubt_lexicon": "\\b(?:bug|typo|re-?check|hold\\s+on|off\\s+by|should\\s+be|contradict\\w*|inconsist\\w*)\\b",
+  "experiment": "E12_FIXES_LADDER_open",
+  "flag_channel": "doubt_lex frozen lexicon (no 32B judge)",
+  "gold_policy": "regenerated per arm with the arm instruction in the same position",
+  "instruction_position": "prepended to user message; prefill unchanged (full prefix incl newline)",
+  "instruction_sha256": "a7a293bf439de93b",
+  "instruction_verbatim": "Work carefully and verify your work as you go.",
+  "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "n_target_per_cell": 100,
+  "recompute_signature_def": "Mechanical, grep-able signature of explicit recomputation of the plant.\n\n    Defined per non-blank continuation line:\n      verb_lines        : lines that name the planted variable AND contain a\n                          recompute/verify/correct verb (regex _RECOMP_VERB).\n      true_rederive     : lines that name the planted variable AND contain the\n                          TRUE value string (a re-derivation to the correct value).\n      planted_flagged   : lines that name the planted variable AND contain the\n                          PLANTED value string AND a recompute/correction verb\n                          (an explicit call-out of the wrong value).\n    All three are counts (>=0). A rollout \"shows recomputation\" iff\n    (verb_lines + true_rederive) > 0. Var/value matching is substring on the\n    rendered token; documented as coarse-but-conservative in the report.",
+  "seed": 0,
+  "tag": "llama8b",
+  "target_cells": {
+    "0_bare": "adjacent_contradiction",
+    "1_bare": "onehop_kc1",
+    "5_bare": "deep_kc5"
+  },
+  "temp": 0.7
+}

@@ -1,0 +1,24 @@
+{
+  "checks": [
+    {
+      "gold_prefill": "line 1:",
+      "gold_prefill_trailing_ok": true,
+      "program_id": "kr1_507786_00100000",
+      "user_equals_expg_builder": true
+    },
+    {
+      "gold_prefill": "line 1:",
+      "gold_prefill_trailing_ok": true,
+      "program_id": "kr1_507786_00100002",
+      "user_equals_expg_builder": true
+    },
+    {
+      "gold_prefill": "line 1:",
+      "gold_prefill_trailing_ok": true,
+      "program_id": "kr1_507786_00100003",
+      "user_equals_expg_builder": true
+    }
+  ],
+  "note": "user turn == tf.make_user_message(listing) byte-identical; gold prefill 'line 1:' has no trailing whitespace; continuation prefill == manifest prefix_text with its single trailing newline stripped (Anthropic rejects trailing whitespace in the final assistant turn) -- stripped flag recorded per raw row; first_char_digit measured per validated row to bound digit-gluing risk",
+  "pass": true
+}

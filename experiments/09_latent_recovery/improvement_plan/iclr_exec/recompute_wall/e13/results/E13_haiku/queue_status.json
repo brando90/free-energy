@@ -1,0 +1,22 @@
+{
+  "cohort": {
+    "grid_kr1": {
+      "eligible": 200,
+      "kept": 60,
+      "tested": 200
+    },
+    "k1_deference": {
+      "eligible": 165,
+      "kept": 60,
+      "tested": 200
+    },
+    "line_k0": {
+      "eligible": 171,
+      "kept": 60,
+      "tested": 200
+    }
+  },
+  "done": true,
+  "this_run_usd": 8.0993,
+  "updated_at": "2026-07-29T09:24:57"
+}

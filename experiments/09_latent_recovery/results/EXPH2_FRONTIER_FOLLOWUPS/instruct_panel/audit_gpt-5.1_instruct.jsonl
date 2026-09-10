@@ -1,0 +1,2 @@
+{"condition": "true_interruption", "problem_id": "3hop_ProofsOnly_random_noadj.json::example58::in_context_example0", "reason": "condition_unavailable", "stage": "core_injection"}
+{"condition": "true_interruption", "problem_id": "1hop_ProofsOnly_4testhops_random_noadj.json::example74::test_example", "reason": "condition_unavailable", "stage": "core_injection"}

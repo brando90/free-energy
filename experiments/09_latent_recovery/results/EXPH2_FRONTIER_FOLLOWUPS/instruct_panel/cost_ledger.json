@@ -1,0 +1,38 @@
+{
+  "hard_budget_usd": 100.0,
+  "models": {
+    "claude-opus-4-8": {
+      "input_tokens": 472653,
+      "output_tokens": 40522,
+      "requests": 650
+    },
+    "claude-sonnet-5": {
+      "input_tokens": 474520,
+      "output_tokens": 43635,
+      "requests": 650
+    },
+    "gpt-4.1": {
+      "input_tokens": 301227,
+      "output_tokens": 45072,
+      "requests": 599
+    },
+    "gpt-4o": {
+      "input_tokens": 300371,
+      "output_tokens": 41461,
+      "requests": 600
+    },
+    "gpt-5.1": {
+      "input_tokens": 299567,
+      "output_tokens": 45304,
+      "requests": 598
+    }
+  },
+  "total_usd": 8.4105,
+  "usd_by_model": {
+    "claude-opus-4-8": 3.3763,
+    "claude-sonnet-5": 2.0781,
+    "gpt-4.1": 0.963,
+    "gpt-4o": 1.1655,
+    "gpt-5.1": 0.8275
+  }
+}

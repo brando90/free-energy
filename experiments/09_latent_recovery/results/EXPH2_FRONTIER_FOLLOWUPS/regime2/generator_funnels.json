@@ -1,0 +1,46 @@
+{
+  "alloc": {
+    "kc1": 60,
+    "kc5": 60,
+    "kr1": 70,
+    "kr8": 60
+  },
+  "funnels": {
+    "kc1": {
+      "accepted": 60,
+      "attempts": 79
+    },
+    "kc5": {
+      "accepted": 60,
+      "attempts": 78
+    },
+    "kr1": {
+      "accepted": 70,
+      "attempts": 84
+    },
+    "kr8": {
+      "accepted": 60,
+      "attempts": 79
+    }
+  },
+  "knobs": {
+    "const_max": 45,
+    "const_min": 2,
+    "deep_const_max": 9,
+    "filler_const_prob": 0.35,
+    "forward_use_gap": 2,
+    "loop_prob": 0.0,
+    "max_attempts_per_program": 400,
+    "mult_prob": 0.15,
+    "read_const_max": 20,
+    "value_max": 999,
+    "value_min": 1
+  },
+  "note": "pilot knobs + pilot seed bases (kr8/kc1/kc5 pools == pilot pools)",
+  "seed_bases": {
+    "kc1": 300000,
+    "kc5": 400000,
+    "kr1": 100000,
+    "kr8": 200000
+  }
+}

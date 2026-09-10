@@ -1,0 +1,22 @@
+{
+  "arm": "A2",
+  "done": true,
+  "gold_cohort": {
+    "0": {
+      "eligible": 90,
+      "kept": 60
+    },
+    "1": {
+      "eligible": 82,
+      "kept": 60
+    },
+    "5": {
+      "eligible": 81,
+      "kept": 60
+    }
+  },
+  "n_worlds": 330,
+  "stage": "done",
+  "this_run_usd": 2.2399,
+  "updated_at": "2026-07-28T09:02:49"
+}

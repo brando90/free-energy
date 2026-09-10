@@ -1,0 +1,629 @@
+{
+  "job1_pooled": {
+    "claude-opus-4-8": {
+      "mode": "bridge",
+      "batch1_src": "e10_api_bridge",
+      "cells": {
+        "adjacent_contradiction": {
+          "batch1": {
+            "n_cf": 70,
+            "absorbed": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ],
+            "doubt_lex": 0
+          },
+          "batch2": {
+            "n_cf": 120,
+            "absorbed": 0,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.031
+            ],
+            "doubt_lex": 0
+          },
+          "pooled": {
+            "n_cf": 190,
+            "absorbed": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0198
+            ]
+          },
+          "batch_effect": {
+            "delta": 0.0,
+            "z": 0.0,
+            "p": 1.0
+          },
+          "flag": "consistent"
+        },
+        "opfree_kr1": {
+          "batch1": {
+            "n_cf": 70,
+            "absorbed": 22,
+            "rate": 0.3143,
+            "wilson95": [
+              0.2176,
+              0.4303
+            ],
+            "doubt_lex": 0
+          },
+          "batch2": {
+            "n_cf": 120,
+            "absorbed": 43,
+            "rate": 0.3583,
+            "wilson95": [
+              0.2782,
+              0.4473
+            ],
+            "doubt_lex": 0
+          },
+          "pooled": {
+            "n_cf": 190,
+            "absorbed": 65,
+            "rate": 0.3421,
+            "wilson95": [
+              0.2784,
+              0.4121
+            ]
+          },
+          "batch_effect": {
+            "delta": -0.044,
+            "z": -0.617,
+            "p": 0.537
+          },
+          "flag": "consistent"
+        },
+        "onehop_kc1": {
+          "batch1": {
+            "n_cf": 60,
+            "absorbed": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ],
+            "doubt_lex": 0
+          },
+          "batch2": {
+            "n_cf": 120,
+            "absorbed": 120,
+            "rate": 1.0,
+            "wilson95": [
+              0.969,
+              1.0
+            ],
+            "doubt_lex": 0
+          },
+          "pooled": {
+            "n_cf": 180,
+            "absorbed": 180,
+            "rate": 1.0,
+            "wilson95": [
+              0.9791,
+              1.0
+            ]
+          },
+          "batch_effect": {
+            "delta": 0.0,
+            "z": 0.0,
+            "p": 1.0
+          },
+          "flag": "consistent"
+        },
+        "deep_kc5": {
+          "batch1": {
+            "n_cf": 60,
+            "absorbed": 59,
+            "rate": 0.9833,
+            "wilson95": [
+              0.9114,
+              0.9971
+            ],
+            "doubt_lex": 0
+          },
+          "batch2": {
+            "n_cf": 120,
+            "absorbed": 119,
+            "rate": 0.9917,
+            "wilson95": [
+              0.9543,
+              0.9985
+            ],
+            "doubt_lex": 0
+          },
+          "pooled": {
+            "n_cf": 180,
+            "absorbed": 178,
+            "rate": 0.9889,
+            "wilson95": [
+              0.9604,
+              0.9969
+            ]
+          },
+          "batch_effect": {
+            "delta": -0.0083,
+            "z": -0.503,
+            "p": 0.6151
+          },
+          "flag": "consistent"
+        }
+      }
+    },
+    "claude-sonnet-5": {
+      "mode": "bridge",
+      "batch1_src": "e10_api_bridge",
+      "cells": {
+        "adjacent_contradiction": {
+          "batch1": {
+            "n_cf": 70,
+            "absorbed": 1,
+            "rate": 0.0143,
+            "wilson95": [
+              0.0025,
+              0.0766
+            ],
+            "doubt_lex": 1
+          },
+          "batch2": {
+            "n_cf": 120,
+            "absorbed": 1,
+            "rate": 0.0083,
+            "wilson95": [
+              0.0015,
+              0.0457
+            ],
+            "doubt_lex": 0
+          },
+          "pooled": {
+            "n_cf": 190,
+            "absorbed": 2,
+            "rate": 0.0105,
+            "wilson95": [
+              0.0029,
+              0.0376
+            ]
+          },
+          "batch_effect": {
+            "delta": 0.006,
+            "z": 0.388,
+            "p": 0.6982
+          },
+          "flag": "consistent"
+        },
+        "opfree_kr1": {
+          "batch1": {
+            "n_cf": 70,
+            "absorbed": 16,
+            "rate": 0.2286,
+            "wilson95": [
+              0.1459,
+              0.3395
+            ],
+            "doubt_lex": 12
+          },
+          "batch2": {
+            "n_cf": 120,
+            "absorbed": 29,
+            "rate": 0.2417,
+            "wilson95": [
+              0.1739,
+              0.3255
+            ],
+            "doubt_lex": 9
+          },
+          "pooled": {
+            "n_cf": 190,
+            "absorbed": 45,
+            "rate": 0.2368,
+            "wilson95": [
+              0.182,
+              0.3021
+            ]
+          },
+          "batch_effect": {
+            "delta": -0.0131,
+            "z": -0.205,
+            "p": 0.8377
+          },
+          "flag": "consistent"
+        },
+        "onehop_kc1": {
+          "batch1": {
+            "n_cf": 59,
+            "absorbed": 59,
+            "rate": 1.0,
+            "wilson95": [
+              0.9389,
+              1.0
+            ],
+            "doubt_lex": 0
+          },
+          "batch2": {
+            "n_cf": 119,
+            "absorbed": 119,
+            "rate": 1.0,
+            "wilson95": [
+              0.9687,
+              1.0
+            ],
+            "doubt_lex": 0
+          },
+          "pooled": {
+            "n_cf": 178,
+            "absorbed": 178,
+            "rate": 1.0,
+            "wilson95": [
+              0.9789,
+              1.0
+            ]
+          },
+          "batch_effect": {
+            "delta": 0.0,
+            "z": 0.0,
+            "p": 1.0
+          },
+          "flag": "consistent"
+        },
+        "deep_kc5": {
+          "batch1": {
+            "n_cf": 60,
+            "absorbed": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ],
+            "doubt_lex": 0
+          },
+          "batch2": {
+            "n_cf": 120,
+            "absorbed": 120,
+            "rate": 1.0,
+            "wilson95": [
+              0.969,
+              1.0
+            ],
+            "doubt_lex": 0
+          },
+          "pooled": {
+            "n_cf": 180,
+            "absorbed": 180,
+            "rate": 1.0,
+            "wilson95": [
+              0.9791,
+              1.0
+            ]
+          },
+          "batch_effect": {
+            "delta": 0.0,
+            "z": 0.0,
+            "p": 1.0
+          },
+          "flag": "consistent"
+        }
+      }
+    },
+    "claude-haiku-4-5": {
+      "mode": "prefill",
+      "batch1_src": "regime2",
+      "cells": {
+        "adjacent_contradiction": {
+          "batch1": {
+            "n_cf": 70,
+            "absorbed": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ],
+            "doubt_lex": 0
+          },
+          "batch2": {
+            "n_cf": 120,
+            "absorbed": 0,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.031
+            ],
+            "doubt_lex": 0
+          },
+          "pooled": {
+            "n_cf": 190,
+            "absorbed": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0198
+            ]
+          },
+          "batch_effect": {
+            "delta": 0.0,
+            "z": 0.0,
+            "p": 1.0
+          },
+          "flag": "consistent"
+        },
+        "opfree_kr1": {
+          "batch1": {
+            "n_cf": 70,
+            "absorbed": 3,
+            "rate": 0.0429,
+            "wilson95": [
+              0.0147,
+              0.1186
+            ],
+            "doubt_lex": 0
+          },
+          "batch2": {
+            "n_cf": 120,
+            "absorbed": 5,
+            "rate": 0.0417,
+            "wilson95": [
+              0.0179,
+              0.0938
+            ],
+            "doubt_lex": 0
+          },
+          "pooled": {
+            "n_cf": 190,
+            "absorbed": 8,
+            "rate": 0.0421,
+            "wilson95": [
+              0.0215,
+              0.0809
+            ]
+          },
+          "batch_effect": {
+            "delta": 0.0012,
+            "z": 0.039,
+            "p": 0.9686
+          },
+          "flag": "consistent"
+        },
+        "onehop_kc1": {
+          "batch1": {
+            "n_cf": 60,
+            "absorbed": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ],
+            "doubt_lex": 0
+          },
+          "batch2": {
+            "n_cf": 120,
+            "absorbed": 120,
+            "rate": 1.0,
+            "wilson95": [
+              0.969,
+              1.0
+            ],
+            "doubt_lex": 0
+          },
+          "pooled": {
+            "n_cf": 180,
+            "absorbed": 180,
+            "rate": 1.0,
+            "wilson95": [
+              0.9791,
+              1.0
+            ]
+          },
+          "batch_effect": {
+            "delta": 0.0,
+            "z": 0.0,
+            "p": 1.0
+          },
+          "flag": "consistent"
+        },
+        "deep_kc5": {
+          "batch1": {
+            "n_cf": 60,
+            "absorbed": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ],
+            "doubt_lex": 0
+          },
+          "batch2": {
+            "n_cf": 120,
+            "absorbed": 120,
+            "rate": 1.0,
+            "wilson95": [
+              0.969,
+              1.0
+            ],
+            "doubt_lex": 0
+          },
+          "pooled": {
+            "n_cf": 180,
+            "absorbed": 180,
+            "rate": 1.0,
+            "wilson95": [
+              0.9791,
+              1.0
+            ]
+          },
+          "batch_effect": {
+            "delta": 0.0,
+            "z": 0.0,
+            "p": 1.0
+          },
+          "flag": "consistent"
+        }
+      }
+    },
+    "claude-sonnet-4-5": {
+      "mode": "prefill",
+      "batch1_src": "regime2",
+      "cells": {
+        "adjacent_contradiction": {
+          "batch1": {
+            "n_cf": 70,
+            "absorbed": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ],
+            "doubt_lex": 0
+          },
+          "batch2": {
+            "n_cf": 120,
+            "absorbed": 0,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.031
+            ],
+            "doubt_lex": 0
+          },
+          "pooled": {
+            "n_cf": 190,
+            "absorbed": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0198
+            ]
+          },
+          "batch_effect": {
+            "delta": 0.0,
+            "z": 0.0,
+            "p": 1.0
+          },
+          "flag": "consistent"
+        },
+        "opfree_kr1": {
+          "batch1": {
+            "n_cf": 70,
+            "absorbed": 3,
+            "rate": 0.0429,
+            "wilson95": [
+              0.0147,
+              0.1186
+            ],
+            "doubt_lex": 0
+          },
+          "batch2": {
+            "n_cf": 120,
+            "absorbed": 3,
+            "rate": 0.025,
+            "wilson95": [
+              0.0085,
+              0.0709
+            ],
+            "doubt_lex": 0
+          },
+          "pooled": {
+            "n_cf": 190,
+            "absorbed": 6,
+            "rate": 0.0316,
+            "wilson95": [
+              0.0146,
+              0.0672
+            ]
+          },
+          "batch_effect": {
+            "delta": 0.0179,
+            "z": 0.679,
+            "p": 0.4972
+          },
+          "flag": "consistent"
+        },
+        "onehop_kc1": {
+          "batch1": {
+            "n_cf": 60,
+            "absorbed": 59,
+            "rate": 0.9833,
+            "wilson95": [
+              0.9114,
+              0.9971
+            ],
+            "doubt_lex": 0
+          },
+          "batch2": {
+            "n_cf": 120,
+            "absorbed": 116,
+            "rate": 0.9667,
+            "wilson95": [
+              0.9174,
+              0.987
+            ],
+            "doubt_lex": 0
+          },
+          "pooled": {
+            "n_cf": 180,
+            "absorbed": 175,
+            "rate": 0.9722,
+            "wilson95": [
+              0.9366,
+              0.9881
+            ]
+          },
+          "batch_effect": {
+            "delta": 0.0167,
+            "z": 0.641,
+            "p": 0.5212
+          },
+          "flag": "consistent"
+        },
+        "deep_kc5": {
+          "batch1": {
+            "n_cf": 60,
+            "absorbed": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ],
+            "doubt_lex": 0
+          },
+          "batch2": {
+            "n_cf": 120,
+            "absorbed": 118,
+            "rate": 0.9833,
+            "wilson95": [
+              0.9413,
+              0.9954
+            ],
+            "doubt_lex": 0
+          },
+          "pooled": {
+            "n_cf": 180,
+            "absorbed": 178,
+            "rate": 0.9889,
+            "wilson95": [
+              0.9604,
+              0.9969
+            ]
+          },
+          "batch_effect": {
+            "delta": 0.0167,
+            "z": 1.006,
+            "p": 0.3146
+          },
+          "flag": "consistent"
+        }
+      }
+    }
+  },
+  "fable": {},
+  "this_run_usd": 19.2762,
+  "usd_by_model": {
+    "claude-fable-5": 2.9263,
+    "claude-haiku-4-5": 1.3204,
+    "claude-opus-4-8": 6.8851,
+    "claude-sonnet-4-5": 3.9657,
+    "claude-sonnet-5": 4.1786
+  }
+}

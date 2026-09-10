@@ -1,0 +1,128 @@
+{
+  "A4_cont_adjacent_contradiction": [
+    {
+      "api_messages": [
+        {
+          "content": "Before continuing, check this trace for inconsistencies.\n\nYou will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: q = 23\n2: s = 97\n3: g = 43\n4: w = 57\n5: b = w * 7 - 8\n6: z = 49\n7: m = g + 20 + 60\n8: n = 56\n9: f = q + s\n10: k = f\n11: a = 30\n12: h = k + 12\n13: d = 56 + 32 - 59 + 29\n14: t = k + 17\n15: c = 33\n16: p = 21\n17: r = 14 + 21 + 18 + 51\n18: u = 47\n19: out = h + t\n20: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: q = 23; q = 23\nline 2: s = 97; s = 97\nline 3: g = 43; g = 43\nline 4: w = 57; w = 57\nline 5: b = w * 7 - 8; b = 391\nline 6: z = 49; z = 49\nline 7: m = g + 20 + 60; m = 123\nline 8: n = 56; n = 56\nline 9: f = q + s; f = 120\nnote: f = 102\n",
+          "role": "assistant (prefill, trailing ws stripped for the request)"
+        }
+      ],
+      "cell": "adjacent_contradiction",
+      "family": "anchor_k0",
+      "program_id": "k0_43d06a_00700001"
+    },
+    {
+      "api_messages": [
+        {
+          "content": "Before continuing, check this trace for inconsistencies.\n\nYou will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: q = 26\n2: e = 68\n3: u = 36\n4: r = e - 10\n5: n = u - 15\n6: p = 59 - 34 + 60 + 14\n7: h = 57\n8: m = 6\n9: v = q + e\n10: w = v\n11: c = p - 43 - 32\n12: a = w + 2\n13: f = u - 25\n14: g = w + 16\n15: t = c + 31\n16: s = 17 + 35\n17: x = 59\n18: y = 34\n19: out = a + g\n20: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: q = 26; q = 26\nline 2: e = 68; e = 68\nline 3: u = 36; u = 36\nline 4: r = e - 10; r = 58\nline 5: n = u - 15; n = 21\nline 6: p = 59 - 34 + 60 + 14; p = 99\nline 7: h = 57; h = 57\nline 8: m = 6; m = 6\nline 9: v = q + e; v = 94\nnote: v = 49\n",
+          "role": "assistant (prefill, trailing ws stripped for the request)"
+        }
+      ],
+      "cell": "adjacent_contradiction",
+      "family": "anchor_k0",
+      "program_id": "k0_43d06a_00700002"
+    }
+  ],
+  "A4_cont_deep_kc5": [
+    {
+      "api_messages": [
+        {
+          "content": "Before continuing, check this trace for inconsistencies.\n\nYou will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: u = 17\n2: h = 52\n3: k = 5 + 19 + 60\n4: q = 76\n5: r = 29\n6: d = 83\n7: n = 78\n8: w = 51\n9: p = 37\n10: m = q + r + d + n + w + p\n11: g = u + 24\n12: y = m + 14\n13: j = 47\n14: b = m + 4\n15: t = 27\n16: f = 44\n17: s = 58\n18: a = u + 19 + 51 - 39\n19: out = y + b\n20: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: u = 17; u = 17\nline 2: h = 52; h = 52\nline 3: k = 5 + 19 + 60; k = 84\nline 4: q = 76; q = 76\nline 5: r = 29; r = 29\nline 6: d = 83; d = 83\nline 7: n = 78; n = 78\nline 8: w = 51; w = 51\nline 9: p = 37; p = 37\nline 10: m = q + r + d + n + w + p; m = 334\n",
+          "role": "assistant (prefill, trailing ws stripped for the request)"
+        }
+      ],
+      "cell": "deep_kc5",
+      "family": "depth_k5_bare",
+      "program_id": "k5_43d06a_00704556"
+    },
+    {
+      "api_messages": [
+        {
+          "content": "Before continuing, check this trace for inconsistencies.\n\nYou will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: r = 40\n2: q = 46\n3: h = r + 41 - 38\n4: c = 76\n5: f = 74\n6: b = 37\n7: z = 20\n8: k = 86\n9: g = 80\n10: n = c + f + b + z + k + g\n11: m = r - 33 + 29 + 46\n12: j = n + 13\n13: d = h + 45\n14: e = n + 4\n15: t = 25\n16: v = 17\n17: u = 41\n18: y = 19\n19: out = j + e\n20: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: r = 40; r = 40\nline 2: q = 46; q = 46\nline 3: h = r + 41 - 38; h = 43\nline 4: c = 76; c = 76\nline 5: f = 74; f = 74\nline 6: b = 37; b = 37\nline 7: z = 20; z = 20\nline 8: k = 86; k = 86\nline 9: g = 80; g = 80\nline 10: n = c + f + b + z + k + g; n = 383\n",
+          "role": "assistant (prefill, trailing ws stripped for the request)"
+        }
+      ],
+      "cell": "deep_kc5",
+      "family": "depth_k5_bare",
+      "program_id": "k5_43d06a_00704557"
+    }
+  ],
+  "A4_cont_onehop_kc1": [
+    {
+      "api_messages": [
+        {
+          "content": "Before continuing, check this trace for inconsistencies.\n\nYou will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: h = 8\n2: t = 23\n3: d = 30\n4: g = 42\n5: c = g + 42 * 7\n6: z = d + 53\n7: b = 4 + 26 + 48 + 48\n8: q = 32\n9: v = 72\n10: y = q + v\n11: j = 28\n12: r = y + 16\n13: s = j + 59 + 29\n14: w = y + 3\n15: k = 22\n16: x = 8 + 13\n17: n = 5\n18: m = 36 + 53\n19: out = r + w\n20: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: h = 8; h = 8\nline 2: t = 23; t = 23\nline 3: d = 30; d = 30\nline 4: g = 42; g = 42\nline 5: c = g + 42 * 7; c = 336\nline 6: z = d + 53; z = 83\nline 7: b = 4 + 26 + 48 + 48; b = 126\nline 8: q = 32; q = 32\nline 9: v = 72; v = 72\nline 10: y = q + v; y = 84\n",
+          "role": "assistant (prefill, trailing ws stripped for the request)"
+        }
+      ],
+      "cell": "onehop_kc1",
+      "family": "depth_k1_bare",
+      "program_id": "k1_43d06a_00700911"
+    },
+    {
+      "api_messages": [
+        {
+          "content": "Before continuing, check this trace for inconsistencies.\n\nYou will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: n = 38\n2: z = 33\n3: m = z + 58 - 27\n4: d = 10\n5: r = 25\n6: w = 30\n7: u = 35\n8: f = 75\n9: y = 94\n10: g = f + y\n11: e = 17\n12: s = g + 12\n13: h = u + 42 + 50\n14: b = g + 16\n15: a = m + 20 + 53\n16: q = 4 + 48 + 56\n17: v = 58 + 43 * 4\n18: t = 18\n19: out = s + b\n20: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: n = 38; n = 38\nline 2: z = 33; z = 33\nline 3: m = z + 58 - 27; m = 64\nline 4: d = 10; d = 10\nline 5: r = 25; r = 25\nline 6: w = 30; w = 30\nline 7: u = 35; u = 35\nline 8: f = 75; f = 75\nline 9: y = 94; y = 94\nline 10: g = f + y; g = 179\n",
+          "role": "assistant (prefill, trailing ws stripped for the request)"
+        }
+      ],
+      "cell": "onehop_kc1",
+      "family": "depth_k1_bare",
+      "program_id": "k1_43d06a_00700912"
+    }
+  ],
+  "A4_gold": [
+    {
+      "api_messages": [
+        {
+          "content": "Before continuing, check this trace for inconsistencies.\n\nYou will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: q = 23\n2: s = 97\n3: g = 43\n4: w = 57\n5: b = w * 7 - 8\n6: z = 49\n7: m = g + 20 + 60\n8: n = 56\n9: f = q + s\n10: k = f\n11: a = 30\n12: h = k + 12\n13: d = 56 + 32 - 59 + 29\n14: t = k + 17\n15: c = 33\n16: p = 21\n17: r = 14 + 21 + 18 + 51\n18: u = 47\n19: out = h + t\n20: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1:",
+          "role": "assistant (prefill)"
+        }
+      ],
+      "k": 0,
+      "program_id": "k0_43d06a_00700001"
+    },
+    {
+      "api_messages": [
+        {
+          "content": "Before continuing, check this trace for inconsistencies.\n\nYou will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: q = 26\n2: e = 68\n3: u = 36\n4: r = e - 10\n5: n = u - 15\n6: p = 59 - 34 + 60 + 14\n7: h = 57\n8: m = 6\n9: v = q + e\n10: w = v\n11: c = p - 43 - 32\n12: a = w + 2\n13: f = u - 25\n14: g = w + 16\n15: t = c + 31\n16: s = 17 + 35\n17: x = 59\n18: y = 34\n19: out = a + g\n20: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1:",
+          "role": "assistant (prefill)"
+        }
+      ],
+      "k": 0,
+      "program_id": "k0_43d06a_00700002"
+    }
+  ]
+}

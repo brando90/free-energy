@@ -1,0 +1,39 @@
+{
+  "job": "EXPA_CALIB_one_hop_falsehood",
+  "input": "/lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/results/EXPA_GLOBAL_EXPANSION/validated_outputs.jsonl",
+  "n_rows": 60,
+  "judge_model": "Qwen/Qwen2.5-32B-Instruct",
+  "continuation_field": "continuation",
+  "statement_field": "injected_statement",
+  "cell_field": "condition",
+  "lexical_field": "verbalized_doubt",
+  "filter": {
+    "condition": "one_hop_falsehood"
+  },
+  "sample_n": 60,
+  "stratify_field": "verbalized_doubt",
+  "seed": 0,
+  "n_unparsed_verdicts": 0,
+  "cells": {
+    "one_hop_falsehood": {
+      "n": 60,
+      "lexical_doubt_rate": 0.3333,
+      "judge_doubt_rate": 0.3833,
+      "explicit_rejection_rate": 0.5167,
+      "judge_lex_agreement": 0.85,
+      "judge_and_lex": 17,
+      "judge_not_lex": 6,
+      "reject_not_judge": 12
+    }
+  },
+  "overall": {
+    "n": 60,
+    "lexical_doubt_rate": 0.3333,
+    "judge_doubt_rate": 0.3833,
+    "explicit_rejection_rate": 0.5167,
+    "judge_lex_agreement": 0.85,
+    "judge_and_lex": 17,
+    "judge_not_lex": 6,
+    "reject_not_judge": 12
+  }
+}

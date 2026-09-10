@@ -1,0 +1,14 @@
+{
+  "hard_budget_usd": 100.0,
+  "models": {
+    "gpt-3.5-turbo-instruct": {
+      "input_tokens": 274987,
+      "output_tokens": 73553,
+      "requests": 613
+    }
+  },
+  "total_usd": 0.5596,
+  "usd_by_model": {
+    "gpt-3.5-turbo-instruct": 0.5596
+  }
+}

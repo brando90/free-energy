@@ -1,0 +1,41 @@
+{
+  "backend": "vllm",
+  "done": true,
+  "gold_cohort": {
+    "0": {
+      "eligible": 373,
+      "kept": 150,
+      "solve_rate": 0.2072,
+      "tested": 1800
+    },
+    "1": {
+      "eligible": 367,
+      "kept": 150,
+      "solve_rate": 0.2039,
+      "tested": 1800
+    },
+    "2": {
+      "eligible": 434,
+      "kept": 150,
+      "solve_rate": 0.2411,
+      "tested": 1800
+    },
+    "3": {
+      "eligible": 391,
+      "kept": 150,
+      "solve_rate": 0.2172,
+      "tested": 1800
+    },
+    "5": {
+      "eligible": 56,
+      "kept": 56,
+      "solve_rate": 0.0311,
+      "tested": 1800
+    }
+  },
+  "manifest_rows": 1668,
+  "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "n_worlds": 9000,
+  "stage": "generated",
+  "updated_at": "2026-07-28T09:34:23"
+}

@@ -1,0 +1,58 @@
+\section{Evidence distance does not predict responses to planted errors}
+\label{sec:reversal}
+
+% source: PAPER_SKELETON Sec 3; EVIDENCE_protocol_prereg P5.
+% NOTE (r2 framing directive #1 + #2): governance vocabulary (pre-registration,
+% Holm family, H1'/H2'/H4 code names, the scoreboard figure, evidence-status
+% labels) removed from this section and consolidated in Appendix~\ref{app:provenance};
+% directive #2 recasts the framing paragraphs from research-journey voice into
+% flat findings about the models. Numbers unchanged.
+
+\paragraph{A distance gradient does not predict rejection or reuse.} A natural
+hypothesis is that errors get caught when the disproving evidence is nearby:
+rejection and reuse should both be graded by how far the refuting evidence
+sits from the plant. A matched-distance test on Qwen2.5-7B, holding everything
+but distance fixed across six distance-linked predictions, finds no support
+for it. Rejection is flat to slightly rising across distance rather than
+falling (slope $+0.011$, $p{=}0.79$), and reuse is highest one hop away rather
+than farthest (slope $-0.248$, $p{=}0.996$); both run opposite to a gradient.
+% source: EVIDENCE_protocol_prereg P5 (H1' slope +0.011 p=0.79; H4 slope -0.248 p=0.996)
+The one distance-linked prediction the test supports is not a gradient but a
+polarity control: affirmative and negated false plants are absorbed
+equivalently, within a $\pm0.10$ margin (diff $+0.054$, $p{=}0.0012$).
+% source: EVIDENCE_protocol_prereg P5 (H2' PASS p=0.0012, diff +0.054); PAPER_SKELETON 3.1
+
+\paragraph{The polarity equivalence holds under the stricter validator too.} A
+reader might worry that this surviving result rests on the permissive
+closure-valid standard we elsewhere demote. It does not. Under the strict
+hop-sound standard the polarity equivalence still holds within the
+$\pm0.10$ margin, with a difference of $-0.042$ and a TOST
+$p{=}8\times10^{-5}$; the point sign flips but the equivalence conclusion is
+unchanged.
+% source: PAPER_SKELETON 3.2; EVIDENCE_protocol_prereg P5 (hop-sound H2' diff -0.042, TOST p=8e-5)
+We state this as ``equivalent within $\pm0.10$'', never as ``identical'',
+because the equivalence fails at the tighter $\pm0.05$ margin and the base
+rates are low.
+% source: EVIDENCE_protocol_prereg P5 caveat (fails at 0.05; aff 0.108 / neg 0.153 hop-sound)
+
+\paragraph{Two downstream contrasts carry different evidential weight.} Two
+contrasts the rest of the paper builds on differ in how directly the
+matched-distance test speaks to them, and we mark the difference rather than
+treating them alike. The $d{=}0$ visibility contrast of
+Section~\ref{sec:visibility} is measured directly but was left
+direction-open, so it motivates the visibility picture rather than clinching
+it.
+% source: EVIDENCE_protocol_prereg P5 caveat (C-0 non-family); PAPER_SKELETON 3.3
+The reversed reuse trend of Section~\ref{sec:usability}, where reuse is
+highest one hop away, runs opposite to the gradient prediction and does not
+reach a confirmatory threshold under matched construction, so we report it as
+a suggestive observation and never describe it as a confirmed effect.
+% source: EVIDENCE_protocol_prereg P5 caveat (H4 reversal one-sided p=0.004, exploratory)
+
+\paragraph{No strict metric reverses a conclusion the paper relies on.} We
+scanned the contrasts the paper leans on under the strict hop-sound
+standard and found no relied-on reversal; the one sign flip, in the
+polarity equivalence, strengthens rather than weakens the case, because it
+moves the estimate toward zero difference.
+% source: PAPER_SKELETON 3.4; EVIDENCE_protocol_prereg P4 (reversal scan, 5 contrasts)
+The strict tables are in Appendix~\ref{app:strict}.

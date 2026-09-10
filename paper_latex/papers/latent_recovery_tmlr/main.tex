@@ -1,0 +1,171 @@
+% =====================================================================
+% DRAFT PROVENANCE (READ FIRST) — background draft, not a finished paper.
+% ---------------------------------------------------------------------
+% Author of this draft: Claude (background writing agent).
+%   r1 pass 2026-07-24; r2 2026-07-24 framing directive #1;
+%   r3 (this file) 2026-07-27 framing directive #2 (results-voice rewrite:
+%   the abstract and every body framing paragraph are recast from
+%   research-journey narration into flat findings about the models; no
+%   "we initially/first hypothesized ... this failed, so we ..." language
+%   remains in the body. All numbers, source comments, and TODO/PENDING
+%   markers preserved. See scratchpad exec_reports/REWRITE_DELIVERY.md
+%   REVISION 3 for the before/after abstract.)
+% Authorization: Elyas explicitly authorized this draft-for-review in
+%   chat on 2026-07-24 ("rewrite the paper and put it in a new pdf so the
+%   old one is saved. then i'll review when back"), and on the same day
+%   gave the r2 FRAMING DIRECTIVE applied here: "the write up is weird in
+%   how it talks about hypothesis and pre-registered — these details don't
+%   matter when submitting." Per that directive, ALL registration / code-
+%   name / hypothesis-scoreboard vocabulary has been moved OUT of the body
+%   and consolidated into ONE appendix ("Reproducibility and analysis
+%   provenance"); the reversal and the motive null are now told in plain
+%   language; experiments are named descriptively in the body. This
+%   overrides the usual write-LaTeX-together-in-chat rule FOR THIS DRAFT
+%   ONLY. Expect heavy human revision. The OLD paper + PDF at
+%   paper_latex/papers/latent_recovery/ are untouched.
+% Sources of truth: rewrite_kit/{README,PAPER_SKELETON,EVIDENCE_*,
+%   STYLE_SHEET,RELATED_WORK_MAP,figures/}, exec_reports/E1_ADJUDICATION.md
+%   + E1_VERIFICATION.md, exec_reports/E9_ADJUDICATION.md + E9_VERIFICATION.md.
+%   Every number below carries a "% source:" comment pointing at the pack
+%   entry or report it came from. Nothing is from memory. NOTE: the
+%   "% source:" comments intentionally still use the internal code names
+%   (H*, B*, EXP*, E1, E9) — they are LaTeX comments, never compiled, and
+%   are kept as the provenance trail. Only the VISIBLE body was de-coded.
+%
+% PROVISIONAL FRAMING DECISIONS FLAGGED FOR ELYAS + BRANDO -------------
+% (F1) The paper LEADS with the audited instrument and folds the multi-
+%      model NON-REPLICATION in as a central finding: how a model handles
+%      a planted falsehood is model- and scale-dependent. The visibility
+%      cliff is Qwen-7B-specific and REVERSES on 3/4 models; usability
+%      governs absorption where absorption exists but collapses with
+%      scale (0.711 -> 0.807 -> 0.013 across 1.5B/7B/32B); the recompute
+%      boundary is the one universal result. This reframe is provisional.
+% (F2) The scooped in-stream-vs-fresh-turn boundary is written as
+%      CORROBORATION of prior work (Tsui / Self-Correction Bench), never
+%      as discovery, per STYLE_SHEET.
+% (F3) The motive / incentive-gating direction is now handled as a plain
+%      NULL, not as future work: the exploratory "checks when the error is
+%      cheap and useless" observation was tested in a controlled follow-up
+%      (the question-flip experiment) and did NOT replicate. The body
+%      carries ONE plain-language flag to that effect (Sec on visibility +
+%      Sec on related/future work); the full adjudication lives in the
+%      provenance appendix. The forward-looking causal version of the
+%      motive question remains a separate future paper. (Was Q5 / prior
+%      "held out"; upgraded to a reported null per E9_ADJUDICATION.)
+%
+% TITLE SHORT-LIST (governance-free per r2 directive; recommendation >>>):
+%   [1] >>> "When Do Language Models Check the False Steps in Their Own
+%           Reasoning? Heterogeneous Boundaries and a Universal Recompute
+%           Wall"  (RECOMMENDED: heterogeneity-forward, no over-claim, no
+%           governance vocabulary; scope lives in the title itself.)
+%   [2]     "Seen, Not Sought: Visibility, Usability, and the Model-
+%           Dependent Boundaries of In-Stream Error Checking in LLMs"
+%           (keeps the memorable phrase but scopes it as one boundary;
+%           co-recommended if you want the hook.)
+%   [3]     "An Audited Instrument for In-Stream Error Absorption: How
+%           LLMs Handle Planted Falsehoods, and Where the Boundaries
+%           Break"  (instrument-forward, safest/most literal.)
+%   The compiled draft below uses [1]. Swap per your pick.
+%
+% FIVE DECISIONS ELYAS MUST MAKE ON REVIEW: ---------------------------
+%   Q1. Thesis strength (framing directives #1 AND #2 now APPLIED). Beyond
+%       the r2 removal of registration scaffolding from the body, r3 applies
+%       framing directive #2: results are stated directly as findings about
+%       the MODELS, never as a chronology of the authors' beliefs. The
+%       distance-gradient result is now "a natural hypothesis is X; the
+%       matched-distance test finds no support" (not "we first tested X,
+%       it failed, so we rebuilt"); the motive result is "usefulness does
+%       not detectably change checking (gap +0.004, CI [-0.002,+0.010])"
+%       with one plain flag that the earlier exploratory contrast does not
+%       replicate. Sec 3 retitled from "...why we gave it up" to "Evidence
+%       distance does not predict responses to planted errors". No
+%       journey-voice ("we initially/first/set out/gave up/discovered/
+%       noticed after the fact") remains in the body. The open call is
+%       still how hard to LEAD with the heterogeneity ("a Qwen-7B
+%       phenomenon that does not travel", current draft) vs. keeping the
+%       visibility+usability laws forward with heterogeneity as the scope.
+%       Gates the abstract, Sec 1, Sec 3, Sec 4, Sec 5, Sec 9, Sec 11,
+%       title. All governance vocabulary ("pre-registered", "Holm",
+%       "confirmatory family", code names, commit hashes, the hypothesis
+%       scoreboard) still lives only in the "Reproducibility and analysis
+%       provenance" appendix.
+%   Q2. Title choice among [1]/[2]/[3] above, all governance-free; the
+%       draft defaults to [1]. Confirm or swap.
+%   Q3. E4 human validation is UNRUN. SRR / strict-repair credibility is
+%       marked "pending human validation" with \tododv throughout. Ship
+%       with those markers, or hold the SRR claims out entirely until E4?
+%   Q4. The full program-execution recompute run is UNRUN and optional for
+%       TMLR. The recompute-universality claim is scoped to the 3 models
+%       run on those cells. Keep it in with that scope (my draft), or
+%       demote to appendix?
+%   Q5. Motive null: confirm the question-flip experiment stays a REPORTED
+%       NULL told in one plain sentence (per E9_ADJUDICATION branch (b),
+%       still PROVISIONAL pending the blind-rater classifier audit), and
+%       that the forward causal version stays a separate future paper.
+%   (Bonus, not counted: 5 bib stubs (2605.05957, 2606.05403, 2603.17199,
+%    2607.09803, 2507.03120) are UNVERIFIED and marked STUB in main.bib;
+%    abs-verify before submission. Figures still need a per-model overlay
+%    from the multi-model replication — TODO left in captions.)
+% =====================================================================
+
+\documentclass{article}
+\usepackage[preprint]{tmlr}
+% TMLR style swapped in (tmlr.sty/tmlr.bst fetched from JmlrOrg). If the
+% style ever fails to load on another machine, fall back to \documentclass
+% {article} and drop the [preprint] option.
+
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{array}
+
+% Visible TODO markers for pending external inputs (not silent omission).
+\newcommand{\todo}[1]{\textcolor{red}{\textbf{[TODO: #1]}}}
+\newcommand{\tododv}[1]{\textcolor{orange}{\textbf{[PENDING E4 HUMAN VALIDATION: #1]}}}
+\newcommand{\pending}[1]{\textcolor{blue}{\textbf{[PENDING: #1]}}}
+
+% Evidence-status label helpers. Per the r2 framing directive the inline
+% registered/exploratory taxonomy is REMOVED from the body; these macros
+% are retained for the provenance appendix only.
+\newcommand{\regconf}{\textsc{(registered-confirmatory)}}
+\newcommand{\regnonfam}{\textsc{(registered-non-family)}}
+\newcommand{\explor}{\textsc{(exploratory)}}
+\newcommand{\descr}{\textsc{(descriptive)}}
+
+\title{When Do Language Models Check the False Steps in Their Own
+Reasoning?\\ Heterogeneous Boundaries and a Universal Recompute Wall}
+
+% Author block left as placeholder pending Brando/Elyas decision on
+% authorship + affiliation ordering.
+\author{\name Anonymous / \todo{author list} \\
+  \addr \todo{affiliations}}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\input{sections/00_abstract}
+\input{sections/01_intro}
+\input{sections/02_protocol}
+\input{sections/03_reversal}
+\input{sections/04_visibility}
+\input{sections/05_usability}
+\input{sections/06_production_recompute}
+\input{sections/07_instrument}
+\input{sections/08_lineage}
+\input{sections/09_related}
+\input{sections/10_limitations}
+\input{sections/11_conclusion}
+
+\bibliographystyle{tmlr}
+\bibliography{main}
+
+\appendix
+\input{sections/AA_appendix}
+
+\end{document}
