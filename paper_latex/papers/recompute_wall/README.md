@@ -9,7 +9,7 @@ registry → prose and figures. Nothing here is imported by the experiments.
 
 ## Layout
 
-- `main.tex` — thin shell: ICLR 2025 style, anonymous author block
+- `main.tex` — thin shell: ICLR 2027 style, anonymous author block
   (`\iclrfinalcopy` commented out), `\input`s the section files in order, and
   declares all four figure floats itself. **Prose is never edited in
   `main.tex`**; the section files must stay byte-identical to the drafting
@@ -28,7 +28,7 @@ registry → prose and figures. Nothing here is imported by the experiments.
   static Jul-28 artifacts with no build script; fig2's data is in the
   registry's `fig2` block if a script is ever needed. All four captions are
   marked `CAPTION DRAFT` pending author sign-off.
-- `main.bib` + vendored style files (`iclr2025_conference.sty/.bst`,
+- `main.bib` + vendored style files (`iclr2027_conference.sty/.bst`,
   `natbib.sty`, `fancyhdr.sty`, `math_commands.tex`) — no external deps.
 - `CLAUDE.md` — prose style rules (full paragraphs, claim-first, no hype,
   numbers over adjectives, `\todo{verify}` instead of any untraceable number).
