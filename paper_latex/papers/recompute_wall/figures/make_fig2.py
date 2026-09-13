@@ -33,7 +33,7 @@ for i, d in enumerate(devs):
     if i and g != gname[-1]: x += 1.0
     xs.append(x); gname.append(g); x += 1.0
 fig, ax = plt.subplots(figsize=(10.0, 5.2))
-fig.subplots_adjust(left=0.08, right=0.98, top=0.88, bottom=0.30)
+fig.subplots_adjust(left=0.08, right=0.98, top=0.84, bottom=0.30)
 W = 0.38
 for series, col, off in (("readable", BLUE, -W / 2), ("computed", ORANGE, W / 2)):
     d = f2[series]
@@ -49,13 +49,16 @@ ax.set_yticks([0, .25, .5, .75, 1.0]); ax.set_yticklabels(["0", ".25", ".50", ".
 ax.grid(axis="y", color=LIGHT, lw=0.9, alpha=0.55); ax.set_axisbelow(True); ax.tick_params(length=0)
 ax.set_ylim(0, 1.06); ax.set_xlim(xs[0] - 0.8, xs[-1] + 0.8)
 ax.set_ylabel("error absorbed  (rate)", fontsize=13)
-ax.set_title(a.title, fontsize=14.5, pad=12)
+ax.set_title(a.title, fontsize=14.5, pad=30)
 # group labels under the axis
 for g in dict.fromkeys(gname):
     gx = [xs[i] for i in range(len(xs)) if gname[i] == g]
     ax.text(sum(gx) / len(gx), -0.36, g, ha="center", va="top", fontsize=12, color=MID,
             transform=ax.get_xaxis_transform())
-ax.text(xs[0] - 0.4, 0.93, "computed error", color=ORANGE, fontsize=12, fontweight="medium")
-ax.text(xs[0] - 0.4, 0.85, "readable error", color=BLUE, fontsize=12, fontweight="medium")
+# key: a two-item legend between the title and the axes, outside the bar area
+from matplotlib.patches import Patch
+ax.legend(handles=[Patch(color=BLUE, label="readable error"), Patch(color=ORANGE, label="computed error")],
+          loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=2, frameon=False, fontsize=12,
+          handlelength=1.2, handleheight=1.0, columnspacing=2.0, borderaxespad=0.2)
 fig.savefig(os.path.join(a.outdir, "fig2.pdf")); fig.savefig(os.path.join(a.outdir, "fig2.png"), dpi=160)
 print("wrote fig2.pdf/fig2.png to", a.outdir)
