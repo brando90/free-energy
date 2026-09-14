@@ -107,3 +107,14 @@ models); only whether the boundary matters on their substrate with their model.
 1. Approve the design and the $5 cap (API spend).
 2. Confirm gpt-4o as the model, or add a second (gpt-4o-mini would roughly double the cost).
 3. Approve committing this spec as the registration.
+
+## Amendment 1 (2026-09-14, pre-run, before any API call)
+
+Build on the 106 original-number items passes 45 after the fail-closed filters (32 rejected because
+the rest of the sentence contains another number, 15 because no sentence terminator follows on the
+same line, 6 baseline site mismatches, 5 prefix mismatches, 3 where the numeral already ends the
+statement). To recover power, the renumbered twin of each passing item is added with the identical
+suffix (the suffix contains no number by filter, so it applies verbatim to the renumbered prefix).
+Primary analysis stays on the 45 original-number items as registered; the renumbered 45 are a
+registered secondary replication and the pooled 90 a third. 360 calls total. Builder, runner, and
+scorer committed alongside this amendment.
