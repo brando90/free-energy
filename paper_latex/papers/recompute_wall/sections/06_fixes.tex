@@ -1,4 +1,4 @@
-\section{Instruction does not restore checking}
+\section{Neither instruction nor steering restores checking}
 \label{sec:fixes}
 
 Section~\ref{sec:opacity} showed that making the computation visible does not help. This section asks whether asking for the computation does, the route prompted-verification methods take \citep{madaan2023selfrefine,shinn2023reflexion,dhuliawala2024cove}: we tell the model, with increasing force, to verify computed values before using them, and absorption does not move.
@@ -10,3 +10,5 @@ No instruction moves absorption of computed errors. Haiku 4.5 absorbs at 1.00 in
 The models are not partially complying. For Haiku 4.5, continuations are the same length in every condition, about 160 tokens, so the instruction does not even produce the surface form of checking. A mechanical scan for re-derivation of the planted value fires in about a tenth of continuations regardless of condition. The instruction is read and ignored rather than attempted and failed.
 
 Together with Section~\ref{sec:opacity} this closes the two obvious repair paths: the model reads past operands that refute the result beside them, and it declines to recompute when told, even when shown. These are prompting results. Trained fixes are a different lever, and Self-Correction Bench reports that fine-tuning on correction traces restores readable-error corrections \citep{tsui2025}; we return to training-side interventions in the discussion.
+
+Steering the model's own representation does not restore checking either. On Qwen2.5-7B, a linear probe on minimal pairs that differ only in the planted value can tell a wrong committed value from a right one, but only in the last three of 28 layers (held-out AUC 0.80, 0.77, and 0.98), at a position whose tokens are identical across the pair. Amplifying those directions in 150 steering conditions, across single layers, layer bands, both signs, and doses up to the direction's natural magnitude, changed nothing: absorption stayed between 0.78 and 0.95 against a 0.90 baseline wherever the model could still continue unperturbed traces, and explicit checking never exceeded 5 percent. The model represents that the value is wrong, late, and does not act on it (Appendix~\ref{sec:appendix}).
