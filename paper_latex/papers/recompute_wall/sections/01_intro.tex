@@ -7,12 +7,12 @@ Two trends make the question pressing. Reasoning models are now trained to check
 
 We measure the unprompted behavior directly. A model solves a short program by writing its execution trace one line at a time. We replace a single line of its own correct trace with a false value, let it continue with no indication that anything changed, and grade the continuation by re-executing the program, so whether the model reused the false value is an arithmetic fact rather than a judgment (Section~\ref{sec:setup}). One property of the planted error governs the outcome. A false value that contradicts a number written earlier in the trace is rejected by strong models. A false value that is itself a computed result is taken at face value and carried through the rest of the trace, by every model we test, and the boundary between the two is a single operation.
 
-The failure is not an inability to recompute. Printing the value's full derivation beside it, so the error is again visible by reading, does not restore checking on any model tested; models defer to content formatted as already computed. Nor is the failure fixable by instruction. Telling the model to verify each computed value before using it, even with a worked example of an error being caught and corrected, leaves absorption at 100 percent.
+The failure is not an inability to recompute. Printing the operands beside the false value does not restore checking on any model tested, although catching the error still requires one addition; models defer to content formatted as already computed. Nor is the failure fixable by instruction. Telling the model to verify each computed value before using it, even with a worked example of an error being caught and corrected, leaves absorption at 100 percent.
 
 We make the following contributions:
 \begin{itemize}
 \item \textbf{An audited instrument} for measuring whether a model reuses a planted false step in its own reasoning, graded by re-executing the program so that no human or model judge is required.
 \item \textbf{The read--recompute asymmetry} across thirteen models: computed falsehoods are absorbed near universally, while readable ones are caught at a rate that rises with model quality.
 \item \textbf{The onset of the wall}, a step function in verification depth that, for Haiku 4.5, flips from near-zero to near-total absorption at a single operation.
-\item \textbf{Two mechanism results}: the failure is deference to computed-looking content, since showing the derivation does not help, and it resists instruction, since four escalating prompts leave it unchanged.
+\item \textbf{Intervention results}: showing the operands beside the false value does not restore checking, and neither do attribution of the trace to another author, four escalating instructions, or steering along the model's own error representation.
 \end{itemize}

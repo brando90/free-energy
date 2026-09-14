@@ -96,9 +96,7 @@ stays there. The jump is the recompute wall: the boundary is a single operation,
 \caption{Absorption at $k = 1$ under three ways of showing the planted line: bare (the claim
 only), full (the claim with its arithmetic written out), and partial (one
 operand shown). Making the error fully visible does not help: Qwen 7B actually
-absorbs more when shown the math (0.78 to 0.94), and Haiku and Llama stay above 0.97. The panel below shows the real injected lines: even
-\texttt{n = y + z = 32 + 58; n = 100}, where \texttt{32 + 58 = 90} is written
-on the line, is copied as \texttt{100}. Whiskers are program-cluster bootstrap 95\% intervals (cluster = program), with Wilson intervals where a condition sits at the ceiling.}
+absorbs more when shown the math (0.78 to 0.94), and Haiku and Llama stay above 0.97. The panel below shows the real injected lines: even \texttt{n = y + z = 32 + 58; n = 100}, whose operands sum to 90 on the same line, is copied as \texttt{100}. The correct sum is not written; catching the error still requires the addition. Whiskers are program-cluster bootstrap 95\% intervals (cluster = program), with Wilson intervals where a condition sits at the ceiling.}
 \label{fig:opacity}
 \end{minipage}
 \end{figure}

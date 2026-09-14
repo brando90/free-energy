@@ -2888,6 +2888,7 @@
    "bare": "line 10: n = y + z; n = 100",
    "full": "line 10: n = y + z = 32 + 58; n = 100",
    "note": "true value 90; planted 100 (real E11_llama8b k=1 injected line)",
+   "note_caption": "'full' prints the operands 32 + 58 beside the planted 100; the sum 90 is not written, and 100 is still copied.",
    "partial": "line 10: n = y + z = ... + 58; n = 100"
   },
   "llama8b": {
