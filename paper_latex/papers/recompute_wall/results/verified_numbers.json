@@ -10,6 +10,7 @@
   "e13_bridge": "e13/results/E13_bridge/summary_attribution.json models.<m>.'<arm>|<cell>'.absorbed \u2014 E13c attribution arms (baseline/self/other_model/human framings over byte-identical perturbed traces), bridge presentation, greedy, one continuation per program (n=60=program_n) so Wilson95 CIs; cited in Sec 5, Sec 9, and app:attribution",
   "e13_tentative_probe": "e13/results/{E13_haiku,E13_open_llama8b,E13_open_qwen7b}/summary_tables.json cells.k1_deference.all.{k1_tentative.absorbed, k1_probe.probe_answer_anywhere_rate/probe_planted_echo_rate} \u2014 tentative '(unverified)' tag + direct-probe cells; probe reported as answer-anywhere (first-integer metric is a restating artifact, disclosed in appendix); cited in Sec 5 and the matched-controls appendix paragraph",
   "e16_probe_steer": "e16_steering/results/qwen7b/probe_neutral.json layers.<l>.linear.mean (150 minimal pairs, neutral-stub position, 5-fold x 5-seed); probe_check.json layers.27.auc_orig (site-span); screen/screen_summary.json, screen_ml/screen_ml_summary.json, steer_stub/steer_stub_summary.json conditions.<c>.{absorbed,checked,control_ok}; confirm/confirm_summary.json; cited in the proposed Sec 9 probe paragraph",
+  "e17_boundary": "e17_boundary/results.json (scorer e17_score.py over responses.jsonl; items from e17_build.py); paired exact McNemar; Wilson over items; cited in Sec 8 and app:renumber",
   "fig1_computed_example": "results/EXPH2_FRONTIER_FOLLOWUPS/regime2 program kc1_507786_00300000 + e10_api_bridge/raw_pert_claude-haiku-4-5 continuation",
   "fig1_readable_example": "results/EXPH2_FRONTIER_FOLLOWUPS/regime2 program kr1_507786_00100000 + raw_pert_claude-haiku-4-5 continuation",
   "fig4_inset_lines": "e11_run/results/E11_llama8b/manifest.jsonl real injected_trace_line (bare/full/partial) at k=1",
@@ -2585,6 +2586,320 @@
   "probe_neutral_n_pairs": 150,
   "probe_span_L27_auc": 1.0,
   "probe_span_L27_auc_signbalanced": 1.0
+ },
+ "e17_boundary": {
+  "ORIG": {
+   "clean_numeral": {
+    "fresh_cue": 0,
+    "malformed": 2,
+    "mentions_planted": 2,
+    "mentions_sitetrue": 43,
+    "n": 45,
+    "no_answer": 2,
+    "other": 1,
+    "propagated": 0,
+    "recovered": 42,
+    "recovered_nonrestart_rate": 0.9333,
+    "recovered_rate": 0.9333,
+    "rederives_site": 0,
+    "restart": 0,
+    "wilson95": [
+     0.8214,
+     0.9771
+    ]
+   },
+   "clean_statement": {
+    "fresh_cue": 2,
+    "malformed": 0,
+    "mentions_planted": 2,
+    "mentions_sitetrue": 45,
+    "n": 45,
+    "no_answer": 0,
+    "other": 1,
+    "propagated": 0,
+    "recovered": 44,
+    "recovered_nonrestart_rate": 0.9767,
+    "recovered_rate": 0.9778,
+    "rederives_site": 0,
+    "restart": 2,
+    "wilson95": [
+     0.8843,
+     0.9961
+    ]
+   },
+   "corr_numeral": {
+    "fresh_cue": 1,
+    "malformed": 1,
+    "mentions_planted": 18,
+    "mentions_sitetrue": 27,
+    "n": 45,
+    "no_answer": 1,
+    "other": 3,
+    "propagated": 16,
+    "recovered": 25,
+    "recovered_nonrestart_rate": 0.5455,
+    "recovered_rate": 0.5556,
+    "rederives_site": 0,
+    "restart": 1,
+    "wilson95": [
+     0.4118,
+     0.6906
+    ]
+   },
+   "corr_statement": {
+    "fresh_cue": 5,
+    "malformed": 0,
+    "mentions_planted": 22,
+    "mentions_sitetrue": 22,
+    "n": 45,
+    "no_answer": 0,
+    "other": 4,
+    "propagated": 20,
+    "recovered": 21,
+    "recovered_nonrestart_rate": 0.425,
+    "recovered_rate": 0.4667,
+    "rederives_site": 0,
+    "restart": 5,
+    "wilson95": [
+     0.3293,
+     0.6092
+    ]
+   },
+   "paired_clean": {
+    "both_recovered": 42,
+    "mcnemar_exact_p": 0.5,
+    "n_pairs": 45,
+    "neither": 1,
+    "numeral_only": 0,
+    "recovery_diff_numeral_minus_statement": -0.0444,
+    "statement_only": 2
+   },
+   "paired_corrupted": {
+    "both_recovered": 19,
+    "mcnemar_exact_p": 0.2891,
+    "n_pairs": 45,
+    "neither": 18,
+    "numeral_only": 6,
+    "recovery_diff_numeral_minus_statement": 0.0889,
+    "statement_only": 2
+   }
+  },
+  "POOLED": {
+   "clean_numeral": {
+    "fresh_cue": 0,
+    "malformed": 4,
+    "mentions_planted": 2,
+    "mentions_sitetrue": 86,
+    "n": 90,
+    "no_answer": 4,
+    "other": 2,
+    "propagated": 0,
+    "recovered": 84,
+    "recovered_nonrestart_rate": 0.9333,
+    "recovered_rate": 0.9333,
+    "rederives_site": 0,
+    "restart": 0,
+    "wilson95": [
+     0.8621,
+     0.9691
+    ]
+   },
+   "clean_statement": {
+    "fresh_cue": 5,
+    "malformed": 0,
+    "mentions_planted": 2,
+    "mentions_sitetrue": 90,
+    "n": 90,
+    "no_answer": 0,
+    "other": 2,
+    "propagated": 0,
+    "recovered": 88,
+    "recovered_nonrestart_rate": 0.9765,
+    "recovered_rate": 0.9778,
+    "rederives_site": 0,
+    "restart": 5,
+    "wilson95": [
+     0.9226,
+     0.9939
+    ]
+   },
+   "corr_numeral": {
+    "fresh_cue": 1,
+    "malformed": 2,
+    "mentions_planted": 42,
+    "mentions_sitetrue": 47,
+    "n": 90,
+    "no_answer": 2,
+    "other": 7,
+    "propagated": 38,
+    "recovered": 43,
+    "recovered_nonrestart_rate": 0.4719,
+    "recovered_rate": 0.4778,
+    "rederives_site": 0,
+    "restart": 1,
+    "wilson95": [
+     0.3776,
+     0.5798
+    ]
+   },
+   "corr_statement": {
+    "fresh_cue": 11,
+    "malformed": 0,
+    "mentions_planted": 52,
+    "mentions_sitetrue": 37,
+    "n": 90,
+    "no_answer": 0,
+    "other": 7,
+    "propagated": 48,
+    "recovered": 35,
+    "recovered_nonrestart_rate": 0.3291,
+    "recovered_rate": 0.3889,
+    "rederives_site": 0,
+    "restart": 11,
+    "wilson95": [
+     0.2947,
+     0.4922
+    ]
+   },
+   "paired_clean": {
+    "both_recovered": 84,
+    "mcnemar_exact_p": 0.125,
+    "n_pairs": 90,
+    "neither": 2,
+    "numeral_only": 0,
+    "recovery_diff_numeral_minus_statement": -0.0444,
+    "statement_only": 4
+   },
+   "paired_corrupted": {
+    "both_recovered": 31,
+    "mcnemar_exact_p": 0.0768,
+    "n_pairs": 90,
+    "neither": 43,
+    "numeral_only": 12,
+    "recovery_diff_numeral_minus_statement": 0.0889,
+    "statement_only": 4
+   }
+  },
+  "RENUM": {
+   "clean_numeral": {
+    "fresh_cue": 0,
+    "malformed": 2,
+    "mentions_planted": 0,
+    "mentions_sitetrue": 43,
+    "n": 45,
+    "no_answer": 2,
+    "other": 1,
+    "propagated": 0,
+    "recovered": 42,
+    "recovered_nonrestart_rate": 0.9333,
+    "recovered_rate": 0.9333,
+    "rederives_site": 0,
+    "restart": 0,
+    "wilson95": [
+     0.8214,
+     0.9771
+    ]
+   },
+   "clean_statement": {
+    "fresh_cue": 3,
+    "malformed": 0,
+    "mentions_planted": 0,
+    "mentions_sitetrue": 45,
+    "n": 45,
+    "no_answer": 0,
+    "other": 1,
+    "propagated": 0,
+    "recovered": 44,
+    "recovered_nonrestart_rate": 0.9762,
+    "recovered_rate": 0.9778,
+    "rederives_site": 0,
+    "restart": 3,
+    "wilson95": [
+     0.8843,
+     0.9961
+    ]
+   },
+   "corr_numeral": {
+    "fresh_cue": 0,
+    "malformed": 1,
+    "mentions_planted": 24,
+    "mentions_sitetrue": 20,
+    "n": 45,
+    "no_answer": 1,
+    "other": 4,
+    "propagated": 22,
+    "recovered": 18,
+    "recovered_nonrestart_rate": 0.4,
+    "recovered_rate": 0.4,
+    "rederives_site": 0,
+    "restart": 0,
+    "wilson95": [
+     0.2702,
+     0.5455
+    ]
+   },
+   "corr_statement": {
+    "fresh_cue": 6,
+    "malformed": 0,
+    "mentions_planted": 30,
+    "mentions_sitetrue": 15,
+    "n": 45,
+    "no_answer": 0,
+    "other": 3,
+    "propagated": 28,
+    "recovered": 14,
+    "recovered_nonrestart_rate": 0.2308,
+    "recovered_rate": 0.3111,
+    "rederives_site": 0,
+    "restart": 6,
+    "wilson95": [
+     0.1953,
+     0.4567
+    ]
+   },
+   "paired_clean": {
+    "both_recovered": 42,
+    "mcnemar_exact_p": 0.5,
+    "n_pairs": 45,
+    "neither": 1,
+    "numeral_only": 0,
+    "recovery_diff_numeral_minus_statement": -0.0444,
+    "statement_only": 2
+   },
+   "paired_corrupted": {
+    "both_recovered": 12,
+    "mcnemar_exact_p": 0.2891,
+    "n_pairs": 45,
+    "neither": 25,
+    "numeral_only": 6,
+    "recovery_diff_numeral_minus_statement": 0.0889,
+    "statement_only": 2
+   }
+  },
+  "_prose": {
+   "clean_numeral_pct": 93.3,
+   "clean_statement_pct": 97.8,
+   "orig_mcnemar_p": 0.2891,
+   "orig_paired_diff_pts": 8.9,
+   "orig_recovery_numeral_pct": 55.6,
+   "orig_recovery_statement_pct": 46.7,
+   "pooled_flip_table": {
+    "both_recovered": 31,
+    "neither": 43,
+    "numeral_only": 12,
+    "statement_only": 4
+   },
+   "pooled_mcnemar_p": 0.0768,
+   "pooled_n": 90,
+   "pooled_paired_diff_pts": 8.9,
+   "registration": "E17_STATEMENT_BOUNDARY.md commits 201a0dd (spec) + ec7717d (amendment 1, pre-run)",
+   "renum_recovery_numeral_pct": 40.0,
+   "renum_recovery_statement_pct": 31.1,
+   "verdict": "PARTIAL per registered rule (5-15 pt band): boundary lowers recovery ~9 pts in both numberings, pooled p=0.077; statement completion alone does not produce a wall on GSM8K"
+  },
+  "model": "gpt-4o",
+  "n_items": 90,
+  "usd": 0.414
  },
  "fig2": {
   "computed": {
