@@ -1,0 +1,318 @@
+{
+ "n_pairs": 106,
+ "n_items": 90,
+ "rejects": {
+  "numeral_ends_statement": 3,
+  "suffix_contains_number": 32,
+  "prefix_mismatch_with_baseline": 5,
+  "no_sentence_terminator_on_line": 15,
+  "baseline_site_mismatch": 6
+ },
+ "reject_log": [
+  {
+   "phash": "0b066f0ec779",
+   "reason": "numeral_ends_statement",
+   "extra": ""
+  },
+  {
+   "phash": "0ea97892638d",
+   "reason": "suffix_contains_number",
+   "extra": ">>90."
+  },
+  {
+   "phash": "1476d34f7ed2",
+   "reason": "suffix_contains_number",
+   "extra": ">>10 hours."
+  },
+  {
+   "phash": "1c313347274b",
+   "reason": "prefix_mismatch_with_baseline",
+   "extra": ""
+  },
+  {
+   "phash": "1cedac7eb3b3",
+   "reason": "no_sentence_terminator_on_line",
+   "extra": ""
+  },
+  {
+   "phash": "1fd04954a9a7",
+   "reason": "no_sentence_terminator_on_line",
+   "extra": ""
+  },
+  {
+   "phash": "297ac7918365",
+   "reason": "suffix_contains_number",
+   "extra": ">>11232."
+  },
+  {
+   "phash": "2c5f5588852a",
+   "reason": "no_sentence_terminator_on_line",
+   "extra": ""
+  },
+  {
+   "phash": "2cecef47f937",
+   "reason": "suffix_contains_number",
+   "extra": ">>12 more than Anthony."
+  },
+  {
+   "phash": "306ba06368ca",
+   "reason": "suffix_contains_number",
+   "extra": ">>336 marbles."
+  },
+  {
+   "phash": "31f8411b3071",
+   "reason": "suffix_contains_number",
+   "extra": ">>6.00."
+  },
+  {
+   "phash": "3bf62a3d9c85",
+   "reason": "suffix_contains_number",
+   "extra": ">>12 days to break in the shoes."
+  },
+  {
+   "phash": "3dfba13968a3",
+   "reason": "no_sentence_terminator_on_line",
+   "extra": ""
+  },
+  {
+   "phash": "4101dab0be6a",
+   "reason": "baseline_site_mismatch",
+   "extra": "None vs 84"
+  },
+  {
+   "phash": "430f42675e7a",
+   "reason": "suffix_contains_number",
+   "extra": ">>288 balloons."
+  },
+  {
+   "phash": "52aedfd3f7d6",
+   "reason": "suffix_contains_number",
+   "extra": ">>26 gifts."
+  },
+  {
+   "phash": "5489fb79ec71",
+   "reason": "suffix_contains_number",
+   "extra": ">>4 birds scared away."
+  },
+  {
+   "phash": "58baac4e3435",
+   "reason": "suffix_contains_number",
+   "extra": ">>25 shells on Monday."
+  },
+  {
+   "phash": "5e1340d68ed1",
+   "reason": "no_sentence_terminator_on_line",
+   "extra": ""
+  },
+  {
+   "phash": "5fef6e7d23d2",
+   "reason": "no_sentence_terminator_on_line",
+   "extra": ""
+  },
+  {
+   "phash": "60add6c910e8",
+   "reason": "no_sentence_terminator_on_line",
+   "extra": ""
+  },
+  {
+   "phash": "623bf62f5fa6",
+   "reason": "no_sentence_terminator_on_line",
+   "extra": ""
+  },
+  {
+   "phash": "658b5a2addae",
+   "reason": "suffix_contains_number",
+   "extra": ">>120 friends."
+  },
+  {
+   "phash": "689011d2a78c",
+   "reason": "suffix_contains_number",
+   "extra": ">>10 rose stamps."
+  },
+  {
+   "phash": "69f1cbc4d649",
+   "reason": "baseline_site_mismatch",
+   "extra": "None vs 11"
+  },
+  {
+   "phash": "729582443aaa",
+   "reason": "baseline_site_mismatch",
+   "extra": "None vs 90"
+  },
+  {
+   "phash": "7452cdbc1a76",
+   "reason": "numeral_ends_statement",
+   "extra": ""
+  },
+  {
+   "phash": "75e2a51644af",
+   "reason": "suffix_contains_number",
+   "extra": ">>20 cats."
+  },
+  {
+   "phash": "7a2e5080acb0",
+   "reason": "suffix_contains_number",
+   "extra": ">>1800."
+  },
+  {
+   "phash": "8092c5a277cf",
+   "reason": "suffix_contains_number",
+   "extra": ">>24 green squares."
+  },
+  {
+   "phash": "829c3c446073",
+   "reason": "suffix_contains_number",
+   "extra": " sets of 4 yogurts."
+  },
+  {
+   "phash": "86afd0f22aa4",
+   "reason": "baseline_site_mismatch",
+   "extra": "None vs 700"
+  },
+  {
+   "phash": "889c9b80704b",
+   "reason": "numeral_ends_statement",
+   "extra": ""
+  },
+  {
+   "phash": "8d9a8255a264",
+   "reason": "suffix_contains_number",
+   "extra": ">>375 punches."
+  },
+  {
+   "phash": "99758ee73996",
+   "reason": "suffix_contains_number",
+   "extra": ">>600 employees."
+  },
+  {
+   "phash": "a03a511e1bc9",
+   "reason": "no_sentence_terminator_on_line",
+   "extra": ""
+  },
+  {
+   "phash": "a61da77ba013",
+   "reason": "no_sentence_terminator_on_line",
+   "extra": ""
+  },
+  {
+   "phash": "a6f132f04abf",
+   "reason": "suffix_contains_number",
+   "extra": ">>960 square feet."
+  },
+  {
+   "phash": "a7b8cc0f5f97",
+   "reason": "baseline_site_mismatch",
+   "extra": "None vs 25"
+  },
+  {
+   "phash": "a8a0c1eb3380",
+   "reason": "suffix_contains_number",
+   "extra": ">>15 on cheese."
+  },
+  {
+   "phash": "b8f12fc056f5",
+   "reason": "suffix_contains_number",
+   "extra": ">>82 sausages."
+  },
+  {
+   "phash": "bc7a64c57119",
+   "reason": "suffix_contains_number",
+   "extra": ">>15."
+  },
+  {
+   "phash": "bfaa6fc51d5f",
+   "reason": "prefix_mismatch_with_baseline",
+   "extra": ""
+  },
+  {
+   "phash": "c03c6e451f7b",
+   "reason": "baseline_site_mismatch",
+   "extra": "None vs 300"
+  },
+  {
+   "phash": "c4ee643d7956",
+   "reason": "no_sentence_terminator_on_line",
+   "extra": ""
+  },
+  {
+   "phash": "c6fce64cebf5",
+   "reason": "suffix_contains_number",
+   "extra": ">>10 robots."
+  },
+  {
+   "phash": "cde9e0171abd",
+   "reason": "prefix_mismatch_with_baseline",
+   "extra": ""
+  },
+  {
+   "phash": "d1a440993c6d",
+   "reason": "no_sentence_terminator_on_line",
+   "extra": ""
+  },
+  {
+   "phash": "d4234f237d1d",
+   "reason": "suffix_contains_number",
+   "extra": ">>7 hours."
+  },
+  {
+   "phash": "d564e9ff9dab",
+   "reason": "suffix_contains_number",
+   "extra": ">>22 chairs."
+  },
+  {
+   "phash": "d91bded6c542",
+   "reason": "no_sentence_terminator_on_line",
+   "extra": ""
+  },
+  {
+   "phash": "dc08ed1cbb05",
+   "reason": "suffix_contains_number",
+   "extra": ">>8 marbles."
+  },
+  {
+   "phash": "dc3c89eb592e",
+   "reason": "suffix_contains_number",
+   "extra": ">>100 girls."
+  },
+  {
+   "phash": "e2dec1a6e3e0",
+   "reason": "suffix_contains_number",
+   "extra": ">>26 pieces of pie were taken by the guests."
+  },
+  {
+   "phash": "eb8a2317462c",
+   "reason": "prefix_mismatch_with_baseline",
+   "extra": ""
+  },
+  {
+   "phash": "eeaa74b71e9e",
+   "reason": "no_sentence_terminator_on_line",
+   "extra": ""
+  },
+  {
+   "phash": "efa0f50fc531",
+   "reason": "suffix_contains_number",
+   "extra": ">>70.00."
+  },
+  {
+   "phash": "f4e225e31332",
+   "reason": "prefix_mismatch_with_baseline",
+   "extra": ""
+  },
+  {
+   "phash": "f9d29bba44f5",
+   "reason": "suffix_contains_number",
+   "extra": ">>12 on hot dogs."
+  },
+  {
+   "phash": "fbbff52f4fac",
+   "reason": "suffix_contains_number",
+   "extra": ">>20 white hats."
+  },
+  {
+   "phash": "fe15d25cacf2",
+   "reason": "no_sentence_terminator_on_line",
+   "extra": ""
+  }
+ ]
+}

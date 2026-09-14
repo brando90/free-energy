@@ -1,0 +1,24 @@
+
+=== ORIG: 45 items ===
+corr_numeral     n= 45 recovered  25 ( 55.6% [41.2,69.1]) propagated  16 other   3 no_answer   1 | restart   1 (rederive  0 cue  1) true-val-mentioned  27 planted-mentioned  18 malformed   1
+corr_statement   n= 45 recovered  21 ( 46.7% [32.9,60.9]) propagated  20 other   4 no_answer   0 | restart   5 (rederive  0 cue  5) true-val-mentioned  22 planted-mentioned  22 malformed   0
+clean_numeral    n= 45 recovered  42 ( 93.3% [82.1,97.7]) propagated   0 other   1 no_answer   2 | restart   0 (rederive  0 cue  0) true-val-mentioned  43 planted-mentioned   2 malformed   2
+clean_statement  n= 45 recovered  44 ( 97.8% [88.4,99.6]) propagated   0 other   1 no_answer   0 | restart   2 (rederive  0 cue  2) true-val-mentioned  45 planted-mentioned   2 malformed   0
+paired corrupted: n=45 both=19 numeral-only=6 statement-only=2 neither=18 | recovery numeral-statement = +8.9 pts, McNemar p=0.2891
+paired clean    : n=45 both=42 numeral-only=0 statement-only=2 neither=1 | recovery numeral-statement = -4.4 pts, McNemar p=0.5000
+
+=== RENUM: 45 items ===
+corr_numeral     n= 45 recovered  18 ( 40.0% [27.0,54.5]) propagated  22 other   4 no_answer   1 | restart   0 (rederive  0 cue  0) true-val-mentioned  20 planted-mentioned  24 malformed   1
+corr_statement   n= 45 recovered  14 ( 31.1% [19.5,45.7]) propagated  28 other   3 no_answer   0 | restart   6 (rederive  0 cue  6) true-val-mentioned  15 planted-mentioned  30 malformed   0
+clean_numeral    n= 45 recovered  42 ( 93.3% [82.1,97.7]) propagated   0 other   1 no_answer   2 | restart   0 (rederive  0 cue  0) true-val-mentioned  43 planted-mentioned   0 malformed   2
+clean_statement  n= 45 recovered  44 ( 97.8% [88.4,99.6]) propagated   0 other   1 no_answer   0 | restart   3 (rederive  0 cue  3) true-val-mentioned  45 planted-mentioned   0 malformed   0
+paired corrupted: n=45 both=12 numeral-only=6 statement-only=2 neither=25 | recovery numeral-statement = +8.9 pts, McNemar p=0.2891
+paired clean    : n=45 both=42 numeral-only=0 statement-only=2 neither=1 | recovery numeral-statement = -4.4 pts, McNemar p=0.5000
+
+=== POOLED: 90 items ===
+corr_numeral     n= 90 recovered  43 ( 47.8% [37.8,58.0]) propagated  38 other   7 no_answer   2 | restart   1 (rederive  0 cue  1) true-val-mentioned  47 planted-mentioned  42 malformed   2
+corr_statement   n= 90 recovered  35 ( 38.9% [29.5,49.2]) propagated  48 other   7 no_answer   0 | restart  11 (rederive  0 cue 11) true-val-mentioned  37 planted-mentioned  52 malformed   0
+clean_numeral    n= 90 recovered  84 ( 93.3% [86.2,96.9]) propagated   0 other   2 no_answer   4 | restart   0 (rederive  0 cue  0) true-val-mentioned  86 planted-mentioned   2 malformed   4
+clean_statement  n= 90 recovered  88 ( 97.8% [92.3,99.4]) propagated   0 other   2 no_answer   0 | restart   5 (rederive  0 cue  5) true-val-mentioned  90 planted-mentioned   2 malformed   0
+paired corrupted: n=90 both=31 numeral-only=12 statement-only=4 neither=43 | recovery numeral-statement = +8.9 pts, McNemar p=0.0768
+paired clean    : n=90 both=84 numeral-only=0 statement-only=4 neither=2 | recovery numeral-statement = -4.4 pts, McNemar p=0.1250
