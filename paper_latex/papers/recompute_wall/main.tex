@@ -76,23 +76,23 @@ are absorption rates; whiskers are 95\% Wilson intervals.}
 
 \input{sections/04_depth}
 
-% CAPTION DRAFT -- final wording with author
+% CAPTION DRAFT -- final wording with author (both captions verbatim; floats merged 2026-09-13 for page limit)
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.7\textwidth]{figures/fig3.pdf}
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\vspace{0pt}
+\includegraphics[width=\linewidth]{figures/fig3.pdf}
 \caption{Absorption of a planted claim as a function of verification depth
 $k$ (the number of operations needed to check it), for three models. At
 $k = 0$ (the claim restates a value already on the page) Haiku 4.5 absorbs 1.9\% of errors; at $k = 1$ (one operation to verify) it absorbs 100\%, and
 stays there. The jump is the recompute wall: the boundary is a single operation, not depth. Bands are program-cluster bootstrap 95\% intervals (cluster = program), with Wilson intervals where a condition sits at the ceiling. The depth-five Qwen measurement rests on 22 solved programs, below the pre-registered 50-program floor, and is drawn unfilled rather than scored; the depth-five Llama measurement (56 programs) carries a widened interval.}
 \label{fig:depth}
-\end{figure}
-
-\input{sections/05_opacity}
-
-% CAPTION DRAFT -- final wording with author
-\begin{figure}[t]
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
 \centering
-\includegraphics[width=0.7\textwidth]{figures/fig4.pdf}
+\vspace{0pt}
+\includegraphics[width=\linewidth]{figures/fig4.pdf}
 \caption{Absorption at $k = 1$ under three ways of showing the planted line: bare (the claim
 only), full (the claim with its arithmetic written out), and partial (one
 operand shown). Making the error fully visible does not help: Qwen 7B actually
@@ -100,7 +100,10 @@ absorbs more when shown the math (0.78 to 0.94), and Haiku and Llama stay above 
 \texttt{n = y + z = 32 + 58; n = 100}, where \texttt{32 + 58 = 90} is written
 on the line, is copied as \texttt{100}. Whiskers are program-cluster bootstrap 95\% intervals (cluster = program), with Wilson intervals where a condition sits at the ceiling.}
 \label{fig:opacity}
+\end{minipage}
 \end{figure}
+
+\input{sections/05_opacity}
 
 \input{sections/06_fixes}
 \input{sections/07_reasoning}
