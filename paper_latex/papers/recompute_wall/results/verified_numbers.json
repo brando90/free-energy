@@ -17,7 +17,8 @@
   "readable_and_computed_claude": "e10_topup_fable/topup_analysis.json job1_pooled[model].cells.{adjacent_contradiction,onehop_kc1}.pooled (batch1+batch2)",
   "readable_and_computed_gpt": "e10_api_bridge/bridge_analysis.json models[model].cells.{adjacent_contradiction,onehop_kc1}.absorbed",
   "readable_and_computed_open": "e10_widen/results_skampere1/EXPG_PROGTRACE_<m>/summary_tables.json cells.{adjacent_contradiction,onehop_kc1}.final_output_absorbed",
-  "reasoning_arm": "reasoning_arm/arm_a_gpt51/summary_arm_a.json by_cell_cond + rederive_taxonomy; reasoning_arm/arm_b_r1distill/out/summary_arm_b.json B1/B2 + B2_rederive_taxonomy; cited in Sec 7 and app Reasoning-arm protocol"
+  "reasoning_arm": "reasoning_arm/arm_a_gpt51/summary_arm_a.json by_cell_cond + rederive_taxonomy; reasoning_arm/arm_b_r1distill/out/summary_arm_b.json B1/B2 + B2_rederive_taxonomy; cited in Sec 7 and app Reasoning-arm protocol",
+  "yee_prefix_endings": "scratch/yee_audit/repo/results/gsm8k/test_adjusted_position-{calc,copy,propcalc}_perturbation-random_annotated.csv (Yee et al. release), GPT-4 rows, 'Question' column; computed by update_registry_yee_prefix.py 2026-09-14; cited in Sec 8 (boundary sentence) and E17 registration"
  },
  "e10_cohorts": {
   "_prose": {
@@ -3629,6 +3630,41 @@
      "rederive_and_correct": 13
     }
    }
+  }
+ },
+ "yee_prefix_endings": {
+  "_prose": {
+   "calc_frac_after_equals": 0.8333,
+   "calc_frac_mid_statement": 1.0,
+   "calc_frac_with_annotation": 0.2752,
+   "note": "rows = GPT-4 entries (all prompt styles) in the annotated random-perturbation CSVs; 'Question' column holds the perturbed prefix as presented. Their prefix always ends right after the corrupted numeral (never at a sentence terminator); for calculation errors 83% end immediately after an equals sign. Only ~28% of calc items carry <<>> annotations at all, so the July 31 'always inside an unclosed annotation' reading was wrong in its specifics; 'always mid-statement' is correct."
+  },
+  "calc": {
+   "contains_calculator_annotation": 142,
+   "ends_inside_unclosed_annotation": 134,
+   "ends_with_equals_number": 430,
+   "ends_with_number": 516,
+   "ends_with_sentence_terminator": 0,
+   "frac_equals_number": 0.8333,
+   "n_rows_gpt4": 516
+  },
+  "copy": {
+   "contains_calculator_annotation": 172,
+   "ends_inside_unclosed_annotation": 56,
+   "ends_with_equals_number": 34,
+   "ends_with_number": 590,
+   "ends_with_sentence_terminator": 0,
+   "frac_equals_number": 0.0576,
+   "n_rows_gpt4": 590
+  },
+  "propcalc": {
+   "contains_calculator_annotation": 170,
+   "ends_inside_unclosed_annotation": 8,
+   "ends_with_equals_number": 32,
+   "ends_with_number": 532,
+   "ends_with_sentence_terminator": 0,
+   "frac_equals_number": 0.0602,
+   "n_rows_gpt4": 532
   }
  },
  "yee_renumber": {
