@@ -280,7 +280,7 @@ def run_aggregate(args) -> dict:
         f"**TLDR:** {finals[0]['model'] if finals else '?'} full-SFT on VB-train (707 tasks): "
         f"test completion-CE {np.mean([r['test_ce'] for r in finals]):.4f} ± {np.std([r['test_ce'] for r in finals]):.4f} nats "
         f"(ppl {np.mean([r['test_ppl'] for r in finals]):.2f}) over {len(finals)} seeds vs zero-shot "
-        f"{zero['test_ce'] if zero else float('nan'):.4f} nats (ppl {zero['test_ppl'] if zero else float('nan'):.1f}). "
+        f"{zero['test_ce'] if zero else float('nan'):.4f} nats (ppl {zero['test_ppl'] if zero else float('nan'):.1f})."
         if finals else "**TLDR:** incomplete — missing final runs.",
         "",
         "Completion-only CE (prompt tokens masked) in nats; ppl = exp(CE). Full protocol: `PROMPT.md`.",

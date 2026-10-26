@@ -1,6 +1,6 @@
 # B1 results — LM + SFT on VeriBench train/val/test
 
-**TLDR:** Qwen/Qwen2.5-0.5B full-SFT on VB-train (707 tasks): test completion-CE 0.3124 ± 0.0008 nats (ppl 1.37) over 3 seeds vs zero-shot 1.1485 nats (ppl 3.2). 
+**TLDR:** Qwen/Qwen2.5-0.5B full-SFT on VB-train (707 tasks): test completion-CE 0.3124 ± 0.0008 nats (ppl 1.37) over 3 seeds vs zero-shot 1.1485 nats (ppl 3.2).
 
 Completion-only CE (prompt tokens masked) in nats; ppl = exp(CE). Full protocol: `PROMPT.md`.
 

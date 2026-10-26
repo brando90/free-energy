@@ -4,7 +4,7 @@
 # Paper-recipe fallback (documented in results_b2.md): the EBT repo ships no pretrained
 # LM checkpoints, so SFT-style training is not runnable as-is; we train from scratch
 # with the canonical NLP recipe (job_scripts/nlp/pretrain/ebt_s1.sh) adapted to VB:
-# Qwen tokenizer (CE comparability with B1), context 4096, small-data step budget.
+# Qwen tokenizer (CE comparability with B1), context 2048 (4096 OOMs under EBT's MCMC, see results_b2.md), small-data step budget.
 set -euo pipefail
 GPU_ID="${1:-1}"
 MAX_STEPS="${2:-1400}"
