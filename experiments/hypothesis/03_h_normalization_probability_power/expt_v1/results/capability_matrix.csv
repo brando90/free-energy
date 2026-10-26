@@ -1,0 +1,10 @@
+task,minimal_object,rank_only,score_difference,unnormalized_score,normalized_probability_required,note
+argmax / top-k search,ordering,yes,yes,yes,no,Any strictly monotone transform preserves the answer.
+Metropolis-Hastings accept/reject ratio,score difference or unnormalized density ratio,no,yes,yes,no,The global partition constant cancels in same-x ratios.
+calibrated abstention,calibrated probability,no,no,no,yes,A threshold such as P(top)>0.55 is meaningless without calibration.
+expected utility decision,calibrated probability over outcomes,no,no,no,yes,"Utilities integrate over possible states, not only the top state."
+entropy / uncertainty,normalized probability distribution,no,no,no,yes,Entropy changes under rank-preserving temperature transforms.
+exact categorical sampling,normalized probability or equivalent exact sampler,no,no,partial,yes,Finite enumeration can normalize internally; rank alone cannot sample.
+latent-variable marginalization,summed weights and final probability scale,no,partial,partial,yes,Multiplicity over hidden states is lost under max/rank-only summaries.
+Bayesian evidence composition,calibrated log-ratios plus posterior normalization,no,partial,partial,yes,"Log-ratios combine, but posterior decisions need calibrated scale."
+compare likelihoods across different inputs,input-specific normalized likelihood,no,no,no,yes,Different partition functions no longer cancel.
