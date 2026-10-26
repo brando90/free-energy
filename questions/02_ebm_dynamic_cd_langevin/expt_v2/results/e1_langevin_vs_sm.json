@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "dataset": "two_moons",
+    "device": "mps",
+    "steps": 3000,
+    "n_train": 6000,
+    "runtime_s": 115.84
+  },
+  "mmd2": {
+    "floor_data_vs_data": 0.0005097778686529164,
+    "pcd_langevin": 0.019378376528581376,
+    "dsm_mcmc_free": 0.02213670763335268,
+    "ceiling_noise": 0.043606524242064404
+  },
+  "precision_recall": {
+    "pcd_langevin": {
+      "precision": 0.6635,
+      "recall": 1.0,
+      "f1": 0.7977156597535316,
+      "radius": 0.2
+    },
+    "dsm_mcmc_free": {
+      "precision": 0.6535,
+      "recall": 1.0,
+      "f1": 0.7904445116419716,
+      "radius": 0.2
+    }
+  },
+  "final_contrastive_gap_pcd": -2.234497547149658,
+  "final_dsm_loss": 148.71597290039062,
+  "z_was_computed": false,
+  "mcmc_used_in_training": {
+    "pcd_langevin": true,
+    "dsm": false
+  }
+}

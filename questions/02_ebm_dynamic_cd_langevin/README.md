@@ -30,7 +30,8 @@
 - `PROTOCOL.md` - locked toy experiment protocol.
 - `coding_agent_prompt.md` - paste-ready future-agent prompt.
 - `issue.md` - concise GitHub issue body.
-- `expt_v1/` - runnable PyTorch prototype for CD-1 vs dynamic weighted CD.
+- `expt_v1/` - runnable PyTorch prototype for CD-1 vs dynamic weighted CD (continuous 8-Gaussians, 5 seeds).
+- `expt_v2/` - rigorous full **9-question** suite (5 experiments) on tractable ground-truth testbeds; see `expt_v2/ANSWERS.md`.
 
 ## Current Prototype
 
@@ -59,3 +60,26 @@ The aggregate is in `expt_v1/results/snap_5seed/aggregate.md`. Dynamic weighted
 CD improved mean nearest-mode distance from `0.902 +/- 0.010` to
 `0.783 +/- 0.022` while preserving full mode coverage, at about `2.25x` runtime
 for this implementation.
+
+## Full Analysis (expt_v2)
+
+`expt_v2/` is the rigorous companion that answers **all 9** transcribed questions
+with five experiments, using **tractable testbeds** so claims are measured against
+ground truth (a tiny RBM with exact `Z` and exact MLE gradient by enumeration,
+plus a continuous EBM). It explains *why* `expt_v1`'s dynamic weighting helps and
+locates its limits. Headlines (full prose in `expt_v2/ANSWERS.md`, numbers in
+`expt_v2/results/RESULTS.md`):
+
+- **Short-run CD is biased, not just noisy** — CD-1 gradient is 47% biased (96%
+  of its MSE), falling monotonically with `k` (E2).
+- **The note's dynamic weighting works** — late/Zipf trajectory weighting keeps
+  CD-K's low bias but halves variance → **~2× lower gradient MSE** at equal
+  compute (E4). (Direction fix vs. the note: with data-init chains, *late* = good
+  negatives, *early* = poor — consistent with this packet's "key uncertainty".)
+- **MCMC isn't fundamental for training** — score matching trains a valid EBM
+  MCMC-free; `Z` is exponential (E5) but needed only for normalized likelihood;
+  parallel/persistent chains beat one stuck chain ~4× and are ~free on MPS (E1, E3).
+
+E2/E4 were independently cross-checked by a second from-scratch implementation
+(`expt_v2/results/crosscheck_codex/`, agree to ~2-3 s.f.) and passed a QA review
+(`expt_v2/results/qa_report_codex.md`). Run: `cd expt_v2 && ../../../.venv/bin/python src/verify_claims.py`.
