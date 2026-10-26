@@ -13,3 +13,9 @@ achieved 0.076. This indicates that the
 critical ingredient is full input access/attention, not energy scoring by
 itself. The EBM reranker only succeeds when it uses the same full-context lookup
 that the transformer baseline uses.
+
+Caveat: the "transformer" baseline is an exact key scan and the full-context EBM
+reranker calls that same scan, so both reach 1.000 by construction. The run
+illustrates the input-access argument; it is not a trained-model comparison.
+The full-context reranker's 0/1 energies also give it poor calibration (ECE
+0.919).

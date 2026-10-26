@@ -44,9 +44,10 @@ benchmarks and completed to verdict on the Mac.
 - Script: `src/run_experiment.py`
 - Result files: `results/length_metrics.csv`, `results/aggregate_metrics.csv`,
   `results/results.json`, `results/verdict.md`
-- Verdict: supports the hypothesis. Full-context attention and a full-context
-  EBM reranker both solve the synthetic input-coverage task; recurrence and
-  recent-only energy scoring fail from forgetting.
+- Verdict: consistent with the hypothesis, largely by construction. Full-context
+  lookup and a full-context EBM reranker both solve the synthetic
+  input-coverage task; recurrence and recent-only energy scoring fail from
+  forgetting.
 - Key numbers: transformer-style attention and full-context EBM reranker both
   reached `1.000` mean accuracy; last-16 recurrence reached `0.353`; recent-only
   EBM reranking reached `0.076`.
@@ -61,3 +62,21 @@ benchmarks and completed to verdict on the Mac.
   are intrinsically too lossy.
 - H02 is algorithmic rather than trained-neural; it isolates input access and
   forgetting, but does not measure transformer training dynamics.
+
+## Review Notes
+
+Added during second-model review; result files are unchanged.
+
+- H00: softmax probabilities here are normalized, not calibrated (task ECE
+  `0.229` at T=1). The `2.7%` normalization fraction is close to `1/(dims + 1)`
+  for the 32-dim toy network, so it reflects the chosen network cost. The
+  prompt's dtype sweep, peak-memory and numerical-failure measurements were not
+  done. The 64K-candidate rows at batch 8 and 16 are single repetitions.
+- H01: `decomposed_ebm` and `full_position_classifier` are the same logistic
+  model on the same features (identical rows), so there is no separate
+  classifier baseline yet. Both models emit one scalar logit; the contrast is
+  between featurizations. The scalar model's `0.000` localization F1 is set by
+  its uniform attribution.
+- H02: the "transformer" baseline is an exact key scan and the full-context EBM
+  reranker calls it, so both `1.000` accuracies hold by construction. The
+  full-context reranker is poorly calibrated (ECE `0.919`).

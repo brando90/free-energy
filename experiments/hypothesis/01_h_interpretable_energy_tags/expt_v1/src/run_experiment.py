@@ -265,6 +265,12 @@ positive-intervention probability drop of
 prove that any scalar-valued neural energy is intrinsically too lossy; it shows
 that if the scalar energy is not structured enough to expose token/position
 contributions, the model can lose the task-relevant credit assignment signal.
+
+Caveat: `decomposed_ebm` and `full_position_classifier` are the same logistic
+model on the same one-hot position features (their rows are identical), and both
+models emit one scalar logit, so the contrast is really between input
+featurizations. The scalar model's 0.000 localization F1 follows from its
+uniform attribution by construction rather than from training.
 """
     (RESULTS / "verdict.md").write_text(verdict)
     print(json.dumps({"metadata": metadata, "rows": len(rows)}, indent=2))

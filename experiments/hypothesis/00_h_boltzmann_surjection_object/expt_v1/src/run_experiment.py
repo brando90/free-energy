@@ -237,6 +237,7 @@ def main() -> None:
     h00_64k = [r for r in primitive if r["candidates"] == 65536 and r["batch"] == 8]
     by_method = {r["method"]: r["latency_ms"] for r in h00_64k}
     norm_frac_64k = [r for r in split if r["candidates"] == 65536][0]["normalization_fraction"]
+    by_task = {r["method"]: r["ece"] for r in task}
     verdict = f"""# H00 Verdict
 
 **TLDR:** The hypothesis is partially supported: normalization is not free, but
@@ -248,11 +249,18 @@ On the 64K-candidate, batch-8 primitive sweep, raw argmin took
 ms, and full softmax took {by_method['softmax']:.3f} ms per batch. In the
 synthetic energy-network split at 64K candidates, normalization was
 {norm_frac_64k:.1%} of combined energy-network plus `logsumexp` time. The
-ranking-only path preserves top-1 decisions and avoids probability calibration;
-softmax adds calibrated probabilities but pays the exponential pass. This
-weakens the strongest version of "exp is the main bottleneck" for small learned
-energies, but supports treating normalization as a measurable cost at large
-candidate counts.
+ranking-only path preserves top-1 decisions and avoids the normalization pass;
+softmax adds normalized probabilities but pays the exponential pass. Those
+probabilities are not automatically calibrated: in the task benchmark softmax at
+T=1 had ECE {by_task['softmax']:.3f} (rank-margin heuristic:
+{by_task['rank_only']:.3f}). This weakens the strongest version of "exp is the
+main bottleneck" for small learned energies, but supports treating normalization
+as a measurable cost at large candidate counts.
+
+Caveat: the toy energy network costs about `dims` = 32 multiply-sin steps per
+candidate versus one `exp` for `logsumexp`, so the normalization fraction is
+close to 1/(dims + 1) by construction. The dtype sweep, peak memory and
+numerical-failure counts asked for in the prompt were not measured.
 """
     (RESULTS / "verdict.md").write_text(verdict)
     print(json.dumps({"metadata": metadata, "rows": len(primitive), "task_rows": len(task)}, indent=2))

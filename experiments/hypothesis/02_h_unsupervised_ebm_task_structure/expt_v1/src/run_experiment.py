@@ -193,6 +193,12 @@ achieved {float(ebm_recent['accuracy_mean']):.3f}. This indicates that the
 critical ingredient is full input access/attention, not energy scoring by
 itself. The EBM reranker only succeeds when it uses the same full-context lookup
 that the transformer baseline uses.
+
+Caveat: the "transformer" baseline is an exact key scan and the full-context EBM
+reranker calls that same scan, so both reach 1.000 by construction. The run
+illustrates the input-access argument; it is not a trained-model comparison.
+The full-context reranker's 0/1 energies also give it poor calibration (ECE
+{float(ebm_full['ece_mean']):.3f}).
 """
     (RESULTS / "verdict.md").write_text(verdict)
     print(json.dumps({"metadata": metadata, "rows": len(rows)}, indent=2))
