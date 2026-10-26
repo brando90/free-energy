@@ -282,7 +282,7 @@ CAPABILITY_ROWS = [
 
 def write_csv(path: Path, rows: list[dict[str, object]]) -> None:
     with path.open("w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
+        writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()), lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 

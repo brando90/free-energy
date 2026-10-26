@@ -36,6 +36,14 @@ Rank-preserving transforms keep argmax and top-k decisions intact. They do not
 preserve calibrated probabilities, entropy, sampling distributions,
 latent-variable marginals, or expected-utility decisions.
 
+Scope notes: the transform sweep in `results/task_summary.csv` is computed by
+the script (softmax of each transformed score vector against the base
+distribution). The capability matrix in `results/capability_matrix.*` is a
+hand-specified analytic table written out by the script, not a measured result.
+On these fixed scores the expected-utility action changes only under
+`rank_preserving_bad_calibration`, and the 0.55 abstention flag flips under
+`temperature_hot` and `rank_preserving_bad_calibration`.
+
 ## Status
 
 Executed locally with standard-library Python. SNAP was not needed for this
