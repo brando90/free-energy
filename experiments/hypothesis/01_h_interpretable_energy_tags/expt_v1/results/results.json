@@ -1,0 +1,179 @@
+{
+  "metadata": {
+    "python": "3.11.6",
+    "platform": "macOS-26.5-arm64-arm-64bit",
+    "machine": "arm64",
+    "hostname": "DNa81a129.SUNet",
+    "cwd": "/Users/brandomiranda/free-energy",
+    "seq_len": 24,
+    "vocab": 8,
+    "responsible_positions": [
+      5,
+      17
+    ]
+  },
+  "seed_metrics": [
+    {
+      "seed": 0,
+      "model": "scalar_compressed_ebm",
+      "accuracy": 0.616,
+      "auroc": 0.6916329284750338,
+      "ece": 0.0804264254396942,
+      "localization_f1_top2": 0.0,
+      "positive_intervention_prob_drop": 0.08659798848698118
+    },
+    {
+      "seed": 0,
+      "model": "bag_classifier",
+      "accuracy": 0.626,
+      "auroc": 0.6818167212904055,
+      "ece": 0.0825686451163841,
+      "localization_f1_top2": 0.068,
+      "positive_intervention_prob_drop": 0.07909187602993824
+    },
+    {
+      "seed": 0,
+      "model": "decomposed_ebm",
+      "accuracy": 1.0,
+      "auroc": 1.0,
+      "ece": 0.02874433998822658,
+      "localization_f1_top2": 0.8706666666666691,
+      "positive_intervention_prob_drop": 0.9731591574853788
+    },
+    {
+      "seed": 0,
+      "model": "full_position_classifier",
+      "accuracy": 1.0,
+      "auroc": 1.0,
+      "ece": 0.02874433998822658,
+      "localization_f1_top2": 0.8706666666666691,
+      "positive_intervention_prob_drop": 0.9731591574853788
+    },
+    {
+      "seed": 1,
+      "model": "scalar_compressed_ebm",
+      "accuracy": 0.518,
+      "auroc": 0.6622400642312324,
+      "ece": 0.1834408634120401,
+      "localization_f1_top2": 0.0,
+      "positive_intervention_prob_drop": 0.10190772287853504
+    },
+    {
+      "seed": 1,
+      "model": "bag_classifier",
+      "accuracy": 0.534,
+      "auroc": 0.6557687675632277,
+      "ece": 0.1274028214376861,
+      "localization_f1_top2": 0.199,
+      "positive_intervention_prob_drop": 0.08225819848387177
+    },
+    {
+      "seed": 1,
+      "model": "decomposed_ebm",
+      "accuracy": 1.0,
+      "auroc": 1.0,
+      "ece": 0.029268469448004875,
+      "localization_f1_top2": 0.8660000000000023,
+      "positive_intervention_prob_drop": 0.9770208534282563
+    },
+    {
+      "seed": 1,
+      "model": "full_position_classifier",
+      "accuracy": 1.0,
+      "auroc": 1.0,
+      "ece": 0.029268469448004875,
+      "localization_f1_top2": 0.8660000000000023,
+      "positive_intervention_prob_drop": 0.9770208534282563
+    },
+    {
+      "seed": 2,
+      "model": "scalar_compressed_ebm",
+      "accuracy": 0.616,
+      "auroc": 0.6679506933744221,
+      "ece": 0.07049793019376371,
+      "localization_f1_top2": 0.0,
+      "positive_intervention_prob_drop": 0.09157645651996697
+    },
+    {
+      "seed": 2,
+      "model": "bag_classifier",
+      "accuracy": 0.592,
+      "auroc": 0.6577747817154597,
+      "ece": 0.0584758595929173,
+      "localization_f1_top2": 0.079,
+      "positive_intervention_prob_drop": 0.07647583423622553
+    },
+    {
+      "seed": 2,
+      "model": "decomposed_ebm",
+      "accuracy": 1.0,
+      "auroc": 1.0,
+      "ece": 0.029794573651661885,
+      "localization_f1_top2": 0.864666666666669,
+      "positive_intervention_prob_drop": 0.9735510073687015
+    },
+    {
+      "seed": 2,
+      "model": "full_position_classifier",
+      "accuracy": 1.0,
+      "auroc": 1.0,
+      "ece": 0.029794573651661885,
+      "localization_f1_top2": 0.864666666666669,
+      "positive_intervention_prob_drop": 0.9735510073687015
+    }
+  ],
+  "aggregate": [
+    {
+      "model": "bag_classifier",
+      "accuracy_mean": 0.584,
+      "accuracy_std": 0.03798245208865096,
+      "auroc_mean": 0.6651200901896976,
+      "auroc_std": 0.011834670556732398,
+      "ece_mean": 0.08948244204899583,
+      "ece_std": 0.02856083516877144,
+      "localization_f1_top2_mean": 0.11533333333333334,
+      "localization_f1_top2_std": 0.05933146064460425,
+      "positive_intervention_prob_drop_mean": 0.07927530291667852,
+      "positive_intervention_prob_drop_std": 0.002364200800862563
+    },
+    {
+      "model": "decomposed_ebm",
+      "accuracy_mean": 1.0,
+      "accuracy_std": 0.0,
+      "auroc_mean": 1.0,
+      "auroc_std": 0.0,
+      "ece_mean": 0.029269127695964448,
+      "ece_std": 0.0004287563503288453,
+      "localization_f1_top2_mean": 0.8671111111111135,
+      "localization_f1_top2_std": 0.002572408200620109,
+      "positive_intervention_prob_drop_mean": 0.9745770060941122,
+      "positive_intervention_prob_drop_std": 0.0017354497836233201
+    },
+    {
+      "model": "full_position_classifier",
+      "accuracy_mean": 1.0,
+      "accuracy_std": 0.0,
+      "auroc_mean": 1.0,
+      "auroc_std": 0.0,
+      "ece_mean": 0.029269127695964448,
+      "ece_std": 0.0004287563503288453,
+      "localization_f1_top2_mean": 0.8671111111111135,
+      "localization_f1_top2_std": 0.002572408200620109,
+      "positive_intervention_prob_drop_mean": 0.9745770060941122,
+      "positive_intervention_prob_drop_std": 0.0017354497836233201
+    },
+    {
+      "model": "scalar_compressed_ebm",
+      "accuracy_mean": 0.5833333333333334,
+      "accuracy_std": 0.046197643037521094,
+      "auroc_mean": 0.6739412286935628,
+      "auroc_std": 0.012725302934731729,
+      "ece_mean": 0.11145507301516601,
+      "ece_std": 0.05106276705362486,
+      "localization_f1_top2_mean": 0.0,
+      "localization_f1_top2_std": 0.0,
+      "positive_intervention_prob_drop_mean": 0.0933607226284944,
+      "positive_intervention_prob_drop_std": 0.006376242150593691
+    }
+  ]
+}
