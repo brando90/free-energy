@@ -16,3 +16,8 @@ Arms: `d*` = correction data (planted error + re-check line, plus clean control 
 
 \* depths 6 and 8 are never trained on. flag@dK = false-flag rate on correct traces (re-check line emitted when nothing is wrong).
 Raw JSON: /lfs/skampere1/0/brando9/at1445/res/ (cluster, not committed).
+
+Reading so far (one seed, 100 per cell, about +-10 points noise):
+- More correction data fixes the depths it covers: depth-1-only goes from 0.39 to 0.00 propagation at d1 and 0.65 to 0.12 at d2 between N=100 and N=300.
+- It does not fix depths it never covers: d6 and d8 stay at 0.93 to 1.00 propagation in every run, d4-d5 stay at 0.69 or above.
+- Adding depths 2 and 3 widens coverage (d4 0.69, d6 0.95) but at N=300 costs d1 (0.13 vs 0.00) and raises false flags on clean traces (0.14 at d3).
