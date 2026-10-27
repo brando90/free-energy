@@ -60,14 +60,17 @@ Common to all rows: Qwen/Qwen2.5-7B-Instruct bf16, LoRA r16/alpha 32/dropout 0.0
 
 (Oct 26 times, cluster clock. All GPUs were empty at launch; queues have ended and the GPUs are released.)
 
-### Run record addendum (AT-1493 / AT-1523, Oct 27; all skampere1, free, no paid API; same model, LoRA, optimizer, data and eval settings as above)
+### Run record addendum (AT-1493 / AT-1523; all skampere1, free, no paid API; same model, LoRA, optimizer, data and eval settings as above; times from logs/queue_6.log and queue_3.log, cluster clock; first launches at 23:19 failed immediately and were relaunched)
 
 | run | data arm | depths | N programs | seed | GPU (A100-80GB) | finished |
 |---|---|---|---|---|---|---|
-| d123_n300_s2, d123_n300_s3, d12345_n300_s2, d12345_n300_s3 | correction | 1-3 / 1-5 | 300 | 2, 3 | 6 and 3 | Oct 27 about 02:00 |
-| d123_n1000_s1, s2, s3 | correction | 1-3 | 1000 | 1, 2, 3 | 6 (s1, s3), 3 (s2) | Oct 27 by 02:30 |
-| d12345_n1000_s1, s2 | correction | 1-5 | 1000 | 1, 2 | 6 and 3 | 03:35 (s1), 03:19 (s2) |
-| d12345_n1000_s3 | correction | 1-5 | 1000 | 3 | 6 | 04:16 |
+| d123_n1000_s1 | correction | 1-3 | 1000 | 1 | 6 | Oct 26 22:15 |
+| d12345_n300_s1 | correction | 1-5 | 300 | 1 | 6 | Oct 26 21:19 |
+| d12345_n300_s2, d123_n300_s2, d123_n1000_s2 | correction | 1-5, 1-3, 1-3 | 300, 300, 1000 | 2 | 6 | Oct 26 23:38, 23:57; Oct 27 00:53 |
+| d12345_n300_s3, d123_n300_s3, d123_n1000_s3 | correction | 1-5, 1-3, 1-3 | 300, 300, 1000 | 3 | 3 | Oct 26 23:39, 23:57; Oct 27 00:53 |
+| d12345_n1000_s1 | correction | 1-5 | 1000 | 1 | 6 | Oct 27 03:19 |
+| d12345_n1000_s2 | correction | 1-5 | 1000 | 2 | 3 | Oct 27 03:19 |
+| d12345_n1000_s3 | correction | 1-5 | 1000 | 3 | 6 | Oct 27 04:16 |
 | trace-level test (eval_trace.py): base + 9 correction adapters + 2 clean twins | paired perturbed/control, depths 1-5, 100 programs each | - | - | eval seeds 0..99 | 0 | Oct 27 06:25 (about 1 min per adapter) |
 
-Note: the exact finish times of the first rows are approximate (from the AT-1493 log); the cluster logs are logs/queue_6.log and logs/queue_3.log. The trace test ran as one vLLM process loading each LoRA in turn on GPU 0; GPU 0 was empty at launch and is released.
+The trace test ran as one vLLM process loading each LoRA in turn on GPU 0 (empty at launch), 06:10 to 06:25. It has ended and GPU 0 is released.
