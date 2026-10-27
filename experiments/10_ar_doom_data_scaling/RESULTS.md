@@ -53,7 +53,7 @@ Perturbed items corrected at depth 1 / 2 / 3 / 4 / 5 (original eval.py, greedy),
 | depths 1-5, N=1000 | 2 | 1.00 | 0.98 | 0.79 | 0.71 | 0.75 | 0.32 |
 | depths 1-5, N=1000 | 3 | 0.98 | 0.86 | 0.48 | 0.36 | 0.31 | 0.10 |
 
-Seeds 0-2 agree for both depth sets; depths 1-5 seed 3 diverges (corrects less, flags clean input least). So the earlier "d12345 N=1000 corrects 0.25 at d5" (propagation 0.25, seed 0) holds for seeds 1-2 and not for seed 3.
+Seeds 0-2 agree for both depth sets; depths 1-5 seed 3 diverges (corrects less, flags clean input least). So the earlier seed-0 reading (d5 propagation 0.25, i.e. corrected 0.75) holds for seeds 1-2; seed 3 propagates 0.69 at d5.
 
 ### Trace-level test (`eval_trace.py`, `analyze.py`, `trace_results/`)
 Question: is the model detecting the planted error, or re-checking every trace? Each of the 100 programs per depth (depths 1-5) is run twice from the same prompt, once with the planted wrong line 10 (perturbed) and once with the true line 10 (control). TPR = re-check on the perturbed trace, FPR = re-check on its own control, J = TPR - FPR (0 means a blanket re-checker or no detector, 1 means perfect). "Discriminative" = re-check on the perturbed trace and not on its control. Per-item outputs are in `trace_results/trace_per_item_all_runs.json`; per-run tables in `trace_results/analysis.txt`. Greedy decoding with vLLM LoRA batching can differ by 1-2 items from the original eval (e.g. d123 s0 clean d5 flagged 0.31 here, 0.30 there).
