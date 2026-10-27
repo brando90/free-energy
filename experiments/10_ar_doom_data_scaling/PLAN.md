@@ -36,3 +36,26 @@ data-quantity problem, a data-coverage problem, or a wall?
 
 ## Files
 common.py (generator/format/grader), build_data.py, train.py, eval.py, run_queue.sh; results in results/*.json; RESULTS.md.
+
+---
+
+## Run record (every launched run; all on skampere1, free, no paid API)
+Common to all rows: Qwen/Qwen2.5-7B-Instruct bf16, LoRA r16/alpha 32/dropout 0.05 on q,k,v,o,gate,up,down, paper Table 4 optimizer settings (see Setup above), data from `common.py` / `build_data.py` (training seeds >= 1,000,000), eval on 100 held-out programs per depth (eval seeds 0..99), greedy, 500 new tokens. Raw JSON on the cluster in /lfs/skampere1/0/brando9/at1445/res/ and copied to scratch for review.
+
+| run | data arm | depths | N programs | seed | GPU (A100-80GB) | finished |
+|---|---|---|---|---|---|---|
+| base | none (untuned) | - | - | - | 5 | 17:47 |
+| d1_n100_s0 | correction | 1 | 100 | 0 | 5 | 17:54 |
+| d123_n100_s0 | correction | 1-3 | 100 | 0 | 6 | 17:52 |
+| d1_n300_s0 | correction | 1 | 300 | 0 | 5 | 18:12 |
+| d123_n300_s0 | correction | 1-3 | 300 | 0 | 6 | 18:11 |
+| d1_n1000_s0 | correction | 1 | 1000 | 0 | 5 | 19:06 |
+| d123_n1000_s0 | correction | 1-3 | 1000 | 0 | 6 | 19:07 |
+| d12345_n300_s0 | correction | 1-5 | 300 | 0 | 5 | 19:24 |
+| d12345_n1000_s0 | correction | 1-5 | 1000 | 0 | 6 | 20:04 |
+| d1_n300_s1 | correction | 1 | 300 | 1 | 5 | 19:42 |
+| d123_n300_s1 | correction | 1-3 | 300 | 1 | 6 | 20:22 |
+| clean_d12345_n300_s0 | clean (correct traces only) | 1-5 | 300 | 0 | 3 | 18:55 |
+| clean_d12345_n1000_s0 | clean (correct traces only) | 1-5 | 1000 | 0 | 3 | 19:49 |
+
+(Oct 26 times, cluster clock. All GPUs were empty at launch; queues have ended and the GPUs are released.)
