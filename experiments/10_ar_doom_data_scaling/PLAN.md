@@ -1,3 +1,16 @@
+# AT-1499 addendum (Oct 26): the paper's conjecture, and what the arms actually are
+
+**Conjecture (Elyas's paper, Discussion, marked there as interpretation; source: `paper_latex/papers/recompute_wall/sections/09_discussion.tex` on branch `paper-framing-polish`).**
+The recompute wall is a *learned prior*, not a capability gap. In ordinary text a value written as the result of a computation is almost always correct, so trusting it is the right prediction on the training distribution, and "text rarely shows an author stopping mid-derivation to re-verify a line." Training that rewarded catching visible inconsistencies lifted the *readable* side from near zero to near perfect and left the *computed* side flat at 88-100% absorption, "including its indifference to instruction." The paper says the checking behavior is learnable and that what is unmeasured is whether training installs "the propensity to deploy it mid-trace"; training against planted errors is named as the untested lever (RL on corrupted prefixes helps, SFT on correction traces can fail by parroting the mistake). So the conjecture predicts: **generic data should not move the wall; data in which a computed value is explicitly re-verified and corrected should.**
+
+**Consequence for this plan.** The runs launched under AT-1445 (`d1`, `d123`, `d12345` x N) are already *self-correction data*: every perturbed training example's target is one `re-check line 10: ... not <planted>` line followed by the true trace (`common.build_example`), plus a clean control half. They are not "general data". The missing arm is the opposite one, so AT-1499 adds it:
+
+- **Clean arm (general-data control).** Same model, LoRA, optimizer, depths 1-5, same eval; training traces are correct traces only: no planted error, no re-check line (`build_data.py --arm clean`, `queue_clean.sh`). 2N distinct programs, one clean example each, so the example count and update count match the correction arm at N. Runs: N=300 and N=1000, seed 0, on skampere1 GPU 3 (empty at launch).
+- **Correction arm** = the existing `d12345` runs (same N, same eval). The conjecture predicts clean arm ~ base (propagation ~1.0 at every depth) and correction arm far below it at trained depths; the open question the paper leaves is how far past the trained depths (6, 8) the correction arm reaches.
+- Read-out: held-out propagation at depths 1-6, 8 and false-flag rate on correct traces (controls at depths 1, 3, 5), as in Setup below.
+
+---
+
 # Does data fix "LMs do not re-verify computed values"? (data-scaling fine-tuning test)
 
 Context: Elyas's paper ("Language Models Do Not Re-Verify Computed Values in Their Own Reasoning")
