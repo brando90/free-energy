@@ -44,7 +44,7 @@ Common to all rows: Qwen/Qwen2.5-7B-Instruct bf16, LoRA r16/alpha 32/dropout 0.0
 
 | run | data arm | depths | N programs | seed | GPU (A100-80GB) | finished |
 |---|---|---|---|---|---|---|
-| base | none (untuned) | - | - | - | 5 | 17:47 |
+| base | none (untuned) | - | - | - | 5 or 6 (not logged) | 17:47 |
 | d1_n100_s0 | correction | 1 | 100 | 0 | 5 | 17:54 |
 | d123_n100_s0 | correction | 1-3 | 100 | 0 | 6 | 17:52 |
 | d1_n300_s0 | correction | 1 | 300 | 0 | 5 | 18:12 |
