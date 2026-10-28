@@ -1,0 +1,9 @@
+{
+  "attempts": 300,
+  "eligible": 123,
+  "gold_key": "claude-opus-4-1",
+  "reached_target": false,
+  "solve_rate": 1.0,
+  "solved": 300,
+  "world_eligible": 150
+}

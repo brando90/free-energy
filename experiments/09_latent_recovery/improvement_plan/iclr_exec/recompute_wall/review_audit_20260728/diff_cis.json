@@ -1,0 +1,135 @@
+{
+ "_meta": {
+  "B": 2000,
+  "method": "independent program-cluster bootstrap of each cell; percentile CI of rate difference",
+  "seed": 20260728
+ },
+ "e11_k1_minus_k0/haiku": {
+  "boot95": [
+   0.9708,
+   1.0
+  ],
+  "excludes_0": true,
+  "point": 0.9875
+ },
+ "e11_k1_minus_k0/llama8b": {
+  "boot95": [
+   0.3407,
+   0.4378
+  ],
+  "excludes_0": true,
+  "point": 0.3896
+ },
+ "e11_k1_minus_k0/qwen7b": {
+  "boot95": [
+   0.0059,
+   0.1363
+  ],
+  "excludes_0": true,
+  "point": 0.0719
+ },
+ "fig2_computedOnehop_minus_readable/bridge/gpt-3.5-turbo-instruct": {
+  "boot95": [
+   0.7647,
+   0.9265
+  ],
+  "excludes_0": true,
+  "point": 0.8529
+ },
+ "fig2_computedOnehop_minus_readable/bridge/gpt-4.1": {
+  "boot95": [
+   0.9571,
+   1.0
+  ],
+  "excludes_0": true,
+  "point": 0.9857
+ },
+ "fig2_computedOnehop_minus_readable/bridge/gpt-4o": {
+  "boot95": [
+   0.9571,
+   1.0
+  ],
+  "excludes_0": true,
+  "point": 0.9857
+ },
+ "fig2_computedOnehop_minus_readable/bridge/gpt-5.1": {
+  "boot95": [
+   0.8429,
+   0.9714
+  ],
+  "excludes_0": true,
+  "point": 0.9143
+ },
+ "fig2_computedOnehop_minus_readable/claude_pooled/claude-haiku-4-5": {
+  "boot95": [
+   1.0,
+   1.0
+  ],
+  "excludes_0": true,
+  "point": 1.0
+ },
+ "fig2_computedOnehop_minus_readable/claude_pooled/claude-opus-4-8": {
+  "boot95": [
+   1.0,
+   1.0
+  ],
+  "excludes_0": true,
+  "point": 1.0
+ },
+ "fig2_computedOnehop_minus_readable/claude_pooled/claude-sonnet-4-5": {
+  "boot95": [
+   0.9444,
+   0.9944
+  ],
+  "excludes_0": true,
+  "point": 0.9722
+ },
+ "fig2_computedOnehop_minus_readable/claude_pooled/claude-sonnet-5": {
+  "boot95": [
+   0.9737,
+   1.0
+  ],
+  "excludes_0": true,
+  "point": 0.9895
+ },
+ "fig2_computedOnehop_minus_readable/widen/llama8b": {
+  "boot95": [
+   0.34,
+   0.5
+  ],
+  "excludes_0": true,
+  "point": 0.42
+ },
+ "fig2_computedOnehop_minus_readable/widen/olmo7b": {
+  "boot95": [
+   -0.0588,
+   0.2048
+  ],
+  "excludes_0": false,
+  "point": 0.0739
+ },
+ "fig2_computedOnehop_minus_readable/widen/qwen1p5b": {
+  "boot95": [
+   -0.2563,
+   0.1743
+  ],
+  "excludes_0": false,
+  "point": -0.041
+ },
+ "fig2_computedOnehop_minus_readable/widen/qwen32b": {
+  "boot95": [
+   0.9,
+   0.9733
+  ],
+  "excludes_0": true,
+  "point": 0.94
+ },
+ "fig2_computedOnehop_minus_readable/widen/qwen7b": {
+  "boot95": [
+   0.06,
+   0.24
+  ],
+  "excludes_0": true,
+  "point": 0.1533
+ }
+}

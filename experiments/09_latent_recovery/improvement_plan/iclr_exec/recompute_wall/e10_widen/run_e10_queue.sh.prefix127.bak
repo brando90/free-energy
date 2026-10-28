@@ -1,0 +1,114 @@
+#!/bin/bash
+# E10 WIDEN open-weights queue driver -- one pinned GPU, models run sequentially.
+# Worlds (programs.jsonl) are prepared on CPU BEFORE the GPU is armed (prepare_worlds.sh);
+# this queue does the GPU + CPU-analysis half per model:
+#   generate(GPU) -> validate(CPU) -> judge(GPU,32B) -> summarize(CPU) -> report(CPU)
+# queue_status.json is rewritten after EVERY stage transition (start + done, with rc).
+#
+# Launch (pin GPU to a FULLY FREE device -- 0 MiB used at launch):
+#   CUDA_VISIBLE_DEVICES=<free_gpu> nohup bash run_e10_queue.sh > queue.out 2>&1 &
+# The GPU id is taken from CUDA_VISIBLE_DEVICES; this script does NOT choose a GPU.
+set -u
+HERE="$(cd "$(dirname "$0")" && pwd)"
+source "$HERE/e10_config.sh"
+
+export HF_HUB_OFFLINE=1
+export PYTHONDONTWRITEBYTECODE=1
+source "$EXP/improvement_plan/tooling/env.sh" 2>/dev/null || true
+export HF_HUB_OFFLINE=1   # re-assert after env.sh (which sets it to 0)
+: "${CUDA_VISIBLE_DEVICES:?refusing to launch without a pinned CUDA_VISIBLE_DEVICES}"
+
+STATUS="$RESULTS/queue_status.json"
+LOGDIR="$E10DIR/logs"
+mkdir -p "$RESULTS" "$LOGDIR"
+
+status() {  # model stage event [rc]
+  "$PY_MAIN" "$E10DIR/status_writer.py" --file "$STATUS" \
+    --model "$1" --stage "$2" --event "$3" ${4:+--rc "$4"} \
+    ${INIT_QUEUE:+--queue "$QUEUE_ORDER"}
+  INIT_QUEUE=""
+}
+INIT_QUEUE=1
+
+# EngineCore cleanup: run each vLLM stage in its OWN process session (setsid) so we
+# can reap any surviving EngineCore / worker children by process-group after the stage
+# returns, WITHOUT touching lab-mates' GPU processes. Then wait for this GPU's memory
+# to settle before the next model loads.
+GPU="$CUDA_VISIBLE_DEVICES"
+gpu_settle() {  # wait until our stage's VRAM is released (best-effort, bounded)
+  for _ in $(seq 1 30); do
+    used=$(nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits -i "$GPU" 2>/dev/null | tr -d ' ')
+    [ -z "$used" ] && break
+    [ "$used" -lt 2000 ] && break
+    sleep 5
+  done
+}
+
+run_cpu() {  # model stage cmd...
+  local model="$1" stage="$2"; shift 2
+  local log="$LOGDIR/${model}.${stage}.log"
+  status "$model" "$stage" start
+  echo "=== [$model/$stage CPU] $(date -Is) :: $* ===" | tee -a "$log"
+  "$@" >>"$log" 2>&1; local rc=$?
+  status "$model" "$stage" done "$rc"
+  echo "=== [$model/$stage] rc=$rc $(date -Is) ===" | tee -a "$log"
+  return $rc
+}
+
+run_gpu() {  # model stage cmd...  (setsid session + process-group reap = EngineCore trap)
+  local model="$1" stage="$2"; shift 2
+  local log="$LOGDIR/${model}.${stage}.log"
+  status "$model" "$stage" start
+  echo "=== [$model/$stage GPU$GPU] $(date -Is) :: $* ===" | tee -a "$log"
+  setsid "$@" >>"$log" 2>&1 &
+  local pid=$!
+  wait "$pid"; local rc=$?
+  # reap any EngineCore / vLLM worker survivors from THIS stage's session only
+  kill -9 -"$pid" 2>/dev/null || true
+  gpu_settle
+  status "$model" "$stage" done "$rc"
+  echo "=== [$model/$stage] rc=$rc $(date -Is) ===" | tee -a "$log"
+  return $rc
+}
+
+GEN() {  # out repo rev
+  "$PY_VLLM" "$EXPG_DRIVER" generate --out-dir "$1" --backend vllm \
+    --model "$2" --revision "$3" --cells "$CELLS" --cap "$CAP" \
+    --oversample "$OVERSAMPLE" --seed "$SEED" \
+    --max-new-gold "$MAXNEW_GOLD" --max-new-cont "$MAXNEW_CONT" \
+    --batch-size "$BATCH" $CONFIRM_FLAGS
+}
+JUDGE() { "$PY_VLLM" "$EXPG_DRIVER" judge     --out-dir "$1"; }
+VAL()   { "$PY_MAIN" "$EXPG_DRIVER" validate  --out-dir "$1"; }
+SUMM()  { "$PY_MAIN" "$EXPG_DRIVER" summarize --out-dir "$1"; }
+REP()   { "$PY_MAIN" "$EXPG_DRIVER" report    --out-dir "$1"; }
+PREP()  { "$PY_MAIN" "$EXPG_DRIVER" prepare --out-dir "$1" --model "$2" --revision "$3" \
+            --cells "$CELLS" --cap "$CAP" --oversample "$OVERSAMPLE" --seed "$SEED" $CONFIRM_FLAGS; }
+
+for entry in "${E10_MODELS[@]}"; do
+  IFS='|' read -r slug repo rev <<< "$entry"
+  OUT="$(e10_outdir "$slug")"
+  mkdir -p "$OUT"
+  echo "########## MODEL $slug ($repo @ $rev) $(date -Is) ##########"
+
+  # World prep should already exist (prepared on CPU pre-arming). Fallback: prepare
+  # here if missing so the queue is self-healing/resumable.
+  if [ ! -s "$OUT/programs.jsonl" ]; then
+    run_cpu "$slug" prepare_fallback PREP "$OUT" "$repo" "$rev" \
+      || { echo "[$slug] prepare_fallback failed; skipping model"; continue; }
+  else
+    echo "[$slug] worlds present ($(wc -l <"$OUT/programs.jsonl") programs); skipping prepare"
+  fi
+
+  run_gpu "$slug" generate  GEN   "$OUT" "$repo" "$rev" || { echo "[$slug] generate failed; skipping"; continue; }
+  run_cpu "$slug" validate  VAL   "$OUT"                || { echo "[$slug] validate failed; skipping"; continue; }
+  run_gpu "$slug" judge     JUDGE "$OUT"                || { echo "[$slug] judge failed; continuing to summarize"; }
+  run_cpu "$slug" summarize SUMM  "$OUT"                || { echo "[$slug] summarize failed; skipping"; continue; }
+  run_cpu "$slug" report    REP   "$OUT" || true
+
+  status "$slug" model_complete done 0
+  echo "########## MODEL $slug DONE $(date -Is) ##########"
+done
+
+status ALL queue_complete done 0
+echo "########## E10 QUEUE COMPLETE $(date -Is) ##########"

@@ -1,0 +1,2058 @@
+{
+  "ascii_table": "model                    mode        | read_adj | opf_kr1 opf_kr8 1hop_kc1 deep_kc5 | pooled_rec | margin | prefill(1hop/deep)\n------------------------------------------------------------------------------------------------------------------------------\nclaude-opus-4-8          bridge      |   0.00   |  0.31    0.15     1.00     0.98  |    0.60    |  +0.60  |   -  \nclaude-sonnet-5          bridge      |   0.01   |  0.23    0.43     1.00     1.00  |    0.65    |  +0.63  |   -  \nclaude-haiku-4-5         bridge      |   0.00   |  0.36    0.28     1.00     1.00  |    0.65    |  +0.65  | 1.00/1.00\nclaude-sonnet-4-5        bridge      |   0.00   |  0.09    0.13     1.00     1.00  |    0.54    |  +0.54  | 0.98/1.00\ngpt-4.1                  bridge      |   0.01   |  0.94    0.97     1.00     1.00  |    0.98    |  +0.96  |   -  \ngpt-4o                   bridge      |   0.01   |  0.17    0.15     1.00     0.95  |    0.55    |  +0.54  |   -  \ngpt-5.1                  bridge      |   0.09   |  0.89    0.92     1.00     1.00  |    0.95    |  +0.86  |   -  \ngpt-3.5-turbo-instruct   completion  |   0.15   |  1.00    1.00     1.00     1.00  |    1.00    |  +0.85  |   -  ",
+  "models": {
+    "claude-haiku-4-5": {
+      "cells": {
+        "adjacent_contradiction": {
+          "absorbed": {
+            "k": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "silently_corrected": {
+              "k": 70,
+              "n": 70,
+              "rate": 1.0,
+              "wilson95": [
+                0.948,
+                1.0
+              ]
+            }
+          }
+        },
+        "deep_kc5": {
+          "absorbed": {
+            "k": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 60,
+              "n": 60,
+              "rate": 1.0,
+              "wilson95": [
+                0.9398,
+                1.0
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            }
+          }
+        },
+        "onehop_kc1": {
+          "absorbed": {
+            "k": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 60,
+              "n": 60,
+              "rate": 1.0,
+              "wilson95": [
+                0.9398,
+                1.0
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            }
+          }
+        },
+        "opfree_kr1": {
+          "absorbed": {
+            "k": 25,
+            "n": 70,
+            "rate": 0.3571,
+            "wilson95": [
+              0.255,
+              0.4741
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 25,
+              "n": 70,
+              "rate": 0.3571,
+              "wilson95": [
+                0.255,
+                0.4741
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "other": {
+              "k": 3,
+              "n": 70,
+              "rate": 0.0429,
+              "wilson95": [
+                0.0147,
+                0.1186
+              ]
+            },
+            "silently_corrected": {
+              "k": 42,
+              "n": 70,
+              "rate": 0.6,
+              "wilson95": [
+                0.4829,
+                0.7067
+              ]
+            }
+          }
+        },
+        "opfree_kr8": {
+          "absorbed": {
+            "k": 17,
+            "n": 60,
+            "rate": 0.2833,
+            "wilson95": [
+              0.1851,
+              0.4077
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 17,
+              "n": 60,
+              "rate": 0.2833,
+              "wilson95": [
+                0.1851,
+                0.4077
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "other": {
+              "k": 2,
+              "n": 60,
+              "rate": 0.0333,
+              "wilson95": [
+                0.0092,
+                0.1136
+              ]
+            },
+            "silently_corrected": {
+              "k": 41,
+              "n": 60,
+              "rate": 0.6833,
+              "wilson95": [
+                0.5577,
+                0.7869
+              ]
+            }
+          }
+        }
+      },
+      "margin_recompute_minus_readable": 0.648,
+      "mode": "bridge",
+      "pooled_recompute_absorbed": 0.648,
+      "prefill_reference": {
+        "adjacent_contradiction": 0.0,
+        "deep_kc5": 1.0,
+        "onehop_kc1": 1.0,
+        "opfree_kr1": 0.0429,
+        "opfree_kr8": 0.2167
+      },
+      "readable_absorbed": 0.0,
+      "tag": "calibration (has prefill in regime2)"
+    },
+    "claude-opus-4-8": {
+      "cells": {
+        "adjacent_contradiction": {
+          "absorbed": {
+            "k": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "silently_corrected": {
+              "k": 70,
+              "n": 70,
+              "rate": 1.0,
+              "wilson95": [
+                0.948,
+                1.0
+              ]
+            }
+          }
+        },
+        "deep_kc5": {
+          "absorbed": {
+            "k": 59,
+            "n": 60,
+            "rate": 0.9833,
+            "wilson95": [
+              0.9114,
+              0.9971
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 59,
+              "n": 60,
+              "rate": 0.9833,
+              "wilson95": [
+                0.9114,
+                0.9971
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "k": 1,
+              "n": 60,
+              "rate": 0.0167,
+              "wilson95": [
+                0.0029,
+                0.0886
+              ]
+            }
+          }
+        },
+        "onehop_kc1": {
+          "absorbed": {
+            "k": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 60,
+              "n": 60,
+              "rate": 1.0,
+              "wilson95": [
+                0.9398,
+                1.0
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            }
+          }
+        },
+        "opfree_kr1": {
+          "absorbed": {
+            "k": 22,
+            "n": 70,
+            "rate": 0.3143,
+            "wilson95": [
+              0.2176,
+              0.4303
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 22,
+              "n": 70,
+              "rate": 0.3143,
+              "wilson95": [
+                0.2176,
+                0.4303
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "silently_corrected": {
+              "k": 48,
+              "n": 70,
+              "rate": 0.6857,
+              "wilson95": [
+                0.5697,
+                0.7824
+              ]
+            }
+          }
+        },
+        "opfree_kr8": {
+          "absorbed": {
+            "k": 9,
+            "n": 60,
+            "rate": 0.15,
+            "wilson95": [
+              0.081,
+              0.2611
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 9,
+              "n": 60,
+              "rate": 0.15,
+              "wilson95": [
+                0.081,
+                0.2611
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "k": 51,
+              "n": 60,
+              "rate": 0.85,
+              "wilson95": [
+                0.7389,
+                0.919
+              ]
+            }
+          }
+        }
+      },
+      "margin_recompute_minus_readable": 0.6,
+      "mode": "bridge",
+      "pooled_recompute_absorbed": 0.6,
+      "prefill_reference": null,
+      "readable_absorbed": 0.0,
+      "tag": "NEW Anthropic (prefill BLOCKED by API)"
+    },
+    "claude-sonnet-4-5": {
+      "cells": {
+        "adjacent_contradiction": {
+          "absorbed": {
+            "k": 0,
+            "n": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "silently_corrected": {
+              "k": 70,
+              "n": 70,
+              "rate": 1.0,
+              "wilson95": [
+                0.948,
+                1.0
+              ]
+            }
+          }
+        },
+        "deep_kc5": {
+          "absorbed": {
+            "k": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 60,
+              "n": 60,
+              "rate": 1.0,
+              "wilson95": [
+                0.9398,
+                1.0
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            }
+          }
+        },
+        "onehop_kc1": {
+          "absorbed": {
+            "k": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 60,
+              "n": 60,
+              "rate": 1.0,
+              "wilson95": [
+                0.9398,
+                1.0
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            }
+          }
+        },
+        "opfree_kr1": {
+          "absorbed": {
+            "k": 6,
+            "n": 70,
+            "rate": 0.0857,
+            "wilson95": [
+              0.0399,
+              0.1747
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 6,
+              "n": 70,
+              "rate": 0.0857,
+              "wilson95": [
+                0.0399,
+                0.1747
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "silently_corrected": {
+              "k": 64,
+              "n": 70,
+              "rate": 0.9143,
+              "wilson95": [
+                0.8253,
+                0.9601
+              ]
+            }
+          }
+        },
+        "opfree_kr8": {
+          "absorbed": {
+            "k": 8,
+            "n": 60,
+            "rate": 0.1333,
+            "wilson95": [
+              0.0691,
+              0.2417
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 8,
+              "n": 60,
+              "rate": 0.1333,
+              "wilson95": [
+                0.0691,
+                0.2417
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "k": 52,
+              "n": 60,
+              "rate": 0.8667,
+              "wilson95": [
+                0.7583,
+                0.9309
+              ]
+            }
+          }
+        }
+      },
+      "margin_recompute_minus_readable": 0.536,
+      "mode": "bridge",
+      "pooled_recompute_absorbed": 0.536,
+      "prefill_reference": {
+        "adjacent_contradiction": 0.0,
+        "deep_kc5": 1.0,
+        "onehop_kc1": 0.9833,
+        "opfree_kr1": 0.0429,
+        "opfree_kr8": 0.05
+      },
+      "readable_absorbed": 0.0,
+      "tag": "calibration (has prefill in regime2)"
+    },
+    "claude-sonnet-5": {
+      "cells": {
+        "adjacent_contradiction": {
+          "absorbed": {
+            "k": 1,
+            "n": 70,
+            "rate": 0.0143,
+            "wilson95": [
+              0.0025,
+              0.0766
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 1,
+              "n": 70,
+              "rate": 0.0143,
+              "wilson95": [
+                0.0025,
+                0.0766
+              ]
+            },
+            "flagged": {
+              "k": 1,
+              "n": 70,
+              "rate": 0.0143,
+              "wilson95": [
+                0.0025,
+                0.0766
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "silently_corrected": {
+              "k": 68,
+              "n": 70,
+              "rate": 0.9714,
+              "wilson95": [
+                0.9017,
+                0.9921
+              ]
+            }
+          }
+        },
+        "deep_kc5": {
+          "absorbed": {
+            "k": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 60,
+              "n": 60,
+              "rate": 1.0,
+              "wilson95": [
+                0.9398,
+                1.0
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            }
+          }
+        },
+        "onehop_kc1": {
+          "absorbed": {
+            "k": 59,
+            "n": 59,
+            "rate": 1.0,
+            "wilson95": [
+              0.9389,
+              1.0
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 59,
+              "n": 59,
+              "rate": 1.0,
+              "wilson95": [
+                0.9389,
+                1.0
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 59,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0611
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 59,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0611
+              ]
+            },
+            "silently_corrected": {
+              "k": 0,
+              "n": 59,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0611
+              ]
+            }
+          }
+        },
+        "opfree_kr1": {
+          "absorbed": {
+            "k": 13,
+            "n": 70,
+            "rate": 0.1857,
+            "wilson95": [
+              0.1119,
+              0.2923
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 13,
+              "n": 70,
+              "rate": 0.1857,
+              "wilson95": [
+                0.1119,
+                0.2923
+              ]
+            },
+            "flagged": {
+              "k": 12,
+              "n": 70,
+              "rate": 0.1714,
+              "wilson95": [
+                0.1009,
+                0.2762
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "silently_corrected": {
+              "k": 45,
+              "n": 70,
+              "rate": 0.6429,
+              "wilson95": [
+                0.5259,
+                0.745
+              ]
+            }
+          }
+        },
+        "opfree_kr8": {
+          "absorbed": {
+            "k": 22,
+            "n": 60,
+            "rate": 0.3667,
+            "wilson95": [
+              0.2562,
+              0.4932
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 22,
+              "n": 60,
+              "rate": 0.3667,
+              "wilson95": [
+                0.2562,
+                0.4932
+              ]
+            },
+            "flagged": {
+              "k": 8,
+              "n": 60,
+              "rate": 0.1333,
+              "wilson95": [
+                0.0691,
+                0.2417
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "k": 30,
+              "n": 60,
+              "rate": 0.5,
+              "wilson95": [
+                0.3773,
+                0.6227
+              ]
+            }
+          }
+        }
+      },
+      "margin_recompute_minus_readable": 0.6323,
+      "mode": "bridge",
+      "pooled_recompute_absorbed": 0.6466,
+      "prefill_reference": null,
+      "readable_absorbed": 0.0143,
+      "tag": "NEW Anthropic (prefill BLOCKED by API)"
+    },
+    "gpt-3.5-turbo-instruct": {
+      "cells": {
+        "adjacent_contradiction": {
+          "absorbed": {
+            "k": 10,
+            "n": 68,
+            "rate": 0.1471,
+            "wilson95": [
+              0.0819,
+              0.25
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 10,
+              "n": 68,
+              "rate": 0.1471,
+              "wilson95": [
+                0.0819,
+                0.25
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 68,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0535
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 68,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0535
+              ]
+            },
+            "silently_corrected": {
+              "k": 58,
+              "n": 68,
+              "rate": 0.8529,
+              "wilson95": [
+                0.75,
+                0.9181
+              ]
+            }
+          }
+        },
+        "deep_kc5": {
+          "absorbed": {
+            "k": 59,
+            "n": 59,
+            "rate": 1.0,
+            "wilson95": [
+              0.9389,
+              1.0
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 59,
+              "n": 59,
+              "rate": 1.0,
+              "wilson95": [
+                0.9389,
+                1.0
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 59,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0611
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 59,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0611
+              ]
+            },
+            "silently_corrected": {
+              "k": 0,
+              "n": 59,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0611
+              ]
+            }
+          }
+        },
+        "onehop_kc1": {
+          "absorbed": {
+            "k": 58,
+            "n": 58,
+            "rate": 1.0,
+            "wilson95": [
+              0.9379,
+              1.0
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 58,
+              "n": 58,
+              "rate": 1.0,
+              "wilson95": [
+                0.9379,
+                1.0
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 58,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0621
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 58,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0621
+              ]
+            },
+            "silently_corrected": {
+              "k": 0,
+              "n": 58,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0621
+              ]
+            }
+          }
+        },
+        "opfree_kr1": {
+          "absorbed": {
+            "k": 68,
+            "n": 68,
+            "rate": 1.0,
+            "wilson95": [
+              0.9465,
+              1.0
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 68,
+              "n": 68,
+              "rate": 1.0,
+              "wilson95": [
+                0.9465,
+                1.0
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 68,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0535
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 68,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0535
+              ]
+            },
+            "silently_corrected": {
+              "k": 0,
+              "n": 68,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.0535
+              ]
+            }
+          }
+        },
+        "opfree_kr8": {
+          "absorbed": {
+            "k": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 60,
+              "n": 60,
+              "rate": 1.0,
+              "wilson95": [
+                0.9398,
+                1.0
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            }
+          }
+        }
+      },
+      "margin_recompute_minus_readable": 0.8529,
+      "mode": "completion",
+      "pooled_recompute_absorbed": 1.0,
+      "prefill_reference": null,
+      "readable_absorbed": 0.1471,
+      "tag": "OpenAI legacy completions (true single stream)"
+    },
+    "gpt-4.1": {
+      "cells": {
+        "adjacent_contradiction": {
+          "absorbed": {
+            "k": 1,
+            "n": 70,
+            "rate": 0.0143,
+            "wilson95": [
+              0.0025,
+              0.0766
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 1,
+              "n": 70,
+              "rate": 0.0143,
+              "wilson95": [
+                0.0025,
+                0.0766
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "silently_corrected": {
+              "k": 69,
+              "n": 70,
+              "rate": 0.9857,
+              "wilson95": [
+                0.9234,
+                0.9975
+              ]
+            }
+          }
+        },
+        "deep_kc5": {
+          "absorbed": {
+            "k": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 60,
+              "n": 60,
+              "rate": 1.0,
+              "wilson95": [
+                0.9398,
+                1.0
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            }
+          }
+        },
+        "onehop_kc1": {
+          "absorbed": {
+            "k": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 60,
+              "n": 60,
+              "rate": 1.0,
+              "wilson95": [
+                0.9398,
+                1.0
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            }
+          }
+        },
+        "opfree_kr1": {
+          "absorbed": {
+            "k": 66,
+            "n": 70,
+            "rate": 0.9429,
+            "wilson95": [
+              0.8621,
+              0.9776
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 66,
+              "n": 70,
+              "rate": 0.9429,
+              "wilson95": [
+                0.8621,
+                0.9776
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "other": {
+              "k": 1,
+              "n": 70,
+              "rate": 0.0143,
+              "wilson95": [
+                0.0025,
+                0.0766
+              ]
+            },
+            "silently_corrected": {
+              "k": 3,
+              "n": 70,
+              "rate": 0.0429,
+              "wilson95": [
+                0.0147,
+                0.1186
+              ]
+            }
+          }
+        },
+        "opfree_kr8": {
+          "absorbed": {
+            "k": 58,
+            "n": 60,
+            "rate": 0.9667,
+            "wilson95": [
+              0.8864,
+              0.9908
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 58,
+              "n": 60,
+              "rate": 0.9667,
+              "wilson95": [
+                0.8864,
+                0.9908
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "other": {
+              "k": 2,
+              "n": 60,
+              "rate": 0.0333,
+              "wilson95": [
+                0.0092,
+                0.1136
+              ]
+            },
+            "silently_corrected": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            }
+          }
+        }
+      },
+      "margin_recompute_minus_readable": 0.9617,
+      "mode": "bridge",
+      "pooled_recompute_absorbed": 0.976,
+      "prefill_reference": null,
+      "readable_absorbed": 0.0143,
+      "tag": "OpenAI chat"
+    },
+    "gpt-4o": {
+      "cells": {
+        "adjacent_contradiction": {
+          "absorbed": {
+            "k": 1,
+            "n": 70,
+            "rate": 0.0143,
+            "wilson95": [
+              0.0025,
+              0.0766
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 1,
+              "n": 70,
+              "rate": 0.0143,
+              "wilson95": [
+                0.0025,
+                0.0766
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "silently_corrected": {
+              "k": 69,
+              "n": 70,
+              "rate": 0.9857,
+              "wilson95": [
+                0.9234,
+                0.9975
+              ]
+            }
+          }
+        },
+        "deep_kc5": {
+          "absorbed": {
+            "k": 57,
+            "n": 60,
+            "rate": 0.95,
+            "wilson95": [
+              0.863,
+              0.9829
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 57,
+              "n": 60,
+              "rate": 0.95,
+              "wilson95": [
+                0.863,
+                0.9829
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "other": {
+              "k": 1,
+              "n": 60,
+              "rate": 0.0167,
+              "wilson95": [
+                0.0029,
+                0.0886
+              ]
+            },
+            "silently_corrected": {
+              "k": 2,
+              "n": 60,
+              "rate": 0.0333,
+              "wilson95": [
+                0.0092,
+                0.1136
+              ]
+            }
+          }
+        },
+        "onehop_kc1": {
+          "absorbed": {
+            "k": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 60,
+              "n": 60,
+              "rate": 1.0,
+              "wilson95": [
+                0.9398,
+                1.0
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            }
+          }
+        },
+        "opfree_kr1": {
+          "absorbed": {
+            "k": 12,
+            "n": 70,
+            "rate": 0.1714,
+            "wilson95": [
+              0.1009,
+              0.2762
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 12,
+              "n": 70,
+              "rate": 0.1714,
+              "wilson95": [
+                0.1009,
+                0.2762
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "other": {
+              "k": 6,
+              "n": 70,
+              "rate": 0.0857,
+              "wilson95": [
+                0.0399,
+                0.1747
+              ]
+            },
+            "silently_corrected": {
+              "k": 52,
+              "n": 70,
+              "rate": 0.7429,
+              "wilson95": [
+                0.6297,
+                0.8307
+              ]
+            }
+          }
+        },
+        "opfree_kr8": {
+          "absorbed": {
+            "k": 9,
+            "n": 60,
+            "rate": 0.15,
+            "wilson95": [
+              0.081,
+              0.2611
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 9,
+              "n": 60,
+              "rate": 0.15,
+              "wilson95": [
+                0.081,
+                0.2611
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "other": {
+              "k": 7,
+              "n": 60,
+              "rate": 0.1167,
+              "wilson95": [
+                0.0577,
+                0.2218
+              ]
+            },
+            "silently_corrected": {
+              "k": 44,
+              "n": 60,
+              "rate": 0.7333,
+              "wilson95": [
+                0.6099,
+                0.8287
+              ]
+            }
+          }
+        }
+      },
+      "margin_recompute_minus_readable": 0.5377,
+      "mode": "bridge",
+      "pooled_recompute_absorbed": 0.552,
+      "prefill_reference": null,
+      "readable_absorbed": 0.0143,
+      "tag": "OpenAI chat"
+    },
+    "gpt-5.1": {
+      "cells": {
+        "adjacent_contradiction": {
+          "absorbed": {
+            "k": 6,
+            "n": 70,
+            "rate": 0.0857,
+            "wilson95": [
+              0.0399,
+              0.1747
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 6,
+              "n": 70,
+              "rate": 0.0857,
+              "wilson95": [
+                0.0399,
+                0.1747
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "silently_corrected": {
+              "k": 64,
+              "n": 70,
+              "rate": 0.9143,
+              "wilson95": [
+                0.8253,
+                0.9601
+              ]
+            }
+          }
+        },
+        "deep_kc5": {
+          "absorbed": {
+            "k": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 60,
+              "n": 60,
+              "rate": 1.0,
+              "wilson95": [
+                0.9398,
+                1.0
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            }
+          }
+        },
+        "onehop_kc1": {
+          "absorbed": {
+            "k": 60,
+            "n": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 60,
+              "n": 60,
+              "rate": 1.0,
+              "wilson95": [
+                0.9398,
+                1.0
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "silently_corrected": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            }
+          }
+        },
+        "opfree_kr1": {
+          "absorbed": {
+            "k": 62,
+            "n": 70,
+            "rate": 0.8857,
+            "wilson95": [
+              0.7904,
+              0.9409
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 62,
+              "n": 70,
+              "rate": 0.8857,
+              "wilson95": [
+                0.7904,
+                0.9409
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 70,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.052
+              ]
+            },
+            "other": {
+              "k": 3,
+              "n": 70,
+              "rate": 0.0429,
+              "wilson95": [
+                0.0147,
+                0.1186
+              ]
+            },
+            "silently_corrected": {
+              "k": 5,
+              "n": 70,
+              "rate": 0.0714,
+              "wilson95": [
+                0.0309,
+                0.1566
+              ]
+            }
+          }
+        },
+        "opfree_kr8": {
+          "absorbed": {
+            "k": 55,
+            "n": 60,
+            "rate": 0.9167,
+            "wilson95": [
+              0.8193,
+              0.9639
+            ]
+          },
+          "three_way": {
+            "absorbed": {
+              "k": 55,
+              "n": 60,
+              "rate": 0.9167,
+              "wilson95": [
+                0.8193,
+                0.9639
+              ]
+            },
+            "flagged": {
+              "k": 0,
+              "n": 60,
+              "rate": 0.0,
+              "wilson95": [
+                -0.0,
+                0.0602
+              ]
+            },
+            "other": {
+              "k": 2,
+              "n": 60,
+              "rate": 0.0333,
+              "wilson95": [
+                0.0092,
+                0.1136
+              ]
+            },
+            "silently_corrected": {
+              "k": 3,
+              "n": 60,
+              "rate": 0.05,
+              "wilson95": [
+                0.0171,
+                0.137
+              ]
+            }
+          }
+        }
+      },
+      "margin_recompute_minus_readable": 0.8623,
+      "mode": "bridge",
+      "pooled_recompute_absorbed": 0.948,
+      "prefill_reference": null,
+      "readable_absorbed": 0.0857,
+      "tag": "OpenAI chat (reasoning=none)"
+    }
+  },
+  "note": "3-way on cf cells; absorbed=final_output_absorbed & not flagged; silently_corrected=final_output_valid & not flagged & not absorbed; flagged=doubt_lex (frozen code lexicon). Margin = pooled recompute absorbed - readable(adjacent_contradiction) absorbed."
+}

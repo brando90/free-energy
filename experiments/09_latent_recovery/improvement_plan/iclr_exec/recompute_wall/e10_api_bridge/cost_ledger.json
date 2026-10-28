@@ -1,0 +1,56 @@
+{
+  "hard_budget_usd": 100.0,
+  "models": {
+    "claude-haiku-4-5": {
+      "input_tokens": 631532,
+      "output_tokens": 106128,
+      "requests": 710
+    },
+    "claude-opus-4-8": {
+      "input_tokens": 657062,
+      "output_tokens": 106323,
+      "requests": 710
+    },
+    "claude-sonnet-4-5": {
+      "input_tokens": 631532,
+      "output_tokens": 107363,
+      "requests": 710
+    },
+    "claude-sonnet-5": {
+      "input_tokens": 656186,
+      "output_tokens": 110162,
+      "requests": 709
+    },
+    "gpt-3.5-turbo-instruct": {
+      "input_tokens": 575172,
+      "output_tokens": 101853,
+      "requests": 703
+    },
+    "gpt-4.1": {
+      "input_tokens": 613522,
+      "output_tokens": 103816,
+      "requests": 713
+    },
+    "gpt-4o": {
+      "input_tokens": 614466,
+      "output_tokens": 107625,
+      "requests": 713
+    },
+    "gpt-5.1": {
+      "input_tokens": 612519,
+      "output_tokens": 110643,
+      "requests": 713
+    }
+  },
+  "total_usd": 21.8401,
+  "usd_by_model": {
+    "claude-haiku-4-5": 1.1622,
+    "claude-opus-4-8": 5.9434,
+    "claude-sonnet-4-5": 3.505,
+    "claude-sonnet-5": 3.621,
+    "gpt-3.5-turbo-instruct": 1.0665,
+    "gpt-4.1": 2.0576,
+    "gpt-4o": 2.6124,
+    "gpt-5.1": 1.8721
+  }
+}

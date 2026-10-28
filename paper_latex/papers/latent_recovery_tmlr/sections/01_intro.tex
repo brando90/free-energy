@@ -1,0 +1,114 @@
+\section{Introduction}
+\label{sec:intro}
+
+% source: PAPER_SKELETON Sec 1; reframed per README Sec 0 (E1 non-replication) and E1_ADJUDICATION.
+
+\paragraph{A model that continues its own flawed reasoning can silently
+absorb the flaw.} Language models generate long reasoning traces one token
+at a time, and a false intermediate step, whether hallucinated, mis-copied,
+or adversarially planted, does not announce itself. The question this paper
+asks is behavioral and narrow: when a false statement already sits in a
+model's own trace and the model keeps going with no external prompt to
+check, does it reject the statement or reuse it. The answer depends on the
+model. On Qwen2.5-7B-Instruct, the response is governed by two things,
+whether the contradiction is directly visible in the trace and whether the
+false step is useful for finishing the proof, and not by how ``checkable''
+the error is in principle. Across four further open-weights models this
+structure largely does not transfer: the visibility pattern reverses on
+three of them, and absorption itself disappears at 32B scale. Two
+regularities hold in every model we tested: none re-verifies a value that
+must be recomputed, and verbal rejection is a poor guide to genuine
+checking.
+
+\paragraph{Evidence distance does not predict the response.} A natural
+hypothesis is that rejection is graded by inferential distance to the
+refuting evidence. A matched-distance test on Qwen2.5-7B-Instruct, laid out
+as six distance-linked predictions, gives no support for it: five fail, and
+the point estimates for the two that carry the gradient story run opposite to
+it.
+% source: EVIDENCE_protocol_prereg P5 (commit/sha/timestamp); PAPER_SKELETON 1.2
+The one prediction the test supports is not a distance gradient but a
+polarity control, that affirmative and negated false statements are absorbed
+equivalently. What predicts the response instead is whether the contradiction
+is directly visible and whether the false step is useful for finishing the
+proof. The mechanics of how the predictions were fixed in advance are
+collected in Appendix~\ref{app:provenance}.
+
+\paragraph{Visibility and usability boundaries govern the anchor model.} On
+the anchor model, explicit rejection of a planted falsehood
+is abundant when the contradiction is a directly readable premise, roughly
+0.25 of continuations at measured distance $d{=}0$, and collapses about
+eightfold to 0.03 one hop away, staying flat for larger distances.
+% source: EVIDENCE_findings_core F-vis.1 (0.2467 d0 vs 0.0311 d1); PAPER_SKELETON 4.1
+Separately, silent downstream reuse of a planted falsehood tracks whether
+that falsehood is derivationally needed to finish the current proof. A
+usable falsehood is reused near 0.8 whether its refutation is one hop or
+infinitely many hops away, and an inert one is reused near zero.
+% source: EVIDENCE_findings_core F-use.1 (0.863/0.768/0.787 usable; ~0 inert)
+Both are boundary conditions on when in-stream self-checking happens at
+all, and neither is a graded distance gradient.
+
+\paragraph{The boundary conditions do not replicate across models.} The
+single-model-family base is the obvious weakness, so we ran a multi-model
+replication that repeats the three boundary conditions on four more
+open-weights models: Llama-3.1-8B, OLMo-2-7B, Qwen2.5-1.5B, and
+Qwen2.5-32B, with its predictions again fixed before the data were
+generated and its verdict independently re-checked from the raw data.
+% source: E1_ADJUDICATION (registration bdb098a1); E1_VERIFICATION (CONFIRMED)
+Zero of the four fully replicate. The visibility cliff is the sharpest
+casualty: on three of the four models the effect significantly reverses, so
+explicit rejection is \emph{lower} when the contradiction is directly
+visible than when it is a hop away, the opposite of the anchor.
+% source: E1_ADJUDICATION Sec 3 B1 (llama8b -0.144, qwen1.5b -0.142, qwen32b -0.069)
+The usability asymmetry is the most portable of the three, holding on two
+of the four, but it is scale-bounded: usable-error absorption falls from
+0.71 at 1.5B to 0.81 at 7B to 0.01 at 32B, so the effect essentially
+vanishes with capability within a single model family.
+% source: E1_ADJUDICATION Sec 4.2 (0.711/0.807/0.013); F-use.1 E1 caveat
+Because the same pipeline reproduces the Qwen2.5-7B anchor exactly, this is
+a property of the models, not of the analysis. We therefore present the
+single-model-family limitation not as an open caveat but as a positive
+finding: how a model handles a planted falsehood in its own trace is
+model-dependent and scale-dependent.
+
+\paragraph{Two results do survive across scale and lineage.} First, a
+recompute boundary. In a program-execution regime, no model we tested,
+including two frontier models that reject re-readable planted errors near
+totally, re-verifies a value it must recompute; recomputable falsehoods are
+absorbed at 0.98 to 1.00 everywhere.
+% source: EVIDENCE_lineage_boundaries L-rec.1 (deep_kc5 1.000 haiku/sonnet/qwen)
+Second, an instrument caution that holds wherever we can check it. Verbal
+``rejection'' cannot by itself distinguish a genuine check from lexical
+cueing: a frequency-matched but non-refuting rule elicits the same
+rejection rate as genuine refuting evidence, and every one of those
+frequency-matched rejections fabricates a rule that is absent from the
+world.
+% source: EVIDENCE_findings_core F-lex.1/F-lex.2 (FREQ 0.118 ~ REFUTING 0.114; 26/26 fabricated)
+Only a derivation-licensed split, which asks whether the model's own text
+contains a valid derivation, separates the two.
+
+\paragraph{Scope guard.} All of these findings concern non-deliberative,
+in-stream continuation on synthetic first-order-logic worlds. We do not
+claim they extend to explicit deliberation or thinking modes, to natural
+prose, or to tasks outside the audited-logic substrate; models with a
+separate deliberation channel are deliberately excluded from the
+controlled tests.
+% source: PAPER_SKELETON 1.4; EVIDENCE_lineage_boundaries L-prod.1 (instruct exclusion)
+We also frame the in-stream-versus-fresh-turn part of the production
+boundary as corroboration of concurrent work on the self-correction blind
+spot, discussed in Section~\ref{sec:related}, not as a discovery of ours.
+
+\paragraph{Contributions.} We contribute (i) an audited perturb-and-validate
+instrument that truth-audits every plant, formally validates every
+continuation, and measures refutation distance mechanically rather than by
+design label (Section~\ref{sec:protocol}); (ii) evidence that inferential
+distance does not predict in-stream rejection or reuse
+(Section~\ref{sec:reversal}); (iii) two
+boundary conditions, visibility and usability, on the anchor model
+(Sections~\ref{sec:visibility}, \ref{sec:usability}), together with a
+multi-model result that they largely do not replicate; (iv)
+a recompute boundary that does survive across scale and lineage
+(Section~\ref{sec:production}); and (v) an instrument caution that verbal
+rejection is lexically cued (Section~\ref{sec:instrument}). We read the
+whole as a boundary-condition map with an honest account of how far each
+boundary travels.

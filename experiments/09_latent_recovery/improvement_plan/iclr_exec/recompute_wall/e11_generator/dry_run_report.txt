@@ -1,0 +1,173 @@
+WHITESPACE-TOKEN COUNT ACROSS ALL CELLS: [106]  (matched=True)
+==============================================================================
+CELL k=0  accepted=200/200  attempts=295  accept_rate=0.678  starved=False
+  measured_min_k: [0]  (all==k: True)
+  ws_tokens: [106]   nearest_anc_dist: [6]
+  BPE[qwen7b]: mean=197.75 sd=3.18 range=[191,207]
+  reject reasons: {'build': 49, 'fam': 32, 'program_error': 14}
+  --- sample world ---
+program_id: k0_43d06a_00100000   k=0  L=20  ops=14  ws_tokens=106  site_line=10
+operands=[87]  site_true=87  measured_min_k=0  nearest_anc_dist=6
+--- listing ---
+1: j = 40
+2: a = 47
+3: d = a + 21 - 30
+4: k = 4
+5: n = 55
+6: e = 42
+7: y = 37
+8: v = 21 + 36 + 29 - 59
+9: r = j + a
+10: b = r
+11: u = 43
+12: m = b + 18
+13: p = 32
+14: z = b + 19
+15: s = n + 60
+16: g = p * 2 - 33 + 55
+17: t = 58 + 18
+18: f = 25
+19: out = m + z
+20: print(out)
+--- site-line opacity arms (planted value spliced) ---
+anchor note plant: note: r = 78  (true=87, readable at line 9)
+==============================================================================
+CELL k=1  accepted=200/200  attempts=256  accept_rate=0.781  starved=False
+  measured_min_k: [1]  (all==k: True)
+  ws_tokens: [106]   nearest_anc_dist: [4]
+  BPE[qwen7b]: mean=199.45 sd=2.67 range=[193,205]
+  reject reasons: {'build': 37, 'program_error': 18, 'no_axis_c_delta': 1}
+  --- sample world ---
+program_id: k1_43d06a_00100780   k=1  L=20  ops=14  ws_tokens=106  site_line=10
+operands=[41, 28]  site_true=69  measured_min_k=1  nearest_anc_dist=4
+--- listing ---
+1: s = 30
+2: q = 40
+3: y = 25
+4: c = 17 * 7 + 21
+5: e = s + 24 - 24 + 25
+6: u = 29
+7: w = 16
+8: m = 41
+9: x = 28
+10: a = m + x
+11: h = y + 46 + 24 + 19
+12: t = a + 18
+13: k = 57
+14: r = a + 19
+15: p = 20
+16: f = 6
+17: z = 58
+18: b = k * 9 + 44
+19: out = t + r
+20: print(out)
+--- site-line opacity arms (planted value spliced) ---
+bare    : a = m + x; a = 89
+full    : a = m + x = 41 + 28; a = 89
+partial : a = m + x = ... + 28; a = 89
+(true value would be 69; planted 89; out_true=175 out_cf=215)
+==============================================================================
+CELL k=2  accepted=200/200  attempts=367  accept_rate=0.545  starved=False
+  measured_min_k: [2]  (all==k: True)
+  ws_tokens: [106]   nearest_anc_dist: [4]
+  BPE[qwen7b]: mean=198.58 sd=3.09 range=[189,206]
+  reject reasons: {'audit': 112, 'build': 37, 'program_error': 18}
+  --- sample world ---
+program_id: k2_43d06a_00101554   k=2  L=20  ops=14  ws_tokens=106  site_line=10
+operands=[39, 79, 72]  site_true=190  measured_min_k=2  nearest_anc_dist=4
+--- listing ---
+1: n = 26
+2: p = 32
+3: u = 24
+4: m = 8
+5: j = 21
+6: b = 43
+7: e = 39
+8: k = 79
+9: t = 72
+10: q = e + k + t
+11: x = 32 + 52 + 39
+12: w = q + 7
+13: c = 49
+14: f = q + 20
+15: z = p + 57 + 9 + 12
+16: d = 9
+17: h = p + 48
+18: a = 6 + 25 + 3 + 2
+19: out = w + f
+20: print(out)
+--- site-line opacity arms (planted value spliced) ---
+bare    : q = e + k + t; q = 170
+full    : q = e + k + t = 39 + 79 + 72; q = 170
+partial : q = e + k + t = ... + 79 + 72; q = 170
+(true value would be 190; planted 170; out_true=407 out_cf=367)
+==============================================================================
+CELL k=3  accepted=200/200  attempts=319  accept_rate=0.627  starved=False
+  measured_min_k: [3]  (all==k: True)
+  ws_tokens: [106]   nearest_anc_dist: [4]
+  BPE[qwen7b]: mean=197.95 sd=2.75 range=[192,204]
+  reject reasons: {'build': 34, 'audit': 70, 'program_error': 15}
+  --- sample world ---
+program_id: k3_43d06a_00102331   k=3  L=20  ops=14  ws_tokens=106  site_line=10
+operands=[81, 93, 14, 60]  site_true=248  measured_min_k=3  nearest_anc_dist=4
+--- listing ---
+1: t = 24
+2: d = 20
+3: u = 32 + 45 - 18 + 11
+4: j = t - 21
+5: v = t + 38 + 40
+6: n = 81
+7: s = 93
+8: r = 14
+9: a = 60
+10: c = n + s + r + a
+11: y = 41
+12: e = c + 16
+13: q = 16
+14: w = c + 12
+15: m = 31
+16: p = 12
+17: h = m + 49 - 3
+18: f = 53
+19: out = e + w
+20: print(out)
+--- site-line opacity arms (planted value spliced) ---
+bare    : c = n + s + r + a; c = 238
+full    : c = n + s + r + a = 81 + 93 + 14 + 60; c = 238
+partial : c = n + s + r + a = ... + 14 + 60; c = 238
+(true value would be 248; planted 238; out_true=524 out_cf=504)
+==============================================================================
+CELL k=5  accepted=200/200  attempts=274  accept_rate=0.730  starved=False
+  measured_min_k: [5]  (all==k: True)
+  ws_tokens: [106]   nearest_anc_dist: [4]
+  BPE[qwen7b]: mean=195.68 sd=2.28 range=[191,200]
+  reject reasons: {'audit': 39, 'build': 21, 'program_error': 14}
+  --- sample world ---
+program_id: k5_43d06a_00103885   k=5  L=20  ops=14  ws_tokens=106  site_line=10
+operands=[96, 32, 53, 66, 16, 54]  site_true=317  measured_min_k=5  nearest_anc_dist=4
+--- listing ---
+1: p = 50
+2: r = 15
+3: e = 7
+4: f = 96
+5: m = 32
+6: x = 53
+7: s = 66
+8: d = 16
+9: y = 54
+10: g = f + m + x + s + d + y
+11: a = 33 + 60 - 20
+12: q = g + 19
+13: c = 23
+14: z = g + 9
+15: w = 17
+16: n = p + 43 + 53
+17: b = p - 12
+18: j = 29 + 11
+19: out = q + z
+20: print(out)
+--- site-line opacity arms (planted value spliced) ---
+bare    : g = f + m + x + s + d + y; g = 307
+full    : g = f + m + x + s + d + y = 96 + 32 + 53 + 66 + 16 + 54; g = 307
+partial : g = f + m + x + s + d + y = ... + 16 + 54; g = 307
+(true value would be 317; planted 307; out_true=662 out_cf=642)

@@ -46,28 +46,49 @@ the model little reason to doubt.
 
 \section{Introduction}
 Autoregressive language models generate one token at a time, so long-horizon reasoning
-can be fragile. A standard compounding argument says that if each step is correct with
-probability $(1-\varepsilon)$ and a wrong step can never be repaired, then the chance
-that a $T$-step derivation is fully correct decays like $(1-\varepsilon)^T$
-\citep{dziri2023faith}. The argument relies on independence, a constant error rate,
-and unrecoverability; the last premise carries much of the force. The intrinsic
-question is therefore not just whether a trace contains an error, but when the model
-treats that error as something to doubt. Reasoning systems still consume, route, and
-act on model-generated traces, so their failure modes depend on which errors the base
-rollout flags, absorbs, or repairs. We therefore study the unassisted rollout: if we
-plant one error in a model's own proof, does the model build on the error, route
-around it, or complete a valid proof anyway?
+can be fragile. Recent theory frames this fragility as an intrinsic stability limit of
+single-path autoregressive execution, not merely a byproduct of combinatorial search:
+small epistemic perturbations can erode decision advantage with execution length, and
+CoT perturbation studies show heterogeneous vulnerabilities across error types
+\citep{liao2026stability,aravindan2026fragile}. A standard compounding argument says
+that if each step is correct with probability $(1-\varepsilon)$ and a wrong step can
+never be repaired, then the chance that a $T$-step derivation is fully correct decays
+like $(1-\varepsilon)^T$ \citep{dziri2023faith}. This geometric sketch is only one
+topology of accumulation: off-policy sequential prediction can incur
+$O(\varepsilon T^2)$ mistakes under induced-state mismatch
+\citep{ross2011reduction}, and recent CoT audits identify late-stage fragility, where
+late errors can be more damaging because the trace provides less logical runway for
+redundant routing or self-correction \citep{zhang2025ascot,neumann2025cascade}. The
+compounding argument therefore relies not just on independence and a constant error
+rate, but on unrecoverability; that last premise carries much of the force.
+
+The intrinsic question is not just whether a trace contains an error, but when the
+model treats that error as something to doubt. Recent self-correction work shows that
+apparent doubt can depend on chat-template role labels, while probabilistic soundness
+frameworks evaluate each step against previously verified premises rather than using
+holistic judges \citep{chen2026selfcorrection,you2025probabilistic}. Downstream systems
+also consume and route model-generated traces: trace disagreement can serve as a
+knowledge-representation signal, diverse paths can be routed during distillation, and
+visual diagnosis tools expose premise-level error propagation
+\citep{wawer2026consensus,lei2025learning,chen2026chainbreaks}. We therefore study the
+unassisted rollout: if we plant one error in a model's own proof, does the model build
+on the error, route around it, or complete a valid proof anyway?
 
 Prior work gives reasons to expect both fragility and robustness. Interventional
 studies perturb visible chain-of-thought and report surprising robustness
 \citep{vonrecum2026robust}; mechanistic analyses find redundant, self-repairing
-structure inside networks \citep{mcgrath2023hydra,lad2024stages}. Neither line fully
-settles our question, because two details matter here: whether the planted step is
-actually false, and whether apparent recovery is a genuine proof or a restatement of a
-prompted goal. Once those are controlled, the central pattern is simple: the model is
-more likely to avoid an error when the surrounding proof contains nearby evidence
-against it, and more likely to use the planted fact when detecting the error requires a
-broader proof search.
+structure inside networks \citep{mcgrath2023hydra,lad2024stages}. A parallel
+architectural response makes robustness structural: recursive models use unbounded
+recursion to isolate active sub-contexts while separating local attention from global memory
+\citep{yang2026recursive}, and horizon-reduction work treats effective horizon length
+as a stability bottleneck whose reduction enables horizon generalization
+\citep{kim2026longhorizon}. These systems form the structural-governance backdrop for
+our question: they change the execution structure, whereas we ask what happens inside a
+single visible rollout. None of these lines fully settles our question, because two details matter here:
+whether the planted step is actually false, and whether apparent recovery is a genuine
+proof or a restatement of a prompted goal. Once those are controlled, the central
+pattern is simple: the model avoids errors when nearby evidence refutes them, and uses
+planted facts more often when detection requires broader proof search.
 In the expanded Qwen2.5-7B sweep, globally checkable falsehoods yield
 closure-valid completion rates of 0.360--0.447 across injection positions and
 injection-dependence rates of 0.233--0.420, while one-hop falsehoods remain
@@ -462,58 +483,36 @@ correcting it are dissociable behaviors.}
 \end{figure}
 
 \section{Limitations}
-Our coverage is still narrow. The tasks are two synthetic families plus GSM8K; a
-formal-verification task such as Lean is the natural next regime. The models span
-several Qwen sizes, two further families (OLMo-2 and Llama-3.1), and a reasoning-RL
-variant (R1-Distill), but the model set is still small and Qwen-heavy. We also use
-deterministic decoding and a single null-sampling seed.
-
-Several design limitations remain. The globally-checkable falsehood family is
-generation-constrained, although the primary sweep expands the matched validated
-sample to \ExpansionTargetPerPosition\ examples per injection position.
-The lexical-polarity control does not cleanly isolate polarity because the local false
-positive categorical cell is infeasible in the current grammar. The prompt states the
-proof target, which the validator's parroting category and the goal-hidden QA condition
-address only partially. Our latent and geometric metrics are negative results.
-Closure-based validation permits step-skipping; the strict replay audit is reported
-separately and should not be conflated with closure-valid completion.
+Our coverage is still narrow: two synthetic families plus GSM8K, deterministic
+decoding, one null-sampling seed, and a model set that remains small and Qwen-heavy
+despite including OLMo-2, Llama-3.1, and R1-Distill. A formal-verification task such
+as Lean is the natural next regime. Several design limitations also remain. The
+globally-checkable falsehood family is generation-constrained, although the primary
+sweep expands the matched validated sample to \ExpansionTargetPerPosition\ examples
+per injection position. The lexical-polarity control does not cleanly isolate polarity;
+the prompted target is only partly addressed by parroting and goal-hidden QA controls;
+our latent/geometric metrics are negative results; and closure-based validation permits
+step-skipping, so the strict replay audit should not be conflated with closure-valid
+completion.
 
 \section{Related work}
-\textbf{CoT interventions and error recovery.} \citet{vonrecum2026robust} perturb
-visible CoT in reasoning-tuned models and find behavioral robustness with
-early-intervention degradation and doubt/length effects; our truth-status audit
-suggests that ``adversarial'' interventions need per-injection falsity verification.
-\citet{yee2024dissociation} precede our closure-valid/parroting split with a
-faithful/unfaithful recovery dichotomy via manual annotation; our delta is automated
-formal validation, semantic (vs.\ numerical) error control, the truth-status audit,
-and the comparison between errors with nearby evidence and errors requiring broader
-proof search. Their finding that recovery is more frequent for \emph{obvious} errors
-independently anticipates this distinction.
+\textbf{CoT interventions and error recovery.} Perturbation studies of visible CoT
+report behavioral robustness, early-intervention effects, and doubt/length changes
+\citep{vonrecum2026robust}; faithful/unfaithful recovery annotations precede our
+closure-valid/parroting split \citep{yee2024dissociation}. Our delta is automated
+formal validation, semantic error control, a per-injection truth-status audit, and the
+nearby-evidence comparison.
 
-\citet{lanham2023measuring} introduced adding-mistakes interventions for faithfulness;
-\citet{turpin2023unfaithful} showed stated reasoning can omit operative causes, which
-is consistent with models continuing without flagging an error they have used.
-\citet{zhang2023snowball} showed models commit to early mistakes they can separately
-recognize; our results locate when that recognition is and is not deployed in-rollout.
-\citet{huang2024cannot} found intrinsic self-correction weak at the multi-turn level.
-Our single-pass setting shows both sides: models may fail to flag errors without
-nearby evidence, but can explicitly flag inconsistencies when the relevant evidence is
-local.
-
-\textbf{Self-repair and redundancy.} \citet{mcgrath2023hydra,lad2024stages} document
-structural self-repair. Our results describe the complementary failure mode: robustness
-machinery can smooth over content errors that are not easy to check against the
-surrounding proof.
-
-\textbf{Trajectory geometry.} \citet{sun2026trajectories} characterize reasoning as
-step-specific representational trajectories with correctness signals. Our
-style-propagation result (benign $\approx$ falsehood in both functional and geometric
-divergence) is a caution for cross-trace comparisons in that line.
-
-\textbf{Compounding.} The analysis in \citet{dziri2023faith} supplies the ingredients
-of the compounding frame our results sharpen: the model can build on a planted error
-when the surrounding proof lacks nearby evidence against it, and task derivation
-structure (\S\ref{sec:task-structure}) determines the price.
+\textbf{Faithfulness, self-correction, and compounding.}
+\citet{lanham2023measuring,turpin2023unfaithful,zhang2023snowball,huang2024cannot}
+show that stated reasoning can be unfaithful, self-correction can be weak, and models
+may commit to mistakes they can separately recognize. Our single-pass setting locates
+when that recognition is deployed in-rollout. Mechanistic self-repair work
+\citep{mcgrath2023hydra,lad2024stages}, trajectory geometry
+\citep{sun2026trajectories}, and compounding analyses \citep{dziri2023faith} provide
+the surrounding frame: robustness machinery can survive some perturbations, but the
+price depends on whether task structure supplies nearby counterevidence
+(\S\ref{sec:task-structure}).
 
 \section{Conclusion}
 Single-pass autoregressive reasoning is neither uniformly brittle nor reliably
@@ -527,16 +526,54 @@ first-class part of the reasoning state. The risky errors are not merely wrong; 
 are wrong in ways the current context does not make cheap to doubt.
 
 \bibliographystyle{plainnat}
-\begin{thebibliography}{9}
+\begin{thebibliography}{99}
+\bibitem[Aravindan and Kejriwal(2026)]{aravindan2026fragile}
+A.V. Aravindan and M. Kejriwal.
+\newblock Fragile Thoughts: How Large Language Models Handle Chain-of-Thought
+Perturbations.
+\newblock arXiv:2603.03332, 2026.
+\bibitem[Chen et al.(2026a)]{chen2026selfcorrection}
+K.-Y. Chen, F.-Y. Su, and J.-H. Chiang.
+\newblock The Self-Correction Illusion: LLMs Correct Others but Not Themselves.
+\newblock arXiv:2606.05976, 2026.
+\bibitem[Chen et al.(2026b)]{chen2026chainbreaks}
+S. Chen, N. Sritharan, X. Wen, C. Zhang, X. Wang, and Y. Wang.
+\newblock When the Chain Breaks: Interactive Diagnosis of LLM Chain-of-Thought
+Reasoning Errors.
+\newblock \emph{Computer Graphics Forum}, 2026. arXiv:2603.21286.
 \bibitem[Dziri et al.(2023)]{dziri2023faith} N. Dziri et al.
 \newblock Faith and Fate: Limits of Transformers on Compositionality.
 \newblock \emph{NeurIPS}, 2023. arXiv:2305.18654.
+\bibitem[Kim et al.(2026)]{kim2026longhorizon}
+S. Kim, J. Cho, B.-W. Kwak, T. Kwon, L. Wang, N. Yang, X. Zhang, F. Wei,
+and J. Yeo.
+\newblock On Training Large Language Models for Long-Horizon Tasks: An
+Empirical Study of Horizon Length.
+\newblock arXiv:2605.02572, 2026.
 \bibitem[Lad et al.(2024)]{lad2024stages} V. Lad, J.H. Lee, W. Gurnee, M. Tegmark.
 \newblock The Remarkable Robustness of LLMs: Stages of Inference?
 \newblock arXiv:2406.19384, 2024.
+\bibitem[Lei et al.(2025)]{lei2025learning}
+Z. Lei, Z. Tan, S. Wang, Y. Zhu, Z. Chen, Y. Dong, and J. Li.
+\newblock Learning from Diverse Reasoning Paths with Routing and Collaboration.
+\newblock In \emph{Proceedings of EMNLP}, pages 2832--2845, 2025.
+\bibitem[Liao(2026)]{liao2026stability}
+H.-J. Liao.
+\newblock Intrinsic Stability Limits of Autoregressive Reasoning: Structural
+Consequences for Long-Horizon Execution.
+\newblock arXiv:2602.06413, 2026.
 \bibitem[McGrath et al.(2023)]{mcgrath2023hydra} T. McGrath et al.
 \newblock The Hydra Effect: Emergent Self-repair in Language Model Computations.
 \newblock arXiv:2307.15771, 2023.
+\bibitem[Neumann and Singh(2025)]{neumann2025cascade}
+A. Neumann and J. Singh.
+\newblock Caught in the Cascade: Why LLM Auditing is Missing the Middle.
+\newblock Unpublished manuscript, 2025.
+\bibitem[Ross et al.(2011)]{ross2011reduction}
+S. Ross, G.J. Gordon, and J.A. Bagnell.
+\newblock A Reduction of Imitation Learning and Structured Prediction to
+No-Regret Online Learning.
+\newblock In \emph{Proceedings of AISTATS}, pages 627--635, 2011.
 \bibitem[Saparov and He(2023)]{saparov2023prontoqa} A. Saparov and H. He.
 \newblock Language Models Are Greedy Reasoners: A Systematic Formal Analysis of
 Chain-of-Thought. \emph{ICLR}, 2023. arXiv:2210.01240.
@@ -567,6 +604,24 @@ Correctness Signals.
 Z. Akata.
 \newblock Are Reasoning LLMs Robust to Interventions on Their Chain-of-Thought?
 \newblock arXiv:2602.07470, 2026.
+\bibitem[Wawer and Chudziak(2026)]{wawer2026consensus}
+M. Wawer and J.A. Chudziak.
+\newblock Consensus is Strategically Insufficient: Reasoning-Trace Disagreement
+as a Knowledge-Representation Signal.
+\newblock arXiv:2606.04223, 2026.
+\bibitem[Yang et al.(2026)]{yang2026recursive}
+C. Yang, N. Srebro, and Z. Li.
+\newblock Recursive Models for Long-Horizon Reasoning.
+\newblock arXiv:2603.02112, 2026.
+\bibitem[You et al.(2025)]{you2025probabilistic}
+W. You, A. Xue, S. Havaldar, D. Rao, H. Jin, C. Callison-Burch, and E. Wong.
+\newblock Probabilistic Soundness Guarantees in LLM Reasoning Chains.
+\newblock In \emph{Proceedings of EMNLP}, pages 7506--7525, 2025.
+\bibitem[Zhang et al.(2025)]{zhang2025ascot}
+D. Zhang, N. Yang, Y. Sun, J. Zhu, J. Yang, M. Xin, and B. Tian.
+\newblock Not All Errors Are Created Equal: ASCoT Addresses Late-Stage Fragility
+in Efficient LLM Reasoning.
+\newblock arXiv:2508.05282, 2025.
 \end{thebibliography}
 
 \end{document}

@@ -1,0 +1,67 @@
+{
+  "batch": "batch2 (E10 TOPUP superset supplement)",
+  "generator": "improvement_plan/expg/gen_programs.py generate_shape_programs (verbatim; no edits)",
+  "knob_hash": [
+    "507786"
+  ],
+  "knob_hash_matches_batch1": true,
+  "n_per_shape": 120,
+  "shapes": {
+    "kr1": 120,
+    "kc1": 120,
+    "kc5": 120
+  },
+  "seed_bases": {
+    "kr1": 100100,
+    "kc1": 300100,
+    "kc5": 400100
+  },
+  "seed_ranges": {
+    "kr1": [
+      100100,
+      100235
+    ],
+    "kc1": [
+      300100,
+      300253
+    ],
+    "kc5": [
+      400100,
+      400242
+    ]
+  },
+  "batch2_program_id_fingerprint": "768324438cbdba1b948ed849",
+  "disjoint_from_batch1": true,
+  "batch1_source": "results/EXPH2_FRONTIER_FOLLOWUPS/regime2/programs.jsonl (250 programs; the original, kept as a subset of the union)",
+  "note": "Only kr1/kc1/kc5 generated (the shapes carrying the four KEY cells). batch1+batch2 form the superset; batches are distinguished by disjoint seed ranges under an identical knob_hash. Pooling is over the union per (model,cell).",
+  "generator_funnels": {
+    "kr1": {
+      "attempts": 136,
+      "accepted": 120,
+      "rejects": {
+        "true_values_not_distinct": 15,
+        "major5_site_value_in_listing": 1
+      }
+    },
+    "kc1": {
+      "attempts": 154,
+      "accepted": 120,
+      "rejects": {
+        "major5_site_value_in_listing": 2,
+        "true_values_not_distinct": 27,
+        "no_axis_c_delta": 3,
+        "true_values_not_distinct;major5_site_value_in_listing": 2
+      }
+    },
+    "kc5": {
+      "attempts": 143,
+      "accepted": 120,
+      "rejects": {
+        "true_values_not_distinct": 15,
+        "true_values_not_distinct;major5_site_value_in_listing": 4,
+        "major5_site_value_in_listing": 2,
+        "no_axis_c_delta": 2
+      }
+    }
+  }
+}

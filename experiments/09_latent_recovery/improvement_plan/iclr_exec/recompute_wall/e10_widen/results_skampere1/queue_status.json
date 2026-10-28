@@ -1,0 +1,348 @@
+{
+  "current": {
+    "done": "2026-07-27T20:47:51.386072+00:00",
+    "model": "ALL",
+    "rc": 0,
+    "stage": "queue_complete",
+    "started": "2026-07-27T19:48:42.926571+00:00"
+  },
+  "history": [
+    {
+      "at": "2026-07-27T19:27:26.894537+00:00",
+      "event": "start",
+      "model": "qwen1p5b",
+      "rc": null,
+      "stage": "generate"
+    },
+    {
+      "at": "2026-07-27T19:30:36.659774+00:00",
+      "event": "done",
+      "model": "qwen1p5b",
+      "rc": 0,
+      "stage": "generate"
+    },
+    {
+      "at": "2026-07-27T19:30:36.696480+00:00",
+      "event": "start",
+      "model": "qwen1p5b",
+      "rc": null,
+      "stage": "validate"
+    },
+    {
+      "at": "2026-07-27T19:30:36.905068+00:00",
+      "event": "done",
+      "model": "qwen1p5b",
+      "rc": 0,
+      "stage": "validate"
+    },
+    {
+      "at": "2026-07-27T19:30:36.946835+00:00",
+      "event": "start",
+      "model": "qwen1p5b",
+      "rc": null,
+      "stage": "judge"
+    },
+    {
+      "at": "2026-07-27T19:32:24.724764+00:00",
+      "event": "done",
+      "model": "qwen1p5b",
+      "rc": 1,
+      "stage": "judge"
+    },
+    {
+      "at": "2026-07-27T19:32:24.768771+00:00",
+      "event": "start",
+      "model": "qwen1p5b",
+      "rc": null,
+      "stage": "summarize"
+    },
+    {
+      "at": "2026-07-27T19:32:26.819753+00:00",
+      "event": "done",
+      "model": "qwen1p5b",
+      "rc": 0,
+      "stage": "summarize"
+    },
+    {
+      "at": "2026-07-27T19:32:26.858546+00:00",
+      "event": "start",
+      "model": "qwen1p5b",
+      "rc": null,
+      "stage": "report"
+    },
+    {
+      "at": "2026-07-27T19:32:26.947815+00:00",
+      "event": "done",
+      "model": "qwen1p5b",
+      "rc": 0,
+      "stage": "report"
+    },
+    {
+      "at": "2026-07-27T19:32:26.993787+00:00",
+      "event": "done",
+      "model": "qwen1p5b",
+      "rc": 0,
+      "stage": "model_complete"
+    },
+    {
+      "at": "2026-07-27T19:32:27.054795+00:00",
+      "event": "start",
+      "model": "qwen7b",
+      "rc": null,
+      "stage": "generate"
+    },
+    {
+      "at": "2026-07-27T19:36:01.257975+00:00",
+      "event": "done",
+      "model": "qwen7b",
+      "rc": 0,
+      "stage": "generate"
+    },
+    {
+      "at": "2026-07-27T19:36:01.298982+00:00",
+      "event": "start",
+      "model": "qwen7b",
+      "rc": null,
+      "stage": "validate"
+    },
+    {
+      "at": "2026-07-27T19:36:01.713547+00:00",
+      "event": "done",
+      "model": "qwen7b",
+      "rc": 0,
+      "stage": "validate"
+    },
+    {
+      "at": "2026-07-27T19:36:01.973334+00:00",
+      "event": "start",
+      "model": "qwen7b",
+      "rc": null,
+      "stage": "judge"
+    },
+    {
+      "at": "2026-07-27T19:36:55.787815+00:00",
+      "event": "done",
+      "model": "qwen7b",
+      "rc": 1,
+      "stage": "judge"
+    },
+    {
+      "at": "2026-07-27T19:36:55.918843+00:00",
+      "event": "start",
+      "model": "qwen7b",
+      "rc": null,
+      "stage": "summarize"
+    },
+    {
+      "at": "2026-07-27T19:37:02.003638+00:00",
+      "event": "done",
+      "model": "qwen7b",
+      "rc": 0,
+      "stage": "summarize"
+    },
+    {
+      "at": "2026-07-27T19:37:02.072996+00:00",
+      "event": "start",
+      "model": "qwen7b",
+      "rc": null,
+      "stage": "report"
+    },
+    {
+      "at": "2026-07-27T19:37:02.199676+00:00",
+      "event": "done",
+      "model": "qwen7b",
+      "rc": 0,
+      "stage": "report"
+    },
+    {
+      "at": "2026-07-27T19:37:02.280819+00:00",
+      "event": "done",
+      "model": "qwen7b",
+      "rc": 0,
+      "stage": "model_complete"
+    },
+    {
+      "at": "2026-07-27T19:37:02.371859+00:00",
+      "event": "start",
+      "model": "olmo7b",
+      "rc": null,
+      "stage": "generate"
+    },
+    {
+      "at": "2026-07-27T19:42:20.395470+00:00",
+      "event": "done",
+      "model": "olmo7b",
+      "rc": 0,
+      "stage": "generate"
+    },
+    {
+      "at": "2026-07-27T19:42:20.430083+00:00",
+      "event": "start",
+      "model": "olmo7b",
+      "rc": null,
+      "stage": "validate"
+    },
+    {
+      "at": "2026-07-27T19:42:20.960433+00:00",
+      "event": "done",
+      "model": "olmo7b",
+      "rc": 0,
+      "stage": "validate"
+    },
+    {
+      "at": "2026-07-27T19:42:21.010627+00:00",
+      "event": "start",
+      "model": "olmo7b",
+      "rc": null,
+      "stage": "judge"
+    },
+    {
+      "at": "2026-07-27T19:43:15.932493+00:00",
+      "event": "done",
+      "model": "olmo7b",
+      "rc": 1,
+      "stage": "judge"
+    },
+    {
+      "at": "2026-07-27T19:43:15.975190+00:00",
+      "event": "start",
+      "model": "olmo7b",
+      "rc": null,
+      "stage": "summarize"
+    },
+    {
+      "at": "2026-07-27T19:43:21.241799+00:00",
+      "event": "done",
+      "model": "olmo7b",
+      "rc": 0,
+      "stage": "summarize"
+    },
+    {
+      "at": "2026-07-27T19:43:21.275953+00:00",
+      "event": "start",
+      "model": "olmo7b",
+      "rc": null,
+      "stage": "report"
+    },
+    {
+      "at": "2026-07-27T19:43:21.359119+00:00",
+      "event": "done",
+      "model": "olmo7b",
+      "rc": 0,
+      "stage": "report"
+    },
+    {
+      "at": "2026-07-27T19:43:21.401755+00:00",
+      "event": "done",
+      "model": "olmo7b",
+      "rc": 0,
+      "stage": "model_complete"
+    },
+    {
+      "at": "2026-07-27T19:43:21.456819+00:00",
+      "event": "start",
+      "model": "llama8b",
+      "rc": null,
+      "stage": "generate"
+    },
+    {
+      "at": "2026-07-27T19:47:37.467525+00:00",
+      "event": "done",
+      "model": "llama8b",
+      "rc": 0,
+      "stage": "generate"
+    },
+    {
+      "at": "2026-07-27T19:47:37.527821+00:00",
+      "event": "start",
+      "model": "llama8b",
+      "rc": null,
+      "stage": "validate"
+    },
+    {
+      "at": "2026-07-27T19:47:38.059648+00:00",
+      "event": "done",
+      "model": "llama8b",
+      "rc": 0,
+      "stage": "validate"
+    },
+    {
+      "at": "2026-07-27T19:47:38.122293+00:00",
+      "event": "start",
+      "model": "llama8b",
+      "rc": null,
+      "stage": "judge"
+    },
+    {
+      "at": "2026-07-27T19:48:35.672451+00:00",
+      "event": "done",
+      "model": "llama8b",
+      "rc": 1,
+      "stage": "judge"
+    },
+    {
+      "at": "2026-07-27T19:48:35.719246+00:00",
+      "event": "start",
+      "model": "llama8b",
+      "rc": null,
+      "stage": "summarize"
+    },
+    {
+      "at": "2026-07-27T19:48:42.286334+00:00",
+      "event": "done",
+      "model": "llama8b",
+      "rc": 0,
+      "stage": "summarize"
+    },
+    {
+      "at": "2026-07-27T19:48:42.442010+00:00",
+      "event": "start",
+      "model": "llama8b",
+      "rc": null,
+      "stage": "report"
+    },
+    {
+      "at": "2026-07-27T19:48:42.697610+00:00",
+      "event": "done",
+      "model": "llama8b",
+      "rc": 0,
+      "stage": "report"
+    },
+    {
+      "at": "2026-07-27T19:48:42.865529+00:00",
+      "event": "done",
+      "model": "llama8b",
+      "rc": 0,
+      "stage": "model_complete"
+    },
+    {
+      "at": "2026-07-27T19:48:42.926571+00:00",
+      "event": "start",
+      "model": "qwen32b",
+      "rc": null,
+      "stage": "generate"
+    },
+    {
+      "at": "2026-07-27T20:47:51.330452+00:00",
+      "event": "done",
+      "model": "qwen32b",
+      "rc": 137,
+      "stage": "generate"
+    },
+    {
+      "at": "2026-07-27T20:47:51.386072+00:00",
+      "event": "done",
+      "model": "ALL",
+      "rc": 0,
+      "stage": "queue_complete"
+    }
+  ],
+  "queue": [
+    "qwen1p5b",
+    "qwen7b",
+    "olmo7b",
+    "llama8b",
+    "qwen32b"
+  ],
+  "updated_at": "2026-07-27T20:47:51.386097+00:00"
+}

@@ -1,0 +1,11 @@
+=== [prepare qwen1p5b] 2026-07-27T09:22:06-07:00 -> /lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/recompute_wall/e10_widen/results/EXPG_PROGTRACE_qwen1p5b ===
+=== [prepare qwen1p5b] rc=0 2026-07-27T09:22:06-07:00 ===
+=== [prepare qwen7b] 2026-07-27T09:22:06-07:00 -> /lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/recompute_wall/e10_widen/results/EXPG_PROGTRACE_qwen7b ===
+=== [prepare qwen7b] rc=0 2026-07-27T09:22:06-07:00 ===
+=== [prepare olmo7b] 2026-07-27T09:22:06-07:00 -> /lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/recompute_wall/e10_widen/results/EXPG_PROGTRACE_olmo7b ===
+=== [prepare olmo7b] rc=0 2026-07-27T09:22:07-07:00 ===
+=== [prepare llama8b] 2026-07-27T09:22:07-07:00 -> /lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/recompute_wall/e10_widen/results/EXPG_PROGTRACE_llama8b ===
+=== [prepare llama8b] rc=0 2026-07-27T09:22:07-07:00 ===
+=== [prepare qwen32b] 2026-07-27T09:22:07-07:00 -> /lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/recompute_wall/e10_widen/results/EXPG_PROGTRACE_qwen32b ===
+=== [prepare qwen32b] rc=0 2026-07-27T09:22:07-07:00 ===
+ALL WORLDS PREPARED

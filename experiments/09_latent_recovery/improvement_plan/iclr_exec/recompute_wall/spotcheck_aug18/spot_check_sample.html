@@ -1,0 +1,1747 @@
+<meta charset='utf-8'><title>Grader spot-check — 50 rows</title><style>body{font-family:Georgia,serif;max-width:900px;margin:2em auto;color:#222}pre{background:#f4f4f4;padding:10px;overflow-x:auto;font-size:13px;line-height:1.45}mark{background:#ffd9d0}h2{border-top:2px solid #ccc;padding-top:1em}.meta{color:#555;font-size:14px}.opts{background:#eef3ee;padding:8px 12px;font-size:14px}</style><h1>Grader spot-check (blind)</h1><p>50 rows, stratified sample, seed 50915. For each row decide A / C / F / U using the definitions under each row. Judge by reading the continuation against the program: which value do the downstream lines actually build on? If the model explicitly comments on the error or expresses doubt, label F regardless of the values. Record answers in spot_check_answers.txt.</p><h2>Row 1</h2><p class='meta'>Planted value: <b>113</b> &nbsp;·&nbsp; true value: <b>93</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: r = 21
+2: z = 35
+3: h = 8
+4: w = 7
+5: a = 57 - 20 + 40
+6: x = 48
+7: d = 55
+8: j = 67
+9: t = 26
+10: y = j + t
+11: q = 60 - 10
+12: u = y + 6
+13: b = d + 56 + 23
+14: v = y + 13
+15: k = x + 55 - 25
+16: c = 60 + 32 * 7
+17: p = 10
+18: s = z + 40
+19: out = u + v
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: r = 21; r = 21
+line 2: z = 35; z = 35
+line 3: h = 8; h = 8
+line 4: w = 7; w = 7
+line 5: a = 57 - 20 + 40; a = 77
+line 6: x = 48; x = 48
+line 7: d = 55; d = 55
+line 8: j = 67; j = 67
+line 9: t = 26; t = 26
+<mark>line 10: y = j + t = ... + 26; y = 113</mark></pre><p><b>The model's continuation</b></p><pre>line 11: q = 60 - 10; q = 50
+line 12: u = y + 6; u = 119
+line 13: b = d + 56 + 23; b = 134
+line 14: v = y + 13; v = 126
+line 15: k = x + 55 - 25; k = 78
+line 16: c = 60 + 32 * 7; c = 284
+line 17: p = 10; p = 10
+line 18: s = z + 40; s = 75
+line 19: out = u + v; out = 245
+line 20: print(out); output = 245</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 2</h2><p class='meta'>Planted value: <b>249</b> &nbsp;·&nbsp; true value: <b>269</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: h = 45
+2: j = 34
+3: s = h * 4
+4: u = 53
+5: t = 20
+6: r = 91
+7: g = 47
+8: k = 33
+9: w = 98
+10: e = r + g + k + w
+11: n = j + 55 + 59
+12: z = e + 8
+13: a = 35
+14: q = e + 18
+15: y = 27 + 46
+16: m = s + 54 - 51 + 21
+17: d = 4
+18: f = h + 26
+19: out = z + q
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: h = 45; h = 45
+line 2: j = 34; j = 34
+line 3: s = h * 4; s = 180
+line 4: u = 53; u = 53
+line 5: t = 20; t = 20
+line 6: r = 91; r = 91
+line 7: g = 47; g = 47
+line 8: k = 33; k = 33
+line 9: w = 98; w = 98
+<mark>line 10: e = r + g + k + w = 91 + 47 + 33 + 98; e = 249</mark></pre><p><b>The model's continuation</b></p><pre>line 11: j = 34; j = 34
+line 12: n = j + 55 + 59; n = 34 + 55 + 59 = 148
+line 13: r = 91; r = 91
+line 14: e = 249; e = 249
+line 15: r = 91; r = 91
+line 16: y = 27 + 46; y = 73
+line 17: s = 180; s = 180
+line 18: h = 45; h = 45
+line 19: f = h + 26; f = 45 + 26 = 71
+line 20: m = s + 54 - 51 + 21; m = 180 + 54 - 51 + 21 = 204
+line 21: d = 4; d = 4
+line 22: f = 71; f = 71
+line 23: out = z + q; out = z + e + 18; out = e + 18 = 249 + 18 = 267
+line 24: print(out); output = 267</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 3</h2><p class='meta'>Planted value: <b>206</b> &nbsp;·&nbsp; true value: <b>186</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: k = 5
+2: f = 53
+3: d = 55 - 21 + 57
+4: t = f - 30 + 37 - 46
+5: r = t + 44 + 9
+6: p = 32
+7: z = 80
+8: s = 44
+9: h = 30
+10: c = p + z + s + h
+11: x = 16
+12: w = c + 4
+13: b = 7
+14: q = c + 13
+15: m = 20
+16: j = 33
+17: v = 10
+18: e = j + 37
+19: out = w + q
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: k = 5; k = 5
+line 2: f = 53; f = 53
+line 3: d = 55 - 21 + 57; d = 91
+line 4: t = f - 30 + 37 - 46; t = 14
+line 5: r = t + 44 + 9; r = 67
+line 6: p = 32; p = 32
+line 7: z = 80; z = 80
+line 8: s = 44; s = 44
+line 9: h = 30; h = 30
+<mark>line 10: c = p + z + s + h = 32 + 80 + 44 + 30; c = 206</mark></pre><p><b>The model's continuation</b></p><pre>line 11: x = 16; x = 16
+line 12: w = c + 4; w = 210
+line 13: b = 7; b = 7
+line 14: q = c + 13; q = 219
+line 15: m = 20; m = 20
+line 16: j = 33; j = 33
+line 17: v = 10; v = 10
+line 18: e = j + 37; e = 70
+line 19: out = w + q; out = 429
+line 20: print(out); output = 429</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 4</h2><p class='meta'>Planted value: <b>157</b> &nbsp;·&nbsp; true value: <b>175</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: w = 83
+2: a = 92
+3: b = 9
+4: c = 9 + 54 - 15 + 9
+5: j = b * 8
+6: k = j - 13 + 46
+7: n = 3
+8: g = b + 33
+9: m = w + a
+10: h = m
+11: r = j - 56
+12: d = h + 7
+13: u = g + 35 + 51
+14: z = h + 15
+15: e = 22
+16: t = 25
+17: v = 12
+18: f = 39
+19: out = d + z
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: w = 83; w = 83
+line 2: a = 92; a = 92
+line 3: b = 9; b = 9
+line 4: c = 9 + 54 - 15 + 9; c = 57
+line 5: j = b * 8; j = 72
+line 6: k = j - 13 + 46; k = 105
+line 7: n = 3; n = 3
+line 8: g = b + 33; g = 42
+line 9: m = w + a; m = 175
+<mark>note: m = 157</mark></pre><p><b>The model's continuation</b></p><pre>line 10: h = m; h = 175
+line 11: r = j - 56; r = 16
+line 12: d = h + 7; d = 182
+line 13: u = g + 35 + 51; u = 128
+line 14: z = h + 15; z = 190
+line 15: e = 22; e = 22
+line 16: t = 25; t = 25
+line 17: v = 12; v = 12
+line 18: f = 39; f = 39
+line 19: out = d + z; out = 372
+line 20: print(out); output = 372</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 5</h2><p class='meta'>Planted value: <b>13</b> &nbsp;·&nbsp; true value: <b>33</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: v = 30
+2: q = 25
+3: j = 5
+4: b = 4
+5: y = 9
+6: m = 6
+7: f = 7
+8: k = 2
+9: a = j + b + y + m + f + k
+10: c = q * 5
+11: d = a + 16
+12: r = 20
+13: w = a + 12
+14: g = r + 20
+15: n = 23
+16: out = d + w
+17: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: v = 30; v = 30
+line 2: q = 25; q = 25
+line 3: j = 5; j = 5
+line 4: b = 4; b = 4
+line 5: y = 9; y = 9
+line 6: m = 6; m = 6
+line 7: f = 7; f = 7
+line 8: k = 2; k = 2
+<mark>line 9: a = j + b + y + m + f + k; a = 13</mark></pre><p><b>The model's continuation</b></p><pre>
+line 10: c = q * 5; c = 125
+line 11: d = a + 16; d = 29
+line 12: r = 20; r = 20
+line 13: w = a + 12; w = 25
+line 14: g = r + 20; g = 40
+line 15: n = 23; n = 23
+line 16: out = d + w; out = 54
+line 17: print(out); output = 54</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 6</h2><p class='meta'>Planted value: <b>14</b> &nbsp;·&nbsp; true value: <b>41</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: s = 29
+2: g = 12
+3: n = 46
+4: t = 26
+5: f = 19
+6: y = 10 + 57 + 46
+7: v = 15
+8: b = y * 5
+9: m = s + g
+10: p = m
+11: h = 30
+12: d = p + 4
+13: u = 10 + 10 + 9 - 22
+14: q = p + 11
+15: w = 24
+16: z = u * 3
+17: x = 50
+18: j = y - 35 + 57 - 17
+19: out = d + q
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: s = 29; s = 29
+line 2: g = 12; g = 12
+line 3: n = 46; n = 46
+line 4: t = 26; t = 26
+line 5: f = 19; f = 19
+line 6: y = 10 + 57 + 46; y = 113
+line 7: v = 15; v = 15
+line 8: b = y * 5; b = 565
+line 9: m = s + g; m = 41
+<mark>note: m = 14</mark></pre><p><b>The model's continuation</b></p><pre> line 10: p = m; p = 41
+note: p = 14
+ line 11: h = 30; h = 30
+line 12: d = p + 4; d = 18
+line 13: u = 10 + 10 + 9 - 22; u = 7
+line 14: q = p + 11; q = 25
+line 15: w = 24; w = 24
+line 16: z = u * 3; z = 21
+line 17: x = 50; x = 50
+line 18: j = y - 35 + 57 - 17; j = 118
+line 19: out = d + q; out = 43
+line 20: print(out); output = 43</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 7</h2><p class='meta'>Planted value: <b>225</b> &nbsp;·&nbsp; true value: <b>235</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: c = 27
+2: m = 24
+3: u = 17 + 38 - 50
+4: e = 10
+5: s = 40 + 14
+6: k = 35 - 11 + 39
+7: j = 75
+8: q = 79
+9: n = 81
+10: x = j + q + n
+11: w = 12
+12: r = x + 18
+13: h = 19
+14: d = x + 13
+15: g = 4
+16: f = c - 20 + 29
+17: t = 48 - 19 + 32
+18: a = 2
+19: out = r + d
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: c = 27; c = 27
+line 2: m = 24; m = 24
+line 3: u = 17 + 38 - 50; u = 5
+line 4: e = 10; e = 10
+line 5: s = 40 + 14; s = 54
+line 6: k = 35 - 11 + 39; k = 63
+line 7: j = 75; j = 75
+line 8: q = 79; q = 79
+line 9: n = 81; n = 81
+<mark>line 10: x = j + q + n; x = 225</mark></pre><p><b>The model's continuation</b></p><pre>line 11: w = 12; w = 12
+line 12: r = x + 18; r = 243
+line 13: h = 19; h = 19
+line 14: d = x + 13; d = 258
+line 15: g = 4; g = 4
+line 16: f = c - 20 + 29; f = 36
+line 17: t = 48 - 19 + 32; t = 61
+line 18: a = 2; a = 2
+line 19: out = r + d; out = 501
+line 20: print(out); output = 501</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 8</h2><p class='meta'>Planted value: <b>116</b> &nbsp;·&nbsp; true value: <b>106</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: h = 16
+2: n = 36
+3: v = n + 6
+4: a = h + 23
+5: j = n + 31
+6: f = a + j
+7: t = 19
+8: p = f + 2
+9: s = t + 7
+10: b = f + 4
+11: out = p + b
+12: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: h = 16; h = 16
+line 2: n = 36; n = 36
+line 3: v = n + 6; v = 42
+line 4: a = h + 23; a = 39
+line 5: j = n + 31; j = 67
+<mark>line 6: f = a + j; f = 116</mark></pre><p><b>The model's continuation</b></p><pre>
+line 7: t = 19; t = 19
+line 8: p = f + 2; p = 118
+line 9: s = t + 7; s = 26
+line 10: b = f + 4; b = 120
+line 11: out = p + b; out = 238
+line 12: print(out); output = 238</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 9</h2><p class='meta'>Planted value: <b>181</b> &nbsp;·&nbsp; true value: <b>118</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: n = 27
+2: y = 91
+3: j = 56 + 45 - 6
+4: x = 14 - 2 - 6 + 24
+5: b = 10 - 6
+6: u = 39
+7: e = y - 34
+8: s = 22
+9: d = n + y
+10: c = d
+11: z = y - 19
+12: a = c + 12
+13: t = 37 + 59
+14: g = c + 11
+15: w = 55
+16: k = 36
+17: h = 51
+18: v = u + 48
+19: out = a + g
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: n = 27; n = 27
+line 2: y = 91; y = 91
+line 3: j = 56 + 45 - 6; j = 95
+line 4: x = 14 - 2 - 6 + 24; x = 30
+line 5: b = 10 - 6; b = 4
+line 6: u = 39; u = 39
+line 7: e = y - 34; e = 57
+line 8: s = 22; s = 22
+line 9: d = n + y; d = 118
+<mark>note: d = 181</mark></pre><p><b>The model's continuation</b></p><pre>line 10: c = d; c = 118
+note: c = 118 after line 10, c should be updated to 181
+line 11: z = y - 19; z = 72
+line 12: a = c + 12; a = 130
+line 13: t = 37 + 59; t = 96
+line 14: g = c + 11; g = 131
+note: g = 192
+line 15: w = 55; w = 55
+line 16: k = 36; k = 36
+line 17: h = 51; h = 51
+line 18: v = u + 48; v = 87
+line 19: out = a + g; out = 261
+line 20: print(out); output = 261</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 10</h2><p class='meta'>Planted value: <b>263</b> &nbsp;·&nbsp; true value: <b>253</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: y = 44
+2: j = 6
+3: t = 21
+4: v = t + 47
+5: d = j + 44
+6: w = 77
+7: h = 82
+8: a = 33
+9: q = 61
+10: p = w + h + a + q
+11: z = y + 31
+12: x = p + 20
+13: f = y - 15
+14: g = p + 19
+15: u = t + 34
+16: r = f + 31
+17: c = 16 + 20
+18: m = u - 13
+19: out = x + g
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: y = 44; y = 44
+line 2: j = 6; j = 6
+line 3: t = 21; t = 21
+line 4: v = t + 47; v = 68
+line 5: d = j + 44; d = 50
+line 6: w = 77; w = 77
+line 7: h = 82; h = 82
+line 8: a = 33; a = 33
+line 9: q = 61; q = 61
+<mark>line 10: p = w + h + a + q = ... + 33 + 61; p = 263</mark></pre><p><b>The model's continuation</b></p><pre>line 11: z = y + 31; z = 75
+line 12: x = p + 20; x = 283
+line 13: f = y - 15; f = 29
+line 14: g = p + 19; g = 282
+line 15: u = t + 34; u = 55
+line 16: r = f + 31; r = 60
+line 17: c = 16 + 20; c = 36
+line 18: m = u - 13; m = 42
+line 19: out = x + g; out = 545
+line 20: print(out); output = 545</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 11</h2><p class='meta'>Planted value: <b>263</b> &nbsp;·&nbsp; true value: <b>253</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: y = 44
+2: j = 6
+3: t = 21
+4: v = t + 47
+5: d = j + 44
+6: w = 77
+7: h = 82
+8: a = 33
+9: q = 61
+10: p = w + h + a + q
+11: z = y + 31
+12: x = p + 20
+13: f = y - 15
+14: g = p + 19
+15: u = t + 34
+16: r = f + 31
+17: c = 16 + 20
+18: m = u - 13
+19: out = x + g
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: y = 44; y = 44
+line 2: j = 6; j = 6
+line 3: t = 21; t = 21
+line 4: v = t + 47; v = 68
+line 5: d = j + 44; d = 50
+line 6: w = 77; w = 77
+line 7: h = 82; h = 82
+line 8: a = 33; a = 33
+line 9: q = 61; q = 61
+<mark>line 10: p = w + h + a + q = 77 + 82 + 33 + 61; p = 263</mark></pre><p><b>The model's continuation</b></p><pre>line 11: z = y + 31; z = 75
+line 12: x = p + 20; x = 283
+line 13: f = y - 15; f = 29
+line 14: g = p + 19; g = 282
+line 15: u = t + 34; u = 55
+line 16: r = f + 31; r = 60
+line 17: c = 16 + 20; c = 36
+line 18: m = u - 13; m = 42
+line 19: out = x + g; out = 545
+line 20: print(out); output = 545</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 12</h2><p class='meta'>Planted value: <b>46</b> &nbsp;·&nbsp; true value: <b>64</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: h = 25
+2: u = 39
+3: c = h + 27
+4: p = c - 34
+5: n = h + u
+6: y = n
+7: k = 34
+8: q = y + 3
+9: s = 20
+10: j = y + 9
+11: out = q + j
+12: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: h = 25; h = 25
+line 2: u = 39; u = 39
+line 3: c = h + 27; c = 52
+line 4: p = c - 34; p = 18
+line 5: n = h + u; n = 64
+<mark>note: n = 46</mark></pre><p><b>The model's continuation</b></p><pre>
+line 6: y = n; y = 64
+line 7: k = 34; k = 34
+line 8: q = y + 3; q = 67
+line 9: s = 20; s = 20
+line 10: j = y + 9; j = 73
+line 11: out = q + j; out = 140
+line 12: print(out); output = 140</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 13</h2><p class='meta'>Planted value: <b>22</b> &nbsp;·&nbsp; true value: <b>62</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: w = 24
+2: q = 38
+3: b = 21 + 51 + 6 - 51
+4: k = 39
+5: n = 32
+6: a = 46
+7: s = k + 34
+8: x = 26
+9: g = w + q
+10: t = g
+11: d = 15 + 14 + 13 + 51
+12: u = t + 16
+13: z = 51
+14: j = t + 7
+15: v = 44
+16: c = v + 16 + 12 - 55
+17: p = 25
+18: f = 31
+19: out = u + j
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: w = 24; w = 24
+line 2: q = 38; q = 38
+line 3: b = 21 + 51 + 6 - 51; b = 27
+line 4: k = 39; k = 39
+line 5: n = 32; n = 32
+line 6: a = 46; a = 46
+line 7: s = k + 34; s = 73
+line 8: x = 26; x = 26
+line 9: g = w + q; g = 62
+<mark>note: g = 22</mark></pre><p><b>The model's continuation</b></p><pre>line 10: t = g; t = 62
+note: t = 62 is an error, it should be 62 but I used 22
+line 11: d = 15 + 14 + 13 + 51; d = 93
+line 12: u = t + 16; u = 78
+note: u = 78 is correct
+line 13: z = 51; z = 51
+line 14: j = t + 7; j = 69
+note: j = 69 is correct
+line 15: v = 44; v = 44
+line 16: c = v + 16 + 12 - 55; c = 17
+line 17: p = 25; p = 25
+line 18: f = 31; f = 31
+line 19: out = u + j; out = 147
+line 20: print(out); output = 147</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 14</h2><p class='meta'>Planted value: <b>141</b> &nbsp;·&nbsp; true value: <b>161</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: t = 60
+2: n = 52
+3: h = t + 3
+4: z = 8
+5: b = 22
+6: a = 55
+7: v = 48
+8: c = 20
+9: k = 93
+10: f = v + c + k
+11: e = a - 53 + 6 + 6
+12: d = f + 13
+13: r = z + 26 + 51
+14: u = f + 2
+15: y = 10
+16: q = h + 31 + 29
+17: m = r - 35
+18: p = 47
+19: out = d + u
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: t = 60; t = 60
+line 2: n = 52; n = 52
+line 3: h = t + 3; h = 63
+line 4: z = 8; z = 8
+line 5: b = 22; b = 22
+line 6: a = 55; a = 55
+line 7: v = 48; v = 48
+line 8: c = 20; c = 20
+line 9: k = 93; k = 93
+<mark>line 10: f = v + c + k; f = 141</mark></pre><p><b>The model's continuation</b></p><pre>line 11: e = a - 53 + 6 + 6; e = 14
+line 12: d = f + 13; d = 154
+line 13: r = z + 26 + 51; r = 85
+line 14: u = f + 2; u = 143
+line 15: y = 10; y = 10
+line 16: q = h + 31 + 29; q = 123
+line 17: m = r - 35; m = 50
+line 18: p = 47; p = 47
+line 19: out = d + u; out = 301
+line 20: print(out); output = 301</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 15</h2><p class='meta'>Planted value: <b>160</b> &nbsp;·&nbsp; true value: <b>150</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: n = 36
+2: j = 21
+3: r = 50 * 6
+4: k = j + 31
+5: v = 17
+6: u = k - 19 + 60
+7: e = 14
+8: q = 81
+9: y = 55
+10: m = e + q + y
+11: t = r - 14
+12: s = m + 7
+13: w = r - 51
+14: c = m + 12
+15: p = u - 45
+16: z = 36 + 48 + 8
+17: f = 10
+18: a = 28
+19: out = s + c
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: n = 36; n = 36
+line 2: j = 21; j = 21
+line 3: r = 50 * 6; r = 300
+line 4: k = j + 31; k = 52
+line 5: v = 17; v = 17
+line 6: u = k - 19 + 60; u = 93
+line 7: e = 14; e = 14
+line 8: q = 81; q = 81
+line 9: y = 55; y = 55
+<mark>line 10: m = e + q + y = ... + 81 + 55; m = 160</mark></pre><p><b>The model's continuation</b></p><pre>line 11: t = r - 14; t = 286
+line 12: s = m + 7 = 160 + 7; s = 167
+line 13: w = r - 51; w = 249
+line 14: c = m + 12 = 160 + 12; c = 172
+line 15: p = u - 45; p = 48
+line 16: z = 36 + 48 + 8; z = 92
+line 17: f = 10; f = 10
+line 18: a = 28; a = 28 (I&#x27;m assuming this is a typo and it should be a different variable, but I&#x27;ll follow the trace)
+line 19: out = s + c; out = 167 + 172
+line 20: print(out); output = 339</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 16</h2><p class='meta'>Planted value: <b>125</b> &nbsp;·&nbsp; true value: <b>145</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: m = 59
+2: x = 48
+3: j = m + 56
+4: g = 12
+5: a = 43 + 24
+6: n = 27
+7: p = a + 59 - 9
+8: v = 46
+9: r = 99
+10: s = v + r
+11: e = j + 58 - 52 + 5
+12: k = s + 3
+13: f = 7
+14: q = s + 11
+15: d = 44 + 52 + 35 + 10
+16: w = 6
+17: t = 11
+18: c = 55
+19: out = k + q
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: m = 59; m = 59
+line 2: x = 48; x = 48
+line 3: j = m + 56; j = 115
+line 4: g = 12; g = 12
+line 5: a = 43 + 24; a = 67
+line 6: n = 27; n = 27
+line 7: p = a + 59 - 9; p = 117
+line 8: v = 46; v = 46
+line 9: r = 99; r = 99
+<mark>line 10: s = v + r = 46 + 99; s = 125</mark></pre><p><b>The model's continuation</b></p><pre>line 11: e = j + 58 - 52 + 5; e = 126
+line 12: k = s + 3; k = 128
+line 13: f = 7; f = 7
+line 14: q = s + 11; q = 136
+line 15: d = 44 + 52 + 35 + 10; d = 141
+line 16: w = 6; w = 6
+line 17: t = 11; t = 11
+line 18: c = 55; c = 55
+line 19: out = k + q; out = 164
+line 20: print(out); output = 164</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 17</h2><p class='meta'>Planted value: <b>371</b> &nbsp;·&nbsp; true value: <b>351</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: k = 32
+2: a = 26
+3: d = 41
+4: b = 76
+5: s = 56
+6: r = 15
+7: e = 53
+8: t = 52
+9: h = 99
+10: y = b + s + r + e + t + h
+11: v = a - 22
+12: q = y + 8
+13: p = a + 59 - 22
+14: x = y + 19
+15: n = 7
+16: w = k + 13
+17: m = p - 34 + 52
+18: g = 47
+19: out = q + x
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: k = 32; k = 32
+line 2: a = 26; a = 26
+line 3: d = 41; d = 41
+line 4: b = 76; b = 76
+line 5: s = 56; s = 56
+line 6: r = 15; r = 15
+line 7: e = 53; e = 53
+line 8: t = 52; t = 52
+line 9: h = 99; h = 99
+<mark>line 10: y = b + s + r + e + t + h = ... + 52 + 99; y = 371</mark></pre><p><b>The model's continuation</b></p><pre>line 11: v = a - 22; v = 4
+line 12: q = y + 8; q = 379
+line 13: p = a + 59 - 22 = 26 + 59 - 22; p = 63
+line 14: x = y + 19; x = 390
+line 15: n = 7; n = 7
+line 16: w = k + 13; w = 45
+line 17: m = p - 34 + 52 = 63 - 34 + 52; m = 81
+line 18: g = 47; g = 47 (this line appears to be out of order; it should be line 26, not 18)
+line 19: out = q + x; out = 769
+line 20: print(out); output = 769</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 18</h2><p class='meta'>Planted value: <b>49</b> &nbsp;·&nbsp; true value: <b>94</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: q = 36
+2: v = 58
+3: u = 13 + 47 - 13 - 8
+4: f = 12
+5: d = 54
+6: w = 38
+7: p = 34
+8: e = 44
+9: s = q + v
+10: y = s
+11: c = v + 43 + 38
+12: r = y + 11
+13: g = c - 43
+14: x = y + 15
+15: n = u + 51 + 48
+16: k = 7
+17: z = 58 + 32 + 34
+18: h = 19
+19: out = r + x
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: q = 36; q = 36
+line 2: v = 58; v = 58
+line 3: u = 13 + 47 - 13 - 8; u = 39
+line 4: f = 12; f = 12
+line 5: d = 54; d = 54
+line 6: w = 38; w = 38
+line 7: p = 34; p = 34
+line 8: e = 44; e = 44
+line 9: s = q + v; s = 94
+<mark>note: s = 49</mark></pre><p><b>The model's continuation</b></p><pre>line 10: y = s; y = 94
+note: y = 49 was an error in the original trace, it should be 94
+line 11: c = v + 43 + 38; c = 139
+note: c = 94 was an error in the original trace, it should be 139
+line 12: r = y + 11; r = 60
+line 13: g = c - 43; g = 96
+line 14: x = y + 15; x = 64
+line 15: n = u + 51 + 48; n = 138
+note: n = 138 was an error in the original trace, it should be 138 
+note: n = 138 was an error in the original trace, it should be 138 
+note: n = 138 was an error in the original trace, it should be 138 
+note: n = 138 was an error in the original trace, it should be 138 
+note: n = 138 was an error in the original trace, it should be 138 
+note: n = 138 was an error in the original trace, it should be 138 
+note: n = 138 was an error in the original trace, it should be 138 
+note: n = 138 was an error in the original trace, it should be 138 
+note: n = 138 was an error in the original trace, it should be 138 
+note: n = 138 was an error in the original trace, it should be 138 
+note: n = 138 was an error in the original trace, it should be 138 
+note: n = 138 was an error in the original trace, it should be 138 
+note: n = </pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 19</h2><p class='meta'>Planted value: <b>206</b> &nbsp;·&nbsp; true value: <b>226</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: c = 26
+2: z = 56
+3: f = 12
+4: s = f + 30 + 55
+5: u = 40 * 5 - 33
+6: p = 44
+7: q = 67
+8: m = 71
+9: t = 88
+10: e = q + m + t
+11: h = 11
+12: v = e + 13
+13: b = 13
+14: w = e + 9
+15: r = h + 18
+16: y = c + 54 + 11 + 27
+17: g = y + 12
+18: n = 10
+19: out = v + w
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: c = 26; c = 26
+line 2: z = 56; z = 56
+line 3: f = 12; f = 12
+line 4: s = f + 30 + 55; s = 97
+line 5: u = 40 * 5 - 33; u = 167
+line 6: p = 44; p = 44
+line 7: q = 67; q = 67
+line 8: m = 71; m = 71
+line 9: t = 88; t = 88
+<mark>line 10: e = q + m + t = ... + 71 + 88; e = 206</mark></pre><p><b>The model's continuation</b></p><pre>line 11: h = 11; h = 11
+line 12: v = e + 13; v = 219
+line 13: b = 13; b = 13
+line 14: w = e + 9; w = 215
+line 15: r = h + 18; r = 29
+line 16: y = c + 54 + 11 + 27; y = 118
+line 17: g = y + 12; g = 130
+line 18: n = 10; n = 10
+line 19: out = v + w; out = 434
+line 20: print(out); output = 434</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 20</h2><p class='meta'>Planted value: <b>79</b> &nbsp;·&nbsp; true value: <b>99</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: p = 3
+2: c = 32
+3: x = 18 + 6
+4: j = x - 22
+5: n = 37 + 2 + 30
+6: m = 52
+7: e = c + 50
+8: s = 65
+9: a = 34
+10: b = s + a
+11: d = 49 + 44
+12: u = b + 6
+13: f = 29
+14: g = b + 16
+15: k = p + 32
+16: t = 42
+17: w = x + 34 + 9
+18: z = 23 - 5
+19: out = u + g
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: p = 3; p = 3
+line 2: c = 32; c = 32
+line 3: x = 18 + 6; x = 24
+line 4: j = x - 22; j = 2
+line 5: n = 37 + 2 + 30; n = 69
+line 6: m = 52; m = 52
+line 7: e = c + 50; e = 82
+line 8: s = 65; s = 65
+line 9: a = 34; a = 34
+<mark>line 10: b = s + a = ... + 34; b = 79</mark></pre><p><b>The model's continuation</b></p><pre>line 10: b = s + a; b = 99 ( wait, no! I made a mistake)
+line 11: d = 49 + 44; d = 93
+line 12: u = b + 6; u = 105
+line 13: f = 29; f = 29
+line 14: g = b + 16; g = 115
+line 15: k = p + 32; k = 35
+line 16: t = 42; t = 42
+line 17: w = x + 34 + 9; w = 67
+line 18: z = 23 - 5; z = 18
+line 19: out = u + g; out = 220
+line 20: print(out); output = 220</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 21</h2><p class='meta'>Planted value: <b>117</b> &nbsp;·&nbsp; true value: <b>107</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: b = 20
+2: j = 24
+3: c = j + 40
+4: v = b + 45
+5: h = j + 18
+6: a = v + h
+7: w = c - 7
+8: p = a + 12
+9: f = 35
+10: t = a + 11
+11: out = p + t
+12: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>```plaintext
+line 1: b = 20; b = 20
+line 2: j = 24; j = 24
+line 3: c = j + 40; c = 64
+line 4: v = b + 45; v = 65
+line 5: h = j + 18; h = 42
+<mark>line 6: a = v + h; a = 117</mark></pre><p><b>The model's continuation</b></p><pre>```plaintext
+line 7: w = c - 7; w = 57
+line 8: p = a + 12; p = 129
+line 9: f = 35; f = 35
+line 10: t = a + 11; t = 128
+line 11: out = p + t; out = 257
+line 12: print(out); output = 257
+```</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 22</h2><p class='meta'>Planted value: <b>19</b> &nbsp;·&nbsp; true value: <b>29</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: p = 43
+2: h = 21
+3: a = 9
+4: z = 4
+5: u = 3
+6: w = 6
+7: n = 2
+8: t = 5
+9: f = a + z + u + w + n + t
+10: b = 25
+11: c = f + 16
+12: j = 17
+13: y = f + 18
+14: q = 22
+15: x = b + 8
+16: out = c + y
+17: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: p = 43; p = 43  
+line 2: h = 21; h = 21  
+line 3: a = 9; a = 9  
+line 4: z = 4; z = 4  
+line 5: u = 3; u = 3  
+line 6: w = 6; w = 6  
+line 7: n = 2; n = 2  
+line 8: t = 5; t = 5  
+<mark>line 9: f = a + z + u + w + n + t; f = 19  </mark></pre><p><b>The model's continuation</b></p><pre>line 10: b = 25; b = 25  
+line 11: c = f + 16; c = 35  
+line 12: j = 17; j = 17  
+line 13: y = f + 18; y = 37  
+line 14: q = 22; q = 22  
+line 15: x = b + 8; x = 33  
+line 16: out = c + y; out = 72  
+line 17: print(out); output = 72</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 23</h2><p class='meta'>Planted value: <b>280</b> &nbsp;·&nbsp; true value: <b>300</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: x = 9
+2: q = 4
+3: s = 33 + 35 - 48
+4: c = 54
+5: y = 59
+6: k = 17
+7: b = 46
+8: f = 27
+9: j = 97
+10: g = c + y + k + b + f + j
+11: h = 28
+12: r = g + 5
+13: d = q + 49
+14: t = g + 10
+15: p = q + 23 + 16 + 24
+16: a = 33
+17: m = 49
+18: n = 51
+19: out = r + t
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: x = 9; x = 9
+line 2: q = 4; q = 4
+line 3: s = 33 + 35 - 48; s = 20
+line 4: c = 54; c = 54
+line 5: y = 59; y = 59
+line 6: k = 17; k = 17
+line 7: b = 46; b = 46
+line 8: f = 27; f = 27
+line 9: j = 97; j = 97
+<mark>line 10: g = c + y + k + b + f + j = 54 + 59 + 17 + 46 + 27 + 97; g = 280</mark></pre><p><b>The model's continuation</b></p><pre>line 11: h = 28; h = 28
+line 12: r = g + 5 = 280 + 5; r = 285
+line 13: d = q + 49 = 4 + 49; d = 53
+line 14: t = g + 10 = 280 + 10; t = 290
+line 15: p = q + 23 + 16 + 24 = 4 + 23 + 16 + 24; p = 67
+line 16: a = 33; a = 33 (I&#x27;m assuming this is a typo and it should be a new variable, but I&#x27;ll follow the trace)
+line 17: m = 49; m = 49
+line 18: n = 51; n = 51
+line 19: out = r + t = 285 + 290; out = 575
+line 20: print(out); output = 575</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 24</h2><p class='meta'>Planted value: <b>67</b> &nbsp;·&nbsp; true value: <b>76</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: n = 16
+2: k = 60
+3: w = k + 13 + 6
+4: p = 5
+5: g = 49
+6: v = 12 + 52 - 56
+7: x = 39
+8: f = 51 - 45
+9: j = n + k
+10: c = j
+11: e = p + 31
+12: m = c + 13
+13: d = 57 - 3 + 16 + 36
+14: a = c + 19
+15: q = n - 12
+16: z = 7
+17: r = 17
+18: h = 33
+19: out = m + a
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: n = 16; n = 16
+line 2: k = 60; k = 60
+line 3: w = k + 13 + 6; w = 79
+line 4: p = 5; p = 5
+line 5: g = 49; g = 49
+line 6: v = 12 + 52 - 56; v = 8
+line 7: x = 39; x = 39
+line 8: f = 51 - 45; f = 6
+line 9: j = n + k; j = 76
+<mark>note: j = 67</mark></pre><p><b>The model's continuation</b></p><pre>line 10: c = j; c = 76 (should be j = 76, c = 67)
+line 11: e = p + 31; e = 36
+line 12: m = c + 13; m = 89
+note: m = 80
+line 13: d = 57 - 3 + 16 + 36; d = 102
+note: d = 86
+line 14: a = c + 19; a = 95
+note: a = 86
+line 15: q = n - 12; q = 4
+line 16: z = 7; z = 7
+line 17: r = 17; r = 17
+line 18: h = 33; h = 33
+line 19: out = m + a; out = 184
+note: out = 165
+line 20: print(out); output = 184</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 25</h2><p class='meta'>Planted value: <b>117</b> &nbsp;·&nbsp; true value: <b>127</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: e = 37
+2: s = 21
+3: p = 5
+4: t = e + 28
+5: j = s + 41
+6: v = t + j
+7: a = s + 28
+8: w = v + 8
+9: c = a - 25
+10: z = v + 17
+11: out = w + z
+12: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: e = 37; e = 37
+line 2: s = 21; s = 21
+line 3: p = 5; p = 5
+line 4: t = e + 28; t = 65
+line 5: j = s + 41; j = 62
+<mark>line 6: v = t + j; v = 117</mark></pre><p><b>The model's continuation</b></p><pre>
+line 7: a = s + 28; a = 49
+line 8: w = v + 8; w = 125
+line 9: c = a - 25; c = 24
+line 10: z = v + 17; z = 144
+line 11: out = w + z; out = 269
+line 12: print(out); output = 269</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 26</h2><p class='meta'>Planted value: <b>142</b> &nbsp;·&nbsp; true value: <b>152</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: u = 27
+2: a = 33
+3: r = 7
+4: c = 25 + 54 - 57
+5: s = 11
+6: n = 15
+7: f = 37
+8: p = 63
+9: d = 89
+10: m = p + d
+11: j = 3 + 49 - 16
+12: e = m + 9
+13: v = f - 3
+14: g = m + 13
+15: h = 21 + 56 - 49
+16: q = 27 + 31 + 11
+17: t = 16 + 56
+18: z = 24
+19: out = e + g
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: u = 27; u = 27
+line 2: a = 33; a = 33
+line 3: r = 7; r = 7
+line 4: c = 25 + 54 - 57; c = 22
+line 5: s = 11; s = 11
+line 6: n = 15; n = 15
+line 7: f = 37; f = 37
+line 8: p = 63; p = 63
+line 9: d = 89; d = 89
+<mark>line 10: m = p + d; m = 142</mark></pre><p><b>The model's continuation</b></p><pre>line 11: j = 3 + 49 - 16; j = 36
+line 12: e = m + 9; e = 151
+line 13: v = f - 3; v = 34
+line 14: g = m + 13; g = 155
+line 15: h = 21 + 56 - 49; h = 28
+line 16: q = 27 + 31 + 11; q = 69
+line 17: t = 16 + 56; t = 72
+line 18: z = 24; z = 24
+line 19: out = e + g; out = 306
+line 20: print(out); output = 306</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 27</h2><p class='meta'>Planted value: <b>294</b> &nbsp;·&nbsp; true value: <b>274</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: k = 32
+2: e = 11
+3: t = k + 54
+4: c = e + 53
+5: x = 19
+6: m = 36
+7: d = 95
+8: p = 52
+9: b = 91
+10: f = m + d + p + b
+11: n = e + 20 + 48
+12: q = f + 12
+13: g = 2
+14: z = f + 10
+15: w = 48 + 55 + 36
+16: r = k - 24
+17: v = 34
+18: h = r + 15
+19: out = q + z
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: k = 32; k = 32
+line 2: e = 11; e = 11
+line 3: t = k + 54; t = 86
+line 4: c = e + 53; c = 64
+line 5: x = 19; x = 19
+line 6: m = 36; m = 36
+line 7: d = 95; d = 95
+line 8: p = 52; p = 52
+line 9: b = 91; b = 91
+<mark>line 10: f = m + d + p + b; f = 294</mark></pre><p><b>The model's continuation</b></p><pre>line 11: n = e + 20 + 48; n = 79
+line 12: q = f + 12; q = 306
+line 13: g = 2; g = 2
+line 14: z = f + 10; z = 304
+line 15: w = 48 + 55 + 36; w = 139
+line 16: r = k - 24; r = 8
+line 17: v = 34; v = 34
+line 18: h = r + 15; h = 23
+line 19: out = q + z; out = 310
+line 20: print(out); output = 310</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 28</h2><p class='meta'>Planted value: <b>237</b> &nbsp;·&nbsp; true value: <b>227</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: w = 12
+2: y = 11
+3: h = y + 42 + 10
+4: n = h + 57
+5: b = 59
+6: p = b - 7 - 33
+7: r = 88
+8: q = 43
+9: f = 96
+10: x = r + q + f
+11: k = 9
+12: s = x + 18
+13: v = p + 42 - 53
+14: e = x + 3
+15: g = 15
+16: d = 51
+17: c = 2
+18: j = b - 45 + 50
+19: out = s + e
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: w = 12; w = 12
+line 2: y = 11; y = 11
+line 3: h = y + 42 + 10; h = 63
+line 4: n = h + 57; n = 120
+line 5: b = 59; b = 59
+line 6: p = b - 7 - 33; p = 19
+line 7: r = 88; r = 88
+line 8: q = 43; q = 43
+line 9: f = 96; f = 96
+<mark>line 10: x = r + q + f = ... + 43 + 96; x = 237</mark></pre><p><b>The model's continuation</b></p><pre>line 11: k = 9; k = 9
+line 12: s = x + 18; s = 255
+line 13: v = p + 42 - 53 = 19 + 42 - 53; v = 8
+line 14: e = x + 3; e = 240
+line 15: g = 15; g = 15
+line 16: d = 51; d = 51
+line 17: c = 2; c = 2
+line 18: j = b - 45 + 50 = 59 - 45 + 50; j = 64
+line 19: out = s + e; out = 295
+line 20: print(out); output = 295</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 29</h2><p class='meta'>Planted value: <b>218</b> &nbsp;·&nbsp; true value: <b>198</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: t = 7
+2: b = 14
+3: s = 48
+4: m = 53
+5: u = s + 56 + 48
+6: a = 28
+7: p = 70
+8: z = 79
+9: k = 21
+10: q = a + p + z + k
+11: e = 34 + 38
+12: f = q + 8
+13: r = 59 - 12
+14: h = q + 18
+15: j = r + 28
+16: w = 42 - 13 + 57 - 24
+17: x = 40
+18: y = 15
+19: out = f + h
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: t = 7; t = 7
+line 2: b = 14; b = 14
+line 3: s = 48; s = 48
+line 4: m = 53; m = 53
+line 5: u = s + 56 + 48; u = 152
+line 6: a = 28; a = 28
+line 7: p = 70; p = 70
+line 8: z = 79; z = 79
+line 9: k = 21; k = 21
+<mark>line 10: q = a + p + z + k = ... + 79 + 21; q = 218</mark></pre><p><b>The model's continuation</b></p><pre>line 11: e = 34 + 38; e = 72
+line 12: f = q + 8; f = 226
+line 13: r = 59 - 12; r = 47
+line 14: h = q + 18; h = 236
+line 15: j = r + 28; j = 75
+line 16: w = 42 - 13 + 57 - 24; w = 52
+line 17: x = 40; x = 40
+line 18: y = 15; y = 15
+line 19: out = f + h; out = 462
+line 20: print(out); output = 462</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 30</h2><p class='meta'>Planted value: <b>120</b> &nbsp;·&nbsp; true value: <b>110</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: k = 10
+2: c = 49
+3: u = 19
+4: r = k + 31 - 16 + 26
+5: f = 14
+6: d = 3 + 6 + 53
+7: z = 60
+8: g = 71
+9: n = 39
+10: a = g + n
+11: q = 28 + 29 - 37
+12: p = a + 12
+13: y = 13
+14: v = a + 8
+15: j = 15
+16: e = 43
+17: s = 40
+18: h = 43 + 18 + 17 + 49
+19: out = p + v
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: k = 10; k = 10
+line 2: c = 49; c = 49
+line 3: u = 19; u = 19
+line 4: r = k + 31 - 16 + 26; r = 51
+line 5: f = 14; f = 14
+line 6: d = 3 + 6 + 53; d = 62
+line 7: z = 60; z = 60
+line 8: g = 71; g = 71
+line 9: n = 39; n = 39
+<mark>line 10: a = g + n = 71 + 39; a = 120</mark></pre><p><b>The model's continuation</b></p><pre>line 11: q = 28 + 29 - 37; q = 20
+line 12: p = a + 12; p = 132
+line 13: y = 13; y = 13
+line 14: v = a + 8; v = 128
+line 15: j = 15; j = 15
+line 16: e = 43; e = 43
+line 17: s = 40; s = 40
+line 18: h = 43 + 18 + 17 + 49; h = 127
+line 19: out = p + v; out = 264
+line 20: print(out); output = 264</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 31</h2><p class='meta'>Planted value: <b>157</b> &nbsp;·&nbsp; true value: <b>137</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: c = 35
+2: p = 34
+3: v = 3
+4: f = c + 23
+5: r = p + 45
+6: e = f + r
+7: g = p - 15
+8: a = e + 15
+9: x = p + 38
+10: n = e + 10
+11: out = a + n
+12: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: c = 35; c = 35  
+line 2: p = 34; p = 34  
+line 3: v = 3; v = 3  
+line 4: f = c + 23; f = 58  
+line 5: r = p + 45; r = 79  
+<mark>line 6: e = f + r; e = 157  </mark></pre><p><b>The model's continuation</b></p><pre>line 7: g = p - 15; g = 19  
+line 8: a = e + 15; a = 172  
+line 9: x = p + 38; x = 72  
+line 10: n = e + 10; n = 167  
+line 11: out = a + n; out = 339  
+line 12: print(out); output = 339</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 32</h2><p class='meta'>Planted value: <b>384</b> &nbsp;·&nbsp; true value: <b>404</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: b = 37
+2: j = 52
+3: r = j + 52 - 26
+4: k = 74
+5: e = 61
+6: w = 46
+7: g = 80
+8: u = 66
+9: x = 77
+10: t = k + e + w + g + u + x
+11: f = 34
+12: z = t + 13
+13: c = j - 26 + 24
+14: p = t + 18
+15: s = 45
+16: h = 9
+17: d = 36
+18: m = 9 + 27 - 24
+19: out = z + p
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: b = 37; b = 37
+line 2: j = 52; j = 52
+line 3: r = j + 52 - 26; r = 78
+line 4: k = 74; k = 74
+line 5: e = 61; e = 61
+line 6: w = 46; w = 46
+line 7: g = 80; g = 80
+line 8: u = 66; u = 66
+line 9: x = 77; x = 77
+<mark>line 10: t = k + e + w + g + u + x = 74 + 61 + 46 + 80 + 66 + 77; t = 384</mark></pre><p><b>The model's continuation</b></p><pre>line 11: f = 34; f = 34
+line 12: z = t + 13; z = 384 + 13; z = 397
+line 13: c = j - 26 + 24; c = 52 - 26 + 24; c = 50
+line 14: p = t + 18; p = 384 + 18; p = 402
+line 15: s = 45; s = 45
+line 16: h = 9; h = 9
+line 17: d = 36; d = 36
+line 18: m = 9 + 27 - 24; m = 9 + 27 - 24; m = 12
+line 19: out = z + p; out = 397 + 402; out = 799
+line 20: print(out); output = 799</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 33</h2><p class='meta'>Planted value: <b>173</b> &nbsp;·&nbsp; true value: <b>193</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: q = 46
+2: e = 57
+3: h = e - 32 + 40 + 19
+4: x = 21
+5: m = 37
+6: d = 16
+7: r = 43
+8: w = 60
+9: k = 74
+10: f = d + r + w + k
+11: t = m + 30 + 29
+12: u = f + 6
+13: z = x + 28
+14: j = f + 17
+15: v = 54
+16: c = z + 56
+17: y = 23
+18: b = q + 46
+19: out = u + j
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: q = 46; q = 46
+line 2: e = 57; e = 57
+line 3: h = e - 32 + 40 + 19; h = 84
+line 4: x = 21; x = 21
+line 5: m = 37; m = 37
+line 6: d = 16; d = 16
+line 7: r = 43; r = 43
+line 8: w = 60; w = 60
+line 9: k = 74; k = 74
+<mark>line 10: f = d + r + w + k = ... + 60 + 74; f = 173</mark></pre><p><b>The model's continuation</b></p><pre>line 11: t = m + 30 + 29; t = 96
+line 12: u = f + 6; u = 179
+line 13: x = 21; x = 21
+line 14: m = 37; m = 37
+line 15: d = 16; d = 16
+line 16: r = 43; r = 43
+line 17: w = 60; w = 60
+line 18: k = 74; k = 74
+line 19: f = d + r + w + k = ... + 16 + 43 + 60 + 74; f = 193
+line 20: j = f + 17; j = 210
+line 21: m = 37; m = 37
+line 22: t = m + 30 + 29 = ... + 30 + 29; t = 96
+line 23: f = 193; f = 193
+line 24: j = f + 17; j = 210
+line 25: u = 179; u = 179
+line 26: j = 210; j = 210
+line 27: h = 84; h = 84
+line 28: x = 21; x = 21
+line 29: e = 57; e = 57
+line 30: h = e - 32 + 40 + 19; h = 84
+line 31: f = 193; f = 193
+line 32: j = f + 17; j = 210
+line 33: v = 54; v = 54
+line 34: z = x + </pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 34</h2><p class='meta'>Planted value: <b>237</b> &nbsp;·&nbsp; true value: <b>247</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: u = 19
+2: z = 24
+3: d = 25
+4: y = 35
+5: m = y - 15 + 41
+6: k = 89
+7: s = 80
+8: v = 60
+9: f = 18
+10: t = k + s + v + f
+11: j = 48 + 2 - 22 + 8
+12: a = t + 20
+13: w = 50
+14: q = t + 2
+15: b = d + 41
+16: c = 11 + 45 * 2
+17: x = 4
+18: g = 21
+19: out = a + q
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: u = 19; u = 19
+line 2: z = 24; z = 24
+line 3: d = 25; d = 25
+line 4: y = 35; y = 35
+line 5: m = y - 15 + 41; m = 61
+line 6: k = 89; k = 89
+line 7: s = 80; s = 80
+line 8: v = 60; v = 60
+line 9: f = 18; f = 18
+<mark>line 10: t = k + s + v + f = ... + 60 + 18; t = 237</mark></pre><p><b>The model's continuation</b></p><pre>line 11: j = 48 + 2 - 22 + 8; j = 36
+line 12: a = t + 20; a = 257
+line 13: w = 50; w = 50
+line 14: q = t + 2; q = 239
+line 15: b = d + 41; b = 66
+line 16: c = 11 + 45 * 2; c = 101
+line 17: x = 4; x = 4
+line 18: g = 21; g = 21
+line 19: out = a + q; out = 506
+line 20: print(out); output = 506</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 35</h2><p class='meta'>Planted value: <b>52</b> &nbsp;·&nbsp; true value: <b>32</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: c = 27
+2: g = 33
+3: e = 8
+4: w = 4
+5: q = 2
+6: t = 7
+7: x = 5
+8: d = 6
+9: b = e + w + q + t + x + d
+10: k = c * 2
+11: n = b + 11
+12: a = g - 21
+13: r = b + 3
+14: h = 14
+15: m = 19
+16: out = n + r
+17: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: c = 27; c = 27
+line 2: g = 33; g = 33
+line 3: e = 8; e = 8
+line 4: w = 4; w = 4
+line 5: q = 2; q = 2
+line 6: t = 7; t = 7
+line 7: x = 5; x = 5
+line 8: d = 6; d = 6
+<mark>line 9: b = e + w + q + t + x + d; b = 52</mark></pre><p><b>The model's continuation</b></p><pre>
+line 10: k = c * 2; k = 54
+line 11: n = b + 11; n = 43
+line 12: a = g - 21; a = 12
+line 13: r = b + 3; r = 35
+line 14: h = 14; h = 14
+line 15: m = 19; m = 19
+line 16: out = n + r; out = 78
+line 17: print(out); output = 78</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 36</h2><p class='meta'>Planted value: <b>16</b> &nbsp;·&nbsp; true value: <b>61</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: k = 29
+2: x = 32
+3: y = 52
+4: q = 19
+5: f = y + 35 * 2
+6: p = x * 4 + 31 + 40
+7: m = 35
+8: u = 45
+9: c = k + x
+10: j = c
+11: e = 31
+12: g = j + 18
+13: n = 33
+14: h = j + 14
+15: z = x * 9
+16: v = 29 + 24
+17: a = 9
+18: d = q + 20 + 20 + 55
+19: out = g + h
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: k = 29; k = 29
+line 2: x = 32; x = 32
+line 3: y = 52; y = 52
+line 4: q = 19; q = 19
+line 5: f = y + 35 * 2; f = 122
+line 6: p = x * 4 + 31 + 40; p = 199
+line 7: m = 35; m = 35
+line 8: u = 45; u = 45
+line 9: c = k + x; c = 61
+<mark>note: c = 16</mark></pre><p><b>The model's continuation</b></p><pre>line 10: j = c; j = 61
+note: j = 16
+line 11: e = 31; e = 31
+line 12: g = j + 18; g = 79
+note: g = 44
+line 13: n = 33; n = 33
+line 14: h = j + 14; h = 75
+note: h = 44
+line 15: z = x * 9; z = 288
+line 16: v = 29 + 24; v = 53
+line 17: a = 9; a = 9
+line 18: d = q + 20 + 20 + 55; d = 114
+line 19: out = g + h; out = 124
+note: out = 89
+line 20: print(out); output = 124</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 37</h2><p class='meta'>Planted value: <b>127</b> &nbsp;·&nbsp; true value: <b>137</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: y = 29
+2: j = 10
+3: u = 49
+4: g = 19 + 51 + 17
+5: m = 2
+6: a = 8
+7: h = 35
+8: b = 58
+9: n = 44
+10: d = h + b + n
+11: s = y - 22 + 48
+12: v = d + 3
+13: c = u + 52
+14: x = d + 5
+15: f = 59
+16: e = 38
+17: z = u + 8 + 34
+18: t = 19 + 27 + 22
+19: out = v + x
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: y = 29; y = 29
+line 2: j = 10; j = 10
+line 3: u = 49; u = 49
+line 4: g = 19 + 51 + 17; g = 87
+line 5: m = 2; m = 2
+line 6: a = 8; a = 8
+line 7: h = 35; h = 35
+line 8: b = 58; b = 58
+line 9: n = 44; n = 44
+<mark>line 10: d = h + b + n = 35 + 58 + 44; d = 127</mark></pre><p><b>The model's continuation</b></p><pre>line 11: s = y - 22 + 48; s = 29 - 22 + 48; s = 55
+line 12: v = d + 3; v = 127 + 3; v = 130
+line 13: c = u + 52; c = 49 + 52; c = 101
+line 14: x = d + 5; x = 127 + 5; x = 132
+line 15: f = 59; f = 59
+line 16: e = 38; e = 38
+line 17: z = u + 8 + 34; z = 49 + 8 + 34; z = 91
+line 18: t = 19 + 27 + 22; t = 19 + 27 + 22; t = 68
+line 19: out = v + x; out = 130 + 132; out = 262
+line 20: print(out); output = 262</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 38</h2><p class='meta'>Planted value: <b>119</b> &nbsp;·&nbsp; true value: <b>109</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: j = 16
+2: g = 38
+3: w = j + 16
+4: k = j + 20
+5: x = g + 35
+6: h = k + x
+7: f = 17
+8: n = h + 7
+9: b = 24
+10: z = h + 14
+11: out = n + z
+12: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: j = 16; j = 16
+line 2: g = 38; g = 38
+line 3: w = j + 16; w = 32
+line 4: k = j + 20; k = 36
+line 5: x = g + 35; x = 73
+<mark>line 6: h = k + x; h = 119</mark></pre><p><b>The model's continuation</b></p><pre>
+line 7: f = 17; f = 17
+line 8: n = h + 7; n = 126
+line 9: b = 24; b = 24
+line 10: z = h + 14; z = 133
+line 11: out = n + z; out = 259
+line 12: print(out); output = 259</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 39</h2><p class='meta'>Planted value: <b>318</b> &nbsp;·&nbsp; true value: <b>338</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: g = 55
+2: e = 18
+3: k = 32
+4: c = 46
+5: v = 28
+6: h = 59
+7: y = 71
+8: m = 85
+9: w = 49
+10: n = c + v + h + y + m + w
+11: j = 42
+12: s = n + 3
+13: r = e + 11 - 22
+14: d = n + 17
+15: t = 53
+16: b = 24
+17: z = 15 + 16 + 38 + 10
+18: p = b + 19
+19: out = s + d
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: g = 55; g = 55
+line 2: e = 18; e = 18
+line 3: k = 32; k = 32
+line 4: c = 46; c = 46
+line 5: v = 28; v = 28
+line 6: h = 59; h = 59
+line 7: y = 71; y = 71
+line 8: m = 85; m = 85
+line 9: w = 49; w = 49
+<mark>line 10: n = c + v + h + y + m + w = 46 + 28 + 59 + 71 + 85 + 49; n = 318</mark></pre><p><b>The model's continuation</b></p><pre>line 11: j = 42; j = 42
+line 12: s = n + 3 = 318 + 3; s = 321
+line 13: r = e + 11 - 22 = 18 + 11 - 22; r = 7
+line 14: d = n + 17 = 318 + 17; d = 335
+line 15: t = 53; t = 53
+line 16: b = 24; b = 24
+line 17: z = 15 + 16 + 38 + 10 = 15 + 16 + 38 + 10; z = 79 (Note: This line should be corrected to: z = 15 + 16 + 38 + 10; z = 79)
+ line 18: p = b + 19 = 24 + 19; p = 43
+line 19: out = s + d = 321 + 335; out = 656
+line 20: print(out); output = 656</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 40</h2><p class='meta'>Planted value: <b>313</b> &nbsp;·&nbsp; true value: <b>323</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: q = 20
+2: a = 23
+3: x = q + 57
+4: p = 74
+5: r = 13
+6: s = 24
+7: n = 83
+8: y = 97
+9: f = 32
+10: g = p + r + s + n + y + f
+11: e = 2
+12: b = g + 12
+13: d = a + 41
+14: m = g + 10
+15: h = a + 31
+16: z = a + 32
+17: c = h * 2 + 5
+18: j = 10
+19: out = b + m
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: q = 20; q = 20
+line 2: a = 23; a = 23
+line 3: x = q + 57; x = 77
+line 4: p = 74; p = 74
+line 5: r = 13; r = 13
+line 6: s = 24; s = 24
+line 7: n = 83; n = 83
+line 8: y = 97; y = 97
+line 9: f = 32; f = 32
+<mark>line 10: g = p + r + s + n + y + f = 74 + 13 + 24 + 83 + 97 + 32; g = 313</mark></pre><p><b>The model's continuation</b></p><pre>line 11: e = 2; e = 2
+line 12: b = g + 12; b = 325
+line 13: d = a + 41; d = 64
+line 14: m = g + 10; m = 323
+line 15: h = a + 31; h = 54
+line 16: z = a + 32; z = 55
+line 17: c = h * 2 + 5; c = 113
+line 18: j = 10; j = 10
+line 19: out = b + m; out = 648
+line 20: print(out); output = 648</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 41</h2><p class='meta'>Planted value: <b>187</b> &nbsp;·&nbsp; true value: <b>177</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: z = 3
+2: b = 18
+3: w = 43 - 26 + 39 - 44
+4: y = b + 21 + 58
+5: e = 10
+6: v = 57
+7: k = v + 13
+8: g = 81
+9: t = 96
+10: s = g + t
+11: j = z + 49 - 37
+12: h = s + 5
+13: q = 58 - 44
+14: c = s + 13
+15: m = 4
+16: p = 43
+17: a = q - 5
+18: f = 58
+19: out = h + c
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: z = 3; z = 3
+line 2: b = 18; b = 18
+line 3: w = 43 - 26 + 39 - 44; w = 12
+line 4: y = b + 21 + 58; y = 97
+line 5: e = 10; e = 10
+line 6: v = 57; v = 57
+line 7: k = v + 13; k = 70
+line 8: g = 81; g = 81
+line 9: t = 96; t = 96
+<mark>line 10: s = g + t = 81 + 96; s = 187</mark></pre><p><b>The model's continuation</b></p><pre>line 11: j = z + 49 - 37; j = 15
+line 12: h = s + 5; h = 192
+line 13: q = 58 - 44; q = 14
+line 14: c = s + 13; c = 200
+line 15: m = 4; m = 4
+line 16: p = 43; p = 43
+line 17: a = q - 5; a = 9
+line 18: f = 58; f = 58
+line 19: out = h + c; out = 392
+line 20: print(out); output = 392</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 42</h2><p class='meta'>Planted value: <b>110</b> &nbsp;·&nbsp; true value: <b>130</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: a = 13
+2: m = 2
+3: e = 54
+4: q = 28
+5: x = 36
+6: w = m + 9 - 3
+7: k = 39
+8: u = 69
+9: z = 61
+10: f = u + z
+11: p = 29 + 18 + 27
+12: h = f + 11
+13: r = 3
+14: n = f + 17
+15: d = e - 6 - 4
+16: b = 46
+17: v = e + 39 + 25
+18: t = 15 + 40 - 44
+19: out = h + n
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: a = 13; a = 13
+line 2: m = 2; m = 2
+line 3: e = 54; e = 54
+line 4: q = 28; q = 28
+line 5: x = 36; x = 36
+line 6: w = m + 9 - 3; w = 8
+line 7: k = 39; k = 39
+line 8: u = 69; u = 69
+line 9: z = 61; z = 61
+<mark>line 10: f = u + z = ... + 61; f = 110</mark></pre><p><b>The model's continuation</b></p><pre>line 11: p = 29 + 18 + 27; p = 74
+line 12: h = f + 11; h = 121
+line 13: r = 3; r = 3
+line 14: n = f + 17; n = 127
+line 15: d = e - 6 - 4; d = 44
+line 16: b = 46; b = 46
+line 17: v = e + 39 + 25; v = 118
+line 18: t = 15 + 40 - 44; t = 11
+line 19: out = h + n; out = 148
+line 20: print(out); output = 148</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 43</h2><p class='meta'>Planted value: <b>12</b> &nbsp;·&nbsp; true value: <b>32</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: d = 38
+2: x = 22
+3: n = 4
+4: b = 2
+5: e = 6
+6: p = 7
+7: u = 5
+8: j = 8
+9: m = n + b + e + p + u + j
+10: f = d + 26
+11: r = m + 18
+12: q = 26
+13: s = m + 13
+14: v = d + 44
+15: a = x * 5
+16: out = r + s
+17: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>```plaintext
+line 1: d = 38; d = 38
+line 2: x = 22; x = 22
+line 3: n = 4; n = 4
+line 4: b = 2; b = 2
+line 5: e = 6; e = 6
+line 6: p = 7; p = 7
+line 7: u = 5; u = 5
+line 8: j = 8; j = 8
+<mark>line 9: m = n + b + e + p + u + j; m = 12</mark></pre><p><b>The model's continuation</b></p><pre>```plaintext
+line 10: f = d + 26; f = 64
+line 11: r = m + 18; r = 50
+line 12: q = 26; q = 26
+line 13: s = m + 13; s = 45
+line 14: v = d + 44; v = 82
+line 15: a = x * 5; a = 110
+line 16: out = r + s; out = 95
+line 17: print(out); output = 95
+```</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 44</h2><p class='meta'>Planted value: <b>95</b> &nbsp;·&nbsp; true value: <b>59</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: v = 41
+2: a = 18
+3: r = v - 37
+4: s = v - 28
+5: g = v + a
+6: x = g
+7: e = r + 22
+8: f = x + 5
+9: j = e + 3
+10: h = x + 15
+11: out = f + h
+12: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: v = 41; v = 41
+line 2: a = 18; a = 18
+line 3: r = v - 37; r = 4
+line 4: s = v - 28; s = 13
+line 5: g = v + a; g = 59
+<mark>note: g = 95</mark></pre><p><b>The model's continuation</b></p><pre>line 6: x = g; x = 59
+line 7: e = r + 22; e = 26
+line 8: f = x + 5; f = 64
+line 9: j = e + 3; j = 29
+line 10: h = x + 15; h = 74
+line 11: out = f + h; out = 138
+line 12: print(out); output = 138</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 45</h2><p class='meta'>Planted value: <b>95</b> &nbsp;·&nbsp; true value: <b>59</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: b = 34
+2: m = 25
+3: a = m + 41
+4: k = b + 37
+5: v = b + m
+6: f = v
+7: g = 10
+8: d = f + 17
+9: j = g * 9
+10: e = f + 15
+11: out = d + e
+12: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: b = 34; b = 34
+line 2: m = 25; m = 25
+line 3: a = m + 41; a = 66
+line 4: k = b + 37; k = 71
+line 5: v = b + m; v = 59
+<mark>note: v = 95</mark></pre><p><b>The model's continuation</b></p><pre>line 6: f = v; f = 95
+line 7: g = 10; g = 10
+line 8: d = f + 17; d = 112
+line 9: j = g * 9; j = 90
+line 10: e = f + 15; e = 110
+line 11: out = d + e; out = 222
+line 12: print(out); output = 222</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 46</h2><p class='meta'>Planted value: <b>72</b> &nbsp;·&nbsp; true value: <b>82</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: k = 14
+2: t = 51
+3: u = 8
+4: a = t * 2
+5: g = 45
+6: x = 54
+7: y = 32 - 18 + 48
+8: c = 12
+9: n = 70
+10: e = c + n
+11: w = 2
+12: v = e + 19
+13: f = 47
+14: p = e + 7
+15: z = 7 + 52 + 43 + 30
+16: s = a + 57 + 34 - 8
+17: j = u + 52
+18: h = 55
+19: out = v + p
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: k = 14; k = 14
+line 2: t = 51; t = 51
+line 3: u = 8; u = 8
+line 4: a = t * 2; a = 102
+line 5: g = 45; g = 45
+line 6: x = 54; x = 54
+line 7: y = 32 - 18 + 48; y = 62
+line 8: c = 12; c = 12
+line 9: n = 70; n = 70
+<mark>line 10: e = c + n = ... + 70; e = 72</mark></pre><p><b>The model's continuation</b></p><pre>line 11: w = e + 19; w = 91
+line 12: f = 47; f = 47
+line 13: p = e + 7; p = 79
+line 14: z = 7 + 52 + 43 + 30; z = 132
+line 15: s = a + 57 + 34 - 8; s = 185
+line 16: j = u + 52; j = 60
+line 17: h = 55; h = 55
+line 18: out = v + p; out = 190
+line 19: print(out); output = 190</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 47</h2><p class='meta'>Planted value: <b>13</b> &nbsp;·&nbsp; true value: <b>33</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: s = 4
+2: h = 34
+3: j = 5
+4: f = 3
+5: q = 8
+6: u = 6
+7: b = 9
+8: n = 2
+9: z = j + f + q + u + b + n
+10: x = s + 19
+11: k = z + 7
+12: g = 18
+13: t = z + 17
+14: a = h * 8
+15: e = s + 41
+16: out = k + t
+17: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: s = 4; s = 4
+line 2: h = 34; h = 34
+line 3: j = 5; j = 5
+line 4: f = 3; f = 3
+line 5: q = 8; q = 8
+line 6: u = 6; u = 6
+line 7: b = 9; b = 9
+line 8: n = 2; n = 2
+<mark>line 9: z = j + f + q + u + b + n; z = 13</mark></pre><p><b>The model's continuation</b></p><pre>
+line 10: x = s + 19; x = 23
+line 11: k = z + 7; k = 20
+line 12: g = 18; g = 18
+line 13: t = z + 17; t = 30
+line 14: a = h * 8; a = 272
+line 15: e = s + 41; e = 45
+line 16: out = k + t; out = 50
+line 17: print(out); output = 50</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 48</h2><p class='meta'>Planted value: <b>267</b> &nbsp;·&nbsp; true value: <b>247</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: n = 33
+2: x = 7
+3: p = 9
+4: z = 36
+5: j = 31 + 57
+6: g = 40
+7: f = 21
+8: e = 91
+9: s = 95
+10: d = g + f + e + s
+11: a = 54 - 36 - 12
+12: h = d + 19
+13: w = n + 47 - 5 + 52
+14: y = d + 11
+15: k = x + 12
+16: b = x + 19
+17: r = 42
+18: v = 51
+19: out = h + y
+20: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: n = 33; n = 33
+line 2: x = 7; x = 7
+line 3: p = 9; p = 9
+line 4: z = 36; z = 36
+line 5: j = 31 + 57; j = 88
+line 6: g = 40; g = 40
+line 7: f = 21; f = 21
+line 8: e = 91; e = 91
+line 9: s = 95; s = 95
+<mark>line 10: d = g + f + e + s; d = 267</mark></pre><p><b>The model's continuation</b></p><pre>line 11: a = 54 - 36 - 12; a = 6
+line 12: h = d + 19; h = 286
+line 13: w = n + 47 - 5 + 52; w = 127
+line 14: y = d + 11; y = 278
+line 15: k = x + 12; k = 19
+line 16: b = x + 19; b = 26
+line 17: r = 42; r = 42
+line 18: v = 51; v = 51
+line 19: out = h + y; out = 564
+line 20: print(out); output = 564</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 49</h2><p class='meta'>Planted value: <b>25</b> &nbsp;·&nbsp; true value: <b>35</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: f = 15
+2: m = 29
+3: k = 8
+4: w = 7
+5: e = 2
+6: g = 9
+7: j = 5
+8: z = 4
+9: v = k + w + e + g + j + z
+10: a = 26
+11: q = v + 14
+12: y = f + 18
+13: h = v + 18
+14: b = a * 2
+15: s = m + 45
+16: out = q + h
+17: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: f = 15; f = 15
+line 2: m = 29; m = 29
+line 3: k = 8; k = 8
+line 4: w = 7; w = 7
+line 5: e = 2; e = 2
+line 6: g = 9; g = 9
+line 7: j = 5; j = 5
+line 8: z = 4; z = 4
+<mark>line 9: v = k + w + e + g + j + z; v = 25</mark></pre><p><b>The model's continuation</b></p><pre>line 10: a = 26; a = 26
+line 11: q = v + 14; q = 39
+line 12: y = f + 18; y = 33
+line 13: h = v + 18; h = 43
+line 14: b = a * 2; b = 52
+line 15: s = m + 45; s = 74
+line 16: out = q + h; out = 82
+line 17: print(out); output = 82</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p><h2>Row 50</h2><p class='meta'>Planted value: <b>12</b> &nbsp;·&nbsp; true value: <b>32</b> (in the highlighted line)</p><p><b>Program</b></p><pre>1: b = 5
+2: m = 15
+3: v = 9
+4: f = 6
+5: g = 4
+6: x = 3
+7: e = 2
+8: k = 8
+9: d = v + f + g + x + e + k
+10: j = m + 22
+11: z = d + 20
+12: s = 27
+13: r = d + 16
+14: a = j + 42
+15: y = 13
+16: out = z + r
+17: print(out)</pre><p><b>What the model was continuing</b> (last line contains the plant)</p><pre>line 1: b = 5; b = 5
+line 2: m = 15; m = 15
+line 3: v = 9; v = 9
+line 4: f = 6; f = 6
+line 5: g = 4; g = 4
+line 6: x = 3; x = 3
+line 7: e = 2; e = 2
+line 8: k = 8; k = 8
+<mark>line 9: d = v + f + g + x + e + k; d = 12</mark></pre><p><b>The model's continuation</b></p><pre>line 9: d = v + f + g + x + e + k; d = 32
+line 10: j = m + 22; j = 37
+line 11: z = d + 20; z = 52
+line 12: s = 27; s = 27
+line 13: r = d + 16; r = 48
+line 14: a = j + 42; a = 79
+line 15: y = 13; y = 13
+line 16: out = z + r; out = 100
+line 17: print(out); output = 100</pre><p class='opts'><b>Your label:</b> A = absorbed (downstream values build on the planted value) · C = silently corrected (downstream follows the TRUE value, no comment) · F = flagged (explicitly remarks on the error/doubt — F wins over A/C) · U = unresolved (no usable/gradable output)</p>

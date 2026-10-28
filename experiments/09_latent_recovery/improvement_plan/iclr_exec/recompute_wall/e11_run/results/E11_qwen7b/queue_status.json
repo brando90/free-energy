@@ -1,0 +1,41 @@
+{
+  "backend": "vllm",
+  "done": true,
+  "gold_cohort": {
+    "0": {
+      "eligible": 258,
+      "kept": 150,
+      "solve_rate": 0.1433,
+      "tested": 1800
+    },
+    "1": {
+      "eligible": 255,
+      "kept": 150,
+      "solve_rate": 0.1417,
+      "tested": 1800
+    },
+    "2": {
+      "eligible": 241,
+      "kept": 150,
+      "solve_rate": 0.1339,
+      "tested": 1800
+    },
+    "3": {
+      "eligible": 162,
+      "kept": 150,
+      "solve_rate": 0.09,
+      "tested": 1800
+    },
+    "5": {
+      "eligible": 22,
+      "kept": 22,
+      "solve_rate": 0.0122,
+      "tested": 1800
+    }
+  },
+  "manifest_rows": 1566,
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "n_worlds": 9000,
+  "stage": "generated",
+  "updated_at": "2026-07-28T08:48:59"
+}

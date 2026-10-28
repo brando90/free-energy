@@ -1,0 +1,552 @@
+{
+  "adjacent_contradiction": [
+    {
+      "cell": "grid_kr1",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: w = 7\n2: g = 44\n3: a = g + 39\n4: n = w + 10\n5: r = w + g\n6: q = r\n7: k = g + 24\n8: s = q + 9\n9: f = 38\n10: z = q + 19\n11: out = s + z\n12: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: w = 7; w = 7\nline 2: g = 44; g = 44\nline 3: a = g + 39; a = 83\nline 4: n = w + 10; n = 17\nline 5: r = w + g; r = 51\nnote: r = 15\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "kr1_507786_00920000"
+    },
+    {
+      "cell": "grid_kr1",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: w = 24\n2: g = 29\n3: q = 7\n4: j = q + 18\n5: y = w + g\n6: d = y\n7: f = j + 9\n8: h = d + 16\n9: r = j + 7\n10: n = d + 11\n11: out = h + n\n12: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: w = 24; w = 24\nline 2: g = 29; g = 29\nline 3: q = 7; q = 7\nline 4: j = q + 18; j = 25\nline 5: y = w + g; y = 53\nnote: y = 35\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "kr1_507786_00920001"
+    }
+  ],
+  "anchor_k0": [
+    {
+      "cell": "line_k0",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: m = 31\n2: y = 87\n3: c = 41\n4: v = 56\n5: s = c + 13\n6: b = 35\n7: p = y - 33 + 36 - 10\n8: f = p - 42\n9: j = m + y\n10: d = j\n11: k = y + 25\n12: x = d + 19\n13: h = f + 15\n14: e = d + 5\n15: a = 37\n16: q = 21\n17: u = q + 21 + 56\n18: t = 30 + 29\n19: out = x + e\n20: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: m = 31; m = 31\nline 2: y = 87; y = 87\nline 3: c = 41; c = 41\nline 4: v = 56; v = 56\nline 5: s = c + 13; s = 54\nline 6: b = 35; b = 35\nline 7: p = y - 33 + 36 - 10; p = 80\nline 8: f = p - 42; f = 38\nline 9: j = m + y; j = 118\nnote: j = 181\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "k0_43d06a_00910004"
+    },
+    {
+      "cell": "line_k0",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: s = 92\n2: r = 37\n3: c = s + 42 - 58\n4: u = 7\n5: p = u + 52\n6: z = p + 60 + 38 + 29\n7: j = 56\n8: b = 49\n9: g = s + r\n10: m = g\n11: n = 2\n12: t = m + 17\n13: f = 51\n14: a = m + 3\n15: k = 39 + 21 + 2 + 29\n16: v = c - 23\n17: q = 15\n18: e = 24\n19: out = t + a\n20: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: s = 92; s = 92\nline 2: r = 37; r = 37\nline 3: c = s + 42 - 58; c = 76\nline 4: u = 7; u = 7\nline 5: p = u + 52; p = 59\nline 6: z = p + 60 + 38 + 29; z = 186\nline 7: j = 56; j = 56\nline 8: b = 49; b = 49\nline 9: g = s + r; g = 129\nnote: g = 219\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "k0_43d06a_00910005"
+    }
+  ],
+  "depth_k1_bare": [
+    {
+      "cell": "k1_deference",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: v = 28\n2: a = 4\n3: b = v + 33\n4: t = 19\n5: z = 42\n6: q = b + 35 - 49\n7: m = 11\n8: f = 97\n9: y = 13\n10: u = f + y\n11: e = v - 26 + 27\n12: c = u + 2\n13: j = 45 + 46 + 14\n14: p = u + 15\n15: w = 23\n16: n = 28 + 32\n17: g = 5\n18: r = z - 23 - 9\n19: out = c + p\n20: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: v = 28; v = 28\nline 2: a = 4; a = 4\nline 3: b = v + 33; b = 61\nline 4: t = 19; t = 19\nline 5: z = 42; z = 42\nline 6: q = b + 35 - 49; q = 47\nline 7: m = 11; m = 11\nline 8: f = 97; f = 97\nline 9: y = 13; y = 13\nline 10: u = f + y; u = 90\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "k1_43d06a_00930011"
+    },
+    {
+      "cell": "k1_deference",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: j = 11\n2: n = 27\n3: w = n + 42\n4: k = w - 59\n5: z = j + 22 + 33 - 20\n6: h = 18\n7: a = z + 7 + 41\n8: g = 47\n9: p = 91\n10: b = g + p\n11: m = 45\n12: r = b + 16\n13: y = 25 * 8\n14: c = b + 15\n15: e = 55\n16: t = y + 3 * 2\n17: x = 50\n18: u = 32\n19: out = r + c\n20: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: j = 11; j = 11\nline 2: n = 27; n = 27\nline 3: w = n + 42; w = 69\nline 4: k = w - 59; k = 10\nline 5: z = j + 22 + 33 - 20; z = 46\nline 6: h = 18; h = 18\nline 7: a = z + 7 + 41; a = 94\nline 8: g = 47; g = 47\nline 9: p = 91; p = 91\nline 10: b = g + p; b = 118\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "k1_43d06a_00930015"
+    }
+  ],
+  "depth_k1_full": [
+    {
+      "cell": "k1_deference",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: v = 28\n2: a = 4\n3: b = v + 33\n4: t = 19\n5: z = 42\n6: q = b + 35 - 49\n7: m = 11\n8: f = 97\n9: y = 13\n10: u = f + y\n11: e = v - 26 + 27\n12: c = u + 2\n13: j = 45 + 46 + 14\n14: p = u + 15\n15: w = 23\n16: n = 28 + 32\n17: g = 5\n18: r = z - 23 - 9\n19: out = c + p\n20: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: v = 28; v = 28\nline 2: a = 4; a = 4\nline 3: b = v + 33; b = 61\nline 4: t = 19; t = 19\nline 5: z = 42; z = 42\nline 6: q = b + 35 - 49; q = 47\nline 7: m = 11; m = 11\nline 8: f = 97; f = 97\nline 9: y = 13; y = 13\nline 10: u = f + y = 97 + 13; u = 90\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "k1_43d06a_00930011"
+    },
+    {
+      "cell": "k1_deference",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: j = 11\n2: n = 27\n3: w = n + 42\n4: k = w - 59\n5: z = j + 22 + 33 - 20\n6: h = 18\n7: a = z + 7 + 41\n8: g = 47\n9: p = 91\n10: b = g + p\n11: m = 45\n12: r = b + 16\n13: y = 25 * 8\n14: c = b + 15\n15: e = 55\n16: t = y + 3 * 2\n17: x = 50\n18: u = 32\n19: out = r + c\n20: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: j = 11; j = 11\nline 2: n = 27; n = 27\nline 3: w = n + 42; w = 69\nline 4: k = w - 59; k = 10\nline 5: z = j + 22 + 33 - 20; z = 46\nline 6: h = 18; h = 18\nline 7: a = z + 7 + 41; a = 94\nline 8: g = 47; g = 47\nline 9: p = 91; p = 91\nline 10: b = g + p = 47 + 91; b = 118\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "k1_43d06a_00930015"
+    }
+  ],
+  "depth_k1_partial": [
+    {
+      "cell": "k1_deference",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: v = 28\n2: a = 4\n3: b = v + 33\n4: t = 19\n5: z = 42\n6: q = b + 35 - 49\n7: m = 11\n8: f = 97\n9: y = 13\n10: u = f + y\n11: e = v - 26 + 27\n12: c = u + 2\n13: j = 45 + 46 + 14\n14: p = u + 15\n15: w = 23\n16: n = 28 + 32\n17: g = 5\n18: r = z - 23 - 9\n19: out = c + p\n20: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: v = 28; v = 28\nline 2: a = 4; a = 4\nline 3: b = v + 33; b = 61\nline 4: t = 19; t = 19\nline 5: z = 42; z = 42\nline 6: q = b + 35 - 49; q = 47\nline 7: m = 11; m = 11\nline 8: f = 97; f = 97\nline 9: y = 13; y = 13\nline 10: u = f + y = ... + 13; u = 90\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "k1_43d06a_00930011"
+    },
+    {
+      "cell": "k1_deference",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: j = 11\n2: n = 27\n3: w = n + 42\n4: k = w - 59\n5: z = j + 22 + 33 - 20\n6: h = 18\n7: a = z + 7 + 41\n8: g = 47\n9: p = 91\n10: b = g + p\n11: m = 45\n12: r = b + 16\n13: y = 25 * 8\n14: c = b + 15\n15: e = 55\n16: t = y + 3 * 2\n17: x = 50\n18: u = 32\n19: out = r + c\n20: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: j = 11; j = 11\nline 2: n = 27; n = 27\nline 3: w = n + 42; w = 69\nline 4: k = w - 59; k = 10\nline 5: z = j + 22 + 33 - 20; z = 46\nline 6: h = 18; h = 18\nline 7: a = z + 7 + 41; a = 94\nline 8: g = 47; g = 47\nline 9: p = 91; p = 91\nline 10: b = g + p = ... + 91; b = 118\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "k1_43d06a_00930015"
+    }
+  ],
+  "dose_large": [
+    {
+      "cell": "grid_kr1",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: w = 7\n2: g = 44\n3: a = g + 39\n4: n = w + 10\n5: r = w + g\n6: q = r\n7: k = g + 24\n8: s = q + 9\n9: f = 38\n10: z = q + 19\n11: out = s + z\n12: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: w = 7; w = 7\nline 2: g = 44; g = 44\nline 3: a = g + 39; a = 83\nline 4: n = w + 10; n = 17\nline 5: r = w + g; r = 51\nnote: r = 397\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "kr1_507786_00920000"
+    },
+    {
+      "cell": "grid_kr1",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: w = 24\n2: g = 29\n3: q = 7\n4: j = q + 18\n5: y = w + g\n6: d = y\n7: f = j + 9\n8: h = d + 16\n9: r = j + 7\n10: n = d + 11\n11: out = h + n\n12: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: w = 24; w = 24\nline 2: g = 29; g = 29\nline 3: q = 7; q = 7\nline 4: j = q + 18; j = 25\nline 5: y = w + g; y = 53\nnote: y = 324\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "kr1_507786_00920001"
+    }
+  ],
+  "dose_off1": [
+    {
+      "cell": "grid_kr1",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: w = 7\n2: g = 44\n3: a = g + 39\n4: n = w + 10\n5: r = w + g\n6: q = r\n7: k = g + 24\n8: s = q + 9\n9: f = 38\n10: z = q + 19\n11: out = s + z\n12: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: w = 7; w = 7\nline 2: g = 44; g = 44\nline 3: a = g + 39; a = 83\nline 4: n = w + 10; n = 17\nline 5: r = w + g; r = 51\nnote: r = 50\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "kr1_507786_00920000"
+    },
+    {
+      "cell": "grid_kr1",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: w = 24\n2: g = 29\n3: q = 7\n4: j = q + 18\n5: y = w + g\n6: d = y\n7: f = j + 9\n8: h = d + 16\n9: r = j + 7\n10: n = d + 11\n11: out = h + n\n12: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: w = 24; w = 24\nline 2: g = 29; g = 29\nline 3: q = 7; q = 7\nline 4: j = q + 18; j = 25\nline 5: y = w + g; y = 53\nnote: y = 52\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "kr1_507786_00920001"
+    }
+  ],
+  "dose_off10_20": [
+    {
+      "cell": "grid_kr1",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: w = 7\n2: g = 44\n3: a = g + 39\n4: n = w + 10\n5: r = w + g\n6: q = r\n7: k = g + 24\n8: s = q + 9\n9: f = 38\n10: z = q + 19\n11: out = s + z\n12: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: w = 7; w = 7\nline 2: g = 44; g = 44\nline 3: a = g + 39; a = 83\nline 4: n = w + 10; n = 17\nline 5: r = w + g; r = 51\nnote: r = 71\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "kr1_507786_00920000"
+    },
+    {
+      "cell": "grid_kr1",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: w = 24\n2: g = 29\n3: q = 7\n4: j = q + 18\n5: y = w + g\n6: d = y\n7: f = j + 9\n8: h = d + 16\n9: r = j + 7\n10: n = d + 11\n11: out = h + n\n12: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: w = 24; w = 24\nline 2: g = 29; g = 29\nline 3: q = 7; q = 7\nline 4: j = q + 18; j = 25\nline 5: y = w + g; y = 53\nnote: y = 73\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "kr1_507786_00920001"
+    }
+  ],
+  "grid_line_false_copy_true": [
+    {
+      "cell": "grid_kr1",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: w = 7\n2: g = 44\n3: a = g + 39\n4: n = w + 10\n5: r = w + g\n6: q = r\n7: k = g + 24\n8: s = q + 9\n9: f = 38\n10: z = q + 19\n11: out = s + z\n12: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: w = 7; w = 7\nline 2: g = 44; g = 44\nline 3: a = g + 39; a = 83\nline 4: n = w + 10; n = 17\nline 5: r = w + g; r = 15\nline 6: q = r; q = 51\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "kr1_507786_00920000"
+    },
+    {
+      "cell": "grid_kr1",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: w = 24\n2: g = 29\n3: q = 7\n4: j = q + 18\n5: y = w + g\n6: d = y\n7: f = j + 9\n8: h = d + 16\n9: r = j + 7\n10: n = d + 11\n11: out = h + n\n12: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: w = 24; w = 24\nline 2: g = 29; g = 29\nline 3: q = 7; q = 7\nline 4: j = q + 18; j = 25\nline 5: y = w + g; y = 35\nline 6: d = y; d = 53\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "kr1_507786_00920001"
+    }
+  ],
+  "grid_line_false_note_true": [
+    {
+      "cell": "grid_kr1",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: w = 7\n2: g = 44\n3: a = g + 39\n4: n = w + 10\n5: r = w + g\n6: q = r\n7: k = g + 24\n8: s = q + 9\n9: f = 38\n10: z = q + 19\n11: out = s + z\n12: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: w = 7; w = 7\nline 2: g = 44; g = 44\nline 3: a = g + 39; a = 83\nline 4: n = w + 10; n = 17\nline 5: r = w + g; r = 15\nnote: r = 51\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "kr1_507786_00920000"
+    },
+    {
+      "cell": "grid_kr1",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: w = 24\n2: g = 29\n3: q = 7\n4: j = q + 18\n5: y = w + g\n6: d = y\n7: f = j + 9\n8: h = d + 16\n9: r = j + 7\n10: n = d + 11\n11: out = h + n\n12: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: w = 24; w = 24\nline 2: g = 29; g = 29\nline 3: q = 7; q = 7\nline 4: j = q + 18; j = 25\nline 5: y = w + g; y = 35\nnote: y = 53\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "kr1_507786_00920001"
+    }
+  ],
+  "grid_note_false_before": [
+    {
+      "cell": "grid_kr1",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: w = 7\n2: g = 44\n3: a = g + 39\n4: n = w + 10\n5: r = w + g\n6: q = r\n7: k = g + 24\n8: s = q + 9\n9: f = 38\n10: z = q + 19\n11: out = s + z\n12: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: w = 7; w = 7\nline 2: g = 44; g = 44\nline 3: a = g + 39; a = 83\nline 4: n = w + 10; n = 17\nnote: r = 15\nline 5: r = w + g; r = 51\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "kr1_507786_00920000"
+    },
+    {
+      "cell": "grid_kr1",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: w = 24\n2: g = 29\n3: q = 7\n4: j = q + 18\n5: y = w + g\n6: d = y\n7: f = j + 9\n8: h = d + 16\n9: r = j + 7\n10: n = d + 11\n11: out = h + n\n12: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: w = 24; w = 24\nline 2: g = 29; g = 29\nline 3: q = 7; q = 7\nline 4: j = q + 18; j = 25\nnote: y = 35\nline 5: y = w + g; y = 53\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "kr1_507786_00920001"
+    }
+  ],
+  "grid_note_true_before_line_false": [
+    {
+      "cell": "grid_kr1",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: w = 7\n2: g = 44\n3: a = g + 39\n4: n = w + 10\n5: r = w + g\n6: q = r\n7: k = g + 24\n8: s = q + 9\n9: f = 38\n10: z = q + 19\n11: out = s + z\n12: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: w = 7; w = 7\nline 2: g = 44; g = 44\nline 3: a = g + 39; a = 83\nline 4: n = w + 10; n = 17\nnote: r = 51\nline 5: r = w + g; r = 15\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "kr1_507786_00920000"
+    },
+    {
+      "cell": "grid_kr1",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: w = 24\n2: g = 29\n3: q = 7\n4: j = q + 18\n5: y = w + g\n6: d = y\n7: f = j + 9\n8: h = d + 16\n9: r = j + 7\n10: n = d + 11\n11: out = h + n\n12: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: w = 24; w = 24\nline 2: g = 29; g = 29\nline 3: q = 7; q = 7\nline 4: j = q + 18; j = 25\nnote: y = 53\nline 5: y = w + g; y = 35\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "kr1_507786_00920001"
+    }
+  ],
+  "k1_full_sum": [
+    {
+      "cell": "k1_deference",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: v = 28\n2: a = 4\n3: b = v + 33\n4: t = 19\n5: z = 42\n6: q = b + 35 - 49\n7: m = 11\n8: f = 97\n9: y = 13\n10: u = f + y\n11: e = v - 26 + 27\n12: c = u + 2\n13: j = 45 + 46 + 14\n14: p = u + 15\n15: w = 23\n16: n = 28 + 32\n17: g = 5\n18: r = z - 23 - 9\n19: out = c + p\n20: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: v = 28; v = 28\nline 2: a = 4; a = 4\nline 3: b = v + 33; b = 61\nline 4: t = 19; t = 19\nline 5: z = 42; z = 42\nline 6: q = b + 35 - 49; q = 47\nline 7: m = 11; m = 11\nline 8: f = 97; f = 97\nline 9: y = 13; y = 13\nline 10: u = f + y = 97 + 13 = 110; u = 90\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "k1_43d06a_00930011"
+    },
+    {
+      "cell": "k1_deference",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: j = 11\n2: n = 27\n3: w = n + 42\n4: k = w - 59\n5: z = j + 22 + 33 - 20\n6: h = 18\n7: a = z + 7 + 41\n8: g = 47\n9: p = 91\n10: b = g + p\n11: m = 45\n12: r = b + 16\n13: y = 25 * 8\n14: c = b + 15\n15: e = 55\n16: t = y + 3 * 2\n17: x = 50\n18: u = 32\n19: out = r + c\n20: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: j = 11; j = 11\nline 2: n = 27; n = 27\nline 3: w = n + 42; w = 69\nline 4: k = w - 59; k = 10\nline 5: z = j + 22 + 33 - 20; z = 46\nline 6: h = 18; h = 18\nline 7: a = z + 7 + 41; a = 94\nline 8: g = 47; g = 47\nline 9: p = 91; p = 91\nline 10: b = g + p = 47 + 91 = 138; b = 118\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "k1_43d06a_00930015"
+    }
+  ],
+  "k1_probe": [
+    {
+      "cell": "k1_deference",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: v = 28\n2: a = 4\n3: b = v + 33\n4: t = 19\n5: z = 42\n6: q = b + 35 - 49\n7: m = 11\n8: f = 97\n9: y = 13\n10: u = f + y\n11: e = v - 26 + 27\n12: c = u + 2\n13: j = 45 + 46 + 14\n14: p = u + 15\n15: w = 23\n16: n = 28 + 32\n17: g = 5\n18: r = z - 23 - 9\n19: out = c + p\n20: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: v = 28; v = 28\nline 2: a = 4; a = 4\nline 3: b = v + 33; b = 61\nline 4: t = 19; t = 19\nline 5: z = 42; z = 42\nline 6: q = b + 35 - 49; q = 47\nline 7: m = 11; m = 11\nline 8: f = 97; f = 97\nline 9: y = 13; y = 13\nline 10: u = f + y; u = 90",
+          "role": "assistant"
+        },
+        {
+          "content": "What is 97 + 13?",
+          "role": "user"
+        }
+      ],
+      "probe_answer": 110,
+      "program_id": "k1_43d06a_00930011"
+    },
+    {
+      "cell": "k1_deference",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: j = 11\n2: n = 27\n3: w = n + 42\n4: k = w - 59\n5: z = j + 22 + 33 - 20\n6: h = 18\n7: a = z + 7 + 41\n8: g = 47\n9: p = 91\n10: b = g + p\n11: m = 45\n12: r = b + 16\n13: y = 25 * 8\n14: c = b + 15\n15: e = 55\n16: t = y + 3 * 2\n17: x = 50\n18: u = 32\n19: out = r + c\n20: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: j = 11; j = 11\nline 2: n = 27; n = 27\nline 3: w = n + 42; w = 69\nline 4: k = w - 59; k = 10\nline 5: z = j + 22 + 33 - 20; z = 46\nline 6: h = 18; h = 18\nline 7: a = z + 7 + 41; a = 94\nline 8: g = 47; g = 47\nline 9: p = 91; p = 91\nline 10: b = g + p; b = 118",
+          "role": "assistant"
+        },
+        {
+          "content": "What is 47 + 91?",
+          "role": "user"
+        }
+      ],
+      "probe_answer": 138,
+      "program_id": "k1_43d06a_00930015"
+    }
+  ],
+  "k1_tentative": [
+    {
+      "cell": "k1_deference",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: v = 28\n2: a = 4\n3: b = v + 33\n4: t = 19\n5: z = 42\n6: q = b + 35 - 49\n7: m = 11\n8: f = 97\n9: y = 13\n10: u = f + y\n11: e = v - 26 + 27\n12: c = u + 2\n13: j = 45 + 46 + 14\n14: p = u + 15\n15: w = 23\n16: n = 28 + 32\n17: g = 5\n18: r = z - 23 - 9\n19: out = c + p\n20: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: v = 28; v = 28\nline 2: a = 4; a = 4\nline 3: b = v + 33; b = 61\nline 4: t = 19; t = 19\nline 5: z = 42; z = 42\nline 6: q = b + 35 - 49; q = 47\nline 7: m = 11; m = 11\nline 8: f = 97; f = 97\nline 9: y = 13; y = 13\nline 10: u = f + y = 97 + 13; u = 90 (unverified)\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "k1_43d06a_00930011"
+    },
+    {
+      "cell": "k1_deference",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: j = 11\n2: n = 27\n3: w = n + 42\n4: k = w - 59\n5: z = j + 22 + 33 - 20\n6: h = 18\n7: a = z + 7 + 41\n8: g = 47\n9: p = 91\n10: b = g + p\n11: m = 45\n12: r = b + 16\n13: y = 25 * 8\n14: c = b + 15\n15: e = 55\n16: t = y + 3 * 2\n17: x = 50\n18: u = 32\n19: out = r + c\n20: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: j = 11; j = 11\nline 2: n = 27; n = 27\nline 3: w = n + 42; w = 69\nline 4: k = w - 59; k = 10\nline 5: z = j + 22 + 33 - 20; z = 46\nline 6: h = 18; h = 18\nline 7: a = z + 7 + 41; a = 94\nline 8: g = 47; g = 47\nline 9: p = 91; p = 91\nline 10: b = g + p = 47 + 91; b = 118 (unverified)\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "k1_43d06a_00930015"
+    }
+  ],
+  "line_k0": [
+    {
+      "cell": "line_k0",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: m = 31\n2: y = 87\n3: c = 41\n4: v = 56\n5: s = c + 13\n6: b = 35\n7: p = y - 33 + 36 - 10\n8: f = p - 42\n9: j = m + y\n10: d = j\n11: k = y + 25\n12: x = d + 19\n13: h = f + 15\n14: e = d + 5\n15: a = 37\n16: q = 21\n17: u = q + 21 + 56\n18: t = 30 + 29\n19: out = x + e\n20: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: m = 31; m = 31\nline 2: y = 87; y = 87\nline 3: c = 41; c = 41\nline 4: v = 56; v = 56\nline 5: s = c + 13; s = 54\nline 6: b = 35; b = 35\nline 7: p = y - 33 + 36 - 10; p = 80\nline 8: f = p - 42; f = 38\nline 9: j = m + y; j = 118\nline 10: d = j; d = 138\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "k0_43d06a_00910004"
+    },
+    {
+      "cell": "line_k0",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: s = 92\n2: r = 37\n3: c = s + 42 - 58\n4: u = 7\n5: p = u + 52\n6: z = p + 60 + 38 + 29\n7: j = 56\n8: b = 49\n9: g = s + r\n10: m = g\n11: n = 2\n12: t = m + 17\n13: f = 51\n14: a = m + 3\n15: k = 39 + 21 + 2 + 29\n16: v = c - 23\n17: q = 15\n18: e = 24\n19: out = t + a\n20: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: s = 92; s = 92\nline 2: r = 37; r = 37\nline 3: c = s + 42 - 58; c = 76\nline 4: u = 7; u = 7\nline 5: p = u + 52; p = 59\nline 6: z = p + 60 + 38 + 29; z = 186\nline 7: j = 56; j = 56\nline 8: b = 49; b = 49\nline 9: g = s + r; g = 129\nline 10: m = g; m = 119\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "k0_43d06a_00910005"
+    }
+  ],
+  "line_k0_swap": [
+    {
+      "cell": "line_k0",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: m = 31\n2: y = 87\n3: c = 41\n4: v = 56\n5: s = c + 13\n6: b = 35\n7: p = y - 33 + 36 - 10\n8: f = p - 42\n9: j = m + y\n10: d = j\n11: k = y + 25\n12: x = d + 19\n13: h = f + 15\n14: e = d + 5\n15: a = 37\n16: q = 21\n17: u = q + 21 + 56\n18: t = 30 + 29\n19: out = x + e\n20: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: m = 31; m = 31\nline 2: y = 87; y = 87\nline 3: c = 41; c = 41\nline 4: v = 56; v = 56\nline 5: s = c + 13; s = 54\nline 6: b = 35; b = 35\nline 7: p = y - 33 + 36 - 10; p = 80\nline 8: f = p - 42; f = 38\nline 9: j = m + y; j = 118\nline 10: d = j; d = 181\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "k0_43d06a_00910004"
+    },
+    {
+      "cell": "line_k0",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: s = 92\n2: r = 37\n3: c = s + 42 - 58\n4: u = 7\n5: p = u + 52\n6: z = p + 60 + 38 + 29\n7: j = 56\n8: b = 49\n9: g = s + r\n10: m = g\n11: n = 2\n12: t = m + 17\n13: f = 51\n14: a = m + 3\n15: k = 39 + 21 + 2 + 29\n16: v = c - 23\n17: q = 15\n18: e = 24\n19: out = t + a\n20: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: s = 92; s = 92\nline 2: r = 37; r = 37\nline 3: c = s + 42 - 58; c = 76\nline 4: u = 7; u = 7\nline 5: p = u + 52; p = 59\nline 6: z = p + 60 + 38 + 29; z = 186\nline 7: j = 56; j = 56\nline 8: b = 49; b = 49\nline 9: g = s + r; g = 129\nline 10: m = g; m = 192\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "k0_43d06a_00910005"
+    }
+  ],
+  "opfree_kr1": [
+    {
+      "cell": "grid_kr1",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: w = 7\n2: g = 44\n3: a = g + 39\n4: n = w + 10\n5: r = w + g\n6: q = r\n7: k = g + 24\n8: s = q + 9\n9: f = 38\n10: z = q + 19\n11: out = s + z\n12: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: w = 7; w = 7\nline 2: g = 44; g = 44\nline 3: a = g + 39; a = 83\nline 4: n = w + 10; n = 17\nline 5: r = w + g; r = 51\nline 6: q = r; q = 15\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "kr1_507786_00920000"
+    },
+    {
+      "cell": "grid_kr1",
+      "messages": [
+        {
+          "content": "You will be given a short Python program with numbered lines. Trace its execution line by line. For each line, write exactly one trace line in the format \"line N: <code>; <var> = <value>\", where <value> is the value the variable has after that line runs. For the final print line, write \"line N: print(<var>); output = <value>\". Write one trace line per program line, in order, and nothing else.\n\nProgram:\n1: a = 7\n2: b = 12\n3: x = a + b\n4: t = x\n5: q = t - 4\n6: out = q + a\n7: print(out)\n\nTrace:\nline 1: a = 7; a = 7\nline 2: b = 12; b = 12\nline 3: x = a + b; x = 19\nline 4: t = x; t = 19\nline 5: q = t - 4; q = 15\nline 6: out = q + a; out = 22\nline 7: print(out); output = 22\n\nProgram:\n1: c = 4\n2: d = 9\n3: e = 3\n4: f = 7\n5: n = 2\n6: g = 8\n7: v = c + d + e + f + n + g\n8: w = v - 6\n9: out = w + e\n10: print(out)\n\nTrace:\nline 1: c = 4; c = 4\nline 2: d = 9; d = 9\nline 3: e = 3; e = 3\nline 4: f = 7; f = 7\nline 5: n = 2; n = 2\nline 6: g = 8; g = 8\nline 7: v = c + d + e + f + n + g; v = 33\nline 8: w = v - 6; w = 27\nline 9: out = w + e; out = 30\nline 10: print(out); output = 30\n\nProgram:\n1: g = 8\n2: h = 3\n3: k = g * h\n4: m = k + 17\n5: n = m - g\n6: out = n\n7: print(out)\n\nTrace:\nline 1: g = 8; g = 8\nline 2: h = 3; h = 3\nline 3: k = g * h; k = 24\nline 4: m = k + 17; m = 41\nline 5: n = m - g; n = 33\nline 6: out = n; out = 33\nline 7: print(out); output = 33\n\nProgram:\n1: w = 24\n2: g = 29\n3: q = 7\n4: j = q + 18\n5: y = w + g\n6: d = y\n7: f = j + 9\n8: h = d + 16\n9: r = j + 7\n10: n = d + 11\n11: out = h + n\n12: print(out)\n\nTrace:",
+          "role": "user"
+        },
+        {
+          "content": "line 1: w = 24; w = 24\nline 2: g = 29; g = 29\nline 3: q = 7; q = 7\nline 4: j = q + 18; j = 25\nline 5: y = w + g; y = 53\nline 6: d = y; d = 35\n",
+          "role": "assistant (token-level prefill)"
+        }
+      ],
+      "program_id": "kr1_507786_00920001"
+    }
+  ]
+}

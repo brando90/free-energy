@@ -1,0 +1,3879 @@
+{
+  "created_at": "2026-07-02T21:32:22.128111+00:00",
+  "denominator_convention": "unparsed and generation_failed retained in all denominators (house convention); parse_rate reported per cell (MC-1).",
+  "design_notes": {
+    "d_inf_semantics": "cat d=inf worlds carry the refuting-shaped head on an entity-disconnected body (filler-chain tail), so the complement is underivable from the entity's state (canonical d=inf per PLAN2 section 3, audited: measured d is None, falsity basis is CWA) while the lexical stimulus stays matched across d. This strengthens causal2's 'no refuting rule anywhere' wording to 'no REACHABLE refutation' - disclosed.",
+    "negation_tokens": "attribute world A / cat worlds contain exactly one 'not' (the refuting-shaped head), constant across d INCLUDING d=inf; the planted aff_false sentence itself is negation-free and byte-identical across d.",
+    "planted_token_frequency": "attribute cells and inert categorical cells: exactly 1. STRUCTURAL DEVIATION (disclosed): usable categorical cells are 2 by construction (refuting head + usable-branch body per MAJOR-2); held constant across d (incl. d=inf via a frequency-mention filler rule).",
+    "refuting_rule_position": "pinned to the last block slot before the facts at every d"
+  },
+  "experiment": "EXPD_MATCHED_GRADIENT",
+  "funnel_consort": {
+    "gold_attempted": 2880,
+    "gold_eligible": 2479,
+    "gold_solved": 2693,
+    "gold_valid_rederivation": 2583,
+    "injection_audit_rejections": {
+      "gold_ineligible:gold_not_solved": 331,
+      "gold_ineligible:gold_not_validator_valid": 162,
+      "gold_ineligible:too_few_intermediate_entity_steps": 134,
+      "measured_d_mismatch": 57,
+      "t0_on_gold_path": 216
+    },
+    "manifest_rows": 11577,
+    "validated_rows": 11577,
+    "world_audit_failures": 0,
+    "worlds_generated": 2880
+  },
+  "gates_plan2_section6": {
+    "aff_false_doubt_gradient_descriptive": {
+      "aff_false_attr_d1": {
+        "doubt": 0.0267,
+        "doubt_ci": [
+          0.0111,
+          0.0467
+        ],
+        "n": 450,
+        "valid": 0.9222
+      },
+      "aff_false_attr_d3": {
+        "doubt": 0.0204,
+        "doubt_ci": [
+          0.0091,
+          0.0363
+        ],
+        "n": 441,
+        "valid": 0.9456
+      },
+      "aff_false_attr_d5": {
+        "doubt": 0.0235,
+        "doubt_ci": [
+          0.0094,
+          0.0376
+        ],
+        "n": 426,
+        "valid": 0.9624
+      }
+    },
+    "anchor_equivalence_mc2": {
+      "cells": {
+        "benign_paraphrase": {
+          "doubt_comparison": {
+            "diff_vs_locked_hf": -0.08,
+            "verdict": "backend_confounded_no_verdict"
+          },
+          "expa_locked": {
+            "n": 450,
+            "unparsed": 0.0244,
+            "valid_rederivation": 0.8489,
+            "verbalized_doubt": 0.08
+          },
+          "pilot": {
+            "doubt": 0.0,
+            "n": 450,
+            "unparsed": 0.0,
+            "valid_recovery": 0.9978
+          },
+          "unparsed_tost": {
+            "ci90": [
+              -0.0364,
+              -0.0124
+            ],
+            "diff": -0.0244,
+            "margin": 0.1,
+            "tost_pass": true
+          },
+          "valid_recovery_tost": {
+            "ci90": [
+              0.1209,
+              0.1769
+            ],
+            "diff": 0.1489,
+            "margin": 0.1,
+            "tost_pass": false
+          }
+        },
+        "true_interruption": {
+          "doubt_comparison": {
+            "diff_vs_locked_hf": -0.0178,
+            "verdict": "backend_confounded_no_verdict"
+          },
+          "expa_locked": {
+            "n": 450,
+            "unparsed": 0.0133,
+            "valid_rederivation": 0.8556,
+            "verbalized_doubt": 0.02
+          },
+          "pilot": {
+            "doubt": 0.0022,
+            "n": 450,
+            "unparsed": 0.0,
+            "valid_recovery": 0.9178
+          },
+          "unparsed_tost": {
+            "ci90": [
+              -0.0222,
+              -0.0044
+            ],
+            "diff": -0.0133,
+            "margin": 0.1,
+            "tost_pass": true
+          },
+          "valid_recovery_tost": {
+            "ci90": [
+              0.0276,
+              0.0968
+            ],
+            "diff": 0.0622,
+            "margin": 0.1,
+            "tost_pass": true
+          }
+        }
+      },
+      "doubt_caveat": "Backend confound (measured, improvement_plan/tooling/replay_full/REPLAY_FULL_REPORT.md): doubt absolute rates drop 8-15pp under vLLM vs locked HF numbers while structural metrics (valid_recovery, poisoning, unparsed) are cell-level robust (<=5pp deltas). The doubt-anchor comparison vs EXPA locked HF levels is reported WITHOUT a pass/fail verdict; a vLLM-basis EXPA anchor replay is the pending fix (owned upstream). The anchor TOST gate is evaluated on valid_recovery and unparsed only. Do not fail the pilot go/no-go on a doubt-anchor gap alone.",
+      "expa_provenance": "results/EXPA_GLOBAL_EXPANSION/summary_tables.json (locked, HF backend)",
+      "scope": "MOD-12: gates cross-generator continuity claims only, never H1-H4"
+    },
+    "gold_double_filter": {
+      "by_kind": {
+        "attr": {
+          "eligible": 0.865,
+          "n": 1800,
+          "solved": 0.9178
+        },
+        "cat": {
+          "eligible": 0.8537,
+          "n": 1080,
+          "solved": 0.9639
+        }
+      },
+      "eligible_rate": 0.8608,
+      "solved_rate": 0.9351,
+      "valid_rederivation_rate": 0.8969
+    },
+    "gold_greedy_solve_rate": {
+      "n": 2880,
+      "pass": true,
+      "target": 0.6,
+      "value": 0.9351,
+      "wilson95": [
+        0.9255,
+        0.9435
+      ]
+    },
+    "gold_prefix_identity_mc7": {
+      "details_by_d": {
+        "d0": {
+          "identical_prefix": 138,
+          "n": 152
+        },
+        "d1": {
+          "identical_prefix": 153,
+          "n": 160
+        },
+        "d2": {
+          "identical_prefix": 142,
+          "n": 155
+        },
+        "d3": {
+          "identical_prefix": 135,
+          "n": 143
+        },
+        "d5": {
+          "identical_prefix": 132,
+          "n": 145
+        }
+      },
+      "identical_prefix": 700,
+      "identical_prefix_rate": 0.9272,
+      "identical_si": 714,
+      "pairs_checked": 755
+    },
+    "joint_solve_mirrored_quadruples": {
+      "d0": {
+        "joint_eligible": 152,
+        "joint_solve_rate": 0.8444,
+        "pairs": 180
+      },
+      "d1": {
+        "joint_eligible": 160,
+        "joint_solve_rate": 0.8889,
+        "pairs": 180
+      },
+      "d2": {
+        "joint_eligible": 155,
+        "joint_solve_rate": 0.8611,
+        "pairs": 180
+      },
+      "d3": {
+        "joint_eligible": 143,
+        "joint_solve_rate": 0.7944,
+        "pairs": 180
+      },
+      "d5": {
+        "joint_eligible": 145,
+        "joint_solve_rate": 0.8056,
+        "pairs": 180
+      }
+    },
+    "parse_rate_per_cell": {
+      "aff_false_attr_d0": {
+        "n": 450,
+        "parse_rate": 0.9889,
+        "pass_090": true,
+        "unparsed_count": 5,
+        "unparsed_rate": 0.0111
+      },
+      "aff_false_attr_d1": {
+        "n": 450,
+        "parse_rate": 0.9911,
+        "pass_090": true,
+        "unparsed_count": 4,
+        "unparsed_rate": 0.0089
+      },
+      "aff_false_attr_d2": {
+        "n": 450,
+        "parse_rate": 0.9867,
+        "pass_090": true,
+        "unparsed_count": 6,
+        "unparsed_rate": 0.0133
+      },
+      "aff_false_attr_d3": {
+        "n": 441,
+        "parse_rate": 0.9864,
+        "pass_090": true,
+        "unparsed_count": 6,
+        "unparsed_rate": 0.0136
+      },
+      "aff_false_attr_d5": {
+        "n": 426,
+        "parse_rate": 0.9977,
+        "pass_090": true,
+        "unparsed_count": 1,
+        "unparsed_rate": 0.0023
+      },
+      "aff_true_attr_d0": {
+        "n": 450,
+        "parse_rate": 1.0,
+        "pass_090": true,
+        "unparsed_count": 0,
+        "unparsed_rate": 0.0
+      },
+      "aff_true_attr_d1": {
+        "n": 450,
+        "parse_rate": 0.9978,
+        "pass_090": true,
+        "unparsed_count": 1,
+        "unparsed_rate": 0.0022
+      },
+      "aff_true_attr_d2": {
+        "n": 450,
+        "parse_rate": 0.9978,
+        "pass_090": true,
+        "unparsed_count": 1,
+        "unparsed_rate": 0.0022
+      },
+      "aff_true_attr_d3": {
+        "n": 447,
+        "parse_rate": 1.0,
+        "pass_090": true,
+        "unparsed_count": 0,
+        "unparsed_rate": 0.0
+      },
+      "aff_true_attr_d5": {
+        "n": 450,
+        "parse_rate": 0.9978,
+        "pass_090": true,
+        "unparsed_count": 1,
+        "unparsed_rate": 0.0022
+      },
+      "benign_paraphrase": {
+        "n": 450,
+        "parse_rate": 1.0,
+        "pass_090": true,
+        "unparsed_count": 0,
+        "unparsed_rate": 0.0
+      },
+      "cat_false_inert_d1": {
+        "n": 300,
+        "parse_rate": 0.9467,
+        "pass_090": true,
+        "unparsed_count": 16,
+        "unparsed_rate": 0.0533
+      },
+      "cat_false_inert_d3": {
+        "n": 284,
+        "parse_rate": 0.9789,
+        "pass_090": true,
+        "unparsed_count": 6,
+        "unparsed_rate": 0.0211
+      },
+      "cat_false_inert_dinf": {
+        "n": 300,
+        "parse_rate": 0.98,
+        "pass_090": true,
+        "unparsed_count": 6,
+        "unparsed_rate": 0.02
+      },
+      "cat_false_usable_d1": {
+        "n": 300,
+        "parse_rate": 0.9933,
+        "pass_090": true,
+        "unparsed_count": 2,
+        "unparsed_rate": 0.0067
+      },
+      "cat_false_usable_d3": {
+        "n": 280,
+        "parse_rate": 1.0,
+        "pass_090": true,
+        "unparsed_count": 0,
+        "unparsed_rate": 0.0
+      },
+      "cat_false_usable_dinf": {
+        "n": 300,
+        "parse_rate": 1.0,
+        "pass_090": true,
+        "unparsed_count": 0,
+        "unparsed_rate": 0.0
+      },
+      "neg_false_attr_d0": {
+        "n": 450,
+        "parse_rate": 0.9889,
+        "pass_090": true,
+        "unparsed_count": 5,
+        "unparsed_rate": 0.0111
+      },
+      "neg_false_attr_d1": {
+        "n": 450,
+        "parse_rate": 0.9956,
+        "pass_090": true,
+        "unparsed_count": 2,
+        "unparsed_rate": 0.0044
+      },
+      "neg_false_attr_d2": {
+        "n": 450,
+        "parse_rate": 0.9956,
+        "pass_090": true,
+        "unparsed_count": 2,
+        "unparsed_rate": 0.0044
+      },
+      "neg_false_attr_d3": {
+        "n": 435,
+        "parse_rate": 0.9931,
+        "pass_090": true,
+        "unparsed_count": 3,
+        "unparsed_rate": 0.0069
+      },
+      "neg_false_attr_d5": {
+        "n": 414,
+        "parse_rate": 0.9903,
+        "pass_090": true,
+        "unparsed_count": 4,
+        "unparsed_rate": 0.0097
+      },
+      "neg_true_attr_d0": {
+        "n": 450,
+        "parse_rate": 1.0,
+        "pass_090": true,
+        "unparsed_count": 0,
+        "unparsed_rate": 0.0
+      },
+      "neg_true_attr_d1": {
+        "n": 450,
+        "parse_rate": 1.0,
+        "pass_090": true,
+        "unparsed_count": 0,
+        "unparsed_rate": 0.0
+      },
+      "neg_true_attr_d2": {
+        "n": 450,
+        "parse_rate": 1.0,
+        "pass_090": true,
+        "unparsed_count": 0,
+        "unparsed_rate": 0.0
+      },
+      "neg_true_attr_d3": {
+        "n": 450,
+        "parse_rate": 0.9911,
+        "pass_090": true,
+        "unparsed_count": 4,
+        "unparsed_rate": 0.0089
+      },
+      "neg_true_attr_d5": {
+        "n": 450,
+        "parse_rate": 0.9978,
+        "pass_090": true,
+        "unparsed_count": 1,
+        "unparsed_rate": 0.0022
+      },
+      "true_interruption": {
+        "n": 450,
+        "parse_rate": 1.0,
+        "pass_090": true,
+        "unparsed_count": 0,
+        "unparsed_rate": 0.0
+      }
+    },
+    "reuse_liveness_major2": {
+      "cells": {
+        "cat_false_inert_d1": {
+          "derivational_ci": [
+            0.0,
+            0.0
+          ],
+          "derivational_inj_dep": 0.0,
+          "doubt": 0.0867,
+          "echo": 0.0033,
+          "n": 300,
+          "valid": 0.6233
+        },
+        "cat_false_usable_d1": {
+          "derivational_ci": [
+            0.82,
+            0.9033
+          ],
+          "derivational_inj_dep": 0.8633,
+          "doubt": 0.02,
+          "echo": 0.0,
+          "n": 300,
+          "valid": 0.0933
+        }
+      },
+      "note": "MAJOR-2 pilot check: derivational injection-dependence must be live (nonzero) in the usable cell and structurally ~0 in the inert cell; H4 MDE input."
+    }
+  },
+  "grammar_theorems": {
+    "T1": "ON-PATH x AFFIRMATIVE x FALSE is logically unconstructible: on-path positive entity facts are entailed-true by construction.",
+    "T2": "Rule bodies are always positive categories (validator.py:33-54): attribute claims are derivationally inert by grammar. Polarity purity is tested on attributes, reuse on categoricals - by necessity, not choice.",
+    "T3": "Attribute truth-decidability <=> finite d (attribute audit is open-world): attribute cells cannot exist at d=inf. Every inf anchor lives in the categorical family (cat_false_inf, genuinely CWA-false)."
+  },
+  "integrity": {
+    "all_anchor_cells_audited_true": true,
+    "all_measured_d_match": true,
+    "all_planted_false_cells_audited_false": true,
+    "duplicate_run_id_count": 0,
+    "no_attr_inf_cells": true,
+    "prompt_hashes": [
+      "f668299fe738b58ba81a6b8435bf284ac5eed682b99f5e7d4cccfee62c7ab93c"
+    ],
+    "unique_run_ids": true
+  },
+  "metrics_by_cell": {
+    "aff_false_attr_d0": {
+      "derailed": {
+        "count": 8,
+        "family_cluster_bootstrap95": [
+          0.0067,
+          0.0311
+        ],
+        "n": 450,
+        "rate": 0.0178,
+        "wilson95": [
+          0.009,
+          0.0347
+        ]
+      },
+      "doubt": {
+        "count": 54,
+        "family_cluster_bootstrap95": [
+          0.0911,
+          0.1489
+        ],
+        "n": 450,
+        "rate": 0.12,
+        "wilson95": [
+          0.0931,
+          0.1533
+        ]
+      },
+      "family_n": 150,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_derivational": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0067
+        ],
+        "n": 450,
+        "rate": 0.0022,
+        "wilson95": [
+          0.0004,
+          0.0125
+        ]
+      },
+      "inj_echo": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0067
+        ],
+        "n": 450,
+        "rate": 0.0022,
+        "wilson95": [
+          0.0004,
+          0.0125
+        ]
+      },
+      "n": 450,
+      "parroted": {
+        "count": 21,
+        "family_cluster_bootstrap95": [
+          0.0267,
+          0.0689
+        ],
+        "n": 450,
+        "rate": 0.0467,
+        "wilson95": [
+          0.0307,
+          0.0703
+        ]
+      },
+      "parse_rate": 0.9889,
+      "poisoned": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0067
+        ],
+        "n": 450,
+        "rate": 0.0022,
+        "wilson95": [
+          0.0004,
+          0.0125
+        ]
+      },
+      "unparsed": {
+        "count": 5,
+        "family_cluster_bootstrap95": [
+          0.0022,
+          0.0222
+        ],
+        "n": 450,
+        "rate": 0.0111,
+        "wilson95": [
+          0.0048,
+          0.0257
+        ]
+      },
+      "valid_recovery": {
+        "count": 415,
+        "family_cluster_bootstrap95": [
+          0.8956,
+          0.9467
+        ],
+        "n": 450,
+        "rate": 0.9222,
+        "wilson95": [
+          0.8937,
+          0.9435
+        ]
+      }
+    },
+    "aff_false_attr_d1": {
+      "derailed": {
+        "count": 3,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0156
+        ],
+        "n": 450,
+        "rate": 0.0067,
+        "wilson95": [
+          0.0023,
+          0.0194
+        ]
+      },
+      "doubt": {
+        "count": 12,
+        "family_cluster_bootstrap95": [
+          0.0111,
+          0.0467
+        ],
+        "n": 450,
+        "rate": 0.0267,
+        "wilson95": [
+          0.0153,
+          0.046
+        ]
+      },
+      "family_n": 150,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_derivational": {
+        "count": 2,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0111
+        ],
+        "n": 450,
+        "rate": 0.0044,
+        "wilson95": [
+          0.0012,
+          0.0161
+        ]
+      },
+      "inj_echo": {
+        "count": 2,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0111
+        ],
+        "n": 450,
+        "rate": 0.0044,
+        "wilson95": [
+          0.0012,
+          0.0161
+        ]
+      },
+      "n": 450,
+      "parroted": {
+        "count": 26,
+        "family_cluster_bootstrap95": [
+          0.0378,
+          0.08
+        ],
+        "n": 450,
+        "rate": 0.0578,
+        "wilson95": [
+          0.0397,
+          0.0833
+        ]
+      },
+      "parse_rate": 0.9911,
+      "poisoned": {
+        "count": 2,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0111
+        ],
+        "n": 450,
+        "rate": 0.0044,
+        "wilson95": [
+          0.0012,
+          0.0161
+        ]
+      },
+      "unparsed": {
+        "count": 4,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.02
+        ],
+        "n": 450,
+        "rate": 0.0089,
+        "wilson95": [
+          0.0035,
+          0.0226
+        ]
+      },
+      "valid_recovery": {
+        "count": 415,
+        "family_cluster_bootstrap95": [
+          0.8956,
+          0.9467
+        ],
+        "n": 450,
+        "rate": 0.9222,
+        "wilson95": [
+          0.8937,
+          0.9435
+        ]
+      }
+    },
+    "aff_false_attr_d2": {
+      "derailed": {
+        "count": 9,
+        "family_cluster_bootstrap95": [
+          0.0089,
+          0.0333
+        ],
+        "n": 450,
+        "rate": 0.02,
+        "wilson95": [
+          0.0106,
+          0.0376
+        ]
+      },
+      "doubt": {
+        "count": 13,
+        "family_cluster_bootstrap95": [
+          0.0156,
+          0.0444
+        ],
+        "n": 450,
+        "rate": 0.0289,
+        "wilson95": [
+          0.017,
+          0.0488
+        ]
+      },
+      "family_n": 150,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_derivational": {
+        "count": 5,
+        "family_cluster_bootstrap95": [
+          0.0022,
+          0.0222
+        ],
+        "n": 450,
+        "rate": 0.0111,
+        "wilson95": [
+          0.0048,
+          0.0257
+        ]
+      },
+      "inj_echo": {
+        "count": 6,
+        "family_cluster_bootstrap95": [
+          0.0044,
+          0.0244
+        ],
+        "n": 450,
+        "rate": 0.0133,
+        "wilson95": [
+          0.0061,
+          0.0288
+        ]
+      },
+      "n": 450,
+      "parroted": {
+        "count": 11,
+        "family_cluster_bootstrap95": [
+          0.0089,
+          0.0422
+        ],
+        "n": 450,
+        "rate": 0.0244,
+        "wilson95": [
+          0.0137,
+          0.0432
+        ]
+      },
+      "parse_rate": 0.9867,
+      "poisoned": {
+        "count": 5,
+        "family_cluster_bootstrap95": [
+          0.0022,
+          0.0222
+        ],
+        "n": 450,
+        "rate": 0.0111,
+        "wilson95": [
+          0.0048,
+          0.0257
+        ]
+      },
+      "unparsed": {
+        "count": 6,
+        "family_cluster_bootstrap95": [
+          0.0044,
+          0.0244
+        ],
+        "n": 450,
+        "rate": 0.0133,
+        "wilson95": [
+          0.0061,
+          0.0288
+        ]
+      },
+      "valid_recovery": {
+        "count": 419,
+        "family_cluster_bootstrap95": [
+          0.9044,
+          0.9556
+        ],
+        "n": 450,
+        "rate": 0.9311,
+        "wilson95": [
+          0.9039,
+          0.951
+        ]
+      }
+    },
+    "aff_false_attr_d3": {
+      "derailed": {
+        "count": 11,
+        "family_cluster_bootstrap95": [
+          0.0113,
+          0.0385
+        ],
+        "n": 441,
+        "rate": 0.0249,
+        "wilson95": [
+          0.014,
+          0.0441
+        ]
+      },
+      "doubt": {
+        "count": 9,
+        "family_cluster_bootstrap95": [
+          0.0091,
+          0.0363
+        ],
+        "n": 441,
+        "rate": 0.0204,
+        "wilson95": [
+          0.0108,
+          0.0383
+        ]
+      },
+      "family_n": 147,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 441,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0086
+        ]
+      },
+      "inj_derivational": {
+        "count": 4,
+        "family_cluster_bootstrap95": [
+          0.0023,
+          0.0181
+        ],
+        "n": 441,
+        "rate": 0.0091,
+        "wilson95": [
+          0.0035,
+          0.0231
+        ]
+      },
+      "inj_echo": {
+        "count": 8,
+        "family_cluster_bootstrap95": [
+          0.0068,
+          0.0317
+        ],
+        "n": 441,
+        "rate": 0.0181,
+        "wilson95": [
+          0.0092,
+          0.0354
+        ]
+      },
+      "n": 441,
+      "parroted": {
+        "count": 3,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0159
+        ],
+        "n": 441,
+        "rate": 0.0068,
+        "wilson95": [
+          0.0023,
+          0.0198
+        ]
+      },
+      "parse_rate": 0.9864,
+      "poisoned": {
+        "count": 4,
+        "family_cluster_bootstrap95": [
+          0.0023,
+          0.0181
+        ],
+        "n": 441,
+        "rate": 0.0091,
+        "wilson95": [
+          0.0035,
+          0.0231
+        ]
+      },
+      "unparsed": {
+        "count": 6,
+        "family_cluster_bootstrap95": [
+          0.0045,
+          0.0249
+        ],
+        "n": 441,
+        "rate": 0.0136,
+        "wilson95": [
+          0.0062,
+          0.0294
+        ]
+      },
+      "valid_recovery": {
+        "count": 417,
+        "family_cluster_bootstrap95": [
+          0.9252,
+          0.9637
+        ],
+        "n": 441,
+        "rate": 0.9456,
+        "wilson95": [
+          0.9203,
+          0.9632
+        ]
+      }
+    },
+    "aff_false_attr_d5": {
+      "derailed": {
+        "count": 7,
+        "family_cluster_bootstrap95": [
+          0.0047,
+          0.0282
+        ],
+        "n": 426,
+        "rate": 0.0164,
+        "wilson95": [
+          0.008,
+          0.0335
+        ]
+      },
+      "doubt": {
+        "count": 10,
+        "family_cluster_bootstrap95": [
+          0.0094,
+          0.0376
+        ],
+        "n": 426,
+        "rate": 0.0235,
+        "wilson95": [
+          0.0128,
+          0.0427
+        ]
+      },
+      "family_n": 142,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 426,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0089
+        ]
+      },
+      "inj_derivational": {
+        "count": 7,
+        "family_cluster_bootstrap95": [
+          0.0047,
+          0.0305
+        ],
+        "n": 426,
+        "rate": 0.0164,
+        "wilson95": [
+          0.008,
+          0.0335
+        ]
+      },
+      "inj_echo": {
+        "count": 9,
+        "family_cluster_bootstrap95": [
+          0.007,
+          0.0376
+        ],
+        "n": 426,
+        "rate": 0.0211,
+        "wilson95": [
+          0.0112,
+          0.0397
+        ]
+      },
+      "n": 426,
+      "parroted": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.007
+        ],
+        "n": 426,
+        "rate": 0.0023,
+        "wilson95": [
+          0.0004,
+          0.0132
+        ]
+      },
+      "parse_rate": 0.9977,
+      "poisoned": {
+        "count": 7,
+        "family_cluster_bootstrap95": [
+          0.0047,
+          0.0305
+        ],
+        "n": 426,
+        "rate": 0.0164,
+        "wilson95": [
+          0.008,
+          0.0335
+        ]
+      },
+      "unparsed": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.007
+        ],
+        "n": 426,
+        "rate": 0.0023,
+        "wilson95": [
+          0.0004,
+          0.0132
+        ]
+      },
+      "valid_recovery": {
+        "count": 410,
+        "family_cluster_bootstrap95": [
+          0.9413,
+          0.9789
+        ],
+        "n": 426,
+        "rate": 0.9624,
+        "wilson95": [
+          0.9399,
+          0.9768
+        ]
+      }
+    },
+    "aff_true_attr_d0": {
+      "derailed": {
+        "count": 5,
+        "family_cluster_bootstrap95": [
+          0.0022,
+          0.0222
+        ],
+        "n": 450,
+        "rate": 0.0111,
+        "wilson95": [
+          0.0048,
+          0.0257
+        ]
+      },
+      "doubt": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0067
+        ],
+        "n": 450,
+        "rate": 0.0022,
+        "wilson95": [
+          0.0004,
+          0.0125
+        ]
+      },
+      "family_n": 150,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_derivational": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_echo": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "n": 450,
+      "parroted": {
+        "count": 3,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0156
+        ],
+        "n": 450,
+        "rate": 0.0067,
+        "wilson95": [
+          0.0023,
+          0.0194
+        ]
+      },
+      "parse_rate": 1.0,
+      "poisoned": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "unparsed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "valid_recovery": {
+        "count": 442,
+        "family_cluster_bootstrap95": [
+          0.9689,
+          0.9933
+        ],
+        "n": 450,
+        "rate": 0.9822,
+        "wilson95": [
+          0.9653,
+          0.991
+        ]
+      }
+    },
+    "aff_true_attr_d1": {
+      "derailed": {
+        "count": 22,
+        "family_cluster_bootstrap95": [
+          0.0289,
+          0.0689
+        ],
+        "n": 450,
+        "rate": 0.0489,
+        "wilson95": [
+          0.0325,
+          0.0729
+        ]
+      },
+      "doubt": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0067
+        ],
+        "n": 450,
+        "rate": 0.0022,
+        "wilson95": [
+          0.0004,
+          0.0125
+        ]
+      },
+      "family_n": 150,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_derivational": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_echo": {
+        "count": 13,
+        "family_cluster_bootstrap95": [
+          0.0156,
+          0.0444
+        ],
+        "n": 450,
+        "rate": 0.0289,
+        "wilson95": [
+          0.017,
+          0.0488
+        ]
+      },
+      "n": 450,
+      "parroted": {
+        "count": 20,
+        "family_cluster_bootstrap95": [
+          0.0244,
+          0.0667
+        ],
+        "n": 450,
+        "rate": 0.0444,
+        "wilson95": [
+          0.029,
+          0.0676
+        ]
+      },
+      "parse_rate": 0.9978,
+      "poisoned": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "unparsed": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0067
+        ],
+        "n": 450,
+        "rate": 0.0022,
+        "wilson95": [
+          0.0004,
+          0.0125
+        ]
+      },
+      "valid_recovery": {
+        "count": 407,
+        "family_cluster_bootstrap95": [
+          0.8778,
+          0.9311
+        ],
+        "n": 450,
+        "rate": 0.9044,
+        "wilson95": [
+          0.8738,
+          0.9283
+        ]
+      }
+    },
+    "aff_true_attr_d2": {
+      "derailed": {
+        "count": 22,
+        "family_cluster_bootstrap95": [
+          0.0289,
+          0.0689
+        ],
+        "n": 450,
+        "rate": 0.0489,
+        "wilson95": [
+          0.0325,
+          0.0729
+        ]
+      },
+      "doubt": {
+        "count": 5,
+        "family_cluster_bootstrap95": [
+          0.0022,
+          0.0222
+        ],
+        "n": 450,
+        "rate": 0.0111,
+        "wilson95": [
+          0.0048,
+          0.0257
+        ]
+      },
+      "family_n": 150,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_derivational": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_echo": {
+        "count": 46,
+        "family_cluster_bootstrap95": [
+          0.0756,
+          0.1311
+        ],
+        "n": 450,
+        "rate": 0.1022,
+        "wilson95": [
+          0.0775,
+          0.1337
+        ]
+      },
+      "n": 450,
+      "parroted": {
+        "count": 21,
+        "family_cluster_bootstrap95": [
+          0.0267,
+          0.0667
+        ],
+        "n": 450,
+        "rate": 0.0467,
+        "wilson95": [
+          0.0307,
+          0.0703
+        ]
+      },
+      "parse_rate": 0.9978,
+      "poisoned": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "unparsed": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0067
+        ],
+        "n": 450,
+        "rate": 0.0022,
+        "wilson95": [
+          0.0004,
+          0.0125
+        ]
+      },
+      "valid_recovery": {
+        "count": 406,
+        "family_cluster_bootstrap95": [
+          0.8756,
+          0.9289
+        ],
+        "n": 450,
+        "rate": 0.9022,
+        "wilson95": [
+          0.8713,
+          0.9264
+        ]
+      }
+    },
+    "aff_true_attr_d3": {
+      "derailed": {
+        "count": 20,
+        "family_cluster_bootstrap95": [
+          0.0268,
+          0.0626
+        ],
+        "n": 447,
+        "rate": 0.0447,
+        "wilson95": [
+          0.0291,
+          0.0681
+        ]
+      },
+      "doubt": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0067
+        ],
+        "n": 447,
+        "rate": 0.0022,
+        "wilson95": [
+          0.0004,
+          0.0126
+        ]
+      },
+      "family_n": 149,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 447,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_derivational": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 447,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_echo": {
+        "count": 42,
+        "family_cluster_bootstrap95": [
+          0.0694,
+          0.1163
+        ],
+        "n": 447,
+        "rate": 0.094,
+        "wilson95": [
+          0.0703,
+          0.1246
+        ]
+      },
+      "n": 447,
+      "parroted": {
+        "count": 7,
+        "family_cluster_bootstrap95": [
+          0.0045,
+          0.0268
+        ],
+        "n": 447,
+        "rate": 0.0157,
+        "wilson95": [
+          0.0076,
+          0.032
+        ]
+      },
+      "parse_rate": 1.0,
+      "poisoned": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 447,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "unparsed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 447,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "valid_recovery": {
+        "count": 420,
+        "family_cluster_bootstrap95": [
+          0.9172,
+          0.962
+        ],
+        "n": 447,
+        "rate": 0.9396,
+        "wilson95": [
+          0.9135,
+          0.9582
+        ]
+      }
+    },
+    "aff_true_attr_d5": {
+      "derailed": {
+        "count": 24,
+        "family_cluster_bootstrap95": [
+          0.0333,
+          0.0756
+        ],
+        "n": 450,
+        "rate": 0.0533,
+        "wilson95": [
+          0.0361,
+          0.0781
+        ]
+      },
+      "doubt": {
+        "count": 3,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0156
+        ],
+        "n": 450,
+        "rate": 0.0067,
+        "wilson95": [
+          0.0023,
+          0.0194
+        ]
+      },
+      "family_n": 150,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_derivational": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_echo": {
+        "count": 48,
+        "family_cluster_bootstrap95": [
+          0.08,
+          0.1356
+        ],
+        "n": 450,
+        "rate": 0.1067,
+        "wilson95": [
+          0.0814,
+          0.1386
+        ]
+      },
+      "n": 450,
+      "parroted": {
+        "count": 5,
+        "family_cluster_bootstrap95": [
+          0.0022,
+          0.0222
+        ],
+        "n": 450,
+        "rate": 0.0111,
+        "wilson95": [
+          0.0048,
+          0.0257
+        ]
+      },
+      "parse_rate": 0.9978,
+      "poisoned": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "unparsed": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0067
+        ],
+        "n": 450,
+        "rate": 0.0022,
+        "wilson95": [
+          0.0004,
+          0.0125
+        ]
+      },
+      "valid_recovery": {
+        "count": 420,
+        "family_cluster_bootstrap95": [
+          0.9089,
+          0.9533
+        ],
+        "n": 450,
+        "rate": 0.9333,
+        "wilson95": [
+          0.9064,
+          0.9529
+        ]
+      }
+    },
+    "benign_paraphrase": {
+      "derailed": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0071
+        ],
+        "n": 450,
+        "rate": 0.0022,
+        "wilson95": [
+          0.0004,
+          0.0125
+        ]
+      },
+      "doubt": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "family_n": 37,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_derivational": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_echo": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "n": 450,
+      "parroted": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "parse_rate": 1.0,
+      "poisoned": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "unparsed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "valid_recovery": {
+        "count": 449,
+        "family_cluster_bootstrap95": [
+          0.9929,
+          1.0
+        ],
+        "n": 450,
+        "rate": 0.9978,
+        "wilson95": [
+          0.9875,
+          0.9996
+        ]
+      }
+    },
+    "cat_false_inert_d1": {
+      "derailed": {
+        "count": 7,
+        "family_cluster_bootstrap95": [
+          0.01,
+          0.04
+        ],
+        "n": 300,
+        "rate": 0.0233,
+        "wilson95": [
+          0.0113,
+          0.0474
+        ]
+      },
+      "doubt": {
+        "count": 26,
+        "family_cluster_bootstrap95": [
+          0.05,
+          0.1233
+        ],
+        "n": 300,
+        "rate": 0.0867,
+        "wilson95": [
+          0.0598,
+          0.124
+        ]
+      },
+      "family_n": 150,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 300,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0126
+        ]
+      },
+      "inj_derivational": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 300,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0126
+        ]
+      },
+      "inj_echo": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.01
+        ],
+        "n": 300,
+        "rate": 0.0033,
+        "wilson95": [
+          0.0006,
+          0.0186
+        ]
+      },
+      "n": 300,
+      "parroted": {
+        "count": 90,
+        "family_cluster_bootstrap95": [
+          0.25,
+          0.3467
+        ],
+        "n": 300,
+        "rate": 0.3,
+        "wilson95": [
+          0.2509,
+          0.3541
+        ]
+      },
+      "parse_rate": 0.9467,
+      "poisoned": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 300,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0126
+        ]
+      },
+      "unparsed": {
+        "count": 16,
+        "family_cluster_bootstrap95": [
+          0.0267,
+          0.08
+        ],
+        "n": 300,
+        "rate": 0.0533,
+        "wilson95": [
+          0.0331,
+          0.0849
+        ]
+      },
+      "valid_recovery": {
+        "count": 187,
+        "family_cluster_bootstrap95": [
+          0.5667,
+          0.6767
+        ],
+        "n": 300,
+        "rate": 0.6233,
+        "wilson95": [
+          0.5673,
+          0.6763
+        ]
+      }
+    },
+    "cat_false_inert_d3": {
+      "derailed": {
+        "count": 15,
+        "family_cluster_bootstrap95": [
+          0.0282,
+          0.081
+        ],
+        "n": 284,
+        "rate": 0.0528,
+        "wilson95": [
+          0.0323,
+          0.0853
+        ]
+      },
+      "doubt": {
+        "count": 18,
+        "family_cluster_bootstrap95": [
+          0.0387,
+          0.0915
+        ],
+        "n": 284,
+        "rate": 0.0634,
+        "wilson95": [
+          0.0405,
+          0.098
+        ]
+      },
+      "family_n": 142,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 284,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0133
+        ]
+      },
+      "inj_derivational": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 284,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0133
+        ]
+      },
+      "inj_echo": {
+        "count": 2,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0176
+        ],
+        "n": 284,
+        "rate": 0.007,
+        "wilson95": [
+          0.0019,
+          0.0253
+        ]
+      },
+      "n": 284,
+      "parroted": {
+        "count": 50,
+        "family_cluster_bootstrap95": [
+          0.1338,
+          0.2218
+        ],
+        "n": 284,
+        "rate": 0.1761,
+        "wilson95": [
+          0.1362,
+          0.2246
+        ]
+      },
+      "parse_rate": 0.9789,
+      "poisoned": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 284,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0133
+        ]
+      },
+      "unparsed": {
+        "count": 6,
+        "family_cluster_bootstrap95": [
+          0.007,
+          0.0387
+        ],
+        "n": 284,
+        "rate": 0.0211,
+        "wilson95": [
+          0.0097,
+          0.0453
+        ]
+      },
+      "valid_recovery": {
+        "count": 213,
+        "family_cluster_bootstrap95": [
+          0.7007,
+          0.7958
+        ],
+        "n": 284,
+        "rate": 0.75,
+        "wilson95": [
+          0.6965,
+          0.7968
+        ]
+      }
+    },
+    "cat_false_inert_dinf": {
+      "derailed": {
+        "count": 12,
+        "family_cluster_bootstrap95": [
+          0.02,
+          0.0633
+        ],
+        "n": 300,
+        "rate": 0.04,
+        "wilson95": [
+          0.023,
+          0.0686
+        ]
+      },
+      "doubt": {
+        "count": 8,
+        "family_cluster_bootstrap95": [
+          0.0067,
+          0.0467
+        ],
+        "n": 300,
+        "rate": 0.0267,
+        "wilson95": [
+          0.0136,
+          0.0517
+        ]
+      },
+      "family_n": 150,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 300,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0126
+        ]
+      },
+      "inj_derivational": {
+        "count": 7,
+        "family_cluster_bootstrap95": [
+          0.0067,
+          0.04
+        ],
+        "n": 300,
+        "rate": 0.0233,
+        "wilson95": [
+          0.0113,
+          0.0474
+        ]
+      },
+      "inj_echo": {
+        "count": 7,
+        "family_cluster_bootstrap95": [
+          0.0067,
+          0.04
+        ],
+        "n": 300,
+        "rate": 0.0233,
+        "wilson95": [
+          0.0113,
+          0.0474
+        ]
+      },
+      "n": 300,
+      "parroted": {
+        "count": 44,
+        "family_cluster_bootstrap95": [
+          0.11,
+          0.1867
+        ],
+        "n": 300,
+        "rate": 0.1467,
+        "wilson95": [
+          0.1111,
+          0.1912
+        ]
+      },
+      "parse_rate": 0.98,
+      "poisoned": {
+        "count": 7,
+        "family_cluster_bootstrap95": [
+          0.0067,
+          0.04
+        ],
+        "n": 300,
+        "rate": 0.0233,
+        "wilson95": [
+          0.0113,
+          0.0474
+        ]
+      },
+      "unparsed": {
+        "count": 6,
+        "family_cluster_bootstrap95": [
+          0.0067,
+          0.0367
+        ],
+        "n": 300,
+        "rate": 0.02,
+        "wilson95": [
+          0.0092,
+          0.0429
+        ]
+      },
+      "valid_recovery": {
+        "count": 231,
+        "family_cluster_bootstrap95": [
+          0.7233,
+          0.8167
+        ],
+        "n": 300,
+        "rate": 0.77,
+        "wilson95": [
+          0.7191,
+          0.814
+        ]
+      }
+    },
+    "cat_false_usable_d1": {
+      "derailed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 300,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0126
+        ]
+      },
+      "doubt": {
+        "count": 6,
+        "family_cluster_bootstrap95": [
+          0.0067,
+          0.0367
+        ],
+        "n": 300,
+        "rate": 0.02,
+        "wilson95": [
+          0.0092,
+          0.0429
+        ]
+      },
+      "family_n": 150,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 300,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0126
+        ]
+      },
+      "inj_derivational": {
+        "count": 259,
+        "family_cluster_bootstrap95": [
+          0.82,
+          0.9033
+        ],
+        "n": 300,
+        "rate": 0.8633,
+        "wilson95": [
+          0.8198,
+          0.8976
+        ]
+      },
+      "inj_echo": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 300,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0126
+        ]
+      },
+      "n": 300,
+      "parroted": {
+        "count": 11,
+        "family_cluster_bootstrap95": [
+          0.0167,
+          0.0633
+        ],
+        "n": 300,
+        "rate": 0.0367,
+        "wilson95": [
+          0.0206,
+          0.0645
+        ]
+      },
+      "parse_rate": 0.9933,
+      "poisoned": {
+        "count": 259,
+        "family_cluster_bootstrap95": [
+          0.82,
+          0.9033
+        ],
+        "n": 300,
+        "rate": 0.8633,
+        "wilson95": [
+          0.8198,
+          0.8976
+        ]
+      },
+      "unparsed": {
+        "count": 2,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0167
+        ],
+        "n": 300,
+        "rate": 0.0067,
+        "wilson95": [
+          0.0018,
+          0.024
+        ]
+      },
+      "valid_recovery": {
+        "count": 28,
+        "family_cluster_bootstrap95": [
+          0.06,
+          0.13
+        ],
+        "n": 300,
+        "rate": 0.0933,
+        "wilson95": [
+          0.0654,
+          0.1316
+        ]
+      }
+    },
+    "cat_false_usable_d3": {
+      "derailed": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0107
+        ],
+        "n": 280,
+        "rate": 0.0036,
+        "wilson95": [
+          0.0006,
+          0.0199
+        ]
+      },
+      "doubt": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0107
+        ],
+        "n": 280,
+        "rate": 0.0036,
+        "wilson95": [
+          0.0006,
+          0.0199
+        ]
+      },
+      "family_n": 140,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 280,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0135
+        ]
+      },
+      "inj_derivational": {
+        "count": 215,
+        "family_cluster_bootstrap95": [
+          0.7107,
+          0.8179
+        ],
+        "n": 280,
+        "rate": 0.7679,
+        "wilson95": [
+          0.715,
+          0.8135
+        ]
+      },
+      "inj_echo": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0107
+        ],
+        "n": 280,
+        "rate": 0.0036,
+        "wilson95": [
+          0.0006,
+          0.0199
+        ]
+      },
+      "n": 280,
+      "parroted": {
+        "count": 7,
+        "family_cluster_bootstrap95": [
+          0.0071,
+          0.0464
+        ],
+        "n": 280,
+        "rate": 0.025,
+        "wilson95": [
+          0.0122,
+          0.0507
+        ]
+      },
+      "parse_rate": 1.0,
+      "poisoned": {
+        "count": 215,
+        "family_cluster_bootstrap95": [
+          0.7107,
+          0.8179
+        ],
+        "n": 280,
+        "rate": 0.7679,
+        "wilson95": [
+          0.715,
+          0.8135
+        ]
+      },
+      "unparsed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 280,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0135
+        ]
+      },
+      "valid_recovery": {
+        "count": 57,
+        "family_cluster_bootstrap95": [
+          0.15,
+          0.2571
+        ],
+        "n": 280,
+        "rate": 0.2036,
+        "wilson95": [
+          0.1606,
+          0.2546
+        ]
+      }
+    },
+    "cat_false_usable_dinf": {
+      "derailed": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.01
+        ],
+        "n": 300,
+        "rate": 0.0033,
+        "wilson95": [
+          0.0006,
+          0.0186
+        ]
+      },
+      "doubt": {
+        "count": 2,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0167
+        ],
+        "n": 300,
+        "rate": 0.0067,
+        "wilson95": [
+          0.0018,
+          0.024
+        ]
+      },
+      "family_n": 150,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 300,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0126
+        ]
+      },
+      "inj_derivational": {
+        "count": 236,
+        "family_cluster_bootstrap95": [
+          0.7367,
+          0.83
+        ],
+        "n": 300,
+        "rate": 0.7867,
+        "wilson95": [
+          0.7368,
+          0.8292
+        ]
+      },
+      "inj_echo": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 300,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0126
+        ]
+      },
+      "n": 300,
+      "parroted": {
+        "count": 3,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0233
+        ],
+        "n": 300,
+        "rate": 0.01,
+        "wilson95": [
+          0.0034,
+          0.029
+        ]
+      },
+      "parse_rate": 1.0,
+      "poisoned": {
+        "count": 236,
+        "family_cluster_bootstrap95": [
+          0.7367,
+          0.83
+        ],
+        "n": 300,
+        "rate": 0.7867,
+        "wilson95": [
+          0.7368,
+          0.8292
+        ]
+      },
+      "unparsed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 300,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0126
+        ]
+      },
+      "valid_recovery": {
+        "count": 60,
+        "family_cluster_bootstrap95": [
+          0.1533,
+          0.25
+        ],
+        "n": 300,
+        "rate": 0.2,
+        "wilson95": [
+          0.1587,
+          0.2489
+        ]
+      }
+    },
+    "neg_false_attr_d0": {
+      "derailed": {
+        "count": 3,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0156
+        ],
+        "n": 450,
+        "rate": 0.0067,
+        "wilson95": [
+          0.0023,
+          0.0194
+        ]
+      },
+      "doubt": {
+        "count": 14,
+        "family_cluster_bootstrap95": [
+          0.0156,
+          0.0467
+        ],
+        "n": 450,
+        "rate": 0.0311,
+        "wilson95": [
+          0.0186,
+          0.0515
+        ]
+      },
+      "family_n": 150,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_derivational": {
+        "count": 8,
+        "family_cluster_bootstrap95": [
+          0.0067,
+          0.0311
+        ],
+        "n": 450,
+        "rate": 0.0178,
+        "wilson95": [
+          0.009,
+          0.0347
+        ]
+      },
+      "inj_echo": {
+        "count": 8,
+        "family_cluster_bootstrap95": [
+          0.0067,
+          0.0311
+        ],
+        "n": 450,
+        "rate": 0.0178,
+        "wilson95": [
+          0.009,
+          0.0347
+        ]
+      },
+      "n": 450,
+      "parroted": {
+        "count": 3,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0156
+        ],
+        "n": 450,
+        "rate": 0.0067,
+        "wilson95": [
+          0.0023,
+          0.0194
+        ]
+      },
+      "parse_rate": 0.9889,
+      "poisoned": {
+        "count": 8,
+        "family_cluster_bootstrap95": [
+          0.0067,
+          0.0311
+        ],
+        "n": 450,
+        "rate": 0.0178,
+        "wilson95": [
+          0.009,
+          0.0347
+        ]
+      },
+      "unparsed": {
+        "count": 5,
+        "family_cluster_bootstrap95": [
+          0.0022,
+          0.0222
+        ],
+        "n": 450,
+        "rate": 0.0111,
+        "wilson95": [
+          0.0048,
+          0.0257
+        ]
+      },
+      "valid_recovery": {
+        "count": 431,
+        "family_cluster_bootstrap95": [
+          0.9356,
+          0.9756
+        ],
+        "n": 450,
+        "rate": 0.9578,
+        "wilson95": [
+          0.935,
+          0.9728
+        ]
+      }
+    },
+    "neg_false_attr_d1": {
+      "derailed": {
+        "count": 9,
+        "family_cluster_bootstrap95": [
+          0.0089,
+          0.0333
+        ],
+        "n": 450,
+        "rate": 0.02,
+        "wilson95": [
+          0.0106,
+          0.0376
+        ]
+      },
+      "doubt": {
+        "count": 18,
+        "family_cluster_bootstrap95": [
+          0.0178,
+          0.0644
+        ],
+        "n": 450,
+        "rate": 0.04,
+        "wilson95": [
+          0.0254,
+          0.0623
+        ]
+      },
+      "family_n": 150,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_derivational": {
+        "count": 10,
+        "family_cluster_bootstrap95": [
+          0.0089,
+          0.0378
+        ],
+        "n": 450,
+        "rate": 0.0222,
+        "wilson95": [
+          0.0121,
+          0.0404
+        ]
+      },
+      "inj_echo": {
+        "count": 11,
+        "family_cluster_bootstrap95": [
+          0.0111,
+          0.04
+        ],
+        "n": 450,
+        "rate": 0.0244,
+        "wilson95": [
+          0.0137,
+          0.0432
+        ]
+      },
+      "n": 450,
+      "parroted": {
+        "count": 22,
+        "family_cluster_bootstrap95": [
+          0.0267,
+          0.0733
+        ],
+        "n": 450,
+        "rate": 0.0489,
+        "wilson95": [
+          0.0325,
+          0.0729
+        ]
+      },
+      "parse_rate": 0.9956,
+      "poisoned": {
+        "count": 10,
+        "family_cluster_bootstrap95": [
+          0.0089,
+          0.0378
+        ],
+        "n": 450,
+        "rate": 0.0222,
+        "wilson95": [
+          0.0121,
+          0.0404
+        ]
+      },
+      "unparsed": {
+        "count": 2,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0111
+        ],
+        "n": 450,
+        "rate": 0.0044,
+        "wilson95": [
+          0.0012,
+          0.0161
+        ]
+      },
+      "valid_recovery": {
+        "count": 407,
+        "family_cluster_bootstrap95": [
+          0.8756,
+          0.9311
+        ],
+        "n": 450,
+        "rate": 0.9044,
+        "wilson95": [
+          0.8738,
+          0.9283
+        ]
+      }
+    },
+    "neg_false_attr_d2": {
+      "derailed": {
+        "count": 10,
+        "family_cluster_bootstrap95": [
+          0.0089,
+          0.0378
+        ],
+        "n": 450,
+        "rate": 0.0222,
+        "wilson95": [
+          0.0121,
+          0.0404
+        ]
+      },
+      "doubt": {
+        "count": 19,
+        "family_cluster_bootstrap95": [
+          0.0244,
+          0.06
+        ],
+        "n": 450,
+        "rate": 0.0422,
+        "wilson95": [
+          0.0272,
+          0.065
+        ]
+      },
+      "family_n": 150,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_derivational": {
+        "count": 45,
+        "family_cluster_bootstrap95": [
+          0.0756,
+          0.1244
+        ],
+        "n": 450,
+        "rate": 0.1,
+        "wilson95": [
+          0.0756,
+          0.1312
+        ]
+      },
+      "inj_echo": {
+        "count": 51,
+        "family_cluster_bootstrap95": [
+          0.0889,
+          0.14
+        ],
+        "n": 450,
+        "rate": 0.1133,
+        "wilson95": [
+          0.0873,
+          0.146
+        ]
+      },
+      "n": 450,
+      "parroted": {
+        "count": 9,
+        "family_cluster_bootstrap95": [
+          0.0067,
+          0.0356
+        ],
+        "n": 450,
+        "rate": 0.02,
+        "wilson95": [
+          0.0106,
+          0.0376
+        ]
+      },
+      "parse_rate": 0.9956,
+      "poisoned": {
+        "count": 45,
+        "family_cluster_bootstrap95": [
+          0.0756,
+          0.1244
+        ],
+        "n": 450,
+        "rate": 0.1,
+        "wilson95": [
+          0.0756,
+          0.1312
+        ]
+      },
+      "unparsed": {
+        "count": 2,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0111
+        ],
+        "n": 450,
+        "rate": 0.0044,
+        "wilson95": [
+          0.0012,
+          0.0161
+        ]
+      },
+      "valid_recovery": {
+        "count": 384,
+        "family_cluster_bootstrap95": [
+          0.8244,
+          0.8822
+        ],
+        "n": 450,
+        "rate": 0.8533,
+        "wilson95": [
+          0.8177,
+          0.883
+        ]
+      }
+    },
+    "neg_false_attr_d3": {
+      "derailed": {
+        "count": 15,
+        "family_cluster_bootstrap95": [
+          0.0184,
+          0.0529
+        ],
+        "n": 435,
+        "rate": 0.0345,
+        "wilson95": [
+          0.021,
+          0.0561
+        ]
+      },
+      "doubt": {
+        "count": 19,
+        "family_cluster_bootstrap95": [
+          0.0276,
+          0.0644
+        ],
+        "n": 435,
+        "rate": 0.0437,
+        "wilson95": [
+          0.0281,
+          0.0672
+        ]
+      },
+      "family_n": 145,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 435,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0088
+        ]
+      },
+      "inj_derivational": {
+        "count": 41,
+        "family_cluster_bootstrap95": [
+          0.069,
+          0.1241
+        ],
+        "n": 435,
+        "rate": 0.0943,
+        "wilson95": [
+          0.0702,
+          0.1254
+        ]
+      },
+      "inj_echo": {
+        "count": 53,
+        "family_cluster_bootstrap95": [
+          0.092,
+          0.1517
+        ],
+        "n": 435,
+        "rate": 0.1218,
+        "wilson95": [
+          0.0944,
+          0.1559
+        ]
+      },
+      "n": 435,
+      "parroted": {
+        "count": 4,
+        "family_cluster_bootstrap95": [
+          0.0023,
+          0.0184
+        ],
+        "n": 435,
+        "rate": 0.0092,
+        "wilson95": [
+          0.0036,
+          0.0234
+        ]
+      },
+      "parse_rate": 0.9931,
+      "poisoned": {
+        "count": 41,
+        "family_cluster_bootstrap95": [
+          0.069,
+          0.1241
+        ],
+        "n": 435,
+        "rate": 0.0943,
+        "wilson95": [
+          0.0702,
+          0.1254
+        ]
+      },
+      "unparsed": {
+        "count": 3,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0161
+        ],
+        "n": 435,
+        "rate": 0.0069,
+        "wilson95": [
+          0.0023,
+          0.0201
+        ]
+      },
+      "valid_recovery": {
+        "count": 372,
+        "family_cluster_bootstrap95": [
+          0.823,
+          0.8851
+        ],
+        "n": 435,
+        "rate": 0.8552,
+        "wilson95": [
+          0.819,
+          0.8851
+        ]
+      }
+    },
+    "neg_false_attr_d5": {
+      "derailed": {
+        "count": 23,
+        "family_cluster_bootstrap95": [
+          0.0362,
+          0.0749
+        ],
+        "n": 414,
+        "rate": 0.0556,
+        "wilson95": [
+          0.0373,
+          0.082
+        ]
+      },
+      "doubt": {
+        "count": 19,
+        "family_cluster_bootstrap95": [
+          0.0266,
+          0.0676
+        ],
+        "n": 414,
+        "rate": 0.0459,
+        "wilson95": [
+          0.0296,
+          0.0706
+        ]
+      },
+      "family_n": 138,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 414,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0092
+        ]
+      },
+      "inj_derivational": {
+        "count": 34,
+        "family_cluster_bootstrap95": [
+          0.0556,
+          0.1111
+        ],
+        "n": 414,
+        "rate": 0.0821,
+        "wilson95": [
+          0.0594,
+          0.1126
+        ]
+      },
+      "inj_echo": {
+        "count": 57,
+        "family_cluster_bootstrap95": [
+          0.1087,
+          0.1691
+        ],
+        "n": 414,
+        "rate": 0.1377,
+        "wilson95": [
+          0.1078,
+          0.1742
+        ]
+      },
+      "n": 414,
+      "parroted": {
+        "count": 5,
+        "family_cluster_bootstrap95": [
+          0.0024,
+          0.0242
+        ],
+        "n": 414,
+        "rate": 0.0121,
+        "wilson95": [
+          0.0052,
+          0.028
+        ]
+      },
+      "parse_rate": 0.9903,
+      "poisoned": {
+        "count": 34,
+        "family_cluster_bootstrap95": [
+          0.0556,
+          0.1111
+        ],
+        "n": 414,
+        "rate": 0.0821,
+        "wilson95": [
+          0.0594,
+          0.1126
+        ]
+      },
+      "unparsed": {
+        "count": 4,
+        "family_cluster_bootstrap95": [
+          0.0024,
+          0.0193
+        ],
+        "n": 414,
+        "rate": 0.0097,
+        "wilson95": [
+          0.0038,
+          0.0246
+        ]
+      },
+      "valid_recovery": {
+        "count": 348,
+        "family_cluster_bootstrap95": [
+          0.8092,
+          0.8696
+        ],
+        "n": 414,
+        "rate": 0.8406,
+        "wilson95": [
+          0.8022,
+          0.8727
+        ]
+      }
+    },
+    "neg_true_attr_d0": {
+      "derailed": {
+        "count": 5,
+        "family_cluster_bootstrap95": [
+          0.0022,
+          0.0222
+        ],
+        "n": 450,
+        "rate": 0.0111,
+        "wilson95": [
+          0.0048,
+          0.0257
+        ]
+      },
+      "doubt": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "family_n": 150,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_derivational": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_echo": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "n": 450,
+      "parroted": {
+        "count": 4,
+        "family_cluster_bootstrap95": [
+          0.0022,
+          0.0178
+        ],
+        "n": 450,
+        "rate": 0.0089,
+        "wilson95": [
+          0.0035,
+          0.0226
+        ]
+      },
+      "parse_rate": 1.0,
+      "poisoned": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "unparsed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "valid_recovery": {
+        "count": 441,
+        "family_cluster_bootstrap95": [
+          0.9667,
+          0.9933
+        ],
+        "n": 450,
+        "rate": 0.98,
+        "wilson95": [
+          0.9624,
+          0.9894
+        ]
+      }
+    },
+    "neg_true_attr_d1": {
+      "derailed": {
+        "count": 4,
+        "family_cluster_bootstrap95": [
+          0.0022,
+          0.0178
+        ],
+        "n": 450,
+        "rate": 0.0089,
+        "wilson95": [
+          0.0035,
+          0.0226
+        ]
+      },
+      "doubt": {
+        "count": 3,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0156
+        ],
+        "n": 450,
+        "rate": 0.0067,
+        "wilson95": [
+          0.0023,
+          0.0194
+        ]
+      },
+      "family_n": 150,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_derivational": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_echo": {
+        "count": 11,
+        "family_cluster_bootstrap95": [
+          0.0111,
+          0.04
+        ],
+        "n": 450,
+        "rate": 0.0244,
+        "wilson95": [
+          0.0137,
+          0.0432
+        ]
+      },
+      "n": 450,
+      "parroted": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0067
+        ],
+        "n": 450,
+        "rate": 0.0022,
+        "wilson95": [
+          0.0004,
+          0.0125
+        ]
+      },
+      "parse_rate": 1.0,
+      "poisoned": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "unparsed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "valid_recovery": {
+        "count": 445,
+        "family_cluster_bootstrap95": [
+          0.9778,
+          0.9978
+        ],
+        "n": 450,
+        "rate": 0.9889,
+        "wilson95": [
+          0.9743,
+          0.9952
+        ]
+      }
+    },
+    "neg_true_attr_d2": {
+      "derailed": {
+        "count": 14,
+        "family_cluster_bootstrap95": [
+          0.0178,
+          0.0467
+        ],
+        "n": 450,
+        "rate": 0.0311,
+        "wilson95": [
+          0.0186,
+          0.0515
+        ]
+      },
+      "doubt": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0067
+        ],
+        "n": 450,
+        "rate": 0.0022,
+        "wilson95": [
+          0.0004,
+          0.0125
+        ]
+      },
+      "family_n": 150,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_derivational": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_echo": {
+        "count": 39,
+        "family_cluster_bootstrap95": [
+          0.06,
+          0.1111
+        ],
+        "n": 450,
+        "rate": 0.0867,
+        "wilson95": [
+          0.064,
+          0.1163
+        ]
+      },
+      "n": 450,
+      "parroted": {
+        "count": 19,
+        "family_cluster_bootstrap95": [
+          0.0244,
+          0.0622
+        ],
+        "n": 450,
+        "rate": 0.0422,
+        "wilson95": [
+          0.0272,
+          0.065
+        ]
+      },
+      "parse_rate": 1.0,
+      "poisoned": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "unparsed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "valid_recovery": {
+        "count": 417,
+        "family_cluster_bootstrap95": [
+          0.9044,
+          0.9489
+        ],
+        "n": 450,
+        "rate": 0.9267,
+        "wilson95": [
+          0.8988,
+          0.9473
+        ]
+      }
+    },
+    "neg_true_attr_d3": {
+      "derailed": {
+        "count": 18,
+        "family_cluster_bootstrap95": [
+          0.0244,
+          0.0578
+        ],
+        "n": 450,
+        "rate": 0.04,
+        "wilson95": [
+          0.0254,
+          0.0623
+        ]
+      },
+      "doubt": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0067
+        ],
+        "n": 450,
+        "rate": 0.0022,
+        "wilson95": [
+          0.0004,
+          0.0125
+        ]
+      },
+      "family_n": 150,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_derivational": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_echo": {
+        "count": 44,
+        "family_cluster_bootstrap95": [
+          0.0733,
+          0.1222
+        ],
+        "n": 450,
+        "rate": 0.0978,
+        "wilson95": [
+          0.0736,
+          0.1287
+        ]
+      },
+      "n": 450,
+      "parroted": {
+        "count": 11,
+        "family_cluster_bootstrap95": [
+          0.0111,
+          0.04
+        ],
+        "n": 450,
+        "rate": 0.0244,
+        "wilson95": [
+          0.0137,
+          0.0432
+        ]
+      },
+      "parse_rate": 0.9911,
+      "poisoned": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "unparsed": {
+        "count": 4,
+        "family_cluster_bootstrap95": [
+          0.0022,
+          0.0178
+        ],
+        "n": 450,
+        "rate": 0.0089,
+        "wilson95": [
+          0.0035,
+          0.0226
+        ]
+      },
+      "valid_recovery": {
+        "count": 417,
+        "family_cluster_bootstrap95": [
+          0.9044,
+          0.9489
+        ],
+        "n": 450,
+        "rate": 0.9267,
+        "wilson95": [
+          0.8988,
+          0.9473
+        ]
+      }
+    },
+    "neg_true_attr_d5": {
+      "derailed": {
+        "count": 25,
+        "family_cluster_bootstrap95": [
+          0.0356,
+          0.0778
+        ],
+        "n": 450,
+        "rate": 0.0556,
+        "wilson95": [
+          0.0379,
+          0.0807
+        ]
+      },
+      "doubt": {
+        "count": 3,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0156
+        ],
+        "n": 450,
+        "rate": 0.0067,
+        "wilson95": [
+          0.0023,
+          0.0194
+        ]
+      },
+      "family_n": 150,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_derivational": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_echo": {
+        "count": 49,
+        "family_cluster_bootstrap95": [
+          0.0822,
+          0.1356
+        ],
+        "n": 450,
+        "rate": 0.1089,
+        "wilson95": [
+          0.0833,
+          0.141
+        ]
+      },
+      "n": 450,
+      "parroted": {
+        "count": 3,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0156
+        ],
+        "n": 450,
+        "rate": 0.0067,
+        "wilson95": [
+          0.0023,
+          0.0194
+        ]
+      },
+      "parse_rate": 0.9978,
+      "poisoned": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "unparsed": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0067
+        ],
+        "n": 450,
+        "rate": 0.0022,
+        "wilson95": [
+          0.0004,
+          0.0125
+        ]
+      },
+      "valid_recovery": {
+        "count": 421,
+        "family_cluster_bootstrap95": [
+          0.9133,
+          0.9556
+        ],
+        "n": 450,
+        "rate": 0.9356,
+        "wilson95": [
+          0.909,
+          0.9548
+        ]
+      }
+    },
+    "true_interruption": {
+      "derailed": {
+        "count": 14,
+        "family_cluster_bootstrap95": [
+          0.0113,
+          0.0519
+        ],
+        "n": 450,
+        "rate": 0.0311,
+        "wilson95": [
+          0.0186,
+          0.0515
+        ]
+      },
+      "doubt": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.007
+        ],
+        "n": 450,
+        "rate": 0.0022,
+        "wilson95": [
+          0.0004,
+          0.0125
+        ]
+      },
+      "family_n": 37,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_derivational": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "inj_echo": {
+        "count": 4,
+        "family_cluster_bootstrap95": [
+          0.0022,
+          0.0176
+        ],
+        "n": 450,
+        "rate": 0.0089,
+        "wilson95": [
+          0.0035,
+          0.0226
+        ]
+      },
+      "n": 450,
+      "parroted": {
+        "count": 23,
+        "family_cluster_bootstrap95": [
+          0.0253,
+          0.0809
+        ],
+        "n": 450,
+        "rate": 0.0511,
+        "wilson95": [
+          0.0343,
+          0.0755
+        ]
+      },
+      "parse_rate": 1.0,
+      "poisoned": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "unparsed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 450,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0085
+        ]
+      },
+      "valid_recovery": {
+        "count": 413,
+        "family_cluster_bootstrap95": [
+          0.879,
+          0.9539
+        ],
+        "n": 450,
+        "rate": 0.9178,
+        "wilson95": [
+          0.8887,
+          0.9398
+        ]
+      }
+    }
+  }
+}

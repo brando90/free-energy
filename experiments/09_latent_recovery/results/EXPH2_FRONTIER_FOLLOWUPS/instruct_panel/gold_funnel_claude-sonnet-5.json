@@ -1,0 +1,9 @@
+{
+  "attempts": 250,
+  "eligible": 109,
+  "gold_key": "claude-sonnet-5",
+  "reached_target": true,
+  "solve_rate": 1.0,
+  "solved": 250,
+  "world_eligible": 0
+}

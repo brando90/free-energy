@@ -1,0 +1,22 @@
+{
+  "per_model": {
+    "gpt-4.1": {
+      "per_arm": {
+        "baseline": {
+          "input_tokens_est": 7347,
+          "n_calls": 15,
+          "output_tokens_est": 4500,
+          "usd_est": 0.05
+        },
+        "self": {
+          "input_tokens_est": 7306,
+          "n_calls": 15,
+          "output_tokens_est": 4500,
+          "usd_est": 0.05
+        }
+      },
+      "total_usd_est": 0.1
+    }
+  },
+  "total_usd_est": 0.1
+}

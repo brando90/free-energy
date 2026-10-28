@@ -1,0 +1,17 @@
+{"model": "claude-haiku-4-5", "summary": {"n_programs": 250, "new_generations": 250, "solve_rate": 1.0, "parse_rate": 1.0, "failure_taxonomy": {}, "by_shape": {"kr1": {"n": 70, "solve_rate": 1.0, "eligible": 70}, "kr8": {"n": 60, "solve_rate": 1.0, "eligible": 60}, "kc1": {"n": 60, "solve_rate": 1.0, "eligible": 60}, "kc5": {"n": 60, "solve_rate": 1.0, "eligible": 60}}}, "cumulative_usd": 5.22}
+[r2 perturb claude-haiku-4-5] manifest=460 new=460 cells={"benign_paraphrase": 70, "true_interruption": 70, "adjacent_contradiction": 70, "opfree_kr1": 70, "opfree_kr8": 60, "onehop_kc1": 60, "deep_kc5": 60} cum=$6.79
+[r2 validate claude-haiku-4-5] rows=460
+{"model": "claude-sonnet-4-5", "summary": {"n_programs": 250, "new_generations": 250, "solve_rate": 1.0, "parse_rate": 1.0, "failure_taxonomy": {}, "by_shape": {"kr1": {"n": 70, "solve_rate": 1.0, "eligible": 70}, "kr8": {"n": 60, "solve_rate": 1.0, "eligible": 60}, "kc1": {"n": 60, "solve_rate": 1.0, "eligible": 60}, "kc5": {"n": 60, "solve_rate": 1.0, "eligible": 60}}}, "cumulative_usd": 8.94}
+[r2 perturb claude-sonnet-4-5] manifest=460 new=460 cells={"benign_paraphrase": 70, "true_interruption": 70, "adjacent_contradiction": 70, "opfree_kr1": 70, "opfree_kr8": 60, "onehop_kc1": 60, "deep_kc5": 60} cum=$12.29
+[r2 validate claude-sonnet-4-5] rows=460
+summary_regime2.json written; cumulative=$12.37
+[ladder gold claude-opus-4-1] attempts=50 eligible=19 cum=$13.21
+[ladder gold claude-opus-4-1] attempts=100 eligible=40 cum=$14.20
+[ladder gold claude-opus-4-1] attempts=150 eligible=63 cum=$15.13
+[ladder gold claude-opus-4-1] attempts=200 eligible=79 cum=$16.12
+[ladder gold claude-opus-4-1] attempts=250 eligible=99 cum=$17.03
+[ladder gold claude-opus-4-1] attempts=300 eligible=123 cum=$18.02
+{"funnel": {"gold_key": "claude-opus-4-1", "attempts": 300, "solved": 300, "solve_rate": 1.0, "eligible": 123, "world_eligible": 150, "reached_target": false}, "cumulative_usd": 21.98}
+[ladder perturb claude-opus-4-1_prefill] manifest=550 new=550 cum=$30.67
+[ladder validate claude-opus-4-1_prefill] rows=550
+PIPE2_DONE

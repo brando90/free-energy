@@ -1,0 +1,40 @@
+\begin{abstract}
+When a language model continues a reasoning trace that already contains a
+false step, does it catch the error or quietly build on it? We study this
+with an audited perturb-and-validate instrument: a statement is planted into
+a model's own proof trace on formally checkable logic problems, audited for
+whether it is true or false under the closed world, and the model's
+unprompted continuation is formally validated.
+
+Responses to a planted false step are strongly model-dependent. On the
+primary model, Qwen2.5-7B, explicit rejection is a visibility event: a
+planted falsehood is rejected in roughly 0.25 of continuations when its
+contradiction is a directly readable premise and in about 0.03 one hop away,
+flat beyond, and genuine multi-hop checking exists but is rare and ungraded
+by proximity. This visible-contradiction rejection pattern does not transfer:
+on three of four other open-weights models it significantly reverses, with
+rejection \emph{lower} when the contradiction is visible than when it is a
+hop away.
+
+Among the models that absorb planted falsehoods, evidence distance does not
+predict absorption but derivational usefulness does: a usable falsehood is
+reused near 0.8 regardless of how close its refutation sits, an inert one
+near zero. Absorption itself declines to near zero with scale within one
+family (0.81 at 7B to 0.01 at 32B in Qwen2.5) and varies by training recipe
+across labs at a matched harness.
+
+Two results hold across scale and lineage. No tested model re-verifies an
+already-computed value: recomputable falsehoods are absorbed near 1.00 even
+by frontier models that reject re-readable ones. And verbal rejection is a
+weak proxy for checking: a frequency-matched non-refuting rule elicits the
+same rejection rate as genuine refutation, yet those rejections fabricate a
+rule absent from the world, so only a derivation-licensed split separates
+checking from lexical cueing.
+
+Single-model conclusions about how reasoning errors are handled do not
+transfer across model, scale, or training recipe; computed intermediate
+values are the one universal blind spot. We frame the in-stream-versus-fresh-turn
+part of this last boundary as corroboration of concurrent work on the
+self-correction blind spot, not as a discovery, and our controlled tests run
+on a single model family and a synthetic logic domain.
+\end{abstract}

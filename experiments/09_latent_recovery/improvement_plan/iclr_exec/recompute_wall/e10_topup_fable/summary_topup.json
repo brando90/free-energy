@@ -1,0 +1,415 @@
+{
+  "cells": [
+    "adjacent_contradiction",
+    "opfree_kr1",
+    "onehop_kc1",
+    "deep_kc5"
+  ],
+  "created_at": "2026-07-27T20:14:37.194763+00:00",
+  "cumulative_usd": 71.9311,
+  "models": {
+    "claude-fable-5-off": {
+      "cells": {},
+      "mode": "bridge",
+      "model_id": "claude-fable-5"
+    },
+    "claude-fable-5-on": {
+      "cells": {},
+      "mode": "bridge",
+      "model_id": "claude-fable-5"
+    },
+    "claude-haiku-4-5": {
+      "cells": {
+        "adjacent_contradiction": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 120,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.031
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 0,
+            "n": 120,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.031
+            ]
+          },
+          "n": 120,
+          "n_gen_failed": 0,
+          "n_live": 120
+        },
+        "deep_kc5": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 120,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.031
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 120,
+            "n": 120,
+            "rate": 1.0,
+            "wilson95": [
+              0.969,
+              1.0
+            ]
+          },
+          "n": 120,
+          "n_gen_failed": 0,
+          "n_live": 120
+        },
+        "onehop_kc1": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 120,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.031
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 120,
+            "n": 120,
+            "rate": 1.0,
+            "wilson95": [
+              0.969,
+              1.0
+            ]
+          },
+          "n": 120,
+          "n_gen_failed": 0,
+          "n_live": 120
+        },
+        "opfree_kr1": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 120,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.031
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 5,
+            "n": 120,
+            "rate": 0.0417,
+            "wilson95": [
+              0.0179,
+              0.0938
+            ]
+          },
+          "n": 120,
+          "n_gen_failed": 0,
+          "n_live": 120
+        }
+      },
+      "mode": "prefill",
+      "model_id": "claude-haiku-4-5"
+    },
+    "claude-opus-4-8": {
+      "cells": {
+        "adjacent_contradiction": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 120,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.031
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 0,
+            "n": 120,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.031
+            ]
+          },
+          "n": 120,
+          "n_gen_failed": 0,
+          "n_live": 120
+        },
+        "deep_kc5": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 120,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.031
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 119,
+            "n": 120,
+            "rate": 0.9917,
+            "wilson95": [
+              0.9543,
+              0.9985
+            ]
+          },
+          "n": 120,
+          "n_gen_failed": 0,
+          "n_live": 120
+        },
+        "onehop_kc1": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 120,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.031
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 120,
+            "n": 120,
+            "rate": 1.0,
+            "wilson95": [
+              0.969,
+              1.0
+            ]
+          },
+          "n": 120,
+          "n_gen_failed": 0,
+          "n_live": 120
+        },
+        "opfree_kr1": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 120,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.031
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 43,
+            "n": 120,
+            "rate": 0.3583,
+            "wilson95": [
+              0.2782,
+              0.4473
+            ]
+          },
+          "n": 120,
+          "n_gen_failed": 0,
+          "n_live": 120
+        }
+      },
+      "mode": "bridge",
+      "model_id": "claude-opus-4-8"
+    },
+    "claude-sonnet-4-5": {
+      "cells": {
+        "adjacent_contradiction": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 120,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.031
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 0,
+            "n": 120,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.031
+            ]
+          },
+          "n": 120,
+          "n_gen_failed": 0,
+          "n_live": 120
+        },
+        "deep_kc5": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 120,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.031
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 118,
+            "n": 120,
+            "rate": 0.9833,
+            "wilson95": [
+              0.9413,
+              0.9954
+            ]
+          },
+          "n": 120,
+          "n_gen_failed": 0,
+          "n_live": 120
+        },
+        "onehop_kc1": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 120,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.031
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 116,
+            "n": 120,
+            "rate": 0.9667,
+            "wilson95": [
+              0.9174,
+              0.987
+            ]
+          },
+          "n": 120,
+          "n_gen_failed": 0,
+          "n_live": 120
+        },
+        "opfree_kr1": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 120,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.031
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 3,
+            "n": 120,
+            "rate": 0.025,
+            "wilson95": [
+              0.0085,
+              0.0709
+            ]
+          },
+          "n": 120,
+          "n_gen_failed": 0,
+          "n_live": 120
+        }
+      },
+      "mode": "prefill",
+      "model_id": "claude-sonnet-4-5"
+    },
+    "claude-sonnet-5": {
+      "cells": {
+        "adjacent_contradiction": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 120,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.031
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 1,
+            "n": 120,
+            "rate": 0.0083,
+            "wilson95": [
+              0.0015,
+              0.0457
+            ]
+          },
+          "n": 120,
+          "n_gen_failed": 0,
+          "n_live": 120
+        },
+        "deep_kc5": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 120,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.031
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 120,
+            "n": 120,
+            "rate": 1.0,
+            "wilson95": [
+              0.969,
+              1.0
+            ]
+          },
+          "n": 120,
+          "n_gen_failed": 0,
+          "n_live": 120
+        },
+        "onehop_kc1": {
+          "doubt_lex": {
+            "count": 0,
+            "n": 119,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0313
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 119,
+            "n": 119,
+            "rate": 1.0,
+            "wilson95": [
+              0.9687,
+              1.0
+            ]
+          },
+          "n": 119,
+          "n_gen_failed": 0,
+          "n_live": 119
+        },
+        "opfree_kr1": {
+          "doubt_lex": {
+            "count": 9,
+            "n": 120,
+            "rate": 0.075,
+            "wilson95": [
+              0.04,
+              0.1364
+            ]
+          },
+          "final_output_absorbed": {
+            "count": 29,
+            "n": 120,
+            "rate": 0.2417,
+            "wilson95": [
+              0.1739,
+              0.3255
+            ]
+          },
+          "n": 120,
+          "n_gen_failed": 0,
+          "n_live": 120
+        }
+      },
+      "mode": "bridge",
+      "model_id": "claude-sonnet-5"
+    }
+  },
+  "this_run_usd": 19.2762
+}

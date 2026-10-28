@@ -1,0 +1,73 @@
+{
+  "R": 3,
+  "cells": [
+    "line_k0",
+    "grid_kr1",
+    "k1_deference"
+  ],
+  "conditional_gate": "families ('grid_note_false_before', 'grid_note_true_before_line_false') CONDITIONAL on parse-sanity gate in summary",
+  "created_at": "2026-07-29T08:52:58",
+  "decoding": {
+    "greedy_rollout": 0,
+    "max_new_cont": 384,
+    "max_new_gold": 512,
+    "probe_max_tokens": 64,
+    "sampled_rollouts": 3
+  },
+  "dry": true,
+  "experiment": "E13_MATCHED_CONTROLS_haiku_prefill",
+  "families": {
+    "grid_kr1": [
+      "adjacent_contradiction",
+      "opfree_kr1",
+      "grid_line_false_note_true",
+      "grid_note_false_before",
+      "grid_note_true_before_line_false",
+      "grid_line_false_copy_true",
+      "dose_off1",
+      "dose_off10_20",
+      "dose_large"
+    ],
+    "k1_deference": [
+      "depth_k1_bare",
+      "depth_k1_full",
+      "depth_k1_partial",
+      "k1_full_sum",
+      "k1_tentative",
+      "k1_probe"
+    ],
+    "line_k0": [
+      "anchor_k0",
+      "line_k0",
+      "line_k0_swap"
+    ]
+  },
+  "flag_channel": "doubt_lex frozen lexicon (no 32B judge on API arm)",
+  "gold_policy": "live: own-trace haiku golds regenerated in this run (prefill 'line 1:'); dry: interpreter-true stand-in, labelled",
+  "gold_prefill": "line 1:",
+  "injection_contract": "RW/e13/README.md (Build 1/2, binding)",
+  "model": "claude-haiku-4-5",
+  "n_target_per_cell": 60,
+  "probe_note": "prefix_family=depth_k1_bare (interpretation choice flagged for Review); question as follow-up user turn; raw answers retained",
+  "prompt_sha256": "a1a134d3c0b753c273365be903dba2cd5c5fc2d33fb443891448d4c384de578b",
+  "runner": "e13_api.py",
+  "seed": 0,
+  "temp": 0.7,
+  "worlds": {
+    "grid_kr1": {
+      "n_worlds": 200,
+      "path": "/lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/recompute_wall/e13/worlds/grid_kr1.jsonl",
+      "sha256": "8bd62a3cbb322566967409d588fb2631d3d639ffb1e167a271909f250945f10e"
+    },
+    "k1_deference": {
+      "n_worlds": 200,
+      "path": "/lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/recompute_wall/e13/worlds/k1_deference.jsonl",
+      "sha256": "45f49384e8b88eeb9177680eb1dbbad1c81cd83986211ae8ac09f76f474f4f6b"
+    },
+    "line_k0": {
+      "n_worlds": 200,
+      "path": "/lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/recompute_wall/e13/worlds/line_k0.jsonl",
+      "sha256": "5f8f14999e939b95133186e4dd3e03f4d0397ebd15563ade0186886bd4a851b3"
+    }
+  }
+}

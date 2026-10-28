@@ -1,0 +1,10 @@
+{
+  "cont_worlds_per_cell": {
+    "anchor_k0": 60,
+    "depth_k1_bare": 60,
+    "depth_k5_bare": 60
+  },
+  "dry": true,
+  "n_programs": 330,
+  "updated_at": "2026-07-29T08:53:06"
+}

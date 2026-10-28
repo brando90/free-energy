@@ -1,0 +1,566 @@
+{
+  "created_at": "2026-07-27T16:18:30.510070+00:00",
+  "note": "Computed from existing Jul-6 EXPH2_FRONTIER_FOLLOWUPS validated data; no new API calls (E10 \u00a74 roster already run on designated substrates).",
+  "expg_substrate": {
+    "claude-haiku-4-5": {
+      "cells": {
+        "benign_paraphrase": {
+          "n_rows": 70,
+          "final_output_absorbed": {
+            "count": 0,
+            "n_measured": 0,
+            "rate": null,
+            "wilson95": [
+              null,
+              null
+            ]
+          },
+          "next_read_absorbed": {
+            "count": 0,
+            "n_measured": 0,
+            "rate": null,
+            "wilson95": [
+              null,
+              null
+            ]
+          }
+        },
+        "true_interruption": {
+          "n_rows": 70,
+          "final_output_absorbed": {
+            "count": 0,
+            "n_measured": 0,
+            "rate": null,
+            "wilson95": [
+              null,
+              null
+            ]
+          },
+          "next_read_absorbed": {
+            "count": 0,
+            "n_measured": 0,
+            "rate": null,
+            "wilson95": [
+              null,
+              null
+            ]
+          }
+        },
+        "adjacent_contradiction": {
+          "n_rows": 70,
+          "final_output_absorbed": {
+            "count": 0,
+            "n_measured": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "next_read_absorbed": {
+            "count": 0,
+            "n_measured": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          }
+        },
+        "opfree_kr1": {
+          "n_rows": 70,
+          "final_output_absorbed": {
+            "count": 3,
+            "n_measured": 70,
+            "rate": 0.0429,
+            "wilson95": [
+              0.0147,
+              0.1186
+            ]
+          },
+          "next_read_absorbed": {
+            "count": 3,
+            "n_measured": 70,
+            "rate": 0.0429,
+            "wilson95": [
+              0.0147,
+              0.1186
+            ]
+          }
+        },
+        "opfree_kr8": {
+          "n_rows": 60,
+          "final_output_absorbed": {
+            "count": 13,
+            "n_measured": 60,
+            "rate": 0.2167,
+            "wilson95": [
+              0.1312,
+              0.3362
+            ]
+          },
+          "next_read_absorbed": {
+            "count": 13,
+            "n_measured": 60,
+            "rate": 0.2167,
+            "wilson95": [
+              0.1312,
+              0.3362
+            ]
+          }
+        },
+        "onehop_kc1": {
+          "n_rows": 60,
+          "final_output_absorbed": {
+            "count": 60,
+            "n_measured": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "next_read_absorbed": {
+            "count": 60,
+            "n_measured": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          }
+        },
+        "deep_kc5": {
+          "n_rows": 60,
+          "final_output_absorbed": {
+            "count": 60,
+            "n_measured": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "next_read_absorbed": {
+            "count": 60,
+            "n_measured": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          }
+        }
+      },
+      "recompute_side_pooled_final_output_absorbed": {
+        "count": 136,
+        "n_measured": 250,
+        "rate": 0.544,
+        "wilson95": [
+          0.4821,
+          0.6046
+        ]
+      },
+      "readable_side_adjacent_contradiction_final_output_absorbed": {
+        "count": 0,
+        "n_measured": 70,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.052
+        ]
+      },
+      "asymmetry_margin_recompute_minus_readable": 0.544,
+      "asymmetry_replicates_ge_0.15": true
+    },
+    "claude-sonnet-4-5": {
+      "cells": {
+        "benign_paraphrase": {
+          "n_rows": 70,
+          "final_output_absorbed": {
+            "count": 0,
+            "n_measured": 0,
+            "rate": null,
+            "wilson95": [
+              null,
+              null
+            ]
+          },
+          "next_read_absorbed": {
+            "count": 0,
+            "n_measured": 0,
+            "rate": null,
+            "wilson95": [
+              null,
+              null
+            ]
+          }
+        },
+        "true_interruption": {
+          "n_rows": 70,
+          "final_output_absorbed": {
+            "count": 0,
+            "n_measured": 0,
+            "rate": null,
+            "wilson95": [
+              null,
+              null
+            ]
+          },
+          "next_read_absorbed": {
+            "count": 0,
+            "n_measured": 0,
+            "rate": null,
+            "wilson95": [
+              null,
+              null
+            ]
+          }
+        },
+        "adjacent_contradiction": {
+          "n_rows": 70,
+          "final_output_absorbed": {
+            "count": 0,
+            "n_measured": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          },
+          "next_read_absorbed": {
+            "count": 0,
+            "n_measured": 70,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.052
+            ]
+          }
+        },
+        "opfree_kr1": {
+          "n_rows": 70,
+          "final_output_absorbed": {
+            "count": 3,
+            "n_measured": 70,
+            "rate": 0.0429,
+            "wilson95": [
+              0.0147,
+              0.1186
+            ]
+          },
+          "next_read_absorbed": {
+            "count": 3,
+            "n_measured": 70,
+            "rate": 0.0429,
+            "wilson95": [
+              0.0147,
+              0.1186
+            ]
+          }
+        },
+        "opfree_kr8": {
+          "n_rows": 60,
+          "final_output_absorbed": {
+            "count": 3,
+            "n_measured": 60,
+            "rate": 0.05,
+            "wilson95": [
+              0.0171,
+              0.137
+            ]
+          },
+          "next_read_absorbed": {
+            "count": 3,
+            "n_measured": 60,
+            "rate": 0.05,
+            "wilson95": [
+              0.0171,
+              0.137
+            ]
+          }
+        },
+        "onehop_kc1": {
+          "n_rows": 60,
+          "final_output_absorbed": {
+            "count": 59,
+            "n_measured": 60,
+            "rate": 0.9833,
+            "wilson95": [
+              0.9114,
+              0.9971
+            ]
+          },
+          "next_read_absorbed": {
+            "count": 59,
+            "n_measured": 60,
+            "rate": 0.9833,
+            "wilson95": [
+              0.9114,
+              0.9971
+            ]
+          }
+        },
+        "deep_kc5": {
+          "n_rows": 60,
+          "final_output_absorbed": {
+            "count": 60,
+            "n_measured": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          },
+          "next_read_absorbed": {
+            "count": 60,
+            "n_measured": 60,
+            "rate": 1.0,
+            "wilson95": [
+              0.9398,
+              1.0
+            ]
+          }
+        }
+      },
+      "recompute_side_pooled_final_output_absorbed": {
+        "count": 125,
+        "n_measured": 250,
+        "rate": 0.5,
+        "wilson95": [
+          0.4385,
+          0.5615
+        ]
+      },
+      "readable_side_adjacent_contradiction_final_output_absorbed": {
+        "count": 0,
+        "n_measured": 70,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.052
+        ]
+      },
+      "asymmetry_margin_recompute_minus_readable": 0.5,
+      "asymmetry_replicates_ge_0.15": true
+    }
+  },
+  "nl_substrate": {
+    "gpt-4.1": {
+      "mode": "instruct",
+      "recompute_side_inj_derivational_global_falsehood": {
+        "count": 60,
+        "n_measured": 100,
+        "rate": 0.6,
+        "wilson95": [
+          0.502,
+          0.6906
+        ]
+      },
+      "readable_side_stated_complement_one_hop": {
+        "count": 29,
+        "n_measured": 100,
+        "rate": 0.29,
+        "wilson95": [
+          0.2101,
+          0.3854
+        ]
+      },
+      "global_falsehood_class_dist": {
+        "poisoned": 60,
+        "valid_rederivation": 36,
+        "parroted": 2,
+        "unparsed": 2
+      },
+      "caveat": "instruct chat re-presentation; NL entity-chain substrate (EXPH channels stand in per E10 \u00a74); not pooled with EXPG or open-weights"
+    },
+    "gpt-4o": {
+      "mode": "instruct",
+      "recompute_side_inj_derivational_global_falsehood": {
+        "count": 34,
+        "n_measured": 100,
+        "rate": 0.34,
+        "wilson95": [
+          0.2546,
+          0.4372
+        ]
+      },
+      "readable_side_stated_complement_one_hop": {
+        "count": 30,
+        "n_measured": 100,
+        "rate": 0.3,
+        "wilson95": [
+          0.2189,
+          0.3959
+        ]
+      },
+      "global_falsehood_class_dist": {
+        "valid_rederivation": 64,
+        "poisoned": 34,
+        "parroted": 1,
+        "unparsed": 1
+      },
+      "caveat": "instruct chat re-presentation; NL entity-chain substrate (EXPH channels stand in per E10 \u00a74); not pooled with EXPG or open-weights"
+    },
+    "gpt-5.1": {
+      "mode": "instruct",
+      "recompute_side_inj_derivational_global_falsehood": {
+        "count": 33,
+        "n_measured": 100,
+        "rate": 0.33,
+        "wilson95": [
+          0.2456,
+          0.4269
+        ]
+      },
+      "readable_side_stated_complement_one_hop": {
+        "count": 33,
+        "n_measured": 100,
+        "rate": 0.33,
+        "wilson95": [
+          0.2456,
+          0.4269
+        ]
+      },
+      "global_falsehood_class_dist": {
+        "poisoned": 33,
+        "valid_rederivation": 64,
+        "derailed": 3
+      },
+      "caveat": "instruct chat re-presentation; NL entity-chain substrate (EXPH channels stand in per E10 \u00a74); not pooled with EXPG or open-weights"
+    },
+    "claude-opus-4-8": {
+      "mode": "instruct",
+      "recompute_side_inj_derivational_global_falsehood": {
+        "count": 0,
+        "n_measured": 100,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.037
+        ]
+      },
+      "readable_side_stated_complement_one_hop": {
+        "count": 98,
+        "n_measured": 100,
+        "rate": 0.98,
+        "wilson95": [
+          0.93,
+          0.9945
+        ]
+      },
+      "global_falsehood_class_dist": {
+        "valid_rederivation": 100
+      },
+      "caveat": "instruct chat re-presentation; NL entity-chain substrate (EXPH channels stand in per E10 \u00a74); not pooled with EXPG or open-weights"
+    },
+    "claude-sonnet-5": {
+      "mode": "instruct",
+      "recompute_side_inj_derivational_global_falsehood": {
+        "count": 1,
+        "n_measured": 100,
+        "rate": 0.01,
+        "wilson95": [
+          0.0018,
+          0.0545
+        ]
+      },
+      "readable_side_stated_complement_one_hop": {
+        "count": 100,
+        "n_measured": 100,
+        "rate": 1.0,
+        "wilson95": [
+          0.963,
+          1.0
+        ]
+      },
+      "global_falsehood_class_dist": {
+        "valid_rederivation": 98,
+        "derailed": 1,
+        "poisoned": 1
+      },
+      "caveat": "instruct chat re-presentation; NL entity-chain substrate (EXPH channels stand in per E10 \u00a74); not pooled with EXPG or open-weights"
+    },
+    "gpt-3.5-turbo-instruct": {
+      "mode": "completions",
+      "recompute_side_inj_derivational_global_falsehood": {
+        "count": 48,
+        "n_measured": 91,
+        "rate": 0.5275,
+        "wilson95": [
+          0.4259,
+          0.6268
+        ]
+      },
+      "readable_side_stated_complement_one_hop": {
+        "count": 4,
+        "n_measured": 91,
+        "rate": 0.044,
+        "wilson95": [
+          0.0172,
+          0.1076
+        ]
+      },
+      "global_falsehood_class_dist": {
+        "poisoned": 48,
+        "parroted": 17,
+        "valid_rederivation": 17,
+        "derailed": 8,
+        "unparsed": 1
+      },
+      "caveat": "legacy completions single-stream; NL entity-chain substrate (EXPH channels stand in)"
+    }
+  },
+  "refusal_scan": {
+    "claude-haiku-4-5 (EXPG/regime2)": {
+      "n_rows": 460,
+      "n_refusal": 0,
+      "examples": [],
+      "generation_failed": 0,
+      "derailed": 6
+    },
+    "claude-sonnet-4-5 (EXPG/regime2)": {
+      "n_rows": 460,
+      "n_refusal": 0,
+      "examples": [],
+      "generation_failed": 0,
+      "derailed": 0
+    },
+    "gpt-4.1 (NL/instruct)": {
+      "n_rows": 399,
+      "n_refusal": 0,
+      "examples": [],
+      "generation_failed": 0
+    },
+    "gpt-4o (NL/instruct)": {
+      "n_rows": 400,
+      "n_refusal": 0,
+      "examples": [],
+      "generation_failed": 0
+    },
+    "gpt-5.1 (NL/instruct)": {
+      "n_rows": 398,
+      "n_refusal": 0,
+      "examples": [],
+      "generation_failed": 0
+    },
+    "claude-opus-4-8 (NL/instruct)": {
+      "n_rows": 400,
+      "n_refusal": 0,
+      "examples": [],
+      "generation_failed": 0
+    },
+    "claude-sonnet-5 (NL/instruct)": {
+      "n_rows": 400,
+      "n_refusal": 0,
+      "examples": [],
+      "generation_failed": 0
+    },
+    "gpt-3.5-turbo-instruct (NL/completions)": {
+      "n_rows": 364,
+      "n_refusal": 0,
+      "examples": [],
+      "generation_failed": 1
+    }
+  }
+}

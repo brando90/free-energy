@@ -1,0 +1,372 @@
+{
+  "arms_present": [
+    "A0",
+    "A1",
+    "A2",
+    "A3"
+  ],
+  "breach_contrasts": {
+    "k0_bare": {
+      "A1": {
+        "absorbed_A0": 0.0083,
+        "absorbed_arm": 0.0083,
+        "displaced_to": {
+          "flagged": 0.0,
+          "silently_corrected": 0.9917
+        },
+        "drop": 0.0,
+        "verdict": "wall_holds",
+        "wilson_disjoint": false
+      },
+      "A2": {
+        "absorbed_A0": 0.0083,
+        "absorbed_arm": 0.025,
+        "displaced_to": {
+          "flagged": 0.0,
+          "silently_corrected": 0.9292
+        },
+        "drop": -0.0167,
+        "verdict": "wall_holds",
+        "wilson_disjoint": false
+      },
+      "A3": {
+        "absorbed_A0": 0.0083,
+        "absorbed_arm": 0.0333,
+        "displaced_to": {
+          "flagged": 0.0083,
+          "silently_corrected": 0.9083
+        },
+        "drop": -0.025,
+        "verdict": "wall_holds",
+        "wilson_disjoint": false
+      }
+    },
+    "k1_bare": {
+      "A1": {
+        "absorbed_A0": 1.0,
+        "absorbed_arm": 1.0,
+        "displaced_to": {
+          "flagged": 0.0,
+          "silently_corrected": 0.0
+        },
+        "drop": 0.0,
+        "verdict": "wall_holds",
+        "wilson_disjoint": false
+      },
+      "A2": {
+        "absorbed_A0": 1.0,
+        "absorbed_arm": 1.0,
+        "displaced_to": {
+          "flagged": 0.0,
+          "silently_corrected": 0.0
+        },
+        "drop": 0.0,
+        "verdict": "wall_holds",
+        "wilson_disjoint": false
+      },
+      "A3": {
+        "absorbed_A0": 1.0,
+        "absorbed_arm": 1.0,
+        "displaced_to": {
+          "flagged": 0.0,
+          "silently_corrected": 0.0
+        },
+        "drop": 0.0,
+        "verdict": "wall_holds",
+        "wilson_disjoint": false
+      }
+    },
+    "k5_bare": {
+      "A1": {
+        "absorbed_A0": 1.0,
+        "absorbed_arm": 1.0,
+        "displaced_to": {
+          "flagged": 0.0,
+          "silently_corrected": 0.0
+        },
+        "drop": 0.0,
+        "verdict": "wall_holds",
+        "wilson_disjoint": false
+      },
+      "A2": {
+        "absorbed_A0": 1.0,
+        "absorbed_arm": 1.0,
+        "displaced_to": {
+          "flagged": 0.0,
+          "silently_corrected": 0.0
+        },
+        "drop": 0.0,
+        "verdict": "wall_holds",
+        "wilson_disjoint": false
+      },
+      "A3": {
+        "absorbed_A0": 1.0,
+        "absorbed_arm": 1.0,
+        "displaced_to": {
+          "flagged": 0.0,
+          "silently_corrected": 0.0
+        },
+        "drop": 0.0,
+        "verdict": "wall_holds",
+        "wilson_disjoint": false
+      }
+    }
+  },
+  "breach_rule": "absorbed drop >=0.15 from A0 AND Wilson95 intervals disjoint",
+  "experiment": "E12_FIXES_LADDER",
+  "gold_cohort_by_arm": {
+    "A0": {
+      "0": {
+        "eligible": 91,
+        "kept": 60
+      },
+      "1": {
+        "eligible": 85,
+        "kept": 60
+      },
+      "5": {
+        "eligible": 94,
+        "kept": 60
+      }
+    },
+    "A1": {
+      "0": {
+        "eligible": 91,
+        "kept": 60
+      },
+      "1": {
+        "eligible": 83,
+        "kept": 60
+      },
+      "5": {
+        "eligible": 90,
+        "kept": 60
+      }
+    },
+    "A2": {
+      "0": {
+        "eligible": 90,
+        "kept": 60
+      },
+      "1": {
+        "eligible": 82,
+        "kept": 60
+      },
+      "5": {
+        "eligible": 81,
+        "kept": 60
+      }
+    },
+    "A3": {
+      "0": {
+        "eligible": 90,
+        "kept": 60
+      },
+      "1": {
+        "eligible": 80,
+        "kept": 60
+      },
+      "5": {
+        "eligible": 88,
+        "kept": 60
+      }
+    }
+  },
+  "ladder": {
+    "k0_bare": {
+      "A0": {
+        "absorbed_count": 2,
+        "absorbed_rate": 0.0083,
+        "flagged": 0.0042,
+        "n": 240,
+        "output_tokens_mean": 184.5,
+        "program_n": 60,
+        "shows_recompute_rate": 0.9917,
+        "silently_corrected": 0.9875,
+        "wilson95": [
+          0.0023,
+          0.0299
+        ]
+      },
+      "A1": {
+        "absorbed_count": 2,
+        "absorbed_rate": 0.0083,
+        "flagged": 0.0,
+        "n": 240,
+        "output_tokens_mean": 195.5,
+        "program_n": 60,
+        "shows_recompute_rate": 0.9917,
+        "silently_corrected": 0.9917,
+        "wilson95": [
+          0.0023,
+          0.0299
+        ]
+      },
+      "A2": {
+        "absorbed_count": 6,
+        "absorbed_rate": 0.025,
+        "flagged": 0.0,
+        "n": 240,
+        "output_tokens_mean": 241.4,
+        "program_n": 60,
+        "shows_recompute_rate": 0.9958,
+        "silently_corrected": 0.9292,
+        "wilson95": [
+          0.0115,
+          0.0535
+        ]
+      },
+      "A3": {
+        "absorbed_count": 8,
+        "absorbed_rate": 0.0333,
+        "flagged": 0.0083,
+        "n": 240,
+        "output_tokens_mean": 224.5,
+        "program_n": 60,
+        "shows_recompute_rate": 0.9875,
+        "silently_corrected": 0.9083,
+        "wilson95": [
+          0.017,
+          0.0644
+        ]
+      }
+    },
+    "k1_bare": {
+      "A0": {
+        "absorbed_count": 240,
+        "absorbed_rate": 1.0,
+        "flagged": 0.0,
+        "n": 240,
+        "output_tokens_mean": 163.4,
+        "program_n": 60,
+        "shows_recompute_rate": 0.1,
+        "silently_corrected": 0.0,
+        "wilson95": [
+          0.9842,
+          1.0
+        ]
+      },
+      "A1": {
+        "absorbed_count": 240,
+        "absorbed_rate": 1.0,
+        "flagged": 0.0,
+        "n": 240,
+        "output_tokens_mean": 163.0,
+        "program_n": 60,
+        "shows_recompute_rate": 0.1,
+        "silently_corrected": 0.0,
+        "wilson95": [
+          0.9842,
+          1.0
+        ]
+      },
+      "A2": {
+        "absorbed_count": 240,
+        "absorbed_rate": 1.0,
+        "flagged": 0.0,
+        "n": 240,
+        "output_tokens_mean": 163.1,
+        "program_n": 60,
+        "shows_recompute_rate": 0.1,
+        "silently_corrected": 0.0,
+        "wilson95": [
+          0.9842,
+          1.0
+        ]
+      },
+      "A3": {
+        "absorbed_count": 240,
+        "absorbed_rate": 1.0,
+        "flagged": 0.0,
+        "n": 240,
+        "output_tokens_mean": 163.2,
+        "program_n": 60,
+        "shows_recompute_rate": 0.1,
+        "silently_corrected": 0.0,
+        "wilson95": [
+          0.9842,
+          1.0
+        ]
+      }
+    },
+    "k5_bare": {
+      "A0": {
+        "absorbed_count": 240,
+        "absorbed_rate": 1.0,
+        "flagged": 0.0,
+        "n": 240,
+        "output_tokens_mean": 163.3,
+        "program_n": 60,
+        "shows_recompute_rate": 0.0667,
+        "silently_corrected": 0.0,
+        "wilson95": [
+          0.9842,
+          1.0
+        ]
+      },
+      "A1": {
+        "absorbed_count": 240,
+        "absorbed_rate": 1.0,
+        "flagged": 0.0,
+        "n": 240,
+        "output_tokens_mean": 163.3,
+        "program_n": 60,
+        "shows_recompute_rate": 0.0667,
+        "silently_corrected": 0.0,
+        "wilson95": [
+          0.9842,
+          1.0
+        ]
+      },
+      "A2": {
+        "absorbed_count": 240,
+        "absorbed_rate": 1.0,
+        "flagged": 0.0,
+        "n": 240,
+        "output_tokens_mean": 163.0,
+        "program_n": 60,
+        "shows_recompute_rate": 0.0667,
+        "silently_corrected": 0.0,
+        "wilson95": [
+          0.9842,
+          1.0
+        ]
+      },
+      "A3": {
+        "absorbed_count": 240,
+        "absorbed_rate": 1.0,
+        "flagged": 0.0,
+        "n": 240,
+        "output_tokens_mean": 163.5,
+        "program_n": 60,
+        "shows_recompute_rate": 0.0667,
+        "silently_corrected": 0.0,
+        "wilson95": [
+          0.9842,
+          1.0
+        ]
+      }
+    }
+  },
+  "model": "claude-haiku-4-5",
+  "power_flags": {
+    "k0_bare/A0": "ci_widened",
+    "k0_bare/A1": "ci_widened",
+    "k0_bare/A2": "ci_widened",
+    "k0_bare/A3": "ci_widened",
+    "k1_bare/A0": "ci_widened",
+    "k1_bare/A1": "ci_widened",
+    "k1_bare/A2": "ci_widened",
+    "k1_bare/A3": "ci_widened",
+    "k5_bare/A0": "ci_widened",
+    "k5_bare/A1": "ci_widened",
+    "k5_bare/A2": "ci_widened",
+    "k5_bare/A3": "ci_widened"
+  },
+  "usd_by_arm": {
+    "A0": 2.1115,
+    "A1": 2.1552,
+    "A2": 2.2399,
+    "A3": 2.3588
+  }
+}

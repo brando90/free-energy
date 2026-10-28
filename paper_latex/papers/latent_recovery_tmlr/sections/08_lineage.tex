@@ -1,0 +1,60 @@
+\section{Stakes: the lineage panel, scoped}
+\label{sec:stakes}
+
+% source: PAPER_SKELETON Sec 8; EVIDENCE_lineage_boundaries L-lab / tier table.
+
+\paragraph{The lineage panel is descriptive and scoped, not a vendor
+leaderboard.} The cross-lineage comparison of Section~\ref{sec:production}
+uses one seed, is single-format only where it compares directly, and is
+anchored through the format-robust echo-corrected reuse metric. We present
+it as stakes, why in-stream absorption matters for chain-of-thought
+monitoring, with the universal recompute column as its non-partisan center,
+rather than as a ranking.
+% source: PAPER_SKELETON 8.1; EVIDENCE_lineage_boundaries L-lab.1 caveat
+
+\paragraph{The load-bearing comparison is within one format.} The single
+most defensible statement is the within-format one: same instruct format,
+each model's own traces, audited-false plants, gpt-4.1 reuses a false
+category at 0.58 while claude-sonnet-5 reuses at 0.01.
+% source: PAPER_SKELETON 8.2; EVIDENCE_lineage_boundaries L-lab.1
+We never say the Anthropic models check every time; the supported claim is
+that they reject every audited falsehood in this harness, at closure-valid
+0.97 to 1.00 and reuse 0.000, and the verbatim one-hop-check transcript is
+attributed to a single model. We never say gpt-4.1 never checks; only its
+reuse rate is on record.
+% source: EVIDENCE_lineage_boundaries L-lab.2 caveat; STYLE_SHEET Sec 5
+
+\paragraph{The split is not memorization.} The worlds use nonce predicates,
+and the same Anthropic models that reject re-readable plants absorb
+recomputable ones at 1.00, which a memorization account cannot produce.
+% source: PAPER_SKELETON 8.3; EVIDENCE_lineage_boundaries L-rec.1 / L-lab.2
+
+\paragraph{Every by-model claim carries an evidence tier.} To keep the
+descriptive arm from being read as a controlled result, Table~\ref{tab:tiers}
+labels each claim by how much weight it carries: controlled on the anchor
+model, controlled multi-model replication, descriptive single-seed API, or
+legacy appendix. The replication tier now carries the non-replication
+verdict, and the anchor-model tier is explicitly scoped to Qwen2.5-7B where
+the replication tested it.
+% source: PAPER_SKELETON 8.4; EVIDENCE_lineage_boundaries tier table + E1 landing note
+
+\begin{table}[t]
+\centering
+\caption{\textbf{Evidence-tier map.} Each family of claims is labeled by how
+much weight it carries. Tier~2 now holds a verified non-replication, and
+tier~1 is scoped to Qwen2.5-7B where tier~2 tested it. Cumulative API spend
+across the descriptive arm was \$30.81.}
+% source: EVIDENCE_lineage_boundaries tier table
+\label{tab:tiers}
+\small
+\begin{tabular}{@{}llp{7.2cm}@{}}
+\toprule
+Tier & Basis & Claims \\
+\midrule
+1 anchor (controlled) & Qwen2.5-7B, predictions fixed in advance & Visibility cliff, usability asymmetry, lexical cueing. Scoped to Qwen2.5-7B per tier~2. \\
+2 replication (controlled) & multi-model, predictions fixed in advance & \textbf{Non-replication (verified): 0/4 fully replicate; visibility cliff reverses on 3/4; usability gap holds on 2/4 but collapses at 32B; flatness 0/4.} \\
+3 descriptive API & single-seed & Production boundary (corroboration), lab split, recompute boundary. \\
+4 legacy / appendix & instrument lesson & Certificate experiment, legacy gap decomposition. \\
+\bottomrule
+\end{tabular}
+\end{table}

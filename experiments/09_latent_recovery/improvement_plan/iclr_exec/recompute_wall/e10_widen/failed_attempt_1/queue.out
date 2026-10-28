@@ -1,0 +1,26 @@
+########## MODEL qwen1p5b (Qwen/Qwen2.5-1.5B-Instruct @ 989aa7980e4cf806f80c7fef2b1adb7bc71aa306) 2026-07-27T12:01:02-07:00 ##########
+[qwen1p5b] worlds present (960 programs); skipping prepare
+=== [qwen1p5b/generate GPU0] 2026-07-27T12:01:02-07:00 :: GEN /lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/recompute_wall/e10_widen/results/EXPG_PROGTRACE_qwen1p5b Qwen/Qwen2.5-1.5B-Instruct 989aa7980e4cf806f80c7fef2b1adb7bc71aa306 ===
+=== [qwen1p5b/generate] rc=127 2026-07-27T12:01:02-07:00 ===
+[qwen1p5b] generate failed; skipping
+########## MODEL qwen7b (Qwen/Qwen2.5-7B-Instruct @ a09a35458c702b33eeacc393d103063234e8bc28) 2026-07-27T12:01:02-07:00 ##########
+[qwen7b] worlds present (960 programs); skipping prepare
+=== [qwen7b/generate GPU0] 2026-07-27T12:01:02-07:00 :: GEN /lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/recompute_wall/e10_widen/results/EXPG_PROGTRACE_qwen7b Qwen/Qwen2.5-7B-Instruct a09a35458c702b33eeacc393d103063234e8bc28 ===
+=== [qwen7b/generate] rc=127 2026-07-27T12:01:02-07:00 ===
+[qwen7b] generate failed; skipping
+########## MODEL olmo7b (allenai/OLMo-2-1124-7B-Instruct @ 470b1fba1ae01581f270116362ee4aa1b97f4c84) 2026-07-27T12:01:03-07:00 ##########
+[olmo7b] worlds present (960 programs); skipping prepare
+=== [olmo7b/generate GPU0] 2026-07-27T12:01:03-07:00 :: GEN /lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/recompute_wall/e10_widen/results/EXPG_PROGTRACE_olmo7b allenai/OLMo-2-1124-7B-Instruct 470b1fba1ae01581f270116362ee4aa1b97f4c84 ===
+=== [olmo7b/generate] rc=127 2026-07-27T12:01:03-07:00 ===
+[olmo7b] generate failed; skipping
+########## MODEL llama8b (NousResearch/Meta-Llama-3.1-8B-Instruct @ d10aef7999a2b5ba950ab3974312feeedbfe0b77) 2026-07-27T12:01:03-07:00 ##########
+[llama8b] worlds present (960 programs); skipping prepare
+=== [llama8b/generate GPU0] 2026-07-27T12:01:03-07:00 :: GEN /lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/recompute_wall/e10_widen/results/EXPG_PROGTRACE_llama8b NousResearch/Meta-Llama-3.1-8B-Instruct d10aef7999a2b5ba950ab3974312feeedbfe0b77 ===
+=== [llama8b/generate] rc=127 2026-07-27T12:01:03-07:00 ===
+[llama8b] generate failed; skipping
+########## MODEL qwen32b (Qwen/Qwen2.5-32B-Instruct @ 5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd) 2026-07-27T12:01:03-07:00 ##########
+[qwen32b] worlds present (960 programs); skipping prepare
+=== [qwen32b/generate GPU0] 2026-07-27T12:01:03-07:00 :: GEN /lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/recompute_wall/e10_widen/results/EXPG_PROGTRACE_qwen32b Qwen/Qwen2.5-32B-Instruct 5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd ===
+=== [qwen32b/generate] rc=127 2026-07-27T12:01:03-07:00 ===
+[qwen32b] generate failed; skipping
+########## E10 QUEUE COMPLETE 2026-07-27T12:01:03-07:00 ##########

@@ -1,0 +1,3309 @@
+{
+  "cells": {
+    "grid_kr1": {
+      "all": {
+        "adjacent_contradiction": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.6474,
+              0.7341
+            ],
+            "count": 932,
+            "rate": 0.6904,
+            "wilson95": [
+              0.6652,
+              0.7145
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0028
+            ]
+          },
+          "label_counts": {
+            "absorbed": 932,
+            "silently_corrected": 323,
+            "unresolved": 95
+          },
+          "n": 1350,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.006,
+            "unparsed_rate": 0.0037
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.1985,
+              0.283
+            ],
+            "count": 323,
+            "rate": 0.2393,
+            "wilson95": [
+              0.2173,
+              0.2627
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0496,
+              0.0911
+            ],
+            "count": 95,
+            "rate": 0.0704,
+            "wilson95": [
+              0.0579,
+              0.0853
+            ]
+          }
+        },
+        "dose_large": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.6363,
+              0.7178
+            ],
+            "count": 915,
+            "rate": 0.6778,
+            "wilson95": [
+              0.6524,
+              0.7022
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0028
+            ]
+          },
+          "label_counts": {
+            "absorbed": 915,
+            "silently_corrected": 372,
+            "unresolved": 63
+          },
+          "n": 1350,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.001,
+            "unparsed_rate": 0.0007
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.2363,
+              0.3126
+            ],
+            "count": 372,
+            "rate": 0.2756,
+            "wilson95": [
+              0.2524,
+              0.3
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0319,
+              0.063
+            ],
+            "count": 63,
+            "rate": 0.0467,
+            "wilson95": [
+              0.0366,
+              0.0593
+            ]
+          }
+        },
+        "dose_off1": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.7578,
+              0.8267
+            ],
+            "count": 1071,
+            "rate": 0.7933,
+            "wilson95": [
+              0.7709,
+              0.8141
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0028
+            ]
+          },
+          "label_counts": {
+            "absorbed": 1071,
+            "silently_corrected": 242,
+            "unresolved": 37
+          },
+          "n": 1350,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.005,
+            "unparsed_rate": 0.0052
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.1511,
+              0.2104
+            ],
+            "count": 242,
+            "rate": 0.1793,
+            "wilson95": [
+              0.1597,
+              0.2006
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0133,
+              0.0444
+            ],
+            "count": 37,
+            "rate": 0.0274,
+            "wilson95": [
+              0.0199,
+              0.0375
+            ]
+          }
+        },
+        "dose_off10_20": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.7133,
+              0.8015
+            ],
+            "count": 1024,
+            "rate": 0.7585,
+            "wilson95": [
+              0.735,
+              0.7806
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0028
+            ]
+          },
+          "label_counts": {
+            "absorbed": 1024,
+            "silently_corrected": 274,
+            "unresolved": 52
+          },
+          "n": 1350,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.01,
+            "unparsed_rate": 0.0059
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.1652,
+              0.2415
+            ],
+            "count": 274,
+            "rate": 0.203,
+            "wilson95": [
+              0.1824,
+              0.2252
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0244,
+              0.0556
+            ],
+            "count": 52,
+            "rate": 0.0385,
+            "wilson95": [
+              0.0295,
+              0.0502
+            ]
+          }
+        },
+        "grid_line_false_copy_true": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.0,
+              0.0037
+            ],
+            "count": 2,
+            "rate": 0.0015,
+            "wilson95": [
+              0.0004,
+              0.0054
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0028
+            ]
+          },
+          "label_counts": {
+            "absorbed": 2,
+            "silently_corrected": 1009,
+            "unresolved": 339
+          },
+          "n": 1350,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.7067,
+              0.7889
+            ],
+            "count": 1009,
+            "rate": 0.7474,
+            "wilson95": [
+              0.7235,
+              0.7699
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.2096,
+              0.2904
+            ],
+            "count": 339,
+            "rate": 0.2511,
+            "wilson95": [
+              0.2287,
+              0.2749
+            ]
+          }
+        },
+        "grid_line_false_note_true": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.0726,
+              0.1259
+            ],
+            "count": 133,
+            "rate": 0.0985,
+            "wilson95": [
+              0.0837,
+              0.1156
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0028
+            ]
+          },
+          "label_counts": {
+            "absorbed": 133,
+            "silently_corrected": 1185,
+            "unresolved": 32
+          },
+          "n": 1350,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.001,
+            "unparsed_rate": 0.0015
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.8489,
+              0.9067
+            ],
+            "count": 1185,
+            "rate": 0.8778,
+            "wilson95": [
+              0.8592,
+              0.8942
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0141,
+              0.0333
+            ],
+            "count": 32,
+            "rate": 0.0237,
+            "wilson95": [
+              0.0168,
+              0.0333
+            ]
+          }
+        },
+        "grid_note_false_before": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0028
+            ]
+          },
+          "conditional": "note-before-definition corner: CONDITIONAL on this parse-sanity gate (spec E13a-grid); Review agent signs off before scaling",
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0028
+            ]
+          },
+          "label_counts": {
+            "silently_corrected": 1346,
+            "unresolved": 4
+          },
+          "n": 1350,
+          "parse_gate": {
+            "mean_line_skip": 0.0008,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.001,
+            "unparsed_rate": 0.0007
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.9926,
+              1.0
+            ],
+            "count": 1346,
+            "rate": 0.997,
+            "wilson95": [
+              0.9924,
+              0.9988
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0,
+              0.0074
+            ],
+            "count": 4,
+            "rate": 0.003,
+            "wilson95": [
+              0.0012,
+              0.0076
+            ]
+          }
+        },
+        "grid_note_true_before_line_false": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.9037,
+              0.9593
+            ],
+            "count": 1259,
+            "rate": 0.9326,
+            "wilson95": [
+              0.918,
+              0.9448
+            ]
+          },
+          "conditional": "note-before-definition corner: CONDITIONAL on this parse-sanity gate (spec E13a-grid); Review agent signs off before scaling",
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0028
+            ]
+          },
+          "label_counts": {
+            "absorbed": 1259,
+            "silently_corrected": 62,
+            "unresolved": 29
+          },
+          "n": 1350,
+          "parse_gate": {
+            "mean_line_skip": 0.0015,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.0267,
+              0.0674
+            ],
+            "count": 62,
+            "rate": 0.0459,
+            "wilson95": [
+              0.036,
+              0.0584
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.003,
+              0.043
+            ],
+            "count": 29,
+            "rate": 0.0215,
+            "wilson95": [
+              0.015,
+              0.0307
+            ]
+          }
+        },
+        "opfree_kr1": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.7089,
+              0.7978
+            ],
+            "count": 1016,
+            "rate": 0.7526,
+            "wilson95": [
+              0.7289,
+              0.7749
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0028
+            ]
+          },
+          "label_counts": {
+            "absorbed": 1016,
+            "silently_corrected": 4,
+            "unresolved": 330
+          },
+          "n": 1350,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.0007,
+              0.0059
+            ],
+            "count": 4,
+            "rate": 0.003,
+            "wilson95": [
+              0.0012,
+              0.0076
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.1993,
+              0.2881
+            ],
+            "count": 330,
+            "rate": 0.2444,
+            "wilson95": [
+              0.2223,
+              0.2681
+            ]
+          }
+        }
+      },
+      "greedy": {
+        "adjacent_contradiction": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.6933,
+              0.84
+            ],
+            "count": 115,
+            "rate": 0.7667,
+            "wilson95": [
+              0.6928,
+              0.8272
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.025
+            ]
+          },
+          "label_counts": {
+            "absorbed": 115,
+            "silently_corrected": 30,
+            "unresolved": 5
+          },
+          "n": 150,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.14,
+              0.2667
+            ],
+            "count": 30,
+            "rate": 0.2,
+            "wilson95": [
+              0.1438,
+              0.2711
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0067,
+              0.06
+            ],
+            "count": 5,
+            "rate": 0.0333,
+            "wilson95": [
+              0.0143,
+              0.0757
+            ]
+          }
+        },
+        "dose_large": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.7267,
+              0.86
+            ],
+            "count": 119,
+            "rate": 0.7933,
+            "wilson95": [
+              0.7216,
+              0.8504
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.025
+            ]
+          },
+          "label_counts": {
+            "absorbed": 119,
+            "silently_corrected": 30,
+            "unresolved": 1
+          },
+          "n": 150,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.1333,
+              0.2667
+            ],
+            "count": 30,
+            "rate": 0.2,
+            "wilson95": [
+              0.1438,
+              0.2711
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0,
+              0.02
+            ],
+            "count": 1,
+            "rate": 0.0067,
+            "wilson95": [
+              0.0012,
+              0.0368
+            ]
+          }
+        },
+        "dose_off1": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.8733,
+              0.96
+            ],
+            "count": 138,
+            "rate": 0.92,
+            "wilson95": [
+              0.8654,
+              0.9536
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.025
+            ]
+          },
+          "label_counts": {
+            "absorbed": 138,
+            "silently_corrected": 9,
+            "unresolved": 3
+          },
+          "n": 150,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.0267,
+              0.1
+            ],
+            "count": 9,
+            "rate": 0.06,
+            "wilson95": [
+              0.0319,
+              0.1101
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0,
+              0.04
+            ],
+            "count": 3,
+            "rate": 0.02,
+            "wilson95": [
+              0.0068,
+              0.0571
+            ]
+          }
+        },
+        "dose_off10_20": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.7533,
+              0.88
+            ],
+            "count": 123,
+            "rate": 0.82,
+            "wilson95": [
+              0.7508,
+              0.8732
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.025
+            ]
+          },
+          "label_counts": {
+            "absorbed": 123,
+            "silently_corrected": 25,
+            "unresolved": 2
+          },
+          "n": 150,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.1067,
+              0.2267
+            ],
+            "count": 25,
+            "rate": 0.1667,
+            "wilson95": [
+              0.1155,
+              0.2345
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0,
+              0.0333
+            ],
+            "count": 2,
+            "rate": 0.0133,
+            "wilson95": [
+              0.0037,
+              0.0473
+            ]
+          }
+        },
+        "grid_line_false_copy_true": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.025
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.025
+            ]
+          },
+          "label_counts": {
+            "silently_corrected": 141,
+            "unresolved": 9
+          },
+          "n": 150,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.9,
+              0.9733
+            ],
+            "count": 141,
+            "rate": 0.94,
+            "wilson95": [
+              0.8899,
+              0.9681
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0267,
+              0.1
+            ],
+            "count": 9,
+            "rate": 0.06,
+            "wilson95": [
+              0.0319,
+              0.1101
+            ]
+          }
+        },
+        "grid_line_false_note_true": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.0,
+              0.0333
+            ],
+            "count": 2,
+            "rate": 0.0133,
+            "wilson95": [
+              0.0037,
+              0.0473
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.025
+            ]
+          },
+          "label_counts": {
+            "absorbed": 2,
+            "silently_corrected": 148
+          },
+          "n": 150,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.9667,
+              1.0
+            ],
+            "count": 148,
+            "rate": 0.9867,
+            "wilson95": [
+              0.9527,
+              0.9963
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.025
+            ]
+          }
+        },
+        "grid_note_false_before": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.025
+            ]
+          },
+          "conditional": "note-before-definition corner: CONDITIONAL on this parse-sanity gate (spec E13a-grid); Review agent signs off before scaling",
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.025
+            ]
+          },
+          "label_counts": {
+            "silently_corrected": 150
+          },
+          "n": 150,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              1.0,
+              1.0
+            ],
+            "count": 150,
+            "rate": 1.0,
+            "wilson95": [
+              0.975,
+              1.0
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.025
+            ]
+          }
+        },
+        "grid_note_true_before_line_false": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.9267,
+              0.9867
+            ],
+            "count": 144,
+            "rate": 0.96,
+            "wilson95": [
+              0.9155,
+              0.9815
+            ]
+          },
+          "conditional": "note-before-definition corner: CONDITIONAL on this parse-sanity gate (spec E13a-grid); Review agent signs off before scaling",
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.025
+            ]
+          },
+          "label_counts": {
+            "absorbed": 144,
+            "silently_corrected": 2,
+            "unresolved": 4
+          },
+          "n": 150,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.0,
+              0.0333
+            ],
+            "count": 2,
+            "rate": 0.0133,
+            "wilson95": [
+              0.0037,
+              0.0473
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0,
+              0.0533
+            ],
+            "count": 4,
+            "rate": 0.0267,
+            "wilson95": [
+              0.0104,
+              0.0666
+            ]
+          }
+        },
+        "opfree_kr1": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.86,
+              0.9467
+            ],
+            "count": 136,
+            "rate": 0.9067,
+            "wilson95": [
+              0.8494,
+              0.9436
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.025
+            ]
+          },
+          "label_counts": {
+            "absorbed": 136,
+            "unresolved": 14
+          },
+          "n": 150,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.025
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0533,
+              0.14
+            ],
+            "count": 14,
+            "rate": 0.0933,
+            "wilson95": [
+              0.0564,
+              0.1506
+            ]
+          }
+        }
+      },
+      "sampled": {
+        "adjacent_contradiction": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.6375,
+              0.7217
+            ],
+            "count": 817,
+            "rate": 0.6808,
+            "wilson95": [
+              0.6539,
+              0.7066
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0032
+            ]
+          },
+          "label_counts": {
+            "absorbed": 817,
+            "silently_corrected": 293,
+            "unresolved": 90
+          },
+          "n": 1200,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.007,
+            "unparsed_rate": 0.0042
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.2042,
+              0.2875
+            ],
+            "count": 293,
+            "rate": 0.2442,
+            "wilson95": [
+              0.2207,
+              0.2693
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0542,
+              0.0967
+            ],
+            "count": 90,
+            "rate": 0.075,
+            "wilson95": [
+              0.0614,
+              0.0913
+            ]
+          }
+        },
+        "dose_large": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.6217,
+              0.7033
+            ],
+            "count": 796,
+            "rate": 0.6633,
+            "wilson95": [
+              0.6361,
+              0.6895
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0032
+            ]
+          },
+          "label_counts": {
+            "absorbed": 796,
+            "silently_corrected": 342,
+            "unresolved": 62
+          },
+          "n": 1200,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.001,
+            "unparsed_rate": 0.0008
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.2475,
+              0.3217
+            ],
+            "count": 342,
+            "rate": 0.285,
+            "wilson95": [
+              0.2602,
+              0.3112
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.035,
+              0.0692
+            ],
+            "count": 62,
+            "rate": 0.0517,
+            "wilson95": [
+              0.0405,
+              0.0657
+            ]
+          }
+        },
+        "dose_off1": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.7425,
+              0.8108
+            ],
+            "count": 933,
+            "rate": 0.7775,
+            "wilson95": [
+              0.7531,
+              0.8001
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0032
+            ]
+          },
+          "label_counts": {
+            "absorbed": 933,
+            "silently_corrected": 233,
+            "unresolved": 34
+          },
+          "n": 1200,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.006,
+            "unparsed_rate": 0.0058
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.165,
+              0.225
+            ],
+            "count": 233,
+            "rate": 0.1942,
+            "wilson95": [
+              0.1728,
+              0.2175
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0142,
+              0.0458
+            ],
+            "count": 34,
+            "rate": 0.0283,
+            "wilson95": [
+              0.0203,
+              0.0393
+            ]
+          }
+        },
+        "dose_off10_20": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.7075,
+              0.7942
+            ],
+            "count": 901,
+            "rate": 0.7508,
+            "wilson95": [
+              0.7256,
+              0.7745
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0032
+            ]
+          },
+          "label_counts": {
+            "absorbed": 901,
+            "silently_corrected": 249,
+            "unresolved": 50
+          },
+          "n": 1200,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.012,
+            "unparsed_rate": 0.0067
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.1708,
+              0.245
+            ],
+            "count": 249,
+            "rate": 0.2075,
+            "wilson95": [
+              0.1855,
+              0.2314
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0267,
+              0.0592
+            ],
+            "count": 50,
+            "rate": 0.0417,
+            "wilson95": [
+              0.0317,
+              0.0545
+            ]
+          }
+        },
+        "grid_line_false_copy_true": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.0,
+              0.0042
+            ],
+            "count": 2,
+            "rate": 0.0017,
+            "wilson95": [
+              0.0005,
+              0.0061
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0032
+            ]
+          },
+          "label_counts": {
+            "absorbed": 2,
+            "silently_corrected": 868,
+            "unresolved": 330
+          },
+          "n": 1200,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.6775,
+              0.7667
+            ],
+            "count": 868,
+            "rate": 0.7233,
+            "wilson95": [
+              0.6973,
+              0.7479
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.2317,
+              0.3183
+            ],
+            "count": 330,
+            "rate": 0.275,
+            "wilson95": [
+              0.2505,
+              0.301
+            ]
+          }
+        },
+        "grid_line_false_note_true": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.08,
+              0.1392
+            ],
+            "count": 131,
+            "rate": 0.1092,
+            "wilson95": [
+              0.0928,
+              0.1281
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0032
+            ]
+          },
+          "label_counts": {
+            "absorbed": 131,
+            "silently_corrected": 1037,
+            "unresolved": 32
+          },
+          "n": 1200,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.002,
+            "unparsed_rate": 0.0017
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.8325,
+              0.8967
+            ],
+            "count": 1037,
+            "rate": 0.8642,
+            "wilson95": [
+              0.8436,
+              0.8824
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0158,
+              0.0375
+            ],
+            "count": 32,
+            "rate": 0.0267,
+            "wilson95": [
+              0.019,
+              0.0374
+            ]
+          }
+        },
+        "grid_note_false_before": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0032
+            ]
+          },
+          "conditional": "note-before-definition corner: CONDITIONAL on this parse-sanity gate (spec E13a-grid); Review agent signs off before scaling",
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0032
+            ]
+          },
+          "label_counts": {
+            "silently_corrected": 1196,
+            "unresolved": 4
+          },
+          "n": 1200,
+          "parse_gate": {
+            "mean_line_skip": 0.001,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.002,
+            "unparsed_rate": 0.0008
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.9917,
+              1.0
+            ],
+            "count": 1196,
+            "rate": 0.9967,
+            "wilson95": [
+              0.9915,
+              0.9987
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0,
+              0.0083
+            ],
+            "count": 4,
+            "rate": 0.0033,
+            "wilson95": [
+              0.0013,
+              0.0085
+            ]
+          }
+        },
+        "grid_note_true_before_line_false": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.8992,
+              0.9575
+            ],
+            "count": 1115,
+            "rate": 0.9292,
+            "wilson95": [
+              0.9132,
+              0.9424
+            ]
+          },
+          "conditional": "note-before-definition corner: CONDITIONAL on this parse-sanity gate (spec E13a-grid); Review agent signs off before scaling",
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0032
+            ]
+          },
+          "label_counts": {
+            "absorbed": 1115,
+            "silently_corrected": 60,
+            "unresolved": 25
+          },
+          "n": 1200,
+          "parse_gate": {
+            "mean_line_skip": 0.0017,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.0283,
+              0.0725
+            ],
+            "count": 60,
+            "rate": 0.05,
+            "wilson95": [
+              0.039,
+              0.0638
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0033,
+              0.0417
+            ],
+            "count": 25,
+            "rate": 0.0208,
+            "wilson95": [
+              0.0142,
+              0.0306
+            ]
+          }
+        },
+        "opfree_kr1": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.6875,
+              0.7792
+            ],
+            "count": 880,
+            "rate": 0.7333,
+            "wilson95": [
+              0.7076,
+              0.7576
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0032
+            ]
+          },
+          "label_counts": {
+            "absorbed": 880,
+            "silently_corrected": 4,
+            "unresolved": 316
+          },
+          "n": 1200,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 150,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.0008,
+              0.0067
+            ],
+            "count": 4,
+            "rate": 0.0033,
+            "wilson95": [
+              0.0013,
+              0.0085
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.2158,
+              0.3075
+            ],
+            "count": 316,
+            "rate": 0.2633,
+            "wilson95": [
+              0.2392,
+              0.289
+            ]
+          }
+        }
+      }
+    },
+    "k1_deference": {
+      "all": {
+        "depth_k1_bare": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.716,
+              0.8981
+            ],
+            "count": 264,
+            "rate": 0.8148,
+            "wilson95": [
+              0.7689,
+              0.8533
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0117
+            ]
+          },
+          "label_counts": {
+            "absorbed": 264,
+            "silently_corrected": 1,
+            "unresolved": 59
+          },
+          "n": 324,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 36,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.0,
+              0.0093
+            ],
+            "count": 1,
+            "rate": 0.0031,
+            "wilson95": [
+              0.0005,
+              0.0173
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0957,
+              0.2778
+            ],
+            "count": 59,
+            "rate": 0.1821,
+            "wilson95": [
+              0.1439,
+              0.2278
+            ]
+          }
+        },
+        "depth_k1_full": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.8519,
+              0.9753
+            ],
+            "count": 298,
+            "rate": 0.9198,
+            "wilson95": [
+              0.885,
+              0.9447
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0117
+            ]
+          },
+          "label_counts": {
+            "absorbed": 298,
+            "unresolved": 26
+          },
+          "n": 324,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 36,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0117
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0247,
+              0.1481
+            ],
+            "count": 26,
+            "rate": 0.0802,
+            "wilson95": [
+              0.0553,
+              0.115
+            ]
+          }
+        },
+        "depth_k1_partial": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.8086,
+              0.9691
+            ],
+            "count": 291,
+            "rate": 0.8981,
+            "wilson95": [
+              0.8604,
+              0.9266
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0117
+            ]
+          },
+          "label_counts": {
+            "absorbed": 291,
+            "unresolved": 33
+          },
+          "n": 324,
+          "parse_gate": {
+            "mean_line_skip": 0.0009,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.009,
+            "unparsed_rate": 0.0031
+          },
+          "program_n": 36,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0117
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0309,
+              0.1883
+            ],
+            "count": 33,
+            "rate": 0.1019,
+            "wilson95": [
+              0.0734,
+              0.1396
+            ]
+          }
+        },
+        "k1_full_sum": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.2932,
+              0.4722
+            ],
+            "count": 123,
+            "rate": 0.3796,
+            "wilson95": [
+              0.3285,
+              0.4336
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0117
+            ]
+          },
+          "label_counts": {
+            "absorbed": 123,
+            "silently_corrected": 98,
+            "unresolved": 103
+          },
+          "n": 324,
+          "parse_gate": {
+            "mean_line_skip": 0.0491,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.491,
+            "unparsed_rate": 0.1173
+          },
+          "program_n": 36,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.2068,
+              0.4043
+            ],
+            "count": 98,
+            "rate": 0.3025,
+            "wilson95": [
+              0.255,
+              0.3546
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.2222,
+              0.429
+            ],
+            "count": 103,
+            "rate": 0.3179,
+            "wilson95": [
+              0.2696,
+              0.3705
+            ]
+          }
+        },
+        "k1_probe": {
+          "n": 324,
+          "probe_answer_anywhere_rate": 0.963,
+          "probe_correct": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0117
+            ]
+          },
+          "probe_no_number_rate": 0.0,
+          "probe_planted_echo_rate": 0.037,
+          "program_n": 36
+        },
+        "k1_tentative": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.8395,
+              0.9383
+            ],
+            "count": 290,
+            "rate": 0.8951,
+            "wilson95": [
+              0.8569,
+              0.9239
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              -0.0,
+              0.0117
+            ]
+          },
+          "label_counts": {
+            "absorbed": 290,
+            "silently_corrected": 5,
+            "unresolved": 29
+          },
+          "n": 324,
+          "parse_gate": {
+            "mean_line_skip": 0.1719,
+            "mean_prose_lines": 0.012,
+            "mean_unparsed_lines": 1.731,
+            "unparsed_rate": 0.5494
+          },
+          "program_n": 36,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.0031,
+              0.0309
+            ],
+            "count": 5,
+            "rate": 0.0154,
+            "wilson95": [
+              0.0066,
+              0.0356
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0463,
+              0.142
+            ],
+            "count": 29,
+            "rate": 0.0895,
+            "wilson95": [
+              0.063,
+              0.1256
+            ]
+          }
+        }
+      },
+      "greedy": {
+        "depth_k1_bare": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.7222,
+              0.9722
+            ],
+            "count": 31,
+            "rate": 0.8611,
+            "wilson95": [
+              0.7134,
+              0.9392
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0964
+            ]
+          },
+          "label_counts": {
+            "absorbed": 31,
+            "unresolved": 5
+          },
+          "n": 36,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 36,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0964
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0278,
+              0.2778
+            ],
+            "count": 5,
+            "rate": 0.1389,
+            "wilson95": [
+              0.0608,
+              0.2866
+            ]
+          }
+        },
+        "depth_k1_full": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.7778,
+              0.9722
+            ],
+            "count": 32,
+            "rate": 0.8889,
+            "wilson95": [
+              0.7468,
+              0.9559
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0964
+            ]
+          },
+          "label_counts": {
+            "absorbed": 32,
+            "unresolved": 4
+          },
+          "n": 36,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 36,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0964
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0278,
+              0.2222
+            ],
+            "count": 4,
+            "rate": 0.1111,
+            "wilson95": [
+              0.0441,
+              0.2532
+            ]
+          }
+        },
+        "depth_k1_partial": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.8056,
+              1.0
+            ],
+            "count": 33,
+            "rate": 0.9167,
+            "wilson95": [
+              0.7817,
+              0.9713
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0964
+            ]
+          },
+          "label_counts": {
+            "absorbed": 33,
+            "unresolved": 3
+          },
+          "n": 36,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 36,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0964
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0,
+              0.1944
+            ],
+            "count": 3,
+            "rate": 0.0833,
+            "wilson95": [
+              0.0287,
+              0.2183
+            ]
+          }
+        },
+        "k1_full_sum": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.2778,
+              0.6111
+            ],
+            "count": 16,
+            "rate": 0.4444,
+            "wilson95": [
+              0.2954,
+              0.6042
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0964
+            ]
+          },
+          "label_counts": {
+            "absorbed": 16,
+            "silently_corrected": 8,
+            "unresolved": 12
+          },
+          "n": 36,
+          "parse_gate": {
+            "mean_line_skip": 0.0333,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.333,
+            "unparsed_rate": 0.0556
+          },
+          "program_n": 36,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.0833,
+              0.3611
+            ],
+            "count": 8,
+            "rate": 0.2222,
+            "wilson95": [
+              0.1172,
+              0.3809
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.1944,
+              0.5
+            ],
+            "count": 12,
+            "rate": 0.3333,
+            "wilson95": [
+              0.2021,
+              0.4967
+            ]
+          }
+        },
+        "k1_probe": {
+          "n": 36,
+          "probe_answer_anywhere_rate": 0.9722,
+          "probe_correct": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0964
+            ]
+          },
+          "probe_no_number_rate": 0.0,
+          "probe_planted_echo_rate": 0.0278,
+          "program_n": 36
+        },
+        "k1_tentative": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.8056,
+              1.0
+            ],
+            "count": 33,
+            "rate": 0.9167,
+            "wilson95": [
+              0.7817,
+              0.9713
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0964
+            ]
+          },
+          "label_counts": {
+            "absorbed": 33,
+            "unresolved": 3
+          },
+          "n": 36,
+          "parse_gate": {
+            "mean_line_skip": 0.125,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 1.25,
+            "unparsed_rate": 0.4167
+          },
+          "program_n": 36,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0964
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0,
+              0.1944
+            ],
+            "count": 3,
+            "rate": 0.0833,
+            "wilson95": [
+              0.0287,
+              0.2183
+            ]
+          }
+        }
+      },
+      "sampled": {
+        "depth_k1_bare": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.7118,
+              0.8924
+            ],
+            "count": 233,
+            "rate": 0.809,
+            "wilson95": [
+              0.7597,
+              0.8502
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0132
+            ]
+          },
+          "label_counts": {
+            "absorbed": 233,
+            "silently_corrected": 1,
+            "unresolved": 54
+          },
+          "n": 288,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 36,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.0,
+              0.0104
+            ],
+            "count": 1,
+            "rate": 0.0035,
+            "wilson95": [
+              0.0006,
+              0.0194
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.1007,
+              0.2778
+            ],
+            "count": 54,
+            "rate": 0.1875,
+            "wilson95": [
+              0.1466,
+              0.2366
+            ]
+          }
+        },
+        "depth_k1_full": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.8576,
+              0.9757
+            ],
+            "count": 266,
+            "rate": 0.9236,
+            "wilson95": [
+              0.8871,
+              0.949
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0132
+            ]
+          },
+          "label_counts": {
+            "absorbed": 266,
+            "unresolved": 22
+          },
+          "n": 288,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 36,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0132
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0243,
+              0.1389
+            ],
+            "count": 22,
+            "rate": 0.0764,
+            "wilson95": [
+              0.051,
+              0.1129
+            ]
+          }
+        },
+        "depth_k1_partial": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.809,
+              0.9653
+            ],
+            "count": 258,
+            "rate": 0.8958,
+            "wilson95": [
+              0.8552,
+              0.9261
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0132
+            ]
+          },
+          "label_counts": {
+            "absorbed": 258,
+            "unresolved": 30
+          },
+          "n": 288,
+          "parse_gate": {
+            "mean_line_skip": 0.001,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.01,
+            "unparsed_rate": 0.0035
+          },
+          "program_n": 36,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0132
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0347,
+              0.191
+            ],
+            "count": 30,
+            "rate": 0.1042,
+            "wilson95": [
+              0.0739,
+              0.1448
+            ]
+          }
+        },
+        "k1_full_sum": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.2882,
+              0.4618
+            ],
+            "count": 107,
+            "rate": 0.3715,
+            "wilson95": [
+              0.3178,
+              0.4287
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0132
+            ]
+          },
+          "label_counts": {
+            "absorbed": 107,
+            "silently_corrected": 90,
+            "unresolved": 91
+          },
+          "n": 288,
+          "parse_gate": {
+            "mean_line_skip": 0.051,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.51,
+            "unparsed_rate": 0.125
+          },
+          "program_n": 36,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.2188,
+              0.4132
+            ],
+            "count": 90,
+            "rate": 0.3125,
+            "wilson95": [
+              0.2617,
+              0.3682
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.2222,
+              0.4236
+            ],
+            "count": 91,
+            "rate": 0.316,
+            "wilson95": [
+              0.265,
+              0.3718
+            ]
+          }
+        },
+        "k1_probe": {
+          "n": 288,
+          "probe_answer_anywhere_rate": 0.9618,
+          "probe_correct": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0132
+            ]
+          },
+          "probe_no_number_rate": 0.0,
+          "probe_planted_echo_rate": 0.0382,
+          "program_n": 36
+        },
+        "k1_tentative": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.8403,
+              0.9375
+            ],
+            "count": 257,
+            "rate": 0.8924,
+            "wilson95": [
+              0.8513,
+              0.9231
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0132
+            ]
+          },
+          "label_counts": {
+            "absorbed": 257,
+            "silently_corrected": 5,
+            "unresolved": 26
+          },
+          "n": 288,
+          "parse_gate": {
+            "mean_line_skip": 0.1778,
+            "mean_prose_lines": 0.014,
+            "mean_unparsed_lines": 1.792,
+            "unparsed_rate": 0.566
+          },
+          "program_n": 36,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.0035,
+              0.0347
+            ],
+            "count": 5,
+            "rate": 0.0174,
+            "wilson95": [
+              0.0074,
+              0.04
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0451,
+              0.1424
+            ],
+            "count": 26,
+            "rate": 0.0903,
+            "wilson95": [
+              0.0624,
+              0.129
+            ]
+          }
+        }
+      }
+    },
+    "line_k0": {
+      "all": {
+        "anchor_k0": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.56,
+              0.7733
+            ],
+            "count": 151,
+            "rate": 0.6711,
+            "wilson95": [
+              0.6073,
+              0.7292
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0168
+            ]
+          },
+          "label_counts": {
+            "absorbed": 151,
+            "silently_corrected": 65,
+            "unresolved": 9
+          },
+          "n": 225,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 25,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.1778,
+              0.3956
+            ],
+            "count": 65,
+            "rate": 0.2889,
+            "wilson95": [
+              0.2336,
+              0.3513
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0178,
+              0.0667
+            ],
+            "count": 9,
+            "rate": 0.04,
+            "wilson95": [
+              0.0212,
+              0.0743
+            ]
+          }
+        },
+        "line_k0": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.6978,
+              0.8711
+            ],
+            "count": 177,
+            "rate": 0.7867,
+            "wilson95": [
+              0.7286,
+              0.8351
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0168
+            ]
+          },
+          "label_counts": {
+            "absorbed": 177,
+            "silently_corrected": 2,
+            "unresolved": 46
+          },
+          "n": 225,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 25,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.0,
+              0.0267
+            ],
+            "count": 2,
+            "rate": 0.0089,
+            "wilson95": [
+              0.0024,
+              0.0318
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.1244,
+              0.2844
+            ],
+            "count": 46,
+            "rate": 0.2044,
+            "wilson95": [
+              0.1569,
+              0.2619
+            ]
+          }
+        },
+        "line_k0_swap": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.6178,
+              0.8489
+            ],
+            "count": 167,
+            "rate": 0.7422,
+            "wilson95": [
+              0.6813,
+              0.795
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0168
+            ]
+          },
+          "label_counts": {
+            "absorbed": 167,
+            "silently_corrected": 6,
+            "unresolved": 52
+          },
+          "n": 225,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 25,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.0,
+              0.0711
+            ],
+            "count": 6,
+            "rate": 0.0267,
+            "wilson95": [
+              0.0123,
+              0.0569
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.1289,
+              0.3467
+            ],
+            "count": 52,
+            "rate": 0.2311,
+            "wilson95": [
+              0.1808,
+              0.2904
+            ]
+          }
+        }
+      },
+      "greedy": {
+        "anchor_k0": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.64,
+              0.92
+            ],
+            "count": 20,
+            "rate": 0.8,
+            "wilson95": [
+              0.6087,
+              0.9114
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.1332
+            ]
+          },
+          "label_counts": {
+            "absorbed": 20,
+            "silently_corrected": 5
+          },
+          "n": 25,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 25,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.04,
+              0.36
+            ],
+            "count": 5,
+            "rate": 0.2,
+            "wilson95": [
+              0.0886,
+              0.3913
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.1332
+            ]
+          }
+        },
+        "line_k0": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.88,
+              1.0
+            ],
+            "count": 24,
+            "rate": 0.96,
+            "wilson95": [
+              0.8046,
+              0.9929
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.1332
+            ]
+          },
+          "label_counts": {
+            "absorbed": 24,
+            "unresolved": 1
+          },
+          "n": 25,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 25,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.1332
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0,
+              0.12
+            ],
+            "count": 1,
+            "rate": 0.04,
+            "wilson95": [
+              0.0071,
+              0.1954
+            ]
+          }
+        },
+        "line_k0_swap": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.76,
+              1.0
+            ],
+            "count": 22,
+            "rate": 0.88,
+            "wilson95": [
+              0.7004,
+              0.9583
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.1332
+            ]
+          },
+          "label_counts": {
+            "absorbed": 22,
+            "silently_corrected": 1,
+            "unresolved": 2
+          },
+          "n": 25,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 25,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.0,
+              0.12
+            ],
+            "count": 1,
+            "rate": 0.04,
+            "wilson95": [
+              0.0071,
+              0.1954
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.0,
+              0.2
+            ],
+            "count": 2,
+            "rate": 0.08,
+            "wilson95": [
+              0.0222,
+              0.2497
+            ]
+          }
+        }
+      },
+      "sampled": {
+        "anchor_k0": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.545,
+              0.755
+            ],
+            "count": 131,
+            "rate": 0.655,
+            "wilson95": [
+              0.5868,
+              0.7174
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0188
+            ]
+          },
+          "label_counts": {
+            "absorbed": 131,
+            "silently_corrected": 60,
+            "unresolved": 9
+          },
+          "n": 200,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 25,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.19,
+              0.41
+            ],
+            "count": 60,
+            "rate": 0.3,
+            "wilson95": [
+              0.2407,
+              0.3668
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.02,
+              0.075
+            ],
+            "count": 9,
+            "rate": 0.045,
+            "wilson95": [
+              0.0239,
+              0.0833
+            ]
+          }
+        },
+        "line_k0": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.67,
+              0.855
+            ],
+            "count": 153,
+            "rate": 0.765,
+            "wilson95": [
+              0.7016,
+              0.8184
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0188
+            ]
+          },
+          "label_counts": {
+            "absorbed": 153,
+            "silently_corrected": 2,
+            "unresolved": 45
+          },
+          "n": 200,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 25,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.0,
+              0.03
+            ],
+            "count": 2,
+            "rate": 0.01,
+            "wilson95": [
+              0.0027,
+              0.0357
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.14,
+              0.315
+            ],
+            "count": 45,
+            "rate": 0.225,
+            "wilson95": [
+              0.1726,
+              0.2877
+            ]
+          }
+        },
+        "line_k0_swap": {
+          "absorbed": {
+            "cluster_boot95": [
+              0.595,
+              0.835
+            ],
+            "count": 145,
+            "rate": 0.725,
+            "wilson95": [
+              0.6593,
+              0.7822
+            ]
+          },
+          "flagged": {
+            "cluster_boot95": [
+              0.0,
+              0.0
+            ],
+            "count": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.0188
+            ]
+          },
+          "label_counts": {
+            "absorbed": 145,
+            "silently_corrected": 5,
+            "unresolved": 50
+          },
+          "n": 200,
+          "parse_gate": {
+            "mean_line_skip": 0.0,
+            "mean_prose_lines": 0.0,
+            "mean_unparsed_lines": 0.0,
+            "unparsed_rate": 0.0
+          },
+          "program_n": 25,
+          "silently_corrected": {
+            "cluster_boot95": [
+              0.0,
+              0.06
+            ],
+            "count": 5,
+            "rate": 0.025,
+            "wilson95": [
+              0.0107,
+              0.0572
+            ]
+          },
+          "unresolved": {
+            "cluster_boot95": [
+              0.145,
+              0.365
+            ],
+            "count": 50,
+            "rate": 0.25,
+            "wilson95": [
+              0.1951,
+              0.3143
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cohort": {
+    "grid_kr1": {
+      "eligible": 196,
+      "kept": 150,
+      "tested": 200
+    },
+    "k1_deference": {
+      "eligible": 36,
+      "kept": 36,
+      "tested": 200
+    },
+    "line_k0": {
+      "eligible": 25,
+      "kept": 25,
+      "tested": 200
+    }
+  },
+  "created_at": "2026-07-29T09:19:29",
+  "experiment": "E13_MATCHED_CONTROLS_open",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "model_tag": "qwen7b",
+  "stats_note": "Wilson95 + program-cluster bootstrap95 (n_boot=1000, cluster=program_id); greedy=rollout 0, sampled=rollouts 1..8 at T=0.7"
+}

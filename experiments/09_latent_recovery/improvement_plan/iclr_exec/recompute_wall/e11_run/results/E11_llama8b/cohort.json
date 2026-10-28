@@ -1,0 +1,41 @@
+{
+  "by_k": {
+    "0": {
+      "eligible": 373,
+      "kept": 150,
+      "solve_rate": 0.2072,
+      "tested": 1800
+    },
+    "1": {
+      "eligible": 367,
+      "kept": 150,
+      "solve_rate": 0.2039,
+      "tested": 1800
+    },
+    "2": {
+      "eligible": 434,
+      "kept": 150,
+      "solve_rate": 0.2411,
+      "tested": 1800
+    },
+    "3": {
+      "eligible": 391,
+      "kept": 150,
+      "solve_rate": 0.2172,
+      "tested": 1800
+    },
+    "5": {
+      "eligible": 56,
+      "kept": 56,
+      "solve_rate": 0.0311,
+      "tested": 1800
+    }
+  },
+  "created_at": "2026-07-28T09:06:48",
+  "failure_taxonomy": {
+    "parse": 11,
+    "wrong_value": 7368
+  },
+  "gold_solve_overall": 0.1801,
+  "n_cohort": 656
+}

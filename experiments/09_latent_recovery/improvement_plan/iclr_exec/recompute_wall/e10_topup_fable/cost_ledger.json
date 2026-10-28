@@ -1,0 +1,38 @@
+{
+  "hard_budget_usd": 150.0,
+  "models": {
+    "claude-fable-5": {
+      "input_tokens": 289762,
+      "output_tokens": 574,
+      "requests": 360
+    },
+    "claude-haiku-4-5": {
+      "input_tokens": 702882,
+      "output_tokens": 123512,
+      "requests": 840
+    },
+    "claude-opus-4-8": {
+      "input_tokens": 759162,
+      "output_tokens": 123572,
+      "requests": 840
+    },
+    "claude-sonnet-4-5": {
+      "input_tokens": 702882,
+      "output_tokens": 123806,
+      "requests": 840
+    },
+    "claude-sonnet-5": {
+      "input_tokens": 758316,
+      "output_tokens": 126910,
+      "requests": 839
+    }
+  },
+  "total_usd": 19.2762,
+  "usd_by_model": {
+    "claude-fable-5": 2.9263,
+    "claude-haiku-4-5": 1.3204,
+    "claude-opus-4-8": 6.8851,
+    "claude-sonnet-4-5": 3.9657,
+    "claude-sonnet-5": 4.1786
+  }
+}

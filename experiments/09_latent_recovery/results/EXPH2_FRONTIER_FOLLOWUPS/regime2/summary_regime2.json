@@ -1,0 +1,2030 @@
+{
+  "cells": [
+    "benign_paraphrase",
+    "true_interruption",
+    "adjacent_contradiction",
+    "opfree_kr1",
+    "opfree_kr8",
+    "onehop_kc1",
+    "deep_kc5"
+  ],
+  "created_at": "2026-07-06T19:46:52.516403+00:00",
+  "cumulative_usd": 12.3748,
+  "gold_funnels": {
+    "claude-haiku-4-5": {
+      "by_shape": {
+        "kc1": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        },
+        "kc5": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        },
+        "kr1": {
+          "eligible": 70,
+          "n": 70,
+          "solve_rate": 1.0
+        },
+        "kr8": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        }
+      },
+      "failure_taxonomy": {},
+      "n_programs": 250,
+      "new_generations": 250,
+      "parse_rate": 1.0,
+      "solve_rate": 1.0
+    },
+    "claude-sonnet-4-5": {
+      "by_shape": {
+        "kc1": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        },
+        "kc5": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        },
+        "kr1": {
+          "eligible": 70,
+          "n": 70,
+          "solve_rate": 1.0
+        },
+        "kr8": {
+          "eligible": 60,
+          "n": 60,
+          "solve_rate": 1.0
+        }
+      },
+      "failure_taxonomy": {},
+      "n_programs": 250,
+      "new_generations": 250,
+      "parse_rate": 1.0,
+      "solve_rate": 1.0
+    }
+  },
+  "models": {
+    "claude-haiku-4-5": {
+      "adjacent_contradiction": {
+        "doubt_broad": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "doubt_lex": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "final_output_absorbed": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "final_output_valid": {
+          "count": 70,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            1.0,
+            1.0
+          ],
+          "rate": 1.0,
+          "wilson95": [
+            0.948,
+            1.0
+          ]
+        },
+        "first_char_digit": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "injection_dependent": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "mean_line_skip_rate": 0.0,
+        "n": 70,
+        "next_read_absorbed": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "repair_event": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "trace_valid": {
+          "count": 56,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.7,
+            0.8857
+          ],
+          "rate": 0.8,
+          "wilson95": [
+            0.6918,
+            0.877
+          ]
+        },
+        "unparsed": {
+          "count": 14,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.1143,
+            0.2857
+          ],
+          "rate": 0.2,
+          "wilson95": [
+            0.123,
+            0.3082
+          ]
+        }
+      },
+      "benign_paraphrase": {
+        "doubt_broad": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "doubt_lex": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "final_output_absorbed": {
+          "n_measured": 0,
+          "rate": null
+        },
+        "final_output_valid": {
+          "count": 70,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            1.0,
+            1.0
+          ],
+          "rate": 1.0,
+          "wilson95": [
+            0.948,
+            1.0
+          ]
+        },
+        "first_char_digit": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "injection_dependent": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "mean_line_skip_rate": 0.0,
+        "n": 70,
+        "next_read_absorbed": {
+          "n_measured": 0,
+          "rate": null
+        },
+        "repair_event": {
+          "n_measured": 0,
+          "rate": null
+        },
+        "trace_valid": {
+          "count": 70,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            1.0,
+            1.0
+          ],
+          "rate": 1.0,
+          "wilson95": [
+            0.948,
+            1.0
+          ]
+        },
+        "unparsed": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        }
+      },
+      "deep_kc5": {
+        "doubt_broad": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "doubt_lex": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "final_output_absorbed": {
+          "count": 60,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            1.0,
+            1.0
+          ],
+          "rate": 1.0,
+          "wilson95": [
+            0.9398,
+            1.0
+          ]
+        },
+        "final_output_valid": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "first_char_digit": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "injection_dependent": {
+          "count": 60,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            1.0,
+            1.0
+          ],
+          "rate": 1.0,
+          "wilson95": [
+            0.9398,
+            1.0
+          ]
+        },
+        "mean_line_skip_rate": 0.0,
+        "n": 60,
+        "next_read_absorbed": {
+          "count": 60,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            1.0,
+            1.0
+          ],
+          "rate": 1.0,
+          "wilson95": [
+            0.9398,
+            1.0
+          ]
+        },
+        "repair_event": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "trace_valid": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "unparsed": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        }
+      },
+      "onehop_kc1": {
+        "doubt_broad": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "doubt_lex": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "final_output_absorbed": {
+          "count": 60,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            1.0,
+            1.0
+          ],
+          "rate": 1.0,
+          "wilson95": [
+            0.9398,
+            1.0
+          ]
+        },
+        "final_output_valid": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "first_char_digit": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "injection_dependent": {
+          "count": 60,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            1.0,
+            1.0
+          ],
+          "rate": 1.0,
+          "wilson95": [
+            0.9398,
+            1.0
+          ]
+        },
+        "mean_line_skip_rate": 0.0,
+        "n": 60,
+        "next_read_absorbed": {
+          "count": 60,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            1.0,
+            1.0
+          ],
+          "rate": 1.0,
+          "wilson95": [
+            0.9398,
+            1.0
+          ]
+        },
+        "repair_event": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "trace_valid": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "unparsed": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        }
+      },
+      "opfree_kr1": {
+        "doubt_broad": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "doubt_lex": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "final_output_absorbed": {
+          "count": 3,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.1
+          ],
+          "rate": 0.0429,
+          "wilson95": [
+            0.0147,
+            0.1186
+          ]
+        },
+        "final_output_valid": {
+          "count": 66,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.8857,
+            0.9857
+          ],
+          "rate": 0.9429,
+          "wilson95": [
+            0.8621,
+            0.9776
+          ]
+        },
+        "first_char_digit": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "injection_dependent": {
+          "count": 4,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0143,
+            0.1143
+          ],
+          "rate": 0.0571,
+          "wilson95": [
+            0.0224,
+            0.1379
+          ]
+        },
+        "mean_line_skip_rate": 0.0,
+        "n": 70,
+        "next_read_absorbed": {
+          "count": 3,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.1
+          ],
+          "rate": 0.0429,
+          "wilson95": [
+            0.0147,
+            0.1186
+          ]
+        },
+        "repair_event": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "trace_valid": {
+          "count": 66,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.8857,
+            0.9857
+          ],
+          "rate": 0.9429,
+          "wilson95": [
+            0.8621,
+            0.9776
+          ]
+        },
+        "unparsed": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        }
+      },
+      "opfree_kr8": {
+        "doubt_broad": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "doubt_lex": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "final_output_absorbed": {
+          "count": 13,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.1167,
+            0.3333
+          ],
+          "rate": 0.2167,
+          "wilson95": [
+            0.1312,
+            0.3362
+          ]
+        },
+        "final_output_valid": {
+          "count": 42,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.5667,
+            0.8167
+          ],
+          "rate": 0.7,
+          "wilson95": [
+            0.5749,
+            0.801
+          ]
+        },
+        "first_char_digit": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "injection_dependent": {
+          "count": 17,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.1833,
+            0.4
+          ],
+          "rate": 0.2833,
+          "wilson95": [
+            0.1851,
+            0.4077
+          ]
+        },
+        "mean_line_skip_rate": 0.0,
+        "n": 60,
+        "next_read_absorbed": {
+          "count": 13,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.1167,
+            0.3333
+          ],
+          "rate": 0.2167,
+          "wilson95": [
+            0.1312,
+            0.3362
+          ]
+        },
+        "repair_event": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "trace_valid": {
+          "count": 42,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.5667,
+            0.8167
+          ],
+          "rate": 0.7,
+          "wilson95": [
+            0.5749,
+            0.801
+          ]
+        },
+        "unparsed": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        }
+      },
+      "true_interruption": {
+        "doubt_broad": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "doubt_lex": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "final_output_absorbed": {
+          "n_measured": 0,
+          "rate": null
+        },
+        "final_output_valid": {
+          "count": 70,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            1.0,
+            1.0
+          ],
+          "rate": 1.0,
+          "wilson95": [
+            0.948,
+            1.0
+          ]
+        },
+        "first_char_digit": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "injection_dependent": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "mean_line_skip_rate": 0.0,
+        "n": 70,
+        "next_read_absorbed": {
+          "n_measured": 0,
+          "rate": null
+        },
+        "repair_event": {
+          "n_measured": 0,
+          "rate": null
+        },
+        "trace_valid": {
+          "count": 55,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.6857,
+            0.8714
+          ],
+          "rate": 0.7857,
+          "wilson95": [
+            0.6761,
+            0.8656
+          ]
+        },
+        "unparsed": {
+          "count": 15,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.1286,
+            0.3
+          ],
+          "rate": 0.2143,
+          "wilson95": [
+            0.1344,
+            0.3239
+          ]
+        }
+      }
+    },
+    "claude-sonnet-4-5": {
+      "adjacent_contradiction": {
+        "doubt_broad": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "doubt_lex": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "final_output_absorbed": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "final_output_valid": {
+          "count": 70,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            1.0,
+            1.0
+          ],
+          "rate": 1.0,
+          "wilson95": [
+            0.948,
+            1.0
+          ]
+        },
+        "first_char_digit": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "injection_dependent": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "mean_line_skip_rate": 0.002,
+        "n": 70,
+        "next_read_absorbed": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "repair_event": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "trace_valid": {
+          "count": 43,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.5,
+            0.7286
+          ],
+          "rate": 0.6143,
+          "wilson95": [
+            0.4972,
+            0.7195
+          ]
+        },
+        "unparsed": {
+          "count": 27,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.2714,
+            0.5
+          ],
+          "rate": 0.3857,
+          "wilson95": [
+            0.2805,
+            0.5028
+          ]
+        }
+      },
+      "benign_paraphrase": {
+        "doubt_broad": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "doubt_lex": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "final_output_absorbed": {
+          "n_measured": 0,
+          "rate": null
+        },
+        "final_output_valid": {
+          "count": 70,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            1.0,
+            1.0
+          ],
+          "rate": 1.0,
+          "wilson95": [
+            0.948,
+            1.0
+          ]
+        },
+        "first_char_digit": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "injection_dependent": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "mean_line_skip_rate": 0.0,
+        "n": 70,
+        "next_read_absorbed": {
+          "n_measured": 0,
+          "rate": null
+        },
+        "repair_event": {
+          "n_measured": 0,
+          "rate": null
+        },
+        "trace_valid": {
+          "count": 70,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            1.0,
+            1.0
+          ],
+          "rate": 1.0,
+          "wilson95": [
+            0.948,
+            1.0
+          ]
+        },
+        "unparsed": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        }
+      },
+      "deep_kc5": {
+        "doubt_broad": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "doubt_lex": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "final_output_absorbed": {
+          "count": 60,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            1.0,
+            1.0
+          ],
+          "rate": 1.0,
+          "wilson95": [
+            0.9398,
+            1.0
+          ]
+        },
+        "final_output_valid": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "first_char_digit": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "injection_dependent": {
+          "count": 60,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            1.0,
+            1.0
+          ],
+          "rate": 1.0,
+          "wilson95": [
+            0.9398,
+            1.0
+          ]
+        },
+        "mean_line_skip_rate": 0.0,
+        "n": 60,
+        "next_read_absorbed": {
+          "count": 60,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            1.0,
+            1.0
+          ],
+          "rate": 1.0,
+          "wilson95": [
+            0.9398,
+            1.0
+          ]
+        },
+        "repair_event": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "trace_valid": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "unparsed": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        }
+      },
+      "onehop_kc1": {
+        "doubt_broad": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "doubt_lex": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "final_output_absorbed": {
+          "count": 59,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.95,
+            1.0
+          ],
+          "rate": 0.9833,
+          "wilson95": [
+            0.9114,
+            0.9971
+          ]
+        },
+        "final_output_valid": {
+          "count": 1,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.05
+          ],
+          "rate": 0.0167,
+          "wilson95": [
+            0.0029,
+            0.0886
+          ]
+        },
+        "first_char_digit": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "injection_dependent": {
+          "count": 59,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.95,
+            1.0
+          ],
+          "rate": 0.9833,
+          "wilson95": [
+            0.9114,
+            0.9971
+          ]
+        },
+        "mean_line_skip_rate": 0.0,
+        "n": 60,
+        "next_read_absorbed": {
+          "count": 59,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.95,
+            1.0
+          ],
+          "rate": 0.9833,
+          "wilson95": [
+            0.9114,
+            0.9971
+          ]
+        },
+        "repair_event": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "trace_valid": {
+          "count": 1,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.05
+          ],
+          "rate": 0.0167,
+          "wilson95": [
+            0.0029,
+            0.0886
+          ]
+        },
+        "unparsed": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        }
+      },
+      "opfree_kr1": {
+        "doubt_broad": {
+          "count": 1,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0429
+          ],
+          "rate": 0.0143,
+          "wilson95": [
+            0.0025,
+            0.0766
+          ]
+        },
+        "doubt_lex": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "final_output_absorbed": {
+          "count": 3,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.1
+          ],
+          "rate": 0.0429,
+          "wilson95": [
+            0.0147,
+            0.1186
+          ]
+        },
+        "final_output_valid": {
+          "count": 67,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.9,
+            1.0
+          ],
+          "rate": 0.9571,
+          "wilson95": [
+            0.8814,
+            0.9853
+          ]
+        },
+        "first_char_digit": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "injection_dependent": {
+          "count": 3,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.1
+          ],
+          "rate": 0.0429,
+          "wilson95": [
+            0.0147,
+            0.1186
+          ]
+        },
+        "mean_line_skip_rate": 0.0,
+        "n": 70,
+        "next_read_absorbed": {
+          "count": 3,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.1
+          ],
+          "rate": 0.0429,
+          "wilson95": [
+            0.0147,
+            0.1186
+          ]
+        },
+        "repair_event": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "trace_valid": {
+          "count": 67,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.9,
+            1.0
+          ],
+          "rate": 0.9571,
+          "wilson95": [
+            0.8814,
+            0.9853
+          ]
+        },
+        "unparsed": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        }
+      },
+      "opfree_kr8": {
+        "doubt_broad": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "doubt_lex": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "final_output_absorbed": {
+          "count": 3,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.1167
+          ],
+          "rate": 0.05,
+          "wilson95": [
+            0.0171,
+            0.137
+          ]
+        },
+        "final_output_valid": {
+          "count": 57,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.8833,
+            1.0
+          ],
+          "rate": 0.95,
+          "wilson95": [
+            0.863,
+            0.9829
+          ]
+        },
+        "first_char_digit": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "injection_dependent": {
+          "count": 3,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.1167
+          ],
+          "rate": 0.05,
+          "wilson95": [
+            0.0171,
+            0.137
+          ]
+        },
+        "mean_line_skip_rate": 0.0,
+        "n": 60,
+        "next_read_absorbed": {
+          "count": 3,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.1167
+          ],
+          "rate": 0.05,
+          "wilson95": [
+            0.0171,
+            0.137
+          ]
+        },
+        "repair_event": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "trace_valid": {
+          "count": 57,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.8833,
+            1.0
+          ],
+          "rate": 0.95,
+          "wilson95": [
+            0.863,
+            0.9829
+          ]
+        },
+        "unparsed": {
+          "count": 0,
+          "n_measured": 60,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        }
+      },
+      "true_interruption": {
+        "doubt_broad": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "doubt_lex": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "final_output_absorbed": {
+          "n_measured": 0,
+          "rate": null
+        },
+        "final_output_valid": {
+          "count": 70,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            1.0,
+            1.0
+          ],
+          "rate": 1.0,
+          "wilson95": [
+            0.948,
+            1.0
+          ]
+        },
+        "first_char_digit": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "injection_dependent": {
+          "count": 0,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.052
+          ]
+        },
+        "mean_line_skip_rate": 0.0041,
+        "n": 70,
+        "next_read_absorbed": {
+          "n_measured": 0,
+          "rate": null
+        },
+        "repair_event": {
+          "n_measured": 0,
+          "rate": null
+        },
+        "trace_valid": {
+          "count": 61,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.8,
+            0.9429
+          ],
+          "rate": 0.8714,
+          "wilson95": [
+            0.7734,
+            0.9309
+          ]
+        },
+        "unparsed": {
+          "count": 9,
+          "n_measured": 70,
+          "program_cluster_bootstrap95": [
+            0.0571,
+            0.2
+          ],
+          "rate": 0.1286,
+          "wilson95": [
+            0.0691,
+            0.2266
+          ]
+        }
+      }
+    }
+  },
+  "qwen_pilot_reference": "results/EXPG_PROGTRACE_PILOT/REPORT.md (n<=35/cell)"
+}

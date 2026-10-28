@@ -1,0 +1,110 @@
+{
+  "backend": "vllm",
+  "backend_note": "New suites run wholly under one backend; never mix backends within an experiment. Doubt absolute rates are backend-sensitive (vLLM 8-15pp below locked HF levels; tooling/replay_full) -> doubt is reported as within-regime contrasts, never absolute one-seed quantities.",
+  "cell_shape": {
+    "adjacent_contradiction": "kr1",
+    "benign_paraphrase": "kr1",
+    "deep_kc5": "kc5",
+    "onehop_kc1": "kc1",
+    "opfree_kr1": "kr1",
+    "opfree_kr8": "kr8",
+    "true_interruption": "kr1"
+  },
+  "cells": [
+    "benign_paraphrase",
+    "true_interruption",
+    "adjacent_contradiction",
+    "opfree_kr1",
+    "opfree_kr8",
+    "onehop_kc1",
+    "deep_kc5"
+  ],
+  "created_at": "2026-07-27T09:22:07",
+  "decoding": {
+    "do_sample": false,
+    "max_new_tokens_continuation": 384,
+    "max_new_tokens_gold": 512,
+    "temperature": 0.0
+  },
+  "design_references": {
+    "amendments": "reports/verdict.md MAJOR-5, MOD-9, MOD-10 (binding, generation-time; PLAN2 section 4)",
+    "design": "reports/regime2.md sections 2, 4",
+    "pre_registration": "PLAN2.md (H7 slot; sections 3, 4, 6, 8, 10)",
+    "stats": "wilson + cluster_boot_rate, program = cluster (expa_global_expansion.py:738-767 convention)"
+  },
+  "device": null,
+  "doubt_lexicon_broad_exploratory": "\\b(?:wait|hmm+|actually|mistake|error|wrong|incorrect|oops|oh\\s+no|however|but|correction|fix)\\b|\\?{2,}",
+  "doubt_lexicon_frozen": "\\b(?:bug|typo|re-?check|hold\\s+on|off\\s+by|should\\s+be|contradict\\w*|inconsist\\w*)\\b",
+  "experiment": "EXPG_PROGTRACE_PILOT",
+  "generator_funnels": {
+    "kc1": {
+      "accepted": 240,
+      "attempts": 304,
+      "rejects": {
+        "major5_site_value_in_listing": 6,
+        "no_axis_c_delta": 3,
+        "true_values_not_distinct": 50,
+        "true_values_not_distinct;major5_site_value_in_listing": 5
+      }
+    },
+    "kc5": {
+      "accepted": 240,
+      "attempts": 294,
+      "rejects": {
+        "major5_site_value_in_listing": 12,
+        "no_axis_c_delta": 4,
+        "true_values_not_distinct": 23,
+        "true_values_not_distinct;major5_site_value_in_listing": 15
+      }
+    },
+    "kr1": {
+      "accepted": 240,
+      "attempts": 272,
+      "rejects": {
+        "major5_site_value_in_listing": 2,
+        "true_values_not_distinct": 28,
+        "true_values_not_distinct;major5_site_value_in_listing": 2
+      }
+    },
+    "kr8": {
+      "accepted": 240,
+      "attempts": 320,
+      "rejects": {
+        "major5_site_value_in_listing": 23,
+        "true_values_not_distinct": 52,
+        "true_values_not_distinct;major5_site_value_in_listing": 5
+      }
+    }
+  },
+  "grammar_knobs": {
+    "const_max": 45,
+    "const_min": 2,
+    "deep_const_max": 9,
+    "filler_const_prob": 0.35,
+    "forward_use_gap": 2,
+    "loop_prob": 0.0,
+    "max_attempts_per_program": 400,
+    "mult_prob": 0.15,
+    "read_const_max": 20,
+    "value_max": 999,
+    "value_min": 1
+  },
+  "interpreter_note": "hand-rolled evaluator (interp.py); no exec() on generated programs anywhere; no CRUXEval rows in the pilot (optional arm skipped)",
+  "judge_model": "Qwen/Qwen2.5-32B-Instruct",
+  "model": "Qwen/Qwen2.5-32B-Instruct",
+  "model_revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+  "model_revision_pinned": false,
+  "oversample_per_shape": 240,
+  "per_cell_cap": 150,
+  "positions": [
+    "mid"
+  ],
+  "prompt": {
+    "gold_prefill": "line 1:",
+    "instruction_plus_exemplars_sha256": "a1a134d3c0b753c273365be903dba2cd5c5fc2d33fb443891448d4c384de578b",
+    "shared_across_conditions": true
+  },
+  "python": "3.11.15 (main, Jun  2 2026, 22:26:03) [Clang 22.1.3 ]",
+  "seed": 0,
+  "status_note": "Stage-0 + Stage-1 PILOT, pre-registration-exempt (PLAN2 section 8: the pilot gates go/no-go -- G-A, G-B -- and tunes grammar knobs; it scores no confirmatory hypothesis; H7 runs only in the full grid, which this runner refuses without the timestamped PLAN_PROGTRACE.md)."
+}

@@ -1,0 +1,14 @@
+{
+  "hard_budget_usd": 100.0,
+  "models": {
+    "claude-opus-4-1": {
+      "input_tokens": 498153,
+      "output_tokens": 71374,
+      "requests": 1000
+    }
+  },
+  "total_usd": 12.8253,
+  "usd_by_model": {
+    "claude-opus-4-1": 12.8253
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "arms": {
+    "baseline": {
+      "sentence_verbatim": "A partial trace of this program has already been written; it is shown below under \"Trace:\".",
+      "sha256": "499b7c0482488c78dad4504b0db48af1aee8e3e5642d18e2f1ad3d3560767eaa"
+    },
+    "human": {
+      "sentence_verbatim": "A person wrote the following partial trace. It is shown below under \"Trace:\".",
+      "sha256": "ca7b7e32f22f14b2bf40fd101e26f1b1b1a49c457e1674d9fb67afeb8318d391"
+    },
+    "other_model": {
+      "sentence_verbatim": "Another AI model wrote the following partial trace. It is shown below under \"Trace:\".",
+      "sha256": "52ce6118c3fb544f928c4255644504294695ccf466f90dc1520e407b53ba1516"
+    },
+    "self": {
+      "sentence_verbatim": "You wrote the following partial trace earlier. It is shown below under \"Trace:\".",
+      "sha256": "2c27aaeafc8052a7629d1437b49a71d1c315c80736ec4c2b239977819f8bdc29"
+    }
+  },
+  "cell_cap": 5,
+  "cells": [
+    "onehop_kc1",
+    "adjacent_contradiction",
+    "opfree_kr1"
+  ],
+  "created_at": "2026-07-29T09:09:16",
+  "dry": false,
+  "experiment": "E13C_BRIDGE_ATTRIBUTION",
+  "gold_policy": "golds REUSED READ-ONLY from e10_api_bridge raw_gold_<model>.jsonl (own-trace, 2026-07-27); gold prompts carry no partial trace so they are attribution-arm-independent",
+  "models": [
+    "gpt-4.1_bridge"
+  ],
+  "prompt_sha256": "a1a134d3c0b753c273365be903dba2cd5c5fc2d33fb443891448d4c384de578b",
+  "scoring": "validate.classify_run (existing EXPG 2-world path)",
+  "seed": 0,
+  "template_note": "baseline byte-identical to e10bridge.bridge_user_message (asserted); attributed arms = pinned spec sentence + constant locator sentence; ONLY the attribution proposition varies",
+  "worlds": {
+    "file_sha256": "8505ee8564ff6b3b896e56f6aba7470880a8afedb74ef531aafefcb2b5cc2c7a",
+    "n_programs": 250,
+    "program_id_fingerprint": "64583365b3ad48dc46b168be",
+    "source": "/lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/results/EXPH2_FRONTIER_FOLLOWUPS/regime2/programs.jsonl"
+  }
+}

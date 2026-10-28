@@ -1,0 +1,706 @@
+{
+  "arms": [
+    "baseline",
+    "self",
+    "other_model",
+    "human"
+  ],
+  "cells": [
+    "onehop_kc1",
+    "adjacent_contradiction",
+    "opfree_kr1"
+  ],
+  "created_at": "2026-07-29T16:37:02.448982+00:00",
+  "models": {
+    "claude-opus-4-8": {
+      "baseline|adjacent_contradiction": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.0,
+            0.0
+          ],
+          "count": 0,
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 1.0
+      },
+      "baseline|onehop_kc1": {
+        "absorbed": {
+          "cluster_boot95": [
+            1.0,
+            1.0
+          ],
+          "count": 60,
+          "rate": 1.0,
+          "wilson95": [
+            0.9398,
+            1.0
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 0.0
+      },
+      "baseline|opfree_kr1": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.15,
+            0.3833
+          ],
+          "count": 16,
+          "rate": 0.2667,
+          "wilson95": [
+            0.1713,
+            0.3901
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 0.7333
+      },
+      "human|adjacent_contradiction": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.0,
+            0.0
+          ],
+          "count": 0,
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 1.0
+      },
+      "human|onehop_kc1": {
+        "absorbed": {
+          "cluster_boot95": [
+            1.0,
+            1.0
+          ],
+          "count": 60,
+          "rate": 1.0,
+          "wilson95": [
+            0.9398,
+            1.0
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 0.0
+      },
+      "human|opfree_kr1": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.2,
+            0.4333
+          ],
+          "count": 19,
+          "rate": 0.3167,
+          "wilson95": [
+            0.2131,
+            0.4423
+          ]
+        },
+        "flagged_doubt_lex": 0.0167,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 0.6667
+      },
+      "other_model|adjacent_contradiction": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.0,
+            0.0
+          ],
+          "count": 0,
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 1.0
+      },
+      "other_model|onehop_kc1": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.95,
+            1.0
+          ],
+          "count": 59,
+          "rate": 0.9833,
+          "wilson95": [
+            0.9114,
+            0.9971
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 0.0
+      },
+      "other_model|opfree_kr1": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.0667,
+            0.2333
+          ],
+          "count": 9,
+          "rate": 0.15,
+          "wilson95": [
+            0.081,
+            0.2611
+          ]
+        },
+        "flagged_doubt_lex": 0.0167,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 0.8333
+      },
+      "self|adjacent_contradiction": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.0,
+            0.0
+          ],
+          "count": 0,
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 1.0
+      },
+      "self|onehop_kc1": {
+        "absorbed": {
+          "cluster_boot95": [
+            1.0,
+            1.0
+          ],
+          "count": 60,
+          "rate": 1.0,
+          "wilson95": [
+            0.9398,
+            1.0
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 0.0
+      },
+      "self|opfree_kr1": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.05,
+            0.2333
+          ],
+          "count": 8,
+          "rate": 0.1333,
+          "wilson95": [
+            0.0691,
+            0.2417
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 0.8667
+      }
+    },
+    "claude-sonnet-5": {
+      "baseline|adjacent_contradiction": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.0,
+            0.05
+          ],
+          "count": 1,
+          "rate": 0.0167,
+          "wilson95": [
+            0.0029,
+            0.0886
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 0.9833
+      },
+      "baseline|onehop_kc1": {
+        "absorbed": {
+          "cluster_boot95": [
+            1.0,
+            1.0
+          ],
+          "count": 59,
+          "rate": 1.0,
+          "wilson95": [
+            0.9389,
+            1.0
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 59,
+        "n_live": 59,
+        "program_n": 59,
+        "silently_corrected": 0.0
+      },
+      "baseline|opfree_kr1": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.0833,
+            0.2667
+          ],
+          "count": 10,
+          "rate": 0.1667,
+          "wilson95": [
+            0.0931,
+            0.2803
+          ]
+        },
+        "flagged_doubt_lex": 0.1333,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 0.7
+      },
+      "human|adjacent_contradiction": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.0,
+            0.0
+          ],
+          "count": 0,
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 1.0
+      },
+      "human|onehop_kc1": {
+        "absorbed": {
+          "cluster_boot95": [
+            1.0,
+            1.0
+          ],
+          "count": 59,
+          "rate": 1.0,
+          "wilson95": [
+            0.9389,
+            1.0
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 59,
+        "n_live": 59,
+        "program_n": 59,
+        "silently_corrected": 0.0
+      },
+      "human|opfree_kr1": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.0167,
+            0.1333
+          ],
+          "count": 4,
+          "rate": 0.0667,
+          "wilson95": [
+            0.0262,
+            0.1593
+          ]
+        },
+        "flagged_doubt_lex": 0.05,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 0.8833
+      },
+      "other_model|adjacent_contradiction": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.0,
+            0.05
+          ],
+          "count": 1,
+          "rate": 0.0167,
+          "wilson95": [
+            0.0029,
+            0.0886
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 0.9833
+      },
+      "other_model|onehop_kc1": {
+        "absorbed": {
+          "cluster_boot95": [
+            1.0,
+            1.0
+          ],
+          "count": 59,
+          "rate": 1.0,
+          "wilson95": [
+            0.9389,
+            1.0
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 59,
+        "n_live": 59,
+        "program_n": 59,
+        "silently_corrected": 0.0
+      },
+      "other_model|opfree_kr1": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.0,
+            0.0
+          ],
+          "count": 0,
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "flagged_doubt_lex": 0.1167,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 0.8833
+      },
+      "self|adjacent_contradiction": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.0,
+            0.05
+          ],
+          "count": 1,
+          "rate": 0.0167,
+          "wilson95": [
+            0.0029,
+            0.0886
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 0.9833
+      },
+      "self|onehop_kc1": {
+        "absorbed": {
+          "cluster_boot95": [
+            1.0,
+            1.0
+          ],
+          "count": 59,
+          "rate": 1.0,
+          "wilson95": [
+            0.9389,
+            1.0
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 59,
+        "n_live": 59,
+        "program_n": 59,
+        "silently_corrected": 0.0
+      },
+      "self|opfree_kr1": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.0,
+            0.0
+          ],
+          "count": 0,
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "flagged_doubt_lex": 0.05,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 0.95
+      }
+    },
+    "gpt-4.1": {
+      "baseline|adjacent_contradiction": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.0,
+            0.05
+          ],
+          "count": 1,
+          "rate": 0.0167,
+          "wilson95": [
+            0.0029,
+            0.0886
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 0.9833
+      },
+      "baseline|onehop_kc1": {
+        "absorbed": {
+          "cluster_boot95": [
+            1.0,
+            1.0
+          ],
+          "count": 60,
+          "rate": 1.0,
+          "wilson95": [
+            0.9398,
+            1.0
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 0.0
+      },
+      "baseline|opfree_kr1": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.9167,
+            1.0
+          ],
+          "count": 58,
+          "rate": 0.9667,
+          "wilson95": [
+            0.8864,
+            0.9908
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 0.0167
+      },
+      "human|adjacent_contradiction": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.0,
+            0.05
+          ],
+          "count": 1,
+          "rate": 0.0167,
+          "wilson95": [
+            0.0029,
+            0.0886
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 0.9833
+      },
+      "human|onehop_kc1": {
+        "absorbed": {
+          "cluster_boot95": [
+            1.0,
+            1.0
+          ],
+          "count": 60,
+          "rate": 1.0,
+          "wilson95": [
+            0.9398,
+            1.0
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 0.0
+      },
+      "human|opfree_kr1": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.9,
+            1.0
+          ],
+          "count": 57,
+          "rate": 0.95,
+          "wilson95": [
+            0.863,
+            0.9829
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 0.05
+      },
+      "other_model|adjacent_contradiction": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.0,
+            0.0
+          ],
+          "count": 0,
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.0602
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 1.0
+      },
+      "other_model|onehop_kc1": {
+        "absorbed": {
+          "cluster_boot95": [
+            1.0,
+            1.0
+          ],
+          "count": 60,
+          "rate": 1.0,
+          "wilson95": [
+            0.9398,
+            1.0
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 0.0
+      },
+      "other_model|opfree_kr1": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.8333,
+            0.9833
+          ],
+          "count": 55,
+          "rate": 0.9167,
+          "wilson95": [
+            0.8193,
+            0.9639
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 0.0667
+      },
+      "self|adjacent_contradiction": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.0,
+            0.05
+          ],
+          "count": 1,
+          "rate": 0.0167,
+          "wilson95": [
+            0.0029,
+            0.0886
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 0.9833
+      },
+      "self|onehop_kc1": {
+        "absorbed": {
+          "cluster_boot95": [
+            1.0,
+            1.0
+          ],
+          "count": 60,
+          "rate": 1.0,
+          "wilson95": [
+            0.9398,
+            1.0
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 0.0
+      },
+      "self|opfree_kr1": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.8,
+            0.9667
+          ],
+          "count": 53,
+          "rate": 0.8833,
+          "wilson95": [
+            0.7782,
+            0.9423
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 60,
+        "n_live": 60,
+        "program_n": 60,
+        "silently_corrected": 0.1167
+      }
+    }
+  }
+}

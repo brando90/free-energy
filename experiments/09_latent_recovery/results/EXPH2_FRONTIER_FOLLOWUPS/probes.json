@@ -1,0 +1,13 @@
+{
+  "anthropic_models_endpoint": {
+    "claude-opus-4-0": "404 not_found",
+    "claude-opus-4-1": "OK (claude-opus-4-1-20250805)",
+    "claude-sonnet-4-0": "404 not_found"
+  },
+  "gpt-5.1_reasoning_effort_none": "accepted at runtime (no substitution needed)",
+  "openai_completions_endpoint": {
+    "davinci-002": "ALIVE (base model; probe only, not run)",
+    "gpt-3.5-turbo-instruct": "ALIVE"
+  },
+  "probed_at": "2026-07-06T19:57:48.383621+00:00"
+}

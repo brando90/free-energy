@@ -1,0 +1,1281 @@
+{
+  "created_at": "2026-07-02T20:09:31.914956+00:00",
+  "denominator_convention": "unparsed and generation_failed retained in all denominators (house convention); parse_rate reported per cell (MC-1).",
+  "design_notes": {
+    "d_inf_semantics": "cat d=inf worlds carry the refuting-shaped head on an entity-disconnected body (filler-chain tail), so the complement is underivable from the entity's state (canonical d=inf per PLAN2 section 3, audited: measured d is None, falsity basis is CWA) while the lexical stimulus stays matched across d. This strengthens causal2's 'no refuting rule anywhere' wording to 'no REACHABLE refutation' - disclosed.",
+    "negation_tokens": "attribute world A / cat worlds contain exactly one 'not' (the refuting-shaped head), constant across d INCLUDING d=inf; the planted aff_false sentence itself is negation-free and byte-identical across d.",
+    "planted_token_frequency": "attribute cells and inert categorical cells: exactly 1. STRUCTURAL DEVIATION (disclosed): usable categorical cells are 2 by construction (refuting head + usable-branch body per MAJOR-2); held constant across d (incl. d=inf via a frequency-mention filler rule).",
+    "refuting_rule_position": "pinned to the last block slot before the facts at every d"
+  },
+  "experiment": "EXPD_MATCHED_GRADIENT_PILOT",
+  "funnel_consort": {
+    "gold_attempted": 200,
+    "gold_eligible": 180,
+    "gold_solved": 187,
+    "gold_valid_rederivation": 182,
+    "injection_audit_rejections": {
+      "gold_ineligible:gold_not_solved": 7,
+      "gold_ineligible:gold_not_validator_valid": 3,
+      "gold_ineligible:too_few_intermediate_entity_steps": 2,
+      "measured_d_mismatch": 1,
+      "t0_on_gold_path": 14
+    },
+    "manifest_rows": 217,
+    "validated_rows": 217,
+    "world_audit_failures": 0,
+    "worlds_generated": 200
+  },
+  "gates_plan2_section6": {
+    "aff_false_doubt_gradient_descriptive": {
+      "aff_false_attr_d1": {
+        "doubt": 0.0,
+        "doubt_ci": [
+          0.0,
+          0.0
+        ],
+        "n": 35,
+        "valid": 0.9714
+      },
+      "aff_false_attr_d3": {
+        "doubt": 0.0,
+        "doubt_ci": [
+          0.0,
+          0.0
+        ],
+        "n": 17,
+        "valid": 1.0
+      },
+      "aff_false_attr_d5": {
+        "doubt": 0.0,
+        "doubt_ci": [
+          0.0,
+          0.0
+        ],
+        "n": 15,
+        "valid": 1.0
+      }
+    },
+    "anchor_equivalence_mc2": {
+      "cells": {
+        "benign_paraphrase": {
+          "doubt_comparison": {
+            "diff_vs_locked_hf": -0.08,
+            "verdict": "backend_confounded_no_verdict"
+          },
+          "expa_locked": {
+            "n": 450,
+            "unparsed": 0.0244,
+            "valid_rederivation": 0.8489,
+            "verbalized_doubt": 0.08
+          },
+          "pilot": {
+            "doubt": 0.0,
+            "n": 35,
+            "unparsed": 0.0,
+            "valid_recovery": 1.0
+          },
+          "unparsed_tost": {
+            "ci90": [
+              -0.0364,
+              -0.0124
+            ],
+            "diff": -0.0244,
+            "margin": 0.1,
+            "tost_pass": true
+          },
+          "valid_recovery_tost": {
+            "ci90": [
+              0.1233,
+              0.1789
+            ],
+            "diff": 0.1511,
+            "margin": 0.1,
+            "tost_pass": false
+          }
+        },
+        "true_interruption": {
+          "doubt_comparison": {
+            "diff_vs_locked_hf": -0.02,
+            "verdict": "backend_confounded_no_verdict"
+          },
+          "expa_locked": {
+            "n": 450,
+            "unparsed": 0.0133,
+            "valid_rederivation": 0.8556,
+            "verbalized_doubt": 0.02
+          },
+          "pilot": {
+            "doubt": 0.0,
+            "n": 35,
+            "unparsed": 0.0,
+            "valid_recovery": 0.8857
+          },
+          "unparsed_tost": {
+            "ci90": [
+              -0.0222,
+              -0.0044
+            ],
+            "diff": -0.0133,
+            "margin": 0.1,
+            "tost_pass": true
+          },
+          "valid_recovery_tost": {
+            "ci90": [
+              -0.0625,
+              0.1227
+            ],
+            "diff": 0.0301,
+            "margin": 0.1,
+            "tost_pass": false
+          }
+        }
+      },
+      "doubt_caveat": "Backend confound (measured, improvement_plan/tooling/replay_full/REPLAY_FULL_REPORT.md): doubt absolute rates drop 8-15pp under vLLM vs locked HF numbers while structural metrics (valid_recovery, poisoning, unparsed) are cell-level robust (<=5pp deltas). The doubt-anchor comparison vs EXPA locked HF levels is reported WITHOUT a pass/fail verdict; a vLLM-basis EXPA anchor replay is the pending fix (owned upstream). The anchor TOST gate is evaluated on valid_recovery and unparsed only. Do not fail the pilot go/no-go on a doubt-anchor gap alone.",
+      "expa_provenance": "results/EXPA_GLOBAL_EXPANSION/summary_tables.json (locked, HF backend)",
+      "scope": "MOD-12: gates cross-generator continuity claims only, never H1-H4"
+    },
+    "gold_double_filter": {
+      "by_kind": {
+        "attr": {
+          "eligible": 0.8867,
+          "n": 150,
+          "solved": 0.92
+        },
+        "cat": {
+          "eligible": 0.94,
+          "n": 50,
+          "solved": 0.98
+        }
+      },
+      "eligible_rate": 0.9,
+      "solved_rate": 0.935,
+      "valid_rederivation_rate": 0.91
+    },
+    "gold_greedy_solve_rate": {
+      "n": 200,
+      "pass": true,
+      "target": 0.6,
+      "value": 0.935,
+      "wilson95": [
+        0.892,
+        0.9616
+      ]
+    },
+    "gold_prefix_identity_mc7": {
+      "details_by_d": {
+        "d1": {
+          "identical_prefix": 30,
+          "n": 34
+        },
+        "d3": {
+          "identical_prefix": 15,
+          "n": 16
+        },
+        "d5": {
+          "identical_prefix": 14,
+          "n": 15
+        }
+      },
+      "identical_prefix": 59,
+      "identical_prefix_rate": 0.9077,
+      "identical_si": 59,
+      "pairs_checked": 65
+    },
+    "joint_solve_mirrored_quadruples": {
+      "d1": {
+        "joint_eligible": 34,
+        "joint_solve_rate": 0.9714,
+        "pairs": 35
+      },
+      "d3": {
+        "joint_eligible": 16,
+        "joint_solve_rate": 0.8,
+        "pairs": 20
+      },
+      "d5": {
+        "joint_eligible": 15,
+        "joint_solve_rate": 0.75,
+        "pairs": 20
+      }
+    },
+    "parse_rate_per_cell": {
+      "aff_false_attr_d1": {
+        "n": 35,
+        "parse_rate": 1.0,
+        "pass_090": true,
+        "unparsed_count": 0,
+        "unparsed_rate": 0.0
+      },
+      "aff_false_attr_d3": {
+        "n": 17,
+        "parse_rate": 1.0,
+        "pass_090": true,
+        "unparsed_count": 0,
+        "unparsed_rate": 0.0
+      },
+      "aff_false_attr_d5": {
+        "n": 15,
+        "parse_rate": 1.0,
+        "pass_090": true,
+        "unparsed_count": 0,
+        "unparsed_rate": 0.0
+      },
+      "benign_paraphrase": {
+        "n": 35,
+        "parse_rate": 1.0,
+        "pass_090": true,
+        "unparsed_count": 0,
+        "unparsed_rate": 0.0
+      },
+      "cat_false_inert_d1": {
+        "n": 23,
+        "parse_rate": 0.913,
+        "pass_090": true,
+        "unparsed_count": 2,
+        "unparsed_rate": 0.087
+      },
+      "cat_false_usable_d1": {
+        "n": 23,
+        "parse_rate": 1.0,
+        "pass_090": true,
+        "unparsed_count": 0,
+        "unparsed_rate": 0.0
+      },
+      "neg_false_attr_d1": {
+        "n": 34,
+        "parse_rate": 1.0,
+        "pass_090": true,
+        "unparsed_count": 0,
+        "unparsed_rate": 0.0
+      },
+      "true_interruption": {
+        "n": 35,
+        "parse_rate": 1.0,
+        "pass_090": true,
+        "unparsed_count": 0,
+        "unparsed_rate": 0.0
+      }
+    },
+    "reuse_liveness_major2": {
+      "cells": {
+        "cat_false_inert_d1": {
+          "derivational_ci": [
+            0.0,
+            0.0
+          ],
+          "derivational_inj_dep": 0.0,
+          "doubt": 0.2174,
+          "echo": 0.0,
+          "n": 23,
+          "valid": 0.8696
+        },
+        "cat_false_usable_d1": {
+          "derivational_ci": [
+            0.6087,
+            0.913
+          ],
+          "derivational_inj_dep": 0.7826,
+          "doubt": 0.0,
+          "echo": 0.0,
+          "n": 23,
+          "valid": 0.2174
+        }
+      },
+      "note": "MAJOR-2 pilot check: derivational injection-dependence must be live (nonzero) in the usable cell and structurally ~0 in the inert cell; H4 MDE input."
+    }
+  },
+  "grammar_theorems": {
+    "T1": "ON-PATH x AFFIRMATIVE x FALSE is logically unconstructible: on-path positive entity facts are entailed-true by construction.",
+    "T2": "Rule bodies are always positive categories (validator.py:33-54): attribute claims are derivationally inert by grammar. Polarity purity is tested on attributes, reuse on categoricals - by necessity, not choice.",
+    "T3": "Attribute truth-decidability <=> finite d (attribute audit is open-world): attribute cells cannot exist at d=inf. Every inf anchor lives in the categorical family (cat_false_inf, genuinely CWA-false)."
+  },
+  "integrity": {
+    "all_anchor_cells_audited_true": true,
+    "all_measured_d_match": true,
+    "all_planted_false_cells_audited_false": true,
+    "duplicate_run_id_count": 0,
+    "no_attr_inf_cells": true,
+    "prompt_hashes": [
+      "f668299fe738b58ba81a6b8435bf284ac5eed682b99f5e7d4cccfee62c7ab93c"
+    ],
+    "unique_run_ids": true
+  },
+  "metrics_by_cell": {
+    "aff_false_attr_d1": {
+      "derailed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 35,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0989
+        ]
+      },
+      "doubt": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 35,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0989
+        ]
+      },
+      "family_n": 35,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 35,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0989
+        ]
+      },
+      "inj_derivational": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0857
+        ],
+        "n": 35,
+        "rate": 0.0286,
+        "wilson95": [
+          0.0051,
+          0.1453
+        ]
+      },
+      "inj_echo": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0857
+        ],
+        "n": 35,
+        "rate": 0.0286,
+        "wilson95": [
+          0.0051,
+          0.1453
+        ]
+      },
+      "n": 35,
+      "parroted": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 35,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0989
+        ]
+      },
+      "parse_rate": 1.0,
+      "poisoned": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0857
+        ],
+        "n": 35,
+        "rate": 0.0286,
+        "wilson95": [
+          0.0051,
+          0.1453
+        ]
+      },
+      "unparsed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 35,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0989
+        ]
+      },
+      "valid_recovery": {
+        "count": 34,
+        "family_cluster_bootstrap95": [
+          0.9143,
+          1.0
+        ],
+        "n": 35,
+        "rate": 0.9714,
+        "wilson95": [
+          0.8547,
+          0.9949
+        ]
+      }
+    },
+    "aff_false_attr_d3": {
+      "derailed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 17,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.1843
+        ]
+      },
+      "doubt": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 17,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.1843
+        ]
+      },
+      "family_n": 17,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 17,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.1843
+        ]
+      },
+      "inj_derivational": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 17,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.1843
+        ]
+      },
+      "inj_echo": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 17,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.1843
+        ]
+      },
+      "n": 17,
+      "parroted": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 17,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.1843
+        ]
+      },
+      "parse_rate": 1.0,
+      "poisoned": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 17,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.1843
+        ]
+      },
+      "unparsed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 17,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.1843
+        ]
+      },
+      "valid_recovery": {
+        "count": 17,
+        "family_cluster_bootstrap95": [
+          1.0,
+          1.0
+        ],
+        "n": 17,
+        "rate": 1.0,
+        "wilson95": [
+          0.8157,
+          1.0
+        ]
+      }
+    },
+    "aff_false_attr_d5": {
+      "derailed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 15,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.2039
+        ]
+      },
+      "doubt": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 15,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.2039
+        ]
+      },
+      "family_n": 15,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 15,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.2039
+        ]
+      },
+      "inj_derivational": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 15,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.2039
+        ]
+      },
+      "inj_echo": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 15,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.2039
+        ]
+      },
+      "n": 15,
+      "parroted": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 15,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.2039
+        ]
+      },
+      "parse_rate": 1.0,
+      "poisoned": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 15,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.2039
+        ]
+      },
+      "unparsed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 15,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.2039
+        ]
+      },
+      "valid_recovery": {
+        "count": 15,
+        "family_cluster_bootstrap95": [
+          1.0,
+          1.0
+        ],
+        "n": 15,
+        "rate": 1.0,
+        "wilson95": [
+          0.7961,
+          1.0
+        ]
+      }
+    },
+    "benign_paraphrase": {
+      "derailed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 35,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0989
+        ]
+      },
+      "doubt": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 35,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0989
+        ]
+      },
+      "family_n": 15,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 35,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0989
+        ]
+      },
+      "inj_derivational": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 35,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0989
+        ]
+      },
+      "inj_echo": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 35,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0989
+        ]
+      },
+      "n": 35,
+      "parroted": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 35,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0989
+        ]
+      },
+      "parse_rate": 1.0,
+      "poisoned": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 35,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0989
+        ]
+      },
+      "unparsed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 35,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0989
+        ]
+      },
+      "valid_recovery": {
+        "count": 35,
+        "family_cluster_bootstrap95": [
+          1.0,
+          1.0
+        ],
+        "n": 35,
+        "rate": 1.0,
+        "wilson95": [
+          0.9011,
+          1.0
+        ]
+      }
+    },
+    "cat_false_inert_d1": {
+      "derailed": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.1304
+        ],
+        "n": 23,
+        "rate": 0.0435,
+        "wilson95": [
+          0.0077,
+          0.2099
+        ]
+      },
+      "doubt": {
+        "count": 5,
+        "family_cluster_bootstrap95": [
+          0.087,
+          0.3913
+        ],
+        "n": 23,
+        "rate": 0.2174,
+        "wilson95": [
+          0.0966,
+          0.419
+        ]
+      },
+      "family_n": 23,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 23,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.1431
+        ]
+      },
+      "inj_derivational": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 23,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.1431
+        ]
+      },
+      "inj_echo": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 23,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.1431
+        ]
+      },
+      "n": 23,
+      "parroted": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 23,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.1431
+        ]
+      },
+      "parse_rate": 0.913,
+      "poisoned": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 23,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.1431
+        ]
+      },
+      "unparsed": {
+        "count": 2,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.2174
+        ],
+        "n": 23,
+        "rate": 0.087,
+        "wilson95": [
+          0.0242,
+          0.268
+        ]
+      },
+      "valid_recovery": {
+        "count": 20,
+        "family_cluster_bootstrap95": [
+          0.6957,
+          1.0
+        ],
+        "n": 23,
+        "rate": 0.8696,
+        "wilson95": [
+          0.6787,
+          0.9546
+        ]
+      }
+    },
+    "cat_false_usable_d1": {
+      "derailed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 23,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.1431
+        ]
+      },
+      "doubt": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 23,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.1431
+        ]
+      },
+      "family_n": 23,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 23,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.1431
+        ]
+      },
+      "inj_derivational": {
+        "count": 18,
+        "family_cluster_bootstrap95": [
+          0.6087,
+          0.913
+        ],
+        "n": 23,
+        "rate": 0.7826,
+        "wilson95": [
+          0.581,
+          0.9034
+        ]
+      },
+      "inj_echo": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 23,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.1431
+        ]
+      },
+      "n": 23,
+      "parroted": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 23,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.1431
+        ]
+      },
+      "parse_rate": 1.0,
+      "poisoned": {
+        "count": 18,
+        "family_cluster_bootstrap95": [
+          0.6087,
+          0.913
+        ],
+        "n": 23,
+        "rate": 0.7826,
+        "wilson95": [
+          0.581,
+          0.9034
+        ]
+      },
+      "unparsed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 23,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.1431
+        ]
+      },
+      "valid_recovery": {
+        "count": 5,
+        "family_cluster_bootstrap95": [
+          0.087,
+          0.3913
+        ],
+        "n": 23,
+        "rate": 0.2174,
+        "wilson95": [
+          0.0966,
+          0.419
+        ]
+      }
+    },
+    "neg_false_attr_d1": {
+      "derailed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 34,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.1015
+        ]
+      },
+      "doubt": {
+        "count": 1,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0882
+        ],
+        "n": 34,
+        "rate": 0.0294,
+        "wilson95": [
+          0.0052,
+          0.1492
+        ]
+      },
+      "family_n": 34,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 34,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.1015
+        ]
+      },
+      "inj_derivational": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 34,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.1015
+        ]
+      },
+      "inj_echo": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 34,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.1015
+        ]
+      },
+      "n": 34,
+      "parroted": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 34,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.1015
+        ]
+      },
+      "parse_rate": 1.0,
+      "poisoned": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 34,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.1015
+        ]
+      },
+      "unparsed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 34,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.1015
+        ]
+      },
+      "valid_recovery": {
+        "count": 34,
+        "family_cluster_bootstrap95": [
+          1.0,
+          1.0
+        ],
+        "n": 34,
+        "rate": 1.0,
+        "wilson95": [
+          0.8985,
+          1.0
+        ]
+      }
+    },
+    "true_interruption": {
+      "derailed": {
+        "count": 2,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.129
+        ],
+        "n": 35,
+        "rate": 0.0571,
+        "wilson95": [
+          0.0158,
+          0.1861
+        ]
+      },
+      "doubt": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 35,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0989
+        ]
+      },
+      "family_n": 15,
+      "generation_failed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 35,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0989
+        ]
+      },
+      "inj_derivational": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 35,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0989
+        ]
+      },
+      "inj_echo": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 35,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0989
+        ]
+      },
+      "n": 35,
+      "parroted": {
+        "count": 2,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.1389
+        ],
+        "n": 35,
+        "rate": 0.0571,
+        "wilson95": [
+          0.0158,
+          0.1861
+        ]
+      },
+      "parse_rate": 1.0,
+      "poisoned": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 35,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0989
+        ]
+      },
+      "unparsed": {
+        "count": 0,
+        "family_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "n": 35,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0989
+        ]
+      },
+      "valid_recovery": {
+        "count": 31,
+        "family_cluster_bootstrap95": [
+          0.7879,
+          0.9714
+        ],
+        "n": 35,
+        "rate": 0.8857,
+        "wilson95": [
+          0.7405,
+          0.9546
+        ]
+      }
+    }
+  }
+}

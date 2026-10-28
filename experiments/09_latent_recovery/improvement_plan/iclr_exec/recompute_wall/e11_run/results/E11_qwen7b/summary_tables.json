@@ -1,0 +1,838 @@
+{
+  "cells": {
+    "k0_bare": {
+      "absorbed": {
+        "cluster_boot95": [
+          0.6652,
+          0.7548
+        ],
+        "count": 962,
+        "rate": 0.7126,
+        "wilson95": [
+          0.6879,
+          0.7361
+        ]
+      },
+      "flagged": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0028
+        ]
+      },
+      "label_counts": {
+        "absorbed": 962,
+        "silently_corrected": 276,
+        "unresolved": 112
+      },
+      "n": 1350,
+      "program_n": 150,
+      "silently_corrected": {
+        "cluster_boot95": [
+          0.1667,
+          0.2437
+        ],
+        "count": 276,
+        "rate": 0.2044,
+        "wilson95": [
+          0.1838,
+          0.2268
+        ]
+      },
+      "unresolved": {
+        "cluster_boot95": [
+          0.0556,
+          0.1133
+        ],
+        "count": 112,
+        "rate": 0.083,
+        "wilson95": [
+          0.0694,
+          0.0989
+        ]
+      }
+    },
+    "k1_bare": {
+      "absorbed": {
+        "cluster_boot95": [
+          0.7296,
+          0.8319
+        ],
+        "count": 1059,
+        "rate": 0.7844,
+        "wilson95": [
+          0.7617,
+          0.8056
+        ]
+      },
+      "flagged": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0028
+        ]
+      },
+      "label_counts": {
+        "absorbed": 1059,
+        "silently_corrected": 8,
+        "unresolved": 283
+      },
+      "n": 1350,
+      "program_n": 150,
+      "silently_corrected": {
+        "cluster_boot95": [
+          0.0,
+          0.0178
+        ],
+        "count": 8,
+        "rate": 0.0059,
+        "wilson95": [
+          0.003,
+          0.0117
+        ]
+      },
+      "unresolved": {
+        "cluster_boot95": [
+          0.1637,
+          0.26
+        ],
+        "count": 283,
+        "rate": 0.2096,
+        "wilson95": [
+          0.1888,
+          0.2322
+        ]
+      }
+    },
+    "k1_full": {
+      "absorbed": {
+        "cluster_boot95": [
+          0.9119,
+          0.9563
+        ],
+        "count": 1264,
+        "rate": 0.9363,
+        "wilson95": [
+          0.922,
+          0.9481
+        ]
+      },
+      "flagged": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0028
+        ]
+      },
+      "label_counts": {
+        "absorbed": 1264,
+        "unresolved": 86
+      },
+      "n": 1350,
+      "program_n": 150,
+      "silently_corrected": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0028
+        ]
+      },
+      "unresolved": {
+        "cluster_boot95": [
+          0.043,
+          0.0874
+        ],
+        "count": 86,
+        "rate": 0.0637,
+        "wilson95": [
+          0.0519,
+          0.078
+        ]
+      }
+    },
+    "k1_partial": {
+      "absorbed": {
+        "cluster_boot95": [
+          0.8978,
+          0.9519
+        ],
+        "count": 1250,
+        "rate": 0.9259,
+        "wilson95": [
+          0.9107,
+          0.9387
+        ]
+      },
+      "flagged": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0028
+        ]
+      },
+      "label_counts": {
+        "absorbed": 1250,
+        "silently_corrected": 5,
+        "unresolved": 95
+      },
+      "n": 1350,
+      "program_n": 150,
+      "silently_corrected": {
+        "cluster_boot95": [
+          0.0,
+          0.0111
+        ],
+        "count": 5,
+        "rate": 0.0037,
+        "wilson95": [
+          0.0016,
+          0.0086
+        ]
+      },
+      "unresolved": {
+        "cluster_boot95": [
+          0.0452,
+          0.0985
+        ],
+        "count": 95,
+        "rate": 0.0704,
+        "wilson95": [
+          0.0579,
+          0.0853
+        ]
+      }
+    },
+    "k2_bare": {
+      "absorbed": {
+        "cluster_boot95": [
+          0.9089,
+          0.9704
+        ],
+        "count": 1273,
+        "rate": 0.943,
+        "wilson95": [
+          0.9293,
+          0.9541
+        ]
+      },
+      "flagged": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0028
+        ]
+      },
+      "label_counts": {
+        "absorbed": 1273,
+        "silently_corrected": 1,
+        "unresolved": 76
+      },
+      "n": 1350,
+      "program_n": 150,
+      "silently_corrected": {
+        "cluster_boot95": [
+          0.0,
+          0.0022
+        ],
+        "count": 1,
+        "rate": 0.0007,
+        "wilson95": [
+          0.0001,
+          0.0042
+        ]
+      },
+      "unresolved": {
+        "cluster_boot95": [
+          0.0289,
+          0.0904
+        ],
+        "count": 76,
+        "rate": 0.0563,
+        "wilson95": [
+          0.0452,
+          0.0699
+        ]
+      }
+    },
+    "k2_full": {
+      "absorbed": {
+        "cluster_boot95": [
+          0.9222,
+          0.9785
+        ],
+        "count": 1286,
+        "rate": 0.9526,
+        "wilson95": [
+          0.9399,
+          0.9627
+        ]
+      },
+      "flagged": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0028
+        ]
+      },
+      "label_counts": {
+        "absorbed": 1286,
+        "unresolved": 64
+      },
+      "n": 1350,
+      "program_n": 150,
+      "silently_corrected": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0028
+        ]
+      },
+      "unresolved": {
+        "cluster_boot95": [
+          0.0215,
+          0.0778
+        ],
+        "count": 64,
+        "rate": 0.0474,
+        "wilson95": [
+          0.0373,
+          0.0601
+        ]
+      }
+    },
+    "k2_partial": {
+      "absorbed": {
+        "cluster_boot95": [
+          0.9193,
+          0.9785
+        ],
+        "count": 1284,
+        "rate": 0.9511,
+        "wilson95": [
+          0.9383,
+          0.9614
+        ]
+      },
+      "flagged": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0028
+        ]
+      },
+      "label_counts": {
+        "absorbed": 1284,
+        "silently_corrected": 1,
+        "unresolved": 65
+      },
+      "n": 1350,
+      "program_n": 150,
+      "silently_corrected": {
+        "cluster_boot95": [
+          0.0,
+          0.0022
+        ],
+        "count": 1,
+        "rate": 0.0007,
+        "wilson95": [
+          0.0001,
+          0.0042
+        ]
+      },
+      "unresolved": {
+        "cluster_boot95": [
+          0.0215,
+          0.08
+        ],
+        "count": 65,
+        "rate": 0.0481,
+        "wilson95": [
+          0.038,
+          0.0609
+        ]
+      }
+    },
+    "k3_bare": {
+      "absorbed": {
+        "cluster_boot95": [
+          0.8941,
+          0.9667
+        ],
+        "count": 1259,
+        "rate": 0.9326,
+        "wilson95": [
+          0.918,
+          0.9448
+        ]
+      },
+      "flagged": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0028
+        ]
+      },
+      "label_counts": {
+        "absorbed": 1259,
+        "unresolved": 91
+      },
+      "n": 1350,
+      "program_n": 150,
+      "silently_corrected": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0028
+        ]
+      },
+      "unresolved": {
+        "cluster_boot95": [
+          0.0326,
+          0.1052
+        ],
+        "count": 91,
+        "rate": 0.0674,
+        "wilson95": [
+          0.0552,
+          0.082
+        ]
+      }
+    },
+    "k3_full": {
+      "absorbed": {
+        "cluster_boot95": [
+          0.9348,
+          0.9881
+        ],
+        "count": 1302,
+        "rate": 0.9644,
+        "wilson95": [
+          0.9532,
+          0.9731
+        ]
+      },
+      "flagged": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0028
+        ]
+      },
+      "label_counts": {
+        "absorbed": 1302,
+        "silently_corrected": 8,
+        "unresolved": 40
+      },
+      "n": 1350,
+      "program_n": 150,
+      "silently_corrected": {
+        "cluster_boot95": [
+          0.0,
+          0.0178
+        ],
+        "count": 8,
+        "rate": 0.0059,
+        "wilson95": [
+          0.003,
+          0.0117
+        ]
+      },
+      "unresolved": {
+        "cluster_boot95": [
+          0.0089,
+          0.0578
+        ],
+        "count": 40,
+        "rate": 0.0296,
+        "wilson95": [
+          0.0218,
+          0.0401
+        ]
+      }
+    },
+    "k3_partial": {
+      "absorbed": {
+        "cluster_boot95": [
+          0.9274,
+          0.98
+        ],
+        "count": 1291,
+        "rate": 0.9563,
+        "wilson95": [
+          0.944,
+          0.966
+        ]
+      },
+      "flagged": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.0028
+        ]
+      },
+      "label_counts": {
+        "absorbed": 1291,
+        "silently_corrected": 1,
+        "unresolved": 58
+      },
+      "n": 1350,
+      "program_n": 150,
+      "silently_corrected": {
+        "cluster_boot95": [
+          0.0,
+          0.0022
+        ],
+        "count": 1,
+        "rate": 0.0007,
+        "wilson95": [
+          0.0001,
+          0.0042
+        ]
+      },
+      "unresolved": {
+        "cluster_boot95": [
+          0.0193,
+          0.0719
+        ],
+        "count": 58,
+        "rate": 0.043,
+        "wilson95": [
+          0.0334,
+          0.0551
+        ]
+      }
+    },
+    "k5_bare": {
+      "absorbed": {
+        "cluster_boot95": [
+          0.8485,
+          1.0
+        ],
+        "count": 187,
+        "rate": 0.9444,
+        "wilson95": [
+          0.9033,
+          0.9687
+        ]
+      },
+      "flagged": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.019
+        ]
+      },
+      "label_counts": {
+        "absorbed": 187,
+        "unresolved": 11
+      },
+      "n": 198,
+      "program_n": 22,
+      "silently_corrected": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.019
+        ]
+      },
+      "unresolved": {
+        "cluster_boot95": [
+          0.0,
+          0.1515
+        ],
+        "count": 11,
+        "rate": 0.0556,
+        "wilson95": [
+          0.0313,
+          0.0967
+        ]
+      }
+    },
+    "k5_full": {
+      "absorbed": {
+        "cluster_boot95": [
+          1.0,
+          1.0
+        ],
+        "count": 198,
+        "rate": 1.0,
+        "wilson95": [
+          0.981,
+          1.0
+        ]
+      },
+      "flagged": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.019
+        ]
+      },
+      "label_counts": {
+        "absorbed": 198
+      },
+      "n": 198,
+      "program_n": 22,
+      "silently_corrected": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.019
+        ]
+      },
+      "unresolved": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.019
+        ]
+      }
+    },
+    "k5_partial": {
+      "absorbed": {
+        "cluster_boot95": [
+          0.7424,
+          1.0
+        ],
+        "count": 175,
+        "rate": 0.8838,
+        "wilson95": [
+          0.8317,
+          0.9213
+        ]
+      },
+      "flagged": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.019
+        ]
+      },
+      "label_counts": {
+        "absorbed": 175,
+        "unresolved": 23
+      },
+      "n": 198,
+      "program_n": 22,
+      "silently_corrected": {
+        "cluster_boot95": [
+          0.0,
+          0.0
+        ],
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.019
+        ]
+      },
+      "unresolved": {
+        "cluster_boot95": [
+          0.0,
+          0.2576
+        ],
+        "count": 23,
+        "rate": 0.1162,
+        "wilson95": [
+          0.0787,
+          0.1683
+        ]
+      }
+    }
+  },
+  "contrasts": {
+    "k0_vs_k1_gap": {
+      "absorbed_k0": 0.7126,
+      "absorbed_k1_bare": 0.7844,
+      "gap_k1_minus_k0": 0.0718
+    },
+    "monotonic_trend": {
+      "bare_rate_by_k": {
+        "0": 0.7126,
+        "1": 0.7844,
+        "2": 0.943,
+        "3": 0.9326,
+        "5": 0.9444
+      },
+      "isotonic_nondecreasing": false,
+      "k5_minus_k0": 0.2318,
+      "spearman_rho": 0.9
+    },
+    "opacity_restoration": {
+      "per_k": {
+        "k1": {
+          "bare": 0.7844,
+          "full": 0.9363,
+          "restoration_bare_minus_full": -0.1519
+        },
+        "k2": {
+          "bare": 0.943,
+          "full": 0.9526,
+          "restoration_bare_minus_full": -0.0096
+        },
+        "k3": {
+          "bare": 0.9326,
+          "full": 0.9644,
+          "restoration_bare_minus_full": -0.0318
+        },
+        "k5": {
+          "bare": 0.9444,
+          "full": 1.0,
+          "restoration_bare_minus_full": -0.0556
+        }
+      },
+      "pooled_kge1": {
+        "bare": 0.8894,
+        "full": 0.9534,
+        "restoration": -0.064
+      }
+    }
+  },
+  "created_at": "2026-07-28T08:49:14",
+  "experiment": "E11_DEPTH_OPACITY",
+  "flag_channel": "judge_reject if judged else doubt_lex (frozen lexicon)",
+  "gold_cohort": {
+    "0": {
+      "eligible": 258,
+      "kept": 150,
+      "solve_rate": 0.1433,
+      "tested": 1800
+    },
+    "1": {
+      "eligible": 255,
+      "kept": 150,
+      "solve_rate": 0.1417,
+      "tested": 1800
+    },
+    "2": {
+      "eligible": 241,
+      "kept": 150,
+      "solve_rate": 0.1339,
+      "tested": 1800
+    },
+    "3": {
+      "eligible": 162,
+      "kept": 150,
+      "solve_rate": 0.09,
+      "tested": 1800
+    },
+    "5": {
+      "eligible": 22,
+      "kept": 22,
+      "solve_rate": 0.0122,
+      "tested": 1800
+    }
+  },
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "power_flags": {
+    "k0_bare": "ok",
+    "k1_bare": "ok",
+    "k1_full": "ok",
+    "k1_partial": "ok",
+    "k2_bare": "ok",
+    "k2_full": "ok",
+    "k2_partial": "ok",
+    "k3_bare": "ok",
+    "k3_full": "ok",
+    "k3_partial": "ok",
+    "k5_bare": "INVALID_underpowered",
+    "k5_full": "INVALID_underpowered",
+    "k5_partial": "INVALID_underpowered"
+  },
+  "stats_note": "Wilson95 + program-cluster bootstrap95 (n_boot=1000); cluster=program family (program_id)"
+}

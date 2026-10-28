@@ -1,0 +1,152 @@
+{
+  "arm": "A1",
+  "cells": {
+    "k0_bare": {
+      "absorbed": {
+        "count": 2,
+        "rate": 0.0083,
+        "wilson95": [
+          0.0023,
+          0.0299
+        ]
+      },
+      "alias": "adjacent_contradiction",
+      "flagged": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.0158
+        ]
+      },
+      "label_counts": {
+        "absorbed": 2,
+        "silently_corrected": 238
+      },
+      "n": 240,
+      "output_tokens_mean": 195.5,
+      "program_n": 60,
+      "shows_recompute_rate": 0.9917,
+      "silently_corrected": {
+        "count": 238,
+        "rate": 0.9917,
+        "wilson95": [
+          0.9701,
+          0.9977
+        ]
+      },
+      "unresolved": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.0158
+        ]
+      }
+    },
+    "k1_bare": {
+      "absorbed": {
+        "count": 240,
+        "rate": 1.0,
+        "wilson95": [
+          0.9842,
+          1.0
+        ]
+      },
+      "alias": "onehop_kc1",
+      "flagged": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.0158
+        ]
+      },
+      "label_counts": {
+        "absorbed": 240
+      },
+      "n": 240,
+      "output_tokens_mean": 163.0,
+      "program_n": 60,
+      "shows_recompute_rate": 0.1,
+      "silently_corrected": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.0158
+        ]
+      },
+      "unresolved": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.0158
+        ]
+      }
+    },
+    "k5_bare": {
+      "absorbed": {
+        "count": 240,
+        "rate": 1.0,
+        "wilson95": [
+          0.9842,
+          1.0
+        ]
+      },
+      "alias": "deep_kc5",
+      "flagged": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.0158
+        ]
+      },
+      "label_counts": {
+        "absorbed": 240
+      },
+      "n": 240,
+      "output_tokens_mean": 163.3,
+      "program_n": 60,
+      "shows_recompute_rate": 0.0667,
+      "silently_corrected": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.0158
+        ]
+      },
+      "unresolved": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson95": [
+          -0.0,
+          0.0158
+        ]
+      }
+    }
+  },
+  "created_at": "2026-07-28T08:59:00",
+  "experiment": "E12_FIXES_LADDER",
+  "flag_channel": "doubt_lex frozen lexicon (no 32B judge on API arm)",
+  "gold_cohort": {
+    "0": {
+      "eligible": 91,
+      "kept": 60
+    },
+    "1": {
+      "eligible": 83,
+      "kept": 60
+    },
+    "5": {
+      "eligible": 90,
+      "kept": 60
+    }
+  },
+  "instruction_sha256": "a7a293bf439de93b",
+  "model": "claude-haiku-4-5",
+  "this_run_usd": 2.1552
+}

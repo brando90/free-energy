@@ -1,0 +1,130 @@
+{
+  "arms": [
+    "baseline",
+    "self"
+  ],
+  "cells": [
+    "onehop_kc1",
+    "adjacent_contradiction",
+    "opfree_kr1"
+  ],
+  "created_at": "2026-07-29T16:09:28.085046+00:00",
+  "models": {
+    "gpt-4.1": {
+      "baseline|adjacent_contradiction": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.0,
+            0.0
+          ],
+          "count": 0,
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.4345
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 5,
+        "n_live": 5,
+        "program_n": 5,
+        "silently_corrected": 1.0
+      },
+      "baseline|onehop_kc1": {
+        "absorbed": {
+          "cluster_boot95": [
+            1.0,
+            1.0
+          ],
+          "count": 5,
+          "rate": 1.0,
+          "wilson95": [
+            0.5655,
+            1.0
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 5,
+        "n_live": 5,
+        "program_n": 5,
+        "silently_corrected": 0.0
+      },
+      "baseline|opfree_kr1": {
+        "absorbed": {
+          "cluster_boot95": [
+            1.0,
+            1.0
+          ],
+          "count": 5,
+          "rate": 1.0,
+          "wilson95": [
+            0.5655,
+            1.0
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 5,
+        "n_live": 5,
+        "program_n": 5,
+        "silently_corrected": 0.0
+      },
+      "self|adjacent_contradiction": {
+        "absorbed": {
+          "cluster_boot95": [
+            0.0,
+            0.0
+          ],
+          "count": 0,
+          "rate": 0.0,
+          "wilson95": [
+            -0.0,
+            0.4345
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 5,
+        "n_live": 5,
+        "program_n": 5,
+        "silently_corrected": 1.0
+      },
+      "self|onehop_kc1": {
+        "absorbed": {
+          "cluster_boot95": [
+            1.0,
+            1.0
+          ],
+          "count": 5,
+          "rate": 1.0,
+          "wilson95": [
+            0.5655,
+            1.0
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 5,
+        "n_live": 5,
+        "program_n": 5,
+        "silently_corrected": 0.0
+      },
+      "self|opfree_kr1": {
+        "absorbed": {
+          "cluster_boot95": [
+            1.0,
+            1.0
+          ],
+          "count": 5,
+          "rate": 1.0,
+          "wilson95": [
+            0.5655,
+            1.0
+          ]
+        },
+        "flagged_doubt_lex": 0.0,
+        "n": 5,
+        "n_live": 5,
+        "program_n": 5,
+        "silently_corrected": 0.0
+      }
+    }
+  }
+}

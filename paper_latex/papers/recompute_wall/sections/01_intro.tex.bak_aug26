@@ -1,0 +1,22 @@
+\section{Introduction}
+\label{sec:intro}
+
+Language models increasingly solve problems by producing long chains of intermediate steps \citep{nye2021scratchpad,wei2022cot,kojima2022zeroshot}, and much of the value of a chain is that later steps rest on earlier ones. This structure is also a liability. A false intermediate step, whether a misremembered fact, a mis-copied number, or a wrong calculation, does not announce itself, and everything downstream inherits it. Whether this matters turns on a question that is rarely measured directly: when a false step is already present in a model's own reasoning, does the model notice it or build on it?
+
+Two trends make the question pressing. Reasoning models are now trained to check their own work, spending test-time computation to reread and reconsider what they have written \citep{deepseekr1,snell2024testtime}. Agent systems chain the output of one step into the input of the next and treat a produced value as settled once it is written \citep{yao2023react,kapoor2024agents}. Both bet that a wrong step has some chance of being caught before it propagates. The self-correction literature is more skeptical \citep{huang2024,stechly2024selfverification,tsui2025}, but it measures whether models can fix errors when asked to look for them, which is a different question from whether they catch errors they were never told were there.
+
+We measure the unprompted behavior directly. A model solves a short program by writing its execution trace one line at a time; we take its own correct trace, replace a single line with a false value, and let it continue with no indication that anything changed. We grade the continuation by re-executing the program, so whether the model reused the false value or the true one is an arithmetic fact rather than a judgment. The outcome is governed by one property of the planted error. A false value that contradicts a number written earlier in the trace is rejected by capable models, which continue from the true value. A false value that is itself a computed result, catchable only by redoing the computation, is taken at face value and carried through the rest of the trace. Section~\ref{sec:setup} gives the protocol and a worked example.
+
+This pattern holds across thirteen models from five developers, from a 1.5-billion-parameter open-weight model to frontier systems. Computed falsehoods are absorbed in 88 to 100 percent of continuations by every model that solves the base task reliably; the two weakest models solve too few programs to establish the contrast. Readable falsehoods are caught at a rate that climbs with model quality, from near zero for the smallest model to 99 percent for the strongest. This contrast is the paper's central observation: the ability to check a value one can reread improves sharply with scale and training, and the ability to check a value one must recompute does not improve at all.
+
+The boundary between the two regimes is sharp. Varying how many operations separate the planted value from a re-readable source, we find that for the frontier model absorption is a step function: 2 percent when the contradiction is directly readable, and 100 percent as soon as a single operation stands between the model and the truth.
+
+The failure is not an inability to recompute. Printing the value's full derivation beside it, so the error is again visible by reading, does not restore checking on any model tested; models defer to content formatted as already computed. Nor is the failure fixable by instruction. Telling the model to verify each computed value before using it, even with a worked example of an error being caught and corrected, leaves absorption at 100 percent.
+
+We make the following contributions:
+\begin{itemize}
+\item \textbf{An audited instrument} for measuring whether a model reuses a planted false step in its own reasoning, graded by re-executing the program so that no human or model judge is required.
+\item \textbf{The read--recompute asymmetry} across thirteen models: computed falsehoods are absorbed near universally, while readable ones are caught at a rate that rises with model quality.
+\item \textbf{The onset of the wall}, a step function in verification depth that, for the frontier model, flips from near-zero to near-total absorption at a single operation.
+\item \textbf{Two mechanism results}: the failure is deference to computed-looking content, since showing the derivation does not help, and it resists instruction, since four escalating prompts leave it unchanged.
+\end{itemize}

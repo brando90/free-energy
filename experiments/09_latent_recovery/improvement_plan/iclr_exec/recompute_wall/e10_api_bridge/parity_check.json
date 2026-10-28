@@ -1,0 +1,24 @@
+{
+  "checks": [
+    {
+      "bridge_contains_instruction": true,
+      "gold_prefill_no_trailing_ws": true,
+      "program_id": "kr1_507786_00100000",
+      "user_equals_expg_builder": true
+    },
+    {
+      "bridge_contains_instruction": true,
+      "gold_prefill_no_trailing_ws": true,
+      "program_id": "kr1_507786_00100002",
+      "user_equals_expg_builder": true
+    },
+    {
+      "bridge_contains_instruction": true,
+      "gold_prefill_no_trailing_ws": true,
+      "program_id": "kr1_507786_00100003",
+      "user_equals_expg_builder": true
+    }
+  ],
+  "note": "prefill user turn byte-identical to tf.make_user_message; completion = user + '\\n' + prefix (single stream); bridge = same instruction/exemplars/program with prefix in the user turn (disclosed). All three scored by classify_run on the continuation's numbers (format-robust).",
+  "pass": true
+}

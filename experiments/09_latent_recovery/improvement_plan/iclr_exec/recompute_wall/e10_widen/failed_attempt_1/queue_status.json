@@ -1,0 +1,96 @@
+{
+  "current": {
+    "done": "2026-07-27T19:01:03.704806+00:00",
+    "model": "ALL",
+    "rc": 0,
+    "stage": "queue_complete",
+    "started": "2026-07-27T19:01:03.480958+00:00"
+  },
+  "history": [
+    {
+      "at": "2026-07-27T19:01:02.573131+00:00",
+      "event": "start",
+      "model": "qwen1p5b",
+      "rc": null,
+      "stage": "generate"
+    },
+    {
+      "at": "2026-07-27T19:01:02.753824+00:00",
+      "event": "done",
+      "model": "qwen1p5b",
+      "rc": 127,
+      "stage": "generate"
+    },
+    {
+      "at": "2026-07-27T19:01:02.810767+00:00",
+      "event": "start",
+      "model": "qwen7b",
+      "rc": null,
+      "stage": "generate"
+    },
+    {
+      "at": "2026-07-27T19:01:02.984120+00:00",
+      "event": "done",
+      "model": "qwen7b",
+      "rc": 127,
+      "stage": "generate"
+    },
+    {
+      "at": "2026-07-27T19:01:03.031620+00:00",
+      "event": "start",
+      "model": "olmo7b",
+      "rc": null,
+      "stage": "generate"
+    },
+    {
+      "at": "2026-07-27T19:01:03.212058+00:00",
+      "event": "done",
+      "model": "olmo7b",
+      "rc": 127,
+      "stage": "generate"
+    },
+    {
+      "at": "2026-07-27T19:01:03.261941+00:00",
+      "event": "start",
+      "model": "llama8b",
+      "rc": null,
+      "stage": "generate"
+    },
+    {
+      "at": "2026-07-27T19:01:03.435452+00:00",
+      "event": "done",
+      "model": "llama8b",
+      "rc": 127,
+      "stage": "generate"
+    },
+    {
+      "at": "2026-07-27T19:01:03.480958+00:00",
+      "event": "start",
+      "model": "qwen32b",
+      "rc": null,
+      "stage": "generate"
+    },
+    {
+      "at": "2026-07-27T19:01:03.661441+00:00",
+      "event": "done",
+      "model": "qwen32b",
+      "rc": 127,
+      "stage": "generate"
+    },
+    {
+      "at": "2026-07-27T19:01:03.704806+00:00",
+      "event": "done",
+      "model": "ALL",
+      "rc": 0,
+      "stage": "queue_complete"
+    }
+  ],
+  "queue": [
+    "qwen1p5b",
+    "qwen7b",
+    "olmo7b",
+    "llama8b",
+    "qwen32b"
+  ],
+  "updated_at": "2026-07-27T19:01:03.704830+00:00"
+}

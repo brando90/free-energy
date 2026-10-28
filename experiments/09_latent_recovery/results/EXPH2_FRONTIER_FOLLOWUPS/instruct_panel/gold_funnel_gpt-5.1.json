@@ -1,0 +1,9 @@
+{
+  "attempts": 200,
+  "eligible": 118,
+  "gold_key": "gpt-5.1",
+  "reached_target": true,
+  "solve_rate": 0.99,
+  "solved": 198,
+  "world_eligible": 0
+}

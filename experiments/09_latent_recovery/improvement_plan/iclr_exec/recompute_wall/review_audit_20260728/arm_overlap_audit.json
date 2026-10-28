@@ -1,0 +1,2318 @@
+{
+ "haiku_gold_generation_worlds": {
+  "per_arm_per_k": {
+   "A0": {
+    "0": 110,
+    "1": 110,
+    "5": 110
+   },
+   "A1": {
+    "0": 110,
+    "1": 110,
+    "5": 110
+   },
+   "A2": {
+    "0": 110,
+    "1": 110,
+    "5": 110
+   },
+   "A3": {
+    "0": 110,
+    "1": 110,
+    "5": 110
+   }
+  },
+  "same_worlds_entered_gold_phase_all4": true
+ },
+ "haiku_gold_trace_identity": {
+  "failed_generation_per_arm": {
+   "A0": 0,
+   "A1": 0,
+   "A2": 0,
+   "A3": 0
+  },
+  "gold_identical_within_4way_intersection": {
+   "0": {
+    "gold_text_identical_all4": 58,
+    "intersection_n": 58
+   },
+   "1": {
+    "gold_text_identical_all4": 55,
+    "intersection_n": 55
+   },
+   "5": {
+    "gold_text_identical_all4": 50,
+    "intersection_n": 50
+   }
+  },
+  "n_gold_rows_per_arm": {
+   "A0": 330,
+   "A1": 330,
+   "A2": 330,
+   "A3": 330
+  },
+  "pairwise_gold_text_diff": {
+   "A0vsA1": {
+    "differs_by_k": {
+     "0": 4,
+     "1": 10,
+     "5": 10
+    },
+    "n_text_differs": 24,
+    "shared_gold_keys": 330
+   },
+   "A0vsA2": {
+    "differs_by_k": {
+     "0": 6,
+     "1": 12,
+     "5": 17
+    },
+    "n_text_differs": 35,
+    "shared_gold_keys": 330
+   },
+   "A0vsA3": {
+    "differs_by_k": {
+     "0": 5,
+     "1": 14,
+     "5": 18
+    },
+    "n_text_differs": 37,
+    "shared_gold_keys": 330
+   },
+   "A1vsA2": {
+    "differs_by_k": {
+     "0": 4,
+     "1": 6,
+     "5": 14
+    },
+    "n_text_differs": 24,
+    "shared_gold_keys": 330
+   },
+   "A1vsA3": {
+    "differs_by_k": {
+     "0": 5,
+     "1": 13,
+     "5": 18
+    },
+    "n_text_differs": 36,
+    "shared_gold_keys": 330
+   },
+   "A2vsA3": {
+    "differs_by_k": {
+     "0": 3,
+     "1": 11,
+     "5": 16
+    },
+    "n_text_differs": 30,
+    "shared_gold_keys": 330
+   }
+  }
+ },
+ "intersection_reanalysis": {
+  "haiku": {
+   "0": {
+    "delta_vs_A0": {
+     "A1": {
+      "full_minus_A0": 0.0,
+      "intersection_minus_A0": 0.0
+     },
+     "A2": {
+      "full_minus_A0": 0.0167,
+      "intersection_minus_A0": 0.0173
+     },
+     "A3": {
+      "full_minus_A0": 0.025,
+      "intersection_minus_A0": 0.0216
+     }
+    },
+    "n_intersection_programs": 58,
+    "per_arm": {
+     "A0": {
+      "full": {
+       "absorbed": 2,
+       "labels": {
+        "absorbed": 2,
+        "flagged": 1,
+        "silently_corrected": 237
+       },
+       "n": 240,
+       "rate": 0.0083,
+       "wilson95": [
+        0.0023,
+        0.0299
+       ]
+      },
+      "intersection": {
+       "absorbed": 2,
+       "labels": {
+        "absorbed": 2,
+        "flagged": 1,
+        "silently_corrected": 229
+       },
+       "n": 232,
+       "rate": 0.0086,
+       "wilson95": [
+        0.0024,
+        0.0309
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 0,
+       "labels": {
+        "silently_corrected": 58
+       },
+       "n": 58,
+       "rate": 0.0,
+       "wilson95": [
+        0.0,
+        0.0621
+       ]
+      }
+     },
+     "A1": {
+      "full": {
+       "absorbed": 2,
+       "labels": {
+        "absorbed": 2,
+        "silently_corrected": 238
+       },
+       "n": 240,
+       "rate": 0.0083,
+       "wilson95": [
+        0.0023,
+        0.0299
+       ]
+      },
+      "intersection": {
+       "absorbed": 2,
+       "labels": {
+        "absorbed": 2,
+        "silently_corrected": 230
+       },
+       "n": 232,
+       "rate": 0.0086,
+       "wilson95": [
+        0.0024,
+        0.0309
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 0,
+       "labels": {
+        "silently_corrected": 58
+       },
+       "n": 58,
+       "rate": 0.0,
+       "wilson95": [
+        0.0,
+        0.0621
+       ]
+      }
+     },
+     "A2": {
+      "full": {
+       "absorbed": 6,
+       "labels": {
+        "absorbed": 6,
+        "silently_corrected": 223,
+        "unresolved": 11
+       },
+       "n": 240,
+       "rate": 0.025,
+       "wilson95": [
+        0.0115,
+        0.0535
+       ]
+      },
+      "intersection": {
+       "absorbed": 6,
+       "labels": {
+        "absorbed": 6,
+        "silently_corrected": 215,
+        "unresolved": 11
+       },
+       "n": 232,
+       "rate": 0.0259,
+       "wilson95": [
+        0.0119,
+        0.0553
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 0,
+       "labels": {
+        "silently_corrected": 54,
+        "unresolved": 4
+       },
+       "n": 58,
+       "rate": 0.0,
+       "wilson95": [
+        0.0,
+        0.0621
+       ]
+      }
+     },
+     "A3": {
+      "full": {
+       "absorbed": 8,
+       "labels": {
+        "absorbed": 8,
+        "flagged": 2,
+        "silently_corrected": 218,
+        "unresolved": 12
+       },
+       "n": 240,
+       "rate": 0.0333,
+       "wilson95": [
+        0.017,
+        0.0644
+       ]
+      },
+      "intersection": {
+       "absorbed": 7,
+       "labels": {
+        "absorbed": 7,
+        "flagged": 2,
+        "silently_corrected": 213,
+        "unresolved": 10
+       },
+       "n": 232,
+       "rate": 0.0302,
+       "wilson95": [
+        0.0147,
+        0.061
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 0,
+       "labels": {
+        "silently_corrected": 56,
+        "unresolved": 2
+       },
+       "n": 58,
+       "rate": 0.0,
+       "wilson95": [
+        0.0,
+        0.0621
+       ]
+      }
+     }
+    }
+   },
+   "1": {
+    "delta_vs_A0": {
+     "A1": {
+      "full_minus_A0": 0.0,
+      "intersection_minus_A0": 0.0
+     },
+     "A2": {
+      "full_minus_A0": 0.0,
+      "intersection_minus_A0": 0.0
+     },
+     "A3": {
+      "full_minus_A0": 0.0,
+      "intersection_minus_A0": 0.0
+     }
+    },
+    "n_intersection_programs": 55,
+    "per_arm": {
+     "A0": {
+      "full": {
+       "absorbed": 240,
+       "labels": {
+        "absorbed": 240
+       },
+       "n": 240,
+       "rate": 1.0,
+       "wilson95": [
+        0.9842,
+        1.0
+       ]
+      },
+      "intersection": {
+       "absorbed": 220,
+       "labels": {
+        "absorbed": 220
+       },
+       "n": 220,
+       "rate": 1.0,
+       "wilson95": [
+        0.9828,
+        1.0
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 55,
+       "labels": {
+        "absorbed": 55
+       },
+       "n": 55,
+       "rate": 1.0,
+       "wilson95": [
+        0.9347,
+        1.0
+       ]
+      }
+     },
+     "A1": {
+      "full": {
+       "absorbed": 240,
+       "labels": {
+        "absorbed": 240
+       },
+       "n": 240,
+       "rate": 1.0,
+       "wilson95": [
+        0.9842,
+        1.0
+       ]
+      },
+      "intersection": {
+       "absorbed": 220,
+       "labels": {
+        "absorbed": 220
+       },
+       "n": 220,
+       "rate": 1.0,
+       "wilson95": [
+        0.9828,
+        1.0
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 55,
+       "labels": {
+        "absorbed": 55
+       },
+       "n": 55,
+       "rate": 1.0,
+       "wilson95": [
+        0.9347,
+        1.0
+       ]
+      }
+     },
+     "A2": {
+      "full": {
+       "absorbed": 240,
+       "labels": {
+        "absorbed": 240
+       },
+       "n": 240,
+       "rate": 1.0,
+       "wilson95": [
+        0.9842,
+        1.0
+       ]
+      },
+      "intersection": {
+       "absorbed": 220,
+       "labels": {
+        "absorbed": 220
+       },
+       "n": 220,
+       "rate": 1.0,
+       "wilson95": [
+        0.9828,
+        1.0
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 55,
+       "labels": {
+        "absorbed": 55
+       },
+       "n": 55,
+       "rate": 1.0,
+       "wilson95": [
+        0.9347,
+        1.0
+       ]
+      }
+     },
+     "A3": {
+      "full": {
+       "absorbed": 240,
+       "labels": {
+        "absorbed": 240
+       },
+       "n": 240,
+       "rate": 1.0,
+       "wilson95": [
+        0.9842,
+        1.0
+       ]
+      },
+      "intersection": {
+       "absorbed": 220,
+       "labels": {
+        "absorbed": 220
+       },
+       "n": 220,
+       "rate": 1.0,
+       "wilson95": [
+        0.9828,
+        1.0
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 55,
+       "labels": {
+        "absorbed": 55
+       },
+       "n": 55,
+       "rate": 1.0,
+       "wilson95": [
+        0.9347,
+        1.0
+       ]
+      }
+     }
+    }
+   },
+   "5": {
+    "delta_vs_A0": {
+     "A1": {
+      "full_minus_A0": 0.0,
+      "intersection_minus_A0": 0.0
+     },
+     "A2": {
+      "full_minus_A0": 0.0,
+      "intersection_minus_A0": 0.0
+     },
+     "A3": {
+      "full_minus_A0": 0.0,
+      "intersection_minus_A0": 0.0
+     }
+    },
+    "n_intersection_programs": 50,
+    "per_arm": {
+     "A0": {
+      "full": {
+       "absorbed": 240,
+       "labels": {
+        "absorbed": 240
+       },
+       "n": 240,
+       "rate": 1.0,
+       "wilson95": [
+        0.9842,
+        1.0
+       ]
+      },
+      "intersection": {
+       "absorbed": 200,
+       "labels": {
+        "absorbed": 200
+       },
+       "n": 200,
+       "rate": 1.0,
+       "wilson95": [
+        0.9812,
+        1.0
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 50,
+       "labels": {
+        "absorbed": 50
+       },
+       "n": 50,
+       "rate": 1.0,
+       "wilson95": [
+        0.9286,
+        1.0
+       ]
+      }
+     },
+     "A1": {
+      "full": {
+       "absorbed": 240,
+       "labels": {
+        "absorbed": 240
+       },
+       "n": 240,
+       "rate": 1.0,
+       "wilson95": [
+        0.9842,
+        1.0
+       ]
+      },
+      "intersection": {
+       "absorbed": 200,
+       "labels": {
+        "absorbed": 200
+       },
+       "n": 200,
+       "rate": 1.0,
+       "wilson95": [
+        0.9812,
+        1.0
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 50,
+       "labels": {
+        "absorbed": 50
+       },
+       "n": 50,
+       "rate": 1.0,
+       "wilson95": [
+        0.9286,
+        1.0
+       ]
+      }
+     },
+     "A2": {
+      "full": {
+       "absorbed": 240,
+       "labels": {
+        "absorbed": 240
+       },
+       "n": 240,
+       "rate": 1.0,
+       "wilson95": [
+        0.9842,
+        1.0
+       ]
+      },
+      "intersection": {
+       "absorbed": 200,
+       "labels": {
+        "absorbed": 200
+       },
+       "n": 200,
+       "rate": 1.0,
+       "wilson95": [
+        0.9812,
+        1.0
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 50,
+       "labels": {
+        "absorbed": 50
+       },
+       "n": 50,
+       "rate": 1.0,
+       "wilson95": [
+        0.9286,
+        1.0
+       ]
+      }
+     },
+     "A3": {
+      "full": {
+       "absorbed": 240,
+       "labels": {
+        "absorbed": 240
+       },
+       "n": 240,
+       "rate": 1.0,
+       "wilson95": [
+        0.9842,
+        1.0
+       ]
+      },
+      "intersection": {
+       "absorbed": 200,
+       "labels": {
+        "absorbed": 200
+       },
+       "n": 200,
+       "rate": 1.0,
+       "wilson95": [
+        0.9812,
+        1.0
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 50,
+       "labels": {
+        "absorbed": 50
+       },
+       "n": 50,
+       "rate": 1.0,
+       "wilson95": [
+        0.9286,
+        1.0
+       ]
+      }
+     }
+    }
+   }
+  },
+  "llama8b": {
+   "0": {
+    "delta_vs_A0": {
+     "A1": {
+      "full_minus_A0": 0.0071,
+      "intersection_minus_A0": 0.0278
+     },
+     "A2": {
+      "full_minus_A0": 0.0514,
+      "intersection_minus_A0": 0.0766
+     },
+     "A3": {
+      "full_minus_A0": 0.0014,
+      "intersection_minus_A0": 0.0296
+     }
+    },
+    "n_intersection_programs": 82,
+    "per_arm": {
+     "A0": {
+      "full": {
+       "absorbed": 434,
+       "labels": {
+        "absorbed": 434,
+        "flagged": 10,
+        "silently_corrected": 188,
+        "unresolved": 68
+       },
+       "n": 700,
+       "rate": 0.62,
+       "wilson95": [
+        0.5835,
+        0.6552
+       ]
+      },
+      "intersection": {
+       "absorbed": 350,
+       "labels": {
+        "absorbed": 350,
+        "flagged": 9,
+        "silently_corrected": 164,
+        "unresolved": 51
+       },
+       "n": 574,
+       "rate": 0.6098,
+       "wilson95": [
+        0.5692,
+        0.6488
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 56,
+       "labels": {
+        "absorbed": 56,
+        "silently_corrected": 18,
+        "unresolved": 8
+       },
+       "n": 82,
+       "rate": 0.6829,
+       "wilson95": [
+        0.576,
+        0.7735
+       ]
+      }
+     },
+     "A1": {
+      "full": {
+       "absorbed": 439,
+       "labels": {
+        "absorbed": 439,
+        "flagged": 5,
+        "silently_corrected": 201,
+        "unresolved": 55
+       },
+       "n": 700,
+       "rate": 0.6271,
+       "wilson95": [
+        0.5907,
+        0.6622
+       ]
+      },
+      "intersection": {
+       "absorbed": 366,
+       "labels": {
+        "absorbed": 366,
+        "flagged": 4,
+        "silently_corrected": 158,
+        "unresolved": 46
+       },
+       "n": 574,
+       "rate": 0.6376,
+       "wilson95": [
+        0.5975,
+        0.6759
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 56,
+       "labels": {
+        "absorbed": 56,
+        "silently_corrected": 20,
+        "unresolved": 6
+       },
+       "n": 82,
+       "rate": 0.6829,
+       "wilson95": [
+        0.576,
+        0.7735
+       ]
+      }
+     },
+     "A2": {
+      "full": {
+       "absorbed": 470,
+       "labels": {
+        "absorbed": 470,
+        "flagged": 6,
+        "silently_corrected": 119,
+        "unresolved": 105
+       },
+       "n": 700,
+       "rate": 0.6714,
+       "wilson95": [
+        0.6358,
+        0.7052
+       ]
+      },
+      "intersection": {
+       "absorbed": 394,
+       "labels": {
+        "absorbed": 394,
+        "flagged": 4,
+        "silently_corrected": 97,
+        "unresolved": 79
+       },
+       "n": 574,
+       "rate": 0.6864,
+       "wilson95": [
+        0.6473,
+        0.723
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 65,
+       "labels": {
+        "absorbed": 65,
+        "silently_corrected": 11,
+        "unresolved": 6
+       },
+       "n": 82,
+       "rate": 0.7927,
+       "wilson95": [
+        0.6928,
+        0.8663
+       ]
+      }
+     },
+     "A3": {
+      "full": {
+       "absorbed": 435,
+       "labels": {
+        "absorbed": 435,
+        "flagged": 14,
+        "silently_corrected": 116,
+        "unresolved": 135
+       },
+       "n": 700,
+       "rate": 0.6214,
+       "wilson95": [
+        0.5849,
+        0.6566
+       ]
+      },
+      "intersection": {
+       "absorbed": 367,
+       "labels": {
+        "absorbed": 367,
+        "flagged": 12,
+        "silently_corrected": 93,
+        "unresolved": 102
+       },
+       "n": 574,
+       "rate": 0.6394,
+       "wilson95": [
+        0.5993,
+        0.6776
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 62,
+       "labels": {
+        "absorbed": 62,
+        "silently_corrected": 12,
+        "unresolved": 8
+       },
+       "n": 82,
+       "rate": 0.7561,
+       "wilson95": [
+        0.6531,
+        0.8362
+       ]
+      }
+     }
+    }
+   },
+   "1": {
+    "delta_vs_A0": {
+     "A1": {
+      "full_minus_A0": 0.0014,
+      "intersection_minus_A0": -0.0032
+     },
+     "A2": {
+      "full_minus_A0": -0.0015,
+      "intersection_minus_A0": -0.0016
+     },
+     "A3": {
+      "full_minus_A0": 0.0071,
+      "intersection_minus_A0": 0.0
+     }
+    },
+    "n_intersection_programs": 88,
+    "per_arm": {
+     "A0": {
+      "full": {
+       "absorbed": 692,
+       "labels": {
+        "absorbed": 692,
+        "unresolved": 8
+       },
+       "n": 700,
+       "rate": 0.9886,
+       "wilson95": [
+        0.9776,
+        0.9942
+       ]
+      },
+      "intersection": {
+       "absorbed": 613,
+       "labels": {
+        "absorbed": 613,
+        "unresolved": 3
+       },
+       "n": 616,
+       "rate": 0.9951,
+       "wilson95": [
+        0.9858,
+        0.9983
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 88,
+       "labels": {
+        "absorbed": 88
+       },
+       "n": 88,
+       "rate": 1.0,
+       "wilson95": [
+        0.9582,
+        1.0
+       ]
+      }
+     },
+     "A1": {
+      "full": {
+       "absorbed": 693,
+       "labels": {
+        "absorbed": 693,
+        "unresolved": 7
+       },
+       "n": 700,
+       "rate": 0.99,
+       "wilson95": [
+        0.9795,
+        0.9951
+       ]
+      },
+      "intersection": {
+       "absorbed": 611,
+       "labels": {
+        "absorbed": 611,
+        "unresolved": 5
+       },
+       "n": 616,
+       "rate": 0.9919,
+       "wilson95": [
+        0.9811,
+        0.9965
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 88,
+       "labels": {
+        "absorbed": 88
+       },
+       "n": 88,
+       "rate": 1.0,
+       "wilson95": [
+        0.9582,
+        1.0
+       ]
+      }
+     },
+     "A2": {
+      "full": {
+       "absorbed": 691,
+       "labels": {
+        "absorbed": 691,
+        "unresolved": 9
+       },
+       "n": 700,
+       "rate": 0.9871,
+       "wilson95": [
+        0.9757,
+        0.9932
+       ]
+      },
+      "intersection": {
+       "absorbed": 612,
+       "labels": {
+        "absorbed": 612,
+        "unresolved": 4
+       },
+       "n": 616,
+       "rate": 0.9935,
+       "wilson95": [
+        0.9834,
+        0.9975
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 88,
+       "labels": {
+        "absorbed": 88
+       },
+       "n": 88,
+       "rate": 1.0,
+       "wilson95": [
+        0.9582,
+        1.0
+       ]
+      }
+     },
+     "A3": {
+      "full": {
+       "absorbed": 697,
+       "labels": {
+        "absorbed": 697,
+        "unresolved": 3
+       },
+       "n": 700,
+       "rate": 0.9957,
+       "wilson95": [
+        0.9875,
+        0.9985
+       ]
+      },
+      "intersection": {
+       "absorbed": 613,
+       "labels": {
+        "absorbed": 613,
+        "unresolved": 3
+       },
+       "n": 616,
+       "rate": 0.9951,
+       "wilson95": [
+        0.9858,
+        0.9983
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 88,
+       "labels": {
+        "absorbed": 88
+       },
+       "n": 88,
+       "rate": 1.0,
+       "wilson95": [
+        0.9582,
+        1.0
+       ]
+      }
+     }
+    }
+   },
+   "5": {
+    "delta_vs_A0": {
+     "A1": {
+      "full_minus_A0": 0.0148,
+      "intersection_minus_A0": 0.0204
+     },
+     "A2": {
+      "full_minus_A0": 0.0529,
+      "intersection_minus_A0": 0.0817
+     },
+     "A3": {
+      "full_minus_A0": 0.0505,
+      "intersection_minus_A0": 0.0817
+     }
+    },
+    "n_intersection_programs": 14,
+    "per_arm": {
+     "A0": {
+      "full": {
+       "absorbed": 170,
+       "labels": {
+        "absorbed": 170,
+        "unresolved": 19
+       },
+       "n": 189,
+       "rate": 0.8995,
+       "wilson95": [
+        0.8483,
+        0.9347
+       ]
+      },
+      "intersection": {
+       "absorbed": 83,
+       "labels": {
+        "absorbed": 83,
+        "unresolved": 15
+       },
+       "n": 98,
+       "rate": 0.8469,
+       "wilson95": [
+        0.7627,
+        0.905
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 12,
+       "labels": {
+        "absorbed": 12,
+        "unresolved": 2
+       },
+       "n": 14,
+       "rate": 0.8571,
+       "wilson95": [
+        0.6006,
+        0.9599
+       ]
+      }
+     },
+     "A1": {
+      "full": {
+       "absorbed": 192,
+       "labels": {
+        "absorbed": 192,
+        "unresolved": 18
+       },
+       "n": 210,
+       "rate": 0.9143,
+       "wilson95": [
+        0.8686,
+        0.9451
+       ]
+      },
+      "intersection": {
+       "absorbed": 85,
+       "labels": {
+        "absorbed": 85,
+        "unresolved": 13
+       },
+       "n": 98,
+       "rate": 0.8673,
+       "wilson95": [
+        0.7862,
+        0.9208
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 12,
+       "labels": {
+        "absorbed": 12,
+        "unresolved": 2
+       },
+       "n": 14,
+       "rate": 0.8571,
+       "wilson95": [
+        0.6006,
+        0.9599
+       ]
+      }
+     },
+     "A2": {
+      "full": {
+       "absorbed": 140,
+       "labels": {
+        "absorbed": 140,
+        "unresolved": 7
+       },
+       "n": 147,
+       "rate": 0.9524,
+       "wilson95": [
+        0.905,
+        0.9767
+       ]
+      },
+      "intersection": {
+       "absorbed": 91,
+       "labels": {
+        "absorbed": 91,
+        "unresolved": 7
+       },
+       "n": 98,
+       "rate": 0.9286,
+       "wilson95": [
+        0.8598,
+        0.965
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 13,
+       "labels": {
+        "absorbed": 13,
+        "unresolved": 1
+       },
+       "n": 14,
+       "rate": 0.9286,
+       "wilson95": [
+        0.6853,
+        0.9873
+       ]
+      }
+     },
+     "A3": {
+      "full": {
+       "absorbed": 133,
+       "labels": {
+        "absorbed": 133,
+        "unresolved": 7
+       },
+       "n": 140,
+       "rate": 0.95,
+       "wilson95": [
+        0.9004,
+        0.9756
+       ]
+      },
+      "intersection": {
+       "absorbed": 91,
+       "labels": {
+        "absorbed": 91,
+        "unresolved": 7
+       },
+       "n": 98,
+       "rate": 0.9286,
+       "wilson95": [
+        0.8598,
+        0.965
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 13,
+       "labels": {
+        "absorbed": 13,
+        "unresolved": 1
+       },
+       "n": 14,
+       "rate": 0.9286,
+       "wilson95": [
+        0.6853,
+        0.9873
+       ]
+      }
+     }
+    }
+   }
+  },
+  "qwen7b": {
+   "0": {
+    "delta_vs_A0": {
+     "A1": {
+      "full_minus_A0": -0.0014,
+      "intersection_minus_A0": -0.0122
+     },
+     "A2": {
+      "full_minus_A0": 0.0858,
+      "intersection_minus_A0": 0.0889
+     },
+     "A3": {
+      "full_minus_A0": 0.1172,
+      "intersection_minus_A0": 0.1237
+     }
+    },
+    "n_intersection_programs": 82,
+    "per_arm": {
+     "A0": {
+      "full": {
+       "absorbed": 523,
+       "labels": {
+        "absorbed": 523,
+        "silently_corrected": 121,
+        "unresolved": 56
+       },
+       "n": 700,
+       "rate": 0.7471,
+       "wilson95": [
+        0.7137,
+        0.7779
+       ]
+      },
+      "intersection": {
+       "absorbed": 423,
+       "labels": {
+        "absorbed": 423,
+        "silently_corrected": 100,
+        "unresolved": 51
+       },
+       "n": 574,
+       "rate": 0.7369,
+       "wilson95": [
+        0.6994,
+        0.7713
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 71,
+       "labels": {
+        "absorbed": 71,
+        "silently_corrected": 9,
+        "unresolved": 2
+       },
+       "n": 82,
+       "rate": 0.8659,
+       "wilson95": [
+        0.7755,
+        0.9234
+       ]
+      }
+     },
+     "A1": {
+      "full": {
+       "absorbed": 522,
+       "labels": {
+        "absorbed": 522,
+        "silently_corrected": 117,
+        "unresolved": 61
+       },
+       "n": 700,
+       "rate": 0.7457,
+       "wilson95": [
+        0.7122,
+        0.7766
+       ]
+      },
+      "intersection": {
+       "absorbed": 416,
+       "labels": {
+        "absorbed": 416,
+        "silently_corrected": 103,
+        "unresolved": 55
+       },
+       "n": 574,
+       "rate": 0.7247,
+       "wilson95": [
+        0.6868,
+        0.7597
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 68,
+       "labels": {
+        "absorbed": 68,
+        "silently_corrected": 9,
+        "unresolved": 5
+       },
+       "n": 82,
+       "rate": 0.8293,
+       "wilson95": [
+        0.7336,
+        0.8955
+       ]
+      }
+     },
+     "A2": {
+      "full": {
+       "absorbed": 583,
+       "labels": {
+        "absorbed": 583,
+        "flagged": 7,
+        "silently_corrected": 63,
+        "unresolved": 47
+       },
+       "n": 700,
+       "rate": 0.8329,
+       "wilson95": [
+        0.8034,
+        0.8587
+       ]
+      },
+      "intersection": {
+       "absorbed": 474,
+       "labels": {
+        "absorbed": 474,
+        "flagged": 6,
+        "silently_corrected": 50,
+        "unresolved": 44
+       },
+       "n": 574,
+       "rate": 0.8258,
+       "wilson95": [
+        0.7926,
+        0.8546
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 79,
+       "labels": {
+        "absorbed": 79,
+        "silently_corrected": 1,
+        "unresolved": 2
+       },
+       "n": 82,
+       "rate": 0.9634,
+       "wilson95": [
+        0.8979,
+        0.9875
+       ]
+      }
+     },
+     "A3": {
+      "full": {
+       "absorbed": 605,
+       "labels": {
+        "absorbed": 605,
+        "flagged": 4,
+        "silently_corrected": 51,
+        "unresolved": 40
+       },
+       "n": 700,
+       "rate": 0.8643,
+       "wilson95": [
+        0.8369,
+        0.8877
+       ]
+      },
+      "intersection": {
+       "absorbed": 494,
+       "labels": {
+        "absorbed": 494,
+        "flagged": 4,
+        "silently_corrected": 41,
+        "unresolved": 35
+       },
+       "n": 574,
+       "rate": 0.8606,
+       "wilson95": [
+        0.8299,
+        0.8866
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 80,
+       "labels": {
+        "absorbed": 80,
+        "unresolved": 2
+       },
+       "n": 82,
+       "rate": 0.9756,
+       "wilson95": [
+        0.9154,
+        0.9933
+       ]
+      }
+     }
+    }
+   },
+   "1": {
+    "delta_vs_A0": {
+     "A1": {
+      "full_minus_A0": 0.0057,
+      "intersection_minus_A0": -0.0039
+     },
+     "A2": {
+      "full_minus_A0": 0.0029,
+      "intersection_minus_A0": -0.0078
+     },
+     "A3": {
+      "full_minus_A0": 0.0157,
+      "intersection_minus_A0": 0.002
+     }
+    },
+    "n_intersection_programs": 73,
+    "per_arm": {
+     "A0": {
+      "full": {
+       "absorbed": 554,
+       "labels": {
+        "absorbed": 554,
+        "unresolved": 146
+       },
+       "n": 700,
+       "rate": 0.7914,
+       "wilson95": [
+        0.7598,
+        0.8199
+       ]
+      },
+      "intersection": {
+       "absorbed": 403,
+       "labels": {
+        "absorbed": 403,
+        "unresolved": 108
+       },
+       "n": 511,
+       "rate": 0.7886,
+       "wilson95": [
+        0.7512,
+        0.8218
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 62,
+       "labels": {
+        "absorbed": 62,
+        "unresolved": 11
+       },
+       "n": 73,
+       "rate": 0.8493,
+       "wilson95": [
+        0.75,
+        0.9137
+       ]
+      }
+     },
+     "A1": {
+      "full": {
+       "absorbed": 558,
+       "labels": {
+        "absorbed": 558,
+        "unresolved": 142
+       },
+       "n": 700,
+       "rate": 0.7971,
+       "wilson95": [
+        0.7658,
+        0.8253
+       ]
+      },
+      "intersection": {
+       "absorbed": 401,
+       "labels": {
+        "absorbed": 401,
+        "unresolved": 110
+       },
+       "n": 511,
+       "rate": 0.7847,
+       "wilson95": [
+        0.747,
+        0.8182
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 62,
+       "labels": {
+        "absorbed": 62,
+        "unresolved": 11
+       },
+       "n": 73,
+       "rate": 0.8493,
+       "wilson95": [
+        0.75,
+        0.9137
+       ]
+      }
+     },
+     "A2": {
+      "full": {
+       "absorbed": 556,
+       "labels": {
+        "absorbed": 556,
+        "unresolved": 144
+       },
+       "n": 700,
+       "rate": 0.7943,
+       "wilson95": [
+        0.7628,
+        0.8226
+       ]
+      },
+      "intersection": {
+       "absorbed": 399,
+       "labels": {
+        "absorbed": 399,
+        "unresolved": 112
+       },
+       "n": 511,
+       "rate": 0.7808,
+       "wilson95": [
+        0.7429,
+        0.8145
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 61,
+       "labels": {
+        "absorbed": 61,
+        "unresolved": 12
+       },
+       "n": 73,
+       "rate": 0.8356,
+       "wilson95": [
+        0.7343,
+        0.9034
+       ]
+      }
+     },
+     "A3": {
+      "full": {
+       "absorbed": 565,
+       "labels": {
+        "absorbed": 565,
+        "unresolved": 135
+       },
+       "n": 700,
+       "rate": 0.8071,
+       "wilson95": [
+        0.7763,
+        0.8347
+       ]
+      },
+      "intersection": {
+       "absorbed": 404,
+       "labels": {
+        "absorbed": 404,
+        "unresolved": 107
+       },
+       "n": 511,
+       "rate": 0.7906,
+       "wilson95": [
+        0.7532,
+        0.8237
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 61,
+       "labels": {
+        "absorbed": 61,
+        "unresolved": 12
+       },
+       "n": 73,
+       "rate": 0.8356,
+       "wilson95": [
+        0.7343,
+        0.9034
+       ]
+      }
+     }
+    }
+   },
+   "5": {
+    "delta_vs_A0": {
+     "A1": {
+      "full_minus_A0": 0.0045,
+      "intersection_minus_A0": 0.0
+     },
+     "A2": {
+      "full_minus_A0": 0.0061,
+      "intersection_minus_A0": 0.0
+     },
+     "A3": {
+      "full_minus_A0": -0.051,
+      "intersection_minus_A0": 0.0
+     }
+    },
+    "n_intersection_programs": 5,
+    "per_arm": {
+     "A0": {
+      "full": {
+       "absorbed": 48,
+       "labels": {
+        "absorbed": 48,
+        "unresolved": 1
+       },
+       "n": 49,
+       "rate": 0.9796,
+       "wilson95": [
+        0.8931,
+        0.9964
+       ]
+      },
+      "intersection": {
+       "absorbed": 34,
+       "labels": {
+        "absorbed": 34,
+        "unresolved": 1
+       },
+       "n": 35,
+       "rate": 0.9714,
+       "wilson95": [
+        0.8547,
+        0.9949
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 5,
+       "labels": {
+        "absorbed": 5
+       },
+       "n": 5,
+       "rate": 1.0,
+       "wilson95": [
+        0.5655,
+        1.0
+       ]
+      }
+     },
+     "A1": {
+      "full": {
+       "absorbed": 62,
+       "labels": {
+        "absorbed": 62,
+        "unresolved": 1
+       },
+       "n": 63,
+       "rate": 0.9841,
+       "wilson95": [
+        0.9154,
+        0.9972
+       ]
+      },
+      "intersection": {
+       "absorbed": 34,
+       "labels": {
+        "absorbed": 34,
+        "unresolved": 1
+       },
+       "n": 35,
+       "rate": 0.9714,
+       "wilson95": [
+        0.8547,
+        0.9949
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 5,
+       "labels": {
+        "absorbed": 5
+       },
+       "n": 5,
+       "rate": 1.0,
+       "wilson95": [
+        0.5655,
+        1.0
+       ]
+      }
+     },
+     "A2": {
+      "full": {
+       "absorbed": 69,
+       "labels": {
+        "absorbed": 69,
+        "unresolved": 1
+       },
+       "n": 70,
+       "rate": 0.9857,
+       "wilson95": [
+        0.9234,
+        0.9975
+       ]
+      },
+      "intersection": {
+       "absorbed": 34,
+       "labels": {
+        "absorbed": 34,
+        "unresolved": 1
+       },
+       "n": 35,
+       "rate": 0.9714,
+       "wilson95": [
+        0.8547,
+        0.9949
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 5,
+       "labels": {
+        "absorbed": 5
+       },
+       "n": 5,
+       "rate": 1.0,
+       "wilson95": [
+        0.5655,
+        1.0
+       ]
+      }
+     },
+     "A3": {
+      "full": {
+       "absorbed": 104,
+       "labels": {
+        "absorbed": 104,
+        "unresolved": 8
+       },
+       "n": 112,
+       "rate": 0.9286,
+       "wilson95": [
+        0.8654,
+        0.9634
+       ]
+      },
+      "intersection": {
+       "absorbed": 34,
+       "labels": {
+        "absorbed": 34,
+        "unresolved": 1
+       },
+       "n": 35,
+       "rate": 0.9714,
+       "wilson95": [
+        0.8547,
+        0.9949
+       ]
+      },
+      "intersection_rollout0": {
+       "absorbed": 5,
+       "labels": {
+        "absorbed": 5
+       },
+       "n": 5,
+       "rate": 1.0,
+       "wilson95": [
+        0.5655,
+        1.0
+       ]
+      }
+     }
+    }
+   }
+  }
+ },
+ "overlap": {
+  "haiku": {
+   "0": {
+    "fourway_intersection": 58,
+    "fourway_intersection_ids_sha256": "60fcd920ee4fee50",
+    "fourway_union": 61,
+    "identical_sets_all4": false,
+    "pairwise_intersection": {
+     "A0&A1": 60,
+     "A0&A2": 59,
+     "A0&A3": 59,
+     "A1&A2": 59,
+     "A1&A3": 59,
+     "A2&A3": 59
+    },
+    "per_arm_kept": {
+     "A0": 60,
+     "A1": 60,
+     "A2": 60,
+     "A3": 60
+    }
+   },
+   "1": {
+    "fourway_intersection": 55,
+    "fourway_intersection_ids_sha256": "05053c8d4b7ba0f6",
+    "fourway_union": 66,
+    "identical_sets_all4": false,
+    "pairwise_intersection": {
+     "A0&A1": 57,
+     "A0&A2": 57,
+     "A0&A3": 55,
+     "A1&A2": 59,
+     "A1&A3": 57,
+     "A2&A3": 57
+    },
+    "per_arm_kept": {
+     "A0": 60,
+     "A1": 60,
+     "A2": 60,
+     "A3": 60
+    }
+   },
+   "5": {
+    "fourway_intersection": 50,
+    "fourway_intersection_ids_sha256": "b6c95ae8357fd36b",
+    "fourway_union": 71,
+    "identical_sets_all4": false,
+    "pairwise_intersection": {
+     "A0&A1": 56,
+     "A0&A2": 52,
+     "A0&A3": 55,
+     "A1&A2": 55,
+     "A1&A3": 57,
+     "A2&A3": 53
+    },
+    "per_arm_kept": {
+     "A0": 60,
+     "A1": 60,
+     "A2": 60,
+     "A3": 60
+    }
+   }
+  },
+  "llama8b": {
+   "0": {
+    "fourway_intersection": 82,
+    "fourway_intersection_ids_sha256": "12c4518ffb75214d",
+    "fourway_union": 116,
+    "identical_sets_all4": false,
+    "pairwise_intersection": {
+     "A0&A1": 92,
+     "A0&A2": 90,
+     "A0&A3": 89,
+     "A1&A2": 94,
+     "A1&A3": 89,
+     "A2&A3": 91
+    },
+    "per_arm_kept": {
+     "A0": 100,
+     "A1": 100,
+     "A2": 100,
+     "A3": 100
+    }
+   },
+   "1": {
+    "fourway_intersection": 88,
+    "fourway_intersection_ids_sha256": "1de3e53bb57421bf",
+    "fourway_union": 114,
+    "identical_sets_all4": false,
+    "pairwise_intersection": {
+     "A0&A1": 94,
+     "A0&A2": 96,
+     "A0&A3": 89,
+     "A1&A2": 94,
+     "A1&A3": 92,
+     "A2&A3": 91
+    },
+    "per_arm_kept": {
+     "A0": 100,
+     "A1": 100,
+     "A2": 100,
+     "A3": 100
+    }
+   },
+   "5": {
+    "fourway_intersection": 14,
+    "fourway_intersection_ids_sha256": "d381ad0e3edefa37",
+    "fourway_union": 34,
+    "identical_sets_all4": false,
+    "pairwise_intersection": {
+     "A0&A1": 26,
+     "A0&A2": 19,
+     "A0&A3": 17,
+     "A1&A2": 19,
+     "A1&A3": 18,
+     "A2&A3": 15
+    },
+    "per_arm_kept": {
+     "A0": 27,
+     "A1": 30,
+     "A2": 21,
+     "A3": 20
+    }
+   }
+  },
+  "qwen7b": {
+   "0": {
+    "fourway_intersection": 82,
+    "fourway_intersection_ids_sha256": "3c8d7efa5abc5003",
+    "fourway_union": 122,
+    "identical_sets_all4": false,
+    "pairwise_intersection": {
+     "A0&A1": 94,
+     "A0&A2": 89,
+     "A0&A3": 85,
+     "A1&A2": 92,
+     "A1&A3": 86,
+     "A2&A3": 89
+    },
+    "per_arm_kept": {
+     "A0": 100,
+     "A1": 100,
+     "A2": 100,
+     "A3": 100
+    }
+   },
+   "1": {
+    "fourway_intersection": 73,
+    "fourway_intersection_ids_sha256": "47db0b1ca6bd431e",
+    "fourway_union": 130,
+    "identical_sets_all4": false,
+    "pairwise_intersection": {
+     "A0&A1": 92,
+     "A0&A2": 81,
+     "A0&A3": 80,
+     "A1&A2": 85,
+     "A1&A3": 82,
+     "A2&A3": 84
+    },
+    "per_arm_kept": {
+     "A0": 100,
+     "A1": 100,
+     "A2": 100,
+     "A3": 100
+    }
+   },
+   "5": {
+    "fourway_intersection": 5,
+    "fourway_intersection_ids_sha256": "27a798e4a4cc82fb",
+    "fourway_union": 18,
+    "identical_sets_all4": false,
+    "pairwise_intersection": {
+     "A0&A1": 7,
+     "A0&A2": 6,
+     "A0&A3": 6,
+     "A1&A2": 7,
+     "A1&A3": 8,
+     "A2&A3": 8
+    },
+    "per_arm_kept": {
+     "A0": 7,
+     "A1": 9,
+     "A2": 10,
+     "A3": 16
+    }
+   }
+  }
+ },
+ "per_arm_base_solvability": {
+  "haiku": {
+   "A0": {
+    "0": {
+     "denominator_source": "gold rows in raw_generations.jsonl",
+     "eligible": 91,
+     "kept": 60,
+     "solve_rate": 0.8273,
+     "worlds_tested": 110
+    },
+    "1": {
+     "denominator_source": "gold rows in raw_generations.jsonl",
+     "eligible": 85,
+     "kept": 60,
+     "solve_rate": 0.7727,
+     "worlds_tested": 110
+    },
+    "5": {
+     "denominator_source": "gold rows in raw_generations.jsonl",
+     "eligible": 94,
+     "kept": 60,
+     "solve_rate": 0.8545,
+     "worlds_tested": 110
+    }
+   },
+   "A1": {
+    "0": {
+     "denominator_source": "gold rows in raw_generations.jsonl",
+     "eligible": 91,
+     "kept": 60,
+     "solve_rate": 0.8273,
+     "worlds_tested": 110
+    },
+    "1": {
+     "denominator_source": "gold rows in raw_generations.jsonl",
+     "eligible": 83,
+     "kept": 60,
+     "solve_rate": 0.7545,
+     "worlds_tested": 110
+    },
+    "5": {
+     "denominator_source": "gold rows in raw_generations.jsonl",
+     "eligible": 90,
+     "kept": 60,
+     "solve_rate": 0.8182,
+     "worlds_tested": 110
+    }
+   },
+   "A2": {
+    "0": {
+     "denominator_source": "gold rows in raw_generations.jsonl",
+     "eligible": 90,
+     "kept": 60,
+     "solve_rate": 0.8182,
+     "worlds_tested": 110
+    },
+    "1": {
+     "denominator_source": "gold rows in raw_generations.jsonl",
+     "eligible": 82,
+     "kept": 60,
+     "solve_rate": 0.7455,
+     "worlds_tested": 110
+    },
+    "5": {
+     "denominator_source": "gold rows in raw_generations.jsonl",
+     "eligible": 81,
+     "kept": 60,
+     "solve_rate": 0.7364,
+     "worlds_tested": 110
+    }
+   },
+   "A3": {
+    "0": {
+     "denominator_source": "gold rows in raw_generations.jsonl",
+     "eligible": 90,
+     "kept": 60,
+     "solve_rate": 0.8182,
+     "worlds_tested": 110
+    },
+    "1": {
+     "denominator_source": "gold rows in raw_generations.jsonl",
+     "eligible": 80,
+     "kept": 60,
+     "solve_rate": 0.7273,
+     "worlds_tested": 110
+    },
+    "5": {
+     "denominator_source": "gold rows in raw_generations.jsonl",
+     "eligible": 88,
+     "kept": 60,
+     "solve_rate": 0.8,
+     "worlds_tested": 110
+    }
+   }
+  },
+  "llama8b": {
+   "A0": {
+    "0": {
+     "denominator_source": "ASSUMED full world file (gold rows not logged; runner code absent on skampere2)",
+     "eligible": 166,
+     "kept": 100,
+     "solve_rate": 0.2075,
+     "worlds_tested": 800
+    },
+    "1": {
+     "denominator_source": "ASSUMED full world file (gold rows not logged; runner code absent on skampere2)",
+     "eligible": 169,
+     "kept": 100,
+     "solve_rate": 0.2112,
+     "worlds_tested": 800
+    },
+    "5": {
+     "denominator_source": "ASSUMED full world file (gold rows not logged; runner code absent on skampere2)",
+     "eligible": 27,
+     "kept": 27,
+     "solve_rate": 0.0338,
+     "worlds_tested": 800
+    }
+   },
+   "A1": {
+    "0": {
+     "denominator_source": "ASSUMED full world file (gold rows not logged; runner code absent on skampere2)",
+     "eligible": 173,
+     "kept": 100,
+     "solve_rate": 0.2162,
+     "worlds_tested": 800
+    },
+    "1": {
+     "denominator_source": "ASSUMED full world file (gold rows not logged; runner code absent on skampere2)",
+     "eligible": 173,
+     "kept": 100,
+     "solve_rate": 0.2162,
+     "worlds_tested": 800
+    },
+    "5": {
+     "denominator_source": "ASSUMED full world file (gold rows not logged; runner code absent on skampere2)",
+     "eligible": 30,
+     "kept": 30,
+     "solve_rate": 0.0375,
+     "worlds_tested": 800
+    }
+   },
+   "A2": {
+    "0": {
+     "denominator_source": "ASSUMED full world file (gold rows not logged; runner code absent on skampere2)",
+     "eligible": 172,
+     "kept": 100,
+     "solve_rate": 0.215,
+     "worlds_tested": 800
+    },
+    "1": {
+     "denominator_source": "ASSUMED full world file (gold rows not logged; runner code absent on skampere2)",
+     "eligible": 167,
+     "kept": 100,
+     "solve_rate": 0.2087,
+     "worlds_tested": 800
+    },
+    "5": {
+     "denominator_source": "ASSUMED full world file (gold rows not logged; runner code absent on skampere2)",
+     "eligible": 21,
+     "kept": 21,
+     "solve_rate": 0.0262,
+     "worlds_tested": 800
+    }
+   },
+   "A3": {
+    "0": {
+     "denominator_source": "ASSUMED full world file (gold rows not logged; runner code absent on skampere2)",
+     "eligible": 162,
+     "kept": 100,
+     "solve_rate": 0.2025,
+     "worlds_tested": 800
+    },
+    "1": {
+     "denominator_source": "ASSUMED full world file (gold rows not logged; runner code absent on skampere2)",
+     "eligible": 176,
+     "kept": 100,
+     "solve_rate": 0.22,
+     "worlds_tested": 800
+    },
+    "5": {
+     "denominator_source": "ASSUMED full world file (gold rows not logged; runner code absent on skampere2)",
+     "eligible": 20,
+     "kept": 20,
+     "solve_rate": 0.025,
+     "worlds_tested": 800
+    }
+   }
+  },
+  "qwen7b": {
+   "A0": {
+    "0": {
+     "denominator_source": "ASSUMED full world file (gold rows not logged; runner code absent on skampere2)",
+     "eligible": 113,
+     "kept": 100,
+     "solve_rate": 0.1412,
+     "worlds_tested": 800
+    },
+    "1": {
+     "denominator_source": "ASSUMED full world file (gold rows not logged; runner code absent on skampere2)",
+     "eligible": 109,
+     "kept": 100,
+     "solve_rate": 0.1363,
+     "worlds_tested": 800
+    },
+    "5": {
+     "denominator_source": "ASSUMED full world file (gold rows not logged; runner code absent on skampere2)",
+     "eligible": 7,
+     "kept": 7,
+     "solve_rate": 0.0088,
+     "worlds_tested": 800
+    }
+   },
+   "A1": {
+    "0": {
+     "denominator_source": "ASSUMED full world file (gold rows not logged; runner code absent on skampere2)",
+     "eligible": 109,
+     "kept": 100,
+     "solve_rate": 0.1363,
+     "worlds_tested": 800
+    },
+    "1": {
+     "denominator_source": "ASSUMED full world file (gold rows not logged; runner code absent on skampere2)",
+     "eligible": 115,
+     "kept": 100,
+     "solve_rate": 0.1437,
+     "worlds_tested": 800
+    },
+    "5": {
+     "denominator_source": "ASSUMED full world file (gold rows not logged; runner code absent on skampere2)",
+     "eligible": 9,
+     "kept": 9,
+     "solve_rate": 0.0112,
+     "worlds_tested": 800
+    }
+   },
+   "A2": {
+    "0": {
+     "denominator_source": "ASSUMED full world file (gold rows not logged; runner code absent on skampere2)",
+     "eligible": 118,
+     "kept": 100,
+     "solve_rate": 0.1475,
+     "worlds_tested": 800
+    },
+    "1": {
+     "denominator_source": "ASSUMED full world file (gold rows not logged; runner code absent on skampere2)",
+     "eligible": 126,
+     "kept": 100,
+     "solve_rate": 0.1575,
+     "worlds_tested": 800
+    },
+    "5": {
+     "denominator_source": "ASSUMED full world file (gold rows not logged; runner code absent on skampere2)",
+     "eligible": 10,
+     "kept": 10,
+     "solve_rate": 0.0125,
+     "worlds_tested": 800
+    }
+   },
+   "A3": {
+    "0": {
+     "denominator_source": "ASSUMED full world file (gold rows not logged; runner code absent on skampere2)",
+     "eligible": 122,
+     "kept": 100,
+     "solve_rate": 0.1525,
+     "worlds_tested": 800
+    },
+    "1": {
+     "denominator_source": "ASSUMED full world file (gold rows not logged; runner code absent on skampere2)",
+     "eligible": 126,
+     "kept": 100,
+     "solve_rate": 0.1575,
+     "worlds_tested": 800
+    },
+    "5": {
+     "denominator_source": "ASSUMED full world file (gold rows not logged; runner code absent on skampere2)",
+     "eligible": 16,
+     "kept": 16,
+     "solve_rate": 0.02,
+     "worlds_tested": 800
+    }
+   }
+  }
+ },
+ "raw_prompt_field_check": {
+  "haiku": {
+   "any_prompt_field": false,
+   "keys_seen": [
+    "arm",
+    "cell",
+    "condition",
+    "continuation",
+    "failed_generation",
+    "family",
+    "k",
+    "opacity",
+    "output_tokens",
+    "planted_value",
+    "program_id",
+    "rollout",
+    "run_id",
+    "true_value"
+   ],
+   "total_raw_rows": 4200
+  },
+  "llama8b": {
+   "any_prompt_field": false,
+   "keys_seen": [
+    "arm",
+    "cell",
+    "condition",
+    "continuation",
+    "family",
+    "k",
+    "opacity",
+    "program_id",
+    "rollout"
+   ],
+   "total_raw_rows": 6286
+  },
+  "qwen7b": {
+   "any_prompt_field": false,
+   "keys_seen": [
+    "arm",
+    "cell",
+    "condition",
+    "continuation",
+    "family",
+    "k",
+    "opacity",
+    "program_id",
+    "rollout"
+   ],
+   "total_raw_rows": 5894
+  }
+ },
+ "world_counts_per_k": {
+  "haiku": {
+   "0": 180,
+   "1": 180,
+   "2": 180,
+   "3": 180,
+   "5": 180
+  },
+  "llama8b": {
+   "0": 800,
+   "1": 800,
+   "5": 800
+  },
+  "qwen7b": {
+   "0": 800,
+   "1": 800,
+   "5": 800
+  }
+ }
+}

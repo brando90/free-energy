@@ -1,0 +1,1830 @@
+{
+  "created_at": "2026-06-18T19:59:02.212431+00:00",
+  "exclusions": "No post-generation exclusions. Failed and unparsed generations are retained in denominators and logged.",
+  "integrity": {
+    "all_original_proofs_validated": true,
+    "duplicate_example_keys": 0,
+    "every_injected_statement_audited": true,
+    "failed_generations_logged": true,
+    "required_result_fields_present": true,
+    "unavailable_perturbations_logged": true,
+    "unique_run_ids": true,
+    "unparsed_generations_logged": true
+  },
+  "metrics": {
+    "by_condition_position": {
+      "GLOBAL_BASELINE|early": {
+        "continuation_length_tokens": {
+          "max": 192,
+          "mean": 134.5,
+          "min": 77
+        },
+        "derailed": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            1.0
+          ],
+          "rate": 0.5,
+          "wilson95": [
+            0.0945,
+            0.9055
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "n": 2,
+        "parroted": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "poisoned": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            1.0
+          ],
+          "rate": 0.5,
+          "wilson95": [
+            0.0945,
+            0.9055
+          ]
+        },
+        "problem_n": 2,
+        "triple_n": 2,
+        "unparsed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "valid_rederivation": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        }
+      },
+      "GLOBAL_BASELINE|late": {
+        "continuation_length_tokens": {
+          "max": 41,
+          "mean": 33.5,
+          "min": 26
+        },
+        "derailed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "n": 2,
+        "parroted": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            1.0
+          ],
+          "rate": 0.5,
+          "wilson95": [
+            0.0945,
+            0.9055
+          ]
+        },
+        "poisoned": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "problem_n": 2,
+        "triple_n": 2,
+        "unparsed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "valid_rederivation": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            1.0
+          ],
+          "rate": 0.5,
+          "wilson95": [
+            0.0945,
+            0.9055
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        }
+      },
+      "GLOBAL_BASELINE|mid": {
+        "continuation_length_tokens": {
+          "max": 151,
+          "mean": 99.0,
+          "min": 47
+        },
+        "derailed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "n": 2,
+        "parroted": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "poisoned": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            1.0
+          ],
+          "rate": 0.5,
+          "wilson95": [
+            0.0945,
+            0.9055
+          ]
+        },
+        "problem_n": 2,
+        "triple_n": 2,
+        "unparsed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "valid_rederivation": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            1.0
+          ],
+          "rate": 0.5,
+          "wilson95": [
+            0.0945,
+            0.9055
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        }
+      },
+      "IRRELEVANT_CERTIFICATE_CONTROL|early": {
+        "continuation_length_tokens": {
+          "max": 120,
+          "mean": 89.5,
+          "min": 59
+        },
+        "derailed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "n": 2,
+        "parroted": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            1.0
+          ],
+          "rate": 0.5,
+          "wilson95": [
+            0.0945,
+            0.9055
+          ]
+        },
+        "poisoned": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            1.0
+          ],
+          "rate": 0.5,
+          "wilson95": [
+            0.0945,
+            0.9055
+          ]
+        },
+        "problem_n": 2,
+        "triple_n": 2,
+        "unparsed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "valid_rederivation": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        }
+      },
+      "IRRELEVANT_CERTIFICATE_CONTROL|late": {
+        "continuation_length_tokens": {
+          "max": 150,
+          "mean": 81.0,
+          "min": 12
+        },
+        "derailed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "n": 2,
+        "parroted": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            1.0
+          ],
+          "rate": 0.5,
+          "wilson95": [
+            0.0945,
+            0.9055
+          ]
+        },
+        "poisoned": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "problem_n": 2,
+        "triple_n": 2,
+        "unparsed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "valid_rederivation": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            1.0
+          ],
+          "rate": 0.5,
+          "wilson95": [
+            0.0945,
+            0.9055
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        }
+      },
+      "IRRELEVANT_CERTIFICATE_CONTROL|mid": {
+        "continuation_length_tokens": {
+          "max": 93,
+          "mean": 76.5,
+          "min": 60
+        },
+        "derailed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "n": 2,
+        "parroted": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "poisoned": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            1.0
+          ],
+          "rate": 0.5,
+          "wilson95": [
+            0.0945,
+            0.9055
+          ]
+        },
+        "problem_n": 2,
+        "triple_n": 2,
+        "unparsed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "valid_rederivation": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            1.0
+          ],
+          "rate": 0.5,
+          "wilson95": [
+            0.0945,
+            0.9055
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        }
+      },
+      "LOCAL_CERTIFICATE|early": {
+        "continuation_length_tokens": {
+          "max": 192,
+          "mean": 120.0,
+          "min": 48
+        },
+        "derailed": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            1.0
+          ],
+          "rate": 0.5,
+          "wilson95": [
+            0.0945,
+            0.9055
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "n": 2,
+        "parroted": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            1.0
+          ],
+          "rate": 0.5,
+          "wilson95": [
+            0.0945,
+            0.9055
+          ]
+        },
+        "poisoned": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "problem_n": 2,
+        "triple_n": 2,
+        "unparsed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "valid_rederivation": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        }
+      },
+      "LOCAL_CERTIFICATE|late": {
+        "continuation_length_tokens": {
+          "max": 192,
+          "mean": 144.0,
+          "min": 96
+        },
+        "derailed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "n": 2,
+        "parroted": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            1.0
+          ],
+          "rate": 0.5,
+          "wilson95": [
+            0.0945,
+            0.9055
+          ]
+        },
+        "poisoned": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "problem_n": 2,
+        "triple_n": 2,
+        "unparsed": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            1.0
+          ],
+          "rate": 0.5,
+          "wilson95": [
+            0.0945,
+            0.9055
+          ]
+        },
+        "valid_rederivation": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        }
+      },
+      "LOCAL_CERTIFICATE|mid": {
+        "continuation_length_tokens": {
+          "max": 192,
+          "mean": 118.0,
+          "min": 44
+        },
+        "derailed": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            1.0
+          ],
+          "rate": 0.5,
+          "wilson95": [
+            0.0945,
+            0.9055
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "n": 2,
+        "parroted": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "poisoned": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "problem_n": 2,
+        "triple_n": 2,
+        "unparsed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "valid_rederivation": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            1.0
+          ],
+          "rate": 0.5,
+          "wilson95": [
+            0.0945,
+            0.9055
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            1.0
+          ],
+          "rate": 0.5,
+          "wilson95": [
+            0.0945,
+            0.9055
+          ]
+        }
+      }
+    },
+    "pooled_by_condition": {
+      "GLOBAL_BASELINE": {
+        "continuation_length_tokens": {
+          "max": 192,
+          "mean": 89.0,
+          "min": 26
+        },
+        "derailed": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.5
+          ],
+          "rate": 0.1667,
+          "wilson95": [
+            0.0301,
+            0.5635
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3903
+          ]
+        },
+        "n": 6,
+        "parroted": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.5
+          ],
+          "rate": 0.1667,
+          "wilson95": [
+            0.0301,
+            0.5635
+          ]
+        },
+        "poisoned": {
+          "count": 2,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.6667
+          ],
+          "rate": 0.3333,
+          "wilson95": [
+            0.0968,
+            0.7
+          ]
+        },
+        "problem_n": 6,
+        "triple_n": 6,
+        "unparsed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3903
+          ]
+        },
+        "valid_rederivation": {
+          "count": 2,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.6667
+          ],
+          "rate": 0.3333,
+          "wilson95": [
+            0.0968,
+            0.7
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3903
+          ]
+        }
+      },
+      "IRRELEVANT_CERTIFICATE_CONTROL": {
+        "continuation_length_tokens": {
+          "max": 150,
+          "mean": 82.33,
+          "min": 12
+        },
+        "derailed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3903
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3903
+          ]
+        },
+        "n": 6,
+        "parroted": {
+          "count": 2,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.6667
+          ],
+          "rate": 0.3333,
+          "wilson95": [
+            0.0968,
+            0.7
+          ]
+        },
+        "poisoned": {
+          "count": 2,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.6667
+          ],
+          "rate": 0.3333,
+          "wilson95": [
+            0.0968,
+            0.7
+          ]
+        },
+        "problem_n": 6,
+        "triple_n": 6,
+        "unparsed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3903
+          ]
+        },
+        "valid_rederivation": {
+          "count": 2,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.6667
+          ],
+          "rate": 0.3333,
+          "wilson95": [
+            0.0968,
+            0.7
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3903
+          ]
+        }
+      },
+      "LOCAL_CERTIFICATE": {
+        "continuation_length_tokens": {
+          "max": 192,
+          "mean": 127.33,
+          "min": 44
+        },
+        "derailed": {
+          "count": 2,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.6667
+          ],
+          "rate": 0.3333,
+          "wilson95": [
+            0.0968,
+            0.7
+          ]
+        },
+        "generation_failed": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3903
+          ]
+        },
+        "n": 6,
+        "parroted": {
+          "count": 2,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.6667
+          ],
+          "rate": 0.3333,
+          "wilson95": [
+            0.0968,
+            0.7
+          ]
+        },
+        "poisoned": {
+          "count": 0,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3903
+          ]
+        },
+        "problem_n": 6,
+        "triple_n": 6,
+        "unparsed": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.5
+          ],
+          "rate": 0.1667,
+          "wilson95": [
+            0.0301,
+            0.5635
+          ]
+        },
+        "valid_rederivation": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.5
+          ],
+          "rate": 0.1667,
+          "wilson95": [
+            0.0301,
+            0.5635
+          ]
+        },
+        "verbalized_doubt": {
+          "count": 1,
+          "problem_cluster_bootstrap95": [
+            0.0,
+            0.5
+          ],
+          "rate": 0.1667,
+          "wilson95": [
+            0.0301,
+            0.5635
+          ]
+        }
+      }
+    }
+  },
+  "mixed_effects_logistic": {
+    "poisoned": {
+      "coefficients": {
+        "condition=IRRELEVANT_CERTIFICATE_CONTROL": {
+          "ci95_or": [
+            0.0199,
+            50.3882
+          ],
+          "log_or": 0.0023,
+          "or": 1.0023,
+          "se": 1.9987
+        },
+        "condition=IRRELEVANT_CERTIFICATE_CONTROL:position=late": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": -1.4847,
+          "or": 0.2266,
+          "se": 66.8178
+        },
+        "condition=IRRELEVANT_CERTIFICATE_CONTROL:position=mid": {
+          "ci95_or": [
+            0.0039,
+            254.0687
+          ],
+          "log_or": -0.002,
+          "or": 0.998,
+          "se": 2.8263
+        },
+        "condition=LOCAL_CERTIFICATE": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": -8.0232,
+          "or": 0.0003,
+          "se": 35.0809
+        },
+        "condition=LOCAL_CERTIFICATE:position=late": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": -0.0021,
+          "or": 0.9979,
+          "se": 99.8834
+        },
+        "condition=LOCAL_CERTIFICATE:position=mid": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": -1.4847,
+          "or": 0.2266,
+          "se": 66.8169
+        },
+        "intercept": {
+          "ci95_or": [
+            0.045,
+            22.0737
+          ],
+          "log_or": -0.003,
+          "or": 0.997,
+          "se": 1.5803
+        },
+        "position=late": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": -8.0225,
+          "or": 0.0003,
+          "se": 35.0932
+        },
+        "position=mid": {
+          "ci95_or": [
+            0.0126,
+            80.0496
+          ],
+          "log_or": 0.0027,
+          "or": 1.0027,
+          "se": 2.2347
+        }
+      },
+      "formula": "poisoned ~ condition * position + (1 | problem_id)",
+      "method": "penalized logistic random-intercept approximation",
+      "n": 18,
+      "problem_n": 6,
+      "status": "ok"
+    },
+    "valid_rederivation": {
+      "coefficients": {
+        "condition=IRRELEVANT_CERTIFICATE_CONTROL": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": -1.1543,
+          "or": 0.3153,
+          "se": 41.6879
+        },
+        "condition=IRRELEVANT_CERTIFICATE_CONTROL:position=late": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": 1.1567,
+          "or": 3.1794,
+          "se": 41.7207
+        },
+        "condition=IRRELEVANT_CERTIFICATE_CONTROL:position=mid": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": 1.1548,
+          "or": 3.1732,
+          "se": 41.7178
+        },
+        "condition=LOCAL_CERTIFICATE": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": -2.991,
+          "or": 0.0502,
+          "se": 54.4238
+        },
+        "condition=LOCAL_CERTIFICATE:position=late": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": -5.4298,
+          "or": 0.0044,
+          "se": 60.5685
+        },
+        "condition=LOCAL_CERTIFICATE:position=mid": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": 2.9911,
+          "or": 19.9073,
+          "se": 54.4385
+        },
+        "intercept": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": -7.5053,
+          "or": 0.0006,
+          "se": 25.7827
+        },
+        "position=late": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": 7.5023,
+          "or": 1812.2522,
+          "se": 25.8247
+        },
+        "position=mid": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": 7.5043,
+          "or": 1815.7855,
+          "se": 25.8217
+        }
+      },
+      "formula": "valid_rederivation ~ condition * position + (1 | problem_id)",
+      "method": "penalized logistic random-intercept approximation",
+      "n": 18,
+      "problem_n": 6,
+      "status": "ok"
+    },
+    "verbalized_doubt": {
+      "coefficients": {
+        "condition=IRRELEVANT_CERTIFICATE_CONTROL": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": -0.6925,
+          "or": 0.5003,
+          "se": 84.5545
+        },
+        "condition=IRRELEVANT_CERTIFICATE_CONTROL:position=late": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": -0.0239,
+          "or": 0.9763,
+          "se": 98.861
+        },
+        "condition=IRRELEVANT_CERTIFICATE_CONTROL:position=mid": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": -0.6198,
+          "or": 0.5381,
+          "se": 86.0321
+        },
+        "condition=LOCAL_CERTIFICATE": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": 3.1408,
+          "or": 23.1215,
+          "se": 67.9885
+        },
+        "condition=LOCAL_CERTIFICATE:position=late": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": -0.6136,
+          "or": 0.5414,
+          "se": 86.1139
+        },
+        "condition=LOCAL_CERTIFICATE:position=mid": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": 6.0059,
+          "or": 405.8355,
+          "se": 63.4625
+        },
+        "intercept": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": -12.2324,
+          "or": 0.0,
+          "se": 75.6797
+        },
+        "position=late": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": -0.6866,
+          "or": 0.5033,
+          "se": 84.6261
+        },
+        "position=mid": {
+          "ci95_or": [
+            0.0,
+            485165195.4098
+          ],
+          "log_or": 3.0843,
+          "or": 21.8516,
+          "se": 68.0805
+        }
+      },
+      "formula": "verbalized_doubt ~ condition * position + (1 | problem_id)",
+      "method": "penalized logistic random-intercept approximation",
+      "n": 18,
+      "problem_n": 6,
+      "status": "ok"
+    }
+  },
+  "multiple_comparisons": "LOCAL_CERTIFICATE vs GLOBAL_BASELINE and LOCAL_CERTIFICATE vs IRRELEVANT_CERTIFICATE_CONTROL on valid_rederivation, poisoning, and verbalized_doubt are primary for Experiment B; other contrasts are exploratory.",
+  "paired_tests": {
+    "poisoned": {
+      "LOCAL_CERTIFICATE_vs_GLOBAL_BASELINE": {
+        "early": {
+          "ci95_problem_cluster_bootstrap": [
+            -1.0,
+            0.0
+          ],
+          "diff_a_minus_b": -0.5,
+          "mcnemar_a0_b1": 1,
+          "mcnemar_a1_b0": 0,
+          "mcnemar_exact_p": 1.0,
+          "n_pairs": 2,
+          "problem_n": 2
+        },
+        "late": {
+          "ci95_problem_cluster_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "diff_a_minus_b": 0.0,
+          "mcnemar_a0_b1": 0,
+          "mcnemar_a1_b0": 0,
+          "mcnemar_exact_p": 1.0,
+          "n_pairs": 2,
+          "problem_n": 2
+        },
+        "mid": {
+          "ci95_problem_cluster_bootstrap": [
+            -1.0,
+            0.0
+          ],
+          "diff_a_minus_b": -0.5,
+          "mcnemar_a0_b1": 1,
+          "mcnemar_a1_b0": 0,
+          "mcnemar_exact_p": 1.0,
+          "n_pairs": 2,
+          "problem_n": 2
+        },
+        "pooled": {
+          "ci95_problem_cluster_bootstrap": [
+            -0.6667,
+            0.0
+          ],
+          "diff_a_minus_b": -0.3333,
+          "mcnemar_a0_b1": 2,
+          "mcnemar_a1_b0": 0,
+          "mcnemar_exact_p": 0.5,
+          "n_pairs": 6,
+          "problem_n": 6
+        }
+      },
+      "LOCAL_CERTIFICATE_vs_IRRELEVANT_CERTIFICATE_CONTROL": {
+        "early": {
+          "ci95_problem_cluster_bootstrap": [
+            -1.0,
+            0.0
+          ],
+          "diff_a_minus_b": -0.5,
+          "mcnemar_a0_b1": 1,
+          "mcnemar_a1_b0": 0,
+          "mcnemar_exact_p": 1.0,
+          "n_pairs": 2,
+          "problem_n": 2
+        },
+        "late": {
+          "ci95_problem_cluster_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "diff_a_minus_b": 0.0,
+          "mcnemar_a0_b1": 0,
+          "mcnemar_a1_b0": 0,
+          "mcnemar_exact_p": 1.0,
+          "n_pairs": 2,
+          "problem_n": 2
+        },
+        "mid": {
+          "ci95_problem_cluster_bootstrap": [
+            -1.0,
+            0.0
+          ],
+          "diff_a_minus_b": -0.5,
+          "mcnemar_a0_b1": 1,
+          "mcnemar_a1_b0": 0,
+          "mcnemar_exact_p": 1.0,
+          "n_pairs": 2,
+          "problem_n": 2
+        },
+        "pooled": {
+          "ci95_problem_cluster_bootstrap": [
+            -0.6667,
+            0.0
+          ],
+          "diff_a_minus_b": -0.3333,
+          "mcnemar_a0_b1": 2,
+          "mcnemar_a1_b0": 0,
+          "mcnemar_exact_p": 0.5,
+          "n_pairs": 6,
+          "problem_n": 6
+        }
+      }
+    },
+    "valid_rederivation": {
+      "LOCAL_CERTIFICATE_vs_GLOBAL_BASELINE": {
+        "early": {
+          "ci95_problem_cluster_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "diff_a_minus_b": 0.0,
+          "mcnemar_a0_b1": 0,
+          "mcnemar_a1_b0": 0,
+          "mcnemar_exact_p": 1.0,
+          "n_pairs": 2,
+          "problem_n": 2
+        },
+        "late": {
+          "ci95_problem_cluster_bootstrap": [
+            -1.0,
+            0.0
+          ],
+          "diff_a_minus_b": -0.5,
+          "mcnemar_a0_b1": 1,
+          "mcnemar_a1_b0": 0,
+          "mcnemar_exact_p": 1.0,
+          "n_pairs": 2,
+          "problem_n": 2
+        },
+        "mid": {
+          "ci95_problem_cluster_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "diff_a_minus_b": 0.0,
+          "mcnemar_a0_b1": 0,
+          "mcnemar_a1_b0": 0,
+          "mcnemar_exact_p": 1.0,
+          "n_pairs": 2,
+          "problem_n": 2
+        },
+        "pooled": {
+          "ci95_problem_cluster_bootstrap": [
+            -0.5,
+            0.0
+          ],
+          "diff_a_minus_b": -0.1667,
+          "mcnemar_a0_b1": 1,
+          "mcnemar_a1_b0": 0,
+          "mcnemar_exact_p": 1.0,
+          "n_pairs": 6,
+          "problem_n": 6
+        }
+      },
+      "LOCAL_CERTIFICATE_vs_IRRELEVANT_CERTIFICATE_CONTROL": {
+        "early": {
+          "ci95_problem_cluster_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "diff_a_minus_b": 0.0,
+          "mcnemar_a0_b1": 0,
+          "mcnemar_a1_b0": 0,
+          "mcnemar_exact_p": 1.0,
+          "n_pairs": 2,
+          "problem_n": 2
+        },
+        "late": {
+          "ci95_problem_cluster_bootstrap": [
+            -1.0,
+            0.0
+          ],
+          "diff_a_minus_b": -0.5,
+          "mcnemar_a0_b1": 1,
+          "mcnemar_a1_b0": 0,
+          "mcnemar_exact_p": 1.0,
+          "n_pairs": 2,
+          "problem_n": 2
+        },
+        "mid": {
+          "ci95_problem_cluster_bootstrap": [
+            -1.0,
+            1.0
+          ],
+          "diff_a_minus_b": 0.0,
+          "mcnemar_a0_b1": 1,
+          "mcnemar_a1_b0": 1,
+          "mcnemar_exact_p": 1.0,
+          "n_pairs": 2,
+          "problem_n": 2
+        },
+        "pooled": {
+          "ci95_problem_cluster_bootstrap": [
+            -0.6667,
+            0.3333
+          ],
+          "diff_a_minus_b": -0.1667,
+          "mcnemar_a0_b1": 2,
+          "mcnemar_a1_b0": 1,
+          "mcnemar_exact_p": 1.0,
+          "n_pairs": 6,
+          "problem_n": 6
+        }
+      }
+    },
+    "verbalized_doubt": {
+      "LOCAL_CERTIFICATE_vs_GLOBAL_BASELINE": {
+        "early": {
+          "ci95_problem_cluster_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "diff_a_minus_b": 0.0,
+          "mcnemar_a0_b1": 0,
+          "mcnemar_a1_b0": 0,
+          "mcnemar_exact_p": 1.0,
+          "n_pairs": 2,
+          "problem_n": 2
+        },
+        "late": {
+          "ci95_problem_cluster_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "diff_a_minus_b": 0.0,
+          "mcnemar_a0_b1": 0,
+          "mcnemar_a1_b0": 0,
+          "mcnemar_exact_p": 1.0,
+          "n_pairs": 2,
+          "problem_n": 2
+        },
+        "mid": {
+          "ci95_problem_cluster_bootstrap": [
+            0.0,
+            1.0
+          ],
+          "diff_a_minus_b": 0.5,
+          "mcnemar_a0_b1": 0,
+          "mcnemar_a1_b0": 1,
+          "mcnemar_exact_p": 1.0,
+          "n_pairs": 2,
+          "problem_n": 2
+        },
+        "pooled": {
+          "ci95_problem_cluster_bootstrap": [
+            0.0,
+            0.5
+          ],
+          "diff_a_minus_b": 0.1667,
+          "mcnemar_a0_b1": 0,
+          "mcnemar_a1_b0": 1,
+          "mcnemar_exact_p": 1.0,
+          "n_pairs": 6,
+          "problem_n": 6
+        }
+      },
+      "LOCAL_CERTIFICATE_vs_IRRELEVANT_CERTIFICATE_CONTROL": {
+        "early": {
+          "ci95_problem_cluster_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "diff_a_minus_b": 0.0,
+          "mcnemar_a0_b1": 0,
+          "mcnemar_a1_b0": 0,
+          "mcnemar_exact_p": 1.0,
+          "n_pairs": 2,
+          "problem_n": 2
+        },
+        "late": {
+          "ci95_problem_cluster_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "diff_a_minus_b": 0.0,
+          "mcnemar_a0_b1": 0,
+          "mcnemar_a1_b0": 0,
+          "mcnemar_exact_p": 1.0,
+          "n_pairs": 2,
+          "problem_n": 2
+        },
+        "mid": {
+          "ci95_problem_cluster_bootstrap": [
+            0.0,
+            1.0
+          ],
+          "diff_a_minus_b": 0.5,
+          "mcnemar_a0_b1": 0,
+          "mcnemar_a1_b0": 1,
+          "mcnemar_exact_p": 1.0,
+          "n_pairs": 2,
+          "problem_n": 2
+        },
+        "pooled": {
+          "ci95_problem_cluster_bootstrap": [
+            0.0,
+            0.5
+          ],
+          "diff_a_minus_b": 0.1667,
+          "mcnemar_a0_b1": 0,
+          "mcnemar_a1_b0": 1,
+          "mcnemar_exact_p": 1.0,
+          "n_pairs": 6,
+          "problem_n": 6
+        }
+      }
+    }
+  },
+  "reproducibility": {
+    "conditions": [
+      "GLOBAL_BASELINE",
+      "LOCAL_CERTIFICATE",
+      "IRRELEVANT_CERTIFICATE_CONTROL"
+    ],
+    "created_at": "2026-06-18T19:58:26.592803+00:00",
+    "decoding": {
+      "do_sample": false,
+      "max_new_tokens": 192,
+      "num_return_sequences": 1,
+      "temperature": null,
+      "top_p": null
+    },
+    "experiment": "EXPB_LOCAL_CERT_FLIP",
+    "git_commit_hash": "d860dc734e285ac148100b3d8da74fc2721dbcaa",
+    "git_dirty_status": [
+      " M experiments/09_latent_recovery/PLAN.md",
+      " M experiments/09_latent_recovery/src/common.py",
+      " M experiments/09_latent_recovery/src/validator.py",
+      " M paper_latex/papers/latent_recovery/main.pdf",
+      " M paper_latex/papers/latent_recovery/main.tex",
+      "?? experiments/09_latent_recovery/results/EXPA_GLOBAL_EXPANSION/",
+      "?? experiments/09_latent_recovery/results/EXPA_GLOBAL_EXPANSION_SMOKE/",
+      "?? experiments/09_latent_recovery/results/EXPB_LOCAL_CERT_FLIP_FAILED_PROMPTIDS/",
+      "?? experiments/09_latent_recovery/results/EXPB_LOCAL_CERT_FLIP_PREP/",
+      "?? experiments/09_latent_recovery/results/EXPB_LOCAL_CERT_FLIP_SMOKE/",
+      "?? experiments/09_latent_recovery/results/EXPB_LOCAL_CERT_FLIP_SMOKE_FIXED/",
+      "?? experiments/09_latent_recovery/results/EXPB_LOCAL_CERT_FLIP_TEST/",
+      "?? experiments/09_latent_recovery/results_ctx/",
+      "?? experiments/09_latent_recovery/results_doubt/",
+      "?? experiments/09_latent_recovery/results_llama/",
+      "?? experiments/09_latent_recovery/results_mistral/",
+      "?? experiments/09_latent_recovery/src/cluster_stats.py",
+      "?? experiments/09_latent_recovery/src/context_check.py",
+      "?? experiments/09_latent_recovery/src/doubt_suppress.py",
+      "?? experiments/09_latent_recovery/src/expa_global_expansion.py",
+      "?? experiments/09_latent_recovery/src/expa_tests.py",
+      "?? experiments/09_latent_recovery/src/expb_local_cert_flip.py",
+      "?? experiments/09_latent_recovery/src/expb_tests.py",
+      "?? experiments/09_latent_recovery/src/fig_verbalization_spectrum.py",
+      "?? experiments/09_latent_recovery/src/gsm8k_gradient.py",
+      "?? experiments/09_latent_recovery/src/make_workshop_figures.py",
+      "?? experiments/09_latent_recovery/src/val3.py",
+      "?? paper_latex/papers/latent_recovery/fig_dose_response.pdf",
+      "?? paper_latex/papers/latent_recovery/fig_dose_response.png",
+      "?? paper_latex/papers/latent_recovery/fig_dose_response.tex",
+      "?? paper_latex/papers/latent_recovery/fig_regime_map.pdf",
+      "?? paper_latex/papers/latent_recovery/fig_regime_map.png",
+      "?? paper_latex/papers/latent_recovery/fig_regime_map.tex",
+      "?? paper_latex/papers/latent_recovery/fig_verbalization_spectrum.pdf",
+      "?? paper_latex/papers/latent_recovery/fig_verbalization_spectrum.png",
+      "?? paper_latex/papers/latent_recovery/fig_verbalization_spectrum.tex",
+      "?? paper_latex/papers/latent_recovery/main.tex.bak",
+      "?? paper_latex/papers/latent_recovery/versions/"
+    ],
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "model_revision_error": null,
+    "model_revision_pinned": true,
+    "positions": [
+      "early",
+      "mid",
+      "late"
+    ],
+    "prompt": {
+      "fewshot": "Q: Every yumpus is a dumpus. Dumpuses are tumpuses. Tumpuses are not bright. Sam is a yumpus. Prove: Sam is not bright.\nA: Sam is a yumpus. Every yumpus is a dumpus. Sam is a dumpus. Dumpuses are tumpuses. Sam is a tumpus. Tumpuses are not bright. Sam is not bright.\n\nQ: Each gorpus is a sterpus. Sterpuses are red. Every borpus is a gorpus. Alex is a borpus. Prove: Alex is red.\nA: Alex is a borpus. Every borpus is a gorpus. Alex is a gorpus. Each gorpus is a sterpus. Alex is a sterpus. Sterpuses are red. Alex is red.\n\n",
+      "instruction": "You will be given facts and rules about fictional creatures, then asked to prove a statement. Answer with only the proof: a sequence of statements, one deduction at a time, in the exact style of the examples. End with the statement to be proven.\n\n"
+    },
+    "python": "3.11.15 (main, Jun  2 2026, 22:26:03) [Clang 22.1.3 ]",
+    "seed": 0,
+    "target_paired_triples_per_position": 2
+  },
+  "sample_size": {
+    "manifest_rows": 18,
+    "paired_triples_by_position": {
+      "early": 2,
+      "late": 2,
+      "mid": 2
+    },
+    "problem_clusters": 6,
+    "target_paired_triples_per_position": 2,
+    "validated_rows": 18
+  },
+  "sanity_checks": {
+    "certificate_char_length_delta_local_minus_irrelevant": {
+      "max": 1,
+      "mean": 0.333,
+      "min": 0
+    },
+    "falsehood_false_rate": 1.0,
+    "irrelevant_certificate_locally_falsifies_count": 0,
+    "irrelevant_certificate_true_rate": 1.0,
+    "local_certificate_true_rate": 1.0,
+    "prompt_formatting": true
+  },
+  "validator_quality": {
+    "strict_validator_available": false,
+    "strict_validator_did_not_overwrite_closure_validator": true,
+    "unit_test_marker_exists": true
+  }
+}

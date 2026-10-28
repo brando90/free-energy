@@ -1,0 +1,9 @@
+{
+  "attempts": 250,
+  "eligible": 91,
+  "gold_key": "gpt-3.5-turbo-instruct",
+  "reached_target": false,
+  "solve_rate": 0.808,
+  "solved": 202,
+  "world_eligible": 0
+}

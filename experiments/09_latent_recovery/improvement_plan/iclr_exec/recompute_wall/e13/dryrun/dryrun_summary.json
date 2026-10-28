@@ -1,0 +1,156 @@
+{
+  "N_target": 200,
+  "cells": {
+    "grid_kr1": {
+      "L_set": [
+        12
+      ],
+      "accept_rate": 0.8696,
+      "accepted": 200,
+      "attempts": 230,
+      "determinism": "ok",
+      "families": [
+        "adjacent_contradiction",
+        "opfree_kr1",
+        "benign_paraphrase",
+        "true_interruption",
+        "grid_line_false_copy_true",
+        "grid_line_false_note_true",
+        "grid_note_false_before",
+        "grid_note_true_before_line_false",
+        "dose_off1",
+        "dose_off10_20",
+        "dose_large"
+      ],
+      "family_missing": [],
+      "measured_min_k_set": [
+        "n/a (kr1 substrate, k_c=0)"
+      ],
+      "nearest_anc_dist_set": [
+        "within-world (paired families)"
+      ],
+      "ops_set": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "rejects": {
+        "dose_off1_starved": 2,
+        "major5_site_value_in_listing": 5,
+        "true_values_not_distinct": 20,
+        "true_values_not_distinct;major5_site_value_in_listing": 3
+      },
+      "starved": false,
+      "status": "PASS",
+      "world_file": "/lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/recompute_wall/e13/worlds/grid_kr1.jsonl",
+      "ws_tokens_set": [
+        54,
+        56,
+        58,
+        60,
+        62
+      ],
+      "ws_tokens_stats": {
+        "max": 62,
+        "mean": 58.84,
+        "min": 54,
+        "sd": 1.85
+      }
+    },
+    "k1_deference": {
+      "L_set": [
+        20
+      ],
+      "accept_rate": 0.7874,
+      "accepted": 200,
+      "attempts": 254,
+      "determinism": "ok",
+      "families": [
+        "depth_k1_bare",
+        "depth_k1_full",
+        "depth_k1_partial",
+        "k1_full_sum",
+        "k1_tentative",
+        "k1_probe"
+      ],
+      "family_missing": [],
+      "measured_min_k_set": [
+        1
+      ],
+      "nearest_anc_dist_set": [
+        4
+      ],
+      "ops_set": [
+        14
+      ],
+      "rejects": {
+        "build": 43,
+        "program_error": 11
+      },
+      "starved": false,
+      "status": "PASS",
+      "world_file": "/lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/recompute_wall/e13/worlds/k1_deference.jsonl",
+      "ws_tokens_set": [
+        106
+      ]
+    },
+    "line_k0": {
+      "L_set": [
+        20
+      ],
+      "accept_rate": 0.6689,
+      "accepted": 200,
+      "attempts": 299,
+      "determinism": "ok",
+      "families": [
+        "anchor_k0",
+        "line_k0",
+        "line_k0_swap"
+      ],
+      "family_missing": [],
+      "measured_min_k_set": [
+        0
+      ],
+      "nearest_anc_dist_set": [
+        6
+      ],
+      "ops_set": [
+        14
+      ],
+      "rejects": {
+        "build": 48,
+        "fam": 23,
+        "line_k0_swap_fam": 5,
+        "program_error": 23
+      },
+      "starved": false,
+      "status": "PASS",
+      "world_file": "/lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/improvement_plan/iclr_exec/recompute_wall/e13/worlds/line_k0.jsonl",
+      "ws_tokens_set": [
+        106
+      ]
+    }
+  },
+  "dropped_corners": {
+    "official_copy_before_definition (x2 truth values)": "IMPOSSIBLE: an official copy line 't = u' placed before u's definition reads an undefined variable -- not a valid program in the SSA grammar (interp rejects it). The official-format face of the cube is therefore only half-realizable; dropped and disclosed."
+  },
+  "e13b_inc_arm_A4": "Before continuing, check this trace for inconsistencies.",
+  "e13c_regime2_fingerprint": {
+    "n_programs": 250,
+    "path": "/lfs/skampere2/0/eobbad/free-energy/experiments/09_latent_recovery/results/EXPH2_FRONTIER_FOLLOWUPS/regime2/programs.jsonl",
+    "sha256": "8505ee8564ff6b3b896e56f6aba7470880a8afedb74ef531aafefcb2b5cc2c7a",
+    "shapes": {
+      "kc1": 60,
+      "kc5": 60,
+      "kr1": 70,
+      "kr8": 60
+    },
+    "status": "ok"
+  },
+  "naturalness_flags": {
+    "grid_note_false_before": "note about u appears one trace line BEFORE u's trace-time definition. Minimal (adjacent) displacement only; the full program listing (always in the prompt) already defines u, so the note is odd but not incoherent. CONDITIONAL: runner must gate on prefix parse sanity at the pilot/gold stage before scaling.",
+    "grid_note_true_before_line_false": "same note-before-definition placement as grid_note_false_before; same CONDITIONAL gate."
+  }
+}

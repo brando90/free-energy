@@ -1,0 +1,29 @@
+{
+  "per_arm": {
+    "A4_cont_adjacent_contradiction": {
+      "input_tokens_est": 116672,
+      "n_calls": 240,
+      "output_tokens_est": 76800,
+      "usd_est": 0.5
+    },
+    "A4_cont_deep_kc5": {
+      "input_tokens_est": 117332,
+      "n_calls": 240,
+      "output_tokens_est": 76800,
+      "usd_est": 0.5
+    },
+    "A4_cont_onehop_kc1": {
+      "input_tokens_est": 117424,
+      "n_calls": 240,
+      "output_tokens_est": 76800,
+      "usd_est": 0.5
+    },
+    "A4_gold": {
+      "input_tokens_est": 140554,
+      "n_calls": 330,
+      "output_tokens_est": 105600,
+      "usd_est": 0.67
+    }
+  },
+  "total_usd_est": 2.17
+}

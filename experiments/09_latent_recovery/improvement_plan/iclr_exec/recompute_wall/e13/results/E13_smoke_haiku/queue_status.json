@@ -1,0 +1,12 @@
+{
+  "cohort": {
+    "line_k0": {
+      "eligible": 170,
+      "kept": 10,
+      "tested": 200
+    }
+  },
+  "done": true,
+  "this_run_usd": 0.5949,
+  "updated_at": "2026-07-29T09:08:54"
+}

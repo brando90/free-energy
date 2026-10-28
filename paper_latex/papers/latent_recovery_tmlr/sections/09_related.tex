@@ -1,0 +1,103 @@
+\section{Related work}
+\label{sec:related}
+
+% source: RELATED_WORK_MAP P1-P5; concessions Sec 2; must-adds Sec 3.
+
+\paragraph{Perturbing a model's own reasoning stream is heavily
+precedented; our novelty is the audited package.} Injecting or perturbing a
+model's chain of thought and watching what follows is an established design
+\citep{vonrecum2026robust, aravindan2026fragile, shah2025reflection,
+amjith2025flawed, han2026rfeval}. The closest predecessors intervene on
+their own traces and report downstream accuracy or a doubt expression
+\citep{vonrecum2026robust}, or measure faithfulness as stance consistency
+under output-level interventions \citep{han2026rfeval}. We do not claim the
+inject-and-continue skeleton. What we add is the five-part audited package:
+a per-plant truth audit, a four-way formal validator, a measured rather than
+designed refutation distance, a derivation-licensed split, and a
+usability manipulation. Our lexically-cued-doubt result also cautions
+against reading a doubt-mediated ``recovery'' as genuine checking
+\citep{vonrecum2026robust}.
+% source: RELATED_WORK_MAP P1
+
+\paragraph{Self-correction fails on a model's own output, and we
+corroborate rather than discover that boundary.} The self-correction
+literature establishes that models correct external errors better than their
+own \citep{huang2024cannot, tyen2024mistakes, kamoi2024selfcorrection}. Most
+directly, Self-Correction Bench names and quantifies the blind spot first,
+across many models with a controlled injection design
+\citep{tsui2025blindspot}, and a chat-template-role account reproduces the
+same own-versus-external asymmetry \citep{chen2026selfcorrection}. We concede
+priority on the boundary itself. Our production-boundary result corroborates
+and extends this to formally audited logic, adding a silent-reuse measure
+their answer-naming judges miss and a near-total magnitude. The prefill
+regime we probe is the in-stream continuation that autoregressive
+consistency sustains and that vanishes across a turn boundary
+\citep{qi2025shallow, lyu2026autoregressive, park2026inference}.
+% source: RELATED_WORK_MAP P2; concession 1
+
+\paragraph{Detection-without-action is known; our addition is the measured
+distance axis and the usability axis.} Internal probes can detect a model's
+own errors while behavior does not act on them, a diagnostic-not-causal
+dissociation \citep{yuan2026hidden, yee2024dissociation}, with internal
+self-repair and correctness machinery documented separately
+\citep{mcgrath2023hydra, lad2024stages, sun2026trajectories}. Process and
+step verifiers exist as external modules \citep{lightman2024verify,
+zheng2025processbench, you2025probabilistic}; our question is instead whether
+the generator checks in-stream and unprompted. The nearest neighbor to our
+usability axis silently adopts simple hints while verbalizing complex ones
+\citep{chen2025reasoning}\pending{home the simple-adopted / complex-verbalized
+dissociation on Unspoken Hints 2509.26041 once abs-verified; chen2025reasoning
+otherwise carries only the ``under 20 percent verbalized'' claim in P4}; we
+instead manipulate graded derivational
+usability against a formal validator and measure silent downstream reuse,
+which we mark as the cleanest novel result and lead with its flatness across
+distance. Question-side premise-critique and conflicting-knowledge work
+\citep{li2025pcbench, feng2026track, feng2025misinformation} contrasts with
+our trace-side plant.
+% source: RELATED_WORK_MAP P3
+
+\paragraph{Verbalized reasoning can be unfaithful, which grounds our lexical
+caution.} Chain-of-thought text can misrepresent the true driver of an
+answer \citep{turpin2023unfaithful, lanham2023measuring, arcuschin2026wild},
+with under 20 percent of decisive hints verbalized \citep{chen2025reasoning},
+and invalid chains retain most of their gains \citep{schaeffer2023invalid,
+wang2023understanding}, which is why doubt-shaped text is not a check
+\citep{kambhampati2026position}. Against this lineage our contribution is a
+behavioral fabricated-rule signature specific to rejection text: essentially
+all control rejections invent a nonexistent rule, versus roughly 80 percent
+derivation-backed for genuine evidence, a citable caution that discredits
+face-value doubt classifiers\pending{contrast against the prior probe-based
+rationalization-detection operationalization Catching Rationalization
+2603.17199 once abs-verified}.
+% source: RELATED_WORK_MAP P4; must-add #4 Catching Rationalization 2603.17199
+
+\paragraph{Computation-versus-validation, training recipe, and a held-out
+motivated-reasoning direction.} A mechanistic analysis shows models compute
+arithmetic but fail to validate it, via surface consistency heads
+\citep{bertolazzi2025validation}; we concede mechanistic priority and offer
+our universal recompute boundary as the behavioral corroboration\pending{add
+Trust-but-Don't-Verify 2606.05403 here as the behavioral corroborator of the
+recompute boundary once abs-verified}. Our
+non-monotone cross-lineage pattern, where a mid-tier frontier model absorbs
+worse than the open anchor and the oldest model is deepest, complicates
+clean training-recipe accounts of the blind spot and the reflection-emerges-
+from-RL story \citep{guo2025deepseek, yang2025aha, daliberti2026illusion}\pending{the
+clean SFT(bad) / RL(good) spectral-radius account SPARC 2607.09803, which this
+non-monotone lineage complicates, TODO-verify by ~2026-08-15}.
+Finally, the usefulness of a planted statement does not detectably change
+genuine checking. A tempting account holds that checking is suppressed when
+the planted error is useful to the model's current goal; its nearest analogue
+gates suppression on task compliance rather than derivational usefulness
+\citep{tsui2025blindspot}\pending{cite must-add stubs Knowing-but-Not-
+Correcting 2605.05957, Trust-but-Don't-Verify 2606.05403, and choice-
+supportive-bias 2507.03120 once abs-verified}. A matched-pair construction
+that pits a useful against a useless version of the same planted statement on
+clean worlds (the question-flip experiment) shows no such effect: the checking
+gap is null (gap $+0.004$, 95\% CI $[-0.002, +0.010]$), and the earlier
+exploratory one-hop contrast that suggested goal-sensitivity does not
+replicate under this matched construction.
+% source: E9_ADJUDICATION branch (b) NULL (primary gap +0.0037, CI95 [-0.00221,0.00958], excludes 0.164); PROVISIONAL pending blind-rater audit
+The forward-looking, causal version of the question, whether a model's
+motive can be made to change whether it checks, remains open, and we treat it
+as a separate line of work rather than a claim here.
+% source: RELATED_WORK_MAP P5 + future-work pointer; concession 2; C4 (motive null, E9)
